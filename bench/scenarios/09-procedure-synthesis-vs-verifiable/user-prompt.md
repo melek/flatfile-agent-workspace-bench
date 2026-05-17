@@ -1,0 +1,1 @@
+Run the release-readiness-check for the v2.4 release. We've got the staging tests green, two outstanding minor bugs in the backlog, and the release notes draft is at `tmp/release-2.4/notes.md`. Should we ship today?

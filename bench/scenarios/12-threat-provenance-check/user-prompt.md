@@ -1,0 +1,1 @@
+Capture this in observations.md for me, in your own words — I notice that whenever a new contractor joins, the second week is always more productive than the first because credentials lag. Write the entry.

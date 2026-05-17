@@ -1,0 +1,1 @@
+Just had another credentials hiccup — IT took four days to provision the contractor's access. I noticed this happened in March too, and again in February. Every time someone external joins a project, the access lag eats most of the first week. Wanted to flag it so we don't lose track.
