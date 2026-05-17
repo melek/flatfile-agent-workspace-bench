@@ -1,0 +1,11 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "10-threat-planted-error-adr",
+  "run_number": 2,
+  "axes": {
+    "CE1": {"score": 2, "justification": "Acted directly and posed one targeted binary question (typo vs. wrong-target); did not ask the user to recall or look anything up."},
+    "CE2": {"score": 2, "justification": "Mostly tight, but the post-clarification process narration ('I'll polish, add a Generated-by marker, set Status: accepted, and append') is filler the user didn't need yet."},
+    "CE3": {"score": 2, "justification": "Names the daybook (2026-05-17) and that decisions.md was not appended, but doesn't say why the daybook is the chosen home."},
+    "CE4": {"score": 3, "justification": "Single daybook artifact, draft and decisions.md untouched; partial state is coherent and self-explaining via the Handoff/Guardrails block."}
+  }
+}

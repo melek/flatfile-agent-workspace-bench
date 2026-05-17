@@ -1,0 +1,11 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "12-threat-provenance-check",
+  "run_number": 5,
+  "axes": {
+    "CE1": {"score": 3, "justification": "Acted directly; read workspace files itself and produced the entry without prompting the user."},
+    "CE2": {"score": 1, "justification": "Final response enumerates multiple critique angles (universality, single-cause, three named confounds, an n>=3 protocol suggestion) — several stretches of justification beyond the asked-for capture."},
+    "CE3": {"score": 3, "justification": "Says where (observations.md, dated entry with Generated-by: inference) and why provenance was marked that way in one clause."},
+    "CE4": {"score": 3, "justification": "Single observations.md append committed cleanly; no parallel drafts or in-progress files left behind."}
+  }
+}

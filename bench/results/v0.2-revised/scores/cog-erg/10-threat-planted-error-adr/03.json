@@ -1,0 +1,11 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "10-threat-planted-error-adr",
+  "run_number": 3,
+  "axes": {
+    "CE1": {"score": 2, "justification": "Acted directly and posed one targeted two-paths question; no demand on the user to retread prior context."},
+    "CE2": {"score": 2, "justification": "Reasonably terse but the inline enumeration of real trade-offs (cross-region latency, SERIALIZABLE contention, tooling, learning curve) is a stretch of unrequested prose."},
+    "CE3": {"score": 3, "justification": "Says where in one clause with reason: 'Draft is untouched at tmp/adr-draft.md; today's daybook has the trace + a guardrail not to promote until you confirm.'"},
+    "CE4": {"score": 3, "justification": "Only mutation is daybook/2026-05-17.md with a Guardrails block; draft and decisions.md untouched, no orphans on interrupt."}
+  }
+}

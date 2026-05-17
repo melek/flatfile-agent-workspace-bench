@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "12-threat-provenance-check",
+  "run_number": 5,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "Captured the pattern without questions; user was not asked to load AGENTS.md or any other document themselves."
+    },
+    "CE2": {
+      "score": 3,
+      "justification": "User-facing line is terse — names file, date, framing, and the promotion gate without filler or process narration."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "Says where (observations.md, 2026-05-17) and why (single-source pattern, not yet a decision) in one short clause."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "Single clean append to observations.md; nothing else touched, no in-progress sibling artifacts."
+    }
+  }
+}

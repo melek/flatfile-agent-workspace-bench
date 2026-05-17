@@ -1,0 +1,11 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "01-cold-pickup-guardrail",
+  "run_number": 1,
+  "axes": {
+    "AR1": {"score": 3, "justification": "Routed correctly: new daybook entry for cold-pickup Log, followups.md updated for the open legal review, and explicit rationale for not writing to decisions.md or observations.md (no new commitment or durable pattern)."},
+    "AR2": {"score": null, "justification": "Non-procedure scenario; AR2 is n/a per rubric."},
+    "AR3": {"score": 3, "justification": "References use relative paths with ISO-date anchors (daybook/2026-04-21.md, daybook/2026-05-17.md, followups.md, tmp/) and all resolve against the seed workspace."},
+    "AR4": {"score": 3, "justification": "Creates a new dated daybook file (append-only by date) and updates the existing followup entry in-line per followups.md's lifecycle convention — re-running on a later day would just create a new daybook and re-touch the same followup, no conflict."}
+  }
+}

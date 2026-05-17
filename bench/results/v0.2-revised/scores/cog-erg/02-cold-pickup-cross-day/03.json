@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "02-cold-pickup-cross-day",
+  "run_number": 3,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "Found the decision and answered without making the user reconstruct anything."
+    },
+    "CE2": {
+      "score": 3,
+      "justification": "Single tight sentence; no preamble or trailing summary."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "Cites the 2026-04-15 decision in the reply and the action list names both daybook and followups destinations with their purposes."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "Daybook and followup append are each discrete commits; nothing partial or orphaned."
+    }
+  }
+}

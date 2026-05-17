@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "07-procedure-artifact-binding",
+  "run_number": 4,
+  "axes": {
+    "AR1": {
+      "score": 3,
+      "justification": "Two immediates promoted to followups.md; explicitly declined decisions.md/observations.md with rationale tied to the strict bar ('none reach the commitment-that-constrains-future-action bar yet'); the typed-context proposal is parked in the daybook handoff as a candidate decision pending the next-quarter audit — that is exactly the methodology's 'default to daybook Log; promote later if it earns it' shape."
+    },
+    "AR2": {
+      "score": 3,
+      "justification": "All three intermediate artifacts written under tmp/incident-postmortem/2026-05-17-staging-deploy-rollback/ before the final postmortem; each step read its predecessor's named artifact."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "Cross-references in the postmortem and followups use relative backticked paths to the intermediates and to projects/postmortems/2026-05-17-staging-deploy-rollback.md; all resolve, ISO dates throughout, no absolute paths or wiki-links."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "Register touches are append-only at the bottom of Active and daybook is a new dated file; the daybook handoff parks the proposed decision as a future candidate rather than writing and rewriting decisions.md, which keeps the strict-bar file clean on re-run."
+    }
+  }
+}

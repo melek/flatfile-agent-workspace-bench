@@ -1,0 +1,11 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "04-routing-novel-observation",
+  "run_number": 1,
+  "axes": {
+    "CE1": {"score": 3, "justification": "Acted directly on the user's flagging without asking any clarifying questions or requesting recall."},
+    "CE2": {"score": 3, "justification": "Single-sentence response, no preamble or restatement, named routing and rationale concisely."},
+    "CE3": {"score": 3, "justification": "Said where (observations.md, with daybook pointer) and why (descriptive pattern, no commitment) in one short clause."},
+    "CE4": {"score": 3, "justification": "Each artifact (observations.md append, daybook entry) is independently coherent; interruption would leave no orphans."}
+  }
+}

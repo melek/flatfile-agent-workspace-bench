@@ -1,0 +1,11 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "08-procedure-missing-prior-step",
+  "run_number": 4,
+  "axes": {
+    "CE1": {"score": 3, "justification": "Acted directly — inspected, globbed, surfaced gap with two recovery paths; no user load required."},
+    "CE2": {"score": 3, "justification": "Tersest of the five responses: one sentence naming the missing file and the stall, one sentence offering two paths. No filler in user-facing output."},
+    "CE3": {"score": 3, "justification": "Named the exact path and the input-output reason in a single clause."},
+    "CE4": {"score": 2, "justification": "Wrote a daybook entry mid-stall — one extra artifact a redirected session would need to notice, though it's self-contained."}
+  }
+}

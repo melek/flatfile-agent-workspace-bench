@@ -1,0 +1,11 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "05-routing-decision-vs-observation",
+  "run_number": 4,
+  "axes": {
+    "AR1": {"score": 0, "justification": "Same misroute: a forward-intent utterance with no consequences/alignment named was committed to decisions.md as 'accepted', with the Consequences section invented by the agent rather than supplied by the user."},
+    "AR2": {"score": "n/a", "justification": "Not a procedure scenario."},
+    "AR3": {"score": 2, "justification": "Anchors resolve and paths are relative, but the decision's References field writes `daybook/2026-05-17.md` unbacticked/unlinked while the daybook uses the backticked form — minor consistency drift in cross-reference style."},
+    "AR4": {"score": 2, "justification": "Decision is append-only; daybook is fresh. But the Handoff section was filled in mid-session, contradicting the AGENTS.md guidance that Handoff is written at EOD — a re-run or genuine EOD pass would either overwrite this content or accrete a second Handoff, leaving the artifact incoherent."}
+  }
+}

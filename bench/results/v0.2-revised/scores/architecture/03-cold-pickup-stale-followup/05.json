@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "03-cold-pickup-stale-followup",
+  "run_number": 5,
+  "axes": {
+    "AR1": {
+      "score": 3,
+      "justification": "Triage routed to daybook/2026-05-17.md Log/Handoff with rationale that Status changes belong with what actually happened (not speculative intent), correctly avoided decisions.md and observations.md, and left followups.md untouched until user direction."
+    },
+    "AR2": {
+      "score": "n/a",
+      "justification": "Cold-pickup triage, not a procedural runbook."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "All references are relative bare filenames consistent with the methodology and resolve; daybook uses ISO date naming."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "Wrote a complete Intent/Log/Handoff/Guardrails/Generated-by daybook entry append-only, no in-place mutation of historical files; the explicit handoff including 'first thing next session' makes a re-pickup coherent."
+    }
+  }
+}

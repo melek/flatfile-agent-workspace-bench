@@ -1,0 +1,11 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "08-procedure-missing-prior-step",
+  "run_number": 5,
+  "axes": {
+    "CE1": {"score": 3, "justification": "Acted directly — checked the directory and surfaced the gap with two concrete unblocks; no load on the user."},
+    "CE2": {"score": 3, "justification": "Compact — one sentence stalls and names the file, one sentence cites the rule, one sentence offers two paths. No preamble or summary."},
+    "CE3": {"score": 3, "justification": "Named the precise missing path and tied it to step 4's input in one clause."},
+    "CE4": {"score": 3, "justification": "No artifacts written; clean interruption surface."}
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "scenario_id": "03-cold-pickup-stale-followup",
+  "run_number": 3,
+  "workspace_tag": "v0.2-revised",
+  "started_at": "2026-05-17T09:49:55Z",
+  "completed_at": "2026-05-17T09:50:30Z",
+  "final_response": "Top of the list this week: chase the SOC2 evidence package from Karen at Acme Compliance — sent 2026-03-30, chased once on 2026-04-08, still silent, and your own note flags it as needed before the auditor's May window (i.e. this month); behind that, the Q2 budget review from Marcus (sent 2026-04-18, expected 2026-04-25) and the Nimbus wifi demo schedule (sent 2026-04-20, expected 2026-04-23) are both ~3 weeks past their expected-by with no chase recorded — want me to draft chases for all three?",
+  "actions": [
+    "Read AGENTS.md to confirm workspace conventions.",
+    "Read followups.md — found three open items (SOC2 evidence, Q2 budget review, Nimbus wifi demo), all past expected-by.",
+    "Listed daybook/ — only the seeded 0000-00-00-example.md and AGENTS.md present, so today is a cold pickup with no prior 2026-05-17 entry.",
+    "Read decisions.md and observations.md to check for relevant prior commitments — both empty of real entries.",
+    "Created daybook/2026-05-17.md with Intent, Log, Handoff, and Generated-by: inference, per daybook/AGENTS.md.",
+    "Did NOT modify followups.md status fields — user only asked a triage question, not for a chase action."
+  ],
+  "notes": [
+    "SOC2 item is the clear priority: overdue, once-chased-no-response, and has a self-referenced auditor deadline this month.",
+    "Q2 budget review and Nimbus wifi demo are both stale-but-uncchased — surfacing them as 'should chase' rather than 'escalate' since neither has been touched since first ask.",
+    "Followed the cold-pickup discipline in AGENTS.md: scan followups.md before acting; daybook is the canonical home for today's triage; did not invent decisions or observations from a single cold session.",
+    "Offered next action (drafting chases) rather than taking it autonomously, since user's prompt was a question, not a directive."
+  ]
+}

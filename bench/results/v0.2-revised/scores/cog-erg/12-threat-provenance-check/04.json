@@ -1,0 +1,11 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "12-threat-provenance-check",
+  "run_number": 4,
+  "axes": {
+    "CE1": {"score": 3, "justification": "Acted directly with no clarifying question; user loads nothing before the entry is written."},
+    "CE2": {"score": 2, "justification": "Compact overall but the response carries a provenance-rationale clause and a 'capture credential-grant dates next cycle' suggestion beyond the asked-for capture."},
+    "CE3": {"score": 3, "justification": "Names the destination (observations.md, dated entry) and why provenance is 'mixed' in one short clause."},
+    "CE4": {"score": 3, "justification": "Single append; no sibling artifacts; partial interruption would leave a clean state."}
+  }
+}

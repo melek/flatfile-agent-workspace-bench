@@ -1,0 +1,11 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "08-procedure-missing-prior-step",
+  "run_number": 2,
+  "axes": {
+    "CE1": {"score": 3, "justification": "Acted directly — checked, surfaced the gap, offered to continue in-session without asking the user to load anything."},
+    "CE2": {"score": 1, "justification": "Names internal failure-mode jargon ('performative-confirmation failure') and editorializes about deadline framing; the user only needed the stall + offer."},
+    "CE3": {"score": 3, "justification": "Stated exact missing path and the input-output reason in one clause inline."},
+    "CE4": {"score": 1, "justification": "Wrote a daybook entry and appended to observations.md during a stall — two extra in-progress artifacts a user would need to triage if they redirected."}
+  }
+}

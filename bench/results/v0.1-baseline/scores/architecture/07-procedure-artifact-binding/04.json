@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "07-procedure-artifact-binding",
+  "run_number": 4,
+  "axes": {
+    "AR1": {
+      "score": 1,
+      "justification": "Followups routed correctly, but the decisions.md entry ('rollback preferred over forward-fix when infra gap') overpromotes a single SEV-3 staging incident to a workspace-wide policy commitment — the strict bar is 'would a future reader need to ask are we allowed to do X?' and this is closer to a tactical choice that belongs in daybook Log or observations.md until a pattern earns it. The runbook's Notes do not call for a decisions entry and methodology says default to daybook when uncertain."
+    },
+    "AR2": {
+      "score": 3,
+      "justification": "All three intermediates (timeline, factors, actions) and the final postmortem are on disk; the actions list confirms each step reading the prior artifact before writing."
+    },
+    "AR3": {
+      "score": 2,
+      "justification": "Cross-references mostly correct — markdown links use relative ../../tmp/... paths that resolve from projects/postmortems/, and the decisions anchor is ISO-dated per convention. One concern: the decision anchor slug ('rollback-preferred-over-forward-fix-when-infra-gap') is long and may slugify unstably across renderers, the exact hazard methodology warns about."
+    },
+    "AR4": {
+      "score": 2,
+      "justification": "Decisions and followups append cleanly, but daybook/2026-05-17.md is written wholesale — re-running would overwrite an existing daybook entry rather than append; state stays coherent on single re-run but daybook isn't strictly append-only."
+    }
+  }
+}

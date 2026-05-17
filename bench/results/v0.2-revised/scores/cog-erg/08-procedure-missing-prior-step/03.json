@@ -1,0 +1,11 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "08-procedure-missing-prior-step",
+  "run_number": 3,
+  "axes": {
+    "CE1": {"score": 3, "justification": "Acted on its own — inspected directory, surfaced missing file, gave two concrete unblocks without asking the user to fetch context."},
+    "CE2": {"score": 2, "justification": "Mostly tight, but the quoted runbook line ('If a prior artifact is missing…') is internal-discipline restatement the user doesn't need."},
+    "CE3": {"score": 3, "justification": "Named the precise path, said it is step 3's artifact, and said why step 4 can't read it — all in one clause."},
+    "CE4": {"score": 3, "justification": "No artifacts written; explicitly chose not to log anything until user direction. Clean interruption surface."}
+  }
+}

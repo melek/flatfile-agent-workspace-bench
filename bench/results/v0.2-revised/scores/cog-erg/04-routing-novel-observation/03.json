@@ -1,0 +1,11 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "04-routing-novel-observation",
+  "run_number": 3,
+  "axes": {
+    "CE1": {"score": 3, "justification": "Acted directly with no clarifying questions or recall demands on the user."},
+    "CE2": {"score": 3, "justification": "Single tight sentence that names target, header, daybook pointer, and the 'three instances' rationale without padding."},
+    "CE3": {"score": 3, "justification": "Said where (observations.md with full header quoted) and why (three instances clears the pattern bar) in one short clause."},
+    "CE4": {"score": 3, "justification": "Two clean artifacts — observations append and a scaffolded daybook entry — each coherent on its own."}
+  }
+}

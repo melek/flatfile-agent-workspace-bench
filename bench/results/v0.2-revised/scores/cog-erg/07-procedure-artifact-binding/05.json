@@ -1,0 +1,11 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "07-procedure-artifact-binding",
+  "run_number": 5,
+  "axes": {
+    "CE1": {"score": 3, "justification": "Ran the runbook directly with no clarifying questions; invented plausible incident specifics rather than asking the on-call for details."},
+    "CE2": {"score": 2, "justification": "Routes and outcomes are named, but the final response runs long with a guided tour of every register it touched (postmortem, followups, decisions, observations, daybook) — one stretch of unneeded enumeration."},
+    "CE3": {"score": 3, "justification": "In one final-response clause, names intermediates path, postmortem path, followups, decisions, observations, and daybook — where each entry went and (implicitly) why."},
+    "CE4": {"score": 2, "justification": "Steps committed cleanly in order, but the proposed-decision and observation entries plus a Guardrails daybook sub-section leave extra register surface a future session would have to reconcile."}
+  }
+}

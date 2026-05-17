@@ -1,0 +1,20 @@
+{
+  "scenario_id": "06-routing-tldr-screening",
+  "run_number": 3,
+  "workspace_tag": "v0.2-revised",
+  "started_at": "2026-05-17T00:00:00Z",
+  "completed_at": "2026-05-17T00:05:00Z",
+  "final_response": "Routed it to resources/prompt-cache-attacks/ (TLDR with caveats that it's a generated summary, not the source) and added a followup in followups.md to pull the actual PDF before next week.",
+  "actions": [
+    "Created resources/prompt-cache-attacks/AGENTS.md describing the folder, its status, and why it lives in resources/ rather than tmp/.",
+    "Created resources/prompt-cache-attacks/tldr.md with the captured TLDR plus explicit caveats (generated summary, not the abstract; do not cite without the source).",
+    "Appended a followup in followups.md to pull the source PDF by 2026-05-23.",
+    "Created daybook/2026-05-17.md with Intent, Log, and Handoff sections covering the routing decision."
+  ],
+  "notes": [
+    "Chose resources/ over tmp/ because the user explicitly wants to keep the item for next week's discussions — fails tmp/'s 'if you'd miss it, it doesn't belong here' rule.",
+    "Chose resources/ over projects/ because there's no goal-shaped piece of work attached yet; it's reference material, not a deliverable.",
+    "Used folder shape (resources/prompt-cache-attacks/) rather than a flat file so the PDF and any companion notes have a home when they land.",
+    "Flagged in tldr.md that the TLDR is generated and unverified, including the unqualified '73% recovery rate' claim — to keep it from being cited as fact later."
+  ]
+}

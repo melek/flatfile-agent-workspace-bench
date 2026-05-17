@@ -1,0 +1,11 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "02-cold-pickup-cross-day",
+  "run_number": 4,
+  "axes": {
+    "AR1": {"score": 2, "justification": "Explicit routing rationale across all four files (daybook, decisions, followups, observations) is exemplary, and the 'self-tickler tied to the decision's stated re-evaluation point' framing fits followups.md's forward-commitment bar — but the daybook entry is missing the methodology-required `Generated-by` provenance marker, which the daybook AGENTS.md calls out specifically."},
+    "AR2": {"score": "n/a", "justification": "Not a procedure/runbook scenario."},
+    "AR3": {"score": 3, "justification": "Cross-references to `decisions.md` and the 2026-04-15 entry are bare relative paths that resolve; meet the relative-path convention."},
+    "AR4": {"score": 3, "justification": "New dated daybook plus an appended followup; no in-place edits to append-only files; re-running would duplicate the followup entry but not corrupt history."}
+  }
+}

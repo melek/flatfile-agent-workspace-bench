@@ -1,0 +1,11 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "06-routing-tldr-screening",
+  "run_number": 2,
+  "axes": {
+    "AR1": {"score": 1, "justification": "Routed an unverified AI-generated TLDR straight into resources/ — the scenario's expected-signals file flags filing in resources/ immediately as the weak response, and resources/AGENTS.md scopes the folder to durable reference material; the followup+caveats salvage it as a defensible neighbor but not a correct route."},
+    "AR2": {"score": "n/a", "justification": "Not a procedure/runbook scenario; artifact-binding axis does not apply."},
+    "AR3": {"score": 3, "justification": "Cross-references (`resources/prompt-cache-attacks/tldr.md`, `followups.md`) are relative, stable, and resolve to created files."},
+    "AR4": {"score": 3, "justification": "New folder, append to followups.md Active, fresh dated daybook — no in-place mutation of historical content; safe to re-run on a future day."}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "scenario_id": "05-routing-decision-vs-observation",
+  "run_number": 3,
+  "workspace_tag": "v0.2-revised",
+  "started_at": "2026-05-17T09:49:58Z",
+  "completed_at": "2026-05-17T09:50:14Z",
+  "final_response": "Logged in decisions.md (2026-05-17 — Events service will use Postgres) and noted in today's daybook.",
+  "actions": [
+    "Read AGENTS.md, decisions.md, observations.md, daybook/AGENTS.md to orient on routing rules",
+    "Appended a dated decision entry to decisions.md with Status: accepted, Generated-by: user, and rationale for treating the tech-stack choice as a forward-binding commitment",
+    "Created daybook/2026-05-17.md with a Log line cross-referencing the decision anchor"
+  ],
+  "notes": [
+    "Routed to decisions.md rather than observations.md: a datastore choice for a service being spun up constrains future schema, driver, and ops work — fails the 'just a choice you made today' test in decisions.md's preamble.",
+    "Generated-by marked 'user' on the decision (the commitment came from the user verbatim) and 'mixed' on the daybook (agent drafted, user-originated content).",
+    "Used the canonical heading slug form '## YYYY-MM-DD — Short title' so the GitHub anchor 'decisions.md#2026-05-17-events-service-will-use-postgres' is stable per AGENTS.md.",
+    "Did not write a Handoff section yet — this is a single-action session, not end-of-day; left a placeholder."
+  ]
+}

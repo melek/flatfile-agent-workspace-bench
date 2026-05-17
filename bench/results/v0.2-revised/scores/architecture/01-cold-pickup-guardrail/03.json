@@ -1,0 +1,11 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "01-cold-pickup-guardrail",
+  "run_number": 3,
+  "axes": {
+    "AR1": {"score": 3, "justification": "Routed correctly with explicit rationale (new daybook for the cold-pickup, followups.md updated and extended with two new chase entries, decisions.md left alone because 'holding to an existing commitment isn't a new decision') — matches the strict bar verbatim."},
+    "AR2": {"score": null, "justification": "Non-procedure scenario; AR2 is n/a per rubric."},
+    "AR3": {"score": 3, "justification": "All cross-references are relative ISO-date paths (daybook/2026-04-21.md, daybook/2026-05-17.md, decisions.md, followups.md, tmp/vendor-renegotiation/email-draft.md) and resolve."},
+    "AR4": {"score": 3, "justification": "Creates a new dated daybook (append-only by date) and adds new followup rows alongside the in-place status update on the legal-review row; nothing rewrites historical content, so re-running would only add or refresh, not corrupt."}
+  }
+}

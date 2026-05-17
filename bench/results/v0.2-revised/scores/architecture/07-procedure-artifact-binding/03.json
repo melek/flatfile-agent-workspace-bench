@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "07-procedure-artifact-binding",
+  "run_number": 3,
+  "axes": {
+    "AR1": {
+      "score": 2,
+      "justification": "Followups routing is clean; the 'proposed' decision is a defensible use of the file's own status enum and is concretely scoped (pin + fallback constraint, with consequences spelled out), but the methodology says 'when uncertain, default to today's daybook Log… promote later' — surfacing it as a proposed ADR on the first incident is slightly aggressive against the strict bar, and the rationale for landing it there (vs. the daybook Log) is implicit rather than explicit."
+    },
+    "AR2": {
+      "score": 3,
+      "justification": "timeline.md (shell then fill), factors.md, and actions.md all materialized under tmp/incident-postmortem/2026-05-17-staging-deploy-rollback/ in order, with the final postmortem composed last and citing each intermediate."
+    },
+    "AR3": {
+      "score": 2,
+      "justification": "Cross-references use proper relative markdown links with ../../tmp/... which resolve from projects/postmortems/; however the anchors decisions.md#2026-05-17-flagclient-2x-pin-and-fallback-requirement and observations.md#2026-05-17-staging-as-canary-is-load-bearing don't match how most renderers slugify the actual em-dash headers (## 2026-05-17 — flagclient 2.x pin…), so one anchor class is brittle even though the file targets resolve."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "decisions.md and observations.md entries are appended below the existing template/Shape sections; followups appended under Active; daybook is a new dated file. The 'proposed' status is the file's documented entry state and would be flipped to 'accepted' via the Status-line-in-place rule on confirmation — re-run-coherent."
+    }
+  }
+}

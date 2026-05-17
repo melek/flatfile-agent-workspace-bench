@@ -1,0 +1,11 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "02-cold-pickup-cross-day",
+  "run_number": 5,
+  "axes": {
+    "AR1": {"score": 1, "justification": "Daybook + decisions.md routing is correct, but the second followup entry ('Recruiting / response on platform staff rec — expected by 2026-05-17 (same day)') bends the followups.md bar — it's not an outstanding ask or a waiting-on, it's the current turn's action — and the daybook entry leaves Handoff as a literal placeholder rather than a written cold-pickup artifact, plus the `Generated-by` provenance marker is absent."},
+    "AR2": {"score": "n/a", "justification": "Not a procedure/runbook scenario."},
+    "AR3": {"score": 3, "justification": "Cross-references use backticked relative `decisions.md` and the 2026-04-15 entry title; all resolve and respect the convention."},
+    "AR4": {"score": 2, "justification": "The same-day Recruiting followup will need closing (or it silently rots), and the Handoff placeholder will need rewriting next session — both are mutations of content that should have been written-once or appended; nothing is corrupted, but the workspace will need a small cleanup pass to stay coherent."}
+  }
+}

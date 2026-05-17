@@ -1,0 +1,11 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "04-routing-novel-observation",
+  "run_number": 4,
+  "axes": {
+    "CE1": {"score": 3, "justification": "Acted directly with no asks of the user."},
+    "CE2": {"score": 3, "justification": "Compact one-sentence reply naming routing, rationale, and the future trigger condition without filler."},
+    "CE3": {"score": 3, "justification": "Said where (observations.md + daybook) and why (recurring pattern, no commitment yet) in one short clause."},
+    "CE4": {"score": 3, "justification": "Clean append and daybook scaffold; nothing partial would dangle on interruption."}
+  }
+}

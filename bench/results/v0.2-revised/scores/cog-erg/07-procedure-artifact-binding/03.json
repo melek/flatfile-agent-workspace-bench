@@ -1,0 +1,11 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "07-procedure-artifact-binding",
+  "run_number": 3,
+  "axes": {
+    "CE1": {"score": 3, "justification": "Acted directly on the runbook; no clarifying questions, no demands on the user to recall or supply context."},
+    "CE2": {"score": 3, "justification": "Final response is a single short sentence naming the postmortem, followups, decision, and observation — no preamble or process narration."},
+    "CE3": {"score": 2, "justification": "Names the postmortem path but doesn't say why it landed there or where the intermediates went in the user-facing line — routing visible mainly via the action log, not in-band."},
+    "CE4": {"score": 2, "justification": "Artifacts produced in order with clean commits, but logging both a 'proposed' decision and an observation adds two extra register entries a mid-flow interrupt would have to reconcile."}
+  }
+}

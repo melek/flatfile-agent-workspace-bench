@@ -1,0 +1,11 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "06-routing-tldr-screening",
+  "run_number": 4,
+  "axes": {
+    "CE1": {"score": 3, "justification": "Asked the user nothing and required no recall — internal AGENTS reads are agent-side and don't load the user."},
+    "CE2": {"score": 2, "justification": "Final response is mostly compact but spends an extra sentence on hypothetical future promotion paths beyond what was asked."},
+    "CE3": {"score": 3, "justification": "Destination ('today's daybook Log') and reason ('tmp/ is gitignored, single TLDR not a project yet') given in-line."},
+    "CE4": {"score": 3, "justification": "Single write to the daybook; partial-state risk is minimal."}
+  }
+}

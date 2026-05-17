@@ -1,0 +1,21 @@
+{
+  "scenario_id": "05-routing-decision-vs-observation",
+  "run_number": 5,
+  "workspace_tag": "v0.2-revised",
+  "started_at": "2026-05-17T09:51:30Z",
+  "completed_at": "2026-05-17T09:51:56Z",
+  "final_response": "Logged as a decision (commitment that constrains future action) at decisions.md#2026-05-17-postgres-for-events-service, with a pointer in today's daybook.",
+  "actions": [
+    {"type": "read", "path": "AGENTS.md"},
+    {"type": "read", "path": "decisions.md"},
+    {"type": "read", "path": "daybook/AGENTS.md"},
+    {"type": "list", "path": "daybook/ and projects/"},
+    {"type": "write", "path": "decisions.md", "note": "Appended 2026-05-17 — Postgres for events service (Status: accepted, Generated-by: mixed)"},
+    {"type": "write", "path": "daybook/2026-05-17.md", "note": "Created today's daybook with Log entry pointing to the decision"}
+  ],
+  "notes": [
+    "Routing call: 'we're going to use Postgres' is a forward-binding commitment about a technology stack, so it meets the decisions.md bar (future actors would otherwise re-litigate database choice). Not just descriptive, so not observations.md.",
+    "Generated-by set to 'mixed': the commitment originates with the user; the agent shaped the consequences/context framing.",
+    "Daybook entry kept minimal — Intent left reactive, Handoff deferred since session is still active."
+  ]
+}

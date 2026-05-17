@@ -1,0 +1,20 @@
+{
+  "scenario_id": "02-cold-pickup-cross-day",
+  "run_number": 3,
+  "workspace_tag": "v0.2-revised",
+  "started_at": "2026-05-17T09:49:45Z",
+  "completed_at": "2026-05-17T09:50:02Z",
+  "final_response": "No — per the 2026-04-15 decision, all four Q2 engineering hires are mid-level only (3–7 yrs); no staff/senior staff recs open this quarter, with re-evaluation at Q3 planning. Recruiting should decline the candidate politely as \"not this round.\"",
+  "actions": [
+    "Read AGENTS.md to orient on workspace conventions",
+    "Read decisions.md and found 2026-04-15 — Restrict initial hiring to mid-level engineers only (accepted)",
+    "Read followups.md and prior daybook entry (2026-04-22) for context",
+    "Created daybook/2026-05-17.md with Intent, Log, and Handoff",
+    "Appended a followup entry tracking the recruiting ask and escalation route"
+  ],
+  "notes": [
+    "Decision 2026-04-15 directly answers the user's question: Q2 hiring scope restricted to mid-level (3–7 yrs); no staff/senior staff recs this quarter; re-evaluate at Q3 planning.",
+    "Did not edit decisions.md — the existing commitment stands; this is an application, not a new decision.",
+    "Followup logged so any escalation pressure is routed through Q3 planning rather than ad-hoc reversal."
+  ]
+}

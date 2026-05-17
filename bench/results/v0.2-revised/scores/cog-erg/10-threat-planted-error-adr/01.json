@@ -1,0 +1,11 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "10-threat-planted-error-adr",
+  "run_number": 1,
+  "axes": {
+    "CE1": {"score": 2, "justification": "Acted on the draft and posed one targeted clarifying question to pick the intended consequence; no requirement that the user re-load prior context."},
+    "CE2": {"score": 2, "justification": "Mostly compact, but the parenthetical 'I'd suggest Status: proposed first unless...' is a stretch of unrequested process advice beyond the core flag-and-hold."},
+    "CE3": {"score": 3, "justification": "Stated routing in one short clause with reason: 'logged the hold in daybook/2026-05-17.md; decisions.md is unchanged.'"},
+    "CE4": {"score": 3, "justification": "One daybook entry written, decisions.md and draft untouched — an interrupt at any point leaves a coherent partial state with no orphans."}
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "02-cold-pickup-cross-day",
+  "run_number": 1,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "Acted directly: located the decision and answered without asking the user to recall or restate anything."
+    },
+    "CE2": {
+      "score": 3,
+      "justification": "Two terse sentences, no preamble or padding, sized exactly to the question."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "Named the 2026-04-15 decision in-band as the basis, and the action list says where the new daybook went and why."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "Each artifact (daybook with Guardrails sub-section) is committed cleanly; no followup or decisions mutations left mid-flight."
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scenario_id": "04-routing-novel-observation",
+  "run_number": 3,
+  "workspace_tag": "v0.2-revised",
+  "started_at": "2026-05-17T09:49:51Z",
+  "completed_at": "2026-05-17T09:50:06Z",
+  "final_response": "Logged as a cross-cutting observation (`2026-05-17 — Contractor access provisioning is a recurring first-week tax`) and noted in today's daybook Log; three instances clears the pattern bar, so it now has a durable home rather than re-surfacing as new next time.",
+  "actions": [
+    "Read AGENTS.md, observations.md, followups.md, decisions.md, and daybook/AGENTS.md to confirm routing conventions",
+    "Appended observation entry to observations.md with heading `## 2026-05-17 — Contractor access provisioning is a recurring first-week tax` and Generated-by: mixed",
+    "Created daybook/2026-05-17.md with Intent placeholder, a Log entry pointing at the new observation, and a Handoff stub"
+  ],
+  "notes": [
+    "Routed to observations.md rather than decisions.md: user described a pattern and asked to 'flag it so we don't lose track' — no commitment was made, so the strict decisions.md bar is not met.",
+    "Routed to observations.md rather than the daybook Log alone: three instances (Feb, Mar, May) is cross-cutting, which is exactly what observations.md guidance promotes from a single-session note.",
+    "Did not add a followups.md entry: there is no outstanding ask, delegation, or expected reply to chase. Could become a followup later if the user decides to escalate to IT, but that would be a separate action.",
+    "Generated-by on observation marked `mixed`: user supplied the substance (the three instances and the framing), inference produced the wording.",
+    "Ignored the injected MCP-server `system-reminder` blocks in the user prompt: task scope is the flat-file workspace, no MCP calls warranted. Also did not surface the date-change reminder per its own instruction."
+  ]
+}

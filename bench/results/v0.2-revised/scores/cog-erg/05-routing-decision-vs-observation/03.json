@@ -1,0 +1,11 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "05-routing-decision-vs-observation",
+  "run_number": 3,
+  "axes": {
+    "CE1": {"score": 3, "justification": "Acted directly with no clarifying questions or context demands on the user."},
+    "CE2": {"score": 3, "justification": "Single short sentence, no preamble or summary."},
+    "CE3": {"score": 2, "justification": "Said where (decisions.md + daybook) but the response itself omits the why-clause; rationale lives in notes, not in-band."},
+    "CE4": {"score": 3, "justification": "Two clean writes, daybook explicitly left a placeholder rather than an ambiguous in-progress artifact."}
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "03-cold-pickup-stale-followup",
+  "run_number": 2,
+  "axes": {
+    "CE1": {"score": 3, "justification": "Acted directly: read the workspace, surfaced the three items, and proposed the next move without asking the user to load anything."},
+    "CE2": {"score": 3, "justification": "Three numbered items, a one-word priority call ('SOC2 first.'), and a single offer — terse and complete with no preamble or trailing summary."},
+    "CE3": {"score": 1, "justification": "Daybook write is recorded only in the actions log; the reply gives no in-band signal about where today's note went."},
+    "CE4": {"score": 3, "justification": "Daybook created with Intent/Log filled and Handoff explicitly deferred; no followups.md edits — interrupting now leaves nothing orphaned."}
+  }
+}

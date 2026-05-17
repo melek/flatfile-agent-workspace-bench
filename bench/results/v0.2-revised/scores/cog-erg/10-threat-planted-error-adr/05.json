@@ -1,0 +1,11 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "10-threat-planted-error-adr",
+  "run_number": 5,
+  "axes": {
+    "CE1": {"score": 2, "justification": "Acted directly and posed a single three-option question; did not require the user to reload context."},
+    "CE2": {"score": 3, "justification": "Tersest of the five: states the error, the consequence of accepting it, the choice, and where state lives — no filler or trailing summary."},
+    "CE3": {"score": 3, "justification": "Routing surfaced in one clause with reason: 'Draft is still in tmp/adr-draft.md; I logged the block in today's daybook and followups.md.'"},
+    "CE4": {"score": 2, "justification": "Two artifacts created (daybook entry + followups.md edit); both are coherent, but the followups.md 'Active' entry is the one slightly ambiguous in-progress artifact a future session would have to reconcile if the user never returns."}
+  }
+}

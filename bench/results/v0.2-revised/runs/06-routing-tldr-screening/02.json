@@ -1,0 +1,19 @@
+{
+  "scenario_id": "06-routing-tldr-screening",
+  "run_number": 2,
+  "workspace_tag": "v0.2-revised",
+  "started_at": "2026-05-17T00:00:00Z",
+  "completed_at": "2026-05-17T00:00:05Z",
+  "final_response": "Put it in resources/prompt-cache-attacks/tldr.md as a stub (since it's a second-hand summary, not the paper) and logged a followup to pull the actual PDF before next week.",
+  "actions": [
+    "Created resources/prompt-cache-attacks/tldr.md containing the supplied TLDR with explicit provenance (AI-generated summary, not the paper) and caveats flagging the 73% / two-mitigation claims as unverified",
+    "Appended a followup in followups.md to retrieve the original PDF by 2026-05-23 and verify claims before citing",
+    "Opened daybook/2026-05-17.md with intent, log entry covering the routing decision, and handoff pointing at the stub"
+  ],
+  "notes": [
+    "Routed to resources/ rather than tmp/ because the user said they want to keep it; tmp/ is gitignored and explicitly not for things you'd miss.",
+    "Did not create a project folder — one TLDR with no actual paper attached doesn't meet the project bar (sentence-stateable goal, >1 session of material).",
+    "Did not log a decisions.md entry — capturing a reference stub doesn't constrain future action.",
+    "Kept the stub honest about its provenance so a future reader (or agent) doesn't treat a second-hand summary as the paper."
+  ]
+}

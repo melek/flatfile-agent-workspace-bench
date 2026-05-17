@@ -1,0 +1,11 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "04-routing-novel-observation",
+  "run_number": 5,
+  "axes": {
+    "CE1": {"score": 3, "justification": "Acted directly; the 'say the word' is a cheap offered handle, not a demand for the user to load context."},
+    "CE2": {"score": 3, "justification": "One sentence, no preamble or restatement, names routing target, descriptive framing, and a one-clause promotion handle."},
+    "CE3": {"score": 3, "justification": "Said where (observations.md with header) and why (descriptive, cross-cutting, not a commitment) in-band."},
+    "CE4": {"score": 3, "justification": "Discrete append + daybook create; both are self-contained, interruption leaves no orphan state."}
+  }
+}

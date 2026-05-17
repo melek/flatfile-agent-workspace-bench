@@ -1,0 +1,11 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "06-routing-tldr-screening",
+  "run_number": 3,
+  "axes": {
+    "CE1": {"score": 3, "justification": "Acted directly with no user-facing questions or required reading."},
+    "CE2": {"score": 3, "justification": "Final response is one compact sentence naming destination, caveat, and followup."},
+    "CE3": {"score": 3, "justification": "Destination and 'generated summary, not the source' rationale named in-line."},
+    "CE4": {"score": 2, "justification": "Mostly clean independent writes, but the extra AGENTS.md scaffolding for a single-stub folder is an ambiguous in-progress artifact if interrupted."}
+  }
+}

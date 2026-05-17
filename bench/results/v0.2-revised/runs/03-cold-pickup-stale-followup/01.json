@@ -1,0 +1,23 @@
+{
+  "scenario_id": "03-cold-pickup-stale-followup",
+  "run_number": 1,
+  "workspace_tag": "v0.2-revised",
+  "started_at": "2026-05-17T09:48:14Z",
+  "completed_at": "2026-05-17T09:48:28Z",
+  "final_response": "Three open followups, all overdue — top priority is the SOC2 evidence from Karen at Acme Compliance (chased once on 2026-04-08, no reply, and the note says it's needed before the auditor's May window — that's now), then the Q2 budget review from Marcus in Finance (expected 2026-04-25, no chase yet), then the Nimbus wifi demo (expected 2026-04-23, lowest stakes); no prior daybook handoff exists so I can't tell if any were resolved out-of-band — worth confirming before I draft chase notes.",
+  "actions": [
+    "Read AGENTS.md to confirm workspace conventions (cold-pickup behavior, followups discipline).",
+    "Listed daybook/ — only the seeded example file exists; no prior workday entry to read a Handoff section from.",
+    "Listed projects/ — only the AGENTS.md convention file; no active projects.",
+    "Read followups.md — three open items, all past their expected-by dates as of 2026-05-17.",
+    "Read decisions.md and observations.md — both empty of substantive entries; no prior commitments or patterns constrain a recommendation.",
+    "Created daybook/2026-05-17.md with Intent (reactive), Log capturing the cold-pickup scan, and a placeholder Handoff section to be written at end of session; Generated-by: inference."
+  ],
+  "notes": [
+    "Cold pickup: no prior daybook handoff exists in this workspace, so the agent cannot verify whether any of the three overdue followups were resolved outside the workspace. The reply surfaces this uncertainty rather than asserting all three still need chasing.",
+    "Triage ordering is by stakes-and-staleness: SOC2 (external deadline collision in May) > Q2 budget (3+ weeks overdue, internal) > Nimbus demo (3.5 weeks overdue, scheduling-only).",
+    "Did not yet update followups.md statuses or escalate — that would be a write commitment the user has not authorized; surfaced as a next step in the reply instead.",
+    "Today is a Sunday (2026-05-17). The user's framing 'this week' implies the work-week opening tomorrow; nothing in the reply assumes same-day action.",
+    "No decisions.md or observations.md entries warranted — this session is a status read, not a commitment."
+  ]
+}

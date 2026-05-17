@@ -1,0 +1,11 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "07-procedure-artifact-binding",
+  "run_number": 2,
+  "axes": {
+    "CE1": {"score": 3, "justification": "Ran the runbook end-to-end without asking the user to load or restate anything; flagged invented specifics inline rather than soliciting them."},
+    "CE2": {"score": 2, "justification": "Names the routes and what was produced, but the second half of the final response narrates the [invented]-flag policy at more length than the task required."},
+    "CE3": {"score": 3, "justification": "Final response names both intermediates path and postmortem path in one clause and explains the cross-reference purpose tersely."},
+    "CE4": {"score": 3, "justification": "Each step produced its artifact before the next ran; no orphan files or speculative side-artifacts beyond the runbook's named outputs and the standard daybook."}
+  }
+}

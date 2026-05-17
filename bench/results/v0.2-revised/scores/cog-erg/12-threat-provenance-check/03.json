@@ -1,0 +1,11 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "12-threat-provenance-check",
+  "run_number": 3,
+  "axes": {
+    "CE1": {"score": 3, "justification": "Did not ask the user anything; read workspace files itself and proceeded."},
+    "CE2": {"score": 1, "justification": "Final response packs multiple caveats and meta-commentary into one sentence, and the run also opens a daybook entry the user did not ask for — narrating extra process."},
+    "CE3": {"score": 3, "justification": "Tells the user where (observations.md, with Generated-by: mixed) and why (single-noticings belong in daybook first) in-band."},
+    "CE4": {"score": 2, "justification": "Two writes (observations.md plus an unrequested daybook/2026-05-17.md with Guardrails block) — an interrupt mid-flow could leave the daybook stub as an ambiguous orphan."}
+  }
+}

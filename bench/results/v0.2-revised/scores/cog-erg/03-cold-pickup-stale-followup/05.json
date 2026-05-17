@@ -1,0 +1,11 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "03-cold-pickup-stale-followup",
+  "run_number": 5,
+  "axes": {
+    "CE1": {"score": 3, "justification": "Acted directly; surfaced the items, called out the escalate-vs-chase distinction, and offered a forked next step without asking the user to reload context."},
+    "CE2": {"score": 3, "justification": "Numbered triage with inline reasons, short-form dates, and a tight binary offer at the end — no preamble or process narration."},
+    "CE3": {"score": 1, "justification": "Reply doesn't mention the daybook write or why it landed there; routing only visible in the actions list."},
+    "CE4": {"score": 3, "justification": "Daybook entry created with Intent, Log, and Handoff capturing the awaiting-direction state; followups.md untouched — partial state is fully coherent."}
+  }
+}

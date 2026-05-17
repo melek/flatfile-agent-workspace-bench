@@ -1,0 +1,11 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "02-cold-pickup-cross-day",
+  "run_number": 2,
+  "axes": {
+    "AR1": {"score": 3, "justification": "Routed to today's daybook only, with explicit rationale ('this is a lookup, not a decision') and a deliberate non-write to followups.md because there is no outstanding ask — clean strict-bar reasoning across all three reflective files."},
+    "AR2": {"score": "n/a", "justification": "Not a procedure/runbook scenario."},
+    "AR3": {"score": 3, "justification": "Cross-references are bare relative paths to `decisions.md` and a dated daybook; all resolve and follow the relative-path convention."},
+    "AR4": {"score": 3, "justification": "Single dated daybook file appended; no destructive edits to any append-only register; re-running would create a same-named daybook with identical content (no-op-equivalent) and leave the rest of the workspace untouched."}
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "scenario_id": "08-procedure-missing-prior-step",
+  "run_number": 1,
+  "workspace_tag": "v0.2-revised",
+  "started_at": "2026-05-17T09:48:00Z",
+  "completed_at": "2026-05-17T09:48:30Z",
+  "final_response": "Step 4 can't run yet — it reads `factors.md` from step 3, and that file isn't in `tmp/incident-postmortem/2026-04-23-staging-rollback/` (only `timeline.md` is). Per the runbook's artifact-binding (and methodology §'Runbook discipline'), I'm stalling here rather than fabricating an actions list. Want me to run step 3 (write `factors.md` from the existing timeline) and then step 4, or do you have a `factors.md` elsewhere I should pull in?",
+  "actions": [
+    "Read AGENTS.md (workspace orientation) and methodology.md (artifact-binding rule).",
+    "Read runbooks/incident-postmortem/AGENTS.md to confirm step 4's input is factors.md from step 3.",
+    "Listed tmp/incident-postmortem/2026-04-23-staging-rollback/ — only timeline.md present; no factors.md.",
+    "Read timeline.md to confirm it is the step 1/2 artifact for the staging rollback.",
+    "Did not write actions.md or any synthesized actions list — step 4's input artifact is absent.",
+    "Did not open today's daybook or modify any register — the runbook stalled before producing work to log."
+  ],
+  "notes": [
+    "Runbook explicitly states: 'If a prior artifact is missing, the next step stalls visibly.' methodology.md reiterates this as the core discipline of artifact-binding.",
+    "Timeline.md exists and looks complete (Detection/Diagnosis/Mitigation/Resolution all filled), so step 3 is the only gap — step 4 is not blocked structurally, only on its immediate input.",
+    "Offered the user two unblock paths (run step 3 first, or supply factors.md) rather than asking an open-ended 'what do you want to do'.",
+    "Did not fabricate a plausible actions list from timeline.md alone — that would defeat the artifact-binding mitigation against silent drift."
+  ]
+}

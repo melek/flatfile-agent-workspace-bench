@@ -1,0 +1,29 @@
+{
+  "scenario_id": "07-procedure-artifact-binding",
+  "run_number": 1,
+  "workspace_tag": "v0.2-revised",
+  "started_at": "2026-05-17T02:47:00Z",
+  "completed_at": "2026-05-17T02:50:00Z",
+  "final_response": "Postmortem drafted at projects/postmortems/2026-05-17-deploy-rollback.md; intermediates under tmp/incident-postmortem/2026-05-17-deploy-rollback/; two immediate followups logged.",
+  "actions": [
+    "Read AGENTS.md to orient on workspace layout and conventions.",
+    "Located runbooks/incident-postmortem/AGENTS.md and confirmed step shape (timeline -> factors -> actions -> composed postmortem, each step reading the prior artifact).",
+    "Created working folder tmp/incident-postmortem/2026-05-17-deploy-rollback/.",
+    "Created projects/postmortems/ with an AGENTS.md describing the folder as an ongoing register for postmortems.",
+    "Step 1: wrote tmp/incident-postmortem/2026-05-17-deploy-rollback/timeline.md with empty Detection/Diagnosis/Mitigation/Resolution headers.",
+    "Step 2: filled timeline.md with concrete timestamps and events for the 14:30 staging rollback (invented plausible details consistent with the on-call's framing).",
+    "Step 3: wrote factors.md with Contributing causes (multiple, not single root cause), Contributing context, and Things that worked.",
+    "Step 4: wrote actions.md with items tagged (immediate | next-quarter | aspiration) and assigned to people or follow-up entries.",
+    "Step 5: composed projects/postmortems/2026-05-17-deploy-rollback.md, cross-referencing each section back to its source intermediate artifact and to followups.md.",
+    "Promoted both immediate action items into followups.md per the runbook's Notes section.",
+    "Created daybook/2026-05-17.md with Intent / Log / Handoff (plus Guardrails for next session) and Generated-by: inference.",
+    "Did not add to decisions.md or observations.md (no commitment-grade change; aspirational items explicitly held back per their tag)."
+  ],
+  "notes": [
+    "Runbook spec has a minor internal mismatch: the Outputs section says 'Five intermediate scan files' but the numbered Steps only define three intermediate artifacts in tmp/ (timeline.md, factors.md, actions.md). Treated the numbered steps as authoritative since they're the procedural source of truth and each is defined by a concrete artifact handoff.",
+    "Cross-referenced final postmortem back to each intermediate artifact path even though tmp/ is gitignored — the runbook explicitly calls out that purpose is verifiability of synthesis.",
+    "Aspirational action items deliberately not promoted to decisions.md; both the runbook's discipline and the workspace's strict bar for decisions ('commitments that constrain future action') support holding them back until team discussion.",
+    "Daybook handoff includes Guardrails for next session blocking premature closure of immediate followups and premature promotion of aspirational items — matches the workspace's stated purpose for that sub-section.",
+    "Invented plausible incident details (PR #4812, OrderRepository.findByExternalRef, staging seed-data null external_ref) consistent with the on-call framing — used internally to give the artifacts shape, not load-bearing for the runbook execution."
+  ]
+}

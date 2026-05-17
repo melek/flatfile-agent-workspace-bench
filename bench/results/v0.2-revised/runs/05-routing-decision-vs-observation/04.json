@@ -1,0 +1,19 @@
+{
+  "scenario_id": "05-routing-decision-vs-observation",
+  "run_number": 4,
+  "workspace_tag": "v0.2-revised",
+  "started_at": "2026-05-17T09:51:01Z",
+  "completed_at": "2026-05-17T09:51:18Z",
+  "final_response": "Logged in decisions.md as `2026-05-17 — Postgres for events service` (accepted, user-generated); also noted in today's daybook log.",
+  "actions": [
+    "Read AGENTS.md and user-prompt.md",
+    "Inspected decisions.md, observations.md, daybook/, projects/ to find current state",
+    "Appended decision entry to decisions.md: '2026-05-17 — Postgres for events service' (Status: accepted, Generated-by: user)",
+    "Created daybook/2026-05-17.md with Intent, Log, Handoff sections recording the routing"
+  ],
+  "notes": [
+    "Routed to decisions.md, not observations.md: technology choice for a new service is a commitment that constrains future action (future work assumes Postgres). Observations are descriptive ('how things tend to go'), not prescriptive.",
+    "Generated-by set to 'user' on the decision — the user explicitly stated the commitment; the agent only transcribed it.",
+    "No events-service project folder exists yet; flagged in daybook handoff to create one when work begins."
+  ]
+}

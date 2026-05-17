@@ -1,0 +1,11 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "06-routing-tldr-screening",
+  "run_number": 5,
+  "axes": {
+    "AR1": {"score": 3, "justification": "Routed to tmp/ with the methodology's exact rationale — resources/ would let an unverified second-hand summary harden into 'fact,' tmp/'s AGENTS.md explicitly covers triage staging — and named-and-rejected decisions.md, observations.md, and projects/ against their strict bars."},
+    "AR2": {"score": "n/a", "justification": "Not a procedure/runbook scenario; artifact-binding axis does not apply."},
+    "AR3": {"score": 3, "justification": "All references (`tmp/prompt-cache-attack-tldr.md`, `followups.md`, `resources/`, `projects/`) are relative, stable, and resolve; daybook carries a Generated-by marker per methodology."},
+    "AR4": {"score": 3, "justification": "Flat tmp/ file (one-off scratch shape permitted by tmp/AGENTS.md), followups.md append to Active, fresh dated daybook — all append-only or new-path; re-running on a future day yields a coherent workspace."}
+  }
+}

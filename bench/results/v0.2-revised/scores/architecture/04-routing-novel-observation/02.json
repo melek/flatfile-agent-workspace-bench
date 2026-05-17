@@ -1,0 +1,11 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "04-routing-novel-observation",
+  "run_number": 2,
+  "axes": {
+    "AR1": {"score": 3, "justification": "Routed to observations.md with explicit in-band rationale and the correct crystallization path ('if a fix gets committed to, that becomes a decisions.md entry referencing this observation')."},
+    "AR2": {"score": "n/a", "justification": "Non-procedure routing scenario."},
+    "AR3": {"score": 3, "justification": "Daybook Log entry and observations.md entry both ISO-dated; references stay within-workspace and relative."},
+    "AR4": {"score": 3, "justification": "All writes are append-only or fresh-dated; re-running would add a duplicate-dated entry but not corrupt prior history."}
+  }
+}

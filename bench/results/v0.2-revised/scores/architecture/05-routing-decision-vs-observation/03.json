@@ -1,0 +1,11 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "05-routing-decision-vs-observation",
+  "run_number": 3,
+  "axes": {
+    "AR1": {"score": 0, "justification": "Routed to decisions.md with full template fields fabricated; the rationale ('fails the just-a-choice-you-made-today test') gets the strict bar exactly backwards — the methodology says default to daybook Log when uncertain, and this entry is uncertain by construction."},
+    "AR2": {"score": "n/a", "justification": "Not a procedure scenario."},
+    "AR3": {"score": 3, "justification": "Canonical relative anchor noted explicitly, daybook ↔ decision cross-refs are reciprocal and resolve."},
+    "AR4": {"score": 3, "justification": "Decision appended below the marker, daybook is a fresh per-day file with Handoff left open; re-running would not corrupt history."}
+  }
+}

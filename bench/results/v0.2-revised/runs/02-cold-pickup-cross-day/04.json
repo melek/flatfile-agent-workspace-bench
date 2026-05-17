@@ -1,0 +1,21 @@
+{
+  "scenario_id": "02-cold-pickup-cross-day",
+  "run_number": 4,
+  "workspace_tag": "v0.2-revised",
+  "started_at": "2026-05-17T09:50:43Z",
+  "completed_at": "2026-05-17T09:51:04Z",
+  "final_response": "No — per the 2026-04-15 decision, all four Q2 engineering hires are mid-level only (3–7 yrs), no staff or senior staff recs this quarter; tell recruiting to pass with a \"not this round\" note and we'll re-evaluate hiring scope at Q3 planning.",
+  "actions": [
+    "Read AGENTS.md to orient on workspace conventions.",
+    "Read decisions.md — found 2026-04-15 decision restricting Q2 hires to mid-level only, no staff/senior staff recs.",
+    "Read followups.md, observations.md, and previous daybook (2026-04-22) to check for any superseding context — none found.",
+    "Created daybook/2026-05-17.md with Intent, Log (citing the 2026-04-15 decision), and Handoff.",
+    "Appended active followup to followups.md to re-evaluate hiring scope at Q3 planning, noting the platform team candidate."
+  ],
+  "notes": [
+    "Decision is unambiguous and recent (about a month old) — no need to chase context.",
+    "Did not append to decisions.md: no new commitment was made; this was applying an existing one.",
+    "Did not write to observations.md: no cross-cutting pattern emerged from a single recruiting ping.",
+    "Followup framed forward (Q3 re-evaluation) rather than as a waiting-on, since there is no outstanding ask from another party — it's a self-tickler tied to the decision's stated re-evaluation point."
+  ]
+}

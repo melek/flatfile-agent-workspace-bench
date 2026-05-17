@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "07-procedure-artifact-binding",
+  "run_number": 1,
+  "axes": {
+    "AR1": {
+      "score": 3,
+      "justification": "Promoted immediates to followups.md; explicitly declined to write decisions.md or observations.md with rationale tied to the strict bar (aspirations are not yet commitments; single-incident pattern not yet cross-cutting) — routing decisions match the methodology's strict bars with stated reasoning."
+    },
+    "AR2": {
+      "score": 3,
+      "justification": "All three intermediate artifacts (timeline.md, factors.md, actions.md) written under tmp/incident-postmortem/2026-05-17-deploy-rollback/ before the final postmortem was composed; each step produced a concrete file the next step read."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "Cross-references in the final postmortem use relative paths (tmp/incident-postmortem/.../timeline.md, followups.md, decisions.md) and ISO-date filenames; all paths resolve from their location and no absolute or wiki-style links appear."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "Appends to followups.md and the new daybook entry are append-only; the new projects/postmortems/AGENTS.md is the single-pane current-state file the methodology calls for; re-running with the same slug would overwrite the date-scoped scratch folder but not corrupt history."
+    }
+  }
+}

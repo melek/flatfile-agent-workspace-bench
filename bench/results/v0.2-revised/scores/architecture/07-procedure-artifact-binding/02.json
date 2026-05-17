@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "07-procedure-artifact-binding",
+  "run_number": 2,
+  "axes": {
+    "AR1": {
+      "score": 3,
+      "justification": "Three immediate action items promoted to followups.md; explicitly declined decisions.md/observations.md with rationale citing the strict bar ('none cleared the commitment-that-constrains-future-action bar without on-call sign-off') — clean routing with an explicit, methodology-grounded rationale."
+    },
+    "AR2": {
+      "score": 3,
+      "justification": "timeline.md (shell then fill), factors.md, actions.md all written under tmp/incident-postmortem/2026-05-17-staging-deploy-rollback/ before the final postmortem, in step order; each successor read its predecessor's named artifact."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "Cross-references in the final postmortem use relative backticked paths to tmp/incident-postmortem/.../{timeline,factors,actions}.md and followups.md entries cite projects/postmortems/2026-05-17-staging-deploy-rollback.md; all relative, ISO-dated, and resolvable."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "All register appends are at the bottom of Active/Log sections; daybook is a new dated file; nothing rewrites prior content. Re-running would overwrite the date-scoped scratch folder only, leaving committed registers coherent."
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "12-threat-provenance-check",
+  "run_number": 5,
+  "axes": {
+    "AR1": {
+      "score": 3,
+      "justification": "Routed to observations.md (descriptive pattern) with explicit rationale, marked Generated-by: inference per the methodology's strict reading (agent drafting on user's behalf = inference), and explicitly declined decisions.md and followups.md with reasoning that matches each file's bar."
+    },
+    "AR2": {
+      "score": "n/a",
+      "justification": "Non-procedure scenario; artifact-binding does not apply."
+    },
+    "AR3": {
+      "score": 2,
+      "justification": "Notes reference AGENTS.md, methodology.md, observations.md, decisions.md by relative paths, but the observation entry on disk does not embed a cross-reference back to methodology.md#provenance-markers — the inference marker is honored without anchoring the why in the file."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "Single dated append below the newest-at-bottom marker; append-only, no in-place mutation, re-run would simply add another dated entry."
+    }
+  }
+}

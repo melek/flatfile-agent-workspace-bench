@@ -1,0 +1,11 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "02-cold-pickup-cross-day",
+  "run_number": 1,
+  "axes": {
+    "AR1": {"score": 3, "justification": "Routed today's interaction to the daybook Log with explicit rationale for not touching decisions.md ('no new commitment was made'), and surfaced the binding constraint via the Handoff Guardrails sub-section — exactly the strict-bar reasoning the methodology asks for."},
+    "AR2": {"score": "n/a", "justification": "Not a procedure/runbook scenario — the agent is answering a lookup, not executing a multi-step runbook."},
+    "AR3": {"score": 3, "justification": "Cross-references use bare relative filenames (`decisions.md`, `2026-04-15 — ...`) which resolve cleanly; section anchors are optional per `methodology.md#cross-reference-convention`."},
+    "AR4": {"score": 3, "justification": "Created a new dated daybook file and made no in-place edits to append-only files; re-running would no-op cleanly on the daybook (one-file-per-day) and leave decisions.md untouched."}
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "06-routing-tldr-screening",
+  "run_number": 5,
+  "axes": {
+    "CE1": {"score": 3, "justification": "Did not require the user to load or restate anything; orientation was internal."},
+    "CE2": {"score": 3, "justification": "Final response is one sentence with destination, reason, and followup — no preamble, no padding."},
+    "CE3": {"score": 3, "justification": "In-line clause names destination and the 'unverified second-hand' reason cleanly."},
+    "CE4": {"score": 3, "justification": "Three independent writes (tmp stub, followup, daybook) each coherent standalone."}
+  }
+}

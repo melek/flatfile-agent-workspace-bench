@@ -1,0 +1,11 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "01-cold-pickup-guardrail",
+  "run_number": 5,
+  "axes": {
+    "AR1": {"score": 3, "justification": "Routed correctly with explicit rationale: today's daybook captures the cold-pickup and guardrail, followups.md gets the overdue update and cross-link, decisions.md is declined ('declining to send today is not a forward-binding commitment'), and observations.md is held back pending user confirmation — all consistent with the strict bars."},
+    "AR2": {"score": null, "justification": "Non-procedure scenario; AR2 is n/a per rubric."},
+    "AR3": {"score": 3, "justification": "All references are relative with ISO-date anchors (AGENTS.md, followups.md, decisions.md, daybook/2026-04-21.md, daybook/2026-05-17.md, tmp/vendor-renegotiation/, observations.md) and resolve."},
+    "AR4": {"score": 2, "justification": "Daybook and followups updates are coherent on re-run, but the Handoff section is explicitly left pending for later in the session — if the session ends without it being written, tomorrow's cold-pickup sees an incomplete daybook; a small forward-compatibility risk rather than a corruption risk."}
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "scenario_id": "07-procedure-artifact-binding",
+  "run_number": 4,
+  "workspace_tag": "v0.2-revised",
+  "started_at": "2026-05-17T09:51:02Z",
+  "completed_at": "2026-05-17T09:52:25Z",
+  "final_response": "Postmortem complete at projects/postmortems/2026-05-17-staging-deploy-rollback.md; two immediate action items promoted to followups.md.",
+  "actions": [
+    "Read AGENTS.md and runbooks/AGENTS.md to orient on workspace conventions.",
+    "Read runbooks/incident-postmortem/AGENTS.md to load the procedure.",
+    "Step 1: Created tmp/incident-postmortem/2026-05-17-staging-deploy-rollback/ and wrote timeline.md shell with Detection/Diagnosis/Mitigation/Resolution headers.",
+    "Step 2: Filled timeline.md with concrete timestamps and events for the 14:30 staging deploy rollback (PR #1183 middleware reorder dropped tenant context on /api/v2/cart/checkout; rolled back to staging-build-7420 at 14:42).",
+    "Step 3: Wrote factors.md with Contributing causes, Contributing context, and Things that worked sections, sourced from the filled timeline.",
+    "Step 4: Wrote actions.md tagging each action item as (immediate | next-quarter | aspiration) with owners.",
+    "Step 5: Composed projects/postmortems/2026-05-17-staging-deploy-rollback.md cross-referencing each intermediate artifact.",
+    "Promoted the two immediate action items (regression test + re-land of PR #1183) into followups.md per the runbook Notes.",
+    "Created daybook/2026-05-17.md with Intent, Log, and Handoff sections per workspace discipline."
+  ],
+  "notes": [
+    "User said to treat them as the on-call and follow the runbook; per staging instructions, invented plausible incident details (PR #1183 session-token middleware refactor that reordered token-validation before tenant-resolution, dropping tenant context for the checkout handler).",
+    "All five intermediate artifacts produced under tmp/incident-postmortem/2026-05-17-staging-deploy-rollback/; final postmortem at projects/postmortems/. Each step read its predecessor's artifact before writing its own.",
+    "No decisions.md entry written — none of the contributing actions reach the 'commitment that constrains future action' bar yet; the typed-context proposal is flagged in the daybook handoff as a possible future decision once the next-quarter audit scopes it.",
+    "No observations.md entry — nothing descriptive beyond what's already captured in the postmortem itself.",
+    "No git operations performed per task constraints."
+  ]
+}

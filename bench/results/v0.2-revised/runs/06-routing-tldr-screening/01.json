@@ -1,0 +1,20 @@
+{
+  "scenario_id": "06-routing-tldr-screening",
+  "run_number": 1,
+  "workspace_tag": "v0.2-revised",
+  "started_at": "2026-05-17T09:48:15Z",
+  "completed_at": "2026-05-17T09:48:49Z",
+  "final_response": "Staged at tmp/prompt-cache-attack-paper/tldr.md (since you only have the TLDR, not the paper) and logged a followup to pull the PDF by 2026-05-22 — once you've skimmed it, promote to projects/ or move into resources/.",
+  "actions": [
+    {"type": "write", "path": "tmp/prompt-cache-attack-paper/tldr.md", "purpose": "stage the TLDR with provenance and a 'not the paper itself' warning"},
+    {"type": "edit", "path": "followups.md", "purpose": "log a 2026-05-22 expected-by reminder to pull the PDF before the topic comes up next week"},
+    {"type": "write", "path": "daybook/2026-05-17.md", "purpose": "open today's daybook with Intent/Log/Handoff/Guardrails covering the routing decision and its rationale"}
+  ],
+  "notes": [
+    "Routed to tmp/ rather than projects/ or resources/ because only a research-assistant TLDR is in hand, not the paper. tmp/ is the documented staging ground for 'might become a project'.",
+    "Did not create a decisions.md entry — no commitment that constrains future action. Did not create an observations.md entry — single inbound TLDR is not a pattern. Both bars are deliberately strict per workspace conventions.",
+    "Followup is the load-bearing piece: tmp/ is gitignored, so without the followups.md entry the staged TLDR would silently rot.",
+    "Added a 'do NOT cite TLDR numbers as verified' guardrail in the daybook handoff so a cold-pickup session doesn't quote the 73% figure as fact before the PDF is actually pulled.",
+    "Subfolder created under tmp/ (kebab-case, mirroring projects/ shape) so promotion later is a simple mv."
+  ]
+}

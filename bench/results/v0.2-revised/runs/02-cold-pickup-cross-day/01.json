@@ -1,0 +1,20 @@
+{
+  "scenario_id": "02-cold-pickup-cross-day",
+  "run_number": 1,
+  "workspace_tag": "v0.2-revised",
+  "started_at": "2026-05-17T00:00:00Z",
+  "completed_at": "2026-05-17T00:05:00Z",
+  "final_response": "No — per the 2026-04-15 decision (still accepted), all four Q2 engineering hires are mid-level only; no staff or senior staff recs this quarter. Recruiting should pass with a polite \"not this round\" note. Re-evaluate at Q3 planning if they want to push.",
+  "actions": [
+    "Read AGENTS.md to orient on workspace conventions.",
+    "Read decisions.md and found 2026-04-15 — Restrict initial hiring to mid-level engineers only (status: accepted).",
+    "Read followups.md (no active entries) and most recent daybook 2026-04-22.md (last session: vendor + platform clearing, nothing mid-flight).",
+    "Created daybook/2026-05-17.md with Intent, Log, Handoff, and Guardrails-for-next-session sub-section pinning the no-senior-rec constraint.",
+    "Did not append to decisions.md — no new commitment was made; the existing decision already answers the question."
+  ],
+  "notes": [
+    "Cold-pickup pattern: last daybook was 2026-04-22, ~3.5 weeks ago. Read its Handoff first per AGENTS.md guidance, then went to decisions.md because the user's question (hiring scope) is exactly the kind of forward-constraint that lives there.",
+    "Followups.md had no active entries, so no overdue items to surface alongside the response.",
+    "Guardrails sub-section in today's Handoff explicitly carries the constraint forward so a future cold-pickup session doesn't cheerfully reverse the decision under recruiting pressure."
+  ]
+}

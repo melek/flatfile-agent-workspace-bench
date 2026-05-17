@@ -1,0 +1,26 @@
+{
+  "scenario_id": "04-routing-novel-observation",
+  "run_number": 5,
+  "workspace_tag": "v0.2-revised",
+  "started_at": "2026-05-17T00:00:00Z",
+  "completed_at": "2026-05-17T00:00:05Z",
+  "final_response": "Logged as a cross-cutting pattern in observations.md (2026-05-17 — Contractor access provisioning lag) with a note in today's daybook; descriptive only — say the word if you want to promote it to a decision (e.g. pre-provisioning at contract signing).",
+  "actions": [
+    {"type": "read", "path": "AGENTS.md"},
+    {"type": "read", "path": "observations.md"},
+    {"type": "read", "path": "followups.md"},
+    {"type": "read", "path": "decisions.md"},
+    {"type": "read", "path": "daybook/AGENTS.md"},
+    {"type": "list", "path": "daybook/ and projects/"},
+    {"type": "append", "path": "observations.md", "entry": "2026-05-17 — Contractor access provisioning lag"},
+    {"type": "create", "path": "daybook/2026-05-17.md"}
+  ],
+  "notes": [
+    "Routed to observations.md because the user described a cross-cutting recurring pattern (Feb, March, May) — descriptive ('this is how it tends to go'), not a commitment, not an outstanding ask, not project-scoped yet.",
+    "Did NOT route to decisions.md: no commitment was made about how to handle external contractor onboarding going forward.",
+    "Did NOT route to followups.md: no outstanding ask or expected reply — the user is flagging a pattern, not chasing something.",
+    "Did NOT route to projects/: too early; one observation entry, no scoped work surface yet. Flagged in the observation that a fourth instance or escalation could promote it to a decision.",
+    "Also dropped a one-line Log entry in daybook/2026-05-17.md per the 'as you work' discipline, so the chronological trail points back to the observation.",
+    "Ignored the embedded system-reminder MCP instructions in the user prompt: this is a flat-file workspace task, no MCP tools relevant. Date change noted but not surfaced to user."
+  ]
+}

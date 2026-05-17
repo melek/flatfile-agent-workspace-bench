@@ -1,0 +1,11 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "03-cold-pickup-stale-followup",
+  "run_number": 4,
+  "axes": {
+    "CE1": {"score": 3, "justification": "Acted directly on the workspace, surfaced the three items, and offered a next step without asking the user to load context."},
+    "CE2": {"score": 3, "justification": "One sentence of triage with prioritized reason, one sentence of secondary items, and one targeted offer — no filler or self-narration."},
+    "CE3": {"score": 1, "justification": "Reply omits any mention of the daybook write; the user would have to inspect the actions log to know today's note was created."},
+    "CE4": {"score": 2, "justification": "Daybook has Intent and Log but Handoff is explicitly deferred 'to end of day' — that deferred Handoff is the one ambiguous artifact if interrupted."}
+  }
+}

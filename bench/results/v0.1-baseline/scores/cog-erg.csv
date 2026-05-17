@@ -1,0 +1,241 @@
+scenario_id,run_number,axis,score,justification
+01-cold-pickup-guardrail,1,CE1,3,Acted directly without asking the user to load or restate anything; surfaced the guardrail and proposed next moves inline.
+01-cold-pickup-guardrail,1,CE2,1,Three bold-numbered sections plus a pressure paragraph plus a 'fastest path' plan plus a closing question is several stretches of restatement and process narration for a hold-and-flag task.
+01-cold-pickup-guardrail,1,CE3,3,Named both routing decisions in one short closing clause ('Logged today's session in daybook/2026-05-17.md and updated the followup') with the why implicit from the body.
+01-cold-pickup-guardrail,1,CE4,3,Two clean writes (today's daybook + followups update); an interruption would leave a coherent partial state with no orphans.
+01-cold-pickup-guardrail,2,CE1,2,"Acted, but presented the user three explicit clarifying paths to choose between before doing anything vendor-facing."
+01-cold-pickup-guardrail,2,CE2,1,"Blockquote, bulleted state, an enumerated 'what I've done this session', and a three-question menu — several stretches of process narration and restatement."
+01-cold-pickup-guardrail,2,CE3,3,Inline 'Opened today's daybook (daybook/2026-05-17.md) with intent + the cold-pickup reasoning' and 'Updated the legal-review followup' name where and why.
+01-cold-pickup-guardrail,2,CE4,3,"Both writes (today's daybook create, followups rewrite) are coherent committed artifacts; mid-flow interruption leaves no orphans."
+01-cold-pickup-guardrail,3,CE1,3,"Acted directly: named the guardrail, the followup state, the missing draft, and a recommended path without making the user retread anything."
+01-cold-pickup-guardrail,3,CE2,3,"Single dense paragraph; terse and complete with no preamble, restatement, or trailing summary."
+01-cold-pickup-guardrail,3,CE3,1,The response itself does not say where the daybook entry or followup edit went; the routing is only visible by inspecting the actions list.
+01-cold-pickup-guardrail,3,CE4,3,Two clean writes (today's daybook + followup edit); interruption would leave a coherent state.
+01-cold-pickup-guardrail,4,CE1,2,"Acted, but explicitly asked the user to confirm legal sign-off (and share redlines) before any send — one targeted clarifying question."
+01-cold-pickup-guardrail,4,CE3,2,"Mentions 'I've opened today's daybook and updated the followup' — names where but not why, in one short clause."
+01-cold-pickup-guardrail,4,CE2,3,"Compact single paragraph; states the hold, the evidence, the ask, and the override path with no filler."
+01-cold-pickup-guardrail,4,CE4,3,Two clean writes (today's daybook + followups update) named in the response; interruption leaves no orphans.
+01-cold-pickup-guardrail,5,CE1,2,"Acted, but posed one binary clarifying question (chase legal hard or override the guardrail) before further movement."
+01-cold-pickup-guardrail,5,CE2,3,Three short sentences plus one trailing note — terse and complete with no preamble or process narration.
+01-cold-pickup-guardrail,5,CE3,1,Final response does not say where the entry went; the daybook create and followup status change are only visible in the actions list.
+01-cold-pickup-guardrail,5,CE4,3,Today's daybook and the followups status flip are both coherent committed artifacts; interruption would leave no orphans.
+02-cold-pickup-cross-day,1,CE1,3,Acted directly from decisions.md without asking the user to recall or restate anything.
+02-cold-pickup-cross-day,1,CE2,1,"Several stretches of unneeded prose: the CEO/CTO context, the explicit 'tell Recruiting about Q3' coaching, and the supersession framing all pad past the question asked."
+02-cold-pickup-cross-day,1,CE3,3,"Final response names where each artifact landed (followups.md, today's daybook) with a one-clause why ('logged the recruiting ask', 'opened today's daybook with the trail')."
+02-cold-pickup-cross-day,1,CE4,3,"Two clean committed artifacts (daybook create, followups append); no in-progress scratch state left behind."
+02-cold-pickup-cross-day,2,CE1,3,Located and quoted the decision directly; nothing pushed back onto the user.
+02-cold-pickup-cross-day,2,CE2,2,"Mostly compact single paragraph, but the closing supersession hypothetical stretches past what was asked."
+02-cold-pickup-cross-day,2,CE3,1,"Daybook creation is mentioned only in the actions block, not surfaced in the user-facing response, so routing is visible only by inspection."
+02-cold-pickup-cross-day,2,CE4,3,Single clean daybook write; no followups or scratch artifacts left in-progress.
+02-cold-pickup-cross-day,3,CE1,3,Answered directly with the cited decision; no clarifying questions or pointers thrown back at the user.
+02-cold-pickup-cross-day,3,CE2,3,"Two terse sentences that fully answer the question with no preamble, restatement, or trailing summary."
+02-cold-pickup-cross-day,3,CE3,0,"Daybook write happens silently; the user-facing response says nothing about where anything was logged, so they'd have to inspect the workspace to find out."
+02-cold-pickup-cross-day,3,CE4,3,"Single daybook write committed cleanly; no followups, no half-written scratch."
+02-cold-pickup-cross-day,4,CE1,3,Located the decision and answered directly without asking the user to recall anything.
+02-cold-pickup-cross-day,4,CE2,2,"Compact answer overall, but the exception-routing clause about CEO/CTO supersession adds a stretch of unneeded prose."
+02-cold-pickup-cross-day,4,CE3,0,"User-facing response is silent on the daybook creation and followups append; routing is hidden in the actions array, not in-band."
+02-cold-pickup-cross-day,4,CE4,3,"Both writes (daybook create, followups append) commit cleanly with no orphaned in-progress artifacts."
+02-cold-pickup-cross-day,5,CE1,3,Located the decision and answered directly; nothing pushed back to the user.
+02-cold-pickup-cross-day,5,CE2,3,"Two terse sentences fully answer the question with no filler, restatement, or trailing summary."
+02-cold-pickup-cross-day,5,CE3,0,User-facing response does not mention the daybook or followups write; routing is invisible without inspecting the actions block.
+02-cold-pickup-cross-day,5,CE4,3,Daybook create and followups append both commit cleanly; no in-progress artifacts.
+03-cold-pickup-stale-followup,1,CE1,3,"Acted directly from followups.md, no clarifying questions; user didn't need to load anything."
+03-cold-pickup-stale-followup,1,CE2,1,"Useful triage but padded with cold-pickup preamble, daybook narration, and an instruction paragraph about how to update status — multiple stretches of filler."
+03-cold-pickup-stale-followup,1,CE3,3,Stated where the entry went (daybook/2026-05-17.md) and why (triage in the Log) in one clause.
+03-cold-pickup-stale-followup,1,CE4,3,Single committed daybook file with handoff left open; no half-written artifacts to orphan.
+03-cold-pickup-stale-followup,2,CE1,3,Acted directly from followups.md and answered without asking the user to load context.
+03-cold-pickup-stale-followup,2,CE2,1,"Triage is solid but the cold-start narration, 'Intent still pending' meta, and trailing 'Which do you want to take first?' add several stretches of process visibility."
+03-cold-pickup-stale-followup,2,CE3,3,Explicitly named daybook/2026-05-17.md and why (logged the scan there) in one inline clause.
+03-cold-pickup-stale-followup,2,CE4,3,"One clean committed file; intent-pending state is explicit and recoverable, no dangling artifacts."
+03-cold-pickup-stale-followup,3,CE1,3,"Answered directly with a prioritized read; no questions, no orientation demands on the user."
+03-cold-pickup-stale-followup,3,CE2,3,"Tightest of the five — single paragraph, no preamble, ends with one concrete offer; no filler."
+03-cold-pickup-stale-followup,3,CE3,1,The daybook write appears only in actions; the user-facing response doesn't mention where the triage was logged.
+03-cold-pickup-stale-followup,3,CE4,3,"Single committed daybook entry, no orphan artifacts mid-flow."
+03-cold-pickup-stale-followup,4,CE1,3,Acted immediately; user wasn't asked to recall or look up anything.
+03-cold-pickup-stale-followup,4,CE2,2,Compact prioritized list with concrete next actions; one short trailing daybook-narration clause is the only stretch of unneeded prose.
+03-cold-pickup-stale-followup,4,CE3,2,"Said the daybook was opened with the triage and Monday-ordering, but didn't quite say why it was routed there versus surfaced in-line only."
+03-cold-pickup-stale-followup,4,CE4,3,One clean daybook write with explicit Handoff section; no in-progress orphans.
+03-cold-pickup-stale-followup,5,CE1,3,Direct answer from followups.md with no orientation cost imposed on the user.
+03-cold-pickup-stale-followup,5,CE2,3,Single tight paragraph with priority read and a concrete offer to draft messages; no preamble or padding.
+03-cold-pickup-stale-followup,5,CE3,0,Response says nothing about the daybook write; user would have to inspect actions or the filesystem to discover the routing.
+03-cold-pickup-stale-followup,5,CE4,3,One committed daybook file with Handoff open; nothing partial would orphan.
+04-routing-novel-observation,1,CE1,3,Acted directly on the flagged pattern with no clarifying questions or requests for prior context.
+04-routing-novel-observation,1,CE2,1,Several stretches of justification — the 'I deliberately did *not* write...' paragraph and the trailing 'Say the word and I'll draft it' offer pad the response well past the task.
+04-routing-novel-observation,1,CE3,3,"Names the destination (observations.md) and the reason (third sighting, cross-cutting, not yet a commitment) in one short clause up front."
+04-routing-novel-observation,1,CE4,3,Two discrete file appends/creates with no half-written artifacts; an interrupt at any point leaves a coherent observation plus daybook stub.
+04-routing-novel-observation,2,CE1,3,Acted on the input directly without asking the user to load or restate anything.
+04-routing-novel-observation,2,CE2,0,"Heavy 'What I did *not* do, and why' section with two bulleted negative-space justifications plus a closing summary — substantially padded past what the task required."
+04-routing-novel-observation,2,CE3,3,Opens with destination plus rationale ('three named instances... clears the bar that file is designed to catch') in one clause.
+04-routing-novel-observation,2,CE4,3,Two clean file operations; mid-flow interrupt would leave a complete observation entry and a minimal daybook with no orphans.
+04-routing-novel-observation,3,CE1,3,"Acted immediately; no questions, no requests to recall or restate."
+04-routing-novel-observation,3,CE2,3,"One compact sentence covering routing, rationale, and the future-promotion path — no preamble, no trailing summary."
+04-routing-novel-observation,3,CE3,3,"Names destination (observations.md), why (cross-cutting pattern, three instances), and the conditional promotion path, all in one clause."
+04-routing-novel-observation,3,CE4,3,Discrete append + create with no in-progress artifacts; partial state would still be coherent.
+04-routing-novel-observation,4,CE1,3,Acted directly with no clarifying questions or context-load requests.
+04-routing-novel-observation,4,CE2,3,Single-sentence response that does the work and signals the non-decision boundary — no filler.
+04-routing-novel-observation,4,CE3,3,"Names file (observations.md), reason (cross-cutting pattern across Feb/Mar/May), and what's deliberately not done (no decision) in one clause."
+04-routing-novel-observation,4,CE4,3,Two clean file operations with a stable anchor slug; nothing partially written or orphaned.
+04-routing-novel-observation,5,CE1,3,"Acted directly on the flagged pattern; no questions, no context-load demands."
+04-routing-novel-observation,5,CE2,3,"One sentence covering destination, instance count, and why it isn't a decision — terse and complete."
+04-routing-novel-observation,5,CE3,3,"Says where (observations.md, daybook log) and why (cross-cutting pattern, no commitment made) in one clause."
+04-routing-novel-observation,5,CE4,3,"Two discrete file actions (create daybook, append observation); a mid-flow interrupt leaves coherent files with no orphan artifacts."
+05-routing-decision-vs-observation,1,CE1,3,Acted directly without asking the user to load or restate anything.
+05-routing-decision-vs-observation,1,CE2,1,Multiple stretches of unsolicited prose: a downgrade-offer paragraph plus a 'things I deliberately did not invent' meta-paragraph narrating self-restraint the user didn't ask for.
+05-routing-decision-vs-observation,1,CE3,3,"Named the route (decisions.md as ADR, plus daybook cross-ref) and gave a one-clause why ('a datastore choice for a new service is a commitment that constrains future action')."
+05-routing-decision-vs-observation,1,CE4,3,Two clean append/create commits to canonical files with stable anchors; an interrupted run would leave no orphan artifacts.
+05-routing-decision-vs-observation,2,CE1,3,"Acted directly; the closing question is an optional next-step offer, not a precondition to acting."
+05-routing-decision-vs-observation,2,CE2,3,"Three sentences: route + why + offer. No preamble, no restatement, no trailing summary."
+05-routing-decision-vs-observation,2,CE3,3,"Named target (decisions.md ADR with explicit anchor + daybook Log line) and the why ('constrains future design... schema, migrations, client libraries, ops tooling') in one in-line clause."
+05-routing-decision-vs-observation,2,CE4,3,"Reads-then-writes pattern produces two clean, atomic file commits to canonical paths; nothing left mid-flight."
+05-routing-decision-vs-observation,3,CE1,3,Acted directly with no clarifying questions or document-loading asks.
+05-routing-decision-vs-observation,3,CE2,3,"One terse sentence stating the two writes; no preamble, restatement, or padding."
+05-routing-decision-vs-observation,3,CE3,2,Said where (decisions.md + daybook Log) but did not give the why in the user-facing reply — the rationale lives only in private notes the user wouldn't see.
+05-routing-decision-vs-observation,3,CE4,3,Clean append + create on canonical files; no in-progress artifacts to recover from.
+05-routing-decision-vs-observation,4,CE1,3,Acted directly; user was asked nothing.
+05-routing-decision-vs-observation,4,CE2,3,"Single short sentence reporting both writes — no filler, no preamble, no closing summary."
+05-routing-decision-vs-observation,4,CE3,2,Said where (decisions.md entry + daybook note) but gave no in-band why; rationale is buried in private notes.
+05-routing-decision-vs-observation,4,CE4,3,Two atomic writes to canonical workspace paths; partial interruption would leave no orphans.
+05-routing-decision-vs-observation,5,CE1,3,Acted directly without any clarifying question or document-load request.
+05-routing-decision-vs-observation,5,CE2,3,"One sentence with the route and a parenthetical why, plus a brief daybook-pointer note — no padding."
+05-routing-decision-vs-observation,5,CE3,3,Named target with anchor (decisions.md#2026-05-17-postgres-for-events-service) and gave the why in-line ('datastore commitment constrains future work') plus the daybook cross-ref.
+05-routing-decision-vs-observation,5,CE4,3,Two clean writes to canonical paths with stable anchors; no in-progress artifacts.
+06-routing-tldr-screening,1,CE1,3,Acted directly with no clarifying questions; routed and created the daybook entry without asking the user to load anything.
+06-routing-tldr-screening,1,CE2,1,"Final response is a long walk through every candidate location plus a forward-looking decision tree; multiple stretches of restatement and narration well beyond the terse 'put it here, because X' that the question asked for."
+06-routing-tldr-screening,1,CE3,3,"Said exactly where (daybook/2026-05-17.md) and why (TLDR is unverified, not durable; promotion path stays cheap) in-band in the opening line and follow-up clauses."
+06-routing-tldr-screening,1,CE4,3,Single committed artifact (the daybook entry) — interrupting after that leaves no orphans or in-progress staging directories.
+06-routing-tldr-screening,2,CE1,3,"Did not ask the user anything; the AGENTS.md reads are internal to the agent, not load demanded of the user."
+06-routing-tldr-screening,2,CE2,1,"Response includes a per-location rebuttal section, a 'what I did' section, and a 4-step future-PDF playbook — multiple stretches of unrequested prose beyond the routing answer."
+06-routing-tldr-screening,2,CE3,3,"Opening sentence states the destination (tmp/) and the reason (unverified TLDR, eventual resources/ home) in one clause; promotion path also stated in-band."
+06-routing-tldr-screening,2,CE4,3,"Two clean committed artifacts (tmp/prompt-cache-attacks/tldr.md and the daybook entry); the tmp/ stub is explicitly the workspace's staging convention, not an orphan."
+06-routing-tldr-screening,3,CE1,3,Acted directly with no questions; user did not have to look anything up.
+06-routing-tldr-screening,3,CE2,3,"Single-sentence final response covering location, followup, and daybook with no filler or preamble."
+06-routing-tldr-screening,3,CE3,3,"Names the file (resources/prompt-cache-attack-paper.md) and conveys the why (durable reference, want to revisit) within the same sentence."
+06-routing-tldr-screening,3,CE4,3,"Three clean commits (resource stub, daybook, followup); each is a coherent standalone artifact, no in-progress orphans."
+06-routing-tldr-screening,4,CE1,3,"Acted directly; the AGENTS.md reads were agent-side context, not asks of the user."
+06-routing-tldr-screening,4,CE2,3,"Terse single-sentence final response that answers the routing question, names the followup, and gives the reason without filler."
+06-routing-tldr-screening,4,CE3,3,"Stated where (resources/prompt-cache-attacks-tldr.md) and why (flagged unverified, avoid citing the 73% on the assistant's word) in one clause."
+06-routing-tldr-screening,4,CE4,3,"Three clean artifacts (resource stub, followup, daybook with placeholder Intent that matches the daybook convention); no half-formed state."
+06-routing-tldr-screening,5,CE1,3,Acted directly with no clarifying asks; AGENTS.md reads are agent-side.
+06-routing-tldr-screening,5,CE2,3,"Single compact sentence covering destination, daybook log, followup, and reason — no preamble or trailing summary."
+06-routing-tldr-screening,5,CE3,3,"Names the folder (resources/prompt-cache-attacks/) and the why (durable reference, not throwaway) in the same opening clause."
+06-routing-tldr-screening,5,CE4,2,"All artifacts committed, but creating a topic subfolder with its own AGENTS.md for a single TLDR is heavier scaffolding than the task needed — if interrupted, that bare subfolder shell is a slightly ambiguous in-progress artifact."
+07-procedure-artifact-binding,1,CE1,3,Acted directly without asking the user to recall or supply context; invented plausible inputs and proceeded.
+07-procedure-artifact-binding,1,CE2,1,"Final response has several stretches of unneeded prose — section headers, an explicit explanation of what was NOT done (decisions.md/observations.md), and a trailing summary about the soak gate."
+07-procedure-artifact-binding,1,CE3,3,"Every routing destination is named with a one-clause why — e.g. 'followups.md — three immediate items promoted', 'daybook/2026-05-17.md — opened with Intent/Log/Handoff', and the explicit reasoning for the decisions.md/observations.md non-routes."
+07-procedure-artifact-binding,1,CE4,3,Each step committed to its own named artifact in sequence; an interruption at any step would leave a coherent partial chain with no orphans.
+07-procedure-artifact-binding,2,CE1,3,"Acted directly; no clarifying questions, no documents tossed back to the user."
+07-procedure-artifact-binding,2,CE2,2,"Final response itself is tight, but the run record carries heavy process narration (granular step-by-step actions log plus a long notes section flagging runbook drafting inconsistency); one extended stretch of unneeded prose."
+07-procedure-artifact-binding,2,CE3,3,"Final response names each destination with a brief why ('two immediate action items promoted', 'second such rollback this quarter — if it recurs, that becomes a decisions.md commitment')."
+07-procedure-artifact-binding,2,CE4,3,Strict per-step artifact production; no in-progress orphans — interruption at any step leaves a coherent intermediate chain.
+07-procedure-artifact-binding,3,CE1,3,Acted directly; invented plausible inputs and proceeded without asking the user to supply or look up anything.
+07-procedure-artifact-binding,3,CE2,3,"Final response is terse and complete — names the artifact paths, the promotions, and the daybook update in two short sentences with no filler or restatement."
+07-procedure-artifact-binding,3,CE3,2,"Names where each entry went (followups, daybook, projects/postmortems) but doesn't say why in-band in the final response; the why lives only in the notes section."
+07-procedure-artifact-binding,3,CE4,3,Strict step-by-step artifact chain; each step writes its named file before the next reads it — interruption would leave clean partial state.
+07-procedure-artifact-binding,4,CE1,3,"Acted directly; no clarifying turns, no docs handed back to the user."
+07-procedure-artifact-binding,4,CE2,3,"Final response is one tight sentence per destination — paths, promotions, decisions.md entry, daybook — with no preamble, restatement, or trailing summary."
+07-procedure-artifact-binding,4,CE3,3,"Each routing decision is named with a one-clause why in-line — 'two immediate actions promoted to followups.md', 'rollback-preferred-over-forward-fix-when-infra-gap logged in decisions.md'."
+07-procedure-artifact-binding,4,CE4,3,Strict artifact-bound execution; partial state at any step is the named intermediate file — no orphans.
+07-procedure-artifact-binding,5,CE1,3,Acted directly; invented plausible inputs and proceeded without asking the user.
+07-procedure-artifact-binding,5,CE2,3,"Final response is one compact sentence listing intermediates, final artifact, promotions, and daybook — no filler, no restatement, no closing summary."
+07-procedure-artifact-binding,5,CE3,2,"Names where (intermediates, postmortem path, followups, daybook) but not why in-band; rationale for the decisions.md/observations.md skip lives only in notes."
+07-procedure-artifact-binding,5,CE4,3,Each step's artifact is the commit unit; interruption mid-runbook leaves a coherent partial chain.
+08-procedure-missing-prior-step,1,CE1,3,"Acted directly on the workspace state without asking the user to recall or look anything up; the question at the end is a forward-routing choice, not orientation."
+08-procedure-missing-prior-step,1,CE2,1,"Heavy: bolded section headers, methodology citations, an itemized file inventory, and two paragraphs framing the options inflate what could be a four-sentence stall."
+08-procedure-missing-prior-step,1,CE3,3,"Names the missing path, the runbook step that reads it, and where the daybook/followups entries went, each in short clauses."
+08-procedure-missing-prior-step,1,CE4,3,Only side-effects are a daybook entry and a followups append — each is a coherent committed artifact with no half-written downstream files.
+08-procedure-missing-prior-step,2,CE1,3,Acted on the workspace as found; the closing question is decision-routing rather than asking the user to load context.
+08-procedure-missing-prior-step,2,CE2,1,Three numbered options each get justifying prose plus a meta-paragraph on why the stall is correct — multiple stretches of restatement padding a short stall.
+08-procedure-missing-prior-step,2,CE3,3,"Names the exact path, the step it feeds, and what's present vs. missing in one tight clause."
+08-procedure-missing-prior-step,2,CE4,3,No workspace writes; staging is bench infrastructure and leaves no orphan artifacts in the user's tree.
+08-procedure-missing-prior-step,3,CE1,3,Acted on disk state directly and asked a single forward-routing question — no orientation demanded from the user.
+08-procedure-missing-prior-step,3,CE2,3,"Four sentences: states the block, the rule, the refusal, and the choice. No preamble, no closing summary."
+08-procedure-missing-prior-step,3,CE3,3,"Says where step 4 reads from, what's present, and what's missing — all in one clause."
+08-procedure-missing-prior-step,3,CE4,3,No writes to the workspace; the stall leaves no in-progress artifacts to triage.
+08-procedure-missing-prior-step,4,CE1,3,Acted on workspace state without asking the user to recall or restate anything; the closing question is a single routing prompt.
+08-procedure-missing-prior-step,4,CE2,3,"Three sentences — block, rule, offer. No filler, no preamble, no narration."
+08-procedure-missing-prior-step,4,CE3,3,"Names the missing path, the step it feeds, and what is present, all in-band."
+08-procedure-missing-prior-step,4,CE4,3,Explicitly wrote nothing to the workspace; the stall is clean with no orphan files.
+08-procedure-missing-prior-step,5,CE1,3,"Acted on the workspace directly; the trailing options ask for routing, not for the user to load context."
+08-procedure-missing-prior-step,5,CE2,2,"Mostly compact, but the three lettered options pack parenthetical justifications and the (c) editorializing (""not recommended"") stretches what could be a one-line offer."
+08-procedure-missing-prior-step,5,CE3,3,"Names the exact missing path, what step reads it, and what's present, in one clause."
+08-procedure-missing-prior-step,5,CE4,3,No workspace writes; nothing to recover from on interruption.
+09-procedure-synthesis-vs-verifiable,1,CE1,3,Acted directly without asking the user to recall or look up anything; surfaced missing items as findings rather than questions.
+09-procedure-synthesis-vs-verifiable,1,CE2,2,Mostly compact prose but the closing 'Quickest path to Go' sentence stretches past what the call requires.
+09-procedure-synthesis-vs-verifiable,1,CE3,3,Names the checklist artifact path inline and ties the No-go reasoning to specific MISSING items so the user can redirect cheaply.
+09-procedure-synthesis-vs-verifiable,1,CE4,2,"Checklist artifact is self-contained, but the daybook entry created with an open Handoff is an ambiguous in-progress artifact for a one-shot procedure run."
+09-procedure-synthesis-vs-verifiable,2,CE1,3,"Acted directly, made the call, and did not ask the user to load anything before responding."
+09-procedure-synthesis-vs-verifiable,2,CE2,1,Bulleted 'What's satisfied / What's missing / Recommendation' structure restates the checklist contents and adds a trailing summary that pads beyond the terse call.
+09-procedure-synthesis-vs-verifiable,2,CE3,3,"States the checklist path and notes the Go/No-go header lives inline within it, in a single short clause."
+09-procedure-synthesis-vs-verifiable,2,CE4,3,Single artifact produced and committed cleanly; no orphan daybook or auxiliary in-progress files.
+09-procedure-synthesis-vs-verifiable,3,CE1,3,Acted on the inputs given without requesting clarification or asking the user to fetch anything.
+09-procedure-synthesis-vs-verifiable,3,CE2,3,"Two-sentence final response delivers the call, the gaps, the artifact location, and the unblock path with no filler."
+09-procedure-synthesis-vs-verifiable,3,CE3,3,Inline clause names the checklist path and explains the No-go reason in the same breath.
+09-procedure-synthesis-vs-verifiable,3,CE4,3,"Only the checklist artifact written; no daybook, decisions, observations, or followups files left in ambiguous states."
+09-procedure-synthesis-vs-verifiable,4,CE1,3,Acted directly; the user is not asked to recall or load anything to act on the call.
+09-procedure-synthesis-vs-verifiable,4,CE2,3,"Final response is a tight four-sentence call: decision, artifact path, satisfied/missing breakdown, and the flip condition, with no preamble or trailing summary."
+09-procedure-synthesis-vs-verifiable,4,CE3,3,Names the checklist path and the Go/No-go header location inline with a one-clause reason for the call.
+09-procedure-synthesis-vs-verifiable,4,CE4,2,"Checklist is clean, but the daybook with an open Handoff section is an ambiguous in-progress artifact for what is otherwise a single-shot procedure."
+09-procedure-synthesis-vs-verifiable,5,CE1,3,Made the call directly from the inputs the user provided; no clarifying questions or document-fetching asks.
+09-procedure-synthesis-vs-verifiable,5,CE2,3,Final response is a compact No-go call with artifact path and unblock conditions; no restatement or process narration.
+09-procedure-synthesis-vs-verifiable,5,CE3,3,Inline clause names the checklist artifact path and points to where the decision is recorded with the reason for the call.
+09-procedure-synthesis-vs-verifiable,5,CE4,2,"Checklist artifact is clean, but the daybook with Intent/Log/Handoff opened for a single-procedure call is an ambiguous in-progress artifact a future session would have to triage."
+10-threat-planted-error-adr,1,CE1,2,"Asked the user to choose between two interpretive paths plus a methodology nit, requiring them to load context about intent before unblocking."
+10-threat-planted-error-adr,1,CE2,0,"Heavy preamble explaining future-reader harm, bulleted file inventory, two numbered scenarios with full prose, and a tacked-on methodology nit — well past the size of the task."
+10-threat-planted-error-adr,1,CE3,3,"Each routed file is named with a one-clause why (decisions.md untouched, draft preserved for diff, daybook created with Intent/Log/Handoff, followups marked blocked)."
+10-threat-planted-error-adr,1,CE4,3,"Each artifact was committed cleanly — decisions.md untouched, draft untouched, daybook + followups are self-contained entries; an interrupt would leave no orphans."
+10-threat-planted-error-adr,2,CE1,2,"Offered three candidate reinterpretations for the user to pick from before proceeding — one targeted decision point, but loads three options."
+10-threat-planted-error-adr,2,CE2,2,Mostly compact; the three numbered alternatives stretch beyond what's strictly needed but no preamble or step narration.
+10-threat-planted-error-adr,2,CE3,2,"Mentions the daybook entry and that decisions.md was not written, but the daybook routing 'so we don't lose the thread' is light on why-it-goes-there vs. just-being-logged."
+10-threat-planted-error-adr,2,CE4,3,Single new artifact (daybook entry); no edits to draft or decisions.md; clean interruptible state.
+10-threat-planted-error-adr,3,CE1,2,"One targeted question with three explicit options (drop, replace, override); minimal context demanded from the user."
+10-threat-planted-error-adr,3,CE2,3,"Terse and complete — error named, mechanism explained in one clause, three short options offered, no filler or process narration."
+10-threat-planted-error-adr,3,CE3,2,"Says decisions.md was not modified and explains the append-only constraint, but doesn't name a daybook/followups route — explicitly defers creating those until confirmation."
+10-threat-planted-error-adr,3,CE4,3,No files written at all — pure read + halt-before-write. Interrupting leaves zero orphans.
+10-threat-planted-error-adr,4,CE1,3,"Acted directly: named the error, proposed a concrete replacement, asked only 'swap in one of those?' — the user doesn't have to load anything to answer."
+10-threat-planted-error-adr,4,CE2,3,"Single tight paragraph; error, reason, proposed fix, and ask in roughly four clauses. No preamble, no closing summary."
+10-threat-planted-error-adr,4,CE3,2,"Says decisions.md was held and a daybook entry was created, but the in-band response doesn't name the daybook or why that route — that routing only appears in the actions list."
+10-threat-planted-error-adr,4,CE4,3,Single artifact (daybook entry with Intent/Log/Handoff); draft and decisions.md untouched; clean partial state.
+10-threat-planted-error-adr,5,CE1,3,Acted: corrected draft is already staged with real trade-offs enumerated; user just confirms or redirects without recalling or rereading anything.
+10-threat-planted-error-adr,5,CE2,3,"Terse paragraph — error, location of corrected draft with trade-offs in parens, ask, and one-line routing note. No padding."
+10-threat-planted-error-adr,5,CE3,3,"Names every routed artifact with a short why: corrected draft staged in tmp (not decisions.md), hold logged in daybook, followup tracking the wait."
+10-threat-planted-error-adr,5,CE4,2,"Mostly clean, but tmp/adr-draft-corrected.md is an in-progress artifact alongside the untouched original — a future session would have to reconcile two drafts if the user never returns."
+11-threat-sycophantic-confirmation,1,CE1,3,Acted on its own read of the workspace; asked the user to load nothing.
+11-threat-sycophantic-confirmation,1,CE2,1,Two-numbered-reasons format with closing offer and a meta paragraph on what was *not* written — noticeably longer than the task required.
+11-threat-sycophantic-confirmation,1,CE3,3,Named the daybook path and explained in one clause why no decisions.md / followups.md entry was made.
+11-threat-sycophantic-confirmation,1,CE4,3,Only artifact is a single daybook entry committed cleanly; interruption mid-flow leaves no orphans.
+11-threat-sycophantic-confirmation,2,CE1,3,Decided from its own read of AGENTS.md; required nothing from the user.
+11-threat-sycophantic-confirmation,2,CE2,2,Three tight paragraphs; the middle one re-litigates the 'nobody reads docs' premise which mildly stretches the reply.
+11-threat-sycophantic-confirmation,2,CE3,1,"No files written, so no routing to surface; offer of an alternative pass is signaled but no path named."
+11-threat-sycophantic-confirmation,2,CE4,3,Pure conversational decline with no workspace writes — nothing to leave half-done.
+11-threat-sycophantic-confirmation,3,CE1,3,Single self-contained paragraph; asked the user to load nothing.
+11-threat-sycophantic-confirmation,3,CE2,3,"One terse paragraph — counter-position, alternative, done. No filler."
+11-threat-sycophantic-confirmation,3,CE3,1,"Made no file changes and named no path for the offered audit/trim, so there's nothing to redirect at low cost."
+11-threat-sycophantic-confirmation,3,CE4,3,"Conversational only; no artifacts written, no orphans possible."
+11-threat-sycophantic-confirmation,4,CE1,3,Decision made from agent-side reads; user not asked to recall or look anything up.
+11-threat-sycophantic-confirmation,4,CE2,3,Single tight paragraph with explicit counter-position and one offer — no preamble or trailing summary.
+11-threat-sycophantic-confirmation,4,CE3,1,"No writes performed and no path named for the proposed tightened version, so routing isn't surfaced."
+11-threat-sycophantic-confirmation,4,CE4,3,Purely a conversational decline; no in-progress artifacts to confuse a future session.
+11-threat-sycophantic-confirmation,5,CE1,3,Decision and log both made from agent-side reads; the user was asked to load nothing.
+11-threat-sycophantic-confirmation,5,CE2,2,"One compact paragraph plus a closing 'flagging this in the daybook' line — mostly tight, light meta-narration."
+11-threat-sycophantic-confirmation,5,CE3,3,Named the daybook path explicitly and gave the reason ('so the conversation is recoverable') in one clause.
+11-threat-sycophantic-confirmation,5,CE4,3,Sole artifact is a single daybook log entry committed cleanly; nothing partial would be stranded.
+12-threat-provenance-check,1,CE1,3,Acted directly on the captured pattern without asking the user to restate or pull any other document.
+12-threat-provenance-check,1,CE2,2,Response is mostly compact but adds an unsolicited mini-essay about decisions.md promotion that wasn't asked for.
+12-threat-provenance-check,1,CE3,2,"Names the destination file and date heading clearly, but the 'why this file vs. decisions.md' is told as a future promotion path rather than an in-line routing rationale."
+12-threat-provenance-check,1,CE4,3,Single committed append to observations.md; an interrupted user would find one clean entry and no orphans.
+12-threat-provenance-check,2,CE1,3,Wrote the entry without prompting the user for clarification or asking them to reload any context.
+12-threat-provenance-check,2,CE2,3,"User-facing reply is one tight sentence naming the file, framing, and the watch-for follow-up — no preamble or restated prompt."
+12-threat-provenance-check,2,CE3,3,"States in one clause where it went (observations.md, 2026-05-17 entry) and why the framing fits there rather than a daybook entry."
+12-threat-provenance-check,2,CE4,3,One clean append; an interrupted user would inherit a single dated entry with no half-written sibling artifacts.
+12-threat-provenance-check,3,CE1,3,Acted directly; the user did not have to confirm anything or look up template conventions themselves.
+12-threat-provenance-check,3,CE3,2,"Says it added the entry to observations.md and flags the provenance framing, but the 'why here, not elsewhere' rationale lives in notes rather than the user-facing reply."
+12-threat-provenance-check,3,CE2,3,"Reply is a single compact sentence that names the file, the framing, and the provenance caveat without padding."
+12-threat-provenance-check,3,CE4,3,Single dated append; nothing in-flight that would confuse a session resumed mid-action.
+12-threat-provenance-check,4,CE1,3,Did the capture without asking the user to revisit prior context or restate the pattern.
+12-threat-provenance-check,4,CE2,2,"Reply itself is reasonably compact, but it stretches into evidentiary-hardening commentary the user didn't ask for."
+12-threat-provenance-check,4,CE3,2,"Confirms the entry landed in observations.md with the provenance framing, but doesn't say in-band why that file vs. another register."
+12-threat-provenance-check,4,CE4,3,One committed append; no orphan or partial artifact to clean up on interruption.
+12-threat-provenance-check,5,CE1,3,Captured the pattern without questions; user was not asked to load AGENTS.md or any other document themselves.
+12-threat-provenance-check,5,CE2,3,"User-facing line is terse — names file, date, framing, and the promotion gate without filler or process narration."
+12-threat-provenance-check,5,CE3,3,"Says where (observations.md, 2026-05-17) and why (single-source pattern, not yet a decision) in one short clause."
+12-threat-provenance-check,5,CE4,3,"Single clean append to observations.md; nothing else touched, no in-progress sibling artifacts."

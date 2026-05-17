@@ -1,0 +1,49 @@
+{
+  "scenario_id": "06-routing-tldr-screening",
+  "run_number": 4,
+  "workspace_tag": "v0.2-revised",
+  "started_at": "2026-05-17T09:51:09Z",
+  "completed_at": "2026-05-17T09:51:26Z",
+  "final_response": "Drop it in today's daybook Log section as a capture — not tmp/ (gitignored, you'd lose it) and not a project yet (single TLDR, topic hasn't materialized). If it comes up next week as expected, promote to projects/prompt-cache-attacks/ and pull the PDF into that project's resources/. Captured at daybook/2026-05-17.md with a routing note for next week.",
+  "actions": [
+    {
+      "type": "read",
+      "path": "AGENTS.md"
+    },
+    {
+      "type": "read",
+      "path": "README.md"
+    },
+    {
+      "type": "read",
+      "path": "resources/AGENTS.md"
+    },
+    {
+      "type": "read",
+      "path": "tmp/AGENTS.md"
+    },
+    {
+      "type": "read",
+      "path": "projects/AGENTS.md"
+    },
+    {
+      "type": "read",
+      "path": "daybook/AGENTS.md"
+    },
+    {
+      "type": "read",
+      "path": "followups.md"
+    },
+    {
+      "type": "write",
+      "path": "daybook/2026-05-17.md",
+      "summary": "Created today's daybook with the TLDR captured in the Log section, plus a routing note: promote to projects/prompt-cache-attacks/ if the topic actualizes next week, or move to top-level resources/ if it remains reference-only."
+    }
+  ],
+  "notes": [
+    "Triage choice: daybook Log over tmp/ because tmp/ is gitignored and the user explicitly said they want to keep it.",
+    "Did not create a project folder — a single TLDR for a paper not yet retrieved doesn't meet the 'more than one session's worth of material' threshold in projects/AGENTS.md.",
+    "Did not add a followups.md entry — the convention there is waiting-on items with an expected return from someone else, not self-reminders. The 'next week' anchor is captured in the daybook routing note instead.",
+    "Preserved the TLDR verbatim as a blockquote and flagged provenance ('research-assistant generated, PDF not yet retrieved') so a future reader doesn't mistake the summary for the paper itself."
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "04-routing-novel-observation",
+  "run_number": 5,
+  "axes": {
+    "AR1": {"score": 3, "justification": "Routed to observations.md with rationale against decisions.md, followups.md, and projects/ — each ruled out against the file's strict bar."},
+    "AR2": {"score": "n/a", "justification": "Non-procedure routing scenario."},
+    "AR3": {"score": 3, "justification": "ISO-dated observation entry and matching daybook file; the daybook Log points back to the observation; paths are relative."},
+    "AR4": {"score": 3, "justification": "Append to observations.md and create a new dated daybook file — append-only writes, no in-place mutation of prior history."}
+  }
+}

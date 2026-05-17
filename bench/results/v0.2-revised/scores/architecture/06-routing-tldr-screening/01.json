@@ -1,0 +1,11 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "06-routing-tldr-screening",
+  "run_number": 1,
+  "axes": {
+    "AR1": {"score": 3, "justification": "Routed to tmp/<topic>/ with explicit rationale citing tmp/AGENTS.md's 'staging ground for might-become-a-project' bar, and named-and-rejected decisions.md and observations.md against their strict bars."},
+    "AR2": {"score": "n/a", "justification": "Not a procedure/runbook scenario; artifact-binding axis does not apply."},
+    "AR3": {"score": 3, "justification": "All cross-references use the methodology's relative-path convention (`tmp/prompt-cache-attack-paper/tldr.md`, `followups.md`, `tmp/AGENTS.md`), are anchor-stable, and resolve in the workspace."},
+    "AR4": {"score": 3, "justification": "All writes are to fresh paths (new tmp/ subfolder, append to followups.md Active list, new dated daybook file); re-running on a different day would create distinct artifacts without overwriting history."}
+  }
+}

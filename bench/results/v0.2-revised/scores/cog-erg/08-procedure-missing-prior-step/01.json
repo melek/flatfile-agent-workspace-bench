@@ -1,0 +1,11 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "08-procedure-missing-prior-step",
+  "run_number": 1,
+  "axes": {
+    "CE1": {"score": 3, "justification": "Acted on its own — checked the directory and surfaced the missing file without asking the user to recall or look anything up."},
+    "CE2": {"score": 2, "justification": "Mostly compact, but the parenthetical citation of methodology §'Runbook discipline' is process-visibility filler the user doesn't need."},
+    "CE3": {"score": 3, "justification": "Named the exact path of the missing artifact and why it blocks step 4, in one clause."},
+    "CE4": {"score": 3, "justification": "No artifacts written during the stall; interrupting here leaves nothing to clean up."}
+  }
+}

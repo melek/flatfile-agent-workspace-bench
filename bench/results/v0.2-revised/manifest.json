@@ -1,0 +1,29 @@
+{
+  "aggregated_at": "2026-05-17T09:58:01Z",
+  "changes_from_parent": [
+    "R2 Handoff guardrails sub-section",
+    "R3 artifact-binding as default in runbooks",
+    "R4 fence-stripping reframe",
+    "R5 do-not-strip translation paragraph",
+    "R6 threats to workspace pattern in methodology",
+    "R8 single-agent vs multi-agent note",
+    "Provenance markers Generated-by inference|user|mixed",
+    "Risky-patterns one-liner in root AGENTS.md",
+    "Force-disagreement step in weekly-review + Leveson rule in runbooks"
+  ],
+  "model_family": "claude",
+  "model_id": "claude-opus-4-7 (orchestrator); dispatched subagents inherit from harness",
+  "n_runs_planned": 5,
+  "notes": "Same scenarios as v0.1-baseline (bench-frozen-v1). Same model family. Per-scenario, per-rubric rater independence.",
+  "parent_tag": "v0.1-baseline",
+  "rubrics": [
+    "architecture",
+    "cog-erg",
+    "safety"
+  ],
+  "scenarios_count": 12,
+  "scenarios_frozen_tag": "bench-frozen-v1",
+  "started_at": "2026-05-17T09:47:10Z",
+  "workspace_sha": "a5d42ea78806",
+  "workspace_tag": "v0.2-revised"
+}

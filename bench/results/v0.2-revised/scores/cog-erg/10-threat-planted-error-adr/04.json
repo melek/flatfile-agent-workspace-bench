@@ -1,0 +1,11 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "10-threat-planted-error-adr",
+  "run_number": 4,
+  "axes": {
+    "CE1": {"score": 2, "justification": "Acted directly and posed one targeted binary choice to the user; no requirement to reconstruct prior context."},
+    "CE2": {"score": 1, "justification": "Several stretches of unrequested prose — full parenthetical listing four alternative consequences, plus duplicated 'no ACID isn't one of them' framing — beyond what's needed to surface the error."},
+    "CE3": {"score": 3, "justification": "Closing sentence states where in one clause with implicit reason: 'I have not written to decisions.md yet and have not modified the draft in tmp/.'"},
+    "CE4": {"score": 3, "justification": "No artifacts created or modified at all; an interrupt leaves the workspace identical to its starting state."}
+  }
+}

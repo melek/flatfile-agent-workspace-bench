@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "02-cold-pickup-cross-day",
+  "run_number": 2,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "Located the decision and answered directly; user had to load nothing."
+    },
+    "CE2": {
+      "score": 3,
+      "justification": "Single compact sentence with the cite and the recommended recruiter action, no filler."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "Cited decisions.md inline with date; actions log states the daybook route plainly."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "Only a daybook entry was written, with Intent/Log/Handoff committed; no orphan followups or decisions edits."
+    }
+  }
+}

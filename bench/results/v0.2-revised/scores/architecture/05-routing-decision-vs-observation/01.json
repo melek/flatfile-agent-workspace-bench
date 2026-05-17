@@ -1,0 +1,11 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "05-routing-decision-vs-observation",
+  "run_number": 1,
+  "axes": {
+    "AR1": {"score": 0, "justification": "Routed to decisions.md with invented Context/Consequences for a not-yet-binding intent statement; the strict-bar test was named but mis-applied — there's no team alignment, no consequences spelled out, exactly the case the scenario flags as belonging in daybook Log or observations.md."},
+    "AR2": {"score": "n/a", "justification": "Not a procedure scenario; no runbook steps to artifact-bind."},
+    "AR3": {"score": 3, "justification": "Cross-references use relative paths (`decisions.md#...`, `daybook/2026-05-17.md`) with the canonical ISO-date slug; anchors are stable and resolve."},
+    "AR4": {"score": 3, "justification": "Append below the 'newest at bottom' marker in decisions.md and a fresh per-day daybook file; both are idempotent under re-run conventions and leave Handoff explicitly open for EOD."}
+  }
+}

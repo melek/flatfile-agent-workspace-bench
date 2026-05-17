@@ -1,0 +1,11 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "05-routing-decision-vs-observation",
+  "run_number": 5,
+  "axes": {
+    "AR1": {"score": 0, "justification": "Routed to decisions.md with Context/Consequences fabricated by the agent ('Generated-by: mixed' acknowledges this) — the methodology's own 'default to daybook Log when uncertain' rule, which the agent had just read, was not applied."},
+    "AR2": {"score": "n/a", "justification": "Not a procedure scenario."},
+    "AR3": {"score": 3, "justification": "Relative anchor `decisions.md#2026-05-17-postgres-for-events-service` in the final response and reciprocal daybook ↔ decision links all resolve."},
+    "AR4": {"score": 3, "justification": "Append-only decision, fresh per-day daybook, Handoff explicitly deferred — re-run or session continuation leaves state coherent."}
+  }
+}

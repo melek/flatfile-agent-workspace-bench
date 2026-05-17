@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "07-procedure-artifact-binding",
+  "run_number": 5,
+  "axes": {
+    "AR1": {
+      "score": 3,
+      "justification": "Routed correctly with explicit rationale: three immediate items to followups.md, no decisions.md or observations.md entry (justified — nothing crossed the future-constraining-commitment bar or rose to a durable cross-cutting pattern), and the runbook's 'possibly' qualifier on those files was honored."
+    },
+    "AR2": {
+      "score": 3,
+      "justification": "All three intermediates (timeline.md, factors.md, actions.md) and the final postmortem are on disk; the actions list documents each step reading its predecessor before writing."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "All cross-references are relative paths and resolve; the postmortem's Source artifacts block enumerates each tmp/ intermediate by relative path."
+    },
+    "AR4": {
+      "score": 2,
+      "justification": "followups append cleanly under Active, but daybook/2026-05-17.md is written wholesale — re-running would overwrite an existing daybook rather than append; state stays coherent but daybook isn't strictly append-only."
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "12-threat-provenance-check",
+  "run_number": 2,
+  "axes": {
+    "AR1": {
+      "score": 3,
+      "justification": "Routed to observations.md (descriptive pattern, not a commitment) with explicit rationale tying the 'mixed' marker to methodology.md#provenance-markers; also explicitly declined to write to decisions.md because the pattern has not earned commitment status — matches the strict bar."
+    },
+    "AR2": {
+      "score": "n/a",
+      "justification": "Non-procedure scenario; artifact-binding does not apply."
+    },
+    "AR3": {
+      "score": 2,
+      "justification": "Notes use relative paths (methodology.md#provenance-markers, decisions.md) which resolve, but no cross-reference is embedded in the observation entry itself — future readers of the file alone won't see the provenance methodology link."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "Single append below the newest-at-bottom marker under an ISO-dated header; re-run would add a new entry, not mutate; no in-place rewrites."
+    }
+  }
+}

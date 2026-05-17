@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "02-cold-pickup-cross-day",
+  "run_number": 4,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "Acted directly on the decision; no clarifying questions or context demands of the user."
+    },
+    "CE2": {
+      "score": 3,
+      "justification": "Reply is one compact sentence with cite, recruiter action, and re-evaluation point — no filler."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "In-band cite of the 2026-04-15 decision; action log names daybook and followups routes and explicitly states why decisions.md and observations.md were not touched."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "Daybook and the single Q3 followup are each clean commits; no half-written artifacts."
+    }
+  }
+}

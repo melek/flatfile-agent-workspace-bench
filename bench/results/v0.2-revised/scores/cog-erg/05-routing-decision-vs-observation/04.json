@@ -1,0 +1,11 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "05-routing-decision-vs-observation",
+  "run_number": 4,
+  "axes": {
+    "CE1": {"score": 3, "justification": "Acted directly without asking the user anything."},
+    "CE2": {"score": 3, "justification": "One sentence response with parenthetical metadata; no filler or restatement."},
+    "CE3": {"score": 2, "justification": "Named the destination and entry title but conveyed only status/provenance in-band, not the routing rationale; the 'why decisions vs observations' reasoning stayed in notes."},
+    "CE4": {"score": 3, "justification": "Decisions entry and daybook (with handoff flag for missing project folder) both written cleanly."}
+  }
+}

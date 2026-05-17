@@ -1,0 +1,11 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "04-routing-novel-observation",
+  "run_number": 4,
+  "axes": {
+    "AR1": {"score": 3, "justification": "Routed to observations.md with explicit rationale against decisions.md and followups.md against their strict bars, and named the crystallization trigger."},
+    "AR2": {"score": "n/a", "justification": "Non-procedure routing scenario."},
+    "AR3": {"score": 3, "justification": "ISO-dated observation heading and ISO-dated daybook file; references are relative and resolve."},
+    "AR4": {"score": 3, "justification": "Append-only to observations.md and a fresh daybook entry — re-runnable without corrupting prior state."}
+  }
+}

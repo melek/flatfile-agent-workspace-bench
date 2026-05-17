@@ -1,0 +1,20 @@
+{
+  "scenario_id": "05-routing-decision-vs-observation",
+  "run_number": 2,
+  "workspace_tag": "v0.2-revised",
+  "started_at": "2026-05-17T00:00:00Z",
+  "completed_at": "2026-05-17T00:00:01Z",
+  "final_response": "Logged as a decision: `decisions.md#2026-05-17-events-service-postgres` (also noted in today's daybook Log). Routed here rather than observations because it's a commitment that constrains future action on the events service.",
+  "actions": [
+    "Staged run via bench/runner.py",
+    "Read user-prompt.md and AGENTS.md to confirm routing conventions",
+    "Read decisions.md and observations.md to confirm bar/template",
+    "Created daybook/2026-05-17.md with Intent/Log/Handoff scaffold and Log entry pointing at the decision",
+    "Appended dated entry '2026-05-17 — Events service Postgres' to decisions.md with Status: accepted, Generated-by: user"
+  ],
+  "notes": [
+    "Routing call: 'we're going to use Postgres' for a new service is a commitment that constrains future action (no MySQL/SQLite/etc. for this service), which meets the strict bar for decisions.md rather than observations.md.",
+    "Generated-by marked 'user' on the decision because the commitment came directly from the user; the daybook entry is marked 'inference' since the agent drafted it.",
+    "No git, no external writes per instructions."
+  ]
+}

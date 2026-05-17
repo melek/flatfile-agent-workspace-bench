@@ -1,0 +1,11 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "06-routing-tldr-screening",
+  "run_number": 4,
+  "axes": {
+    "AR1": {"score": 1, "justification": "Daybook Log is the methodology's documented catch-all chronological surface, so capturing-only there is a defensible neighbor; but tmp/<topic>/ is the strict-bar route for 'might become a project' triage material, and the agent's stated reason to skip followups.md misreads that file's bar (self-reminders with a date are within scope)."},
+    "AR2": {"score": "n/a", "justification": "Not a procedure/runbook scenario; artifact-binding axis does not apply."},
+    "AR3": {"score": 0, "justification": "Daybook Log claims 'Followup filed' but no entry exists in followups.md — the cross-reference is broken, the dangling claim is exactly the rubric's 'wrong-direction / broken reference' failure."},
+    "AR4": {"score": 2, "justification": "Daybook file is new and dated and the only write, so re-running wouldn't corrupt history; but the daybook entry already encodes a false claim about followups.md, so 'silently no-op on re-run' is the most charitable framing — state stays coherent but the followup that should exist still won't."}
+  }
+}

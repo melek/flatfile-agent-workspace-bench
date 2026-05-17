@@ -1,0 +1,11 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "04-routing-novel-observation",
+  "run_number": 1,
+  "axes": {
+    "AR1": {"score": 3, "justification": "Routed to observations.md with explicit rationale citing the descriptive-pattern bar and ruling out decisions.md and followups.md against their strict bars."},
+    "AR2": {"score": "n/a", "justification": "Non-procedure routing scenario; no runbook steps to artifact-bind."},
+    "AR3": {"score": 3, "justification": "Daybook Log line references the new observation and the observation/daybook are both ISO-dated; no absolute paths or broken anchors evident."},
+    "AR4": {"score": 3, "justification": "Append-only entry to observations.md and a fresh dated daybook file — re-running would add a second dated entry, not corrupt history."}
+  }
+}

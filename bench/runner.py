@@ -247,53 +247,105 @@ def cmd_aggregate(args: argparse.Namespace) -> int:
             fieldnames=["scenario_id", "run_number", "axis", "score", "justification"],
         )
 
-    # Disagreement matrix: per (scenario, axis), compute the spread of rubric
-    # means. Flag spread >= 2 as a disagreement.
+    # Per-scenario per-rubric mean (averaged across that rubric's axes for the
+    # scenario). Each rubric uses different axis names, so disagreement is
+    # measured at the scenario level — does the rubric, taken as a whole, say
+    # the runs of this scenario were strong or weak?
+    scenario_rubric_means: dict[tuple[str, str], float] = {}
+    for (scenario_id, axis_name), rubric_map in axis_scores.items():
+        for r, scores in rubric_map.items():
+            non_null = [s for s in scores if s is not None]
+            if not non_null:
+                continue
+            scenario_rubric_means.setdefault((scenario_id, r), []).append(
+                sum(non_null) / len(non_null)
+            )
+
+    # Flatten the per-axis means within (scenario, rubric) into one overall mean.
+    flattened: dict[tuple[str, str], float] = {
+        k: sum(v) / len(v) for k, v in scenario_rubric_means.items()
+    }
+
     matrix_lines = [
         "# Disagreement matrix",
         "",
         f"Workspace version: `{version}`",
         f"Generated at: {_now()}",
         "",
-        "Cell shows the mean score per rubric for a (scenario, axis) pair, "
-        "followed by the spread between the highest- and lowest-scoring "
-        "rubrics. Spread ≥ 2 is flagged as rubric tension.",
+        "Each rubric uses its own axes; comparison is at the **scenario level**. "
+        "The cell shows the per-rubric mean (averaged across that rubric's "
+        "axes, then across the N=5 runs of that scenario). The spread column "
+        "is the difference between the highest- and lowest-scoring rubric for "
+        "the scenario; spread ≥ 1.0 is flagged as rubric tension worth a closer "
+        "look. The size of the spread tells you how much the rubrics disagree "
+        "about whether the workspace handled that scenario well — disagreement "
+        "is the load-bearing output of this benchmark, not raw scores.",
         "",
-        "| Scenario | Axis | "
+        "| Scenario | "
         + " | ".join(f"{r} mean" for r in rubrics)
         + " | Spread | Tension? |",
-        "|---|---|"
+        "|---|"
         + "|".join("---" for _ in rubrics)
         + "|---|---|",
     ]
+    scenarios_sorted = sorted({k[0] for k in flattened.keys()})
     flagged = 0
-    for (scenario_id, axis_name), rubric_map in sorted(axis_scores.items()):
-        cells = []
-        means: dict[str, float] = {}
+    for scenario_id in scenarios_sorted:
+        cells: list[str] = []
+        means_here: list[float] = []
         for r in rubrics:
-            scores = [s for s in rubric_map.get(r, []) if s is not None]
-            if not scores:
+            value = flattened.get((scenario_id, r))
+            if value is None:
                 cells.append("—")
                 continue
-            mean = sum(scores) / len(scores)
-            means[r] = mean
-            cells.append(f"{mean:.2f}")
-        if len(means) >= 2:
-            spread = max(means.values()) - min(means.values())
-            tension = "yes" if spread >= 2.0 else ""
+            cells.append(f"{value:.2f}")
+            means_here.append(value)
+        if len(means_here) >= 2:
+            spread = max(means_here) - min(means_here)
+            tension = "yes" if spread >= 1.0 else ""
             if tension:
                 flagged += 1
         else:
             spread = 0.0
             tension = ""
         matrix_lines.append(
-            f"| {scenario_id} | {axis_name} | "
+            f"| {scenario_id} | "
             + " | ".join(cells)
             + f" | {spread:.2f} | {tension} |"
         )
 
     matrix_lines.append("")
-    matrix_lines.append(f"**Flagged cells (spread ≥ 2):** {flagged}")
+    matrix_lines.append(
+        f"**Flagged scenarios (rubric spread ≥ 1.0):** {flagged}"
+    )
+
+    # Per-axis detail table for the curious — useful for digging into why a
+    # scenario was flagged. Not aggregated across rubrics (axes are disjoint),
+    # just laid out side by side.
+    matrix_lines.extend(
+        [
+            "",
+            "## Per-axis means (within each rubric, across runs)",
+            "",
+            "Each rubric uses its own axis names; rows where the same scenario "
+            "appears under different rubrics are NOT directly comparable. The "
+            "table is provided as a drill-down from the scenario-level "
+            "disagreement above.",
+            "",
+            "| Scenario | Rubric | Axis | Mean | N |",
+            "|---|---|---|---|---|",
+        ]
+    )
+    for (scenario_id, axis_name), rubric_map in sorted(axis_scores.items()):
+        for r in rubrics:
+            scores = [s for s in rubric_map.get(r, []) if s is not None]
+            if not scores:
+                continue
+            matrix_lines.append(
+                f"| {scenario_id} | {r} | {axis_name} | "
+                f"{sum(scores)/len(scores):.2f} | {len(scores)} |"
+            )
+
     (sio.version_dir(version) / "disagreement-matrix.md").write_text(
         "\n".join(matrix_lines) + "\n"
     )

@@ -1,0 +1,11 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "03-cold-pickup-stale-followup",
+  "run_number": 3,
+  "axes": {
+    "CE1": {"score": 3, "justification": "Acted on the workspace directly and returned a triage with a next-step offer; no orientation demanded of the user."},
+    "CE2": {"score": 2, "justification": "Mostly compact, but the SOC2 description packs several parenthetical clauses into a single long sentence that could be trimmed."},
+    "CE3": {"score": 1, "justification": "Reply does not mention the daybook write at all; routing is only visible in the actions log."},
+    "CE4": {"score": 3, "justification": "Daybook entry created with all required sections; explicitly did not touch followups.md statuses — partial state is coherent."}
+  }
+}

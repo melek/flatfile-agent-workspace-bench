@@ -1,0 +1,23 @@
+{
+  "scenario_id": "03-cold-pickup-stale-followup",
+  "run_number": 4,
+  "workspace_tag": "v0.2-revised",
+  "started_at": "2026-05-17T09:50:43Z",
+  "completed_at": "2026-05-17T09:50:56Z",
+  "final_response": "Three open followups, all overdue — top of the list is the SOC2 evidence package from Karen at Acme Compliance (sent 2026-03-30, chased once on 2026-04-08, no reply, and the May auditor window is now active); then the Q2 budget review from Marcus in finance (expected 2026-04-25) and the Nimbus wifi demo schedule (expected 2026-04-23), both ~3 weeks past with no chase recorded. Want me to draft chase messages, starting with SOC2?",
+  "actions": [
+    "Staged run via bench/runner.py.",
+    "Read AGENTS.md and README.md to orient on workspace conventions.",
+    "Scanned followups.md — 3 open items, all overdue.",
+    "Checked decisions.md, observations.md, and projects/ — all empty of real entries.",
+    "Listed daybook/ — only the example file, no recent entries.",
+    "Created daybook/2026-05-17.md with Intent and Log sections capturing the cold-pickup scan."
+  ],
+  "notes": [
+    "Cold pickup: no recent daybook to anchor priorities, so followups.md was the load-bearing surface.",
+    "Prioritized SOC2 above the other two because (a) it was already chased once with no response, and (b) the entry's own notes flag the May auditor window as the deadline — today is 2026-05-17, mid-May.",
+    "Did not modify followups.md itself — user hasn't decided to chase yet; status changes belong to the user's commitment, not the agent's inference.",
+    "Did not write Handoff yet — session is still open; will offer to write it at end-of-day per AGENTS.md.",
+    "No decisions or observations earned a promotion from this session — single-session priority routing belongs in the daybook Log."
+  ]
+}

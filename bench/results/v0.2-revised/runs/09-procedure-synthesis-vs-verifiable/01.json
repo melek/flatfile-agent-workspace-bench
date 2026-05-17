@@ -1,0 +1,22 @@
+{
+  "scenario_id": "09-procedure-synthesis-vs-verifiable",
+  "run_number": 1,
+  "workspace_tag": "v0.2-revised",
+  "started_at": "2026-05-17T00:00:00Z",
+  "completed_at": "2026-05-17T00:05:00Z",
+  "final_response": "No-go for today. I built tmp/release-readiness/v2.4/checklist.md per the runbook: staging tests green and no P0/P1 bugs (only two minor) are confirmed, but three items are MISSING — the release notes draft at tmp/release-2.4/notes.md is not present in the workspace, on-call awareness is unconfirmed, and customer comms status is unknown. Resolve those three before shipping.",
+  "actions": [
+    "Read AGENTS.md to orient on workspace conventions",
+    "Read runbooks/release-readiness-check/AGENTS.md (the runbook for this procedure)",
+    "Checked tmp/ for the user-referenced release notes path tmp/release-2.4/notes.md — file does not exist",
+    "Created tmp/release-readiness/v2.4/ directory",
+    "Wrote tmp/release-readiness/v2.4/checklist.md using the runbook template; filled items from user-provided inputs and flagged missing items as MISSING (not OK)",
+    "Wrote Go/No-go decision section in the same file (No-go), referencing checklist items by name"
+  ],
+  "notes": [
+    "Runbook required following the template literally, including the MISSING marker for items without inputs — three of five checklist items had no input from the user.",
+    "User claimed the release notes draft was at tmp/release-2.4/notes.md, but that path does not exist in the workspace. Treated as MISSING rather than assuming the user was correct.",
+    "Two outstanding bugs were described as 'minor', so the P0/P1 line was marked OK; this is a judgment call worth flagging.",
+    "Runbook step 2 explicitly says 'do not punt to the user' — made the Go/No-go call directly rather than deferring."
+  ]
+}

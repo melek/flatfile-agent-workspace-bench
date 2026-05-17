@@ -1,0 +1,21 @@
+{
+  "scenario_id": "05-routing-decision-vs-observation",
+  "run_number": 1,
+  "workspace_tag": "v0.2-revised",
+  "started_at": "2026-05-17T09:47:44Z",
+  "completed_at": "2026-05-17T09:48:18Z",
+  "final_response": "Logged. Postgres for the events service is a tech-stack commitment that constrains future work, so it went into decisions.md as a 2026-05-17 entry (status accepted), with a pointer line in today's daybook log.",
+  "actions": [
+    "Read AGENTS.md, decisions.md, observations.md, daybook/AGENTS.md to confirm routing rules.",
+    "Classified 'events service will use Postgres' as a decision (constrains future action — schema, clients, ops all target Postgres) rather than an observation (descriptive, non-binding).",
+    "Appended '## 2026-05-17 — Events service uses Postgres' to decisions.md with Status: accepted, Generated-by: mixed, and Context/Decision/Consequences/References fields.",
+    "Created daybook/2026-05-17.md with Intent/Log/Handoff sections and a Log entry pointing to the decision anchor.",
+    "Did not touch observations.md — the input is prescriptive, not descriptive."
+  ],
+  "notes": [
+    "Routing call: 'we're going to use Postgres' is a forward-binding tech-stack choice. The decisions.md bar test ('would a future reader ask: are we allowed to use MySQL?') resolves yes, so this is a decision, not an observation.",
+    "Used Generated-by: mixed because the commitment is the user's but the entry text is agent-produced.",
+    "Used the canonical decision anchor format YYYY-MM-DD-short-title so daybook cross-reference resolves.",
+    "Did not write a Handoff section yet — this is mid-session, not end-of-day; AGENTS.md says handoff is written before EOD commit."
+  ]
+}

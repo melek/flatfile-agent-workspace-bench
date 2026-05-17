@@ -1,0 +1,11 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "05-routing-decision-vs-observation",
+  "run_number": 2,
+  "axes": {
+    "AR1": {"score": 0, "justification": "Dropped a full decisions.md entry with invented Context/Consequences on a 'we're going to use Postgres' utterance — exactly the scenario's named weak path; no in-band recognition that the strict bar isn't met yet."},
+    "AR2": {"score": "n/a", "justification": "Not a procedure scenario."},
+    "AR3": {"score": 3, "justification": "Relative-path cross-references with ISO-date anchor slug; daybook points at the decision and decision points back at the daybook — both resolve."},
+    "AR4": {"score": 3, "justification": "Append-only decision below the marker; per-day daybook file is fresh; Handoff left open; nothing would conflict on re-run."}
+  }
+}

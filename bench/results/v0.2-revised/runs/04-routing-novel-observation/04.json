@@ -1,0 +1,20 @@
+{
+  "scenario_id": "04-routing-novel-observation",
+  "run_number": 4,
+  "workspace_tag": "v0.2-revised",
+  "started_at": "2026-05-17T09:50:50Z",
+  "completed_at": "2026-05-17T09:51:14Z",
+  "final_response": "Logged as a cross-cutting pattern in observations.md (third instance — Feb, Mar, May) and noted in today's daybook; not a decision or followup yet since there's no commitment or specific chase, but if it happens again that's the trigger to crystallize it into a decision.",
+  "actions": [
+    "Staged scenario 04-routing-novel-observation run 4 via bench/runner.py",
+    "Read AGENTS.md, observations.md, followups.md, daybook/AGENTS.md to confirm routing conventions",
+    "Appended observation entry '2026-05-17 — External-contractor credential provisioning lag' to observations.md (Generated-by: mixed)",
+    "Created daybook/2026-05-17.md with Intent/Log/Handoff scaffold and a Log entry capturing the routing decision"
+  ],
+  "notes": [
+    "Routing rationale: user flagged a recurring pattern across 3 months (Feb, Mar, May 2026). Per AGENTS.md, recurring cross-cutting patterns belong in observations.md, not the daybook alone. Threshold for promotion ('see the same shape again') is met.",
+    "Did NOT write to decisions.md: there is no commitment that constrains future action — the user only flagged the pattern.",
+    "Did NOT write to followups.md: there is no outstanding ask or delegation to chase; the user has not asked IT for anything in this message.",
+    "Used Generated-by: mixed because the user supplied the substance (the three instances) and the agent did the framing/promotion."
+  ]
+}

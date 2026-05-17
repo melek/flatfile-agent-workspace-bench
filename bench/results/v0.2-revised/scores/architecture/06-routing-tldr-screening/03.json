@@ -1,0 +1,11 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "06-routing-tldr-screening",
+  "run_number": 3,
+  "axes": {
+    "AR1": {"score": 1, "justification": "Same misrouting to resources/ as run 02 — the scenario explicitly names dropping an AI-summary-without-source in resources/ as the weak response; the per-folder AGENTS.md and explicit 'why resources/ not tmp/' rationale make it defensible-neighbor rather than correct, since the user wanting to keep it does not convert second-hand summary into durable reference."},
+    "AR2": {"score": "n/a", "justification": "Not a procedure/runbook scenario; artifact-binding axis does not apply."},
+    "AR3": {"score": 3, "justification": "All cross-refs use relative paths (`resources/prompt-cache-attacks/tldr.md`, `followups.md`, `tmp/AGENTS.md`), are stable, and resolve."},
+    "AR4": {"score": 3, "justification": "New folder + AGENTS.md, append to followups.md, fresh daybook — fully append-only / new-path; nothing would conflict on re-run."}
+  }
+}

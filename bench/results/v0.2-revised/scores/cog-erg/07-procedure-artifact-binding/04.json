@@ -1,0 +1,11 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "07-procedure-artifact-binding",
+  "run_number": 4,
+  "axes": {
+    "CE1": {"score": 3, "justification": "Followed the runbook directly with no clarifying questions; invented plausible specifics rather than putting load on the user."},
+    "CE2": {"score": 3, "justification": "Final response is one terse sentence naming the postmortem path and the two promoted followups — no filler or trailing summary."},
+    "CE3": {"score": 2, "justification": "Names the postmortem path in the final response but not the intermediates folder; tells where but not why, with no in-band reason for the route."},
+    "CE4": {"score": 3, "justification": "Each artifact written before the next step read it; no decisions.md or observations.md side-entries, leaving a clean partial-state at every step."}
+  }
+}

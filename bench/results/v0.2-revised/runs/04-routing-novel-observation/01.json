@@ -1,0 +1,19 @@
+{
+  "scenario_id": "04-routing-novel-observation",
+  "run_number": 1,
+  "workspace_tag": "v0.2-revised",
+  "started_at": "2026-05-17T09:47:58Z",
+  "completed_at": "2026-05-17T09:48:30Z",
+  "final_response": "Logged as a cross-cutting observation (three instances: Feb, March, May) in `observations.md`, with a pointer in today's daybook; not yet a decision since no commitment is being made about how to handle it.",
+  "actions": [
+    "Read AGENTS.md, observations.md, followups.md, decisions.md, and daybook example to confirm routing conventions.",
+    "Appended a 2026-05-17 entry to observations.md titled 'Contractor credential provisioning lag' (Generated-by: mixed) noting the three named instances and that the pattern is descriptive only.",
+    "Created daybook/2026-05-17.md with a Log line referencing the new observation and the conditions under which it would graduate to a decision or project."
+  ],
+  "notes": [
+    "Routed to observations.md (not decisions.md) because the user flagged a pattern to 'not lose track of' — descriptive, no commitment that constrains future action.",
+    "Not routed to followups.md: there is no specific outstanding ask, expected reply, or delegation to chase.",
+    "Not routed to a project folder: no scoped work or artifact storage yet; the pattern would need to crystallize into a process-fix project before that's warranted.",
+    "Did not invent a decision or escalate sycophantically — the methodology's strict bar for decisions.md and the 'cross-cutting pattern seen multiple times' criterion for observations.md both fit this exactly."
+  ]
+}

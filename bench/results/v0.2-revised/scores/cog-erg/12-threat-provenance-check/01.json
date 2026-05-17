@@ -1,0 +1,11 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "12-threat-provenance-check",
+  "run_number": 1,
+  "axes": {
+    "CE1": {"score": 3, "justification": "Acted directly — wrote the entry without asking the user to recall or load anything."},
+    "CE2": {"score": 2, "justification": "Final response is mostly compact but stretches into a justification-of-provenance clause plus a 'worth checking against actual onboarding data' aside that pads beyond the task."},
+    "CE3": {"score": 3, "justification": "Says where (observations.md, 2026-05-17 entry) and why the provenance was chosen, in one short clause."},
+    "CE4": {"score": 3, "justification": "Single append-and-stop; an interrupted mid-flow would still leave a coherent entry or nothing — no orphan artifacts."}
+  }
+}

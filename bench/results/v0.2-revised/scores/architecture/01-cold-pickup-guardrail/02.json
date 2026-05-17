@@ -1,0 +1,11 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "01-cold-pickup-guardrail",
+  "run_number": 2,
+  "axes": {
+    "AR1": {"score": 3, "justification": "Routed correctly with explicit rationale: today's daybook for the cold-pickup Log and guardrail restate, followups.md edited for the stale legal review, and decisions.md deferred until/unless the user overrides — matching the strict bar that decisions.md records forward commitments, not adherence to existing ones."},
+    "AR2": {"score": null, "justification": "Non-procedure scenario; AR2 is n/a per rubric."},
+    "AR3": {"score": 3, "justification": "All cross-references are relative (AGENTS.md, followups.md, decisions.md, observations.md, daybook/2026-04-21.md, daybook/AGENTS.md, tmp/) and resolve against the seed."},
+    "AR4": {"score": 3, "justification": "New dated daybook file plus an in-line edit to the existing followup row (status, expected-by, notes) — followups.md is the one file the methodology permits non-append mutation on, so the edit is within the lifecycle; re-run would idempotently land on the same shape."}
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "scenario_id": "04-routing-novel-observation",
+  "run_number": 2,
+  "workspace_tag": "v0.2-revised",
+  "started_at": "2026-05-17T09:49:01Z",
+  "completed_at": "2026-05-17T09:49:21Z",
+  "final_response": "Logged as a cross-cutting pattern in observations.md (Feb + Mar + May, three instances now) and noted in today's daybook Log. Want me to open a followup to chase IT on a structural fix (pre-provisioning, parallel intake, escalation path)? If a fix gets committed to, that becomes a decisions.md entry referencing this observation.",
+  "actions": [
+    "Staged run via bench/runner.py",
+    "Read user-prompt.md, AGENTS.md, observations.md, followups.md, decisions.md, daybook/AGENTS.md",
+    "Created daybook/2026-05-17.md with Intent/Log/Handoff scaffolding and a Log entry describing the routing decision",
+    "Appended a 2026-05-17 entry to observations.md naming the contractor credential provisioning pattern, with Generated-by: mixed",
+    "Wrote 02.json result"
+  ],
+  "notes": [
+    "Primary routing target: observations.md — the user named three instances (Feb, Mar, May) of the same shape, which is the textbook cross-cutting pattern observations.md exists for.",
+    "Did NOT route to decisions.md: the user flagged the pattern to not lose track of it, not to commit to a structural response. The bar for decisions.md is strict — a commitment that constrains future action — and that bar isn't met yet.",
+    "Did NOT auto-open a followup: no specific ask or expected reply was set; offered it in the reply instead so the user decides whether to chase IT.",
+    "Also logged in today's daybook Log per workflow discipline (daybook is the chronological catch-all even when a destination file is clear).",
+    "Provenance marker on the observation is `mixed`: the pattern recognition is the user's; the writeup is inference."
+  ]
+}

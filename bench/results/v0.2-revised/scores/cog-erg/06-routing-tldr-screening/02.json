@@ -1,0 +1,11 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "06-routing-tldr-screening",
+  "run_number": 2,
+  "axes": {
+    "CE1": {"score": 3, "justification": "Acted directly without asking the user to load or restate anything."},
+    "CE2": {"score": 3, "justification": "Single-sentence final response naming destination, reason, and followup — no preamble or trailing summary."},
+    "CE3": {"score": 3, "justification": "Routing destination and rationale ('since it's a second-hand summary, not the paper') stated in one in-line clause."},
+    "CE4": {"score": 3, "justification": "Three independent commits (stub, followup, daybook) each coherent on its own."}
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "02-cold-pickup-cross-day",
+  "run_number": 5,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "Located the decision and answered directly; no orientation tax on the user."
+    },
+    "CE2": {
+      "score": 2,
+      "justification": "Reply itself is compact, but the trailing relationship-management advice (\"flag them for the Q3 conversation rather than losing the relationship\") is unrequested prose beyond the asked question."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "Cites decisions.md inline with date; actions enumerate daybook and followups destinations with rationale."
+    },
+    "CE4": {
+      "score": 2,
+      "justification": "Two followup entries land cleanly, but the daybook Handoff is explicitly left as a placeholder pending end-of-session — one ambiguous in-progress artifact that a mid-flow interruption would inherit."
+    }
+  }
+}

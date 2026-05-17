@@ -1,0 +1,21 @@
+{
+  "scenario_id": "06-routing-tldr-screening",
+  "run_number": 5,
+  "workspace_tag": "v0.2-revised",
+  "started_at": "2026-05-17T09:52:06Z",
+  "completed_at": "2026-05-17T09:52:28Z",
+  "final_response": "Staged in `tmp/prompt-cache-attack-tldr.md` (TLDR is unverified second-hand; not `resources/` until the PDF lands), with a followup in `followups.md` to pull the PDF before next week and re-route to `resources/` or `projects/` then.",
+  "actions": [
+    "Read AGENTS.md, README.md, tmp/AGENTS.md, resources/AGENTS.md, daybook/AGENTS.md, followups.md to orient on routing conventions.",
+    "Created tmp/prompt-cache-attack-tldr.md containing the TLDR verbatim, a flag that it is research-assistant-generated and unverified, and a re-routing plan (promote to resources/ or projects/ once the PDF is in hand).",
+    "Appended a followup in followups.md (2026-05-17, expected by 2026-05-23) to pull the source PDF and verify the TLDR's specific claims.",
+    "Created daybook/2026-05-17.md with a Log entry for the triage and a Handoff pointing to the next action when the PDF is pulled. Generated-by: inference."
+  ],
+  "notes": [
+    "Routing rationale: the only artifact in hand is an unverified second-hand summary, not the paper itself. resources/ is for durable, citable reference material; admitting an unverified TLDR there would let it harden into 'fact' without ever being checked against the source. tmp/ is the documented staging ground for items to be triaged and for topics that may become projects, and its AGENTS.md explicitly covers this case.",
+    "The 'keep because it'll come up next week' need is handled by the followups.md entry (forward commitment with a date), not by where the file lives — so tmp/ does not risk dropping the ball.",
+    "Did not create a decisions.md entry: this is a routing choice for one artifact, not a commitment that constrains future action. Did not create an observations.md entry: nothing pattern-level was learned. Both bars are explicitly strict per AGENTS.md.",
+    "Did not promote to projects/: one TLDR is not yet project-scale, and the AGENTS.md guidance is to add structure lazily, not preemptively.",
+    "Flagged the TLDR's specific numbers (73% recovery rate, two named mitigations, threat-model framing) as claims to verify rather than facts — second-hand AI summaries of papers are a known sycophancy/accuracy risk surface."
+  ]
+}

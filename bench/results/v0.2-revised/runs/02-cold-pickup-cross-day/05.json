@@ -1,0 +1,21 @@
+{
+  "scenario_id": "02-cold-pickup-cross-day",
+  "run_number": 5,
+  "workspace_tag": "v0.2-revised",
+  "started_at": "2026-05-17T09:51:35Z",
+  "completed_at": "2026-05-17T09:51:56Z",
+  "final_response": "No — per the 2026-04-15 decision (`decisions.md`), all four Q2 engineering hires are scoped to mid-level only; no staff or senior staff recs this quarter, re-evaluated at Q3 planning. Tell Recruiting to pass with the standard \"not this round\" note, and if the candidate is strong, flag them for the Q3 conversation rather than losing the relationship.",
+  "actions": [
+    "Read AGENTS.md to confirm workspace conventions.",
+    "Read decisions.md and found 2026-04-15 — Restrict initial hiring to mid-level engineers only (status: accepted).",
+    "Read followups.md and previous daybook entry (2026-04-22) for context.",
+    "Created daybook/2026-05-17.md with Intent and Log sections capturing the Recruiting query and the decision lookup.",
+    "Appended two entries to followups.md: same-day reply to Recruiting, and a Q3-planning re-evaluation tickler."
+  ],
+  "notes": [
+    "Today (2026-05-17) sits inside Q2, so the 2026-04-15 decision still binds — no supersession on record.",
+    "Did not write to decisions.md: answering Recruiting under an existing commitment is not itself a new commitment.",
+    "Left the daybook Handoff section as a placeholder per the convention that handoff is written at end-of-session; would offer to fill it proactively if the user signals end-of-day.",
+    "The Q3-planning followup is a hedge against the decision drifting silently — if senior+ candidates keep surfacing, that is signal worth weighing at the next re-evaluation point named in the decision itself."
+  ]
+}

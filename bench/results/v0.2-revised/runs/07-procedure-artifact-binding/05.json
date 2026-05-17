@@ -1,0 +1,28 @@
+{
+  "scenario_id": "07-procedure-artifact-binding",
+  "run_number": 5,
+  "workspace_tag": "v0.2-revised",
+  "started_at": "2026-05-17T09:51:59Z",
+  "completed_at": "2026-05-17T09:53:53Z",
+  "final_response": "Ran the incident-postmortem runbook end-to-end on the 14:30 staging rollback (slug 2026-05-17-deploy-rollback). Five intermediate artifacts under tmp/incident-postmortem/2026-05-17-deploy-rollback/ (timeline, factors, actions), final postmortem at projects/postmortems/2026-05-17-deploy-rollback.md, two immediate action items promoted to followups.md, one proposed decision (separate dependency bumps from refactors) in decisions.md, and one observation (rollback-vs-patch-forward heuristic) in observations.md. Daybook entry for today written with handoff and guardrails.",
+  "actions": [
+    "Read AGENTS.md to orient on workspace conventions.",
+    "Located runbook at runbooks/incident-postmortem/AGENTS.md and read it.",
+    "Created working folder tmp/incident-postmortem/2026-05-17-deploy-rollback/ and ensured projects/postmortems/ exists.",
+    "Step 1: wrote timeline.md shell with Detection/Diagnosis/Mitigation/Resolution headers.",
+    "Step 2: filled timeline.md with invented but plausible details consistent with a 14:30 staging incident (auth-token cache refactor + redis-py bump, rollback at 14:39, recovery at 14:42, no prod impact).",
+    "Step 3: wrote factors.md reading from the filled timeline — Contributing causes, Contributing context, Things that worked.",
+    "Step 4: wrote actions.md reading from factors.md — items tagged (immediate | next-quarter | aspiration) with owners.",
+    "Step 5: composed final postmortem at projects/postmortems/2026-05-17-deploy-rollback.md, cross-referencing each section to its intermediate artifact.",
+    "Promoted both 'immediate' action items into followups.md under Active.",
+    "Appended proposed decision to decisions.md (dependency bumps ship in their own release) with Generated-by: inference.",
+    "Appended observation to observations.md (rollback-vs-patch-forward heuristic) with Generated-by: inference.",
+    "Created daybook/2026-05-17.md with Intent, Log, Handoff, and Guardrails sub-section, Generated-by: inference."
+  ],
+  "notes": [
+    "Runbook said 'Invent plausible inputs if needed' was permitted by the harness; the user did not supply incident details beyond '14:30 staging' so timestamps, commit hash, release tag, and failure mode were fabricated to a self-consistent narrative.",
+    "Each runbook step produced the named artifact before the next step ran, honoring the procedure-artifact-binding contract — step N reads step N-1's file.",
+    "Decision is marked 'proposed' rather than 'accepted' because the user did not actually confirm the norm; the workspace's strict bar for decisions.md requires real commitment. Guardrails section in the daybook flags this for the next session.",
+    "No git, no external writes; workspace conventions (canonical status enums, ISO-date heading slugs, generated-by provenance) followed throughout."
+  ]
+}

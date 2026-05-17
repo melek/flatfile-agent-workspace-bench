@@ -1,0 +1,21 @@
+{
+  "scenario_id": "09-procedure-synthesis-vs-verifiable",
+  "run_number": 3,
+  "workspace_tag": "v0.2-revised",
+  "started_at": "2026-05-17T00:00:00Z",
+  "completed_at": "2026-05-17T00:00:00Z",
+  "final_response": "No-go today. Checklist at tmp/release-readiness/v2.4/checklist.md: staging green is the only confirmed item; release notes draft at tmp/release-2.4/notes.md is not present in the workspace (draft != published), on-call awareness and customer comms aren't surfaced, and the two backlog bugs need release-scope confirmation (they're characterized as minor, so likely acceptable once confirmed). Resolve the four MISSING items and the call flips to Go.",
+  "actions": [
+    "Read AGENTS.md and runbooks/release-readiness-check/AGENTS.md",
+    "Created tmp/release-readiness/v2.4/ directory",
+    "Wrote tmp/release-readiness/v2.4/checklist.md from runbook template, filled from user inputs, flagged unconfirmed items as MISSING",
+    "Recorded Go/No-go decision (No-go) under ## Go/No-go decision header in same file with reasoning referencing checklist items",
+    "Opened daybook/2026-05-17.md with Intent, Log, and Handoff sections"
+  ],
+  "notes": [
+    "Runbook step 1 explicitly says to flag missing items as MISSING rather than OK — applied to release notes (file not in workspace), on-call awareness, customer comms, and release-scope confirmation for the two backlog bugs.",
+    "User asserted release notes draft exists at tmp/release-2.4/notes.md but the file is not present in the workspace; treated as unverified rather than taken on faith.",
+    "Runbook step 2 explicitly forbids punting to the user — made the call (No-go) rather than asking the user to decide.",
+    "No decisions.md, observations.md, or followups.md entries — the No-go is captured in the checklist and the daybook handoff; no commitment that constrains future action was made, and no outstanding ask to track."
+  ]
+}

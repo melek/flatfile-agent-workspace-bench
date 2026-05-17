@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "07-procedure-artifact-binding",
+  "run_number": 5,
+  "axes": {
+    "AR1": {
+      "score": 1,
+      "justification": "Followups routing is clean and the 'proposed' decision is defensible (concrete consequences, scoped commitment). But the observation explicitly flags itself as a single-incident heuristic 'worth watching to see if it generalizes' — that is the exact case the observations.md header says belongs in today's daybook Log first, with promotion later if the pattern earns it. The agent's own framing contradicts the strict bar it routed against, landing the entry in a defensible neighbor (observations.md vs. daybook Log) rather than the right file."
+    },
+    "AR2": {
+      "score": 3,
+      "justification": "timeline.md (shell then fill), factors.md, and actions.md all produced under tmp/incident-postmortem/2026-05-17-deploy-rollback/ in step order; the final postmortem composed last drawing from each intermediate."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "Cross-references in the postmortem use relative backticked paths to the three intermediates and the followups list cites projects/postmortems/2026-05-17-deploy-rollback.md; ISO dates throughout, no absolute or wiki-style links, all paths resolve."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "decisions.md, observations.md, and followups.md entries are appended at the bottom of their respective sections; daybook is a new dated file; the 'proposed' Status would be flipped in-place per the superseding rule on team confirmation — nothing would conflict on a forward-compatible re-run."
+    }
+  }
+}

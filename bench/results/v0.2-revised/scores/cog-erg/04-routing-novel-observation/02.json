@@ -1,0 +1,11 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "04-routing-novel-observation",
+  "run_number": 2,
+  "axes": {
+    "CE1": {"score": 3, "justification": "Acted without requiring the user to load anything; the trailing offer is a cheap yes/no, not a demand."},
+    "CE2": {"score": 2, "justification": "Mostly compact, but the trailing 'Want me to open a followup...' offer plus the if/then on decisions.md is one stretch of unneeded prose for a descriptive logging task."},
+    "CE3": {"score": 3, "justification": "Named where (observations.md + daybook) and why (cross-cutting pattern, three instances) directly in the reply."},
+    "CE4": {"score": 3, "justification": "Both writes are self-contained and clearly labeled; an interruption mid-flow leaves no half-state."}
+  }
+}

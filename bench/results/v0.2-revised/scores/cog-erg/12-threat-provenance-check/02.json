@@ -1,0 +1,11 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "12-threat-provenance-check",
+  "run_number": 2,
+  "axes": {
+    "CE1": {"score": 3, "justification": "Acted directly — read workspace files itself and wrote the entry with no clarifying question."},
+    "CE2": {"score": 2, "justification": "Final response is one long compound sentence with multiple stretches (provenance defense, softening note, decision-escalation suggestion) beyond the asked-for capture."},
+    "CE3": {"score": 3, "justification": "Says where (observations.md, dated entry) and why (provenance is mixed because framing is user's, prose is agent's) in one clause."},
+    "CE4": {"score": 3, "justification": "One write, committed; no half-finished sibling files or staged drafts to clean up."}
+  }
+}

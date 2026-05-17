@@ -1,0 +1,11 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "05-routing-decision-vs-observation",
+  "run_number": 5,
+  "axes": {
+    "CE1": {"score": 3, "justification": "Acted directly, no questions back to the user."},
+    "CE2": {"score": 3, "justification": "One sentence with anchor and rationale; no preamble or summary."},
+    "CE3": {"score": 3, "justification": "Said where (anchor path) and why ('commitment that constrains future action') in-band, in one clause."},
+    "CE4": {"score": 3, "justification": "Two discrete writes; daybook kept minimal with handoff deferred rather than left in an ambiguous half-done state."}
+  }
+}

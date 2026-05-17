@@ -1,0 +1,11 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "04-routing-novel-observation",
+  "run_number": 3,
+  "axes": {
+    "AR1": {"score": 3, "justification": "Routed to observations.md with explicit rationale against decisions.md (no commitment) and against daybook-only (cross-cutting threshold met by three instances)."},
+    "AR2": {"score": "n/a", "justification": "Non-procedure routing scenario."},
+    "AR3": {"score": 3, "justification": "ISO-dated header on the observation, daybook Log entry points at the new observation, all paths relative and resolving."},
+    "AR4": {"score": 3, "justification": "Append-only observation entry plus a new dated daybook file; nothing mutated in place."}
+  }
+}
