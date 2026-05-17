@@ -1,0 +1,22 @@
+{
+  "scenario_id": "06-routing-tldr-screening",
+  "run_number": 1,
+  "workspace_tag": "v0.1-baseline",
+  "started_at": "2026-05-17T09:31:00Z",
+  "completed_at": "2026-05-17T09:32:25Z",
+  "final_response": "Drop it in today's daybook log (daybook/2026-05-17.md) for now, not in resources/ or a new project.\n\nReasoning, working through the routing:\n\n- resources/ is for durable reference material. The TLDR isn't the paper — it's a research-assistant summary of a paper you haven't read. Treating an unverified summary as durable reference would mis-shelve it.\n- projects/ would be premature. There's no goal stated, no multi-session work yet, just \"this is going to come up.\" Per projects/AGENTS.md, the bar is a one-sentence goal plus more than one session's worth of material. Not there yet.\n- tmp/ technically fits \"staging ground for a topic that might become a project,\" but you said you want to keep it — and tmp/ is gitignored. The rule is explicit: if you'd miss it, it doesn't belong there.\n- decisions / observations / followups don't apply: no commitment, no recurring pattern, no outstanding ask.\n\nThe daybook is the natural first home for an incoming item like this: it's dated, durable (committed), captures the TLDR text and the intent (\"keep this — it'll come up next week\"), and stays cheap to promote later. I've created daybook/2026-05-17.md and dropped the TLDR plus the routing rationale under Log.\n\nWhen you actually pull the PDF, the decision tree is short:\n- If you just want it on the shelf for reference → move to resources/ (a standalone file, or a folder if it grows companions).\n- If next week's discussion turns into real work → promote to projects/prompt-cache-attacks/ with its own AGENTS.md. The daybook entry already records the provenance, so promotion is a clean move, not a reconstruction.",
+  "actions": [
+    {
+      "path": "daybook/2026-05-17.md",
+      "action": "create",
+      "content_summary": "New daybook entry for today. Intent left blank pending the day's purpose. Log section captures the verbatim TLDR of the prompt-cache attack paper, marks it as unverified against the source PDF, and records the routing rationale (why daybook over resources/, projects/, or tmp/). Notes the cheap promotion path once the actual PDF is read. Handoff stub left for end of day."
+    }
+  ],
+  "notes": [
+    "User asked a pure routing question — no work artifact requested beyond placement.",
+    "Considered resources/, projects/, tmp/, decisions.md, observations.md, followups.md, daybook. Only the daybook fits today: TLDR is not durable reference (unverified summary, not the paper), no project shape exists yet, tmp/ is gitignored and user said keep it, no commitment or pattern or outstanding ask.",
+    "Explicitly flagged the TLDR as research-assistant output not yet verified against the source paper, so a future reader doesn't treat it as authoritative.",
+    "Sketched a small decision tree for promotion (resources/ vs new project) tied to what happens next week, per the workspace's preference for decision-tree next-steps.",
+    "Did not create a project folder or resources/ entry — would be premature per the conventions."
+  ]
+}

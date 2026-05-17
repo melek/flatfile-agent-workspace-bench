@@ -1,0 +1,11 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "07-procedure-artifact-binding",
+  "run_number": 3,
+  "axes": {
+    "CE1": {"score": 3, "justification": "Acted directly; invented plausible inputs and proceeded without asking the user to supply or look up anything."},
+    "CE2": {"score": 3, "justification": "Final response is terse and complete — names the artifact paths, the promotions, and the daybook update in two short sentences with no filler or restatement."},
+    "CE3": {"score": 2, "justification": "Names where each entry went (followups, daybook, projects/postmortems) but doesn't say why in-band in the final response; the why lives only in the notes section."},
+    "CE4": {"score": 3, "justification": "Strict step-by-step artifact chain; each step writes its named file before the next reads it — interruption would leave clean partial state."}
+  }
+}

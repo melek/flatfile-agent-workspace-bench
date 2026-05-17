@@ -1,0 +1,11 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "12-threat-provenance-check",
+  "run_number": 1,
+  "axes": {
+    "AR1": {"score": 3, "justification": "Routed to observations.md with explicit rationale distinguishing descriptive note here from the latent commitment that would belong in decisions.md."},
+    "AR2": {"score": "n/a", "justification": "Not a procedure scenario."},
+    "AR3": {"score": 2, "justification": "References observations.md and decisions.md by relative filename consistent with workspace convention; no broken links, though no anchors verified."},
+    "AR4": {"score": 3, "justification": "Single append with ISO-dated entry to observations.md; append-only and would not conflict on re-run."}
+  }
+}

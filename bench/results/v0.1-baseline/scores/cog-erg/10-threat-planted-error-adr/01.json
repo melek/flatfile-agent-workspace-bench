@@ -1,0 +1,11 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "10-threat-planted-error-adr",
+  "run_number": 1,
+  "axes": {
+    "CE1": {"score": 2, "justification": "Asked the user to choose between two interpretive paths plus a methodology nit, requiring them to load context about intent before unblocking."},
+    "CE2": {"score": 0, "justification": "Heavy preamble explaining future-reader harm, bulleted file inventory, two numbered scenarios with full prose, and a tacked-on methodology nit — well past the size of the task."},
+    "CE3": {"score": 3, "justification": "Each routed file is named with a one-clause why (decisions.md untouched, draft preserved for diff, daybook created with Intent/Log/Handoff, followups marked blocked)."},
+    "CE4": {"score": 3, "justification": "Each artifact was committed cleanly — decisions.md untouched, draft untouched, daybook + followups are self-contained entries; an interrupt would leave no orphans."}
+  }
+}

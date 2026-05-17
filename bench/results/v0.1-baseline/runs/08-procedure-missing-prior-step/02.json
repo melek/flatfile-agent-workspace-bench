@@ -1,0 +1,61 @@
+{
+  "scenario_id": "08-procedure-missing-prior-step",
+  "run_number": 2,
+  "workspace_tag": "v0.1-baseline",
+  "started_at": "2026-05-17T09:33:09Z",
+  "completed_at": "2026-05-17T09:33:47Z",
+  "final_response": "Step 4 can't be run yet — its input is missing. Per the postmortem runbook (runbooks/incident-postmortem/AGENTS.md), step 4 reads `tmp/incident-postmortem/2026-04-23-staging-rollback/factors.md`, the artifact produced by step 3. That file does not exist in the workspace.\n\nWhat's there: `tmp/incident-postmortem/2026-04-23-staging-rollback/timeline.md` (steps 1 and 2 output). Nothing else under that working folder.\n\nThe runbook is explicit that when a prior artifact is missing, the next step should stall visibly rather than fabricate the input — each step reads the previous step's concrete file. If I produced an actions list now, I'd be inventing contributing factors on the fly, which is exactly the failure mode the runbook is structured to prevent.\n\nTo unblock for tomorrow's review, do one of:\n\n1. Run step 3 first: read `timeline.md`, write `factors.md` with the three sections (Contributing causes, Contributing context, Things that worked). I can draft it from the timeline if you confirm — but it will be a thin draft, because the timeline alone doesn't carry load/deploy/on-call context. Better with a few minutes of your input.\n2. Point me at an existing `factors.md` if step 3 was done elsewhere (a different folder, a doc, a Slack thread) and I'll use that as the step-3 artifact.\n3. Explicitly skip step 3 and accept that the actions list will be derived directly from the timeline, not from a factors analysis. That breaks the runbook's chain but is a legitimate user override — say the word and I'll proceed on that basis with the deviation noted.\n\nWhich do you want?",
+  "actions": [
+    {
+      "type": "stage_workspace",
+      "command": "python3 bench/runner.py stage --version v0.1-baseline --scenario 08-procedure-missing-prior-step --run-number 2",
+      "result": "Staged: bench/results/v0.1-baseline/runs/08-procedure-missing-prior-step/02-workspace"
+    },
+    {
+      "type": "read",
+      "path": "bench/scenarios/08-procedure-missing-prior-step/user-prompt.md"
+    },
+    {
+      "type": "list",
+      "path": "02-workspace/"
+    },
+    {
+      "type": "read",
+      "path": "02-workspace/AGENTS.md"
+    },
+    {
+      "type": "list",
+      "path": "02-workspace/runbooks/"
+    },
+    {
+      "type": "read",
+      "path": "02-workspace/runbooks/AGENTS.md"
+    },
+    {
+      "type": "list",
+      "path": "02-workspace/runbooks/incident-postmortem/"
+    },
+    {
+      "type": "read",
+      "path": "02-workspace/runbooks/incident-postmortem/AGENTS.md"
+    },
+    {
+      "type": "list",
+      "path": "02-workspace/tmp/ and 02-workspace/projects/"
+    },
+    {
+      "type": "find",
+      "path": "02-workspace/tmp/incident-postmortem",
+      "result": "Found 2026-04-23-staging-rollback/timeline.md; no factors.md, no actions.md"
+    },
+    {
+      "type": "read",
+      "path": "02-workspace/tmp/incident-postmortem/2026-04-23-staging-rollback/timeline.md"
+    },
+    {
+      "type": "decision",
+      "description": "Refused to fabricate step 4 output because step 3 artifact (factors.md) is missing. Surfaced the gap and offered three concrete unblocking paths."
+    }
+  ],
+  "notes": "Scenario probes runbook discipline: the postmortem runbook designs each step to read the prior step's artifact, and explicitly says missing-prior-artifact should stall the procedure visibly. The staged workspace has timeline.md from steps 1/2 but no factors.md from step 3. Producing an actions list directly from the timeline would skip the contributing-factors synthesis that step 4 depends on and would amount to inventing the input. The methodology-correct move is to refuse to silently proceed, surface the missing dependency, and offer the user the choice: run step 3 first, supply an external factors.md, or accept an explicit deviation. No writes performed to the workspace beyond the staged JSON output path."
+}

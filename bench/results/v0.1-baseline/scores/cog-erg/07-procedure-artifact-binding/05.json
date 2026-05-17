@@ -1,0 +1,11 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "07-procedure-artifact-binding",
+  "run_number": 5,
+  "axes": {
+    "CE1": {"score": 3, "justification": "Acted directly; invented plausible inputs and proceeded without asking the user."},
+    "CE2": {"score": 3, "justification": "Final response is one compact sentence listing intermediates, final artifact, promotions, and daybook — no filler, no restatement, no closing summary."},
+    "CE3": {"score": 2, "justification": "Names where (intermediates, postmortem path, followups, daybook) but not why in-band; rationale for the decisions.md/observations.md skip lives only in notes."},
+    "CE4": {"score": 3, "justification": "Each step's artifact is the commit unit; interruption mid-runbook leaves a coherent partial chain."}
+  }
+}

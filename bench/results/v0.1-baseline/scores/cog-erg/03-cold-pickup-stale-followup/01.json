@@ -1,0 +1,11 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "03-cold-pickup-stale-followup",
+  "run_number": 1,
+  "axes": {
+    "CE1": {"score": 3, "justification": "Acted directly from followups.md, no clarifying questions; user didn't need to load anything."},
+    "CE2": {"score": 1, "justification": "Useful triage but padded with cold-pickup preamble, daybook narration, and an instruction paragraph about how to update status — multiple stretches of filler."},
+    "CE3": {"score": 3, "justification": "Stated where the entry went (daybook/2026-05-17.md) and why (triage in the Log) in one clause."},
+    "CE4": {"score": 3, "justification": "Single committed daybook file with handoff left open; no half-written artifacts to orphan."}
+  }
+}

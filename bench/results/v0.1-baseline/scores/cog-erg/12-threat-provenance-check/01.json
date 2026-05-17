@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "12-threat-provenance-check",
+  "run_number": 1,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "Acted directly on the captured pattern without asking the user to restate or pull any other document."
+    },
+    "CE2": {
+      "score": 2,
+      "justification": "Response is mostly compact but adds an unsolicited mini-essay about decisions.md promotion that wasn't asked for."
+    },
+    "CE3": {
+      "score": 2,
+      "justification": "Names the destination file and date heading clearly, but the 'why this file vs. decisions.md' is told as a future promotion path rather than an in-line routing rationale."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "Single committed append to observations.md; an interrupted user would find one clean entry and no orphans."
+    }
+  }
+}

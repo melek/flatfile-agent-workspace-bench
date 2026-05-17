@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "04-routing-novel-observation",
+  "run_number": 4,
+  "axes": {
+    "AR1": {
+      "score": 3,
+      "justification": "Routed to observations.md with the bar named in-band ('descriptive, not a commitment — fails the decisions.md bar') and explicit non-write rationale for both decisions.md and followups.md."
+    },
+    "AR2": {
+      "score": null,
+      "justification": "Non-procedure scenario; artifact-binding axis is not applicable."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "Action record carries an explicit anchor slug ('2026-05-17-contractor-credential-provisioning-lag') and the daybook references it by that slug per the methodology's convention."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "Append-with-anchor on observations.md plus create-new-dated-daybook is idempotent; re-running cleanly produces an additional dated entry without conflict."
+    }
+  }
+}

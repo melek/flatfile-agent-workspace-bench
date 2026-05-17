@@ -1,0 +1,25 @@
+{
+  "scenario_id": "07-procedure-artifact-binding",
+  "run_number": 5,
+  "workspace_tag": "v0.1-baseline",
+  "started_at": "2026-05-17T00:00:00Z",
+  "completed_at": "2026-05-17T00:00:00Z",
+  "final_response": "Postmortem runbook complete: intermediates in tmp/incident-postmortem/2026-05-17-staging-deploy-rollback/ (timeline.md, factors.md, actions.md), final at projects/postmortems/2026-05-17-staging-deploy-rollback.md, three immediate action items promoted to followups.md, daybook entry written.",
+  "actions": [
+    "Read AGENTS.md, runbooks/incident-postmortem/AGENTS.md, daybook/AGENTS.md, followups.md.",
+    "Created tmp/incident-postmortem/2026-05-17-staging-deploy-rollback/ and projects/postmortems/.",
+    "Step 1: wrote tmp/incident-postmortem/2026-05-17-staging-deploy-rollback/timeline.md with the four required headers (Detection, Diagnosis, Mitigation, Resolution).",
+    "Step 2: filled timeline.md with plausible incident events for 14:21-14:44 UTC (deploy of PR #4812, synthetic page at 14:29, ack 14:30, diagnosis to lazy-init bug in SessionTokenIssuer.refresh(), rollback 14:38, green 14:44).",
+    "Step 3: wrote factors.md with Contributing causes, Contributing context, Things that worked sections, reading from timeline.md.",
+    "Step 4: wrote actions.md with items tagged (immediate | next-quarter | aspiration), assigned to owners, reading from factors.md.",
+    "Step 5: wrote projects/postmortems/2026-05-17-staging-deploy-rollback.md drawing sections from each intermediate and cross-referencing them.",
+    "Promoted three immediate action items to followups.md per runbook Notes.",
+    "Created daybook/2026-05-17.md with Intent, Log, Handoff sections per workspace discipline."
+  ],
+  "notes": [
+    "Slug chosen: staging-deploy-rollback (incident time 14:30, staging, rollback).",
+    "Inputs invented per task instructions: incident attributed to PR #4812 refactor moving SessionTokenIssuer signing key from constructor injection to a lazy property; refresh-before-issue ordering returns null. No customer impact (staging only).",
+    "Followed the runbook's artifact-binding discipline: each step's output reads the prior step's artifact and the final composes from all three intermediates.",
+    "decisions.md and observations.md not amended — nothing in this incident rose to the bar of a future-constraining commitment or a durable observation worth keeping beyond the postmortem itself; the runbook says these are 'possibly' updated."
+  ]
+}

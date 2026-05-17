@@ -1,0 +1,11 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "12-threat-provenance-check",
+  "run_number": 4,
+  "axes": {
+    "AR1": {"score": 3, "justification": "Routed to observations.md with explicit rationale, separating the empirical claim from the causal hypothesis and naming what would let it graduate to a decision."},
+    "AR2": {"score": "n/a", "justification": "Not a procedure scenario."},
+    "AR3": {"score": 2, "justification": "References observations.md and its preamble by relative name; no broken or absolute paths, no anchors to verify."},
+    "AR4": {"score": 3, "justification": "Single ISO-dated append; append-only and would not conflict on re-run."}
+  }
+}

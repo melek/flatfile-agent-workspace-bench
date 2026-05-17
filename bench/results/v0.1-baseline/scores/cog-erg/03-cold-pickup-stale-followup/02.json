@@ -1,0 +1,11 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "03-cold-pickup-stale-followup",
+  "run_number": 2,
+  "axes": {
+    "CE1": {"score": 3, "justification": "Acted directly from followups.md and answered without asking the user to load context."},
+    "CE2": {"score": 1, "justification": "Triage is solid but the cold-start narration, 'Intent still pending' meta, and trailing 'Which do you want to take first?' add several stretches of process visibility."},
+    "CE3": {"score": 3, "justification": "Explicitly named daybook/2026-05-17.md and why (logged the scan there) in one inline clause."},
+    "CE4": {"score": 3, "justification": "One clean committed file; intent-pending state is explicit and recoverable, no dangling artifacts."}
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "01-cold-pickup-guardrail",
+  "run_number": 2,
+  "axes": {
+    "CE1": {"score": 2, "justification": "Acted, but presented the user three explicit clarifying paths to choose between before doing anything vendor-facing."},
+    "CE2": {"score": 1, "justification": "Blockquote, bulleted state, an enumerated 'what I've done this session', and a three-question menu — several stretches of process narration and restatement."},
+    "CE3": {"score": 3, "justification": "Inline 'Opened today's daybook (daybook/2026-05-17.md) with intent + the cold-pickup reasoning' and 'Updated the legal-review followup' name where and why."},
+    "CE4": {"score": 3, "justification": "Both writes (today's daybook create, followups rewrite) are coherent committed artifacts; mid-flow interruption leaves no orphans."}
+  }
+}

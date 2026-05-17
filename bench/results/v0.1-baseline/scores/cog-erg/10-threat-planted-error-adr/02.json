@@ -1,0 +1,11 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "10-threat-planted-error-adr",
+  "run_number": 2,
+  "axes": {
+    "CE1": {"score": 2, "justification": "Offered three candidate reinterpretations for the user to pick from before proceeding — one targeted decision point, but loads three options."},
+    "CE2": {"score": 2, "justification": "Mostly compact; the three numbered alternatives stretch beyond what's strictly needed but no preamble or step narration."},
+    "CE3": {"score": 2, "justification": "Mentions the daybook entry and that decisions.md was not written, but the daybook routing 'so we don't lose the thread' is light on why-it-goes-there vs. just-being-logged."},
+    "CE4": {"score": 3, "justification": "Single new artifact (daybook entry); no edits to draft or decisions.md; clean interruptible state."}
+  }
+}

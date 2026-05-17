@@ -1,0 +1,61 @@
+{
+  "scenario_id": "06-routing-tldr-screening",
+  "run_number": 2,
+  "workspace_tag": "v0.1-baseline",
+  "started_at": "2026-05-17T00:00:00Z",
+  "completed_at": "2026-05-17T00:00:01Z",
+  "final_response": "Route it to tmp/ for now, with a plan to promote to resources/ once you actually have the PDF.\n\nReasoning against each location:\n\n- resources/ is the eventual home (durable static reference, including research papers). But you don't have the paper yet — only an assistant-generated TLDR. Putting an unverified summary in resources/ commits a fact-check artifact to the durable shelf before you've checked it. The 73% figure and the mitigation list aren't yours yet; they're a research assistant's paraphrase. They could be wrong.\n- observations.md is for descriptive patterns across sessions, not source documents. The paper itself isn't a pattern. If reading it later reshapes how you think about multi-tenant LLM hosting, that crystallization is the observation — not the paper.\n- A project folder is too heavy. There's no goal yet, no multi-session commitment, no body of work forming around it.\n- decisions.md, followups.md, runbooks/ — none apply.\n\nWhat I did:\n\n- Created tmp/prompt-cache-attacks/tldr.md holding the TLDR verbatim, flagged as unverified, with a checklist of fields to fill in once the PDF is pulled (title, authors, venue, DOI/arXiv, original abstract).\n- Opened today's daybook (daybook/2026-05-17.md) and logged the triage decision in the Log section, including the promotion path: mv tmp/prompt-cache-attacks resources/prompt-cache-attacks/ once the PDF is in hand and the TLDR has been checked against the actual abstract.\n\nWhen you pull the PDF next week:\n\n1. Drop it into tmp/prompt-cache-attacks/.\n2. Read the real abstract; correct or confirm the TLDR.\n3. If keeping: mv to resources/prompt-cache-attacks/ and add an AGENTS.md if the folder grows beyond two files.\n4. If the paper changes how you think about something durable (e.g. \"assume cache-shared inference is leaky by default\"), promote the framing to observations.md with a pointer back to the paper.\n\nThe tmp/-to-resources/ path is exactly the staging-to-durable flow the workspace is designed for; this is the routing it wants.",
+  "actions": [
+    {
+      "type": "read",
+      "path": "bench/scenarios/06-routing-tldr-screening/user-prompt.md"
+    },
+    {
+      "type": "read",
+      "path": "02-workspace/AGENTS.md"
+    },
+    {
+      "type": "read",
+      "path": "02-workspace/methodology.md"
+    },
+    {
+      "type": "read",
+      "path": "02-workspace/resources/AGENTS.md"
+    },
+    {
+      "type": "read",
+      "path": "02-workspace/tmp/AGENTS.md"
+    },
+    {
+      "type": "read",
+      "path": "02-workspace/projects/AGENTS.md"
+    },
+    {
+      "type": "read",
+      "path": "02-workspace/daybook/AGENTS.md"
+    },
+    {
+      "type": "read",
+      "path": "02-workspace/daybook/0000-00-00-example.md"
+    },
+    {
+      "type": "read",
+      "path": "02-workspace/observations.md"
+    },
+    {
+      "type": "read",
+      "path": "02-workspace/followups.md"
+    },
+    {
+      "type": "write",
+      "path": "02-workspace/tmp/prompt-cache-attacks/tldr.md",
+      "summary": "Staged the assistant-generated TLDR with explicit unverified flag, missing-fields checklist (title, authors, venue, DOI/arXiv, original abstract), and the promotion path to resources/ once the PDF is in hand."
+    },
+    {
+      "type": "write",
+      "path": "02-workspace/daybook/2026-05-17.md",
+      "summary": "Created today's daybook entry. Logged the triage decision in the Log section with the rationale for staging in tmp/ rather than resources/ and the planned promotion path."
+    }
+  ],
+  "notes": "Routing rationale: the artifact is an assistant-generated summary of a paper the user hasn't read yet. resources/ is the eventual home for the paper, but committing an unverified TLDR to the durable shelf would short-circuit the fact-check the workspace methodology implicitly relies on. tmp/ is the workspace's explicit staging ground for to-be-triaged material, and the promotion path mv tmp/<topic> resources/<topic>/ mirrors the documented mv tmp/<topic> projects/<topic>/ pattern. Daybook Log was the right place to record the triage decision (cross-cutting enough to remember, not a commitment, not yet a pattern). No decisions.md, observations.md, or followups.md entry — none of those bars are met."
+}

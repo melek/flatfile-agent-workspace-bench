@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "08-procedure-missing-prior-step",
+  "run_number": 3,
+  "axes": {
+    "AR1": {
+      "score": 2,
+      "justification": "Notes explicitly say 'no daybook entry written and no followups touched — this was a procedural decline'; correct restraint but no positive routing decision to evaluate, and a case could be made the stall itself warrants a daybook log entry."
+    },
+    "AR2": {
+      "score": 3,
+      "justification": "Inspected the working folder, named factors.md as the missing step-3 artifact, refused to fabricate, and offered to run step 3 first — clean stall."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "All references are relative paths and resolve; quotes the runbook header verbatim to anchor the rationale."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "No workspace writes — trivially idempotent on re-run."
+    }
+  }
+}

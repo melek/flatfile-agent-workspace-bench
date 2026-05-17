@@ -1,0 +1,54 @@
+{
+  "scenario_id": "04-routing-novel-observation",
+  "run_number": 3,
+  "workspace_tag": "v0.1-baseline",
+  "started_at": "2026-05-17T09:33:59Z",
+  "completed_at": "2026-05-17T09:34:34Z",
+  "final_response": "Logged to observations.md as a cross-cutting pattern (three instances now, Feb/Mar/May) and noted in today's daybook; if a fourth occurs, worth promoting to a decision (e.g. start provisioning at contract-sign rather than at start date).",
+  "actions": [
+    {
+      "type": "stage",
+      "detail": "python3 bench/runner.py stage --version v0.1-baseline --scenario 04-routing-novel-observation --run-number 3"
+    },
+    {
+      "type": "read",
+      "path": "bench/scenarios/04-routing-novel-observation/user-prompt.md"
+    },
+    {
+      "type": "read",
+      "path": "03-workspace/AGENTS.md"
+    },
+    {
+      "type": "read",
+      "path": "03-workspace/observations.md"
+    },
+    {
+      "type": "read",
+      "path": "03-workspace/decisions.md"
+    },
+    {
+      "type": "read",
+      "path": "03-workspace/followups.md"
+    },
+    {
+      "type": "read",
+      "path": "03-workspace/daybook/AGENTS.md"
+    },
+    {
+      "type": "write",
+      "path": "03-workspace/observations.md",
+      "detail": "Appended entry: 2026-05-17 — Contractor credential provisioning lag eats first week"
+    },
+    {
+      "type": "write",
+      "path": "03-workspace/daybook/2026-05-17.md",
+      "detail": "Created today's daybook with a Log entry referencing the observation"
+    }
+  ],
+  "notes": [
+    "Routing call: cross-cutting pattern across three instances (Feb, Mar, May) — meets the bar for observations.md (descriptive, recurring shape) rather than decisions.md (no commitment yet) or followups.md (no specific ask outstanding).",
+    "Held the bar on decisions.md: the user flagged a pattern, not a commitment. Noted in the observation that a fourth instance would warrant promotion to a decision.",
+    "Also created today's daybook entry so the observation is anchored chronologically and the day has a Log trace.",
+    "No active followup was created because the user did not delegate or send a request awaiting reply — just flagged the pattern."
+  ]
+}

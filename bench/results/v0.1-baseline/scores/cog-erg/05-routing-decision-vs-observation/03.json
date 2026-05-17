@@ -1,0 +1,11 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "05-routing-decision-vs-observation",
+  "run_number": 3,
+  "axes": {
+    "CE1": {"score": 3, "justification": "Acted directly with no clarifying questions or document-loading asks."},
+    "CE2": {"score": 3, "justification": "One terse sentence stating the two writes; no preamble, restatement, or padding."},
+    "CE3": {"score": 2, "justification": "Said where (decisions.md + daybook Log) but did not give the why in the user-facing reply — the rationale lives only in private notes the user wouldn't see."},
+    "CE4": {"score": 3, "justification": "Clean append + create on canonical files; no in-progress artifacts to recover from."}
+  }
+}

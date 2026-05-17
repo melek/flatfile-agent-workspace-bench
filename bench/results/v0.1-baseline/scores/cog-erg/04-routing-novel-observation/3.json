@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "04-routing-novel-observation",
+  "run_number": 3,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "Acted immediately; no questions, no requests to recall or restate."
+    },
+    "CE2": {
+      "score": 3,
+      "justification": "One compact sentence covering routing, rationale, and the future-promotion path — no preamble, no trailing summary."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "Names destination (observations.md), why (cross-cutting pattern, three instances), and the conditional promotion path, all in one clause."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "Discrete append + create with no in-progress artifacts; partial state would still be coherent."
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "02-cold-pickup-cross-day",
+  "run_number": 1,
+  "axes": {
+    "AR1": {"score": 3, "rationale": "Daybook Log captures today's reactive interaction; followups.md gets the open loop with expected-by date; decisions.md and observations.md correctly left untouched — and notes spell out the routing rationale against the methodology's bars."},
+    "AR2": {"score": null, "rationale": "Non-procedure scenario; artifact-binding does not apply."},
+    "AR3": {"score": 3, "rationale": "Followup uses the methodology's relative-path anchor convention (`decisions.md#2026-04-15-restrict-initial-hiring-to-mid-level-engineers-only`), which matches the single-hyphen example shape and resolves to the existing decision heading."},
+    "AR4": {"score": 3, "rationale": "Daybook file is dated and new; followups.md is append-only under Active; nothing mutates prior content — re-running would either no-op or append cleanly without corrupting history."}
+  }
+}

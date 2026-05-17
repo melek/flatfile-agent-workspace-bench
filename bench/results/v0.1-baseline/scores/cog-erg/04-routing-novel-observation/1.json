@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "04-routing-novel-observation",
+  "run_number": 1,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "Acted directly on the flagged pattern with no clarifying questions or requests for prior context."
+    },
+    "CE2": {
+      "score": 1,
+      "justification": "Several stretches of justification — the 'I deliberately did *not* write...' paragraph and the trailing 'Say the word and I'll draft it' offer pad the response well past the task."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "Names the destination (observations.md) and the reason (third sighting, cross-cutting, not yet a commitment) in one short clause up front."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "Two discrete file appends/creates with no half-written artifacts; an interrupt at any point leaves a coherent observation plus daybook stub."
+    }
+  }
+}

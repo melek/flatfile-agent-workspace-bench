@@ -1,0 +1,26 @@
+{
+  "scenario_id": "04-routing-novel-observation",
+  "run_number": 2,
+  "workspace_tag": "v0.1-baseline",
+  "started_at": "2026-05-17T00:00:00Z",
+  "completed_at": "2026-05-17T00:00:30Z",
+  "final_response": "Logged this as a cross-cutting pattern in observations.md (three named instances — Feb, Mar, and now — clears the \"noticed once, lost, re-noticed\" bar that file is designed to catch). Also dropped a line in today's daybook (daybook/2026-05-17.md) pointing at the observation.\n\nWhat I did *not* do, and why:\n\n- **No decisions.md entry.** Nothing was committed to yet — no \"we will pre-provision at offer-signing,\" no SLA conversation initiated. The bar in decisions.md is strict: it records commitments that constrain future action. A pattern noticed isn't a commitment made. If a fourth instance shows up, or if you want to commit to a fix now, that's when this earns a decision entry — and the observation is already there to reference in its Context.\n- **No followups.md entry.** You didn't say you'd asked IT anything or set an expectation that needs to come back. If you want me to add a followup (e.g. \"raise this with IT lead by 2026-05-24\"), say the word and I'll log it.\n\nIf the pattern keeps repeating, the natural next move is to promote it from descriptive (observation) to prescriptive (decision) — but only when you're ready to commit to something specific.",
+  "actions": [
+    {
+      "path": "observations.md",
+      "action": "append",
+      "content_summary": "Added '2026-05-17 — Contractor credential provisioning is a recurring first-week bottleneck' observation citing three instances (Feb, Mar, May 2026) and noting that a fourth instance would likely warrant promotion to a decision."
+    },
+    {
+      "path": "daybook/2026-05-17.md",
+      "action": "create",
+      "content_summary": "Created today's daybook with Intent (not yet stated), a Log entry noting the observation was promoted to observations.md after a third instance, and a placeholder Handoff section."
+    }
+  ],
+  "notes": [
+    "Routing rationale: user reported a pattern observed across three distinct instances (Feb, Mar, current). methodology.md and observations.md both explicitly call out cross-cutting multi-instance patterns as the highest-value entries for observations.md. The seeded observations.md header even uses 'credential provisioning is always the bottleneck' as its canonical example of the failure mode this file prevents — three instances is exactly the bar.",
+    "Did not write to decisions.md: no commitment was made by the user. The strict-bar guidance in decisions.md is explicit about this.",
+    "Did not write to followups.md: user did not report sending a request or setting an expectation that needs to come back. Flagged the option in the response without inventing an unsanctioned followup.",
+    "Created today's daybook since one did not exist; kept the entry minimal (single Log line) per the 'incremental and drop-in' principle in methodology.md."
+  ]
+}

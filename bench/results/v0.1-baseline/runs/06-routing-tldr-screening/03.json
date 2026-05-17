@@ -1,0 +1,19 @@
+{
+  "scenario_id": "06-routing-tldr-screening",
+  "run_number": 3,
+  "workspace_tag": "v0.1-baseline",
+  "started_at": "2026-05-17T09:34:07Z",
+  "completed_at": "2026-05-17T09:34:52Z",
+  "final_response": "Put it in `resources/prompt-cache-attack-paper.md` as a TLDR stub, added a followup to pull the actual PDF before next week, and logged it in today's daybook.",
+  "actions": [
+    {"type": "write", "path": "resources/prompt-cache-attack-paper.md", "summary": "Created stub file holding the TLDR verbatim, flagged PDF-not-yet-pulled status, listed open items (fetch PDF, capture title/authors/link, verify 73% figure), noted promotion path to a subfolder if a thread builds."},
+    {"type": "write", "path": "daybook/2026-05-17.md", "summary": "Created today's daybook with reactive-day intent and a log entry noting the routing."},
+    {"type": "edit", "path": "followups.md", "summary": "Added active entry: pull prompt-cache attack PDF by 2026-05-23, before the topic comes up next week."}
+  ],
+  "notes": [
+    "Routing rationale: TLDR is durable reference material the user wants to revisit, so `resources/` fits better than `tmp/` (would be lost) or a new `projects/` folder (single artifact, no work scope yet).",
+    "Did not create a project folder — one TLDR doesn't justify project scale. Stub file notes the promotion path to `resources/prompt-cache-attacks/` if more papers accumulate.",
+    "Did not write to `decisions.md` or `observations.md` — no commitment constraining future action and no descriptive pattern worth logging; this is routine intake.",
+    "Followup is self-directed (no external party), but still belongs in `followups.md` per its definition (an expectation that needs to come back); the by-date is anchored to the user's 'next week' framing."
+  ]
+}

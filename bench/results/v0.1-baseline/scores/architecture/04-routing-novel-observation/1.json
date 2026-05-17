@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "04-routing-novel-observation",
+  "run_number": 1,
+  "axes": {
+    "AR1": {
+      "score": 3,
+      "justification": "Routed to observations.md with explicit in-band rationale citing the strict bars for decisions.md ('commitments that constrain future action') and followups.md (named counterparty), and named the pattern as descriptive-not-yet-committed."
+    },
+    "AR2": {
+      "score": null,
+      "justification": "Non-procedure scenario; artifact-binding axis is not applicable."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "Cross-reference uses canonical heading-slug anchor (observations.md#2026-05-17-...) and relative paths; daybook back-link is also relative."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "Both actions are append/create against an ISO-dated header and a new dated daybook file; re-running would either no-op cleanly or append a fresh dated entry without overwriting prior state."
+    }
+  }
+}

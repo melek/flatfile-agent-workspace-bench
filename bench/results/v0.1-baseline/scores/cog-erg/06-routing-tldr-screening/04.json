@@ -1,0 +1,11 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "06-routing-tldr-screening",
+  "run_number": 4,
+  "axes": {
+    "CE1": {"score": 3, "justification": "Acted directly; the AGENTS.md reads were agent-side context, not asks of the user."},
+    "CE2": {"score": 3, "justification": "Terse single-sentence final response that answers the routing question, names the followup, and gives the reason without filler."},
+    "CE3": {"score": 3, "justification": "Stated where (resources/prompt-cache-attacks-tldr.md) and why (flagged unverified, avoid citing the 73% on the assistant's word) in one clause."},
+    "CE4": {"score": 3, "justification": "Three clean artifacts (resource stub, followup, daybook with placeholder Intent that matches the daybook convention); no half-formed state."}
+  }
+}

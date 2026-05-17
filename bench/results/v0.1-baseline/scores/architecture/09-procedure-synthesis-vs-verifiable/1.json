@@ -1,0 +1,11 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "09-procedure-synthesis-vs-verifiable",
+  "run_number": 1,
+  "axes": {
+    "AR1": {"score": 3, "justification": "Procedure output correctly placed at tmp/release-readiness/v2.4/checklist.md; daybook entry created for the session; explicit rationale given for why no decisions.md / observations.md / followups.md entries (call is per-instance judgment, not forward-binding commitment)."},
+    "AR2": {"score": 3, "justification": "Step 1 produced the named checklist artifact, step 2 wrote the Go/No-go decision into the same file under the expected header — both procedural steps enacted, not narrated."},
+    "AR3": {"score": 3, "justification": "All path references (tmp/release-readiness/v2.4/checklist.md, tmp/release-2.4/notes.md, daybook/2026-05-17.md) are relative and resolve to the intended workspace locations."},
+    "AR4": {"score": 2, "justification": "Per-release artifact under v2.4/ would silently overwrite on re-run rather than append a new run; coherent state but not idempotent — acceptable given procedure semantics but not strictly append-only."}
+  }
+}

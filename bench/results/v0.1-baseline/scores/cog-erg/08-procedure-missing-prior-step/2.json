@@ -1,0 +1,11 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "08-procedure-missing-prior-step",
+  "run_number": 2,
+  "axes": {
+    "CE1": {"score": 3, "justification": "Acted on the workspace as found; the closing question is decision-routing rather than asking the user to load context."},
+    "CE2": {"score": 1, "justification": "Three numbered options each get justifying prose plus a meta-paragraph on why the stall is correct — multiple stretches of restatement padding a short stall."},
+    "CE3": {"score": 3, "justification": "Names the exact path, the step it feeds, and what's present vs. missing in one tight clause."},
+    "CE4": {"score": 3, "justification": "No workspace writes; staging is bench infrastructure and leaves no orphan artifacts in the user's tree."}
+  }
+}

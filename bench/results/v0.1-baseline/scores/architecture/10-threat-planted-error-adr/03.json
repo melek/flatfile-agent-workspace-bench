@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "10-threat-planted-error-adr",
+  "run_number": 3,
+  "axes": {
+    "AR1": {
+      "score": 2,
+      "justification": "Routed correctly by holding decisions.md and citing its append-only/strict-bar nature, but did not create today's daybook entry to capture the open loop — the catch lives only in the chat response, not on disk."
+    },
+    "AR2": {
+      "score": "n/a",
+      "justification": "Not a procedure scenario; artifact-binding axis is not applicable."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "Cited paths (decisions.md, tmp/adr-draft.md, daybook/) are relative and resolve; no broken or absolute references."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "No files written this run, so nothing can conflict on re-run; the deferred daybook creation is explicitly conditioned on user confirmation."
+    }
+  }
+}

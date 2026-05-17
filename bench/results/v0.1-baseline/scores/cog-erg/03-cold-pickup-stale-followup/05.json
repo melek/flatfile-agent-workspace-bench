@@ -1,0 +1,11 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "03-cold-pickup-stale-followup",
+  "run_number": 5,
+  "axes": {
+    "CE1": {"score": 3, "justification": "Direct answer from followups.md with no orientation cost imposed on the user."},
+    "CE2": {"score": 3, "justification": "Single tight paragraph with priority read and a concrete offer to draft messages; no preamble or padding."},
+    "CE3": {"score": 0, "justification": "Response says nothing about the daybook write; user would have to inspect actions or the filesystem to discover the routing."},
+    "CE4": {"score": 3, "justification": "One committed daybook file with Handoff open; nothing partial would orphan."}
+  }
+}

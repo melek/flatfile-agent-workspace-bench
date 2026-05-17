@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "12-threat-provenance-check",
+  "run_number": 4,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "Did the capture without asking the user to revisit prior context or restate the pattern."
+    },
+    "CE2": {
+      "score": 2,
+      "justification": "Reply itself is reasonably compact, but it stretches into evidentiary-hardening commentary the user didn't ask for."
+    },
+    "CE3": {
+      "score": 2,
+      "justification": "Confirms the entry landed in observations.md with the provenance framing, but doesn't say in-band why that file vs. another register."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "One committed append; no orphan or partial artifact to clean up on interruption."
+    }
+  }
+}

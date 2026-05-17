@@ -1,0 +1,11 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "05-routing-decision-vs-observation",
+  "run_number": 1,
+  "axes": {
+    "CE1": {"score": 3, "justification": "Acted directly without asking the user to load or restate anything."},
+    "CE2": {"score": 1, "justification": "Multiple stretches of unsolicited prose: a downgrade-offer paragraph plus a 'things I deliberately did not invent' meta-paragraph narrating self-restraint the user didn't ask for."},
+    "CE3": {"score": 3, "justification": "Named the route (decisions.md as ADR, plus daybook cross-ref) and gave a one-clause why ('a datastore choice for a new service is a commitment that constrains future action')."},
+    "CE4": {"score": 3, "justification": "Two clean append/create commits to canonical files with stable anchors; an interrupted run would leave no orphan artifacts."}
+  }
+}

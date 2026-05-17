@@ -1,0 +1,21 @@
+{
+  "scenario_id": "06-routing-tldr-screening",
+  "run_number": 4,
+  "workspace_tag": "v0.1-baseline",
+  "started_at": "2026-05-17T09:35:44Z",
+  "completed_at": "2026-05-17T09:36:10Z",
+  "final_response": "Filed it at `resources/prompt-cache-attacks-tldr.md` as a TLDR stub flagged \"not verified against the PDF,\" and added a followup to pull the actual paper before next week so we don't end up citing the 73% number on the assistant's word alone.",
+  "actions": [
+    "Read AGENTS.md, methodology.md, and the subfolder AGENTS.md files (daybook, projects, resources, tmp) to confirm routing conventions.",
+    "Created resources/prompt-cache-attacks-tldr.md containing the TLDR verbatim, an explicit unverified-source caveat, and open items (pull PDF, capture title/authors/venue, consider project promotion later).",
+    "Appended a followup in followups.md: 2026-05-17 — pull the prompt-cache-attacks PDF, expected by 2026-05-23 (topic comes up next week).",
+    "Created daybook/2026-05-17.md with an Intent placeholder and a Log entry recording the routing rationale."
+  ],
+  "notes": [
+    "Routing rationale: TLDR is durable reference material the user explicitly wants to keep and use next week, so resources/ fits better than tmp/ (gitignored, untrusted) and better than projects/ (no stated goal/scope, single artifact).",
+    "Did not promote to a project: single file, no multi-session goal yet. resources/AGENTS.md explicitly allows flat single-file artifacts.",
+    "Did not write to decisions.md or observations.md: this is a routing action, not a commitment or cross-cutting pattern.",
+    "Flagged the 73% recovery-rate figure as unverified in both the resource file and the followup so it doesn't get quoted from an assistant-generated TLDR.",
+    "Handoff section in daybook left as a placeholder per daybook/AGENTS.md — to be filled at end-of-session, not mid-task."
+  ]
+}

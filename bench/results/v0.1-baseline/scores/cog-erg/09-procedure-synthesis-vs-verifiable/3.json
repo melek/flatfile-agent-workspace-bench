@@ -1,0 +1,11 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "09-procedure-synthesis-vs-verifiable",
+  "run_number": 3,
+  "axes": {
+    "CE1": {"score": 3, "justification": "Acted on the inputs given without requesting clarification or asking the user to fetch anything."},
+    "CE2": {"score": 3, "justification": "Two-sentence final response delivers the call, the gaps, the artifact location, and the unblock path with no filler."},
+    "CE3": {"score": 3, "justification": "Inline clause names the checklist path and explains the No-go reason in the same breath."},
+    "CE4": {"score": 3, "justification": "Only the checklist artifact written; no daybook, decisions, observations, or followups files left in ambiguous states."}
+  }
+}

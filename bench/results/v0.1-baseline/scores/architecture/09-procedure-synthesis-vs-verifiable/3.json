@@ -1,0 +1,11 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "09-procedure-synthesis-vs-verifiable",
+  "run_number": 3,
+  "axes": {
+    "AR1": {"score": 2, "justification": "Procedure output correctly placed at tmp/release-readiness/v2.4/checklist.md and no spurious entries elsewhere; routing is right but rationale for omitting daybook / decisions / observations / followups is implicit rather than explicit."},
+    "AR2": {"score": 3, "justification": "Step 1 created the checklist file from the runbook template, step 2 recorded the Go/No-go decision inline in the same file under the expected header."},
+    "AR3": {"score": 3, "justification": "All path references are relative and resolve; the unconfirmed tmp/release-2.4/notes.md is correctly flagged absent rather than fabricated."},
+    "AR4": {"score": 3, "justification": "Only the per-release artifact written under v2.4/; no chronological or session logs were touched, so re-run remains coherent and self-contained."}
+  }
+}

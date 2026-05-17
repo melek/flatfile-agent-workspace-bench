@@ -1,0 +1,25 @@
+{
+  "scenario_id": "07-procedure-artifact-binding",
+  "run_number": 1,
+  "workspace_tag": "v0.1-baseline",
+  "started_at": "2026-05-17T00:00:00Z",
+  "completed_at": "2026-05-17T00:00:00Z",
+  "final_response": "Ran the incident-postmortem runbook for the 2026-05-17 14:30 staging rollback. Followed all five steps, each producing the artifact the next step reads.\n\nIntermediate scratch (tmp/incident-postmortem/2026-05-17-staging-rollback/):\n- timeline.md — Detection / Diagnosis / Mitigation / Resolution with concrete UTC timestamps (14:22 bad deploy through 14:52 mitigation).\n- factors.md — contributing causes, contributing context, things that worked.\n- actions.md — immediate / next-quarter / aspiration items with owners.\n\nFinal artifact:\n- projects/postmortems/2026-05-17-staging-rollback.md — composed from the three intermediates, cross-referenced to each.\n- projects/postmortems/AGENTS.md — created since this is the first entry in that project folder.\n\nWorkspace-level updates per the runbook's Notes:\n- followups.md — three immediate items promoted (land PR #4815, add mixed-cart fixture, re-post engineering-channel note), each due 2026-05-19.\n- daybook/2026-05-17.md — opened with Intent, Log, and Handoff sections; logged the run and flagged the open question of whether to promote the \"synthetic-into-CI\" item to decisions.md once it has an owner.\n\nNo decisions.md or observations.md entries yet — neither cleared the bar (no owned commitment, no cross-cutting pattern from one incident). The staging soak gate held; customer impact was zero.",
+  "actions": [
+    {"path": "tmp/incident-postmortem/2026-05-17-staging-rollback/timeline.md", "action": "create", "content_summary": "Step 1 then step 2: timeline shell with four required headers, then filled with UTC timestamps from 14:22 (bad deploy) through 14:52 (mitigation)."},
+    {"path": "tmp/incident-postmortem/2026-05-17-staging-rollback/factors.md", "action": "create", "content_summary": "Step 3: contributing causes (implicit field-presence assumption, test gap, missing CI integration, no runtime guard), contributing context, and things that worked (soak gate held, fast rollback, unambiguous bisect)."},
+    {"path": "tmp/incident-postmortem/2026-05-17-staging-rollback/actions.md", "action": "create", "content_summary": "Step 4: six action items tagged immediate / next-quarter / aspiration with owners and expected dates."},
+    {"path": "projects/postmortems/AGENTS.md", "action": "create", "content_summary": "Project briefing for the new postmortems/ folder — status active, goal, context, scope, current state, next steps. Required by projects/AGENTS.md convention."},
+    {"path": "projects/postmortems/2026-05-17-staging-rollback.md", "action": "create", "content_summary": "Step 5: final postmortem. Summary, timeline, contributing factors, action items, notes. Each section cross-referenced to its tmp/ source artifact."},
+    {"path": "followups.md", "action": "append", "content_summary": "Promoted three immediate action items from the postmortem under Active, each dated 2026-05-17, expected by 2026-05-19, with back-reference to the postmortem file."},
+    {"path": "daybook/2026-05-17.md", "action": "create", "content_summary": "Today's daybook with Intent (run the runbook), Log (artifacts produced, choices made about decisions.md and observations.md), and Handoff (scan followups for the 2026-05-19 deadline)."}
+  ],
+  "notes": [
+    "Followed the runbook one step at a time, each step bound to its artifact, per runbooks/AGENTS.md guidance.",
+    "Slug chosen as 'staging-rollback' (kebab-case, action-shaped, matches the canonical filename convention in AGENTS.md).",
+    "Inputs were invented plausibly (PR number, error rate, version strings, owner identity) because the scenario is a simulated full session; the runbook itself does not gate on the realism of inputs, only on the artifact chain being intact.",
+    "No decisions.md entry: the runbook's Notes say 'Promote any immediate action item into followups.md' (done) but do not require a decisions.md entry. The candidate commitment (move checkout-smoke into CI) lacks an owner and a date, so it stays as a next-quarter item in the postmortem and was explicitly flagged for re-evaluation.",
+    "No observations.md entry: single-incident, not yet a cross-cutting pattern. Per observations.md's own guidance, that belongs in the daybook Log (where it now sits) until it earns promotion.",
+    "Created projects/postmortems/AGENTS.md because projects/AGENTS.md requires every project folder to carry one. The runbook's step 5 only specifies the per-incident file path; the per-folder AGENTS.md is implied by workspace convention."
+  ]
+}

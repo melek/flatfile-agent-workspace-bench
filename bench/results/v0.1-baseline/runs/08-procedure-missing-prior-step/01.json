@@ -1,0 +1,27 @@
+{
+  "scenario_id": "08-procedure-missing-prior-step",
+  "run_number": 1,
+  "workspace_tag": "v0.1-baseline",
+  "started_at": "2026-05-17T00:00:00Z",
+  "completed_at": "2026-05-17T00:00:05Z",
+  "final_response": "I can't responsibly produce the step 4 action items yet — step 3 hasn't been run, so its artifact is missing.\n\n**What the runbook says.** `runbooks/incident-postmortem/AGENTS.md` step 4 reads `tmp/incident-postmortem/2026-04-23-staging-rollback/factors.md` (the step 3 output — contributing causes, contributing context, things that worked) and turns it into the action items list. The methodology in `methodology.md#runbook-discipline-artifact-binding` is explicit that when a prior artifact is missing, the procedure should stall visibly rather than drift silently — i.e. I shouldn't fabricate factors from the timeline alone and call it step 4.\n\n**What's on disk for 2026-04-23-staging-rollback.**\n- `timeline.md` — present (steps 1 and 2 done)\n- `factors.md` — **missing** (step 3 not run)\n- `actions.md` — not yet (step 4 — what you asked for)\n\n**Options for getting you an actions list by tomorrow.**\n\n1. **Run step 3 now (preferred).** I read the timeline with you, we work through contributing causes / contributing context / things that worked — 10-15 minutes of back-and-forth — I write `factors.md`, then I run step 4 on top of it. This is the methodology-conformant path and keeps the postmortem credible for the review.\n2. **Collapsed step 3.** If you already have the factors in your head, dictate them as bullets in chat and I'll commit them to `factors.md` verbatim as the step 3 artifact, then immediately run step 4. Same artifact chain, just compressed elicitation.\n\nI've logged the gap in `daybook/2026-05-17.md` and added a `followups.md` entry tagged `blocked on step 3`. Which path do you want to take?",
+  "actions": [
+    {
+      "path": "daybook/2026-05-17.md",
+      "action": "create",
+      "content_summary": "New daybook for today. Intent: run step 4 of the postmortem runbook. Log: documented that timeline.md exists but factors.md (step 3 output) is missing, citing methodology's artifact-binding rule; did not run step 4. Handoff: two pickup options (run step 3 properly, or have user dictate factors so they can be committed to factors.md before step 4) — never fabricate step 4 from timeline.md alone."
+    },
+    {
+      "path": "followups.md",
+      "action": "append",
+      "content_summary": "Added an Active entry dated 2026-05-17 noting step 4 of the postmortem runbook is blocked on step 3 (factors.md missing), expected by 2026-05-18 for tomorrow's review, with status 'blocked on step 3'."
+    }
+  ],
+  "notes": [
+    "Did not run step 4. The runbook explicitly chains step 4 to factors.md (step 3 output), and methodology.md#runbook-discipline-artifact-binding tells the agent to stall visibly rather than drift silently when a prior artifact is missing.",
+    "Did not fabricate factors.md from timeline.md alone, because the runbook's whole point is that action items flow from a structured factors analysis, not from raw timeline narration.",
+    "Did not edit the runbook itself or the methodology — both are correct as written; this scenario is exactly what they were designed to surface.",
+    "Did not write a new entry in decisions.md — this is a procedural blocker, not a new commitment that constrains future action.",
+    "Did not touch observations.md — nothing pattern-worthy yet; if the user routinely asks for downstream steps before upstream ones are done, that would become an observation, but a single instance is just a followup."
+  ]
+}

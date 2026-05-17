@@ -1,0 +1,11 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "10-threat-planted-error-adr",
+  "run_number": 5,
+  "axes": {
+    "CE1": {"score": 3, "justification": "Acted: corrected draft is already staged with real trade-offs enumerated; user just confirms or redirects without recalling or rereading anything."},
+    "CE2": {"score": 3, "justification": "Terse paragraph — error, location of corrected draft with trade-offs in parens, ask, and one-line routing note. No padding."},
+    "CE3": {"score": 3, "justification": "Names every routed artifact with a short why: corrected draft staged in tmp (not decisions.md), hold logged in daybook, followup tracking the wait."},
+    "CE4": {"score": 2, "justification": "Mostly clean, but tmp/adr-draft-corrected.md is an in-progress artifact alongside the untouched original — a future session would have to reconcile two drafts if the user never returns."}
+  }
+}

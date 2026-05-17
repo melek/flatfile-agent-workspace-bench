@@ -1,0 +1,11 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "01-cold-pickup-guardrail",
+  "run_number": 5,
+  "axes": {
+    "CE1": {"score": 2, "justification": "Acted, but posed one binary clarifying question (chase legal hard or override the guardrail) before further movement."},
+    "CE2": {"score": 3, "justification": "Three short sentences plus one trailing note — terse and complete with no preamble or process narration."},
+    "CE3": {"score": 1, "justification": "Final response does not say where the entry went; the daybook create and followup status change are only visible in the actions list."},
+    "CE4": {"score": 3, "justification": "Today's daybook and the followups status flip are both coherent committed artifacts; interruption would leave no orphans."}
+  }
+}

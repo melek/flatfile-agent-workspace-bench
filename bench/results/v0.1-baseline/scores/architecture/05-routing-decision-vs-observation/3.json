@@ -1,0 +1,11 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "05-routing-decision-vs-observation",
+  "run_number": 3,
+  "axes": {
+    "AR1": {"score": 0, "justification": "Same misroute as runs 01/02 with no in-band pushback; the entry should have landed in observations.md or daybook Log until the constraint is named."},
+    "AR2": {"score": null, "justification": "Not a procedure scenario; artifact-binding axis is n/a."},
+    "AR3": {"score": 3, "justification": "Anchor convention is explicit and the relative path resolves; daybook Log cross-reference is well-formed."},
+    "AR4": {"score": 3, "justification": "Appends to decisions.md and a fresh daybook file are append-only and idempotent on re-run."}
+  }
+}

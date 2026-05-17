@@ -1,0 +1,43 @@
+{
+  "scenario_id": "05-routing-decision-vs-observation",
+  "run_number": 3,
+  "workspace_tag": "v0.1-baseline",
+  "started_at": "2026-05-17T00:00:00Z",
+  "completed_at": "2026-05-17T00:01:00Z",
+  "final_response": "Logged. Postgres for the events service is recorded as an accepted decision in decisions.md (2026-05-17 entry), and noted in today's daybook Log.",
+  "actions": [
+    {
+      "type": "read",
+      "path": "bench/scenarios/05-routing-decision-vs-observation/user-prompt.md"
+    },
+    {
+      "type": "read",
+      "path": "AGENTS.md"
+    },
+    {
+      "type": "read",
+      "path": "decisions.md"
+    },
+    {
+      "type": "read",
+      "path": "daybook/AGENTS.md"
+    },
+    {
+      "type": "edit",
+      "path": "decisions.md",
+      "summary": "Appended accepted decision: 2026-05-17 — Postgres for the events service"
+    },
+    {
+      "type": "write",
+      "path": "daybook/2026-05-17.md",
+      "summary": "Created today's daybook entry; logged the Postgres choice with cross-reference to decisions.md anchor"
+    }
+  ],
+  "notes": [
+    "Routing call: choice of datastore for a new service is a commitment that constrains future action (schema, migrations, ops, client libraries) — meets the decisions.md bar rather than observations.md.",
+    "Used the canonical heading format `## 2026-05-17 — Short title` so the cross-reference anchor (decisions.md#2026-05-17-postgres-for-the-events-service) is stable.",
+    "Status set to `accepted` per the canonical enum (user stated the choice as settled, not proposed).",
+    "Created today's daybook entry as the workflow discipline prescribes — Intent left open since the user didn't state a day-level purpose, Log captures the action, Handoff left open for end-of-session.",
+    "Did not invent Consequences detail beyond what the user provided; kept the entry minimal and factual to avoid fabricating rationale."
+  ]
+}

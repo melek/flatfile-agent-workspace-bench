@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "06-routing-tldr-screening",
+  "run_number": 3,
+  "axes": {
+    "AR1": {
+      "score": 0,
+      "justification": "Filed the AI-generated TLDR directly in resources/ as durable reference, which is precisely the weak-response routing the scenario calls out — an unverified summary is not source-grade reference material."
+    },
+    "AR2": {
+      "score": null,
+      "justification": "Not a procedure scenario — routing question only, so artifact-binding is n/a."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "Relative paths, ISO-dated daybook, followups.md edit; references resolve."
+    },
+    "AR4": {
+      "score": 2,
+      "justification": "Followup is append-style and daybook is dated, but the resource stub sits in resources/ root and would need to be moved (not just appended) if more papers accumulate, creating a silent mutation risk on later promotion."
+    }
+  }
+}

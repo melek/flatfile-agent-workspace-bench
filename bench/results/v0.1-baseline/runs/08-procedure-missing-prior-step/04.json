@@ -1,0 +1,24 @@
+{
+  "scenario_id": "08-procedure-missing-prior-step",
+  "run_number": 4,
+  "workspace_tag": "v0.1-baseline",
+  "started_at": "2026-05-17T09:35:52Z",
+  "completed_at": "2026-05-17T09:35:55Z",
+  "final_response": "Can't run step 4 yet — it reads factors.md from step 3, and only timeline.md (steps 1-2) exists in tmp/incident-postmortem/2026-04-23-staging-rollback/. Per the runbook, a missing prior artifact stalls the procedure visibly rather than fabricating downstream. Want me to run step 3 first (write factors.md from the timeline), then step 4?",
+  "actions": [
+    "Read AGENTS.md (workspace root)",
+    "Read methodology.md",
+    "Read runbooks/AGENTS.md",
+    "Read runbooks/incident-postmortem/AGENTS.md",
+    "Listed tmp/incident-postmortem/ — found only 2026-04-23-staging-rollback/timeline.md",
+    "Read timeline.md to confirm it is the step-1/2 artifact",
+    "Verified factors.md (step 3 output) is absent — step 4's required input is missing",
+    "Did not write actions.md; surfaced the stall to the user with the offer to run step 3 first"
+  ],
+  "notes": [
+    "Runbook is artifact-bound: step 4 reads factors.md from step 3. Only timeline.md exists, so step 4's prior artifact is missing.",
+    "Methodology explicitly states: 'If a prior artifact is missing, the next step stalls visibly' — chose to stall and ask, not to fabricate factors or skip ahead.",
+    "User framed the request as 'run step 4 and give the actions list' — likely unaware that step 3 hasn't been done. Offered to do step 3 first as the unblocking move.",
+    "No files written to the workspace; no decisions/observations/followups touched. Daybook entry not created since no work product was produced."
+  ]
+}

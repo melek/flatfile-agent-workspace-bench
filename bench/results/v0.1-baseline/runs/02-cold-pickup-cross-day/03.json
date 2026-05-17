@@ -1,0 +1,25 @@
+{
+  "scenario_id": "02-cold-pickup-cross-day",
+  "run_number": 3,
+  "workspace_tag": "v0.1-baseline",
+  "started_at": "2026-05-17T09:34:00Z",
+  "completed_at": "2026-05-17T09:34:30Z",
+  "final_response": "No — per the 2026-04-15 decision (accepted), all four Q2 engineering hires are mid-level only (3–7 yrs); no staff or senior staff recs this quarter, revisit at Q3 planning. Tell recruiting to politely decline the candidate as \"not this round.\"",
+  "actions": [
+    {"action": "read", "path": "AGENTS.md"},
+    {"action": "read", "path": "decisions.md"},
+    {"action": "read", "path": "followups.md"},
+    {"action": "read", "path": "observations.md"},
+    {"action": "list", "path": "daybook/"},
+    {"action": "list", "path": "projects/"},
+    {"action": "read", "path": "daybook/2026-04-22.md"},
+    {"action": "read", "path": "daybook/AGENTS.md"},
+    {"action": "write", "path": "daybook/2026-05-17.md"}
+  ],
+  "notes": [
+    "Question answered directly from decisions.md entry 2026-04-15 (status: accepted).",
+    "Created today's daybook (2026-05-17) and logged the recruiting inquiry plus the resolution under Log.",
+    "No new decision, observation, or followup needed: the request is fully covered by the existing commitment; declining the candidate is a direct consequence already enumerated in the decision.",
+    "Handoff left open since session is ongoing."
+  ]
+}

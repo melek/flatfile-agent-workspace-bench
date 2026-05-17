@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "08-procedure-missing-prior-step",
+  "run_number": 1,
+  "axes": {
+    "AR1": {
+      "score": 3,
+      "justification": "Routed a forward commitment (blocked-on-step-3) to followups.md and the procedural context to today's daybook; explicitly justifies *not* writing to decisions.md or observations.md, matching the methodology's strict bars."
+    },
+    "AR2": {
+      "score": 3,
+      "justification": "Checked for factors.md, found it missing, stalled visibly, named the missing artifact, refused to fabricate, and offered concrete unblocking paths — the textbook artifact-binding behavior."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "All references are relative paths and include a stable anchor (methodology.md#runbook-discipline-artifact-binding); ISO date used for the daybook filename."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "Daybook is a new dated file (idempotent create); followups.md entry is an append with a dated Active status — both safe on re-run."
+    }
+  }
+}

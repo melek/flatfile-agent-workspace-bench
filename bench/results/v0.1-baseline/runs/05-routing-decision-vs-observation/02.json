@@ -1,0 +1,18 @@
+{
+  "scenario_id": "05-routing-decision-vs-observation",
+  "run_number": 2,
+  "workspace_tag": "v0.1-baseline",
+  "started_at": "2026-05-17T00:00:00Z",
+  "completed_at": "2026-05-17T00:00:05Z",
+  "final_response": "Logged. The Postgres choice constrains future design for the events service (schema, migrations, client libraries, ops tooling), so it routed to decisions.md as an accepted ADR-style entry — `decisions.md#2026-05-17-postgres-for-events-service`. I also added a one-line note under today's daybook Log (`daybook/2026-05-17.md`) pointing at the decision. Want me to spin up a `projects/events-service/` folder now, or wait until there's more to put in it?",
+  "actions": [
+    {"type": "read", "path": "AGENTS.md"},
+    {"type": "read", "path": "decisions.md"},
+    {"type": "read", "path": "daybook/AGENTS.md"},
+    {"type": "list", "path": "daybook/"},
+    {"type": "list", "path": "projects/"},
+    {"type": "write", "path": "decisions.md", "summary": "Appended ADR entry '2026-05-17 — Postgres for events service' (status: accepted)."},
+    {"type": "write", "path": "daybook/2026-05-17.md", "summary": "Created today's daybook with Log entry pointing to the new decision."}
+  ],
+  "notes": "Routing call: the user's statement is a forward-constraining commitment about a service being spun up, which matches the strict bar for decisions.md (future readers would ask 'are we allowed to use MySQL/a doc store here?'). Recorded as an ADR-shaped entry per the template in decisions.md. Also added a Log line in today's daybook so the chronological trail exists, but did not duplicate the substance there. No project folder yet — events service has no other artifacts, and projects/AGENTS.md convention is one folder per ongoing project; offered to create it in the reply rather than pre-creating empty scaffolding."
+}

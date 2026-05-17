@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "04-routing-novel-observation",
+  "run_number": 2,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "Acted on the input directly without asking the user to load or restate anything."
+    },
+    "CE2": {
+      "score": 0,
+      "justification": "Heavy 'What I did *not* do, and why' section with two bulleted negative-space justifications plus a closing summary — substantially padded past what the task required."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "Opens with destination plus rationale ('three named instances... clears the bar that file is designed to catch') in one clause."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "Two clean file operations; mid-flow interrupt would leave a complete observation entry and a minimal daybook with no orphans."
+    }
+  }
+}

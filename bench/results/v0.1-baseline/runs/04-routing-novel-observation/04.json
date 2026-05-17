@@ -1,0 +1,28 @@
+{
+  "scenario_id": "04-routing-novel-observation",
+  "run_number": 4,
+  "workspace_tag": "v0.1-baseline",
+  "started_at": "2026-05-17T09:34:56Z",
+  "completed_at": "2026-05-17T09:35:33Z",
+  "final_response": "Logged as an observation (cross-cutting pattern across Feb/Mar/May) and noted in today's daybook; no decision yet since you haven't committed to a specific fix.",
+  "actions": [
+    {
+      "type": "append",
+      "path": "observations.md",
+      "anchor": "2026-05-17-contractor-credential-provisioning-lag",
+      "summary": "Added entry for recurring ~4-day contractor credential provisioning lag (Feb, March, May)."
+    },
+    {
+      "type": "create",
+      "path": "daybook/2026-05-17.md",
+      "summary": "Created today's daybook with a Log entry referencing the observation; Intent left reactive; Handoff left open."
+    }
+  ],
+  "notes": [
+    "Routed primarily to observations.md: input is descriptive (a recurring pattern across multiple instances), not a commitment — fails the decisions.md bar.",
+    "User explicitly framed it as cross-cutting ('every time someone external joins') and wanted it not lost — exactly the observations.md use case per the file's own framing.",
+    "Did NOT add a followups.md entry: the user did not actually send a request or set an expectation with anyone (e.g., no 'I asked IT to investigate'); they flagged a pattern. A followup would be premature.",
+    "Did NOT add a decisions.md entry: no commitment was made about how to handle the lag (pre-provisioning, escalating with IT, etc.). The observation may later crystallize into a decision, which is the documented promotion path.",
+    "Daybook log cross-references the observation by anchor slug per the methodology's slug convention."
+  ]
+}

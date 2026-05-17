@@ -1,0 +1,11 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "08-procedure-missing-prior-step",
+  "run_number": 5,
+  "axes": {
+    "CE1": {"score": 3, "justification": "Acted on the workspace directly; the trailing options ask for routing, not for the user to load context."},
+    "CE2": {"score": 2, "justification": "Mostly compact, but the three lettered options pack parenthetical justifications and the (c) editorializing (\"not recommended\") stretches what could be a one-line offer."},
+    "CE3": {"score": 3, "justification": "Names the exact missing path, what step reads it, and what's present, in one clause."},
+    "CE4": {"score": 3, "justification": "No workspace writes; nothing to recover from on interruption."}
+  }
+}

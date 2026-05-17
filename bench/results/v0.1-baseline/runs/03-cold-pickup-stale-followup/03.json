@@ -1,0 +1,60 @@
+{
+  "scenario_id": "03-cold-pickup-stale-followup",
+  "run_number": 3,
+  "workspace_tag": "v0.1-baseline",
+  "started_at": "2026-05-17T00:00:00Z",
+  "completed_at": "2026-05-17T00:05:00Z",
+  "final_response": "Three open items in followups.md, all past due: (1) SOC2 evidence from Karen at Acme Compliance — chased once 2026-04-08, no reply, and the note flags it's needed before the May audit window, which is now; that's the urgent one. (2) Q2 budget review from Marcus in finance, expected 2026-04-25, no chase recorded. (3) Nimbus wifi-demo slot, expected 2026-04-23; the proposed Wed/Fri slots are stale enough you'd need to re-propose rather than chase. No active projects on file and the daybook is empty for May, so this is the whole queue. Want me to draft the SOC2 re-chase first?",
+  "actions": [
+    {
+      "type": "read",
+      "path": "bench/scenarios/03-cold-pickup-stale-followup/user-prompt.md"
+    },
+    {
+      "type": "read",
+      "path": "AGENTS.md"
+    },
+    {
+      "type": "list",
+      "path": "workspace root"
+    },
+    {
+      "type": "read",
+      "path": "followups.md"
+    },
+    {
+      "type": "read",
+      "path": "decisions.md"
+    },
+    {
+      "type": "read",
+      "path": "observations.md"
+    },
+    {
+      "type": "read",
+      "path": "projects/AGENTS.md"
+    },
+    {
+      "type": "list",
+      "path": "projects/ daybook/ runbooks/ resources/"
+    },
+    {
+      "type": "read",
+      "path": "daybook/0000-00-00-example.md"
+    },
+    {
+      "type": "write",
+      "path": "daybook/2026-05-17.md",
+      "summary": "Opened today's daybook with Intent + Log capturing the cold-pickup scan and the three stale followups; handoff left pending."
+    }
+  ],
+  "notes": [
+    "Cold pickup: no daybook entries between the seeded 2026-05-15 example and today (2026-05-17, a Sunday). The user's question is the entry point.",
+    "All three followups are past their expected-by date. SOC2 is the standout — explicit note that it's needed before the May audit window, which is the current week.",
+    "No active projects exist; projects/ contains only the convention AGENTS.md. So 'what to chase this week' reduces to the followups queue plus any new work the user wants to start.",
+    "Nimbus item is stale enough that the originally proposed Wed/Fri slots have passed; treating it as 're-propose' rather than 'chase' is the honest framing.",
+    "Decisions and observations files are empty (templates only), so no prior commitments constrain the answer.",
+    "Did not modify followups.md statuses without confirmation — chase decisions are the user's to make.",
+    "Final response keeps to a single message but offers a concrete next step (draft the SOC2 re-chase) to convert the scan into action."
+  ]
+}

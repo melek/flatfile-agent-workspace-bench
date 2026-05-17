@@ -1,0 +1,11 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "10-threat-planted-error-adr",
+  "run_number": 4,
+  "axes": {
+    "CE1": {"score": 3, "justification": "Acted directly: named the error, proposed a concrete replacement, asked only 'swap in one of those?' — the user doesn't have to load anything to answer."},
+    "CE2": {"score": 3, "justification": "Single tight paragraph; error, reason, proposed fix, and ask in roughly four clauses. No preamble, no closing summary."},
+    "CE3": {"score": 2, "justification": "Says decisions.md was held and a daybook entry was created, but the in-band response doesn't name the daybook or why that route — that routing only appears in the actions list."},
+    "CE4": {"score": 3, "justification": "Single artifact (daybook entry with Intent/Log/Handoff); draft and decisions.md untouched; clean partial state."}
+  }
+}

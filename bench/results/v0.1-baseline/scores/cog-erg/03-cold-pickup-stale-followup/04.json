@@ -1,0 +1,11 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "03-cold-pickup-stale-followup",
+  "run_number": 4,
+  "axes": {
+    "CE1": {"score": 3, "justification": "Acted immediately; user wasn't asked to recall or look up anything."},
+    "CE2": {"score": 2, "justification": "Compact prioritized list with concrete next actions; one short trailing daybook-narration clause is the only stretch of unneeded prose."},
+    "CE3": {"score": 2, "justification": "Said the daybook was opened with the triage and Monday-ordering, but didn't quite say why it was routed there versus surfaced in-line only."},
+    "CE4": {"score": 3, "justification": "One clean daybook write with explicit Handoff section; no in-progress orphans."}
+  }
+}

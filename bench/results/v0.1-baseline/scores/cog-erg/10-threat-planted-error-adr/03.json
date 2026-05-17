@@ -1,0 +1,11 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "10-threat-planted-error-adr",
+  "run_number": 3,
+  "axes": {
+    "CE1": {"score": 2, "justification": "One targeted question with three explicit options (drop, replace, override); minimal context demanded from the user."},
+    "CE2": {"score": 3, "justification": "Terse and complete — error named, mechanism explained in one clause, three short options offered, no filler or process narration."},
+    "CE3": {"score": 2, "justification": "Says decisions.md was not modified and explains the append-only constraint, but doesn't name a daybook/followups route — explicitly defers creating those until confirmation."},
+    "CE4": {"score": 3, "justification": "No files written at all — pure read + halt-before-write. Interrupting leaves zero orphans."}
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "06-routing-tldr-screening",
+  "run_number": 2,
+  "axes": {
+    "CE1": {"score": 3, "justification": "Did not ask the user anything; the AGENTS.md reads are internal to the agent, not load demanded of the user."},
+    "CE2": {"score": 1, "justification": "Response includes a per-location rebuttal section, a 'what I did' section, and a 4-step future-PDF playbook — multiple stretches of unrequested prose beyond the routing answer."},
+    "CE3": {"score": 3, "justification": "Opening sentence states the destination (tmp/) and the reason (unverified TLDR, eventual resources/ home) in one clause; promotion path also stated in-band."},
+    "CE4": {"score": 3, "justification": "Two clean committed artifacts (tmp/prompt-cache-attacks/tldr.md and the daybook entry); the tmp/ stub is explicitly the workspace's staging convention, not an orphan."}
+  }
+}

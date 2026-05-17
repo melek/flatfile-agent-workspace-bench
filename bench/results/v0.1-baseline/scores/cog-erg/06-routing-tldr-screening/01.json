@@ -1,0 +1,11 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "06-routing-tldr-screening",
+  "run_number": 1,
+  "axes": {
+    "CE1": {"score": 3, "justification": "Acted directly with no clarifying questions; routed and created the daybook entry without asking the user to load anything."},
+    "CE2": {"score": 1, "justification": "Final response is a long walk through every candidate location plus a forward-looking decision tree; multiple stretches of restatement and narration well beyond the terse 'put it here, because X' that the question asked for."},
+    "CE3": {"score": 3, "justification": "Said exactly where (daybook/2026-05-17.md) and why (TLDR is unverified, not durable; promotion path stays cheap) in-band in the opening line and follow-up clauses."},
+    "CE4": {"score": 3, "justification": "Single committed artifact (the daybook entry) — interrupting after that leaves no orphans or in-progress staging directories."}
+  }
+}

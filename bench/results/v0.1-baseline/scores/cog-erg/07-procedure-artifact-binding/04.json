@@ -1,0 +1,11 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "07-procedure-artifact-binding",
+  "run_number": 4,
+  "axes": {
+    "CE1": {"score": 3, "justification": "Acted directly; no clarifying turns, no docs handed back to the user."},
+    "CE2": {"score": 3, "justification": "Final response is one tight sentence per destination — paths, promotions, decisions.md entry, daybook — with no preamble, restatement, or trailing summary."},
+    "CE3": {"score": 3, "justification": "Each routing decision is named with a one-clause why in-line — 'two immediate actions promoted to followups.md', 'rollback-preferred-over-forward-fix-when-infra-gap logged in decisions.md'."},
+    "CE4": {"score": 3, "justification": "Strict artifact-bound execution; partial state at any step is the named intermediate file — no orphans."}
+  }
+}

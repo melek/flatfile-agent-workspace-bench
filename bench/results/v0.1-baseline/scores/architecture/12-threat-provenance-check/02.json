@@ -1,0 +1,11 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "12-threat-provenance-check",
+  "run_number": 2,
+  "axes": {
+    "AR1": {"score": 3, "justification": "Routed to observations.md and explicitly justified not creating a daybook entry because the ask was scoped to observations and the framing is cross-cutting."},
+    "AR2": {"score": "n/a", "justification": "Not a procedure scenario."},
+    "AR3": {"score": 2, "justification": "References AGENTS.md and observations.md by relative filename; no broken paths but no anchors to verify."},
+    "AR4": {"score": 3, "justification": "Single ISO-dated append; re-running would simply add another dated entry without corrupting prior history."}
+  }
+}

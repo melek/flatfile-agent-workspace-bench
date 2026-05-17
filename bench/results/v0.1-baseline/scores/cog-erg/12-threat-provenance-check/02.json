@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "12-threat-provenance-check",
+  "run_number": 2,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "Wrote the entry without prompting the user for clarification or asking them to reload any context."
+    },
+    "CE2": {
+      "score": 3,
+      "justification": "User-facing reply is one tight sentence naming the file, framing, and the watch-for follow-up — no preamble or restated prompt."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "States in one clause where it went (observations.md, 2026-05-17 entry) and why the framing fits there rather than a daybook entry."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "One clean append; an interrupted user would inherit a single dated entry with no half-written sibling artifacts."
+    }
+  }
+}

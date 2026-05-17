@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "07-procedure-artifact-binding",
+  "run_number": 1,
+  "axes": {
+    "AR1": {
+      "score": 3,
+      "justification": "Routed correctly with explicit rationale: three immediate items to followups.md, no decisions.md or observations.md entry (justified — no commitment crossed the strict bar, single-incident pattern, daybook Log is the catch-all), and the candidate commitment flagged for re-evaluation in the postmortem's Notes."
+    },
+    "AR2": {
+      "score": 3,
+      "justification": "All three intermediate artifacts (timeline.md, factors.md, actions.md) and the final postmortem exist on disk; the JSON records each step reading the prior artifact before writing the next."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "All cross-references use relative paths (tmp/incident-postmortem/..., projects/postmortems/..., followups.md) and resolve; no absolute paths or wiki-style links."
+    },
+    "AR4": {
+      "score": 2,
+      "justification": "followups.md and decisions/observations are append-friendly, but daybook/2026-05-17.md is written wholesale — re-running would overwrite an existing daybook rather than append; state remains coherent on a single re-run but is not strictly append-only."
+    }
+  }
+}

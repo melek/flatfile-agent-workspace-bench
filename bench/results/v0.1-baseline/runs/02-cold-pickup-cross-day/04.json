@@ -1,0 +1,21 @@
+{
+  "scenario_id": "02-cold-pickup-cross-day",
+  "run_number": 4,
+  "workspace_tag": "v0.1-baseline",
+  "started_at": "2026-05-17T09:35:13Z",
+  "completed_at": "2026-05-17T09:35:30Z",
+  "final_response": "No — per the 2026-04-15 decision, all four Q2 engineering hires are mid-level (3–7 YoE); no staff or senior staff recs open this quarter, with a re-evaluation at Q3 planning. Recruiting should send the \"not this round\" decline; if they want to push for an exception, route it to CEO/CTO to reverse/supersede the decision rather than open the rec quietly.",
+  "actions": [
+    "Read AGENTS.md to confirm workspace conventions.",
+    "Read decisions.md and found the 2026-04-15 accepted decision restricting Q2 hires to mid-level only.",
+    "Read the most recent daybook (2026-04-22) and followups.md to confirm no superseding commitment or open loop on hiring scope.",
+    "Created daybook/2026-05-17.md with Intent, Log, and Handoff sections capturing the recruiting query, the cited decision, and the answer.",
+    "Appended an Active entry to followups.md to track recruiting's confirmation and any Q3 reconsideration request, linking back to the 2026-04-15 decision anchor."
+  ],
+  "notes": [
+    "Cold pickup: gap since 2026-04-22 daybook; opened 2026-05-17 daybook for today.",
+    "Did not append to decisions.md — the standing 2026-04-15 commitment already governs; nothing new was decided. An exception path was named (CEO/CTO reversal) but not taken.",
+    "Did not append to observations.md — no new descriptive pattern emerged beyond what the existing decision already captures.",
+    "Anchor used in followups link follows the methodology.md convention (`decisions.md#YYYY-MM-DD-short-title`)."
+  ]
+}

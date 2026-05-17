@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "08-procedure-missing-prior-step",
+  "run_number": 4,
+  "axes": {
+    "AR1": {
+      "score": 2,
+      "justification": "Notes explicitly justify writing nothing ('no decisions/observations/followups touched ... no work product was produced'); correct restraint but no explicit routing decision against the methodology's strict bars."
+    },
+    "AR2": {
+      "score": 3,
+      "justification": "Confirmed factors.md absent, refused to write actions.md, surfaced the stall, and offered to run step 3 first — concise but complete artifact-binding behavior."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "All file references are relative paths (tmp/incident-postmortem/..., runbooks/incident-postmortem/AGENTS.md) and resolve."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "No workspace writes — trivially idempotent on re-run."
+    }
+  }
+}

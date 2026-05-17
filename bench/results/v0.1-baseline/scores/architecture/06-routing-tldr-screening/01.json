@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "06-routing-tldr-screening",
+  "run_number": 1,
+  "axes": {
+    "AR1": {
+      "score": 1,
+      "justification": "Routed to daybook Log instead of tmp/ — defensible neighboring file given the user's 'want to keep it' rules out gitignored tmp/, but methodology's strict bar for unverified-summary artifacts points to tmp/ for triage, not the chronological catch-all."
+    },
+    "AR2": {
+      "score": null,
+      "justification": "Not a procedure scenario — routing question only, so artifact-binding is n/a."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "Single relative path reference (daybook/2026-05-17.md) follows ISO-date convention and resolves."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "Daybook entry is dated and append-only; re-running would create a separate dated file or append to Log without conflict."
+    }
+  }
+}

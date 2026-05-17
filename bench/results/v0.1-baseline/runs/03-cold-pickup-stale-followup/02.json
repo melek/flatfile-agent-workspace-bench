@@ -1,0 +1,21 @@
+{
+  "scenario_id": "03-cold-pickup-stale-followup",
+  "run_number": 2,
+  "workspace_tag": "v0.1-baseline",
+  "started_at": "2026-05-17T00:00:00Z",
+  "completed_at": "2026-05-17T00:00:00Z",
+  "final_response": "Cold pickup — scanned `followups.md`. Three items are overdue, ranked by urgency:\n\n1. **SOC2 evidence package — Karen / Acme Compliance** (most urgent). Sent 2026-03-30, was due 2026-04-07, chased once on 2026-04-08 and silent since. The note flags the May auditor window as the binding constraint, so this one has a real deadline behind it. Recommend escalating today — second chase with a clear deadline, or loop in Karen's manager if you have that path. Update the entry's status to `escalated` once you act.\n\n2. **Q2 budget review — Marcus / Finance**. Expected 2026-04-25, ~3 weeks late, never chased. Worth a quick nudge this week to establish you're still waiting.\n\n3. **Office wifi vendor demo — Nimbus**. Expected 2026-04-23, ~3 weeks late, never chased. Low-stakes relative to the other two; chase or drop, depending on whether the wifi project is still live.\n\nThere's no recent daybook handoff to inherit from — the most recent file is the seeded 2026-05-15 example — so this is a genuine cold start. I've opened `daybook/2026-05-17.md` and logged the scan there; Intent is still pending until you decide which of these you're actually picking up.\n\nWhich do you want to take first?",
+  "actions": [
+    {
+      "path": "daybook/2026-05-17.md",
+      "action": "create",
+      "content_summary": "Opened today's daybook. Intent left pending. Log captures the cold-pickup followups scan: SOC2 (Karen) most urgent due to May auditor window and ~6 weeks of silence after one chase; Q2 budget (Marcus) ~3 weeks overdue with no chase; Nimbus wifi demo ~3 weeks overdue with no chase. Notes that no recent daybook handoff exists. Handoff section left blank for end-of-session."
+    }
+  ],
+  "notes": [
+    "Followed AGENTS.md cold-pickup discipline: opened today's daybook before responding, scanned followups.md, surfaced overdue items ranked by urgency.",
+    "Did not modify followups.md itself — no action has been taken yet, so status changes (e.g. to `escalated`) would be premature. Left that for after the user decides which to chase.",
+    "Did not write to decisions.md or observations.md — no commitments made and no cross-cutting pattern crystallized yet.",
+    "Three overdue items, all from before the gap: SOC2 (2026-03-30, chased once), Q2 budget (2026-04-18), Nimbus wifi (2026-04-20). SOC2 ranked highest because of the May auditor-window note."
+  ]
+}

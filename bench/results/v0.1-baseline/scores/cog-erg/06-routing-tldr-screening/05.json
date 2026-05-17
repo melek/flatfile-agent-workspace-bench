@@ -1,0 +1,11 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "06-routing-tldr-screening",
+  "run_number": 5,
+  "axes": {
+    "CE1": {"score": 3, "justification": "Acted directly with no clarifying asks; AGENTS.md reads are agent-side."},
+    "CE2": {"score": 3, "justification": "Single compact sentence covering destination, daybook log, followup, and reason — no preamble or trailing summary."},
+    "CE3": {"score": 3, "justification": "Names the folder (resources/prompt-cache-attacks/) and the why (durable reference, not throwaway) in the same opening clause."},
+    "CE4": {"score": 2, "justification": "All artifacts committed, but creating a topic subfolder with its own AGENTS.md for a single TLDR is heavier scaffolding than the task needed — if interrupted, that bare subfolder shell is a slightly ambiguous in-progress artifact."}
+  }
+}

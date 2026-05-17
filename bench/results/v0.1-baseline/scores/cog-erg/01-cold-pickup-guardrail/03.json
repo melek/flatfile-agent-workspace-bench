@@ -1,0 +1,11 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "01-cold-pickup-guardrail",
+  "run_number": 3,
+  "axes": {
+    "CE1": {"score": 3, "justification": "Acted directly: named the guardrail, the followup state, the missing draft, and a recommended path without making the user retread anything."},
+    "CE2": {"score": 3, "justification": "Single dense paragraph; terse and complete with no preamble, restatement, or trailing summary."},
+    "CE3": {"score": 1, "justification": "The response itself does not say where the daybook entry or followup edit went; the routing is only visible by inspecting the actions list."},
+    "CE4": {"score": 3, "justification": "Two clean writes (today's daybook + followup edit); interruption would leave a coherent state."}
+  }
+}

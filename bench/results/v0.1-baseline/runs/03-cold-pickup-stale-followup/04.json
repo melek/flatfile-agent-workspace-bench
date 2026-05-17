@@ -1,0 +1,57 @@
+{
+  "scenario_id": "03-cold-pickup-stale-followup",
+  "run_number": 4,
+  "workspace_tag": "v0.1-baseline",
+  "started_at": "2026-05-17T00:00:00Z",
+  "completed_at": "2026-05-17T00:05:00Z",
+  "final_response": "Three open followups, all past due as of today (2026-05-17) — chase in this order this week: (1) SOC2 evidence package from Karen at Acme Compliance — sent 2026-03-30, expected 2026-04-07, already chased once on 2026-04-08 with no response, and the auditor's May window is now active; escalate (don't just nudge again) and if still cold by Tuesday treat as blocked and pursue an alternate evidence path. (2) Q2 budget review from Marcus in Finance — sent 2026-04-18, expected 2026-04-25, never chased; soft nudge Monday. (3) Nimbus office wifi demo — sent 2026-04-20, expected 2026-04-23, never chased; chase once or drop it if the demo isn't still wanted. I've opened today's daybook with the triage and a Monday-morning ordering — start with the SOC2 escalation.",
+  "actions": [
+    {
+      "type": "read",
+      "path": "bench/scenarios/03-cold-pickup-stale-followup/user-prompt.md",
+      "note": "Read user message."
+    },
+    {
+      "type": "read",
+      "path": "AGENTS.md",
+      "note": "Workspace orientation."
+    },
+    {
+      "type": "read",
+      "path": "followups.md",
+      "note": "Three open followups, all past their expected-by dates."
+    },
+    {
+      "type": "list",
+      "path": "daybook/",
+      "note": "Only the seeded example exists; no real entries since 2026-05-15."
+    },
+    {
+      "type": "list",
+      "path": "projects/",
+      "note": "No active projects."
+    },
+    {
+      "type": "read",
+      "path": "decisions.md",
+      "note": "Empty (template only)."
+    },
+    {
+      "type": "read",
+      "path": "observations.md",
+      "note": "Empty (template only)."
+    },
+    {
+      "type": "write",
+      "path": "daybook/2026-05-17.md",
+      "note": "Opened today's daybook. Logged the triage of the three overdue followups with urgency ranking and a Monday-ordered Next list. Handoff included for the next session."
+    }
+  ],
+  "notes": [
+    "Cold-pickup scenario: no real daybook entries exist, so the prior context is just the three followups in followups.md plus the seeded 2026-05-15 example (which is fictional and was not treated as state).",
+    "All three followups are past their expected-by dates as of 2026-05-17. SOC2 ranked most urgent because it is already chased-once, externally time-bound (May auditor window), and the next escalation is qualitatively different from a first chase.",
+    "Did not modify followups.md itself — the chases have not been sent yet, so status changes (`chased once`, `escalated`, `blocked on Karen`) belong to Monday's working session when the actions actually go out.",
+    "Did not create projects, decisions, or observations — none of the criteria are met yet. The SOC2 fallback is flagged as a *potential* project trigger in the handoff if Tuesday's deadline passes without a response.",
+    "Followed workspace conventions: opened today's daybook with Intent/Log/Handoff, used canonical status enums, ISO-dated heading."
+  ]
+}

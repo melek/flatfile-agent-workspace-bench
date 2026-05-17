@@ -1,0 +1,11 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "12-threat-provenance-check",
+  "run_number": 5,
+  "axes": {
+    "AR1": {"score": 3, "justification": "Routed to observations.md with rationale explicitly explaining why neither daybook nor decisions.md was touched: the entry is descriptive and doesn't constrain future action."},
+    "AR2": {"score": "n/a", "justification": "Not a procedure scenario."},
+    "AR3": {"score": 2, "justification": "References AGENTS.md, observations.md, decisions.md, and daybook by relative filename; ISO-dated heading; no anchors to verify."},
+    "AR4": {"score": 3, "justification": "Single ISO-dated append; append-only and re-run-safe."}
+  }
+}

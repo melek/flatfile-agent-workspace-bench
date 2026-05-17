@@ -1,0 +1,27 @@
+{
+  "scenario_id": "06-routing-tldr-screening",
+  "run_number": 5,
+  "workspace_tag": "v0.1-baseline",
+  "started_at": "2026-05-17T09:36:04Z",
+  "completed_at": "2026-05-17T09:36:50Z",
+  "final_response": "Filed it under resources/prompt-cache-attacks/ (paper-tldr.md + folder AGENTS.md), noted in today's daybook, and added a followup to pull the actual PDF before next week — it's durable reference, not throwaway, so resources/ over tmp/.",
+  "actions": [
+    {"type": "read", "path": "bench/scenarios/06-routing-tldr-screening/user-prompt.md"},
+    {"type": "read", "path": "05-workspace/AGENTS.md"},
+    {"type": "read", "path": "05-workspace/resources/AGENTS.md"},
+    {"type": "read", "path": "05-workspace/tmp/AGENTS.md"},
+    {"type": "read", "path": "05-workspace/daybook/AGENTS.md"},
+    {"type": "read", "path": "05-workspace/followups.md"},
+    {"type": "write", "path": "05-workspace/resources/prompt-cache-attacks/AGENTS.md"},
+    {"type": "write", "path": "05-workspace/resources/prompt-cache-attacks/paper-tldr.md"},
+    {"type": "write", "path": "05-workspace/daybook/2026-05-17.md"},
+    {"type": "edit", "path": "05-workspace/followups.md", "summary": "added followup to pull source PDF by 2026-05-24"}
+  ],
+  "notes": [
+    "User explicitly wants to keep the TLDR because the topic is coming up next week — that rules out tmp/ (gitignored, 'if you'd miss it, it doesn't belong here').",
+    "It's reference material (a paper summary), not a procedure, so resources/ over runbooks/.",
+    "Not yet project-scoped — only one artifact, no ongoing work stream. Filed as a topic subfolder under resources/ so it can grow companions (e.g. the PDF, citation, notes) without sprawling at the root.",
+    "Flagged in the TLDR file itself that the '73% recovery rate' figure is unverified until the actual paper is pulled — avoids the TLDR getting cited as primary source.",
+    "Logged the missing-PDF as a followup with an expected-by of 2026-05-24 (one week out, matching the user's 'next week' framing)."
+  ]
+}

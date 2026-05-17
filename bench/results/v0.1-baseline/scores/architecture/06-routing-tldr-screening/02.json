@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "06-routing-tldr-screening",
+  "run_number": 2,
+  "axes": {
+    "AR1": {
+      "score": 3,
+      "justification": "Routed to tmp/prompt-cache-attacks/tldr.md with explicit rationale matching the methodology — unverified summary stages in tmp/, daybook Log records the triage, promotion path to resources/ documented; this is the strong-signal route."
+    },
+    "AR2": {
+      "score": null,
+      "justification": "Not a procedure scenario — routing question only, so artifact-binding is n/a."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "All paths relative, ISO-dated daybook anchor, tmp/ and resources/ references resolve cleanly; the documented mv command preserves directionality."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "tmp/ stub plus daybook Log are append-only and dated; the promotion path is an explicit mv, so re-runs or future sessions extend rather than corrupt state."
+    }
+  }
+}

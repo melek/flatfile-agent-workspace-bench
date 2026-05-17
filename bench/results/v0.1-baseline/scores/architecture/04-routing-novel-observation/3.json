@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "04-routing-novel-observation",
+  "run_number": 3,
+  "axes": {
+    "AR1": {
+      "score": 3,
+      "justification": "Routed to observations.md and named the bar in the notes — descriptive cross-cutting pattern, no commitment, no outstanding ask — with explicit promotion path called out."
+    },
+    "AR2": {
+      "score": null,
+      "justification": "Non-procedure scenario; artifact-binding axis is not applicable."
+    },
+    "AR3": {
+      "score": 2,
+      "justification": "Daybook Log references the observation but the run's actions do not pin an explicit anchor slug for the observation entry, so anchor stability rests on whatever heading was written rather than being committed in-band."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "Pure append + create-new-dated-file; no in-place mutation of historical state, safe to re-run."
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "scenario_id": "02-cold-pickup-cross-day",
+  "run_number": 2,
+  "workspace_tag": "v0.1-baseline",
+  "started_at": "2026-05-17T00:00:00Z",
+  "completed_at": "2026-05-17T00:05:00Z",
+  "final_response": "No — we can't open a senior staff rec this quarter. The controlling commitment is in decisions.md (2026-04-15 — \"Restrict initial hiring to mid-level engineers only\", status: accepted): all four Q2 engineering hires are mid-level (3–7 YOE), no staff or senior staff recs this quarter, re-evaluate at Q3 planning. The decision explicitly anticipates this case and directs recruiting to reject senior+ candidates politely with a \"not this round\" note. So: tell recruiting to pass with that note, and flag the candidate for re-approach at Q3 if scope opens up. If the cofounder wants to reopen the conversation before Q3, that's a new decision — would need to supersede the 2026-04-15 entry, not just bypass it.",
+  "actions": [
+    {
+      "path": "daybook/2026-05-17.md",
+      "action": "create",
+      "content_summary": "Opened today's daybook. Intent marked reactive (inbound from recruiting). Log captures the question, the decisions.md lookup (2026-04-15 mid-level-only commitment), and the response sent to recruiting. Handoff stub left for end-of-day."
+    }
+  ],
+  "notes": [
+    "User question was a classic cold-pickup: 'what did we decide on hiring scope?' Answer lives in decisions.md, retrieved via direct read.",
+    "Controlling decision is 2026-04-15 — accepted — restricts Q2 hires to mid-level only. Consequences section already specifies the recruiting response pattern.",
+    "No new commitment made — restating an existing decision doesn't warrant a new decisions.md entry.",
+    "No followup added: the loop closes with the reply to recruiting; nothing to chase.",
+    "Did not read previous daybook (2026-04-22) beyond confirming nothing in-flight relevant to hiring; the question was self-contained and decisions.md was the authoritative source."
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "05-routing-decision-vs-observation",
+  "run_number": 2,
+  "axes": {
+    "CE1": {"score": 3, "justification": "Acted directly; the closing question is an optional next-step offer, not a precondition to acting."},
+    "CE2": {"score": 3, "justification": "Three sentences: route + why + offer. No preamble, no restatement, no trailing summary."},
+    "CE3": {"score": 3, "justification": "Named target (decisions.md ADR with explicit anchor + daybook Log line) and the why ('constrains future design... schema, migrations, client libraries, ops tooling') in one in-line clause."},
+    "CE4": {"score": 3, "justification": "Reads-then-writes pattern produces two clean, atomic file commits to canonical paths; nothing left mid-flight."}
+  }
+}

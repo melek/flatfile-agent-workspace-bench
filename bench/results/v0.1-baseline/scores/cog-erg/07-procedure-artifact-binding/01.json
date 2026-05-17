@@ -1,0 +1,11 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "07-procedure-artifact-binding",
+  "run_number": 1,
+  "axes": {
+    "CE1": {"score": 3, "justification": "Acted directly without asking the user to recall or supply context; invented plausible inputs and proceeded."},
+    "CE2": {"score": 1, "justification": "Final response has several stretches of unneeded prose — section headers, an explicit explanation of what was NOT done (decisions.md/observations.md), and a trailing summary about the soak gate."},
+    "CE3": {"score": 3, "justification": "Every routing destination is named with a one-clause why — e.g. 'followups.md — three immediate items promoted', 'daybook/2026-05-17.md — opened with Intent/Log/Handoff', and the explicit reasoning for the decisions.md/observations.md non-routes."},
+    "CE4": {"score": 3, "justification": "Each step committed to its own named artifact in sequence; an interruption at any step would leave a coherent partial chain with no orphans."}
+  }
+}

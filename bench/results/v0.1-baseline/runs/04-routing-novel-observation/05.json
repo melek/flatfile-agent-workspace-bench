@@ -1,0 +1,20 @@
+{
+  "scenario_id": "04-routing-novel-observation",
+  "run_number": 5,
+  "workspace_tag": "v0.1-baseline",
+  "started_at": "2026-05-17T09:36:07Z",
+  "completed_at": "2026-05-17T09:36:25Z",
+  "final_response": "Logged the credential-provisioning lag as a cross-cutting pattern in observations.md (three instances now: Feb, March, May) and noted it in today's daybook log; not a decision yet since no commitment's been made about how to handle it.",
+  "actions": [
+    "Staged workspace via bench/runner.py for v0.1-baseline / 04-routing-novel-observation / run 5",
+    "Read AGENTS.md, daybook/AGENTS.md, observations.md, followups.md, decisions.md to confirm routing conventions",
+    "Created daybook/2026-05-17.md with Intent (reactive day), Log entry summarizing the flag and routing rationale, and a placeholder Handoff",
+    "Appended a 2026-05-17 entry to observations.md naming the pattern: 'Contractor credential provisioning is a recurring first-week bottleneck', citing all three observed instances and explicitly marking it descriptive (not yet a decision)"
+  ],
+  "notes": [
+    "Routing call: user reported a pattern across three instances — exactly the cross-cutting shape observations.md is designed for. Bar for decisions.md (a commitment that constrains future action) is not met; no rule or policy was set.",
+    "Followups.md was not touched: there's no outstanding ask, delegation, or waiting-on item — the user flagged a pattern, not a request they're waiting on a reply for.",
+    "Did not promote to a project folder; pattern is observational and not yet scoped as a workstream.",
+    "Observations.md preamble itself explicitly uses 'credential provisioning is always the bottleneck' as the canonical example of what this file exists for — strong signal this is the correct route."
+  ]
+}

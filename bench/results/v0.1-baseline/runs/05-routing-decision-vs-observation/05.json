@@ -1,0 +1,46 @@
+{
+  "scenario_id": "05-routing-decision-vs-observation",
+  "run_number": 5,
+  "workspace_tag": "v0.1-baseline",
+  "started_at": "2026-05-17T09:36:00Z",
+  "completed_at": "2026-05-17T09:36:24Z",
+  "final_response": "Logged as a decision: decisions.md#2026-05-17-postgres-for-events-service (datastore commitment constrains future work). Also dropped a pointer line in today's daybook Log.",
+  "actions": [
+    {
+      "type": "read",
+      "path": "bench/scenarios/05-routing-decision-vs-observation/user-prompt.md"
+    },
+    {
+      "type": "read",
+      "path": "05-workspace/AGENTS.md"
+    },
+    {
+      "type": "read",
+      "path": "05-workspace/decisions.md"
+    },
+    {
+      "type": "read",
+      "path": "05-workspace/daybook/AGENTS.md"
+    },
+    {
+      "type": "list",
+      "path": "05-workspace/daybook/"
+    },
+    {
+      "type": "edit",
+      "path": "05-workspace/decisions.md",
+      "summary": "Appended new decision entry: 2026-05-17 — Postgres for events service (Status: accepted)."
+    },
+    {
+      "type": "write",
+      "path": "05-workspace/daybook/2026-05-17.md",
+      "summary": "Created today's daybook with a Log pointer to the new decision entry."
+    }
+  ],
+  "notes": [
+    "Routing call: user committed to a datastore (Postgres) for a new service. That is a commitment that constrains future action — schema, migrations, client libs all target Postgres going forward — so it clears the strict bar for decisions.md rather than observations.md or just a daybook line.",
+    "User's 'Log that' is a directive to record durably; decisions.md is the durable commitment surface. Added a daybook Log line as a chronological pointer so the day's record reflects the routing.",
+    "Used heading slug convention from AGENTS.md (`## 2026-05-17 — Short title`) so the GitHub anchor is stable and matches the cross-reference form in the daybook.",
+    "Did not invent a project folder — only one fact was given (datastore choice). If/when the events service grows scope, that's the time to spin up `projects/events-service/` and link back to this decision."
+  ]
+}

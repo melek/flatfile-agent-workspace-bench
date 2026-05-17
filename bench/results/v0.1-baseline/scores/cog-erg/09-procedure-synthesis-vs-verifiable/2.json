@@ -1,0 +1,11 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "09-procedure-synthesis-vs-verifiable",
+  "run_number": 2,
+  "axes": {
+    "CE1": {"score": 3, "justification": "Acted directly, made the call, and did not ask the user to load anything before responding."},
+    "CE2": {"score": 1, "justification": "Bulleted 'What's satisfied / What's missing / Recommendation' structure restates the checklist contents and adds a trailing summary that pads beyond the terse call."},
+    "CE3": {"score": 3, "justification": "States the checklist path and notes the Go/No-go header lives inline within it, in a single short clause."},
+    "CE4": {"score": 3, "justification": "Single artifact produced and committed cleanly; no orphan daybook or auxiliary in-progress files."}
+  }
+}

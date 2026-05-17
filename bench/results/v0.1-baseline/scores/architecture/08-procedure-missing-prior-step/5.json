@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "08-procedure-missing-prior-step",
+  "run_number": 5,
+  "axes": {
+    "AR1": {
+      "score": 2,
+      "justification": "Notes state 'did not modify the workspace — no daybook entry, no synthesized factors.md, no actions.md'; correct restraint but no positive routing decision, and a daybook log of the stall would have been defensible."
+    },
+    "AR2": {
+      "score": 3,
+      "justification": "Named the missing factors.md, refused to fabricate, and offered three options including an explicit 'skip discipline' user override — fully artifact-bound and even forecasts the eventual actions.md path."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "All references are relative paths; cites both runbooks/incident-postmortem/AGENTS.md and methodology.md by relative path, all resolve."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "No workspace writes — trivially idempotent on re-run."
+    }
+  }
+}

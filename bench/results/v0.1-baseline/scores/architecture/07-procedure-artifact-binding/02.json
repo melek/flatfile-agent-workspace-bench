@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "07-procedure-artifact-binding",
+  "run_number": 2,
+  "axes": {
+    "AR1": {
+      "score": 3,
+      "justification": "Routed correctly with explicit rationale: immediate items to followups.md; the cross-service-refactor pattern (second occurrence this quarter) into observations.md as descriptive (low bar), with daybook Handoff stating that a third occurrence would escalate to decisions.md — matches the methodology's strict bar for commitments."
+    },
+    "AR2": {
+      "score": 3,
+      "justification": "All three intermediates (timeline.md, factors.md, actions.md) and the final postmortem are on disk; the actions block enumerates each step reading the prior artifact before writing."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "All cross-references are relative paths that resolve; the observations entry back-references the postmortem path correctly; no absolute paths or wiki-style links."
+    },
+    "AR4": {
+      "score": 2,
+      "justification": "Followups, observations, and decisions are append-shaped, but daybook/2026-05-17.md is written wholesale and projects/postmortems/AGENTS.md is created from scratch — re-running would overwrite both rather than append; state stays coherent but daybook isn't strictly append-only."
+    }
+  }
+}

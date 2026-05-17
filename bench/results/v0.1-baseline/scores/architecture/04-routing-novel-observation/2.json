@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "04-routing-novel-observation",
+  "run_number": 2,
+  "axes": {
+    "AR1": {
+      "score": 3,
+      "justification": "Routed to observations.md and explicitly named the strict bar (commitment vs. pattern) and the promotion path to decisions.md if a fix is later committed; also justified the non-write to followups.md."
+    },
+    "AR2": {
+      "score": null,
+      "justification": "Non-procedure scenario; artifact-binding axis is not applicable."
+    },
+    "AR3": {
+      "score": 2,
+      "justification": "Relative paths used and the daybook points at the observation, but the action summary references the observation by title rather than committing to a stable anchor slug — slightly less anchor-stable than run 1."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "Append-to-observations + create-new-dated-daybook pattern is idempotent on re-run; nothing rewrites prior content."
+    }
+  }
+}

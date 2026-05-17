@@ -1,0 +1,11 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "02-cold-pickup-cross-day",
+  "run_number": 3,
+  "axes": {
+    "AR1": {"score": 3, "rationale": "Daybook Log captures the reactive interaction with the decision citation; decisions.md/observations.md/followups.md correctly left alone, and notes name the methodology rationale (\"already covered by existing commitment\")."},
+    "AR2": {"score": null, "rationale": "Non-procedure scenario; artifact-binding does not apply."},
+    "AR3": {"score": 3, "rationale": "Daybook references `decisions.md` by relative path and names the 2026-04-15 entry; the citation resolves to the existing heading without absolute paths or wiki links."},
+    "AR4": {"score": 3, "rationale": "Single action is writing today's dated daybook with an explicitly open handoff section; future sessions can append without conflict and re-running would just rewrite the same fresh-day file."}
+  }
+}

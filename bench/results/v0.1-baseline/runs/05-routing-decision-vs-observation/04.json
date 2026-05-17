@@ -1,0 +1,24 @@
+{
+  "scenario_id": "05-routing-decision-vs-observation",
+  "run_number": 4,
+  "workspace_tag": "v0.1-baseline",
+  "started_at": "2026-05-17T00:00:00Z",
+  "completed_at": "2026-05-17T00:00:01Z",
+  "final_response": "Logged in decisions.md as a 2026-05-17 entry (Postgres for events service, accepted) and noted in today's daybook.",
+  "actions": [
+    {"type": "read", "path": "bench/scenarios/05-routing-decision-vs-observation/user-prompt.md"},
+    {"type": "read", "path": "04-workspace/AGENTS.md"},
+    {"type": "read", "path": "04-workspace/decisions.md"},
+    {"type": "read", "path": "04-workspace/daybook/AGENTS.md"},
+    {"type": "list", "path": "04-workspace/daybook/"},
+    {"type": "list", "path": "04-workspace/projects/"},
+    {"type": "edit", "path": "04-workspace/decisions.md", "summary": "Appended 2026-05-17 — Postgres for events service entry (Status: accepted)"},
+    {"type": "write", "path": "04-workspace/daybook/2026-05-17.md", "summary": "Created today's daybook with Log entry referencing the decision"}
+  ],
+  "notes": [
+    "Routed to decisions.md because the user's statement is a forward-binding commitment about a datastore choice — future schema/ops/tooling decisions are constrained by it. This passes the AGENTS.md test ('would a future reader need to ask wait, are we allowed to do X?').",
+    "Did not route to observations.md (this is a commitment, not a descriptive pattern) or to a project folder (no events-service project exists yet; could be created later if work scales).",
+    "Cross-referenced the decision from today's daybook Log per workspace convention.",
+    "Used canonical status string 'accepted' and ISO-dated heading slug per AGENTS.md canonical-strings rules."
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "01-cold-pickup-guardrail",
+  "run_number": 4,
+  "axes": {
+    "CE1": {"score": 2, "justification": "Acted, but explicitly asked the user to confirm legal sign-off (and share redlines) before any send — one targeted clarifying question."},
+    "CE3": {"score": 2, "justification": "Mentions 'I've opened today's daybook and updated the followup' — names where but not why, in one short clause."},
+    "CE2": {"score": 3, "justification": "Compact single paragraph; states the hold, the evidence, the ask, and the override path with no filler."},
+    "CE4": {"score": 3, "justification": "Two clean writes (today's daybook + followups update) named in the response; interruption leaves no orphans."}
+  }
+}

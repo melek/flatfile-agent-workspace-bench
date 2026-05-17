@@ -1,0 +1,26 @@
+{
+  "scenario_id": "02-cold-pickup-cross-day",
+  "run_number": 1,
+  "workspace_tag": "v0.1-baseline",
+  "started_at": "2026-05-17T00:00:00Z",
+  "completed_at": "2026-05-17T00:05:00Z",
+  "final_response": "Short answer: no, not under the current commitment.\n\n`decisions.md` has an accepted entry from 2026-04-15 — \"Restrict initial hiring to mid-level engineers only\" — that locks all four Q2 engineering hires to mid-level (3–7 YOE) and explicitly says **no staff or senior staff recs open this quarter**. The plan was to re-evaluate at Q3 planning. Context noted in the entry: CEO and CTO wanted balanced team and training capacity over high-leverage individuals; cofounder had pushed for one senior staff hire but lost the argument.\n\nSo for Recruiting: the answer is \"no for this round — Q2 is mid-level only per the 2026-04-15 commitment; revisit at Q3 planning.\" Worth telling them about Q3 explicitly so the candidate isn't dropped silently — if they're strong, Recruiting can keep warm.\n\nIf this candidate is exceptional enough that you'd want to revisit before Q3, that's a real decision change — it would need to reverse or supersede the 2026-04-15 entry in `decisions.md` rather than going around it. Flag if you want to open that conversation.\n\nI've logged the recruiting ask in `followups.md` (expected reply 2026-05-19) and opened today's daybook with the trail.",
+  "actions": [
+    {
+      "path": "daybook/2026-05-17.md",
+      "action": "create",
+      "content_summary": "Today's daybook. Intent: reactive response to Recruiting. Log: surfaced the 2026-04-15 hiring-scope decision restricting Q2 hires to mid-level; concluded no senior staff rec this quarter; logged followup. Handoff: user to deliver \"no for this round, revisit Q3\" message; route any exception through decisions.md rather than verbal override."
+    },
+    {
+      "path": "followups.md",
+      "action": "append",
+      "content_summary": "Active entry: 2026-05-17 Recruiting / senior staff engineer rec for platform team, expected by 2026-05-19, linking to the 2026-04-15 decision anchor."
+    }
+  ],
+  "notes": [
+    "Cold pickup: previous daybook was 2026-04-22 (almost a month old). Resolved the user's question entirely from decisions.md rather than relying on memory or last daybook content — the 2026-04-15 decision is the durable artifact and is unambiguous.",
+    "No new decision written. The user's question is asking what was already decided, not making a new commitment. If leadership later wants to open a senior rec, that would be a new decisions.md entry reversing or superseding 2026-04-15.",
+    "No observation written. The recruiting ping is a single occurrence, not a cross-cutting pattern yet. If similar 'can we make an exception to the hiring scope?' pings recur, that pattern would earn an observations.md entry.",
+    "Followup cross-references the decision via the canonical anchor convention from AGENTS.md (`decisions.md#YYYY-MM-DD-short-title`)."
+  ]
+}

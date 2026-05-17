@@ -34,7 +34,7 @@ Writes `bench/results/<tag>/jobs.jsonl` with one line per simulation job. Idempo
 
 ### Step 2 — Run simulation pass
 
-Read `jobs.jsonl`. For each pending job, dispatch a subagent with the prompt template in `bench/scenarios/<id>/scenario.md` and the workspace seed in `bench/scenarios/<id>/workspace-seed/`. The subagent stages the seed under `runs/<scenario>/<n>-workspace/` and operates from there.
+Read `jobs.jsonl`. For each pending job, dispatch a subagent with the **user prompt** at `bench/scenarios/<id>/user-prompt.md` and the staged workspace path. The subagent operates the workspace from that path. The subagent must **not** see `scenario.md` or `expected-signals.md` — those are the rater's design notes and would contaminate the simulation.
 
 → produces `bench/results/<tag>/runs/<scenario>/<n>.json` per run.
 
@@ -77,22 +77,41 @@ If a rubric thinks the change helped and another thinks it hurt, that is the res
 ### Simulator subagent
 
 ```
-You are operating a flat-file workspace. The workspace is staged at:
+You are operating a flat-file workspace on behalf of a user. The workspace
+is staged at:
   {WORKSPACE_PATH}
 
-Read its AGENTS.md to orient. Then read the scenario brief at:
-  {SCENARIO_BRIEF}
+Step 1. Read the workspace's AGENTS.md (root) and any AGENTS.md files in
+subdirectories you actually need (do not pre-load every one — let
+the user prompt drive what you read).
 
-Then respond to this user prompt, taking whatever actions the methodology asks for (writing daybook entries, decisions, observations, followups, etc.):
+Step 2. Respond to the user's prompt below. Take whatever actions the
+methodology asks for: writing daybook entries, decisions,
+observations, followups, runbook artifacts, etc. Write real
+files in {WORKSPACE_PATH}. Do not write outside it.
 
-{USER_PROMPT}
+  USER PROMPT:
+  {USER_PROMPT}
 
-When you are done, output a JSON object (and nothing else) with these fields:
-  scenario_id, run_number, started_at, completed_at, final_response,
-  actions (list of {path, action, content} — action is one of "create", "append", "rewrite"),
-  notes (any flags the orchestrator should see).
+Step 3. When you are done, write a JSON transcript to:
+  {RUN_OUTPUT}
 
-Do NOT roleplay as an expert, panel, or persona. Operate as a generic agent reading AGENTS.md.
+The transcript must be a single JSON object with these fields:
+  scenario_id, run_number, workspace_tag, started_at, completed_at,
+  final_response (the message you would have sent the user),
+  actions (list of {path, action, content_summary} — action is one of
+    "create", "append", "rewrite", "delete"; content_summary is a
+    short paraphrase of what you wrote, not the full content),
+  notes (any flags the orchestrator should see; empty list if none).
+
+Important constraints:
+- Operate as a generic agent reading AGENTS.md. Do NOT roleplay as a
+  domain expert, persona, or panel.
+- Do not read scenario.md or expected-signals.md — those are not part
+  of what the user sees. You only have the workspace and the user
+  prompt above.
+- Do not minimize work to avoid file writes. The benchmark is testing
+  whether you write the right files in the right places.
 ```
 
 ### Rater subagent

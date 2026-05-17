@@ -1,0 +1,11 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "07-procedure-artifact-binding",
+  "run_number": 2,
+  "axes": {
+    "CE1": {"score": 3, "justification": "Acted directly; no clarifying questions, no documents tossed back to the user."},
+    "CE2": {"score": 2, "justification": "Final response itself is tight, but the run record carries heavy process narration (granular step-by-step actions log plus a long notes section flagging runbook drafting inconsistency); one extended stretch of unneeded prose."},
+    "CE3": {"score": 3, "justification": "Final response names each destination with a brief why ('two immediate action items promoted', 'second such rollback this quarter — if it recurs, that becomes a decisions.md commitment')."},
+    "CE4": {"score": 3, "justification": "Strict per-step artifact production; no in-progress orphans — interruption at any step leaves a coherent intermediate chain."}
+  }
+}

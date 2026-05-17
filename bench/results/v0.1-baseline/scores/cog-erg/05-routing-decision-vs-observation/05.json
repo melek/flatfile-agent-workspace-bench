@@ -1,0 +1,11 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "05-routing-decision-vs-observation",
+  "run_number": 5,
+  "axes": {
+    "CE1": {"score": 3, "justification": "Acted directly without any clarifying question or document-load request."},
+    "CE2": {"score": 3, "justification": "One sentence with the route and a parenthetical why, plus a brief daybook-pointer note — no padding."},
+    "CE3": {"score": 3, "justification": "Named target with anchor (decisions.md#2026-05-17-postgres-for-events-service) and gave the why in-line ('datastore commitment constrains future work') plus the daybook cross-ref."},
+    "CE4": {"score": 3, "justification": "Two clean writes to canonical paths with stable anchors; no in-progress artifacts."}
+  }
+}

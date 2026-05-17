@@ -1,0 +1,11 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "09-procedure-synthesis-vs-verifiable",
+  "run_number": 5,
+  "axes": {
+    "CE1": {"score": 3, "justification": "Made the call directly from the inputs the user provided; no clarifying questions or document-fetching asks."},
+    "CE2": {"score": 3, "justification": "Final response is a compact No-go call with artifact path and unblock conditions; no restatement or process narration."},
+    "CE3": {"score": 3, "justification": "Inline clause names the checklist artifact path and points to where the decision is recorded with the reason for the call."},
+    "CE4": {"score": 2, "justification": "Checklist artifact is clean, but the daybook with Intent/Log/Handoff opened for a single-procedure call is an ambiguous in-progress artifact a future session would have to triage."}
+  }
+}

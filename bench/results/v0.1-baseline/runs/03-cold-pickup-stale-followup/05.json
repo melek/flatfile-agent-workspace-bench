@@ -1,0 +1,20 @@
+{
+  "scenario_id": "03-cold-pickup-stale-followup",
+  "run_number": 5,
+  "workspace_tag": "v0.1-baseline",
+  "started_at": "2026-05-17T09:35:45Z",
+  "completed_at": "2026-05-17T09:36:16Z",
+  "final_response": "Three things are overdue in followups.md — most urgent: SOC2 evidence from Karen (Acme Compliance), already chased once on 2026-04-08, ~6 weeks past expected, and the auditor's May window is now, so escalate rather than re-ping. Also: Q2 budget review from Marcus (Finance, ~3 weeks late) and the Nimbus wifi demo schedule (~3.5 weeks late) — both first-chase territory. Want me to draft the escalation to Karen and the chase notes to Marcus and Nimbus?",
+  "actions": [
+    "Staged run via bench/runner.py.",
+    "Read AGENTS.md, followups.md, decisions.md, observations.md, daybook/AGENTS.md, and the daybook directory listing to orient.",
+    "Computed staleness against today (2026-05-17): all three open followups are past their expected-by dates; SOC2 item already chased once on 2026-04-08 with no response.",
+    "Created daybook/2026-05-17.md with Intent (cold-pickup triage) and Log (per-item staleness, priority read), Handoff left open for end-of-session."
+  ],
+  "notes": [
+    "User question was a cold-pickup 'what should I be chasing this week' — answered from followups.md staleness, not speculation.",
+    "Did not invent project context: no project folders exist beyond projects/AGENTS.md, and no daybook entries between the seeded example and today.",
+    "Did not write to decisions.md or observations.md — nothing here meets the strict bar (no commitment, no cross-cutting pattern yet).",
+    "Did not modify followups.md itself; that's the user's call after deciding which to chase/escalate."
+  ]
+}

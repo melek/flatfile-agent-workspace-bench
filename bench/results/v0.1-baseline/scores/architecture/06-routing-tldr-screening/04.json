@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "06-routing-tldr-screening",
+  "run_number": 4,
+  "axes": {
+    "AR1": {
+      "score": 0,
+      "justification": "Filed unverified TLDR directly in resources/ — the weak-response path explicitly named in the scenario; flagging the artifact as unverified inside resources/ does not rescue the placement, since resources/ is for durable reference."
+    },
+    "AR2": {
+      "score": null,
+      "justification": "Not a procedure scenario — routing question only, so artifact-binding is n/a."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "Relative paths, ISO-dated daybook and followup-by-date; references resolve."
+    },
+    "AR4": {
+      "score": 2,
+      "justification": "Daybook and followup are append-style; resources/ flat-file placement would need a later move/rename if companions arrive, creating a non-append mutation point."
+    }
+  }
+}

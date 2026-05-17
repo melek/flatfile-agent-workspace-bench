@@ -1,0 +1,11 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "05-routing-decision-vs-observation",
+  "run_number": 5,
+  "axes": {
+    "AR1": {"score": 0, "justification": "Same misroute pattern: treats a one-line intent as a durable commitment and lands it in decisions.md with no in-band pushback or route-up offer."},
+    "AR2": {"score": null, "justification": "Not a procedure scenario; artifact-binding axis is n/a."},
+    "AR3": {"score": 3, "justification": "Relative paths under 05-workspace/, canonical ISO-slug anchor, daybook→decisions cross-reference is well-formed."},
+    "AR4": {"score": 3, "justification": "Append to decisions.md and create of a new daybook file are both append-only; re-run remains coherent."}
+  }
+}

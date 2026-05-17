@@ -1,0 +1,11 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "09-procedure-synthesis-vs-verifiable",
+  "run_number": 2,
+  "axes": {
+    "AR1": {"score": 2, "justification": "Procedure output correctly placed at tmp/release-readiness/v2.4/checklist.md; notes touch on why no daybook / decisions / observations / followups but the rationale is procedural ('single-turn execution') rather than tied directly to the strict bars."},
+    "AR2": {"score": 3, "justification": "Step 1 created the checklist artifact from the template, step 2 appended Go/No-go reasoning into the same file — both steps produced concrete on-disk output."},
+    "AR3": {"score": 3, "justification": "All cited paths are relative and resolve; the missing tmp/release-2.4/notes.md is correctly identified as not present rather than treated as a broken reference."},
+    "AR4": {"score": 3, "justification": "Only the per-release checklist artifact was written; no daybook or log entries to conflict on re-run, and the v2.4/ scoping keeps the artifact stable for the current release."}
+  }
+}

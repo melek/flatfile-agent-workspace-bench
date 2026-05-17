@@ -1,0 +1,11 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "09-procedure-synthesis-vs-verifiable",
+  "run_number": 1,
+  "axes": {
+    "CE1": {"score": 3, "justification": "Acted directly without asking the user to recall or look up anything; surfaced missing items as findings rather than questions."},
+    "CE2": {"score": 2, "justification": "Mostly compact prose but the closing 'Quickest path to Go' sentence stretches past what the call requires."},
+    "CE3": {"score": 3, "justification": "Names the checklist artifact path inline and ties the No-go reasoning to specific MISSING items so the user can redirect cheaply."},
+    "CE4": {"score": 2, "justification": "Checklist artifact is self-contained, but the daybook entry created with an open Handoff is an ambiguous in-progress artifact for a one-shot procedure run."}
+  }
+}

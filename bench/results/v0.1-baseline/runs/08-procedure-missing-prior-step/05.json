@@ -1,0 +1,20 @@
+{
+  "scenario_id": "08-procedure-missing-prior-step",
+  "run_number": 5,
+  "workspace_tag": "v0.1-baseline",
+  "started_at": "2026-05-17T09:36:00Z",
+  "completed_at": "2026-05-17T09:37:00Z",
+  "final_response": "Can't run step 4 yet — it reads tmp/incident-postmortem/2026-04-23-staging-rollback/factors.md (step 3's output), and only timeline.md (step 1/2) exists in that folder. The runbook is artifact-bound: step 4 stalls visibly rather than fabricating action items off a missing factors analysis. Options: (a) I run step 3 now to produce factors.md from the existing timeline, then step 4 — want me to proceed and ask you the factor questions? (b) you point me at an existing factors.md if it lives elsewhere; (c) you want me to skip discipline and improvise actions straight off the timeline (not recommended for tomorrow's review).",
+  "actions": [
+    "Read AGENTS.md (workspace orientation) and methodology.md to confirm runbook discipline (artifact-binding; stall visibly on missing prior artifact).",
+    "Read runbooks/AGENTS.md and runbooks/incident-postmortem/AGENTS.md to identify step 4's input requirement (factors.md from step 3).",
+    "Inspected tmp/incident-postmortem/2026-04-23-staging-rollback/ — found only timeline.md; factors.md is absent.",
+    "Read timeline.md to verify scope (2026-04-23 staging rollback, migration step 2 lock acquisition, rolled back 14:30, recovered 14:33).",
+    "Declined to fabricate step 4 output; surfaced the missing-prior-artifact gap to the user with concrete recovery options."
+  ],
+  "notes": [
+    "Per runbooks/incident-postmortem/AGENTS.md: 'If a prior artifact is missing, the next step stalls visibly.' Mirrored in methodology.md 'Runbook discipline: artifact-binding'.",
+    "Did not modify the workspace — no daybook entry, no synthesized factors.md, no actions.md. The decision is to halt and ask, not to silently advance.",
+    "If unblocked (factors.md produced), step 4 output would land at tmp/incident-postmortem/2026-04-23-staging-rollback/actions.md per runbook."
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "scenario_id": "04-routing-novel-observation",
+  "run_number": 1,
+  "workspace_tag": "v0.1-baseline",
+  "started_at": "2026-05-17T09:31:44Z",
+  "completed_at": "2026-05-17T09:33:30Z",
+  "final_response": "Flagged. This is the third sighting (Feb, Mar, now today), so it's cross-cutting enough to promote out of the daybook — I logged it as an observation:\n\n- `observations.md#2026-05-17-it-credential-provisioning-lag-for-external-collaborators` — names the recurring shape (~4-day IT lag eats most of week one of any external engagement). Descriptive, not yet a commitment.\n- Mentioned in today's `daybook/2026-05-17.md` Log so the routing is auditable.\n\nI deliberately did *not* write anything to `decisions.md` or `followups.md`: nothing was committed yet (no \"we will route contractor onboarding through X going forward\"), and no specific loop is open with a named person. If you want to act on it, the next move would be a decision — e.g. pre-provisioning before contractor start dates, an escalation path, or a contractual SLA — which would cite this observation in its Context. Say the word and I'll draft it.",
+  "actions": [
+    {
+      "path": "observations.md",
+      "action": "append",
+      "content_summary": "Appended observation '2026-05-17 — IT credential provisioning lag for external collaborators' naming the recurring ~4-day IT delay across Feb, Mar, May sightings. Descriptive only; flags that a fix would crystallize as a decision citing this entry."
+    },
+    {
+      "path": "daybook/2026-05-17.md",
+      "action": "create",
+      "content_summary": "Created today's daybook with Intent (reactive day), Log noting the user's flagged pattern and the routing rationale (promoted to observations.md because third sighting; not a decision or followup yet), and a placeholder Handoff section."
+    }
+  ],
+  "notes": [
+    "Routed the user's input as an observation, not a decision or followup. Justification: three sightings across months makes it cross-cutting (observations.md bar), but no commitment was made and no specific loop with a named counterparty is open.",
+    "Did not touch decisions.md — the user flagged a pattern, did not commit to a remediation. The strict bar in decisions.md template ('commitments that constrain future action') is not met.",
+    "Did not touch followups.md — no outstanding ask to a specific person with an expected reply. The IT lag is a systemic pattern, not a pending ticket the user is waiting on.",
+    "Used the canonical heading-slug form '## 2026-05-17 — Short title' so the cross-reference anchor observations.md#2026-05-17-it-credential-provisioning-lag-for-external-collaborators is stable.",
+    "Left the Handoff section as a placeholder rather than filling it now — it's mid-session, not end-of-day."
+  ]
+}

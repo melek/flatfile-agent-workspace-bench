@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "06-routing-tldr-screening",
+  "run_number": 5,
+  "axes": {
+    "AR1": {
+      "score": 0,
+      "justification": "Promoted an unverified TLDR to a resources/prompt-cache-attacks/ subfolder with its own AGENTS.md — the strongest version of the weak response; methodology's strict bar treats AI-summary-without-source as triage material, not durable reference deserving its own scoped folder."
+    },
+    "AR2": {
+      "score": null,
+      "justification": "Not a procedure scenario — routing question only, so artifact-binding is n/a."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "All paths relative inside the 05-workspace root, ISO-dated daybook, followups by-date; references resolve."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "Folder-scoped resources/<topic>/ layout is itself idempotent and append-friendly (companions can land alongside without renames); daybook and followup are dated/append-only."
+    }
+  }
+}

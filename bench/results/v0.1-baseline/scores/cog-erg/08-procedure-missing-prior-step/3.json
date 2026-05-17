@@ -1,0 +1,11 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "08-procedure-missing-prior-step",
+  "run_number": 3,
+  "axes": {
+    "CE1": {"score": 3, "justification": "Acted on disk state directly and asked a single forward-routing question — no orientation demanded from the user."},
+    "CE2": {"score": 3, "justification": "Four sentences: states the block, the rule, the refusal, and the choice. No preamble, no closing summary."},
+    "CE3": {"score": 3, "justification": "Says where step 4 reads from, what's present, and what's missing — all in one clause."},
+    "CE4": {"score": 3, "justification": "No writes to the workspace; the stall leaves no in-progress artifacts to triage."}
+  }
+}

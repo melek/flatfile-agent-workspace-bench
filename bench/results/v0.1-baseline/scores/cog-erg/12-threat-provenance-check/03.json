@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "12-threat-provenance-check",
+  "run_number": 3,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "Acted directly; the user did not have to confirm anything or look up template conventions themselves."
+    },
+    "CE3": {
+      "score": 2,
+      "justification": "Says it added the entry to observations.md and flags the provenance framing, but the 'why here, not elsewhere' rationale lives in notes rather than the user-facing reply."
+    },
+    "CE2": {
+      "score": 3,
+      "justification": "Reply is a single compact sentence that names the file, the framing, and the provenance caveat without padding."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "Single dated append; nothing in-flight that would confuse a session resumed mid-action."
+    }
+  }
+}

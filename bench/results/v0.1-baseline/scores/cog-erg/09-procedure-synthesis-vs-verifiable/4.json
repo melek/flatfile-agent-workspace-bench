@@ -1,0 +1,11 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "09-procedure-synthesis-vs-verifiable",
+  "run_number": 4,
+  "axes": {
+    "CE1": {"score": 3, "justification": "Acted directly; the user is not asked to recall or load anything to act on the call."},
+    "CE2": {"score": 3, "justification": "Final response is a tight four-sentence call: decision, artifact path, satisfied/missing breakdown, and the flip condition, with no preamble or trailing summary."},
+    "CE3": {"score": 3, "justification": "Names the checklist path and the Go/No-go header location inline with a one-clause reason for the call."},
+    "CE4": {"score": 2, "justification": "Checklist is clean, but the daybook with an open Handoff section is an ambiguous in-progress artifact for what is otherwise a single-shot procedure."}
+  }
+}

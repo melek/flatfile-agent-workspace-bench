@@ -1,0 +1,93 @@
+{
+  "scenario_id": "07-procedure-artifact-binding",
+  "run_number": 2,
+  "workspace_tag": "v0.1-baseline",
+  "started_at": "2026-05-17T15:12:00Z",
+  "completed_at": "2026-05-17T15:45:00Z",
+  "final_response": "Incident-postmortem runbook complete for the 14:30 staging deploy rollback. Final postmortem at projects/postmortems/2026-05-17-staging-deploy-rollback.md; intermediates at tmp/incident-postmortem/2026-05-17-staging-deploy-rollback/ (timeline.md, factors.md, actions.md). Two immediate action items promoted into followups.md (re-land PR #2184 with producer fix; extend deploy gate to run producer integration tests). Logged the cross-service-refactor pattern in observations.md as this is the second such rollback this quarter — if it recurs, that becomes a decisions.md commitment. Daybook 2026-05-17.md updated with intent/log/handoff.",
+  "actions": [
+    {
+      "step": "stage",
+      "tool": "bash",
+      "command": "python3 bench/runner.py stage --version v0.1-baseline --scenario 07-procedure-artifact-binding --run-number 2",
+      "result": "Staged: bench/results/v0.1-baseline/runs/07-procedure-artifact-binding/02-workspace"
+    },
+    {
+      "step": "read user prompt",
+      "tool": "read",
+      "path": "bench/scenarios/07-procedure-artifact-binding/user-prompt.md"
+    },
+    {
+      "step": "orient on workspace conventions",
+      "tool": "read",
+      "paths": [
+        "02-workspace/AGENTS.md",
+        "02-workspace/runbooks/AGENTS.md",
+        "02-workspace/runbooks/incident-postmortem/AGENTS.md",
+        "02-workspace/daybook/AGENTS.md",
+        "02-workspace/projects/AGENTS.md",
+        "02-workspace/observations.md",
+        "02-workspace/followups.md"
+      ]
+    },
+    {
+      "step": "runbook step 1 — create working folder and timeline shell",
+      "tool": "bash+write",
+      "outputs": [
+        "tmp/incident-postmortem/2026-05-17-staging-deploy-rollback/timeline.md (shell with Detection/Diagnosis/Mitigation/Resolution headers)",
+        "daybook/2026-05-17.md (opened with Intent + initial Log)"
+      ]
+    },
+    {
+      "step": "runbook step 2 — fill timeline",
+      "tool": "write",
+      "outputs": [
+        "tmp/incident-postmortem/2026-05-17-staging-deploy-rollback/timeline.md (populated with timestamps 14:25–15:10 covering deploy, page, diagnosis of Job.priority/getPriority cross-service mismatch from PR #2184, rollback, all-clear)"
+      ]
+    },
+    {
+      "step": "runbook step 3 — contributing factors",
+      "tool": "write",
+      "outputs": [
+        "tmp/incident-postmortem/2026-05-17-staging-deploy-rollback/factors.md (multiple causes: cross-service rename, CI scope, untyped API; context including pattern recurrence; what worked: synthetic detection, gate held, rollback tooling)"
+      ]
+    },
+    {
+      "step": "runbook step 4 — action items",
+      "tool": "write",
+      "outputs": [
+        "tmp/incident-postmortem/2026-05-17-staging-deploy-rollback/actions.md (tagged immediate/next-quarter/aspiration with owners)"
+      ]
+    },
+    {
+      "step": "runbook step 5 — compose final postmortem",
+      "tool": "write",
+      "outputs": [
+        "projects/postmortems/2026-05-17-staging-deploy-rollback.md (sections drawn from each intermediate, with explicit cross-references to source artifacts)",
+        "projects/postmortems/AGENTS.md (new project folder briefing — status/goal/context/scope/next steps)"
+      ]
+    },
+    {
+      "step": "post-runbook routing (per runbook Notes + workspace discipline)",
+      "tool": "edit",
+      "outputs": [
+        "followups.md (two immediate items: PR #2184 re-land by 2026-05-20; deploy-gate change by 2026-05-24)",
+        "observations.md (2026-05-17 entry: cross-service refactors keep missing downstream callers — second occurrence this quarter)",
+        "daybook/2026-05-17.md (Log accreted through all five steps; Handoff written)"
+      ]
+    },
+    {
+      "step": "verify artifacts",
+      "tool": "bash",
+      "result": "tmp/incident-postmortem/2026-05-17-staging-deploy-rollback/ contains actions.md, factors.md, timeline.md; projects/postmortems/ contains 2026-05-17-staging-deploy-rollback.md + AGENTS.md; daybook/2026-05-17.md present."
+    }
+  ],
+  "notes": [
+    "Runbook outputs preamble says 'Five intermediate scan files' but the numbered steps only enumerate three intermediate artifact files (timeline.md, factors.md, actions.md — step 2 updates step 1's file rather than creating a new one). Followed the steps as written since they govern step-by-step execution; the count in the Outputs summary appears to be a drafting inconsistency in the runbook itself rather than a hidden requirement. Worth flagging if iterating on the runbook.",
+    "Incident timeline and technical details (PR #2184, Job.priority/getPriority rename, queue-worker/producer split, timestamps) were invented as plausible inputs per scenario instructions — kept consistent with 'pulled the cord at 14:30' framing and staging-only scope.",
+    "No decisions.md entry created — nothing in this incident's outcomes constrains future workspace-level action yet. The pattern logged in observations.md is the precursor; if a third cross-service-rename rollback happens, that crystallizes into a decisions.md commitment.",
+    "Created projects/postmortems/AGENTS.md because the projects/ subfolder is required to carry one per workspace convention, and the folder was new (the runbook produces the postmortem file but doesn't itself instruct creating the project AGENTS.md; I did it to keep the workspace consistent).",
+    "Did not run any git commands (constraint).",
+    "All writes confined to the staged workspace and the JSON path (constraint)."
+  ]
+}

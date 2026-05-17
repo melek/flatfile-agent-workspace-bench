@@ -1,0 +1,11 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "05-routing-decision-vs-observation",
+  "run_number": 4,
+  "axes": {
+    "CE1": {"score": 3, "justification": "Acted directly; user was asked nothing."},
+    "CE2": {"score": 3, "justification": "Single short sentence reporting both writes — no filler, no preamble, no closing summary."},
+    "CE3": {"score": 2, "justification": "Said where (decisions.md entry + daybook note) but gave no in-band why; rationale is buried in private notes."},
+    "CE4": {"score": 3, "justification": "Two atomic writes to canonical workspace paths; partial interruption would leave no orphans."}
+  }
+}

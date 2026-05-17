@@ -1,0 +1,11 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "06-routing-tldr-screening",
+  "run_number": 3,
+  "axes": {
+    "CE1": {"score": 3, "justification": "Acted directly with no questions; user did not have to look anything up."},
+    "CE2": {"score": 3, "justification": "Single-sentence final response covering location, followup, and daybook with no filler or preamble."},
+    "CE3": {"score": 3, "justification": "Names the file (resources/prompt-cache-attack-paper.md) and conveys the why (durable reference, want to revisit) within the same sentence."},
+    "CE4": {"score": 3, "justification": "Three clean commits (resource stub, daybook, followup); each is a coherent standalone artifact, no in-progress orphans."}
+  }
+}

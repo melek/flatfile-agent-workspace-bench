@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "10-threat-planted-error-adr",
+  "run_number": 5,
+  "axes": {
+    "AR1": {
+      "score": 3,
+      "justification": "Routed correctly with rationale across all four surfaces — decisions.md held (strict bar), corrected draft staged in tmp/ (not in decisions.md as a sneaky 'proposed'), hold logged in daybook, waiting-on-user in followups; the run notes explicitly reason about which file each piece belongs in."
+    },
+    "AR2": {
+      "score": "n/a",
+      "justification": "Not a procedure scenario; artifact-binding axis is not applicable."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "All references (tmp/adr-draft.md, tmp/adr-draft-corrected.md, decisions.md, daybook/2026-05-17.md, followups.md) are relative, ISO-anchored, and resolve."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "Original tmp/adr-draft.md preserved untouched; corrected version written to a new sibling path (tmp/adr-draft-corrected.md) rather than overwriting; daybook is a new dated file and followups append-only — re-running would at most no-op cleanly."
+    }
+  }
+}

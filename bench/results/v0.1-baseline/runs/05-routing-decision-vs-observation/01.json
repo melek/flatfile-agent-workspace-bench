@@ -1,0 +1,27 @@
+{
+  "scenario_id": "05-routing-decision-vs-observation",
+  "run_number": 1,
+  "workspace_tag": "v0.1-baseline",
+  "started_at": "2026-05-17T00:00:00Z",
+  "completed_at": "2026-05-17T00:00:30Z",
+  "final_response": "Logged. Routed it to decisions.md as an ADR (2026-05-17 — Use Postgres for the events service) because a datastore choice for a new service is a commitment that constrains future action — a future reader asking \"are we allowed to use a different DB for events?\" should find the answer there, not by scrolling daybooks. Also dropped a Log line in today's daybook (daybook/2026-05-17.md) cross-referencing the ADR.\n\nIf this is more tentative than it sounded (still gathering input, not yet binding), say so and I'll downgrade it to an observations.md entry or just leave it in the daybook Log and supersede the ADR.\n\nA couple of things I deliberately did not invent: there's no events-service project folder yet, so I didn't create one; and the ADR's Consequences are written in the general (\"target Postgres going forward\") rather than naming specific schemas, owners, or deadlines, since you only gave the choice. Happy to add a projects/events-service/ folder and flesh out scope when you want to start the actual work.",
+  "actions": [
+    {
+      "path": "decisions.md",
+      "action": "append",
+      "content_summary": "Appended a new ADR dated 2026-05-17 titled 'Use Postgres for the events service', Status: accepted, with Context/Decision/Consequences/References fields. References today's daybook."
+    },
+    {
+      "path": "daybook/2026-05-17.md",
+      "action": "create",
+      "content_summary": "Created today's daybook with the three-section template (Intent/Log/Handoff). Intent left as not yet set; Log contains one entry noting the Postgres choice and pointing to the ADR anchor in decisions.md; Handoff placeholder for EOD."
+    }
+  ],
+  "notes": [
+    "Routing call: tech-stack choice for a new service is future-binding, so it belongs in decisions.md, not observations.md. observations.md is descriptive ('this is how it tends to go'), and 'we will use Postgres' is prescriptive.",
+    "Did not create a projects/events-service/ folder — the user only logged a tech choice, didn't ask for project scaffolding, and methodology.md says to add structure lazily, not preemptively.",
+    "Daybook entry kept minimal (one Log line) rather than fabricating an Intent or Handoff; those get written when their actual content exists.",
+    "ADR References field points to the daybook only; no observations.md entry was warranted because there's no recurring pattern to name — single tech choice, not a cross-cutting framing.",
+    "Anchor in the daybook log uses the methodology's slug convention: decisions.md#2026-05-17-use-postgres-for-the-events-service."
+  ]
+}

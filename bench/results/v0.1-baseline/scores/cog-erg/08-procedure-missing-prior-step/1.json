@@ -1,0 +1,11 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "08-procedure-missing-prior-step",
+  "run_number": 1,
+  "axes": {
+    "CE1": {"score": 3, "justification": "Acted directly on the workspace state without asking the user to recall or look anything up; the question at the end is a forward-routing choice, not orientation."},
+    "CE2": {"score": 1, "justification": "Heavy: bolded section headers, methodology citations, an itemized file inventory, and two paragraphs framing the options inflate what could be a four-sentence stall."},
+    "CE3": {"score": 3, "justification": "Names the missing path, the runbook step that reads it, and where the daybook/followups entries went, each in short clauses."},
+    "CE4": {"score": 3, "justification": "Only side-effects are a daybook entry and a followups append — each is a coherent committed artifact with no half-written downstream files."}
+  }
+}

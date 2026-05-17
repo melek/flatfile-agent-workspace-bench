@@ -1,0 +1,11 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "05-routing-decision-vs-observation",
+  "run_number": 4,
+  "axes": {
+    "AR1": {"score": 0, "justification": "Misroute: a confident decisions.md entry for an unaligned intent; the rationale even cites the AGENTS.md strict-bar test while applying it backwards."},
+    "AR2": {"score": null, "justification": "Not a procedure scenario; artifact-binding axis is n/a."},
+    "AR3": {"score": 3, "justification": "All paths are relative under 04-workspace/ with ISO-dated heading slug; cross-reference between daybook and decisions resolves."},
+    "AR4": {"score": 3, "justification": "Append + new-file actions are idempotent and append-only; re-run would not damage prior state."}
+  }
+}

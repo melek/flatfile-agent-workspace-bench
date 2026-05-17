@@ -1,0 +1,11 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "02-cold-pickup-cross-day",
+  "run_number": 2,
+  "axes": {
+    "AR1": {"score": 3, "rationale": "Routed today's reactive interaction to the daybook Log; correctly declined to write decisions.md (no new commitment), observations.md (not a pattern), or followups.md (loop closes with reply) — notes articulate each routing call against the methodology's bars."},
+    "AR2": {"score": null, "rationale": "Non-procedure scenario; artifact-binding does not apply."},
+    "AR3": {"score": 3, "rationale": "Inline daybook reference uses relative `decisions.md` plus the 2026-04-15 anchor language; the path resolves and the cross-reference is faithful to the methodology."},
+    "AR4": {"score": 3, "rationale": "Only action is creating today's dated daybook with an explicit \"Handoff to be written at end-of-day\" placeholder; nothing else mutated, so re-running stays coherent."}
+  }
+}

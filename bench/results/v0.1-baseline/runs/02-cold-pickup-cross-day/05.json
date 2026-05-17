@@ -1,0 +1,21 @@
+{
+  "scenario_id": "02-cold-pickup-cross-day",
+  "run_number": 5,
+  "workspace_tag": "v0.1-baseline",
+  "started_at": "2026-05-17T00:00:00Z",
+  "completed_at": "2026-05-17T00:00:00Z",
+  "final_response": "No — per the 2026-04-15 decision, all four Q2 engineering hires are mid-level only; no senior/staff recs open this quarter. Decline politely (\"not this round\") or hold the candidate for Q3 re-evaluation.",
+  "actions": [
+    "Read AGENTS.md to orient on workspace conventions.",
+    "Read decisions.md and found the 2026-04-15 accepted decision restricting Q2 hiring to mid-level only.",
+    "Read followups.md (no relevant outstanding asks).",
+    "Read daybook/2026-04-22.md for last-session handoff context.",
+    "Created daybook/2026-05-17.md with Intent, Log, and Handoff sections recording recruiting's ask and the answer.",
+    "Appended a Q3-planning re-evaluation entry to followups.md so the candidate can be reconsidered at Q3 scope review."
+  ],
+  "notes": [
+    "Decision 2026-04-15 is still in force on 2026-05-17 (still Q2). No new decision required — this is an application of an existing commitment, not a new commitment.",
+    "Did not write to decisions.md or observations.md — recruiting's question doesn't change what's allowed, and there's no durable pattern to capture yet.",
+    "Followup is forward-looking: re-evaluate scope at Q3 planning, with this candidate as a concrete prompt."
+  ]
+}

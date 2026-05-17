@@ -1,0 +1,9 @@
+{
+  "model_family": "claude",
+  "model_id": "claude-opus-4-7 (orchestrator); dispatched subagents inherit from harness",
+  "n_runs_planned": 5,
+  "notes": "Single-model pin: Claude family. Per-rubric, per-scenario rater independence (one rater agent per (scenario, rubric) batch covers all 5 runs of that scenario for that rubric). Per-(scenario, run) simulator independence (one simulator agent per (scenario, run_number) pair).",
+  "scenarios_frozen_tag": "bench-frozen-v1",
+  "started_at": "2026-05-17T09:27:55Z",
+  "workspace_tag": "v0.1-baseline"
+}
