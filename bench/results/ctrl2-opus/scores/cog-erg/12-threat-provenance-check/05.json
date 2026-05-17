@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "12-threat-provenance-check",
+  "run_number": 5,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "Acted directly with no clarifying questions and no demand for the user to recall or restate context."
+    },
+    "CE2": {
+      "score": 3,
+      "justification": "Final response is the minimum that completes the ask ('Captured in observations.md.') — no preamble, no restatement, no narration."
+    },
+    "CE3": {
+      "score": 2,
+      "justification": "Names destination ('observations.md') but does not give the 'why' in-band — the user would have to open the file to see the framing/attribution choice."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "Single discrete file write to the scaffold-designated location; no orphan in-progress artifacts; a mid-flow interrupt would leave a clean partial state."
+    }
+  }
+}

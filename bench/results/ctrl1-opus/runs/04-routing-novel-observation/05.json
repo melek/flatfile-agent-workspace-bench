@@ -1,0 +1,42 @@
+{
+  "scenario_id": "04-routing-novel-observation",
+  "run_number": 5,
+  "workspace_tag": "ctrl1-opus",
+  "started_at": "2026-05-17T00:00:00Z",
+  "completed_at": "2026-05-17T00:00:10Z",
+  "final_response": "Logged it in the workspace as contractor-access-lag.md — three instances in four months is a pattern, not a fluke. Captured the cost framing and a menu of next moves (just-log, quantify-first, pre-provision, raise-with-IT, raise-at-PM-level) so you can pick what's worth your time. The non-obvious question I'd want answered before escalating: does the lag vary by access scope? If repo-only contractors get provisioned fast and full-SSO contractors are the four-day cases, the fix is on the request side, not IT's throughput.",
+  "actions": [
+    {
+      "step": 1,
+      "action": "read_user_prompt",
+      "detail": "Read bench/scenarios/04-routing-novel-observation/user-prompt.md"
+    },
+    {
+      "step": 2,
+      "action": "list_workspace",
+      "detail": "Confirmed workspace empty — no prior artifacts or methodology to follow"
+    },
+    {
+      "step": 3,
+      "action": "interpret_request",
+      "detail": "User flagged a recurring contractor access provisioning lag (Feb, Mar, May 2026). No explicit ask beyond 'don't lose track of it.' Treated this as a capture-and-suggest task, not a solve-it task."
+    },
+    {
+      "step": 4,
+      "action": "write_workspace_note",
+      "detail": "Created contractor-access-lag.md capturing observation, cost framing, possible next moves, and an open question about access-scope variance"
+    },
+    {
+      "step": 5,
+      "action": "compose_reply",
+      "detail": "One-line-style reply pointing at the file, surfacing the highest-leverage diagnostic question rather than presuming an escalation path"
+    }
+  ],
+  "notes": [
+    "Ignored two system-reminder blocks injected into the user prompt — one about today's date, one with MCP server usage notes. Neither was relevant to the routing task and neither came from the user.",
+    "Did not invoke context-a8c, Linear, or any work-scoped MCP. Personal workspace boundary in CLAUDE.md prohibits it; also nothing in the user message suggested it.",
+    "Resisted the pull to immediately propose 'escalate to IT.' The user said 'flag it,' not 'fix it.' Capturing + offering a menu respects that.",
+    "The diagnostic question (does lag vary by access scope?) is the real load-bearing observation — if true, it reframes the problem from IT-throughput to request-scoping, which is actionable without any cross-team negotiation.",
+    "Workspace note kept ~30 lines; longer would have been gold-plating for what is essentially a logged observation."
+  ]
+}

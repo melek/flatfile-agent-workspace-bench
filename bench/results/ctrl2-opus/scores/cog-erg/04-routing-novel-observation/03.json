@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "04-routing-novel-observation",
+  "run_number": 3,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "Acted directly without clarifying questions; no demand on user to re-load context."
+    },
+    "CE2": {
+      "score": 2,
+      "justification": "Final response is mostly compact but pads with a full scaffold inventory ('AGENTS.md, methodology.md, decisions.md, observations.md, followups.md plus daybook/, tmp/, projects/, runbooks/') that restates what the preamble already specified."
+    },
+    "CE3": {
+      "score": 2,
+      "justification": "Names the destinations (observations.md, followups.md) but the in-band 'why' is thin in the user-facing response — the rationale lives in the actions[] payload rather than the prose the user reads."
+    },
+    "CE4": {
+      "score": 2,
+      "justification": "Files themselves are clean, but the deferred-but-flagged `git init` leaves the workspace in an ambiguous in-progress state (the only run with no .git directory and an explicit deferral noted in the handoff)."
+    }
+  }
+}

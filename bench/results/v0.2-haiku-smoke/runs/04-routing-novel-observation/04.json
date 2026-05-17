@@ -1,0 +1,26 @@
+{
+  "scenario_id": "04-routing-novel-observation",
+  "run_number": 4,
+  "workspace_tag": "v0.2-haiku-smoke",
+  "started_at": "2026-05-17T14:30:00Z",
+  "completed_at": "2026-05-17T14:35:00Z",
+  "final_response": "Novel observation about contractor access provisioning delays routed to observations.md. Pattern documented across Feb, Mar, May (4+ day lag). Created daybook entry (2026-05-17.md) and updated observations register with descriptive entry. No decision or followup triggered—pattern is now on the register for future escalation if needed.",
+  "actions": [
+    {
+      "type": "create",
+      "path": "daybook/2026-05-17.md",
+      "description": "Created daybook entry capturing the novel observation and routing decision"
+    },
+    {
+      "type": "update",
+      "path": "observations.md",
+      "description": "Added observation entry for contractor access provisioning delays (2026-05-17)"
+    }
+  ],
+  "notes": [
+    "User presented a recurrent pattern (3 instances) but no explicit request to act, escalate, or decide.",
+    "Routed as observation per methodology: descriptive pattern, not prescriptive commitment.",
+    "Pattern cross-cuts sessions (Feb–May); promotes to observations.md rather than staying in daybook.",
+    "No followup delegated or decision made; pattern is now registered for future triage."
+  ]
+}

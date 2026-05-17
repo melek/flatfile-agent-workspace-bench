@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "04-routing-novel-observation",
+  "run_number": 5,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "Acted directly without questions or context demands on the user."
+    },
+    "CE2": {
+      "score": 2,
+      "justification": "Multi-clause response covering three artifacts plus a self-imposed deadline; somewhat padded for what the user asked to flag, with one stretch of unneeded prose."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "Named each destination (observations.md, followups.md, daybook) with brief reason in-band, so the user could intercept the unwanted followup."
+    },
+    "CE4": {
+      "score": 2,
+      "justification": "Three artifacts including an unsolicited followups.md entry with a deadline; if interrupted, that lingering escalation commitment is the ambiguous in-progress artifact."
+    }
+  }
+}

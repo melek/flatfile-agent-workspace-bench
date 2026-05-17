@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "07-procedure-artifact-binding",
+  "run_number": 3,
+  "axes": {
+    "AR1": {
+      "score": 3,
+      "justification": "Immediate action items correctly promoted to followups.md per the runbook's Notes; decisions.md and observations.md correctly omitted because there were no commitments or descriptive patterns to record — explicit routing rationale given in the notes."
+    },
+    "AR2": {
+      "score": 2,
+      "justification": "All five named artifacts exist on disk and each step's prose claims to read its predecessor, but the agent did not stall on missing input — it proceeded through all five steps with UNKNOWN-marked content, which is closer to 'most steps artifact-bound; one step (the timeline fill) was prose-only' than to the rubric-3 'stalls visibly when prior artifact missing' behavior the scenario explicitly rewards."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "All cross-references in the final postmortem and followups use relative paths (tmp/incident-postmortem/2026-05-17-staging-rollback/...), the ISO-dated slug is anchor-stable, and every referenced artifact actually exists on disk."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "Followups.md uses a dated section header for append-safety; intermediate tmp/ artifacts are designed to be re-derived per the runbook; postmortem regeneration from updated timeline is explicitly anticipated and would not corrupt history."
+    }
+  }
+}

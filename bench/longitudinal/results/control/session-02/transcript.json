@@ -1,0 +1,50 @@
+{
+  "session_number": 2,
+  "condition": "control",
+  "date": "2026-03-05",
+  "started_at": "2026-03-05T09:00:00Z",
+  "completed_at": "2026-03-05T09:15:00Z",
+  "final_response": "Drafted two messages: (1) firm but not pushy follow-up to Marcus on the 5-day data extract delay, acknowledging the buffer but pressing for a confirmed revised timeline; (2) belated training assignment notification to Priya with engagement shape, scope (6 power users, mid-May), and request for what she needs to start curriculum planning.",
+  "actions": [
+    {
+      "type": "read",
+      "target": "user-prompt.md",
+      "note": "Parsed two requests: Marcus follow-up + Priya notification"
+    },
+    {
+      "type": "read",
+      "target": "state/control/people.md, tasks.md, engagement.md",
+      "note": "Built context on Verdant Foods project, stakeholders, timeline, and Priya's role"
+    },
+    {
+      "type": "draft",
+      "target": "Message to Marcus",
+      "subject": "Data Extract Timeline Check-In",
+      "tone": "Firm, professional, solution-oriented",
+      "key_elements": [
+        "Acknowledge 5-day extension",
+        "Frame impact neutrally (timeline compression, not failure)",
+        "Request confirmed date from data team",
+        "Position as schedule lock for downstream work"
+      ]
+    },
+    {
+      "type": "draft",
+      "target": "Message to Priya",
+      "subject": "Training Lead Assignment Notification",
+      "tone": "Apologetic, clear scope, request for input",
+      "key_elements": [
+        "Acknowledge late notification",
+        "Describe deliverable: 6 power users, 3 plants, mid-May",
+        "Promise engagement doc and contact list",
+        "Ask what she needs to scope curriculum"
+      ]
+    }
+  ],
+  "notes": [
+    "Original deadline (2026-03-07) now 5 days late; user frames as acceptable but requires confirmation",
+    "Priya unaware of assignment; no prior comms sent",
+    "Both drafts prioritize clarity and next steps over blame or urgency",
+    "State files updated; no git writes per instructions"
+  ]
+}

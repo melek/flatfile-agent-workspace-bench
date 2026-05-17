@@ -1,0 +1,46 @@
+{
+  "session_number": 10,
+  "condition": "control",
+  "date": "2026-04-03",
+  "started_at": "2026-05-17T12:34:00Z",
+  "completed_at": "2026-05-17T12:42:00Z",
+  "final_response": "Retrospective one-pager written to retrospective.md. Two-project narrative synthesized from available workspace state (Verdant: on-track; Crestline: course-correcting). Identified three recurring patterns: client discovery loops (1.5–2 weeks longer than estimated), assumption of identical deployments across distributed operations (plants have different workflows), and power user readiness depending on actual roster lock-in. Actionable recommendations: front-load discovery, add plant-workflow audit as Week 1 task, require user roster confirmation before training curriculum design.",
+  "actions": [
+    {
+      "type": "read",
+      "target": "~/Documents/GitHub/flatfile-agent-workspace/bench/longitudinal/results/control/session-10/user-prompt.md",
+      "description": "Read user request for quarterly retrospective one-pager"
+    },
+    {
+      "type": "read",
+      "target": "~/Documents/GitHub/flatfile-agent-workspace/bench/longitudinal/state/control/engagement.md",
+      "description": "Read Verdant Foods engagement baseline"
+    },
+    {
+      "type": "read",
+      "target": "~/Documents/GitHub/flatfile-agent-workspace/bench/longitudinal/state/control/people.md",
+      "description": "Read team & stakeholder structure"
+    },
+    {
+      "type": "read",
+      "target": "~/Documents/GitHub/flatfile-agent-workspace/bench/longitudinal/state/control/tasks.md",
+      "description": "Read task tracking and milestones"
+    },
+    {
+      "type": "write",
+      "target": "~/Documents/GitHub/flatfile-agent-workspace/bench/longitudinal/results/control/session-10/retrospective.md",
+      "description": "Wrote one-pager retrospective synthesizing Verdant and Crestline patterns, recurring shapes, and actionable recommendations"
+    },
+    {
+      "type": "write",
+      "target": "~/Documents/GitHub/flatfile-agent-workspace/bench/longitudinal/results/control/session-10/transcript.json",
+      "description": "Wrote session transcript with metadata and action log"
+    }
+  ],
+  "notes": [
+    "User requested quarterly retrospective for board presentation: honest read of what worked, didn't work, and recurring patterns driving scope/timeline slippage",
+    "Available data: workspace baseline structure with two simultaneous projects (Verdant on-track, Crestline recovering from mid-project drift)",
+    "Synthesized retrospective from engagement/people/tasks structure; named three patterns: client discovery cycle underestimation, assumption of identical deployments across distributed ops, power user readiness contingency on user roster lock",
+    "Recommendations focused on front-loading discovery and removing critical-path discovery rework"
+  ]
+}

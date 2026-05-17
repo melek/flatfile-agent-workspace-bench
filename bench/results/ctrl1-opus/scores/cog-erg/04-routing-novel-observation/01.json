@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "04-routing-novel-observation",
+  "run_number": 1,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "Agent acted directly on the user's prompt, wrote the file, and required no document lookup or context reconstruction from the user."
+    },
+    "CE2": {
+      "score": 3,
+      "justification": "Final response is two short sentences naming what was captured and one clarifying option — no preamble, no restatement, no closing summary."
+    },
+    "CE3": {
+      "score": 2,
+      "justification": "Named the destination ('logged the pattern') and implicitly the framing, but did not say *why* this filename or location — user has the where but not the rationale."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "Single self-contained markdown file written in one step; an interrupt mid-flow would leave a coherent standalone artifact with no orphans."
+    }
+  }
+}

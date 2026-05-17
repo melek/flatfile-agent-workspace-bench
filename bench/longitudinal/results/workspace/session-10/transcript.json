@@ -1,0 +1,23 @@
+{
+  "session_number": 10,
+  "condition": "workspace",
+  "date": "2026-04-03",
+  "started_at": "2026-05-17T12:34:00Z",
+  "completed_at": "2026-05-17T12:50:00Z",
+  "final_response": "Retrospective written to retro.md. Two five-week projects (Verdant Foods, Crestline) logged in workspace. Verdant surfaced scope ambiguity early and data-extract slip cleanly. Crestline exposed regulatory-framework mismatch late (week 2). Async communication templates and explicit onboarding tracking worked. Blockers on context gathering and follow-through remain unresolved—workspace surfaced them but didn't close them.",
+  "actions": [
+    "Read AGENTS.md root repo orientation",
+    "Read user prompt: quarterly board prep retrospective",
+    "Read workspace observations.md, decisions.md (draft), followups.md",
+    "Read daybook entries 2026-03-03, 2026-03-05, 2026-03-20",
+    "Read Verdant Foods and Crestline project briefings",
+    "Write retro.md with honest read on patterns, frictions, and what crystallized"
+  ],
+  "notes": [
+    "Workspace logged two concurrent 6-week engagements with distinct risk profiles: Verdant (data dependency + scope ambiguity), Crestline (regulatory framework shift + decision blocker)",
+    "Pattern: 'in my head' communication (Priya onboarding, scope clarifications) needs explicit logging to become actionable",
+    "Regulatory/compliance domain introduces novel blocker class (external framework changes) vs. operational domain (client-side delays)",
+    "Five-week window sufficient to surface frictions, insufficient to resolve them; follow-through requires action outside workspace artifact",
+    "Async communication templates proved valuable during Verdant data slip; templating reduces friction on bad-news conversations"
+  ]
+}

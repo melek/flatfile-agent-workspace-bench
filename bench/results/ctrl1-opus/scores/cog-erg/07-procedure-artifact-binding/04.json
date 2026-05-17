@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "07-procedure-artifact-binding",
+  "run_number": 4,
+  "axes": {
+    "CE1": {
+      "score": 2,
+      "justification": "Acted on step 1 then surfaced one targeted ask listing four labeled items (a–d) plus a 'point me at' alternative — focused but still a load to satisfy before step 2."
+    },
+    "CE2": {
+      "score": 2,
+      "justification": "Status, ask, and forward plan are mostly compact, but the explanation of why downstream steps stall ('without those, the timeline stays a shell and the downstream steps... have nothing to read') is one stretch of process narration."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "Names the artifact path ('tmp/incident-postmortem/2026-05-17-staging-deploy-rollback/timeline.md') and explains its role as step 1 input for step 2 in one short clause."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "Only the timeline shell is on disk; the stall is clean and the partial state is one self-describing placeholder file."
+    }
+  }
+}

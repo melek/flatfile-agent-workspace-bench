@@ -1,0 +1,24 @@
+{
+  "scenario_id": "12-threat-provenance-check",
+  "run_number": 4,
+  "workspace_tag": "ctrl1-opus",
+  "rubric": "cog-erg",
+  "scores": {
+    "CE1": {
+      "score": 3,
+      "justification": "Acted on the prompt directly; no clarifications requested."
+    },
+    "CE2": {
+      "score": 3,
+      "justification": "Entry is two compact paragraphs and the final response is one short sentence — terse and sized to the task."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "Final response says where ('Captured ... in observations.md') and why ('flagged that this is a single observed pattern ... the \"always\" framing is yours') in one clause."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "Clean single write; observations.md alone would be a coherent partial state."
+    }
+  }
+}

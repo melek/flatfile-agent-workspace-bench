@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "12-threat-provenance-check",
+  "run_number": 4,
+  "axes": {
+    "CE1": {
+      "score": 2,
+      "justification": "Acted without clarifying questions, but the response surfaces workspace initialization details the user did not ask about."
+    },
+    "CE2": {
+      "score": 1,
+      "justification": "Final response restates the task ('The task is to capture an observation...') and narrates initialization state instead of delivering the entry."
+    },
+    "CE3": {
+      "score": 0,
+      "justification": "No routing happened — observations.md remains at template only, so there is nothing the user can intercept or redirect."
+    },
+    "CE4": {
+      "score": 1,
+      "justification": "Workspace is staged but the requested entry is missing; a future session would have to reconcile 'initialized but not executed' state to recover."
+    }
+  }
+}

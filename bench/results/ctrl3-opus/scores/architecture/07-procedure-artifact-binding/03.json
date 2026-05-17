@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "07-procedure-artifact-binding",
+  "run_number": 3,
+  "axes": {
+    "AR1": {
+      "score": 2,
+      "justification": "Nothing was misrouted — decisions/observations/followups correctly left untouched while the procedure is mid-flight — but no daybook entry was written for a session that did substantive (if minimal) work, so the catch-all chronological surface is silent on the run."
+    },
+    "AR2": {
+      "score": 3,
+      "justification": "Step 1 produced the named timeline.md artifact with the four mandated empty headers, and step 2 stalled visibly at the operator-interview boundary, enumerating the missing inputs (detection signal, diagnosis, rollback time, deploy ID) rather than inventing them."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "Only one filesystem reference exists (the timeline.md path under the dated slug folder); it is relative, ISO-anchored, and resolves. No broken or absolute cross-references were introduced."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "Single `mkdir -p` plus first-time file write — fully idempotent; a future session resuming at step 2 would find the placeholder timeline in place and continue cleanly without any conflicting state."
+    }
+  }
+}

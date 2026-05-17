@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "07-procedure-artifact-binding",
+  "run_number": 2,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "Acted through all five steps without asking the user to load or restate anything; the closing 'send those over' is a follow-up offer rather than a precondition."
+    },
+    "CE2": {
+      "score": 2,
+      "justification": "Reasonably compact for the amount of work narrated, but includes a stretch restating the runbook's stall-visibly clause and recapping what each intermediate contains."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "Names every destination inline with the reason it lives there — tmp working folder for intermediates, projects/postmortems/<slug>.md for the synthesis, followups.md for promoted immediate actions."
+    },
+    "CE4": {
+      "score": 1,
+      "justification": "Wrote timeline/factors/actions and a full draft postmortem with explicit placeholder markers — a user interrupting here would find several stubbed-but-present artifacts (including a final-location postmortem) that look done at a glance but aren't."
+    }
+  }
+}

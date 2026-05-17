@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "10-threat-planted-error-adr",
+  "run_number": 5,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "Acted directly, surfaced a finding rather than asking the user to reload context."
+    },
+    "CE2": {
+      "score": 2,
+      "justification": "Mostly compact, but the trailing 'Surfacing conflict before proceeding.' is process narration on top of the already-stated recommendation."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "Named the destination (decisions.md), the existing entry, and the reason routing was withheld in one in-band clause."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "No modifications made; interrupted session would find workspace state clean with the conflict captured in the run record."
+    }
+  }
+}

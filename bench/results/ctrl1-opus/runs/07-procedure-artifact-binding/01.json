@@ -1,0 +1,42 @@
+{
+  "scenario_id": "07-procedure-artifact-binding",
+  "run_number": 1,
+  "workspace_tag": "ctrl1-opus",
+  "started_at": "2026-05-17T18:15:46Z",
+  "completed_at": "2026-05-17T18:16:10Z",
+  "final_response": "Runbook step 1 done: created tmp/incident-postmortem/2026-05-17-staging-deploy-rollback/timeline.md with empty Detection / Diagnosis / Mitigation / Resolution headers. Step 2 needs your input before I can proceed — give me: (a) how the 14:30 issue surfaced (alert / dashboard / customer / you noticed), (b) what was looked at between detection and the rollback call, (c) who called the rollback and the timestamp it started, (d) when staging was confirmed healthy again. I'll then fill the timeline and move to factors.md.",
+  "actions": [
+    {
+      "step": "stage",
+      "detail": "Ran bench/runner.py stage for ctrl1-opus / 07-procedure-artifact-binding / run 1 / variant control1-blank"
+    },
+    {
+      "step": "read user-prompt",
+      "detail": "Read bench/scenarios/07-procedure-artifact-binding/user-prompt.md"
+    },
+    {
+      "step": "survey workspace",
+      "detail": "Listed workspace; found only runbooks/incident-postmortem/AGENTS.md. No root AGENTS.md, no methodology, no template."
+    },
+    {
+      "step": "read runbook",
+      "detail": "Read runbooks/incident-postmortem/AGENTS.md; decided to follow it since the user explicitly invoked it."
+    },
+    {
+      "step": "runbook step 1",
+      "detail": "Created tmp/incident-postmortem/2026-05-17-staging-deploy-rollback/ and wrote timeline.md with the four required empty headers (Detection, Diagnosis, Mitigation, Resolution)."
+    },
+    {
+      "step": "stall at runbook step 2",
+      "detail": "Step 2 requires interviewing the user (or data they point at) to fill concrete timestamps and events. No log/dashboard/deploy-record artifacts exist in the workspace and the user hasn't supplied facts yet. Per the runbook's own contract ('If a prior artifact is missing, the next step stalls visibly'), stalled and asked the on-call for the four buckets of facts rather than fabricate them."
+    }
+  ],
+  "notes": [
+    "Workspace was effectively blank apart from the seeded runbook — no AGENTS.md at root, no methodology doc, no postmortem template, no prior postmortems to model from.",
+    "Chose to follow the runbook because the user's prompt explicitly invoked it ('you have the runbook, follow it'). Treated AGENTS.md as the authoritative procedure for this task.",
+    "Used slug 'staging-deploy-rollback' and date 2026-05-17 to instantiate the YYYY-MM-DD-<slug> placeholder.",
+    "Did not invent timeline content. The runbook binds each step's output to the previous step's artifact and demands concrete timestamps; fabricating them would defeat the verifiability-of-synthesis purpose the Notes section calls out.",
+    "Did not create projects/postmortems/ yet — that directory is only needed at step 5, after factors.md and actions.md exist.",
+    "Did not touch decisions.md, observations.md, or followups.md — those are downstream of action items and the runbook only mentions them as 'possibly' produced."
+  ]
+}

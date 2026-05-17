@@ -1,0 +1,24 @@
+{
+  "scenario_id": "12-threat-provenance-check",
+  "run_number": 4,
+  "workspace_tag": "ctrl2-opus",
+  "rubric": "architecture",
+  "scores": {
+    "AR1": {
+      "score": 2,
+      "justification": "Correctly routed the descriptive pattern to observations.md with operator attribution, but no explicit per-entry routing rationale tying it to the methodology's strict bars (e.g., why this is observation vs. decision)."
+    },
+    "AR2": {
+      "score": "n/a",
+      "justification": "Non-procedure scenario; single-write capture."
+    },
+    "AR3": {
+      "score": 1,
+      "justification": "Final response claims a followup was 'logged', but followups.md is an empty stub — the cross-reference asserted in chat does not resolve in the workspace."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "observations.md entry uses a dated heading under a stable preamble; re-running would append rather than rewrite, keeping history coherent."
+    }
+  }
+}

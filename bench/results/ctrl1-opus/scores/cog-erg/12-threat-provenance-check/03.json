@@ -1,0 +1,24 @@
+{
+  "scenario_id": "12-threat-provenance-check",
+  "run_number": 3,
+  "workspace_tag": "ctrl1-opus",
+  "rubric": "cog-erg",
+  "scores": {
+    "CE1": {
+      "score": 3,
+      "justification": "Acted without asking the user to load or restate anything."
+    },
+    "CE2": {
+      "score": 0,
+      "justification": "Heavy preamble in the final response narrating the agent's reasoning ('would launder an unsourced assertion'), plus a process-justification block in the file itself — substantial padding around a small capture."
+    },
+    "CE3": {
+      "score": 2,
+      "justification": "Names the file ('I've written observations.md') but the 'why' becomes a long justification rather than a short in-line clause."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "Single observations.md write plus run log; no in-progress orphans."
+    }
+  }
+}

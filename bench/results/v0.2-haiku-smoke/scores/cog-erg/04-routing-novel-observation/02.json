@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "04-routing-novel-observation",
+  "run_number": 2,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "Acted directly without asking the user to load or restate anything; self-orientation via reading workspace files is invisible to the user and not an orientation cost on them."
+    },
+    "CE2": {
+      "score": 3,
+      "justification": "Single-sentence final response, no filler or process narration in user-facing output."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "Named destination (observations.md) and reason in one clause ('cross-cutting behavioral pattern per workspace methodology')."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "One clean appended entry to observations.md; no in-progress artifacts to triage on interruption."
+    }
+  }
+}

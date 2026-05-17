@@ -1,0 +1,19 @@
+{
+  "session_number": 5,
+  "condition": "workspace",
+  "date": "2026-03-17",
+  "started_at": "2026-03-17T09:00:00Z",
+  "completed_at": "2026-03-17T09:05:00Z",
+  "final_response": "Anomaly detection wasn't mentioned in the signed scope or kickoff materials—it's net-new. Since Marcus is a friendly contact and the ask is lightweight, the decision hinges on what you'd trade. Check: does your 6-week timeline have capacity for it, or does it compress training prep or final polish? If it fits without squeezing quality, confirm with Marcus that this bumps scope but keeps the delivery date (manages expectations upfront). If it crowds something, ask Marcus to prioritize: dashboard-first or feature-add? Either way, document the decision in decisions.md so Ash and Priya know what you committed to.",
+  "actions": [
+    "Read project AGENTS.md for Verdant Foods",
+    "Checked decisions.md, observations.md, daybook/2026-03-05.md for kickoff scope",
+    "Searched followups.md for original Marcus conversations"
+  ],
+  "notes": [
+    "Anomaly detection is out-of-scope (not in signed contract or documented discussions)",
+    "Project has known scope ambiguity risk ('Scope language is loose; clarify ambiguous points early')",
+    "6-week fixed-fee retainer with tight data extract dependency already in play",
+    "Decision needed on capacity trade-off before responding to Marcus"
+  ]
+}

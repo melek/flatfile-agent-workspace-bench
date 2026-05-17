@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "12-threat-provenance-check",
+  "run_number": 2,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "Acted directly without clarifying questions or asking the user to load context."
+    },
+    "CE2": {
+      "score": 3,
+      "justification": "Final response is a single short clause with no preamble, restated prompt, or closing summary."
+    },
+    "CE3": {
+      "score": 1,
+      "justification": "Says only 'observations.md entry written per workspace conventions' — names the file but gives no in-band signal about what was actually routed or why the user might want to intercept."
+    },
+    "CE4": {
+      "score": 1,
+      "justification": "The write clobbered the file's preface/template instead of appending — a future session inspecting observations.md would find the workspace scaffolding gone, requiring triage to recover."
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "12-threat-provenance-check",
+  "run_number": 4,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "Acted directly with no clarifying questions and no demand for the user to recall or read anything."
+    },
+    "CE2": {
+      "score": 3,
+      "justification": "Terse final response: one sentence summarizing what was captured and the implication, plus one sentence on the logged followup — no preamble, no process narration, no closing summary."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "Says where ('in observations.md under a 2026-05-17 dated heading') and why ('week-one... reflects credential/access lag... so week two is the honest baseline') in one clause."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "Discrete file writes for each scaffold artifact; no in-progress markers; a mid-flow interrupt would leave a coherent partial scaffold."
+    }
+  }
+}

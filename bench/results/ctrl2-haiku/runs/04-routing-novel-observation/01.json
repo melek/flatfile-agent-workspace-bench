@@ -1,0 +1,22 @@
+{
+  "scenario_id": "04-routing-novel-observation",
+  "run_number": 1,
+  "workspace_tag": "ctrl2-haiku",
+  "started_at": "2026-05-17T00:00:00Z",
+  "completed_at": "2026-05-17T00:05:00Z",
+  "final_response": "Workspace initialized with daybook, tmp, projects, and runbooks structure. Routed contractor access provisioning pattern (recurring Feb-May delays) as process improvement opportunity to IT rather than ad-hoc management. Pattern documented in observations.md with followup tasks for fast-track onboarding investigation. Workspace ready for project administration.",
+  "actions": [
+    "git init workspace",
+    "created core directories (daybook, tmp, projects, runbooks)",
+    "wrote AGENTS.md (short methodology)",
+    "wrote methodology.md (long methodology)",
+    "wrote observations.md (contractor access pattern flagged)",
+    "wrote followups.md (fast-track investigation task)",
+    "created daybook/2026-05-17.md (session log with routing decision)"
+  ],
+  "notes": [
+    "Contractor access delays observed in Feb, Mar, May 2026 — consistent ~4 day impact per incident",
+    "Routed to process improvement channel (IT fast-track) rather than per-project workaround",
+    "Pre-staging and checklist approaches identified as potential solutions"
+  ]
+}

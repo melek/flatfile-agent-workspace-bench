@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "04-routing-novel-observation",
+  "run_number": 2,
+  "axes": {
+    "AR1": {
+      "score": 2,
+      "justification": "Content reads as descriptive pattern + diagnostic questions (would map to observations.md), but no in-band rationale distinguishing observation from decision and no canonical filename."
+    },
+    "AR2": {
+      "score": "n/a",
+      "justification": "Non-procedure scenario."
+    },
+    "AR3": {
+      "score": 1,
+      "justification": "No cross-references in the artifact; a methodology-shaped routing would expect a daybook Log breadcrumb pointing to the observation, which is missing."
+    },
+    "AR4": {
+      "score": 1,
+      "justification": "Single-file write with no ISO-dated section header — re-running would overwrite rather than append a new dated entry as the methodology requires for observations.md."
+    }
+  }
+}

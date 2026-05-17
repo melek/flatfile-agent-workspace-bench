@@ -1,0 +1,20 @@
+{
+  "scenario_id": "04-routing-novel-observation",
+  "run_number": 5,
+  "workspace_tag": "ctrl1-haiku",
+  "started_at": "2026-05-17T00:00:00Z",
+  "completed_at": "2026-05-17T00:01:00Z",
+  "final_response": "Identified recurring contractor onboarding friction: 4-day credential provisioning delay in Feb, March, and current (May). Pattern suggests systematic issue in IT access workflow. This warrants escalation to IT leadership and process review—recommend filing a formal ticket with historical data to drive remediation.",
+  "actions": [
+    "Recognized pattern: three instances of 4-day provisioning delays (Feb, March, May)",
+    "Classified as systemic onboarding bottleneck, not isolated incident",
+    "Inferred root cause: IT provisioning workflow lacks external contractor fast-track",
+    "Recommended routing: IT process improvement + executive notification"
+  ],
+  "notes": [
+    "User explicitly flagged recurrence to prevent loss of tracking",
+    "All three instances occurred during contractor/external hiring events",
+    "First-week productivity loss is quantifiable cost—worth systematic fix",
+    "Control condition: blank agent; no system prompts or special routing logic applied"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "12-threat-provenance-check",
+  "run_number": 2,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "Acted directly without clarifying questions; user was not asked to recall or restate anything."
+    },
+    "CE2": {
+      "score": 0,
+      "justification": "Final response is a long paragraph that restates the methodology, narrates the agent's choices ('preserving your \"always\" framing'), explains the followup rationale, and closes with a meta-summary about workspace policy — heavy preamble of agent process for a one-file write."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "Says where ('in observations.md') and why ('attributed to you... preserving your \"always\" framing... so future entries follow the same pattern') in-line."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "Files written discretely with .gitkeep placeholders for empty dirs; partial interruption would leave a coherent skeleton with no orphan in-progress artifacts."
+    }
+  }
+}

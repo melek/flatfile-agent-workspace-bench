@@ -1,0 +1,24 @@
+{
+  "scenario_id": "04-routing-novel-observation",
+  "run_number": 1,
+  "workspace_tag": "ctrl2-opus",
+  "started_at": "2026-05-17T16:47:35Z",
+  "completed_at": "2026-05-17T16:48:29Z",
+  "final_response": "Logged it as a pattern in observations.md (three instances: May, March, February 2026) and added a followups.md item to pin down the actual lag numbers and the right venue to raise it before acting.",
+  "actions": [
+    "Ran `git init` in the workspace root.",
+    "Created scaffold directories: daybook/, tmp/, projects/, runbooks/.",
+    "Wrote AGENTS.md (concise methodology statement).",
+    "Wrote methodology.md (long-form methodology, structure, routing rules, daybook format).",
+    "Wrote decisions.md with an initial ADR-style entry recording the workspace initialization.",
+    "Wrote observations.md and recorded the external-contributor access provisioning lag as a cross-session pattern with the three known instances (May, March, February 2026) and open questions.",
+    "Wrote followups.md with action items: quantify the lag, identify the right venue to raise it, consider an earlier-triggered access request.",
+    "Wrote daybook/2026-05-17.md with session intent, daily notes (including the routing of the operator's observation), and an end-of-day handoff."
+  ],
+  "notes": [
+    "Routed the operator's message primarily to observations.md (it described a recurring pattern, which is exactly the cross-session-memory use case) with a secondary entry in followups.md (the operator said 'so we don't lose track', which reads as wanting an action item, not just a record).",
+    "Did NOT add to decisions.md: there is no decision yet, only a noticed pattern. Adding it would dilute the decision log.",
+    "Did NOT create a runbook: the pattern is observed, not yet a procedure. A runbook (e.g., 'onboarding an external contributor') could come later if the operator decides to formalize a checklist.",
+    "Did NOT push back or ask clarifying questions before acting; the scaffold preamble + the operator's message gave enough to route the input. Open questions were captured in observations.md and followups.md rather than asked back."
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "scenario_id": "04-routing-novel-observation",
+  "run_number": 5,
+  "workspace_tag": "v0.2-haiku-smoke",
+  "started_at": "2026-05-17T16:50:34Z",
+  "completed_at": "2026-05-17T16:50:45Z",
+  "final_response": "Novel observation about recurring contractor access provisioning delays (4-day lag, Feb/Mar/May pattern) routed to observations.md as cross-cutting pattern. Escalation followup added to followups.md with expected action by 2026-05-24. Daybook entry created documenting routing decision.",
+  "actions": [
+    "Added entry to observations.md: 2026-05-17 — Recurring contractor access provisioning delay (cross-cutting pattern across multiple sessions)",
+    "Added entry to followups.md: Escalate IT contractor access provisioning SLA with leadership (expected by 2026-05-24)",
+    "Created daybook entry: daybook/2026-05-17.md documenting Intent, Log, and Handoff for this session's routing work"
+  ],
+  "notes": [
+    "Pattern meets bar for observations.md: descriptive, named, recurring, visible across multiple sessions (not a one-off)",
+    "Followup queued to escalate with IT; no decision yet (would be in decisions.md if a commitment were made)",
+    "Workspace conventions followed: appended (never edited in place), provenance marked as 'inference', references cross-linked",
+    "Daybook handoff clearly signals next step: take ownership of escalation or develop mitigation strategy"
+  ]
+}

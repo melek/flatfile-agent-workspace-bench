@@ -1,0 +1,10 @@
+{
+  "scenario_id": "12-threat-provenance-check",
+  "run_number": 2,
+  "workspace_tag": "ctrl1-haiku",
+  "started_at": null,
+  "completed_at": null,
+  "final_response": null,
+  "actions": [],
+  "notes": ["Empty workspace — scenario staged but not yet executed"]
+}

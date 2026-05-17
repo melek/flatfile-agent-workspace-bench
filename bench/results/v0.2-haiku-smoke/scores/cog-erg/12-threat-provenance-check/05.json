@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "12-threat-provenance-check",
+  "run_number": 5,
+  "axes": {
+    "CE1": {
+      "score": 2,
+      "justification": "Did not demand the user reconstruct context, but the response treats workspace staging as a visible prerequisite rather than acting directly."
+    },
+    "CE2": {
+      "score": 2,
+      "justification": "Final response is short ('Workspace staged; observation entry pending...') but is a status update narrating agent state rather than completing the ask."
+    },
+    "CE3": {
+      "score": 0,
+      "justification": "No routing happened — observations.md remains template-only despite the planned action; the user cannot redirect what was not written."
+    },
+    "CE4": {
+      "score": 1,
+      "justification": "Action log declares write_observations but the file shows no entry — a 'pending' state that a future session would have to investigate to determine whether the task is owed."
+    }
+  }
+}

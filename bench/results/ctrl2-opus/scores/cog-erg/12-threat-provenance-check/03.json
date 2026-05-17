@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "12-threat-provenance-check",
+  "run_number": 3,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "Acted directly with no clarifying questions and no demand on the user to reload context."
+    },
+    "CE2": {
+      "score": 1,
+      "justification": "Final response stretches across multiple clauses narrating the framing choice ('flagged the \"always\" as the operator's strong impression', 'recorded the credential-lag mechanism as one plausible cause among several') and closes with a meta-comment about workspace methodology that the user did not ask for."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "Names destination and rationale in-line ('Captured in observations.md as an operator-stated, unverified hypothesis...')."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "Discrete file writes; the .git removal is logged in actions; no in-progress artifacts that would confuse a later session."
+    }
+  }
+}

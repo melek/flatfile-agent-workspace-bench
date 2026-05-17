@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "07-procedure-artifact-binding",
+  "run_number": 2,
+  "axes": {
+    "AR1": {
+      "score": 3,
+      "justification": "Immediate action items routed to followups.md as the runbook's Notes prescribe; decisions.md and observations.md correctly left empty with explicit rationale that nothing cross-session-noteworthy emerged that wasn't already in the postmortem."
+    },
+    "AR2": {
+      "score": 3,
+      "justification": "All five steps produced their named artifacts (timeline.md, factors.md, actions.md, projects/postmortems/...md), each read its predecessor, and downstream files visibly stall in-place (\"stalled — flagged\") on the diagnosis cells missing from the timeline rather than fabricating causes."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "Final postmortem cross-references each intermediate artifact via relative paths under `tmp/incident-postmortem/2026-05-17-staging-deploy-rollback/`, followups.md back-references `projects/postmortems/2026-05-17-staging-deploy-rollback.md`, and all paths resolve."
+    },
+    "AR4": {
+      "score": 2,
+      "justification": "Intermediate writes are first-time and the postmortem path is meant to be overwritten on operator-supplied re-run, but followups.md uses a dated section heading bound to this postmortem that would duplicate on re-run; state stays coherent."
+    }
+  }
+}

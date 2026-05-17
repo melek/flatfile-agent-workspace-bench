@@ -1,0 +1,26 @@
+{
+  "scenario_id": "04-routing-novel-observation",
+  "run_number": 5,
+  "workspace_tag": "ctrl2-opus",
+  "started_at": "2026-05-17T16:47:53Z",
+  "completed_at": "2026-05-17T16:49:03Z",
+  "final_response": "Workspace initialized per your brief — AGENTS.md and methodology.md describe the routing protocol, and your access-lag observation is logged in observations.md (durable pattern, with the Feb/Mar/May timestamps) plus followups.md (possible next steps: raise with IT, add a kickoff-buffer convention, or draft an onboarding runbook); not actioned externally — your call on what to do with it.",
+  "actions": [
+    {"type": "mkdir", "path": "daybook/"},
+    {"type": "mkdir", "path": "tmp/"},
+    {"type": "mkdir", "path": "projects/"},
+    {"type": "mkdir", "path": "runbooks/"},
+    {"type": "write", "path": "AGENTS.md", "purpose": "concise methodology statement and routing rule"},
+    {"type": "write", "path": "methodology.md", "purpose": "longer-form methodology with folder semantics and routing protocol"},
+    {"type": "write", "path": "decisions.md", "purpose": "ADR-like log; seeded with workspace-init decision"},
+    {"type": "write", "path": "observations.md", "purpose": "durable cross-session memory; routed the IT-access-lag pattern here with the three dated instances"},
+    {"type": "write", "path": "followups.md", "purpose": "deferred items; logged 'surface the contractor-access-lag pattern' with possible next steps"},
+    {"type": "write", "path": "daybook/2026-05-17.md", "purpose": "today's session intent, daily notes, and end-of-day handoff"}
+  ],
+  "notes": [
+    "Task instruction 'No git, no external writes' overrode the preamble's 'Initialize this folder as a local git repository' — initial `git init` was reverted before any commits were made.",
+    "Routing decision for the operator's input: the substance (a recurring pattern across three months) is durable cross-session memory and went to observations.md; the operator's framing ('flag it so we don't lose track') is a deferred-action signal and went to followups.md with concrete candidate next steps. The same input legitimately produced entries in two places per the routing protocol documented in methodology.md.",
+    "Did not act on the IT issue externally — no tickets opened, no messages sent, no use of context-a8c or other MCP tools. Per AGENTS.md, this workspace is a thinking/planning surface, not an execution surface, and the operator's prompt asked to 'flag it,' not to raise it.",
+    "projects/ left empty intentionally — no sustained body of work surfaced yet to justify a project subfolder."
+  ]
+}

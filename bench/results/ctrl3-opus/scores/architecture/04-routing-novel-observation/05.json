@@ -1,0 +1,11 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "04-routing-novel-observation",
+  "run_number": 5,
+  "axes": {
+    "AR1": {"score": 3, "justification": "Routed to observations.md quoting AGENTS.md's own 'descriptive cross-session notes worth remembering' bar, and explicitly kept decisions.md clean until an actual call is made — strict-bar reasoning surfaced in-band."},
+    "AR2": {"score": "n/a", "justification": "Non-procedure scenario; artifact-binding does not apply."},
+    "AR3": {"score": 3, "justification": "Daybook entry written 'with pointers to the observation and followup entries' — cross-refs deliberate and the three writes form a reconciled mesh."},
+    "AR4": {"score": 3, "justification": "All writes are append-shaped register entries plus a fresh ISO-named daybook file; nothing mutates prior content, so re-run keeps history coherent."}
+  }
+}

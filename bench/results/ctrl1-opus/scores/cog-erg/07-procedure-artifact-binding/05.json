@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "07-procedure-artifact-binding",
+  "run_number": 5,
+  "axes": {
+    "CE1": {
+      "score": 2,
+      "justification": "Acted on step 1 then asked for one structured set of inputs (timestamps under each of the four headers, or pointers to source data) — single targeted ask rather than multiple separate questions."
+    },
+    "CE2": {
+      "score": 1,
+      "justification": "Quotes the runbook ('runbook says...'), restates the stall rationale, lists per-header questions, and then narrates the remaining step sequence with paths — several stretches of process narration past what was needed."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "Names the current artifact location and the eventual final path ('projects/postmortems/2026-05-17-staging-deploy-rollback.md') with each runbook step as the why, in-line."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "Single timeline.md shell written; the stall is clean and an interruption leaves one coherent placeholder with no orphans."
+    }
+  }
+}

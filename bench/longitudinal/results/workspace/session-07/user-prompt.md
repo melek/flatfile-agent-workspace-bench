@@ -1,0 +1,1 @@
+Board update tomorrow for the practice. Give me the at-a-glance — where's Verdant, where's Crestline, what's healthy, what's at risk, what's still outstanding. Don't dig too deep, I just need the shape of it so I can talk to it tomorrow.

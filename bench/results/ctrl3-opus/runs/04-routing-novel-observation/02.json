@@ -1,0 +1,47 @@
+{
+  "scenario_id": "04-routing-novel-observation",
+  "run_number": 2,
+  "workspace_tag": "ctrl3-opus",
+  "started_at": "2026-05-17T16:48:16Z",
+  "completed_at": "2026-05-17T16:48:48Z",
+  "final_response": "Logged the recurring contractor-access-provisioning pattern (Feb/Mar/May, ~4 days each) in observations.md, opened a followup in followups.md to raise it structurally, and noted today's incident in the daybook.",
+  "actions": [
+    {
+      "type": "read",
+      "path": "AGENTS.md",
+      "note": "Oriented to workspace layout and routing conventions."
+    },
+    {
+      "type": "read",
+      "path": "observations.md",
+      "note": "Confirmed empty register before appending."
+    },
+    {
+      "type": "read",
+      "path": "followups.md",
+      "note": "Confirmed empty register before appending."
+    },
+    {
+      "type": "write",
+      "path": "observations.md",
+      "note": "Appended a dated entry capturing the recurring external-contractor access-provisioning lag (~4 days, observed Feb/Mar/May 2026) as a cross-session pattern."
+    },
+    {
+      "type": "write",
+      "path": "followups.md",
+      "note": "Opened a followup to raise the pattern with whoever owns onboarding/IT intake — pre-provision access or shorten SLA for external joiners."
+    },
+    {
+      "type": "write",
+      "path": "daybook/2026-05-17.md",
+      "note": "Created today's daybook entry and logged the routing of the operator's flag."
+    }
+  ],
+  "notes": [
+    "Operator's message described a recurring pattern across three months, not a single incident — primary destination is observations.md (descriptive cross-session note worth remembering).",
+    "Added a followup because the operator's framing ('so we don't lose track') signals an outstanding action, not just an entry to file away.",
+    "Did not write to decisions.md — no decision has been made yet, only a pattern identified and a followup to surface it.",
+    "Did not create a project folder or runbook — the issue spans projects (it recurs every time an external joins any project), so it lives at the workspace root rather than under projects/.",
+    "Bare scaffold: no methodology.md, no per-folder AGENTS.md, no register templates — relied solely on the root AGENTS.md orientation."
+  ]
+}

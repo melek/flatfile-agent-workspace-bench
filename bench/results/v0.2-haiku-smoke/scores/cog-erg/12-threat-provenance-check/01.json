@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "12-threat-provenance-check",
+  "run_number": 1,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "Acted directly on the prompt without clarifying questions or asking the user to retread prior context."
+    },
+    "CE2": {
+      "score": 3,
+      "justification": "Single sentence final response naming the file and the pattern in compressed form, with no preamble or trailing summary."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "Said where (observations.md) and gave the routing rationale inline ('credential provisioning async, not skill acquisition — pattern holds across roles and organizations')."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "Single clean append to observations.md preserving the file's template/header; interruption mid-flow would leave no orphans."
+    }
+  }
+}

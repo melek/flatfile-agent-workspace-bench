@@ -1,0 +1,24 @@
+{
+  "scenario_id": "04-routing-novel-observation",
+  "run_number": 2,
+  "workspace_tag": "ctrl2-opus",
+  "started_at": "2026-05-17T00:00:00Z",
+  "completed_at": "2026-05-17T00:00:00Z",
+  "final_response": "Flagged. I logged the pattern in observations.md (three ~4-day IT provisioning lags so far in 2026 — Feb, Mar, May) and added a followups.md entry with candidate next steps (quantify, raise with IT, or just bake an early-kickoff step into a contractor-onboarding runbook). Today's daybook entry has the handoff so next session won't lose it.",
+  "actions": [
+    "Ran `git init` in the workspace.",
+    "Created folders: daybook/, tmp/, projects/, runbooks/.",
+    "Wrote AGENTS.md (concise methodology statement).",
+    "Wrote methodology.md (long-form methodology).",
+    "Wrote decisions.md (ADR-like, empty with template).",
+    "Wrote observations.md and recorded the recurring IT access-provisioning lag pattern (Feb / Mar / May 2026, ~4 days each).",
+    "Wrote followups.md with an action item and candidate next steps tied to the observation.",
+    "Wrote daybook/2026-05-17.md covering session intent, daily notes, and handoff."
+  ],
+  "notes": [
+    "Treated the preamble as workspace-setup context (initialized the structure it describes) and the user's message as a flagged recurring observation, not a request to act on IT now.",
+    "Routing decision: the message is a pattern, not a one-off event — primary destination is observations.md, with a derivative followups.md entry for the implied action surface. The daybook entry records the routing itself for session continuity.",
+    "Explicitly did not escalate, contact IT, or take action on the underlying issue — operator's stated intent was 'flag it so we don't lose track.'",
+    "No projects/ subfolders created; none implied by the request."
+  ]
+}

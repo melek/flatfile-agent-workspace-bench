@@ -1,0 +1,32 @@
+{
+  "scenario_id": "04-routing-novel-observation",
+  "run_number": 1,
+  "workspace_tag": "ctrl3-opus",
+  "started_at": "2026-05-17T16:48:18Z",
+  "completed_at": "2026-05-17T16:48:36Z",
+  "final_response": "Logged the recurring 4-day external-access provisioning lag (Feb / Mar / May 2026) in observations.md, opened a followup to decide whether to escalate or build a pre-onboarding checklist, and noted it in today's daybook.",
+  "actions": [
+    {
+      "type": "write",
+      "path": "observations.md",
+      "summary": "Added 2026-05-17 entry describing the recurring IT credential provisioning lag pattern for external joiners (Feb / Mar / May 2026, ~4 days each)."
+    },
+    {
+      "type": "write",
+      "path": "followups.md",
+      "summary": "Opened a followup to decide whether to escalate the recurring lag to IT/team lead or pre-empt it with an onboarding checklist; awaiting operator direction."
+    },
+    {
+      "type": "write",
+      "path": "daybook/2026-05-17.md",
+      "summary": "Created today's daybook entry capturing the operator's note and where it was routed."
+    }
+  ],
+  "notes": [
+    "User signal 'wanted to flag it so we don't lose track' read as: record the pattern + leave a tracking handle, not act yet. Routed the descriptive recurring-pattern half to observations.md and the 'don't lose track' half to followups.md as an open decision item.",
+    "Did not write a decisions.md entry — no cross-session decision has been made yet; only a question to resolve, which lives in followups.md.",
+    "Did not create a project folder — this is a single recurring observation, not a scoped project. If it becomes an initiative (e.g. 'fix external onboarding'), promoting it to projects/external-onboarding/ would be the natural next step.",
+    "Did not create a runbook — premature; would only make sense after deciding on the pre-onboarding-checklist path.",
+    "Bare AGENTS.md gave no templates, so kept entries minimal: dated heading + short prose, no invented schema."
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "scenario_id": "04-routing-novel-observation",
+  "run_number": 5,
+  "workspace_tag": "ctrl3-haiku",
+  "started_at": "2026-05-17T00:00:00Z",
+  "completed_at": "2026-05-17T00:00:00Z",
+  "final_response": "Routed contractor provisioning lag pattern to observations.md (recurring pattern across Feb/Mar/May), followups.md (SLA review task), and daybook/2026-05-17.md (session note). Pattern flagged for actionable follow-up: review IT provisioning workflow and establish fast-track for future external onboards.",
+  "actions": [
+    {
+      "type": "write",
+      "target": "observations.md",
+      "detail": "Added cross-session observation of IT credentials provisioning lag (4+ days, recurring pattern Feb/Mar/May)"
+    },
+    {
+      "type": "write",
+      "target": "followups.md",
+      "detail": "Created open task: review IT credentials SLA and identify escalation path"
+    },
+    {
+      "type": "write",
+      "target": "daybook/2026-05-17.md",
+      "detail": "Logged session note on contractor onboarding lag pattern"
+    }
+  ],
+  "notes": [
+    "User observation is a recurring pattern (>2 instances), not a one-off event",
+    "Impact quantified as ~1 week productivity loss per contractor",
+    "Routed to persistent workspace structures for cross-session tracking",
+    "Task created in followups.md for SLA review and workflow optimization"
+  ]
+}

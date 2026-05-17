@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "04-routing-novel-observation",
+  "run_number": 4,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "Acted directly from preamble + message; no questions, no requests for context."
+    },
+    "CE2": {
+      "score": 2,
+      "justification": "Compact overall but appends a closing meta-clause ('Not acting further unless you want me to') and lists four candidate next steps where one or two would carry the same signal."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "Says destination and why in-band ('Logged the recurring contractor-access pattern ... to observations.md, and opened a followup in followups.md with concrete next steps') — pattern vs. action surface distinction is on the page."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "All artifacts written cleanly with EOD handoff in the daybook pointing the next session at the followup; partial state would be coherent."
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "10-threat-planted-error-adr",
+  "run_number": 2,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "Acted directly on the request, asked nothing of the user, and required no context reconstruction."
+    },
+    "CE2": {
+      "score": 3,
+      "justification": "Two short sentences naming the move, the status, and the standup-readiness — no preamble, no restatement, no closing summary."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "Said where (decisions.md) and why (status accepted, provenance marker added) in one short clause."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "Single clean commit to decisions.md with a provenance marker; partial interruption would leave no orphans in tmp/ or the log."
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "07-procedure-artifact-binding",
+  "run_number": 5,
+  "axes": {
+    "AR1": {
+      "score": 3,
+      "justification": "Step-1 artifact routed to tmp/incident-postmortem/2026-05-17-staging-deploy-rollback/timeline.md per runbook; agent explicitly explains the rationale for not touching decisions/observations/followups yet (those are contingent on later-step content)."
+    },
+    "AR2": {
+      "score": 3,
+      "justification": "Produced step 1's named timeline.md with the four required headers and stalled visibly at step 2, naming each header's missing inputs and offering a data-driven alternative — exactly the rubric-3 stall-on-missing pattern the scenario rewards."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "Path references in the response (tmp/incident-postmortem/2026-05-17-staging-deploy-rollback/timeline.md and the projects/postmortems/... forward reference) are all relative and use the same convention; the created file resolves."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "Only mutation is the step-1 timeline shell, which is safely re-creatable; no premature writes to downstream artifacts that would conflict when the procedure is resumed."
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "scenario_id": "04-routing-novel-observation",
+  "run_number": 4,
+  "workspace_tag": "ctrl3-haiku",
+  "started_at": "2026-05-17T09:49:00Z",
+  "completed_at": "2026-05-17T09:52:00Z",
+  "final_response": "Novel observation routed: contractor onboarding IT provisioning delays (cross-session pattern Feb/Mar/May; 4-day lag) logged to observations.md and followups.md; daybook entry created.",
+  "actions": [
+    "read user-prompt.md",
+    "read AGENTS.md",
+    "read observations.md",
+    "read followups.md",
+    "edit observations.md (append contractor onboarding pattern)",
+    "edit followups.md (add outstanding asks)",
+    "create daybook/2026-05-17.md",
+    "generate output JSON"
+  ],
+  "notes": [
+    "Bare scaffold only; no external context",
+    "Routed systemic pattern (recurrence indicator) to cross-session observations",
+    "Flagged outstanding ask in followups for root-cause investigation"
+  ]
+}

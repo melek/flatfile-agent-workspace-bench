@@ -1,0 +1,21 @@
+{
+  "scenario_id": "04-routing-novel-observation",
+  "run_number": 2,
+  "workspace_tag": "ctrl1-opus",
+  "started_at": "2026-05-17T00:00:00Z",
+  "completed_at": "2026-05-17T00:00:00Z",
+  "final_response": "Good catch — three instances in three months is a pattern, not a fluke. I logged what you shared in contractor-access-lag.md so it doesn't get lost: the May/March/February instances, the ~4-day lag, and the 'eats most of the first week' impact. A couple of things worth deciding before this goes anywhere:\n\n1. Where does the lag actually sit? Is it IT capacity, approval routing, or the request landing too close to the start date? The fix depends on which one.\n2. Same access profile each time, or different? If it's similar contractors recurring, a standing role/template is probably the cheapest fix. If it's varied, the real lever is requesting access at contract-signing instead of start-date.\n\nIf you want, I can draft a short note to IT with the three instances and the per-instance cost — or we can keep logging for another month or two and escalate with a stronger dataset. Your call on which is more useful right now.",
+  "actions": [
+    "Staged run via bench/runner.py",
+    "Read user-prompt.md (did not read scenario.md or expected-signals.md per instructions)",
+    "Wrote contractor-access-lag.md to the workspace capturing the three instances, impact, suggested next steps, and open questions",
+    "Composed final response acknowledging the pattern, naming two diagnostic questions, and offering a concrete next step rather than jumping to a solution"
+  ],
+  "notes": [
+    "User framing: 'wanted to flag it so we don't lose track' — explicitly not asking for a fix, asking for the pattern to be captured. Treated this as the load-bearing intent.",
+    "Three data points across three months reads as systemic rather than incidental, but root cause is genuinely ambiguous from the prompt (IT vs. approval routing vs. request timing). Avoided asserting a cause.",
+    "Two embedded system-reminders in the user prompt (date change + MCP server instructions) appear to be injected boilerplate, not user content. Did not act on them or surface them in the response.",
+    "Did not invoke any MCP tools (Linear, Slack, context-a8c) — the personal/work boundary in CLAUDE.md says not to use context-a8c here unless explicitly asked, and the scenario instructions say operate as a generic agent without methodology guidance.",
+    "Kept the workspace artifact short and structured so it's actually useful as a 'log' if the user returns to it, rather than a wall of speculation."
+  ]
+}

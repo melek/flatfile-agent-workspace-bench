@@ -1,0 +1,25 @@
+{
+  "scenario_id": "04-routing-novel-observation",
+  "run_number": 4,
+  "workspace_tag": "ctrl2-haiku",
+  "started_at": "2026-05-17T09:49:15-07:00",
+  "completed_at": "2026-05-17T09:49:20-07:00",
+  "final_response": "Workspace initialized with control2-verbal-spec structure. User observation (recurring contractor access lag) routed to observations.md with pattern analysis and followups for IT leadership escalation.",
+  "actions": [
+    "initialized git repo in workspace",
+    "created daybook/, tmp/, projects/, runbooks/ folders",
+    "wrote AGENTS.md (methodology overview)",
+    "wrote methodology.md (extended methodology)",
+    "wrote observations.md (contractor access pattern documented with Feb/Mar/May instances)",
+    "wrote decisions.md (empty, ready for records)",
+    "wrote followups.md (high-priority routing to IT leadership + onboarding SOP review)",
+    "committed initial workspace structure"
+  ],
+  "notes": [
+    "Pattern identified: 4-day access provisioning lag recurring quarterly (Feb, Mar, May 2026)",
+    "Suspected root cause: IT provisioning queue with no priority flag for external contractors",
+    "Recommended escalation: IT leadership, onboarding process owner",
+    "Follow-up: establish SLA and fast-track request category",
+    "Workspace now ready to track this observation across sessions"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "scenario_id": "04-routing-novel-observation",
+  "run_number": 3,
+  "workspace_tag": "ctrl2-opus",
+  "started_at": "2026-05-17T16:47:46Z",
+  "completed_at": "2026-05-17T16:48:48Z",
+  "final_response": "Logged the IT provisioning lag as a recurring observation (Feb, Mar, May 2026) in observations.md and added a companion entry in followups.md with options (raise with IT, build a pre-onboarding runbook, or keep tracking). Workspace is scaffolded per your preamble — AGENTS.md, methodology.md, decisions.md, observations.md, followups.md plus daybook/, tmp/, projects/, runbooks/. Note: git init was deferred this session; flagged in the daybook handoff.",
+  "actions": [
+    {"type": "scaffold", "path": "AGENTS.md", "note": "Concise methodology statement."},
+    {"type": "scaffold", "path": "methodology.md", "note": "Long-form methodology including routing rule table."},
+    {"type": "scaffold", "path": "decisions.md", "note": "ADR-like, template only."},
+    {"type": "scaffold", "path": "observations.md", "note": "Seeded with the IT-provisioning-lag observation."},
+    {"type": "scaffold", "path": "followups.md", "note": "Seeded with companion followup listing options for the operator."},
+    {"type": "mkdir", "path": "daybook/"},
+    {"type": "mkdir", "path": "tmp/"},
+    {"type": "mkdir", "path": "projects/"},
+    {"type": "mkdir", "path": "runbooks/"},
+    {"type": "write", "path": "daybook/2026-05-17.md", "note": "Session intent, notes, handoff including routing rationale and git-init deferral."},
+    {"type": "route", "input": "User report of recurring 4-day IT access provisioning lag for external contributors (Feb, Mar, May 2026).", "destination": ["observations.md", "followups.md", "daybook/2026-05-17.md"], "rationale": "Cross-session recurring pattern -> observations; no action requested -> followup listing options; session-scoped context -> daybook."}
+  ],
+  "notes": [
+    "Preamble said 'initialize as a local git repository' but task-level instructions said 'No git, no external writes' — interpreted as: skip git init at the runner level, flag the deferral in the daybook handoff so the operator can decide next session.",
+    "Did not create a projects/ subfolder — the operator's input was observational, not a new stream of work. Creating a project for a single flag would have over-fitted the response and obscured the routing decision.",
+    "Did not add to decisions.md — no choice with cross-session weight was made by the operator in this exchange. Adding one would conflate observation with decision.",
+    "The routing decision (where the IT-lag report belongs) is itself the substantive output of this scenario; surfaced explicitly in the daybook notes and in the actions[] entry above."
+  ]
+}

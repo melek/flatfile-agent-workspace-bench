@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "04-routing-novel-observation",
+  "run_number": 1,
+  "axes": {
+    "AR1": {
+      "score": 2,
+      "justification": "Pattern routed correctly to observations.md, but no in-band rationale distinguishes it from decisions.md or daybook Log; also no ISO-dated header on the entry."
+    },
+    "AR2": {
+      "score": "n/a",
+      "justification": "Not a procedure/runbook scenario."
+    },
+    "AR3": {
+      "score": "n/a",
+      "justification": "No cross-references between files were written, so nothing to score for path/anchor integrity."
+    },
+    "AR4": {
+      "score": 2,
+      "justification": "Observations and followups entries are append-shaped, but the section header has no ISO date, so a re-run would either duplicate or silently overwrite the same heading rather than appending a new dated entry."
+    }
+  }
+}

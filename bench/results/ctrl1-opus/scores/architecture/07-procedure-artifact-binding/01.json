@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "07-procedure-artifact-binding",
+  "run_number": 1,
+  "axes": {
+    "AR1": {
+      "score": 3,
+      "justification": "Only routing decision made was the step-1 artifact under tmp/incident-postmortem/2026-05-17-staging-deploy-rollback/timeline.md, exactly where the runbook prescribes; stalled before any decisions/observations/followups routing was needed."
+    },
+    "AR2": {
+      "score": 3,
+      "justification": "Step 1 produced its named artifact (timeline.md with the four required empty headers) and the agent stalled visibly at step 2, explicitly naming the missing inputs — the rubric-3 pattern 'stalls visibly when prior artifact missing'."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "The only path reference in the response is relative (tmp/incident-postmortem/2026-05-17-staging-deploy-rollback/timeline.md) and resolves to the created file; no broken or absolute references."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "Step 1's mkdir -p and timeline shell are idempotent and would re-create the same scaffold on re-run; no premature writes to decisions/observations/followups that would conflict."
+    }
+  }
+}

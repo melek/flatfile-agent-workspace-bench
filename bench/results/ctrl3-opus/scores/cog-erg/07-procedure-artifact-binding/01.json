@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "07-procedure-artifact-binding",
+  "run_number": 1,
+  "axes": {
+    "CE1": {
+      "score": 2,
+      "justification": "Acted on its own and then asked one consolidated question (timeline inputs) rather than demanding the user reload anything, but bundled four labeled sub-asks into that question."
+    },
+    "CE2": {
+      "score": 1,
+      "justification": "Final response is a long paragraph with a recap of step 1, an enumerated four-part input list with parenthetical guidance, and a forward-looking narration of steps 2-5 with file paths — several stretches of filler past the stall point."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "States destinations inline with brief reasons (timeline.md at the tmp working folder, factors/actions next, final at projects/postmortems/<slug>.md, immediate actions to followups.md), so the user could redirect cheaply."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "Stopped cleanly at the step 2 boundary with one placeholder timeline.md and a daybook entry recording the stall; no orphan factors/actions/postmortem files left for a future session to triage."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "scenario_id": "12-threat-provenance-check",
+  "run_number": 2,
+  "workspace_tag": "ctrl1-haiku",
+  "rubric": "cog-erg",
+  "scores": {
+    "CE1": {
+      "score": null,
+      "justification": "Run not executed — empty workspace with no final_response or actions; nothing to score against this axis."
+    },
+    "CE2": {
+      "score": null,
+      "justification": "Run not executed — no output exists to evaluate for economy."
+    },
+    "CE3": {
+      "score": null,
+      "justification": "Run not executed — no routing decision was made or surfaced."
+    },
+    "CE4": {
+      "score": null,
+      "justification": "Run not executed — no actions taken, so interruptibility is vacuous."
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "04-routing-novel-observation",
+  "run_number": 1,
+  "axes": {
+    "AR1": {
+      "score": 2,
+      "justification": "Content is correctly framed as a descriptive pattern (would belong in observations.md if methodology applied) with explicit 'no action requested yet — this is the tracking record', but file is named contractor-access-lag.md with no in-band routing rationale invoking decisions/observations/followups distinctions."
+    },
+    "AR2": {
+      "score": "n/a",
+      "justification": "Non-procedure scenario."
+    },
+    "AR3": {
+      "score": 1,
+      "justification": "No cross-references written at all; in a methodology-shaped workspace this routing event would need at minimum a daybook Log pointer to the observation entry, which is absent."
+    },
+    "AR4": {
+      "score": 1,
+      "justification": "Wrote a single standalone file rather than appending an ISO-dated section; a re-run on the same prompt would overwrite the existing content rather than append a new dated entry as observations.md requires."
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "07-procedure-artifact-binding",
+  "run_number": 2,
+  "axes": {
+    "AR1": {
+      "score": 3,
+      "justification": "Step-1 artifact routed to tmp/incident-postmortem/2026-05-17-staging-rollback/timeline.md per runbook; stalled before any decisions/observations/followups routing was triggered."
+    },
+    "AR2": {
+      "score": 3,
+      "justification": "Produced step 1's named timeline.md (four required headers as empty placeholders) and stalled visibly at step 2 with a structured list of the four missing inputs — exactly the rubric-3 stall-on-missing pattern."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "All paths referenced in the response (tmp/incident-postmortem/2026-05-17-staging-rollback/timeline.md, factors.md, actions.md, projects/postmortems/...) are relative and the one that exists resolves; forward-mentioned paths use the same relative convention."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "Only state mutation is the step-1 shell, which is safely re-creatable; nothing was written that would conflict or duplicate on re-run."
+    }
+  }
+}

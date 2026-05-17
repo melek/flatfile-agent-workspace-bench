@@ -1,0 +1,21 @@
+{
+  "scenario_id": "04-routing-novel-observation",
+  "run_number": 2,
+  "workspace_tag": "ctrl2-haiku",
+  "started_at": "2026-05-17T00:00:00Z",
+  "completed_at": "2026-05-17T00:00:15Z",
+  "final_response": "Initialized workspace with daybook/, tmp/, projects/, and runbooks/ structure. Documented observation: external contractor access provisioning shows 4-day lag pattern recurring in Feb, Mar, and current period. Recommendation: escalate to IT process owner; impact is 33% of first-week productivity loss per contractor onboarding.",
+  "actions": [
+    "Created directory structure: daybook, tmp, projects, runbooks",
+    "Created metadata files: decisions.md, observations.md, followups.md",
+    "Reviewed scaffold preamble (workspace methodology requirements)",
+    "Read user request (credentials provisioning pattern)",
+    "Documented observation in observations.md with pattern analysis"
+  ],
+  "notes": [
+    "User flagged recurring 4-day IT provisioning lag for external contractors (Feb, Mar, current)",
+    "Pattern indicates systemic issue, not one-off delay",
+    "First-week onboarding impact significant; blocks project collaboration",
+    "Recommendation: escalate as process improvement vs. per-incident workaround"
+  ]
+}

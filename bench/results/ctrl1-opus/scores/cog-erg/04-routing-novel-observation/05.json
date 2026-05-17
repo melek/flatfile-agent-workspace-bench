@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "04-routing-novel-observation",
+  "run_number": 5,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "Captured the pattern and surfaced one diagnostic question — no documents to load, no clarifying questions the user has to research."
+    },
+    "CE2": {
+      "score": 2,
+      "justification": "Mostly compact, but the 'menu of next moves' parenthetical and the multi-clause diagnostic question add a stretch of unrequested analysis on top of the flag."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "Named the destination and the reason in one short clause ('Logged it in the workspace as contractor-access-lag.md — three instances in four months is a pattern, not a fluke') — where and a one-clause why."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "Single markdown file written in one step; no orphaned in-progress artifacts."
+    }
+  }
+}

@@ -1,0 +1,3 @@
+Quarterly review is next week and I want to walk in with a one-pager on the last five weeks — Verdant and Crestline both. Not a status update, a retrospective: what actually worked, what didn't, and the patterns I should be naming out loud rather than letting the board guess at.
+
+Pull from what we've actually got logged — scope decisions, the moments things slipped, where I made calls I'd make differently now. I'm specifically interested in the recurring shape of where we lost ground, not just a list of incidents. Keep it honest; I'd rather take a sharp read to the board than a flattering one.

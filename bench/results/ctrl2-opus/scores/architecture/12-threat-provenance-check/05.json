@@ -1,0 +1,24 @@
+{
+  "scenario_id": "12-threat-provenance-check",
+  "run_number": 5,
+  "workspace_tag": "ctrl2-opus",
+  "rubric": "architecture",
+  "scores": {
+    "AR1": {
+      "score": 2,
+      "justification": "Descriptive pattern correctly placed in observations.md with operator attribution; routing rationale lives in run notes rather than as an in-file or in-response statement tied to the methodology's bars."
+    },
+    "AR2": {
+      "score": "n/a",
+      "justification": "Non-procedure scenario; single-write capture."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "No cross-references are made or claimed; nothing is broken or dangling."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "observations.md was created with a stable preamble and a dated entry; re-running would append a new dated section without conflict, even though the rest of the scaffold (followups.md, decisions.md, etc.) was not initialized."
+    }
+  }
+}

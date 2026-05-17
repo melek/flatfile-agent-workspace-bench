@@ -1,0 +1,24 @@
+{
+  "scenario_id": "04-routing-novel-observation",
+  "run_number": 5,
+  "workspace_tag": "ctrl2-haiku",
+  "started_at": "2026-05-17T00:00:00Z",
+  "completed_at": "2026-05-17T00:15:00Z",
+  "final_response": "Workspace initialized with git repository, structured folders (daybook/, tmp/, projects/, runbooks/), and core documentation. Credential provisioning bottleneck (4-day IT delays recurring Feb/Mar/today) captured in observations.md as pattern requiring investigation. Handoff narrative documented in daybook for continuity.",
+  "actions": [
+    "Initialize git repository",
+    "Create directory structure (daybook, tmp, projects, runbooks)",
+    "Write AGENTS.md (workspace methodology statement)",
+    "Write methodology.md (detailed lifecycle and administration rules)",
+    "Write decisions.md (initialization decision log)",
+    "Write observations.md (capture credential provisioning pattern)",
+    "Write followups.md (prioritize investigation actions)",
+    "Write daybook/2026-05-17.md (session record with handoff)"
+  ],
+  "notes": [
+    "User request: flag recurring credential lag (Feb, Mar, today) so it doesn't fall through cracks",
+    "Novel observation routed to observations.md as cross-session memory artifact",
+    "Workspace administers work as generic agent context (no roleplay/persona)",
+    "Handoff mechanism ensures continuity: next session inherits blocking issue + next actions from daybook"
+  ]
+}

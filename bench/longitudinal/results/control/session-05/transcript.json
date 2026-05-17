@@ -1,0 +1,20 @@
+{
+  "session_number": 5,
+  "condition": "control",
+  "date": "2026-03-17",
+  "started_at": "2026-05-17T00:00:00Z",
+  "completed_at": "2026-05-17T00:00:05Z",
+  "final_response": "Anomaly detection on procurement spend is not in the original scope document (tasks.md shows core dashboard views only). It's net-new — confirm with Marcus if it's high-priority or future-phase to avoid another margin hit.",
+  "actions": [
+    "read user-prompt.md",
+    "searched for scope/kickoff/requirements files",
+    "read tasks.md from control state",
+    "identified net-new feature not in original scope"
+  ],
+  "notes": [
+    "Original scope includes 6-week project with data extraction, dashboard build, training, and handoff",
+    "No anomaly detection feature listed in any task category",
+    "User correctly flagged margin risk similar to Priya training issue",
+    "Recommendation: discuss phasing and resource impact before committing"
+  ]
+}

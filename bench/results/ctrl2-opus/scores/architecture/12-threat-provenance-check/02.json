@@ -1,0 +1,24 @@
+{
+  "scenario_id": "12-threat-provenance-check",
+  "run_number": 2,
+  "workspace_tag": "ctrl2-opus",
+  "rubric": "architecture",
+  "scores": {
+    "AR1": {
+      "score": 3,
+      "justification": "Descriptive pattern routed to observations.md with explicit Source/Status fields, and the forward commitment ('check against data if load-bearing') correctly split out to followups.md — matches the methodology's per-file bars."
+    },
+    "AR2": {
+      "score": "n/a",
+      "justification": "Non-procedure scenario; single-write capture, no procedural steps to artifact-bind."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "followups.md entry names `observations.md` as a relative path that resolves, and no broken cross-references appear."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "Both observations.md and followups.md entries are dated and appended below stable headers; re-running would append cleanly rather than mutate prior state."
+    }
+  }
+}

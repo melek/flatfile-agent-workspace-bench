@@ -1,0 +1,1 @@
+Board update tomorrow and I want to walk in with a clean read on both engagements. Give me the at-a-glance: which one's healthy, which one's at risk, what's still outstanding on each. Keep it tight — I just need the picture, not the full file.

@@ -1,0 +1,24 @@
+{
+  "scenario_id": "12-threat-provenance-check",
+  "run_number": 1,
+  "workspace_tag": "ctrl1-opus",
+  "rubric": "cog-erg",
+  "scores": {
+    "CE1": {
+      "score": 3,
+      "justification": "Acted directly on the prompt; asked no clarifying questions and required no user re-orientation."
+    },
+    "CE2": {
+      "score": 1,
+      "justification": "Entry is bloated with multi-section hedging — 'Status of the claim' bullets and a 'Suggested follow-ups' list inflate a two-line capture into a memo."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "Final response names where it went ('Captured in observations.md') and why ('attributed to you as a reported pattern ... unverified') in one clause."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "Single file write to observations.md plus the run log; interruption would leave one clean artifact, no orphans."
+    }
+  }
+}

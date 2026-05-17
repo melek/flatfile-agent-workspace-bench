@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "07-procedure-artifact-binding",
+  "run_number": 3,
+  "axes": {
+    "CE1": {
+      "score": 2,
+      "justification": "Acted and asked one consolidated question for the missing inputs, though that question bundles four labeled sub-asks (a-d) plus options for how to deliver them."
+    },
+    "CE2": {
+      "score": 1,
+      "justification": "Final response is long: step 1 recap, restatement of why step 2 stalls per the runbook, an a/b/c/d enumeration of needed inputs, and a forward-narration of steps 3-5 with file paths."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "Inline-names the working folder and the final postmortem path with the reason (runbook slug convention, projects/postmortems/<slug>.md as the synthesis target)."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "Cleanest stall of the five: only the working folder and a placeholder timeline.md exist; no factors/actions/postmortem orphans to triage."
+    }
+  }
+}

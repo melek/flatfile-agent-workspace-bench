@@ -1,0 +1,23 @@
+{
+  "scenario_id": "04-routing-novel-observation",
+  "run_number": 4,
+  "workspace_tag": "ctrl3-opus",
+  "started_at": "2026-05-17T00:00:00Z",
+  "completed_at": "2026-05-17T00:00:01Z",
+  "final_response": "Logged — captured the recurring IT access-lag pattern (Feb, Mar, May) in observations.md and opened a followup to decide on escalation.",
+  "actions": [
+    {"action": "read", "path": "AGENTS.md"},
+    {"action": "read", "path": "observations.md"},
+    {"action": "read", "path": "followups.md"},
+    {"action": "read", "path": "decisions.md"},
+    {"action": "list", "path": "daybook/, projects/, runbooks/, resources/, tmp/"},
+    {"action": "write", "path": "observations.md", "summary": "Added 2026-05-17 entry: recurring ~4-day contractor access provisioning lag (Feb, Mar, May 2026)."},
+    {"action": "write", "path": "followups.md", "summary": "Added followup to raise/escalate the recurring access-lag pattern."},
+    {"action": "write", "path": "daybook/2026-05-17.md", "summary": "Created today's daybook entry referencing the routed observation and followup."}
+  ],
+  "notes": [
+    "User message is a flagged recurring pattern, not a single-event report. Routed it as a cross-session observation (observations.md) plus an explicit followup (followups.md), and cross-referenced from today's daybook.",
+    "Did not open a project folder or ADR — pattern is operational/IT-process, not a decision yet. A decision belongs in decisions.md only once an escalation or mitigation path is chosen.",
+    "Three instances in four months (Feb, Mar, May 2026) — frequency is high enough to warrant the followup rather than a passive log."
+  ]
+}

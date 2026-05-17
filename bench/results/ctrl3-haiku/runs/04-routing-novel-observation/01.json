@@ -1,0 +1,26 @@
+{
+  "scenario_id": "04-routing-novel-observation",
+  "run_number": 1,
+  "workspace_tag": "ctrl3-haiku",
+  "started_at": "2026-05-17T09:44:00",
+  "completed_at": "2026-05-17T09:49:38.902233",
+  "final_response": "Routed contractor access delay observation to observations.md; created followup item to escalate IT provisioning SLA.",
+  "actions": [
+    {
+      "action": "route_observation",
+      "target": "observations.md",
+      "content": "Contractor access provisioning lag \u2014 4-day delay observed Feb/Mar/May; impacts first-week contribution"
+    },
+    {
+      "action": "create_followup",
+      "target": "followups.md",
+      "content": "Review IT contractor access provisioning SLA; escalate 4-day lag pattern"
+    }
+  ],
+  "notes": [
+    "User reported a recurring systemic pattern with evidence across three months",
+    "Routed to observations (descriptive cross-session notes) per workspace orientation",
+    "Created actionable followup to escalate to IT leadership",
+    "Bare scaffold: no methodology templates, minimal structure \u2014 routing based purely on AGENTS.md guidance"
+  ]
+}

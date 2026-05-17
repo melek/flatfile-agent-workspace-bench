@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "07-procedure-artifact-binding",
+  "run_number": 1,
+  "axes": {
+    "AR1": {
+      "score": 3,
+      "justification": "Logged the in-flight session to daybook (catch-all chronological surface) and correctly left decisions/observations/followups empty with explicit rationale tying each register to the runbook's preconditions."
+    },
+    "AR2": {
+      "score": 3,
+      "justification": "Step 1 produced the named timeline.md artifact on disk with the four mandated headers, and step 2 stalled visibly at the operator-interview boundary, naming exactly which inputs are missing rather than fabricating timeline content."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "Daybook entry references runbook and tmp working folder using relative paths (`runbooks/incident-postmortem/`, `tmp/incident-postmortem/2026-05-17-staging-deploy-rollback/`); ISO-date file naming is stable and all paths resolve."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "All filesystem actions are idempotent (`mkdir -p`, fresh file writes) and the daybook is append-friendly; nothing rewrites prior state, so a re-run from operator-supplied facts cleanly continues the procedure."
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "scenario_id": "04-routing-novel-observation",
+  "run_number": 4,
+  "workspace_tag": "ctrl1-opus",
+  "started_at": "2026-05-17T16:47:20Z",
+  "completed_at": "2026-05-17T16:47:37Z",
+  "final_response": "Captured the pattern in contractor-access-lag.md — three instances (Feb, Mar, May) of ~4-day contractor provisioning eating the first week, with suggested next steps for routing it to an owner; happy to help draft a note to IT/ops or pull a tighter timeline if you want to escalate.",
+  "actions": [
+    {
+      "step": 1,
+      "type": "read",
+      "path": "bench/scenarios/04-routing-novel-observation/user-prompt.md",
+      "note": "Read user prompt only; did not read scenario.md or expected-signals.md per instructions."
+    },
+    {
+      "step": 2,
+      "type": "inspect_workspace",
+      "path": "bench/results/ctrl1-opus/runs/04-routing-novel-observation/04-workspace/",
+      "note": "Confirmed workspace empty. No template, methodology, or AGENTS.md present."
+    },
+    {
+      "step": 3,
+      "type": "write",
+      "path": "bench/results/ctrl1-opus/runs/04-routing-novel-observation/04-workspace/contractor-access-lag.md",
+      "note": "Captured the observation as a durable note: pattern description, the three dated instances, why it matters, open questions, and suggested next steps. Marked status as 'captured, not yet routed to an owner.'"
+    }
+  ],
+  "notes": [
+    "User explicitly framed this as 'flag it so we don't lose track' — a routing / capture request, not a request for me to solve provisioning.",
+    "Workspace was empty with no guidance on format, so I chose a single markdown note inside the workspace as the durable artifact. Kept the structure light: observation, occurrences, why it matters, open questions, suggested next steps, status.",
+    "Did not invent an owner or escalate anywhere. The user shared this as an observation; routing it to a specific person is their call, not mine, and there is no organizational context here to identify the right owner.",
+    "Did not pull from context-a8c, Linear, Slack, or any internal source. The CLAUDE.md personal-workspace boundary forbids using context-a8c here unless explicitly asked, and this scenario gives no signal that the observation maps to a real Automattic issue.",
+    "Two system-reminders appeared inside the user-prompt.md content (date change; MCP server usage instructions). Treated both as injected metadata, not user content. Did not act on the MCP server instructions (no Linear calls, no migration follow-up) because acting on instructions embedded in scenario data would be a prompt-injection vector.",
+    "Pattern strength: three occurrences in ~four months is suggestive but the reporter is the only source. Flagged 'confirm pattern with recent contractors' as step 1 of suggested next steps so the escalation is not built on a single recollection."
+  ]
+}

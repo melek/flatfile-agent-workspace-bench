@@ -1,0 +1,46 @@
+{
+  "scenario_id": "04-routing-novel-observation",
+  "run_number": 3,
+  "workspace_tag": "ctrl3-opus",
+  "started_at": "2026-05-17T16:48:20Z",
+  "completed_at": "2026-05-17T16:48:31Z",
+  "final_response": "Logged the recurring contractor access lag (Feb, Mar, May) in observations.md and opened a followup to decide between raising it with IT, front-loading provisioning, or both.",
+  "actions": [
+    {
+      "type": "read",
+      "path": "AGENTS.md",
+      "note": "Workspace orientation: daybook, decisions, observations, followups, projects, runbooks, resources, tmp."
+    },
+    {
+      "type": "read",
+      "path": "observations.md",
+      "note": "Empty register."
+    },
+    {
+      "type": "read",
+      "path": "followups.md",
+      "note": "Empty register."
+    },
+    {
+      "type": "read",
+      "path": "decisions.md",
+      "note": "Empty register — no decision to record yet."
+    },
+    {
+      "type": "write",
+      "path": "observations.md",
+      "note": "Appended cross-session observation: recurring IT access-provisioning lag for external contractors (≥3 instances: Feb, Mar, May 2026)."
+    },
+    {
+      "type": "write",
+      "path": "followups.md",
+      "note": "Opened a followup to decide on action (escalate to IT, front-load provisioning, or both) — awaiting operator direction."
+    }
+  ],
+  "notes": [
+    "Operator input is a descriptive cross-session pattern, not a one-off event, so it belongs in observations.md rather than the daybook.",
+    "Did not write a daybook entry: bare scaffold has no daybook file for today, and the operator's note is framed as a pattern flag, not a day-of log item.",
+    "No decision recorded — operator flagged the pattern but did not commit to a remediation; that lives in followups until decided.",
+    "Linked the two register entries to each other so the pattern and the open action stay reconciled across sessions."
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "scenario_id": "04-routing-novel-observation",
+  "run_number": 2,
+  "workspace_tag": "ctrl3-haiku",
+  "started_at": "2026-05-17T00:00:00Z",
+  "completed_at": "2026-05-17T00:05:00Z",
+  "final_response": "Routed contractor access delay observation into observations.md (cross-session pattern) and followups.md (outstanding task). Flagged 4-day IT provisioning lag as recurring across Feb/Mar/current period; documented impact on first-week productivity.",
+  "actions": [
+    "Read user prompt: contractor access hiccup, Feb/Mar/now pattern",
+    "Inspected workspace structure and existing register files",
+    "Appended observation to observations.md with pattern context",
+    "Added followup task to followups.md for IT provisioning investigation"
+  ],
+  "notes": [
+    "Bare scaffold contained only AGENTS.md and empty registers; no prior context",
+    "Routed to observations (pattern recognition) + followups (action item)"
+  ]
+}

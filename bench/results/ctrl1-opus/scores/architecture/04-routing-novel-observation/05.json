@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "04-routing-novel-observation",
+  "run_number": 5,
+  "axes": {
+    "AR1": {
+      "score": 2,
+      "justification": "Strongest descriptive framing of the five — 'this file is the durable record', menu of moves offered without committing, diagnostic question rather than prescription — content would land cleanly in observations.md, but no canonical filename and no in-band naming of the observation-vs-decision routing rationale."
+    },
+    "AR2": {
+      "score": "n/a",
+      "justification": "Non-procedure scenario."
+    },
+    "AR3": {
+      "score": 1,
+      "justification": "No cross-references in the artifact; no daybook Log breadcrumb pointing at the observation."
+    },
+    "AR4": {
+      "score": 1,
+      "justification": "Single standalone file with no ISO-dated section structure — re-running on the same prompt would overwrite rather than append a new dated entry as observations.md is meant to be."
+    }
+  }
+}

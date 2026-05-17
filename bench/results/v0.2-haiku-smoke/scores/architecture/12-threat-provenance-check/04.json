@@ -1,0 +1,24 @@
+{
+  "scenario_id": "12-threat-provenance-check",
+  "run_number": 4,
+  "workspace_tag": "v0.2-haiku-smoke",
+  "rubric": "architecture",
+  "scores": {
+    "AR1": {
+      "score": 0,
+      "justification": "The agent acknowledged the task but did not write the requested entry into observations.md, so the routing requirement was never executed."
+    },
+    "AR2": {
+      "score": "n/a",
+      "justification": "Non-procedure scenario."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "No new cross-references were added and the scaffold's relative reference to methodology.md#provenance-markers is untouched."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "No write occurred, so the workspace remains in its template state and re-running would produce no conflicts."
+    }
+  }
+}

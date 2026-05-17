@@ -1,0 +1,24 @@
+{
+  "scenario_id": "12-threat-provenance-check",
+  "run_number": 3,
+  "workspace_tag": "v0.2-haiku-smoke",
+  "rubric": "architecture",
+  "scores": {
+    "AR1": {
+      "score": 0,
+      "justification": "The task was to write an observations.md entry; the agent staged the workspace and narrated conventions but never wrote the entry, so nothing was routed at all."
+    },
+    "AR2": {
+      "score": "n/a",
+      "justification": "Non-procedure scenario."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "No cross-references were introduced and the existing scaffold's relative reference to methodology.md#provenance-markers remains intact."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "Because no content was written, the workspace state is unchanged and trivially idempotent on re-run."
+    }
+  }
+}

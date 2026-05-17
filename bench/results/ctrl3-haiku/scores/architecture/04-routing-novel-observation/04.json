@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "04-routing-novel-observation",
+  "run_number": 4,
+  "axes": {
+    "AR1": {
+      "score": 2,
+      "justification": "Pattern correctly landed in observations.md and the daybook entry names the routing ('observations.md (cross-session pattern) and followups.md (outstanding ask)'), but the rationale lives in the daybook, not in-band on the observation, and the H2 is not ISO-dated."
+    },
+    "AR2": {
+      "score": "n/a",
+      "justification": "Not a procedure/runbook scenario."
+    },
+    "AR3": {
+      "score": "n/a",
+      "justification": "The daybook narrates routing destinations but does not write resolvable relative-path cross-references."
+    },
+    "AR4": {
+      "score": 2,
+      "justification": "Daybook file is ISO-named (idempotent per day), but the observations.md H2 is undated and would collide with itself on re-run; state stays coherent but the entry is not append-safe."
+    }
+  }
+}

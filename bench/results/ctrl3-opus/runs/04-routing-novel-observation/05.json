@@ -1,0 +1,41 @@
+{
+  "scenario_id": "04-routing-novel-observation",
+  "run_number": 5,
+  "workspace_tag": "ctrl3-opus",
+  "started_at": "2026-05-17T00:00:00Z",
+  "completed_at": "2026-05-17T00:00:01Z",
+  "final_response": "Logged. Added the recurring contractor-access provisioning lag (Feb / Mar / May 2026, ~4 days each) to observations.md as a pattern, opened a followup to decide whether to raise it with IT or propose a pre-provisioning workflow, and noted today's incident in the daybook.",
+  "actions": [
+    {
+      "type": "read",
+      "path": "AGENTS.md",
+      "why": "Orient to workspace conventions before routing."
+    },
+    {
+      "type": "survey",
+      "path": ".",
+      "why": "Check existing state of observations.md, followups.md, decisions.md, daybook/, projects/ — all empty / unpopulated."
+    },
+    {
+      "type": "write",
+      "path": "observations.md",
+      "why": "The operator flagged a recurring cross-session pattern (3 instances over 3+ months). Observations.md is the right home per AGENTS.md ('descriptive cross-session notes worth remembering')."
+    },
+    {
+      "type": "write",
+      "path": "followups.md",
+      "why": "The operator's framing ('so we don't lose track') implies an outstanding action — decide what to do about the pattern. Routed as a followup."
+    },
+    {
+      "type": "write",
+      "path": "daybook/2026-05-17.md",
+      "why": "Capture today's incident in the daily log with pointers to the observation and followup entries."
+    }
+  ],
+  "notes": [
+    "Operator's signal had two layers: a single incident (today's 4-day lag) and a pattern claim (also happened in Feb and Mar). The pattern is the load-bearing content — a single incident would be a daybook entry only.",
+    "Did not open a project folder. There's no scoped project yet; this is a cross-cutting operational pattern. If it becomes a named initiative (e.g., 'contractor-onboarding-fix'), promote then.",
+    "Did not write a decision record. No decision has been made yet — only a pattern noted and a followup to decide. decisions.md stays clean until an actual call is made.",
+    "Did not escalate or contact IT. Out of scope for a flat-file workspace agent; the followup leaves that judgment to the operator."
+  ]
+}

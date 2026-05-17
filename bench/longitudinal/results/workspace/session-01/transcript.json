@@ -1,0 +1,30 @@
+{
+  "session_number": 1,
+  "condition": "workspace",
+  "date": "2026-03-03",
+  "started_at": "2026-03-03T00:00:00Z",
+  "completed_at": "2026-03-03T00:05:00Z",
+  "final_response": "Logged. Project folder created at `projects/verdant-foods/` with full AGENTS briefing (team, milestones, risks, next steps). Daybook entry for 2026-03-03 written. Two items added to followups: data extract (due 2026-05-24) and scope clarification doc (due 2026-03-10). Ready for handoff.",
+  "actions": [
+    {
+      "path": "projects/verdant-foods/AGENTS.md",
+      "action": "created",
+      "content_summary": "Project briefing: Verdant Foods procurement analytics dashboard, 6-week retainer, team assignments (Ash, Priya), week 3 and week 6 milestones, risks (loose scope language), next steps"
+    },
+    {
+      "path": "daybook/2026-03-03.md",
+      "action": "created",
+      "content_summary": "Intent, log, and handoff for day. Logged engagement details, team structure, and dependencies. Handoff notes awaiting data extract and scope clarification."
+    },
+    {
+      "path": "followups.md",
+      "action": "updated",
+      "content_summary": "Added two active items: (1) data extract due 2026-05-24, (2) scope clarification doc due 2026-03-10"
+    }
+  ],
+  "notes": [
+    "Data extract timeline critical path — client promised end of week (2026-05-24)",
+    "Scope language identified as risk early — clarification doc addresses before week 1 kickoff",
+    "Team roles clear: Ash (data), Priya (training), lead (client management / project coordination)"
+  ]
+}

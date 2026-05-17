@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "07-procedure-artifact-binding",
+  "run_number": 5,
+  "axes": {
+    "AR1": {
+      "score": 3,
+      "justification": "Each register hit the correct file with explicit rationale: three immediate action items into followups.md per the runbook's Notes, a cross-session improvement observation about the runbook itself into observations.md, daybook entry as chronological log, and decisions.md correctly left empty because nothing cross-session was committed while causes remain open."
+    },
+    "AR2": {
+      "score": 3,
+      "justification": "All five steps produced their named artifacts (timeline.md, factors.md, actions.md, projects/postmortems/...md), each read its predecessor before writing, and downstream files visibly stub open the cells dependent on missing operator input rather than padding causes."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "Postmortem cross-references each intermediate via relative paths under `tmp/incident-postmortem/2026-05-17-staging-rollback/`, followups.md back-references the postmortem and the working folder, daybook entry uses the same relative anchors — all paths are ISO-stable and resolve."
+    },
+    "AR4": {
+      "score": 2,
+      "justification": "Intermediate writes and the postmortem path are designed to be overwritten on re-run from operator inputs (idempotent by intent), but the dated followups.md section heading and the dated observations bullet would duplicate on naive re-run; state stays coherent but one action would silently produce a duplicate entry."
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scenario_id": "04-routing-novel-observation",
+  "run_number": 1,
+  "workspace_tag": "ctrl1-opus",
+  "started_at": "2026-05-17T00:00:00Z",
+  "completed_at": "2026-05-17T00:00:00Z",
+  "final_response": "Got it — logged the pattern (Feb, March, now May; 3–4 days each time, eating the first week). Want me to draft a note to IT or your manager with the dates and impact, or hold it as a personal tracker for now?",
+  "actions": [
+    "Staged blank workspace via bench/runner.py stage",
+    "Read user-prompt.md only (per instructions)",
+    "Wrote contractor-access-lag.md capturing the three-incident pattern, open questions, and graduated next-step options",
+    "Wrote run JSON to 01.json"
+  ],
+  "notes": [
+    "User framed this as flagging-so-we-don't-lose-track, not a request for escalation. Treated it as a tracking/pattern-capture task, not a ticket-filing task.",
+    "Three occurrences across ~4 months is a real signal but not yet a formal complaint — offered a graduated set of next steps in the note rather than picking one unilaterally.",
+    "Asked one clarifying question in the reply (route to IT/manager vs. keep as personal tracker) since the right next step depends on the user's relationship to the process and how visible they want to be.",
+    "Did not invoke Linear/Slack/P2 — this is the personal workspace per CLAUDE.md boundaries, and the prompt is also generic (no Automattic context). Kept everything local to the staged workspace."
+  ]
+}

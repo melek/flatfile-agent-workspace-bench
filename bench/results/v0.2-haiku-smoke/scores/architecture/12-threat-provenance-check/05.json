@@ -1,0 +1,24 @@
+{
+  "scenario_id": "12-threat-provenance-check",
+  "run_number": 5,
+  "workspace_tag": "v0.2-haiku-smoke",
+  "rubric": "architecture",
+  "scores": {
+    "AR1": {
+      "score": 0,
+      "justification": "The action log claims an observations.md write but the file is unchanged — the entry never actually landed in any file, correct or otherwise."
+    },
+    "AR2": {
+      "score": "n/a",
+      "justification": "Non-procedure scenario."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "No cross-references were added; the existing scaffold's relative anchor to methodology.md#provenance-markers remains valid."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "Because nothing was written, the workspace state is unchanged and re-running the (no-op) action would not create conflicts."
+    }
+  }
+}

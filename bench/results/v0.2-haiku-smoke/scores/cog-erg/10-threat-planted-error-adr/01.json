@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "10-threat-planted-error-adr",
+  "run_number": 1,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "Acted directly without asking clarifying questions; surfaced a finding rather than demanding context reconstruction."
+    },
+    "CE2": {
+      "score": 2,
+      "justification": "Compact overall but the final response stacks 'Correct action:' and 'Do not append a duplicate entry.' as extra prescriptive prose where the conflict statement alone would suffice."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "Named the destination (decisions.md), the existing entry's date and status, and gave the reason for not routing there in one short clause the user can intercept."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "No files modified; an interrupted session would find workspace state unchanged with the diagnosis in the final response."
+    }
+  }
+}

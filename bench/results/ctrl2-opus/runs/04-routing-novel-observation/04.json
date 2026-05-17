@@ -1,0 +1,24 @@
+{
+  "scenario_id": "04-routing-novel-observation",
+  "run_number": 4,
+  "workspace_tag": "ctrl2-opus",
+  "started_at": "2026-05-17T09:47:00-04:00",
+  "completed_at": "2026-05-17T09:48:30-04:00",
+  "final_response": "Flagged and routed. Logged the recurring contractor-access pattern (Feb, Mar, May 2026 — ~4 days each) to observations.md, and opened a followup in followups.md with concrete next steps (pull exact dates, check IT's SLA, draft a note framing it as a pattern, maybe a pre-onboarding runbook). Noted in today's daybook. Not acting further unless you want me to.",
+  "actions": [
+    "Initialized empty workspace as git repo per scaffold preamble.",
+    "Created directories: daybook/, tmp/, projects/, runbooks/.",
+    "Authored AGENTS.md (concise methodology statement) and methodology.md (longer version, including a routing-inputs section).",
+    "Created empty/stub decisions.md with ADR template.",
+    "Wrote observations.md entry: '2026-05-17 — Recurring contractor/external-access provisioning lag' capturing the three observed instances and the ~1-week productivity cost per onboarding.",
+    "Wrote followups.md entry: 'Quantify and escalate contractor access-provisioning lag' with four candidate next steps (quantify, check SLA, draft note, pre-onboarding runbook).",
+    "Wrote daybook/2026-05-17.md with session intent, notes on routing decision, and EOD handoff pointing the next session at the followup.",
+    "Did NOT create a project folder, runbook, or decision entry — the input is a flagged pattern + intent to escalate later, not yet a project or a decision."
+  ],
+  "notes": [
+    "Input was a recurring-pattern observation, not a discrete task. Routed primarily to observations.md (the pattern) and followups.md (the action), with a daybook entry recording the routing.",
+    "Operator's explicit framing was 'flag so we don't lose track' — taking unilateral escalation action (e.g. drafting a note to IT) would have overshot the request. Kept that as a candidate followup instead.",
+    "Did not invent a project folder for this; spinning one up before the operator has decided to act would clutter the workspace.",
+    "Three-instance pattern (Feb/Mar/May 2026) is recorded as operator-reported, not independently verified — flagged as such in observations.md."
+  ]
+}

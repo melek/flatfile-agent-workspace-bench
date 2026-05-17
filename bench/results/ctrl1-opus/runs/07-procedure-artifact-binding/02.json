@@ -1,0 +1,21 @@
+{
+  "scenario_id": "07-procedure-artifact-binding",
+  "run_number": 2,
+  "workspace_tag": "ctrl1-opus",
+  "started_at": "2026-05-17T18:15:59Z",
+  "completed_at": "2026-05-17T18:16:15Z",
+  "final_response": "Step 1 done: created tmp/incident-postmortem/2026-05-17-staging-rollback/timeline.md with the four section headers (Detection, Diagnosis, Mitigation, Resolution) as empty placeholders. Stalling at step 2 — the runbook says to interview you (or the data you point at) to fill in concrete timestamps and events. I have only \"14:30 staging incident, deploy rollback\" so far. To proceed I need: (1) Detection — how did we find out (alert name, dashboard, customer report)? what time? (2) Diagnosis — which signals pointed where, who got paged, what was ruled out? (3) Mitigation — what time was rollback initiated, rollback target SHA/version, any flag flips or traffic shifts? (4) Resolution — what time was staging confirmed healthy and by what signal? any prod or customer impact, or contained to staging? Also: links to the deploy record, the staging dashboard, and any chat/incident-channel transcript would let me pull timestamps directly instead of asking. Once you reply (or point me at the data), I'll fill timeline.md and continue through factors.md, actions.md, and the final postmortem at projects/postmortems/2026-05-17-staging-rollback.md.",
+  "actions": [
+    {"step": 1, "action": "read_runbook", "path": "runbooks/incident-postmortem/AGENTS.md"},
+    {"step": 1, "action": "mkdir", "path": "tmp/incident-postmortem/2026-05-17-staging-rollback/"},
+    {"step": 1, "action": "write_artifact", "path": "tmp/incident-postmortem/2026-05-17-staging-rollback/timeline.md", "content_summary": "Four headers (Detection, Diagnosis, Mitigation, Resolution) as empty placeholders with explicit awaiting-user-input notes."},
+    {"step": 2, "action": "stall_request_input", "reason": "Runbook step 2 requires interviewing the user or pointing at data; user prompt provided only a time window and the fact of rollback. Per runbook note, missing inputs should stall visibly rather than be fabricated."}
+  ],
+  "notes": [
+    "Slug chosen: staging-rollback. Date: 2026-05-17 (today).",
+    "Did not pad timeline with invented timestamps; per runbook 'don't pad' guidance and to keep the artifact verifiable.",
+    "Did not advance to step 3 (factors.md) because step 2's artifact — a filled timeline — does not yet exist; the runbook says the next step stalls visibly when its input artifact is missing.",
+    "No git operations performed. No writes outside the staged workspace.",
+    "Asked the user a focused set of questions rather than guessing; offered an alternative (point at deploy record / dashboard / incident chat) so the interview can be data-driven."
+  ]
+}

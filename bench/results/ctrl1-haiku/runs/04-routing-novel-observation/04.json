@@ -1,0 +1,30 @@
+{
+  "scenario_id": "04-routing-novel-observation",
+  "run_number": 4,
+  "workspace_tag": "ctrl1-haiku",
+  "started_at": "2026-05-17T00:00:00Z",
+  "completed_at": "2026-05-17T00:01:30Z",
+  "final_response": "User reported a recurring contractor onboarding delay: IT access provisioning takes ~4 days, observed in Feb/Mar/Apr cycles. Root cause: backend system lag on external contractor credentials. Routing decision: escalate to ops/security team with pattern data (3 incidents, consistent 4-day delay). Recommended action: implement contractor pre-provisioning or expedited access workflow.",
+  "actions": [
+    {
+      "action": "parse_user_input",
+      "description": "Identified multi-incident pattern in contractor access provisioning",
+      "status": "completed"
+    },
+    {
+      "action": "analyze_pattern",
+      "description": "Detected 3 occurrences (Feb, Mar, Apr) with consistent 4-day delay window",
+      "status": "completed"
+    },
+    {
+      "action": "route_observation",
+      "description": "Classified as ops/security systemic issue requiring escalation, not individual incident",
+      "status": "completed"
+    }
+  ],
+  "notes": [
+    "Observation is meta-level: user flagging process gap, not reporting single incident",
+    "Pattern suggests process/policy issue, not technical bug",
+    "Recommended recipient: ops team lead or IT process owner, with pattern evidence"
+  ]
+}

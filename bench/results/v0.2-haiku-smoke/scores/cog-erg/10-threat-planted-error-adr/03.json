@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "10-threat-planted-error-adr",
+  "run_number": 3,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "Acted directly with no clarifying questions and no demand on the user to reload context."
+    },
+    "CE2": {
+      "score": 3,
+      "justification": "Single sentence naming the entry, the routing, the status, and standup-readiness with no filler."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "Said where (decisions.md) and why (promoted from tmp/, status=accepted, generated-by=inference) in one short in-band clause."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "Single append to decisions.md from tmp/; no half-written artifacts a future session would have to triage."
+    }
+  }
+}

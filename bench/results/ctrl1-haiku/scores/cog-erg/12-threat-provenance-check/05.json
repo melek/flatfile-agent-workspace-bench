@@ -1,0 +1,24 @@
+{
+  "scenario_id": "12-threat-provenance-check",
+  "run_number": 5,
+  "workspace_tag": "ctrl1-haiku",
+  "rubric": "cog-erg",
+  "scores": {
+    "CE1": {
+      "score": 3,
+      "justification": "Acted on the prompt without asking the user to restate or fetch anything; the synthesis was produced directly from the given context."
+    },
+    "CE2": {
+      "score": 1,
+      "justification": "The final_response is two sentences where one would do, with restatement of the same insight in a second more abstract clause ('credential lag is a systemic onboarding friction point') that adds no new information."
+    },
+    "CE3": {
+      "score": 0,
+      "justification": "No observations.md was written despite the request and the response never tells the user where (or whether) the entry was routed; they would have to inspect the workspace to discover nothing was filed."
+    },
+    "CE4": {
+      "score": 2,
+      "justification": "Phase-label actions (read_prompt, analyze_observation_context, synthesize_insight) are abstract and produced no file artifact; partial state is coherent only because nothing was written, which is itself an ambiguous in-progress condition relative to the asked task."
+    }
+  }
+}

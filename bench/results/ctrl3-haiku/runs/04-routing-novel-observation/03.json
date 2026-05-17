@@ -1,0 +1,42 @@
+{
+  "scenario_id": "04-routing-novel-observation",
+  "run_number": 3,
+  "workspace_tag": "ctrl3-haiku",
+  "started_at": "2026-05-17T00:00:00Z",
+  "completed_at": "2026-05-17T00:05:00Z",
+  "final_response": "Routed contractor access provisioning issue to observations.md as recurring pattern (Feb/Mar/May, ~4-day lag), added escalation followup to IT for SLA/process improvement.",
+  "actions": [
+    {
+      "type": "stage",
+      "target": "bench/results/ctrl3-haiku/runs/04-routing-novel-observation/03-workspace",
+      "status": "completed"
+    },
+    {
+      "type": "read",
+      "target": "user-prompt.md",
+      "status": "completed"
+    },
+    {
+      "type": "read",
+      "target": "AGENTS.md",
+      "status": "completed"
+    },
+    {
+      "type": "route_observation",
+      "entry": "Contractor access provisioning lag (recurring Feb/Mar/May, 4-day delay)",
+      "destination": "observations.md",
+      "status": "completed"
+    },
+    {
+      "type": "create_followup",
+      "entry": "Escalate contractor provisioning SLA to IT",
+      "destination": "followups.md",
+      "status": "completed"
+    }
+  ],
+  "notes": [
+    "Observation contains clear pattern: recurring monthly (Feb, Mar, May), consistent ~4-day lag, high impact on contractor onboarding week 1",
+    "Routed to observations.md for cross-session pattern tracking; escalation added to followups with suggested owner/timeline",
+    "Workspace bare scaffold (no prior context) — routing based on AGENTS.md conventions (observations for patterns, followups for actions)"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "session_number": 4,
+  "condition": "control",
+  "date": "2026-03-13",
+  "started_at": "2026-05-17T15:32:00Z",
+  "completed_at": "2026-05-17T15:33:45Z",
+  "final_response": "The core tension is margin vs. precedent. On margin: 9 trainees eats most of your envelope, so this absorbs profit without return. On precedent: accepting scope creep now signals flexibility you'll defend later at higher cost politically and operationally. Three levers: (1) ship as-is, accept the margin hit as customer goodwill investment (only viable if Marcus relationship / contract renewal justifies it), (2) ask Priya to trim to 6 before EOD (enforces original scope, respects retainer structure, but risks appearing rigid), (3) offer Marcus 2 plants at full scope + 1 plant with partial scope (e.g. 2 trainees + recorded materials) — splits the difference and acknowledges the ask without absorbing full cost. The tiebreaker: Does the Marcus relationship (contract renewal odds, upsell potential, strategic value) justify a margin hit? If yes, ship as-is. If no, trim or split. Get that answer first, then Priya's decision is 15 minutes.",
+  "actions": [
+    "Presented scope creep decision framework",
+    "Identified margin vs. precedent tension",
+    "Offered three resolution paths with tradeoffs"
+  ],
+  "notes": [
+    "Scenario context: Fixed-fee retainer, 6 trainees budgeted vs. 9 scoped, materials ship Monday",
+    "Key constraint: Decision needed today for Priya to execute trim or ship",
+    "No external queries, no roleplay, control condition response only"
+  ]
+}

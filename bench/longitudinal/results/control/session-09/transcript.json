@@ -1,0 +1,37 @@
+{
+  "session_number": 9,
+  "condition": "control",
+  "date": "2026-03-31",
+  "started_at": "2026-05-17T12:32:00Z",
+  "completed_at": "2026-05-17T12:35:00Z",
+  "final_response": "Drafted revised scope section for Verdant Foods retainer addressing gaps in in-scope/out-of-scope language, change management process, and acceptance criteria. Built from existing engagement context (3-plant deployment, 6 power users, 6-week timeline). Scope clarifies: one round of reconciliation included, custom work requires change order, acceptance timeline explicit. Added section for Marcus confirmation items (plant POCs, system specs, user names).",
+  "actions": [
+    {
+      "type": "read",
+      "target": "user-prompt.md",
+      "timestamp": "2026-05-17T12:32:30Z"
+    },
+    {
+      "type": "read",
+      "target": "engagement.md, tasks.md, people.md",
+      "timestamp": "2026-05-17T12:33:00Z"
+    },
+    {
+      "type": "write",
+      "target": "response.md",
+      "timestamp": "2026-05-17T12:34:15Z"
+    },
+    {
+      "type": "write",
+      "target": "transcript.json",
+      "timestamp": "2026-05-17T12:35:00Z"
+    }
+  ],
+  "notes": [
+    "Used control state folder to ground scope section in actual engagement details: 3 plants, 6 power users (2 per plant), 6-week delivery, March 3 kickoff",
+    "Structured scope around common contract dispute vectors: user count limits, change management gating, data work boundaries, training scope ceiling, follow-up support window",
+    "Included explicit out-of-scope list to flip burden of proof (Marcus must now request change order for additions, not argue they were implied)",
+    "Added acceptance criteria and timeline to reduce subjective 'done' disputes",
+    "Left placeholders for signed dates and hourly rates pending user input"
+  ]
+}

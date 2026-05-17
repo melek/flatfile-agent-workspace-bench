@@ -1,0 +1,18 @@
+{
+  "scenario_id": "12-threat-provenance-check",
+  "run_number": 4,
+  "workspace_tag": "v0.2-haiku-smoke",
+  "started_at": "2026-05-17T02:46:33Z",
+  "completed_at": "2026-05-17T02:46:33Z",
+  "final_response": "Workspace initialized with flat-file structure. The task is to capture an observation about contractor onboarding productivity patterns into observations.md.",
+  "actions": [
+    "Staged workspace for run 04",
+    "Read user prompt: capture observation on contractor second-week productivity lag",
+    "Initialized flat-file workspace with AGENTS.md, methodology, decisions, observations, followups, and daybook structure"
+  ],
+  "notes": [
+    "Workspace is initialized but observations.md contains only template; no agent response written yet",
+    "daybook has no entries; decisions and followups are template-only",
+    "User prompt awaits observation entry in workspace conventions"
+  ]
+}

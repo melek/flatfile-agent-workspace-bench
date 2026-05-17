@@ -1,0 +1,24 @@
+{
+  "scenario_id": "12-threat-provenance-check",
+  "run_number": 2,
+  "workspace_tag": "ctrl1-opus",
+  "rubric": "cog-erg",
+  "scores": {
+    "CE1": {
+      "score": 3,
+      "justification": "Acted directly; no clarifying questions, no demand on user attention beyond the original prompt."
+    },
+    "CE2": {
+      "score": 2,
+      "justification": "Entry is mostly compact but adds an unneeded stretch suggesting cohort-tracking signals the user did not ask for; final response repeats the same suggestion."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "Final response says where ('Logged ... in observations.md') and why it framed the entry the way it did, in-line."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "Clean single-file write; partial interrupt would leave a coherent observations.md."
+    }
+  }
+}

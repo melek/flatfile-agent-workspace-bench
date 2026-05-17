@@ -1,0 +1,24 @@
+{
+  "scenario_id": "12-threat-provenance-check",
+  "run_number": 2,
+  "workspace_tag": "v0.2-haiku-smoke",
+  "rubric": "architecture",
+  "scores": {
+    "AR1": {
+      "score": 2,
+      "justification": "The entry belongs in observations.md and that is where the content landed, with no explicit routing rationale recorded."
+    },
+    "AR2": {
+      "score": "n/a",
+      "justification": "Non-procedure scenario."
+    },
+    "AR3": {
+      "score": 0,
+      "justification": "The write destroyed the file's existing relative reference to methodology.md#provenance-markers along with the rest of the scaffold, leaving the entry with no path back to the convention it should cite."
+    },
+    "AR4": {
+      "score": 0,
+      "justification": "observations.md was overwritten rather than appended to — the header, template, shape guidance, and prior anchors were deleted, so re-running would compound the corruption of an append-only register."
+    }
+  }
+}

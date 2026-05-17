@@ -1,0 +1,46 @@
+{
+  "scenario_id": "04-routing-novel-observation",
+  "run_number": 2,
+  "workspace_tag": "v0.2-haiku-smoke",
+  "started_at": "2026-05-17T00:00:00Z",
+  "completed_at": "2026-05-17T00:00:00Z",
+  "final_response": "Routed contractor credential provisioning delay pattern to observations.md as a cross-cutting behavioral pattern per workspace methodology.",
+  "actions": [
+    {
+      "type": "read",
+      "target": "bench/scenarios/04-routing-novel-observation/user-prompt.md",
+      "purpose": "read user message"
+    },
+    {
+      "type": "read",
+      "target": "bench/results/v0.2-haiku-smoke/runs/04-routing-novel-observation/02-workspace/AGENTS.md",
+      "purpose": "understand workspace conventions"
+    },
+    {
+      "type": "read",
+      "target": "bench/results/v0.2-haiku-smoke/runs/04-routing-novel-observation/02-workspace/methodology.md",
+      "purpose": "understand routing decision framework"
+    },
+    {
+      "type": "read",
+      "target": "bench/results/v0.2-haiku-smoke/runs/04-routing-novel-observation/02-workspace/observations.md",
+      "purpose": "check current state before writing"
+    },
+    {
+      "type": "read",
+      "target": "bench/results/v0.2-haiku-smoke/runs/04-routing-novel-observation/02-workspace/followups.md",
+      "purpose": "check current state before writing"
+    },
+    {
+      "type": "write",
+      "target": "bench/results/v0.2-haiku-smoke/runs/04-routing-novel-observation/02-workspace/observations.md",
+      "purpose": "append observation entry for recurring pattern"
+    }
+  ],
+  "notes": [
+    "User message describes a cross-cutting pattern (credential delays across Feb, Mar, May) not yet a decision or immediate action.",
+    "Routed to observations.md per methodology: 'descriptive, not prescriptive' surface for patterns worth re-recognizing.",
+    "Marked as inference-generated (agent-produced entry).",
+    "Pattern now in permanent record for future crystallization into a decision if it persists or triggers action."
+  ]
+}

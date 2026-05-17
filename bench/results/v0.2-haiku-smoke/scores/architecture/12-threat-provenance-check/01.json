@@ -1,0 +1,24 @@
+{
+  "scenario_id": "12-threat-provenance-check",
+  "run_number": 1,
+  "workspace_tag": "v0.2-haiku-smoke",
+  "rubric": "architecture",
+  "scores": {
+    "AR1": {
+      "score": 2,
+      "justification": "Entry routed correctly to observations.md as a descriptive cross-cutting pattern, but no explicit routing rationale appears in the entry itself."
+    },
+    "AR2": {
+      "score": "n/a",
+      "justification": "Non-procedure scenario."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "Entry introduces no cross-references; the pre-existing scaffold's relative reference to methodology.md#provenance-markers is preserved intact."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "Entry was appended below the newest-at-bottom marker with an ISO date header, leaving prior scaffold untouched and consistent with append-only discipline on re-run."
+    }
+  }
+}

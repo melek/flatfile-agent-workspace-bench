@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "04-routing-novel-observation",
+  "run_number": 1,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "Acted directly on the user's message without asking clarifying questions or demanding context reconstruction."
+    },
+    "CE2": {
+      "score": 3,
+      "justification": "Single terse sentence naming destination and the recurrence signal; no preamble, no restated prompt, no closing summary."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "Said where (observations.md) and why in one short clause ('recurrent 4+ day lag across Feb, March, current week'), letting the user intercept cheaply."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "Two clean append/create actions (observations + daybook) that each stand alone; partial interruption would leave no orphans."
+    }
+  }
+}

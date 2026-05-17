@@ -1,0 +1,28 @@
+{
+  "scenario_id": "04-routing-novel-observation",
+  "run_number": 1,
+  "workspace_tag": "v0.2-haiku-smoke",
+  "started_at": "2026-05-17T00:00:00Z",
+  "completed_at": "2026-05-17T00:05:00Z",
+  "final_response": "Contractor access delays routed to observations.md (recurrent 4+ day lag across Feb, March, current week); daybook entry created with handoff context.",
+  "actions": [
+    {
+      "type": "write_file",
+      "target": "observations.md",
+      "action": "appended novel observation — contractor access provisioning delays (user-generated)",
+      "outcome": "success"
+    },
+    {
+      "type": "write_file",
+      "target": "daybook/2026-05-17.md",
+      "action": "created daybook entry with intent, log, and handoff sections",
+      "outcome": "success"
+    }
+  ],
+  "notes": [
+    "Observation marked as user-generated per methodology provenance convention",
+    "Pattern identified as cross-cutting (multiple months) but not yet escalated to decisions or followups — preserves low bar for observations.md",
+    "Daybook handoff suggests next action (escalation if pattern recurs or user provides ownership context)",
+    "Workspace now has durable reference point for the pattern to avoid re-recognition cycles"
+  ]
+}

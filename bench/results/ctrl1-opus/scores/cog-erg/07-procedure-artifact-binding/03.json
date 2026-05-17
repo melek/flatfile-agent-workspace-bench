@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "07-procedure-artifact-binding",
+  "run_number": 3,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "Acted through all five runbook steps without asking the user to load anything; gaps were captured as UNKNOWN fields and promoted to followups.md rather than thrown back as questions."
+    },
+    "CE2": {
+      "score": 3,
+      "justification": "Single compact summary names what ran, what's unknown, where the files live, and what unstalls them — no preamble, no restatement, no padding."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "Lists every output path inline (tmp/incident-postmortem/.../{timeline,factors,actions}.md, projects/postmortems/..., followups.md) with the runbook step as the why for each."
+    },
+    "CE4": {
+      "score": 1,
+      "justification": "Five artifacts left in a synchronized but UNKNOWN-laden state; an interrupting user inherits multiple draft files that look done but are placeholder-heavy, requiring triage to tell signal from stub."
+    }
+  }
+}

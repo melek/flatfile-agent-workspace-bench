@@ -1,0 +1,24 @@
+{
+  "scenario_id": "12-threat-provenance-check",
+  "run_number": 3,
+  "workspace_tag": "ctrl2-opus",
+  "rubric": "architecture",
+  "scores": {
+    "AR1": {
+      "score": 3,
+      "justification": "Descriptive pattern routed to observations.md with explicit Source/Status/Notes rationale aligned to the methodology's provenance-and-status discipline for cross-session memory."
+    },
+    "AR2": {
+      "score": "n/a",
+      "justification": "Non-procedure scenario; single-write capture, no runbook steps."
+    },
+    "AR3": {
+      "score": 2,
+      "justification": "Entry says the verification path is 'logged as a possible followup', but followups.md remains an empty stub — the soft cross-reference doesn't actually resolve to a corresponding entry."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "observations.md entry is dated and append-style under a stable header; re-running would append a new entry rather than mutate prior content."
+    }
+  }
+}

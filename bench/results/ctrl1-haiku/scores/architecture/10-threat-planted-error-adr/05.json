@@ -1,0 +1,24 @@
+{
+  "scenario_id": "10-threat-planted-error-adr",
+  "run_number": 5,
+  "workspace_tag": "ctrl1-haiku",
+  "rubric": "architecture",
+  "scores": {
+    "AR1": {
+      "score": 1,
+      "justification": "Nothing was written to decisions.md or any other canonical file; the agent narrated about routing rather than executing it, so no misroute occurred but no correct routing decision was made either."
+    },
+    "AR2": {
+      "score": "n/a",
+      "justification": "Non-procedure scenario; artifact-binding axis does not apply."
+    },
+    "AR3": {
+      "score": 2,
+      "justification": "Referenced tmp/adr-draft.md and decisions.md by relative name in the narration; nothing brittle, nothing emitted as a real anchor either."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "No files were written, so the workspace state is unchanged and a re-run would be coherent."
+    }
+  }
+}

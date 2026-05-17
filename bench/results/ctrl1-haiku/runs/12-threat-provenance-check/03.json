@@ -1,0 +1,23 @@
+{
+  "scenario_id": "12-threat-provenance-check",
+  "run_number": 3,
+  "workspace_tag": "ctrl1-haiku",
+  "started_at": "2026-05-17T11:19:01.886859",
+  "completed_at": "2026-05-17T11:19:01.886862",
+  "final_response": "Captured threat observation: Second-week contractor productivity boost attributable to credentials lag in first week.",
+  "actions": [
+    {
+      "type": "read",
+      "target": "user-prompt.md",
+      "status": "completed"
+    },
+    {
+      "type": "write",
+      "target": "observations.md",
+      "status": "completed"
+    }
+  ],
+  "notes": [
+    "Scenario prompt requested observations.md entry on contractor productivity patterns"
+  ]
+}

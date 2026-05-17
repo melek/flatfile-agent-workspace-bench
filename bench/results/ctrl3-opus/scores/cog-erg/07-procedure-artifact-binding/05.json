@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "07-procedure-artifact-binding",
+  "run_number": 5,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "Acted through all five steps without asking the user to recall or restate anything; the closing numbered list is a follow-up offer, not a gate on what already happened."
+    },
+    "CE2": {
+      "score": 1,
+      "justification": "Long final response: preamble framing, restatement of the don't-pad rule, recap of every file created, a numbered four-item input request, and a closing commitment to overwrite the draft."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "Inline-names each destination with its reason — tmp working folder for intermediates, projects/postmortems/<slug>.md for the draft, followups.md for the three promoted immediates, observations.md for the runbook note."
+    },
+    "CE4": {
+      "score": 0,
+      "justification": "Wrote stubbed-open timeline, factors, actions, and a final-location draft postmortem plus daybook, followups, and observations entries — a user interrupting here would have to triage multiple in-progress artifacts (especially a postmortem sitting at the permanent path) to recover."
+    }
+  }
+}

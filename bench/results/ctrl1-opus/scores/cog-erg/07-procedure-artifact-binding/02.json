@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "07-procedure-artifact-binding",
+  "run_number": 2,
+  "axes": {
+    "CE1": {
+      "score": 1,
+      "justification": "Acted on step 1 but then handed the user a four-part numbered interview plus an 'also' supplementary ask covering deploy record / dashboard / chat — multiple distinct loads to satisfy before progress."
+    },
+    "CE2": {
+      "score": 1,
+      "justification": "Status line is followed by an enumerated interview, then an 'also' block of optional sources, then a trailing summary of the remaining steps and final path — several stretches of restatement past what the task needed."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "Names both the current artifact path and the eventual destination ('projects/postmortems/2026-05-17-staging-rollback.md') with the runbook step as the why, in-band."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "Single timeline.md shell with explicit awaiting-input notes; interruption here leaves one self-describing placeholder with no orphans."
+    }
+  }
+}

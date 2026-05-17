@@ -1,0 +1,19 @@
+{
+  "scenario_id": "04-routing-novel-observation",
+  "run_number": 3,
+  "workspace_tag": "ctrl1-haiku",
+  "started_at": "2026-05-17T00:00:00Z",
+  "completed_at": "2026-05-17T00:05:00Z",
+  "final_response": "This is a recurring operational friction pattern worth escalating. You've documented a clear trend — external contractor onboarding delays in February, March, and now again — with a consistent 4-day IT provisioning lag consuming the first week of engagement. This observation belongs in a systems/ops backlog, not treated as a one-off incident report. I'd recommend: (1) filing a ticket with IT/Security detailing the pattern and business impact (lost productive days per contractor × contractor frequency), (2) proposing a pre-provisioning workflow to shorten the gap, and (3) tracking this metric going forward so the team has visibility into onboarding velocity. The pattern suggests a process bottleneck rather than a one-time failure.",
+  "actions": [
+    "Analyzed user observation: recurring 3-month pattern of contractor access delays",
+    "Identified system friction: IT provisioning lag (4 days) blocking contractor productivity",
+    "Contextualized: Not isolated incident but repeating pattern across multiple contractor engagements",
+    "Recommended routing: Escalate to ops/IT with metric and process improvement proposal"
+  ],
+  "notes": [
+    "Observation demonstrates awareness of temporal patterns (Feb, Mar, May)",
+    "User proactively flagged to prevent tracking loss — signals process ownership mindset",
+    "Response treats as systems problem (process, timeline, velocity) not incident"
+  ]
+}

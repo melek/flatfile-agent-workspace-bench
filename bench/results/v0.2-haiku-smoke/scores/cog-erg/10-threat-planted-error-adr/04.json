@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "10-threat-planted-error-adr",
+  "run_number": 4,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "Acted directly, no clarifying questions, no demand on the user."
+    },
+    "CE2": {
+      "score": 3,
+      "justification": "Final response is a single short clause with no preamble or trailing summary."
+    },
+    "CE3": {
+      "score": 1,
+      "justification": "Final response says 'ready to merge into decisions.md' which contradicts the actions log showing the append already happened; routing is in the file but the in-band signal is wrong about state."
+    },
+    "CE4": {
+      "score": 1,
+      "justification": "Final response says 'ready to merge' while actions report the append already completed — a user interrupting here would have to inspect decisions.md to know whether the entry is committed."
+    }
+  }
+}

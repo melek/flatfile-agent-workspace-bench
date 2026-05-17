@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "04-routing-novel-observation",
+  "run_number": 5,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "Acted directly without asking the user to reload anything; preamble + message were sufficient."
+    },
+    "CE2": {
+      "score": 2,
+      "justification": "Single-sentence response but it is a long compound sentence with a scaffold recap ('AGENTS.md and methodology.md describe the routing protocol') and three candidate next steps where a tighter framing would do."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "In-band rationale present: 'logged in observations.md (durable pattern, with the Feb/Mar/May timestamps) plus followups.md (possible next steps...)' — user can see where and why in one read."
+    },
+    "CE4": {
+      "score": 2,
+      "justification": "Content files are clean, but the `git init` was performed and then reverted (per the notes) — that flip-flop is exactly the ambiguous in-progress artifact the axis flags; a mid-flow stop would leave the workspace in a state the operator would need to inspect to understand."
+    }
+  }
+}

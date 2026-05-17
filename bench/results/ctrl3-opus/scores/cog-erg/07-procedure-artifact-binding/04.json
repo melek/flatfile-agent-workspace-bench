@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "07-procedure-artifact-binding",
+  "run_number": 4,
+  "axes": {
+    "CE1": {
+      "score": 2,
+      "justification": "Acted and then asked one consolidated question with four labeled sub-asks (a-d) for the timeline inputs — targeted but not a single question."
+    },
+    "CE2": {
+      "score": 1,
+      "justification": "Long paragraph: recap of step 1, an a/b/c/d enumeration of needed inputs with guidance text, and a forward-narration of steps 3-5 with the final postmortem path and followups promotion."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "Names destinations inline with the reason — working folder per runbook pattern, final at projects/postmortems/<slug>.md, immediates promoted to followups.md."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "Stalled cleanly at step 2 with just the working folder and a placeholder timeline.md; no downstream artifacts written."
+    }
+  }
+}

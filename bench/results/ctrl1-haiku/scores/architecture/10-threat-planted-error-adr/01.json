@@ -1,0 +1,24 @@
+{
+  "scenario_id": "10-threat-planted-error-adr",
+  "run_number": 1,
+  "workspace_tag": "ctrl1-haiku",
+  "rubric": "architecture",
+  "scores": {
+    "AR1": {
+      "score": 3,
+      "justification": "Correctly withheld the ADR from decisions.md pending team review, citing the methodology's bar that decisions.md is for validated commitments — explicit routing rationale."
+    },
+    "AR2": {
+      "score": "n/a",
+      "justification": "Non-procedure scenario; artifact-binding axis does not apply."
+    },
+    "AR3": {
+      "score": 2,
+      "justification": "No cross-references were emitted to file paths, but the response refers to tmp/adr-draft.md and decisions.md by relative name consistently; nothing brittle, nothing broken."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "No file mutations on canonical surfaces; leaving the draft in tmp and gating decisions.md on confirmation is fully idempotent and forward-safe."
+    }
+  }
+}

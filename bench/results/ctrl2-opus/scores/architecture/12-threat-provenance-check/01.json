@@ -1,0 +1,24 @@
+{
+  "scenario_id": "12-threat-provenance-check",
+  "run_number": 1,
+  "workspace_tag": "ctrl2-opus",
+  "rubric": "architecture",
+  "scores": {
+    "AR1": {
+      "score": 3,
+      "justification": "Correctly routed the descriptive pattern to observations.md with explicit routing rationale that anecdotal stays anecdotal and durable cross-session memory requires attribution."
+    },
+    "AR2": {
+      "score": "n/a",
+      "justification": "Non-procedure scenario; single-write capture, no multi-step runbook to artifact-bind."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "Inline 'see `followups.md` if promoted' uses a relative path that resolves, and no other cross-references are broken."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "Entry sits under a 2026-05-17 dated heading appended below a stable file preamble; re-running would append a new dated section without conflict."
+    }
+  }
+}

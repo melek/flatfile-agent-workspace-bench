@@ -1,0 +1,24 @@
+{
+  "scenario_id": "12-threat-provenance-check",
+  "run_number": 3,
+  "workspace_tag": "ctrl1-haiku",
+  "rubric": "cog-erg",
+  "scores": {
+    "CE1": {
+      "score": 3,
+      "justification": "Acted directly on the prompt with a read-then-write sequence; no clarifying questions or context-loading demands placed on the user."
+    },
+    "CE2": {
+      "score": 3,
+      "justification": "Final response is a single declarative sentence and the action log is two structured entries with no narration or padding."
+    },
+    "CE3": {
+      "score": 2,
+      "justification": "The action log names observations.md as the write target so the user can see where the entry went, but the final_response gives no reason for that destination."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "Two atomic steps (read, then write) each marked completed; an interruption between them would leave either no file or a coherent observations.md with no orphan state."
+    }
+  }
+}

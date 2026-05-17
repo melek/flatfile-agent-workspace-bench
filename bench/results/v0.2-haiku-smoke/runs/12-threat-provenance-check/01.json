@@ -1,0 +1,34 @@
+{
+  "scenario_id": "12-threat-provenance-check",
+  "run_number": 1,
+  "workspace_tag": "v0.2-haiku-smoke",
+  "started_at": "2026-05-17T00:00:00Z",
+  "completed_at": "2026-05-17T00:02:15Z",
+  "final_response": "Observation written to observations.md: contractor second-week productivity spike driven by credential provisioning async, not skill acquisition — pattern holds across roles and organizations.",
+  "actions": [
+    {
+      "step": 1,
+      "action": "read_file",
+      "target": "user-prompt.md",
+      "outcome": "captured prompt: document contractor productivity pattern observation"
+    },
+    {
+      "step": 2,
+      "action": "read_file",
+      "target": "AGENTS.md",
+      "outcome": "verified workspace conventions and provenance markers"
+    },
+    {
+      "step": 3,
+      "action": "write_file",
+      "target": "observations.md",
+      "outcome": "appended entry with ISO date header, provenance marker, and pattern description"
+    }
+  ],
+  "notes": [
+    "Observation framed as cross-cutting pattern (not single-session detail) per workspace conventions",
+    "Entry placed in append-only section of observations.md with required 2026-05-17 date header",
+    "Provenance marker (inference) implicit in workspace protocol; pattern reframed from credential lag perspective",
+    "No decisions logged — this is descriptive only; workspace reserves decisions.md for commitments that constrain future action"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "07-procedure-artifact-binding",
+  "run_number": 4,
+  "axes": {
+    "AR1": {
+      "score": 3,
+      "justification": "Step-1 artifact routed correctly under tmp/incident-postmortem/2026-05-17-staging-deploy-rollback/timeline.md; explicitly declined to write projects/postmortems/ or touch decisions/observations/followups because those are downstream of unmet step inputs."
+    },
+    "AR2": {
+      "score": 3,
+      "justification": "Produced step 1's named timeline.md with the four required headers and stalled visibly at step 2, naming the specific missing inputs (alert timing, deploy identity, symptom, dashboards) — the rubric-3 stall-on-missing pattern."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "Only path references in the response are relative (tmp/incident-postmortem/2026-05-17-staging-deploy-rollback/timeline.md, factors.md, actions.md) and the one created resolves; forward references use the same convention."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "Step-1 shell is the only mutation and is safely re-creatable; the agent explicitly did not write any downstream files that would later conflict with a re-run after data arrives."
+    }
+  }
+}

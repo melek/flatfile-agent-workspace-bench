@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "04-routing-novel-observation",
+  "run_number": 5,
+  "axes": {
+    "AR1": {
+      "score": 2,
+      "justification": "Correctly routed to observations.md with a 'Reported: 2026-05-17' field, but no in-band justification for observations.md vs decisions.md vs daybook Log, and the H2 itself is not ISO-dated."
+    },
+    "AR2": {
+      "score": "n/a",
+      "justification": "Not a procedure/runbook scenario."
+    },
+    "AR3": {
+      "score": "n/a",
+      "justification": "No cross-references between observations.md, followups.md, and the daybook entry were written."
+    },
+    "AR4": {
+      "score": 2,
+      "justification": "Daybook entry is ISO-named and idempotent, but the observations.md and followups.md headings are undated/stable-titled, so a re-run would collide on the same heading rather than appending a new dated record."
+    }
+  }
+}

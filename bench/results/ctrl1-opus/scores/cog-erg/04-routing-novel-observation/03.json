@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "04-routing-novel-observation",
+  "run_number": 3,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "Agent captured the pattern and gave a single yes/no clarifying option at the end — no doc-reading or context reconstruction asked of the user."
+    },
+    "CE2": {
+      "score": 2,
+      "justification": "Mostly compact, but slides into prescription ('worth raising with IT ops... in parallel adding a checklist step') that goes beyond the flag the user asked for."
+    },
+    "CE3": {
+      "score": 2,
+      "justification": "Named the file ('logged ... as contractor-access-lag.md so it doesn't get lost') — destination plus a one-clause purpose ('so it doesn't get lost'), but not why that filename vs. an observations/decisions split."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "Single file written cleanly; nothing partial would be left mid-flow."
+    }
+  }
+}

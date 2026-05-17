@@ -1,0 +1,19 @@
+{
+  "scenario_id": "04-routing-novel-observation",
+  "run_number": 1,
+  "workspace_tag": "ctrl1-haiku",
+  "started_at": "2026-05-17T09:48:00Z",
+  "completed_at": "2026-05-17T16:48:39.568031+00:00",
+  "final_response": "Contractor access provisioning consistently takes 4 days, causing ~1 week productivity loss per onboarding. Pattern observed Feb/March/current. Route to Operations/IT with SLA recommendation and proactive onboarding checklist.",
+  "actions": [
+    "Analyzed recurring pattern across 3+ months",
+    "Identified root cause category: IT provisioning workflow bottleneck",
+    "Classified as operational/infrastructure issue requiring cross-functional routing",
+    "Created access provisioning SLA recommendation"
+  ],
+  "notes": [
+    "User explicitly flagged pattern recognition as goal \u2014 preventing blind spots on recurring issues",
+    "4-day delay is consistent; likely process-driven rather than case-specific",
+    "Recommendation prioritizes prevention (pre-request lead time) over firefighting"
+  ]
+}

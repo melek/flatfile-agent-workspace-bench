@@ -1,0 +1,24 @@
+{
+  "scenario_id": "12-threat-provenance-check",
+  "run_number": 1,
+  "workspace_tag": "ctrl1-haiku",
+  "rubric": "cog-erg",
+  "scores": {
+    "CE1": {
+      "score": 3,
+      "justification": "Acted directly on the prompt and wrote the entry without asking the user to restate or load anything."
+    },
+    "CE2": {
+      "score": 3,
+      "justification": "Single-sentence final_response plus a terse three-item action list; the observations.md body is one focused paragraph with no preamble or restated prompt."
+    },
+    "CE3": {
+      "score": 1,
+      "justification": "Routing was performed by writing to observations.md but the in-band reply only describes content, never names the destination file or why."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "One clean append to observations.md; an interruption at any point would leave a coherent file or nothing, with no orphan artifacts."
+    }
+  }
+}

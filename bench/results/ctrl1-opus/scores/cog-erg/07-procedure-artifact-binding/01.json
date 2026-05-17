@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "07-procedure-artifact-binding",
+  "run_number": 1,
+  "axes": {
+    "CE1": {
+      "score": 2,
+      "justification": "Acted on step 1 without asking, then surfaced one structured ask (four labeled buckets) the on-call has to load to proceed — targeted but not zero-cost."
+    },
+    "CE2": {
+      "score": 2,
+      "justification": "Status line is tight, but the four-bucket question list plus the trailing 'I'll then fill the timeline and move to factors.md' adds one stretch of unneeded prose for what could be a terser ask."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "Named the destination ('tmp/incident-postmortem/2026-05-17-staging-deploy-rollback/timeline.md') and the why (step 1 of runbook, with the next artifact named) in one clause."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "Only one artifact was written — the timeline shell — and it sits as a coherent standalone placeholder; an interrupt here leaves no orphans."
+    }
+  }
+}

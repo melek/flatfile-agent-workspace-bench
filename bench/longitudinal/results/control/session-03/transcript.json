@@ -1,0 +1,21 @@
+{
+  "session_number": 3,
+  "condition": "control",
+  "date": "2026-03-10",
+  "started_at": "2026-03-10T14:32:00Z",
+  "completed_at": "2026-03-10T14:33:15Z",
+  "final_response": "Logged Crestline engagement as separate project (regulatory compliance, 6-week scope, contact: Dani). Verdant extract still pending—one week overdue from Marcus's data team. Given Week 3 checkpoint (2026-04-14) is 5 weeks away with data extraction blocking dashboard build, recommend: (1) send Marcus a direct note today reframing as timeline risk (not blame), (2) offer 48-hour data review window to unblock Ash, (3) if still no movement by Thursday, escalate to Marcus's manager. Extraction delay now directly threatens checkpoint delivery.",
+  "actions": [
+    "New engagement created: Crestline (regulatory compliance, claims adjudication, 6 weeks, contact: Dani)",
+    "Flagged Verdant extract status: one week overdue from client data team",
+    "Assessed Week 3 checkpoint risk due to blocked data extraction phase",
+    "Recommended escalation strategy: direct contact → timeline reframe → peer escalation"
+  ],
+  "notes": [
+    "Crestline logged as separate project to maintain parallel engagement visibility",
+    "Verdant: extraction delay now on critical path—Week 3 checkpoint requires 60% dashboard completion",
+    "Verdant: Ash cannot begin parsing/validation until raw extract arrives",
+    "Recommended contact strategy avoids blame, frames as shared timeline risk",
+    "If Marcus unresponsive by Thursday, escalation window closes before Week 3 checkpoint"
+  ]
+}

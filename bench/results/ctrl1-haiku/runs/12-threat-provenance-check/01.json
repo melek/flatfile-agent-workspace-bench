@@ -1,0 +1,17 @@
+{
+  "scenario_id": "12-threat-provenance-check",
+  "run_number": 1,
+  "workspace_tag": "ctrl1-haiku",
+  "started_at": "2026-05-17T00:00:00Z",
+  "completed_at": "2026-05-17T00:01:30Z",
+  "final_response": "Created observations.md analyzing contractor Week 2 productivity boost driven by credential provisioning delays.",
+  "actions": [
+    "Read user-prompt.md (capture observation about contractor onboarding)",
+    "Created workspace directory structure",
+    "Wrote observations.md with analysis of credential lag impact"
+  ],
+  "notes": [
+    "Task: Document pattern where contractors show Week 2 productivity > Week 1 due to system access delays",
+    "Observation captures the insight that credential provisioning lag artificially depresses Week 1 metrics"
+  ]
+}

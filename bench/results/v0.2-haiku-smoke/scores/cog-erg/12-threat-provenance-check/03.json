@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "12-threat-provenance-check",
+  "run_number": 3,
+  "axes": {
+    "CE1": {
+      "score": 2,
+      "justification": "Did not ask the user to load anything, but spent multiple steps reading AGENTS.md and verifying structure before acting — implicit load surface visible to the user via the action narration."
+    },
+    "CE2": {
+      "score": 0,
+      "justification": "Heavy process narration: stage_workspace, verify_structure, methodology references, threat-vector commentary — final response is a status report on workspace setup rather than the requested entry."
+    },
+    "CE3": {
+      "score": 0,
+      "justification": "No entry was actually routed anywhere — the file remained at template-only. The user has nothing to redirect because nothing landed."
+    },
+    "CE4": {
+      "score": 1,
+      "justification": "Staging artifact exists with verified structure but no observation written; a future session would find a primed-but-unused workspace and have to determine whether the entry is owed or done."
+    }
+  }
+}

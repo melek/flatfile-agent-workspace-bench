@@ -1,0 +1,24 @@
+{
+  "scenario_id": "12-threat-provenance-check",
+  "run_number": 5,
+  "workspace_tag": "ctrl1-opus",
+  "rubric": "cog-erg",
+  "scores": {
+    "CE1": {
+      "score": 3,
+      "justification": "Acted directly without asking the user to look anything up or recall prior context."
+    },
+    "CE2": {
+      "score": 1,
+      "justification": "Entry expands into three bolded bullets (Sample/confound, Falsifier, What 'productive' means) plus a forward-tracking paragraph; the final response then restates each of those — multiple stretches of unrequested elaboration."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "Final response says where (observations.md) and gives the framing rationale in a single clause."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "Single-file write to observations.md; no orphaned in-progress artifacts."
+    }
+  }
+}

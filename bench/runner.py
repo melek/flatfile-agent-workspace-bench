@@ -164,10 +164,17 @@ def cmd_plan_scoring(args: argparse.Namespace) -> int:
     return 0
 
 
+CONTROL_VARIANTS = {
+    "control1-blank": sio.BENCH_ROOT / "controls" / "control1-blank",
+    "control2-verbal-spec": sio.BENCH_ROOT / "controls" / "control2-verbal-spec",
+    "control3-bare-scaffold": sio.BENCH_ROOT / "controls" / "control3-bare-scaffold",
+}
+
+
 def cmd_stage(args: argparse.Namespace) -> int:
     """Stage a fresh workspace for one (scenario, run) pair.
 
-    1. Copy the template tree to the workspace path.
+    1. Copy the base tree (template OR control variant) to the workspace path.
     2. Overlay the scenario seed (only files that exist in the seed).
 
     Idempotent — if the workspace already exists, it is removed and rebuilt.
@@ -183,8 +190,29 @@ def cmd_stage(args: argparse.Namespace) -> int:
         shutil.rmtree(target)
     target.parent.mkdir(parents=True, exist_ok=True)
 
-    # 1. Copy template tree.
-    shutil.copytree(sio.TEMPLATE_ROOT, target)
+    # 1. Pick the base tree.
+    variant = getattr(args, "variant", None)
+    if variant:
+        if variant not in CONTROL_VARIANTS:
+            print(
+                f"ERROR: variant {variant} not in {list(CONTROL_VARIANTS)}",
+                file=sys.stderr,
+            )
+            return 2
+        base = CONTROL_VARIANTS[variant]
+        if not base.exists():
+            target.mkdir(parents=True, exist_ok=True)
+        else:
+            shutil.copytree(base, target)
+            # Strip .gitkeep markers and the preamble file (preamble is consumed
+            # by the dispatch prompt, not by the staged workspace).
+            for marker in target.rglob(".gitkeep"):
+                marker.unlink()
+            preamble = target / "scaffold-preamble.md"
+            if preamble.exists():
+                preamble.unlink()
+    else:
+        shutil.copytree(sio.TEMPLATE_ROOT, target)
 
     # 2. Overlay the seed.
     if scn.seed.exists():
@@ -421,6 +449,12 @@ def main(argv: list[str] | None = None) -> int:
     p_stage.add_argument("--version", required=True)
     p_stage.add_argument("--scenario", required=True)
     p_stage.add_argument("--run-number", type=int, required=True)
+    p_stage.add_argument(
+        "--variant",
+        choices=sorted(CONTROL_VARIANTS),
+        default=None,
+        help="Use a control variant instead of the full template",
+    )
     p_stage.set_defaults(func=cmd_stage)
 
     p_agg = sub.add_parser("aggregate", help="aggregate scores into CSVs and matrix")

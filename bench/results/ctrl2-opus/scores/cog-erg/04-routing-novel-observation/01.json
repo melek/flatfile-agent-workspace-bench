@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "04-routing-novel-observation",
+  "run_number": 1,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "Acted directly from the preamble + user message with no clarifying questions and no demand on the user to recall or re-state anything."
+    },
+    "CE2": {
+      "score": 3,
+      "justification": "One-sentence final response that names destinations, the pattern count, and the deferred quantification — no preamble, no restatement, no closing fluff."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "Says destination and why in-band ('Logged it as a pattern in observations.md ... added a followups.md item to pin down the actual lag numbers ... before acting') — user can intercept either route cheaply."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "Each file (observations.md, followups.md, daybook entry, scaffold files) was written as a discrete clean artifact with no in-progress markers; interrupting mid-flow would leave no orphans."
+    }
+  }
+}

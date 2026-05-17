@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "07-procedure-artifact-binding",
+  "run_number": 4,
+  "axes": {
+    "AR1": {
+      "score": 2,
+      "justification": "Nothing was misrouted — register files correctly untouched while the procedure is mid-flight with explicit rationale — but no daybook entry was written for the session, so the catch-all chronological surface carries no record of the in-flight runbook."
+    },
+    "AR2": {
+      "score": 3,
+      "justification": "Step 1 produced the named timeline.md artifact with the four mandated empty headers (each annotated with the missing input), and step 2 stalled visibly at the operator-interview boundary rather than fabricating timestamps."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "Only filesystem reference is the dated working folder under tmp/, written via relative path with ISO date and stable slug; no broken or absolute cross-references were introduced."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "Single `mkdir -p` plus first-time file write — fully idempotent; a future session resuming with operator inputs would find the placeholder timeline ready to be filled without any conflicting prior state."
+    }
+  }
+}

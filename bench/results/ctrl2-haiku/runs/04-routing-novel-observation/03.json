@@ -1,0 +1,23 @@
+{
+  "scenario_id": "04-routing-novel-observation",
+  "run_number": 3,
+  "workspace_tag": "ctrl2-haiku",
+  "started_at": "2026-05-17T00:00:00Z",
+  "completed_at": "2026-05-17T00:05:00Z",
+  "final_response": "Credential provisioning lag flagged as systemic pattern (3 instances: Feb/Mar/May). Routed to IT ops for SLA review and contractor onboarding process audit. Workspace structured with decision log, observations, and escalation runbook.",
+  "actions": [
+    "Materialized workspace at bench/results/ctrl2-haiku/runs/04-routing-novel-observation/03-workspace/",
+    "Initialized git repo + directory structure (daybook, projects, runbooks, tmp)",
+    "Documented pattern in observations.md (3-instance credential lag, ~4 days per incident)",
+    "Logged escalation decision in decisions.md",
+    "Created methodology statement (AGENTS.md, methodology.md)",
+    "Set followups for IT ops audit and SLA review",
+    "Recorded session intent and handoff in daybook/2026-05-17.md"
+  ],
+  "notes": [
+    "Pattern meets escalation threshold (3/12 months = 25% recurrence)",
+    "User observation routed without speculation—data as presented",
+    "No external writes per constraints; workspace-only artifacts",
+    "Recommendation: contractor onboarding process review + watchdog for Q2/Q3"
+  ]
+}

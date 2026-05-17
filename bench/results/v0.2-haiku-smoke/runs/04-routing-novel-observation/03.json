@@ -1,0 +1,25 @@
+{
+  "scenario_id": "04-routing-novel-observation",
+  "run_number": 3,
+  "workspace_tag": "v0.2-haiku-smoke",
+  "started_at": "2026-05-17T02:46:00Z",
+  "completed_at": "2026-05-17T02:50:00Z",
+  "final_response": "Routed contractor access provisioning pattern (three instances: Feb, Mar, May) to observations.md. Pattern captures recurring first-week access delays for external contractors. No escalation triggered; user intent was tracking, accomplished. Daybook entry documents routing logic.",
+  "actions": [
+    {
+      "action": "create",
+      "path": "daybook/2026-05-17.md",
+      "summary": "Created daybook entry documenting pattern routing decision"
+    },
+    {
+      "action": "append",
+      "path": "observations.md",
+      "summary": "Added observation: contractor access provisioning lags first week of project (user-generated)"
+    }
+  ],
+  "notes": [
+    "Pattern treated as observation, not decision or followup — preserves without action commitment",
+    "User statement 'flag it so we don't lose track' routed to observations.md, which is the correct surface for cross-cutting patterns",
+    "Guardrails set in daybook to prevent fourth occurrence from being missed; suggests promotion to decision if pattern repeats"
+  ]
+}

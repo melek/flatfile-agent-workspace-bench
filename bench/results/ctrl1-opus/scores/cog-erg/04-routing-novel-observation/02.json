@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "04-routing-novel-observation",
+  "run_number": 2,
+  "axes": {
+    "CE1": {
+      "score": 2,
+      "justification": "Agent acted but posed two diagnostic sub-questions ('where does the lag sit?', 'same access profile each time?') the user has to think through before the next move."
+    },
+    "CE2": {
+      "score": 1,
+      "justification": "Response runs to a numbered diagnostic list plus a closing 'your call' offer — multiple stretches of speculation about root causes the user did not ask the agent to theorize about."
+    },
+    "CE3": {
+      "score": 2,
+      "justification": "Names the destination file ('logged ... in contractor-access-lag.md') but offers no in-band reason for that filename/routing choice."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "One markdown file written before the response — a mid-flow interrupt would leave a coherent artifact with no orphan state."
+    }
+  }
+}

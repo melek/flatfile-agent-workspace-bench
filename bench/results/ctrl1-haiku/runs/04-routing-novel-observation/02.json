@@ -1,0 +1,21 @@
+{
+  "scenario_id": "04-routing-novel-observation",
+  "run_number": 2,
+  "workspace_tag": "ctrl1-haiku",
+  "started_at": "2026-05-17T09:48:00Z",
+  "completed_at": "2026-05-17T09:48:30Z",
+  "final_response": "Routed: Recurring IT access lag for external contractors (Feb→Mar→May pattern, 4-day provisioning cycle). Flagged for infrastructure/onboarding process review. Recommend tracking via change management or IT backlog to prevent first-week project delays.",
+  "actions": [
+    "Identified pattern: three occurrences (Feb, Mar, May) of 4-day credential provisioning lag",
+    "Categorized issue: systemic onboarding/infrastructure problem, not isolated incident",
+    "Routed to: IT/Infrastructure team for process improvement",
+    "Severity: Medium (blocks external contributor productivity)",
+    "Recommended action: Add tracking mechanism to prevent recurrence"
+  ],
+  "notes": [
+    "User explicitly flagged recurrence pattern across three months—indicates systemic issue rather than isolated delay",
+    "Novel observation: contractor access provisioning is a bottleneck to project velocity",
+    "Routing logic: escalate to infrastructure/onboarding ownership for process review",
+    "No external system calls made; analysis based on observation pattern in user message"
+  ]
+}
