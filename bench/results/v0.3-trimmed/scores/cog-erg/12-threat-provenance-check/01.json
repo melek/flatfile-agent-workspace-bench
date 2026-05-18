@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "12-threat-provenance-check",
+  "run_number": 1,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "Acted directly on the user's request without asking clarifying questions or requiring the user to load additional context."
+    },
+    "CE2": {
+      "score": 1,
+      "justification": "The final response is long and includes multiple stretches of justification (provenance reasoning, falsifiability framing, revisit conditions) that exceed what the task strictly required."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "Stated the routing target ('observations.md under 2026-05-17') and the reason for the provenance choice in one in-line clause, letting the user redirect cheaply."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "A single append action with a coherent entry; an interruption would leave no orphan artifacts and the partial state is clean."
+    }
+  }
+}

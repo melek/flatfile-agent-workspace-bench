@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "12-threat-provenance-check",
+  "run_number": 1,
+  "axes": {
+    "AR1": {
+      "score": 3,
+      "justification": "The pattern is a descriptive observation and was routed to observations.md with explicit rationale tying provenance ('user' vs. 'inference') to the methodology's strict bars."
+    },
+    "AR2": {
+      "score": 3,
+      "justification": "Non-procedure scenario, but the single step produced the named artifact (observations.md entry) that downstream readers can resolve."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "The entry uses an ISO date anchor (2026-05-17) and the action targets observations.md by relative path with no broken or absolute references."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "The action is an append of a dated entry to observations.md, which is the append-only register; re-running would add a duplicate dated entry but not corrupt history."
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "07-procedure-artifact-binding",
+  "run_number": 3,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "Acted directly on the runbook without asking the user to recall, restate, or look anything up; explicitly chose to make the reasonable call rather than interview."
+    },
+    "CE2": {
+      "score": 1,
+      "justification": "Final response is a long step-by-step recap of every artifact with closing prose about the draft's honesty and a re-run offer — several stretches of restatement beyond what a terse completion would need."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "Each artifact's destination and reason is named in one short clause (tmp/ intermediates per step, projects/postmortems/ for the final, followups.md per runbook note, AGENTS.md because the projects convention requires one)."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "Each step committed a discrete named artifact in order, so an interruption at any point would leave a coherent partial chain with no orphan files."
+    }
+  }
+}

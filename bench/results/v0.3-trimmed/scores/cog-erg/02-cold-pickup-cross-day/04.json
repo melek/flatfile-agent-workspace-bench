@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "02-cold-pickup-cross-day",
+  "run_number": 4,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "Agent acted directly, locating the 2026-04-15 decision itself without asking the user to recall, restate, or look anything up."
+    },
+    "CE2": {
+      "score": 2,
+      "justification": "Mostly compact and on-task, but the closing paragraph about cofounder/recruiting pushback and superseding entries is extra prose beyond what the yes/no question required."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "Cited the routing inline with a short clause — 'decisions.md, status: accepted' from 2026-04-15 — surfacing both where and why in-band."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "Each file action (reads plus a single daybook create) commits cleanly with no half-written artifacts; a mid-flow interrupt leaves a coherent partial state."
+    }
+  }
+}

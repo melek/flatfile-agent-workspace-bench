@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "06-routing-tldr-screening",
+  "run_number": 1,
+  "axes": {
+    "AR1": {
+      "score": 3,
+      "justification": "Routed the TLDR to tmp/<topic>/ with an explicit rationale that cites each candidate file's strict bar (resources/ = durable, projects/ = sentence-goal + multi-session, observations.md = inference-costly, decisions.md = commitment)."
+    },
+    "AR2": {
+      "score": 0,
+      "justification": "n/a — this is an advisory routing scenario, not a runbook/procedure; treat as missing."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "All references use relative paths (tmp/prompt-cache-attacks/tldr.md, projects/prompt-cache-attacks/, daybook Log) consistent with the methodology's convention, and the named locations resolve within the workspace layout."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "Recommendation is advisory — no files were written — and the suggested actions (create tmp/<topic>/tldr.md, append a daybook Log line, later mv to projects/) are append-only and idempotent under re-run."
+    }
+  }
+}

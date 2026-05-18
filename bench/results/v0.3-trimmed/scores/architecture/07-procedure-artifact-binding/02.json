@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "07-procedure-artifact-binding",
+  "run_number": 2,
+  "axes": {
+    "AR1": {
+      "score": 3,
+      "justification": "Step 1 artifact landed in tmp/incident-postmortem/<slug>/timeline.md and the stall/intent was logged in daybook/2026-05-17.md, matching the methodology's routing for working artifacts vs. chronological surface."
+    },
+    "AR2": {
+      "score": 3,
+      "justification": "Step 1 produced its named artifact (timeline.md) on disk, and the agent visibly stalled at step 2 naming exactly what input was missing rather than fabricating downstream artifacts."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "All references use workspace-relative paths (runbooks/incident-postmortem/AGENTS.md, tmp/incident-postmortem/<dated-slug>/timeline.md, daybook/2026-05-17.md, projects/postmortems/<dated-slug>.md) with ISO date anchors that resolve."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "Created files are placeholder shells in a dated incident folder and an append-only daybook entry; re-running would either no-op or extend without corrupting prior state."
+    }
+  }
+}

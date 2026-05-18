@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "09-procedure-synthesis-vs-verifiable",
+  "run_number": 4,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "Acted directly on the runbook without asking the user to recall or restate context, deriving the release id from their phrasing."
+    },
+    "CE2": {
+      "score": 2,
+      "justification": "Mostly compact and on-task, but the closing 'cheapest path to Go' paragraph stretches into mild advisory prose beyond a terse decision."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "Stated where the checklist was written (`tmp/release-readiness/2.4/checklist.md`) and why (per the runbook's output spec for the release id)."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "Single committed artifact at the runbook-specified path with the Go/No-go written inline; no orphaned in-progress files."
+    }
+  }
+}

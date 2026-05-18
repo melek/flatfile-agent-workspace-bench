@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "01-cold-pickup-guardrail",
+  "run_number": 5,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "Acted directly using workspace state without asking the user to recall or restate context, and offered the read back for correction rather than demanding confirmation upfront."
+    },
+    "CE2": {
+      "score": 1,
+      "justification": "Substance is sound but bloated by a meta-preamble (\"Before I touch... because picking up cold here is risky\"), a long override-disclaimer paragraph, and trailing process narration about daybook/followup edits."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "Closing line names where entries went (`daybook/2026-05-17.md`, the legal followup annotation) and why (this state, cold-pickup observation) in one short clause each."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "Each artifact (today's daybook, followup annotation) was committed cleanly with no draft sent and no staged half-work, leaving a coherent partial state if interrupted."
+    }
+  }
+}

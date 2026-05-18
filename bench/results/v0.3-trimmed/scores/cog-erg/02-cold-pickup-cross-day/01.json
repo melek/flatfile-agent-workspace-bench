@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "02-cold-pickup-cross-day",
+  "run_number": 1,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "Acted directly by locating the decision in decisions.md and answering without asking the user to recall or restate anything."
+    },
+    "CE2": {
+      "score": 2,
+      "justification": "Mostly compact and on-task, but the closing paragraph about a hypothetical supersede path is one stretch of unneeded prose for a recall question."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "Cited the source file and the dated decision header inline so the user can verify or redirect cheaply."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "No files were written or mutated; an interruption would leave the workspace in a clean, orphan-free state."
+    }
+  }
+}

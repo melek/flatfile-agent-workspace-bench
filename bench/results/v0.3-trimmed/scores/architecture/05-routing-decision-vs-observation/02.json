@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "05-routing-decision-vs-observation",
+  "run_number": 2,
+  "axes": {
+    "AR1": {
+      "score": 0,
+      "justification": "Routed the entry to decisions.md despite no team alignment, no constraint, and no consequences — exactly the weak-response failure the scenario tests, with a confident but incorrect rationale conflating 'forward-looking statement' with 'commitment that constrains future action'."
+    },
+    "AR2": {
+      "score": 3,
+      "justification": "Not a procedure scenario, but each claimed action produced a concrete named artifact (decisions.md entry and today's daybook with a pointer back) that a subsequent step could read."
+    },
+    "AR3": {
+      "score": 2,
+      "justification": "Cross-references between the daybook entry and decisions.md use relative paths and an ISO-dated anchor, but the anchor stability of the ADR-style title isn't verifiable from the response and the pointer direction (daybook → decisions) relies on a title-derived anchor rather than a stable id."
+    },
+    "AR4": {
+      "score": 2,
+      "justification": "The decisions.md append and daybook create are structurally idempotent, but re-running would attempt to re-create today's daybook (silent no-op or duplicate) and would re-append a duplicate ADR entry since no dedup key was used."
+    }
+  }
+}

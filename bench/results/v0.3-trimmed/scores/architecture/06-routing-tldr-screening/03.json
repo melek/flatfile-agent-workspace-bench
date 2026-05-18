@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "06-routing-tldr-screening",
+  "run_number": 3,
+  "axes": {
+    "AR1": {
+      "score": 1,
+      "justification": "Routed to resources/ with explicit rationale walking through every alternative, but the scenario's signal-bearing behavior is routing the unverified AI summary to tmp/<topic>/ for triage; resources/ is a defensible neighbor since the agent honored the user's stated 'keep it' constraint and named the provenance gap, but it still places provisional summary-only material in durable reference."
+    },
+    "AR2": {
+      "score": 0,
+      "justification": "n/a — non-procedure routing scenario; no artifacts were written to the workspace, only a recommendation was given."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "All references to other files (resources/AGENTS.md, projects/AGENTS.md, tmp/AGENTS.md, resources/prompt-cache-side-channel-tldr.md) use relative paths consistent with the methodology convention."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "The proposed flat-file drop plus daybook log line plus later promotion-to-folder pattern is idempotent and append-only; re-running would not corrupt history."
+    }
+  }
+}

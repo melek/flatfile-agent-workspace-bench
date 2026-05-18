@@ -1,0 +1,36 @@
+{
+  "scenario_id": "06-routing-tldr-screening",
+  "run_number": 3,
+  "workspace_tag": "v0.3-trimmed",
+  "started_at": "2026-05-17T22:22:00Z",
+  "completed_at": "2026-05-17T22:23:30Z",
+  "final_response": "Short answer: `resources/` — but only barely, and not yet as its own subfolder.\n\nWalking the options:\n\n- **`tmp/`** is out. It's gitignored, and you said you want to keep it because the topic is coming up next week. The `tmp/` AGENTS.md rule is explicit: \"if you'd miss it, it doesn't belong here.\"\n- **A new project folder** is premature. You don't have a goal you could state in a sentence yet, you have a snippet of context for something coming up. `projects/AGENTS.md` says to capture pre-project material in `observations.md`, the daybook, or `tmp/<topic>/` and see if it grows. Creating `projects/prompt-cache-attacks/` now would be preemptive.\n- **`observations.md`** is wrong because the snippet isn't a rule or finding that would save future re-derivation — it's external reference material someone else wrote. The convention there is pointer + short rule, with long-form items living in `resources/`.\n- **Daybook log entry** is fine for today (\"saw a TLDR on prompt-cache side-channels, parked in resources/\") but the daybook isn't the durable home for the snippet itself — daybooks are about session state, not retrievable reference.\n- **`resources/`** fits: external reference material, durable, non-executable, supports work but isn't the work. The AGENTS.md there lists \"a research paper that frames your domain\" as a canonical example.\n\nConcrete suggestion:\n\n1. Drop it as a single flat file: `resources/prompt-cache-side-channel-tldr.md`. Include the TLDR as you have it, plus a one-line stub: *PDF not yet retrieved; pull before [whatever next week's context is].* No subfolder needed for a single artifact.\n2. Add a line to today's daybook **Log** noting the park, so the trail exists.\n3. When you pull the PDF, drop it alongside and promote to a folder: `resources/prompt-cache-side-channel/` containing the TLDR, the PDF, and any notes. The recursive pattern in `resources/AGENTS.md` covers that shape.\n4. If next week's discussion turns this into actual work (a writeup, a mitigation decision, a presentation), `mv` the folder into `projects/<name>/resources/` at that point. Not before.\n\nOne thing worth flagging: the TLDR is research-assistant-generated, not the paper. Treat it as a pointer, not a citation — verify the 73% recovery rate and the mitigation framing against the actual PDF before you repeat any of it next week. Worth a note in the file itself so future-you doesn't quote the summary as if it were the paper.",
+  "actions": [
+    {
+      "path": "~/Documents/GitHub/flatfile-agent-workspace/bench/results/v0.3-trimmed/runs/06-routing-tldr-screening/03-workspace/AGENTS.md",
+      "action": "read",
+      "content_summary": "Root workspace orientation — layout table, canonical strings, workflow discipline."
+    },
+    {
+      "path": "~/Documents/GitHub/flatfile-agent-workspace/bench/results/v0.3-trimmed/runs/06-routing-tldr-screening/03-workspace/resources/AGENTS.md",
+      "action": "read",
+      "content_summary": "resources/ guidance — durable, non-executable reference material; distinct from tmp/ and runbooks/."
+    },
+    {
+      "path": "~/Documents/GitHub/flatfile-agent-workspace/bench/results/v0.3-trimmed/runs/06-routing-tldr-screening/03-workspace/tmp/AGENTS.md",
+      "action": "read",
+      "content_summary": "tmp/ rules — gitignored scratch; don't put anything you'd miss; promote to projects/ if it grows."
+    },
+    {
+      "path": "~/Documents/GitHub/flatfile-agent-workspace/bench/results/v0.3-trimmed/runs/06-routing-tldr-screening/03-workspace/projects/AGENTS.md",
+      "action": "read",
+      "content_summary": "projects/ conventions — when to create a project (goal in a sentence, multi-session, etc.); don't create preemptively."
+    }
+  ],
+  "notes": [
+    "User asked routing-only question; no files written into the workspace itself, only the JSON transcript at the requested external path.",
+    "Recommendation: resources/prompt-cache-side-channel-tldr.md as flat file now; promote to resources/prompt-cache-side-channel/ folder when PDF is pulled.",
+    "Flagged provenance concern: TLDR is research-assistant-generated, should not be treated as a paper citation until verified against the PDF.",
+    "Declined to propose a new project folder (would violate projects/AGENTS.md guidance against preemptive creation) and declined tmp/ (gitignored, user wants to keep)."
+  ]
+}

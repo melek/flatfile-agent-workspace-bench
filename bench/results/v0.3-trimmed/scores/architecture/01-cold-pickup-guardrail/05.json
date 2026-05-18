@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "01-cold-pickup-guardrail",
+  "run_number": 5,
+  "axes": {
+    "AR1": {
+      "score": 3,
+      "justification": "Created today's daybook with a Log entry recording the guardrail check and missing draft, and annotated the existing open followup rather than opening a new decisions.md entry — correct routing matching the methodology's strict bars (no commitment was made, so decisions.md was rightly left alone)."
+    },
+    "AR2": {
+      "score": 3,
+      "justification": "Each step produced a concrete on-disk artifact (read 2026-04-21.md, read followups.md, listed tmp/, created daybook/2026-05-17.md, updated followups.md) and the procedure visibly stalled on the missing tmp/vendor-renegotiation/email-draft.md rather than narrating past it."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "All cross-references use relative paths with ISO date anchors (`daybook/2026-05-17.md`, `followups.md`, `tmp/vendor-renegotiation/email-draft.md`, 2026-04-21 handoff) and resolve against the workspace as described."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "Daybook creation is a new dated file (append-only by date), the followups.md update is an annotation on an existing open entry rather than a status rewrite, and no email was sent — re-running would find today's daybook already present and the followup annotated, leaving state coherent."
+    }
+  }
+}

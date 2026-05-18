@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "05-routing-decision-vs-observation",
+  "run_number": 4,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "Acted directly without asking the user to load context or restate prior decisions."
+    },
+    "CE2": {
+      "score": 1,
+      "justification": "Response includes a multi-clause justification of the routing call plus a trailing offer to fill in Consequences, padding beyond the terse confirmation the task warranted."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "Explicitly named the destination (decisions.md) and the why (a database choice is a commitment that constrains future action) in one short clause."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "Two committed file edits with cross-references; no in-progress artifacts that would orphan on interrupt."
+    }
+  }
+}

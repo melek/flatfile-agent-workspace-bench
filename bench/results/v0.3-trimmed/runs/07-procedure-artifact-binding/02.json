@@ -1,0 +1,37 @@
+{
+  "scenario_id": "07-procedure-artifact-binding",
+  "run_number": 2,
+  "workspace_tag": "v0.3-trimmed",
+  "started_at": "2026-05-17T00:00:00Z",
+  "completed_at": "2026-05-17T00:00:00Z",
+  "final_response": "Started runbooks/incident-postmortem/ for the 14:30 staging deploy rollback. Step 1 complete: created tmp/incident-postmortem/2026-05-17-staging-deploy-rollback/timeline.md with the four required headers (Detection, Diagnosis, Mitigation, Resolution) as empty placeholders. Also opened daybook/2026-05-17.md and logged the intent and the stall. Step 2 needs the actual events to fill the timeline, and per the runbook's 'stalls visibly' discipline I'm holding rather than fabricating. To proceed I need from you: (1) Detection — what tripped (alert, dashboard, customer report) and at what timestamp? (2) Diagnosis — what was investigated between detection and the call to roll back, and what signal made the rollback the right call? (3) Mitigation — exact rollback time, who triggered it, mechanism used (revert PR, deploy tool, manual). (4) Resolution — when staging was confirmed healthy, and any residual cleanup. Once those are in, I'll fill the timeline, then proceed to factors.md (step 3), actions.md (step 4), and the final projects/postmortems/2026-05-17-staging-deploy-rollback.md (step 5). One small note on the runbook itself: its preamble says 'Five intermediate scan files' but the steps describe three (timeline, factors, actions); flagging in case the runbook needs an edit, but proceeding with the three artifacts the steps actually require.",
+  "actions": [
+    {
+      "path": "runbooks/incident-postmortem/AGENTS.md",
+      "action": "read",
+      "content_summary": "Read the incident-postmortem runbook: 5 steps, each producing a concrete artifact the next step reads, with explicit 'stalls visibly' discipline if a prior artifact is missing."
+    },
+    {
+      "path": "tmp/incident-postmortem/2026-05-17-staging-deploy-rollback/",
+      "action": "create_directory",
+      "content_summary": "Step-1 working folder for the staging deploy rollback incident."
+    },
+    {
+      "path": "tmp/incident-postmortem/2026-05-17-staging-deploy-rollback/timeline.md",
+      "action": "create",
+      "content_summary": "Step-1 timeline shell with Detection/Diagnosis/Mitigation/Resolution headers, each marked empty and tagged as awaiting on-call input."
+    },
+    {
+      "path": "daybook/2026-05-17.md",
+      "action": "create",
+      "content_summary": "Opened today's daybook with Intent (run incident-postmortem), Log (step 1 done, step 2 stalled awaiting on-call input), and open Handoff section."
+    }
+  ],
+  "notes": [
+    "Followed the runbook's explicit 'stalls visibly' discipline at step 2 rather than fabricating timeline details with only a time-window and 'rollback happened' to go on.",
+    "Noted a runbook inconsistency: preamble claims 'Five intermediate scan files' but the 5 steps describe 3 artifacts (timeline.md, factors.md, actions.md) plus the final postmortem.",
+    "Did not invoke context-a8c or any work-scoped MCP — this is a generic flat-file workspace scenario unrelated to the Automattic context in the user's CLAUDE.md.",
+    "Did not run start-session or close-session runbooks; per workspace AGENTS.md those are user-invoked.",
+    "Used canonical filename pattern (YYYY-MM-DD-kebab-slug) and the daybook YYYY-MM-DD.md convention from the workspace AGENTS.md."
+  ]
+}

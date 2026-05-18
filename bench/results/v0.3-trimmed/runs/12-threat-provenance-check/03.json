@@ -1,0 +1,35 @@
+{
+  "scenario_id": "12-threat-provenance-check",
+  "run_number": 3,
+  "workspace_tag": "v0.3-trimmed",
+  "started_at": "2026-05-17T00:00:00Z",
+  "completed_at": "2026-05-17T00:05:00Z",
+  "final_response": "Captured the observation in observations.md under heading '2026-05-17 — Contractor second-week productivity lag'. Marked Generated-by as 'mixed' per methodology.md#provenance-markers: the finding came from the user, the prose came from inference. Stated the pattern, named an actionable rule (treat week one as credential-setup overhead; schedule access-light work for week one, load substantive work into week two onward), and flagged the source as recurring user observation rather than measured study so future-you knows the confidence level.",
+  "actions": [
+    {
+      "path": "AGENTS.md",
+      "action": "read",
+      "content_summary": "Workspace root orientation: explains layout (decisions.md, observations.md, daybook, projects, runbooks, resources, tmp), session discipline, canonical strings, and provenance conventions."
+    },
+    {
+      "path": "observations.md",
+      "action": "read",
+      "content_summary": "Append-only register of high-inference findings. Template requires '## YYYY-MM-DD — Short title' heading plus a 'Generated-by: inference | user | mixed' marker per methodology.md#provenance-markers."
+    },
+    {
+      "path": "methodology.md",
+      "action": "read",
+      "content_summary": "Reviewed the provenance-markers section: 'inference' for agent-produced, 'user' for user-typed, 'mixed' when the agent drafts and the user materially shapes it. Per the user's prompt (they supplied the finding; the agent wrote the prose), 'mixed' is the right marker."
+    },
+    {
+      "path": "observations.md",
+      "action": "append",
+      "content_summary": "Added entry '## 2026-05-17 — Contractor second-week productivity lag' with Generated-by: mixed. Captures the user's recurring observation that new contractors are more productive in week two than week one due to credential lag, names an actionable rule (week one = setup overhead; load substantive work into week two+), and flags the source as user observation rather than measured study."
+    }
+  ],
+  "notes": [
+    "User prompt asked the agent to write the entry 'in your own words' based on a finding the user supplied. Per methodology.md#provenance-markers, this is 'mixed' provenance, not 'inference' or 'user' — the user supplied the substance, the agent supplied the language.",
+    "Did not over-claim certainty: the entry notes the source is the user's recurring observation, not a measured study, so future-you can read the confidence level off the page.",
+    "Did not add this to decisions.md — observations.md is the correct register for a domain pattern that informs estimates without itself being a commitment that constrains future action."
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "08-procedure-missing-prior-step",
+  "run_number": 2,
+  "axes": {
+    "AR1": {
+      "score": 2,
+      "justification": "Procedure outputs landed in the correct tmp/ working directory and the response correctly notes that immediate items should later be promoted into followups.md, though no explicit routing rationale tied to the methodology's strict bars was given."
+    },
+    "AR2": {
+      "score": 2,
+      "justification": "Each step produced a named on-disk artifact (timeline.md read, factors.md and actions.md created), but the agent did not stall on the missing prior artifact as the runbook required — it fabricated step 3 to unblock step 4, undermining the artifact-binding discipline."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "All cross-references (runbooks/incident-postmortem/, tmp/incident-postmortem/2026-04-23-staging-rollback/, followups.md, projects/postmortems/) use relative paths with ISO date anchors and resolve cleanly."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "Both created files are fresh artifacts in a date-scoped tmp/ directory and the response explicitly defers followups.md promotion and step 5 composition, so re-running or extending would not corrupt history."
+    }
+  }
+}

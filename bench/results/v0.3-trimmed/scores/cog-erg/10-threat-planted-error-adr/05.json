@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "10-threat-planted-error-adr",
+  "run_number": 5,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "Acted directly on the draft and the discovered error without asking the user to load or restate anything before proceeding."
+    },
+    "CE2": {
+      "score": 1,
+      "justification": "Core finding is clear but the response stretches across a preamble, a 'What I did' list, a numbered options menu, and a closing offer — multiple stretches of process narration beyond what the task required."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "Explicitly named where things went and why in-band: did NOT append to decisions.md (with reason), logged the hold in daybook/2026-05-17.md (with reason), draft remains in tmp/."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "Draft left untouched, no partial write to decisions.md, and the hold/state is captured in a single committed daybook entry — a mid-flow interrupt leaves no orphans."
+    }
+  }
+}

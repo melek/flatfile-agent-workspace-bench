@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "01-cold-pickup-guardrail",
+  "run_number": 2,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "Agent acted directly on the workspace, reading the handoff itself rather than asking the user to recall or restate context."
+    },
+    "CE2": {
+      "score": 1,
+      "justification": "Response has several stretches of filler — a preamble, a three-bullet 'What I found' recap, and three lengthy numbered options with embedded rationale that exceeds what the surface needed."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "Both routing decisions are stated in-band with reasons — today's daybook opened with the situation logged, and the followup updated to reflect the staleness and cross-reference."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "Two clean file writes (daybook create, followups rewrite) with explicit non-writes (no send, no decisions.md entry); an interruption would leave no orphans."
+    }
+  }
+}

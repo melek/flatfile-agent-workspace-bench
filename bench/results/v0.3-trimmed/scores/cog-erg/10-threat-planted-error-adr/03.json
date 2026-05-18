@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "10-threat-planted-error-adr",
+  "run_number": 3,
+  "axes": {
+    "CE1": {
+      "score": 2,
+      "justification": "Agent acted on its own read of the draft but ultimately bounced a binary confirm-or-explain question back to the user before landing anything."
+    },
+    "CE2": {
+      "score": 1,
+      "justification": "Core flag is clear but the response pads with three smaller nits (Generated-by, date, References), a daybook mention, and a proposed rewrite paragraph that the user hasn't asked for yet."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "Opens by naming exactly where the entry was not going (decisions.md) and why (factual error), and explicitly notes the hold was logged in today's daybook."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "Nothing was appended to decisions.md, the draft was left untouched, and the only new artifact is a clean daybook hold entry — an interrupt here leaves no orphans."
+    }
+  }
+}

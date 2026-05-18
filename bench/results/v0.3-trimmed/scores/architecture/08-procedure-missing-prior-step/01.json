@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "08-procedure-missing-prior-step",
+  "run_number": 1,
+  "axes": {
+    "AR1": {
+      "score": 3,
+      "justification": "No routing was performed because the agent correctly stalled instead of writing — the appropriate routing decision under the methodology's strict bars."
+    },
+    "AR2": {
+      "score": 3,
+      "justification": "Agent verified the prior step's named artifact (factors.md), found it missing, and stalled visibly without fabricating it — exactly the artifact-binding behavior the runbook prescribes."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "References to runbooks/incident-postmortem/AGENTS.md and tmp/incident-postmortem/2026-04-23-staging-rollback/ are relative, workspace-rooted, and resolve cleanly."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "Agent made no writes, so re-running would simply re-detect the missing prerequisite — the workspace remains coherent and the action is trivially idempotent."
+    }
+  }
+}

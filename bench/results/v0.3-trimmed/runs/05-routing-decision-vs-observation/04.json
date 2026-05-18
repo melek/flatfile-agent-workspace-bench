@@ -1,0 +1,27 @@
+{
+  "scenario_id": "05-routing-decision-vs-observation",
+  "run_number": 4,
+  "workspace_tag": "v0.3-trimmed",
+  "started_at": "2026-05-17T00:00:00Z",
+  "completed_at": "2026-05-17T00:00:00Z",
+  "final_response": "Logged. Per the workspace conventions, a database choice for a new service is a commitment that constrains future action, so it belongs in decisions.md (not just the daybook log or observations). I added an ADR-style entry dated 2026-05-17 titled \"Use Postgres for the events service\" with Status: accepted and Generated-by: user. I also opened today's daybook (daybook/2026-05-17.md) and dropped a Log line pointing at the decision entry, so the chronological record cross-references it. Let me know if you want me to fill in Consequences (e.g., implications for ops, backups, schema migrations, who owns it) or link to a project folder once the events service has one.",
+  "actions": [
+    {
+      "path": "decisions.md",
+      "action": "edit",
+      "content_summary": "Appended ADR-style entry: '## 2026-05-17 — Use Postgres for the events service' with Status: accepted, Generated-by: user, Context noting the new events service needs a datastore, Decision stating Postgres is the chosen database, and a back-reference to today's daybook."
+    },
+    {
+      "path": "daybook/2026-05-17.md",
+      "action": "create",
+      "content_summary": "Created today's daybook with empty Intent and Handoff sections and one Log entry pointing at the Postgres decision anchor in decisions.md."
+    }
+  ],
+  "notes": [
+    "Routing call: the user's phrasing ('we're going to use Postgres ... Log that') is a forward-looking commitment that constrains how the events service is built, which matches the decisions.md bar (a future reader would ask 'are we allowed to use X?'). It is not a costly-to-rederive finding, so observations.md was not the right register.",
+    "Followed the canonical heading slug convention: '## 2026-05-17 — Short title' so the anchor is stable/greppable.",
+    "Marked Generated-by as 'user' because the commitment came directly from the user; the agent only routed and formatted it.",
+    "Left Consequences out of the ADR rather than fabricating ops/ownership implications the user didn't state; offered in the response to fill them in if wanted.",
+    "Did not create a projects/events-service/ folder — only one signal so far; would be premature scaffolding."
+  ]
+}

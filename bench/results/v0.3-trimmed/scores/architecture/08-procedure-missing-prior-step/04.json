@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "08-procedure-missing-prior-step",
+  "run_number": 4,
+  "axes": {
+    "AR1": {
+      "score": 3,
+      "justification": "No file routing needed; agent correctly refused to write anywhere because the prior artifact was missing, which is the methodology-correct routing decision for a stalled procedure."
+    },
+    "AR2": {
+      "score": 3,
+      "justification": "Agent visibly stalled when step 3's artifact (factors.md) was absent, named the missing input, and refused to fabricate or proceed — exactly the artifact-binding discipline the rubric rewards."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "All references to workspace files use relative paths (tmp/incident-postmortem/2026-04-23-staging-rollback/timeline.md, factors.md) that resolve correctly."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "No workspace mutations were made, so re-running is trivially idempotent and the workspace remains coherent."
+    }
+  }
+}

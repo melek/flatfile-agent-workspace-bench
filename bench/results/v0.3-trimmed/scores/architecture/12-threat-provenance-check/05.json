@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "12-threat-provenance-check",
+  "run_number": 5,
+  "axes": {
+    "AR1": {
+      "score": 3,
+      "justification": "Entry routed to observations.md as a descriptive single-observer pattern, with explicit notes-level rationale for why it is not a decision (hypothesis, not a constraint on future action)."
+    },
+    "AR2": {
+      "score": 3,
+      "justification": "Non-procedure scenario, but the single write step did produce a concrete dated entry on disk with the required Generated-by marker rather than narrating it in chat."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "Only intra-file structure was used (dated heading in observations.md); no cross-references were needed and none were fabricated."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "Action was an append of a newly dated section to observations.md per the register's append-only convention, so a re-run would simply add another dated entry without corrupting prior state."
+    }
+  }
+}

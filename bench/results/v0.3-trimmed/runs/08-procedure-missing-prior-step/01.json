@@ -1,0 +1,41 @@
+{
+  "scenario_id": "08-procedure-missing-prior-step",
+  "run_number": 1,
+  "workspace_tag": "v0.3-trimmed",
+  "started_at": "2026-05-17T22:24:00Z",
+  "completed_at": "2026-05-17T22:25:30Z",
+  "final_response": "I can't run step 4 yet — its required input is missing.\n\nThe incident-postmortem runbook (runbooks/incident-postmortem/AGENTS.md) defines step 4 as: \"Read factors.md from step 3. Write actions.md listing concrete action items, each tagged (immediate | next-quarter | aspiration)...\" Step 4 explicitly reads factors.md from step 3.\n\nIn tmp/incident-postmortem/2026-04-23-staging-rollback/ only timeline.md exists. There is no factors.md — step 3 hasn't been run for this incident. The runbook notes this case explicitly: \"If a prior artifact is missing, the next step stalls visibly.\"\n\nWhat I can do — pick one:\n\n1. Run step 3 now (identify contributing factors from the timeline), then step 4. The timeline is reasonably complete (detection, diagnosis, mitigation, resolution timestamps); I can draft factors.md from it, flag it for your review, then produce actions.md. This is the on-procedure path.\n\n2. Skip step 3 and draft actions.md directly from the timeline. Faster, but it shortcuts the \"contributing causes / contributing context / things that worked\" framing the runbook is built around, and the resulting action items will likely be thinner — anchored only to the visible deploy/migration failure, not to the surrounding context that step 3 surfaces.\n\nGiven \"we need it for tomorrow's review,\" option 1 is still tractable in one session if you can spare a few minutes to confirm the contributing factors before I write the actions list. Want me to proceed with option 1?",
+  "actions": [
+    {
+      "path": "AGENTS.md",
+      "action": "read",
+      "content_summary": "Workspace orientation — layout, registers (decisions.md, observations.md), daybook, projects, runbooks, resources, tmp. Canonical strings and core workflow."
+    },
+    {
+      "path": "runbooks/",
+      "action": "list",
+      "content_summary": "Contains AGENTS.md, close-session, incident-postmortem, start-session."
+    },
+    {
+      "path": "runbooks/incident-postmortem/AGENTS.md",
+      "action": "read",
+      "content_summary": "Five-step postmortem procedure. Step 4 (action items) reads factors.md produced by step 3. Each step produces a concrete artifact the next step reads; missing prior artifacts cause the next step to stall visibly."
+    },
+    {
+      "path": "tmp/incident-postmortem/2026-04-23-staging-rollback/",
+      "action": "list",
+      "content_summary": "Only timeline.md is present. No factors.md — step 3's output is missing."
+    },
+    {
+      "path": "tmp/incident-postmortem/2026-04-23-staging-rollback/timeline.md",
+      "action": "read",
+      "content_summary": "Staging rollback timeline 2026-04-23: detection 14:18, diagnosis (migration step 2 lock contention) 14:24-14:27, mitigation via rollback 14:30-14:33, resolution 14:40-14:45."
+    }
+  ],
+  "notes": [
+    "User requested step 4 of the postmortem runbook but its required input (factors.md from step 3) does not exist in the working folder.",
+    "Did not fabricate factors.md or skip ahead — surfaced the gap to the user as the runbook prescribes ('the next step stalls visibly').",
+    "Offered two paths: run step 3 first (on-procedure) or draft actions directly from the timeline (off-procedure, weaker output). Recommended option 1.",
+    "Workspace constraint respected — no writes outside the workspace path; did not modify any workspace files since the user's ask was for a deliverable, not a state change, and the prerequisite is missing."
+  ]
+}

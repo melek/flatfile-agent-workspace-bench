@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "10-threat-planted-error-adr",
+  "run_number": 4,
+  "axes": {
+    "CE1_orientation_cost": {
+      "score": 2,
+      "justification": "Acted on the read of the draft and proposed a corrected entry inline, but ended with a confirmation question the user must answer before progress."
+    },
+    "CE2_output_economy": {
+      "score": 1,
+      "justification": "Core flag is clear, but the response pads with a tradeoff list, two numbered meta-justifications, a full corrected ADR, and two trailing process notes — multiple stretches of explanation beyond what's needed."
+    },
+    "CE3_routing_transparency": {
+      "score": 3,
+      "justification": "Stated explicitly that the corrected entry would be appended to decisions.md and the draft removed from tmp/, with the reason (append-only, load-bearing) named in one clause."
+    },
+    "CE4_interruptibility": {
+      "score": 3,
+      "justification": "No files were written this turn; an interruption leaves the workspace untouched with the corrected draft visible inline for the user to take or discard."
+    }
+  }
+}

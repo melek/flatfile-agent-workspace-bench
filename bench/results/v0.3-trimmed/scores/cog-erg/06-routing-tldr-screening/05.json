@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "06-routing-tldr-screening",
+  "run_number": 5,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "Agent read workspace AGENTS.md files itself and answered directly without asking the user to load or restate anything."
+    },
+    "CE2": {
+      "score": 1,
+      "justification": "Recommendation is buried under an extended elimination of three alternatives plus a promotion-path paragraph and a closing cost-of-being-wrong summary — several stretches of unneeded prose for a 'where should this go?' question."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "States the destination (`tmp/prompt-cache-attacks/`) and the reason (unvetted TLDR isn't reference material) in the opening clause."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "Agent deliberately created no files and asked for confirmation before acting, leaving zero in-progress artifacts to triage."
+    }
+  }
+}

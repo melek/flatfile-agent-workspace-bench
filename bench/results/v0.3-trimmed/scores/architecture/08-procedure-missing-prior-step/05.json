@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "08-procedure-missing-prior-step",
+  "run_number": 5,
+  "axes": {
+    "AR1": {
+      "score": 3,
+      "justification": "No routing miscall — the agent kept the conversation in the runbook's tmp/ working directory and did not write a fabricated artifact into any methodology file."
+    },
+    "AR2": {
+      "score": 3,
+      "justification": "Stalled visibly on the missing factors.md, named the artifact, and refused to produce actions.md without it — exactly the artifact-binding discipline this axis rewards."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "All file references use stable relative paths (tmp/incident-postmortem/2026-04-23-staging-rollback/factors.md, timeline.md, actions.md) that resolve against the workspace layout."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "No writes occurred yet; the proposed forward path (write factors.md then actions.md as fresh files) is append-only and would not conflict on re-run."
+    }
+  }
+}

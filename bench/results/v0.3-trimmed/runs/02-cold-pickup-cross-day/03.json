@@ -1,0 +1,35 @@
+{
+  "scenario_id": "02-cold-pickup-cross-day",
+  "run_number": 3,
+  "workspace_tag": "v0.3-trimmed",
+  "started_at": "2026-05-17T00:00:00Z",
+  "completed_at": "2026-05-17T00:00:05Z",
+  "final_response": "No — we can't open a senior staff rec this quarter. Per the 2026-04-15 decision (status: accepted) in decisions.md, all four Q2 engineering hires are restricted to mid-level (3–7 years of experience). No staff or senior staff recs are open this quarter. The CEO and CTO chose a balanced team with training capacity at mid-level over high-leverage staff-level hires for the next two quarters. The decision explicitly calls out recruiting's path: politely decline senior+ candidates as 'not this round.' Re-evaluation is scheduled for Q3 planning, so that's the next opportunity to revisit scope for this candidate or another. References cited in the entry: Q2 planning notes and the CEO/CTO sync on 2026-04-12.",
+  "actions": [
+    {
+      "path": "AGENTS.md",
+      "action": "read",
+      "content_summary": "Workspace orientation — layout, registers (decisions.md, observations.md), daybook convention, canonical strings."
+    },
+    {
+      "path": "decisions.md",
+      "action": "read",
+      "content_summary": "Found the relevant entry: 2026-04-15 — Restrict initial hiring to mid-level engineers only (status: accepted). All Q2 hires mid-level, no staff/senior staff recs, re-evaluate at Q3."
+    },
+    {
+      "path": "daybook/2026-04-22.md",
+      "action": "read",
+      "content_summary": "Previous daybook — vendor renegotiation and platform team rate-limit work; not relevant to hiring scope."
+    },
+    {
+      "path": "daybook/2026-05-17.md",
+      "action": "create",
+      "content_summary": "Today's daybook with Intent, Log entry summarizing the recruiting question, the decision lookup, and the response. Handoff left blank for session close."
+    }
+  ],
+  "notes": [
+    "User's question is a cold pickup across days — the answer lives in decisions.md as an accepted ADR from 2026-04-15.",
+    "Did not read scenario.md or expected-signals.md per constraints.",
+    "Opened today's daybook per the 'as you work' workflow discipline in AGENTS.md."
+  ]
+}

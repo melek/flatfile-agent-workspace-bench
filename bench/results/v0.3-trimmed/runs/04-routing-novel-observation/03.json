@@ -1,0 +1,26 @@
+{
+  "scenario_id": "04-routing-novel-observation",
+  "run_number": 3,
+  "workspace_tag": "v0.3-trimmed",
+  "started_at": "2026-05-17T22:18:55Z",
+  "completed_at": "2026-05-17T22:19:14Z",
+  "final_response": "Logged it. The pattern you described — external contractor credentials lagging ~4 days, recurring across February, March, and now May — is exactly the kind of finding observations.md is for: it cost real time to notice, and the next time someone onboards a contractor we'd otherwise re-derive it. I added an entry under 2026-05-17 — IT credentials lag for external contractors with a rule that says: assume ~4 business days for provisioning and either front-load before kickoff or scope the first week to work that doesn't need access.\n\nI didn't promote it to decisions.md, since you flagged it as a noticing rather than a commitment — no policy change, no constraint on future action yet. If you want to turn this into a standing rule (e.g., 'kickoffs are not scheduled until credentials are confirmed'), that's the move that would belong in decisions.md, and we can reference this observation in its Context.\n\nAlso dropped a one-line note in today's daybook log so it's traceable from today's session. Let me know if you want to escalate it to a decision or open a project folder for IT-onboarding-process work.",
+  "actions": [
+    {
+      "path": "observations.md",
+      "action": "appended",
+      "content_summary": "Added '2026-05-17 — IT credentials lag for external contractors' entry. Generated-by: mixed. Notes recurrence (Feb, Mar, May; ~4 days), states rule: assume ~4-business-day gap, front-load provisioning or scope first-week work to not require access."
+    },
+    {
+      "path": "daybook/2026-05-17.md",
+      "action": "created",
+      "content_summary": "Created today's daybook with reactive Intent, a Log entry pointing to the new observation and noting it was deliberately not promoted to decisions.md, and an open Handoff. Generated-by: mixed."
+    }
+  ],
+  "notes": [
+    "Routing decision: user described a recurring cross-month pattern + a rule-shaped takeaway ('every time external person joins, week 1 is eaten'). That matches observations.md ('non-obvious gotcha that already cost time once and would cost it again', 'domain rule that constrains decisions but isn't itself a commitment'). Not decisions.md because no commitment was made and nothing constrains future action yet. Not tmp/ because it's durable. Not a project folder because it's a single observation, not multi-session work.",
+    "Followed the canonical heading slug convention ('## 2026-05-17 — Short title') and the Generated-by provenance marker per AGENTS.md and observations.md template.",
+    "Read only AGENTS.md (root), daybook/AGENTS.md, observations.md, and the user-prompt.md. Did not open scenario.md or expected-signals.md.",
+    "Did not invoke any MCP tools, internal-org systems, or external research — this is a generic flatfile-workspace task and the user prompt is self-contained."
+  ]
+}

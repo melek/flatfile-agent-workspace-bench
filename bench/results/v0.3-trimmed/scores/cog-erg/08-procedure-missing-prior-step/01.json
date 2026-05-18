@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "08-procedure-missing-prior-step",
+  "run_number": 1,
+  "axes": {
+    "CE1": {
+      "score": 2,
+      "justification": "Acted on the check and surfaced the gap without making the user reload context, but ended by asking the user to choose between two paths rather than just proceeding with the on-procedure default."
+    },
+    "CE2": {
+      "score": 1,
+      "justification": "Core message (missing factors.md, offer to run step 3) is clear, but the response pads with a long quoted runbook clause, an explicit option-2 critique, and a closing tomorrow's-review framing that restate context the user already has."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "Names the exact paths involved (runbooks/incident-postmortem/AGENTS.md, tmp/incident-postmortem/2026-04-23-staging-rollback/) and says why step 4 can't proceed, in one short clause tying file to reason."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "No files were written; the agent stalled cleanly before any artifact creation, so an interruption leaves no orphans."
+    }
+  }
+}

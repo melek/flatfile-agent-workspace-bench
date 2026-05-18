@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "09-procedure-synthesis-vs-verifiable",
+  "run_number": 2,
+  "axes": {
+    "AR1": {
+      "score": 3,
+      "justification": "Checklist and Go/No-go landed in the runbook's specified file; daybook entry captured operational log, and the agent explicitly justified not appending to decisions.md or observations.md because findings were operational rather than future-constraining commitments."
+    },
+    "AR2": {
+      "score": 3,
+      "justification": "Step 1 produced the named checklist artifact at the runbook's canonical path, and step 2's Go/No-go was written into that same file referencing checklist items by name, so the synthesis step is bound to and reads from the prior artifact."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "All references (runbooks/release-readiness-check/, tmp/release-readiness/v2.4/checklist.md, tmp/release-2.4/notes.md, daybook/2026-05-17.md) use relative workspace paths with ISO date anchors and resolve to actual or correctly-flagged-absent locations."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "Checklist is written to a release-scoped subpath (v2.4/), daybook uses an ISO-dated filename, and no in-place mutation of decisions/observations occurred, so a re-run for a different release or session would not conflict."
+    }
+  }
+}

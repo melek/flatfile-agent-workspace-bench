@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "08-procedure-missing-prior-step",
+  "run_number": 5,
+  "axes": {
+    "CE1": {
+      "score": 2,
+      "justification": "Agent did the orientation work itself but ended by asking the user to choose between two options, requiring one explicit decision before action."
+    },
+    "CE2": {
+      "score": 1,
+      "justification": "Response contains several stretches of restatement and justification (quoting the runbook, explaining why step 3 matters, previewing thin action items) beyond what's needed to surface the gap."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "Clearly named each artifact path, its step, and why factors.md was the blocker in one inline inventory."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "No partial artifacts were written; an interruption here would leave the workspace exactly as found."
+    }
+  }
+}

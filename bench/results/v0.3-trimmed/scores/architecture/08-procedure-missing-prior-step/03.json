@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "08-procedure-missing-prior-step",
+  "run_number": 3,
+  "axes": {
+    "AR1": {
+      "score": 3,
+      "justification": "No file was written; the agent correctly refused to route any entry because the procedure stalls before producing artifacts, matching the runbook's strict bar."
+    },
+    "AR2": {
+      "score": 3,
+      "justification": "The agent verified step 3's named artifact (factors.md) was missing and stalled visibly rather than fabricating it, exactly the artifact-binding discipline this axis rewards."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "All references (runbooks/incident-postmortem/AGENTS.md, tmp/incident-postmortem/2026-04-23-staging-rollback/...) use stable relative paths that resolve."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "No mutations were made and the proposed forward path (run step 3, then step 4) is naturally idempotent and append-only, so a re-run leaves the workspace coherent."
+    }
+  }
+}

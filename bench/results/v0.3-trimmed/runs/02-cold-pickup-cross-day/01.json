@@ -1,0 +1,47 @@
+{
+  "scenario_id": "02-cold-pickup-cross-day",
+  "run_number": 1,
+  "workspace_tag": "v0.3-trimmed",
+  "started_at": "2026-05-17T22:15:00Z",
+  "completed_at": "2026-05-17T22:16:00Z",
+  "final_response": "No — based on the current decisions log, we cannot open a senior staff engineer rec right now.\n\nThe relevant commitment is in `decisions.md`:\n\n**2026-04-15 — Restrict initial hiring to mid-level engineers only** (status: accepted)\n\n- Q2 headcount was approved at 4 engineers, and CEO + CTO chose mid-level over staff-level for the next two quarters.\n- All four Q2 engineering hires are mid-level (3–7 years). **No staff or senior staff recs are open this quarter.**\n- The agreed handling for senior+ candidates: recruiting declines politely with a \"not this round\" note.\n- Re-evaluation is scheduled at Q3 planning.\n\nSo the answer to recruiting is: pass on this candidate for now (or ask them to keep the candidate warm for Q3), and the question of opening a senior staff rec gets revisited at Q3 planning. If the cofounder or CEO/CTO want to revisit sooner because of this specific candidate, that would be a new decision superseding 2026-04-15 — worth flagging explicitly rather than quietly opening the rec.",
+  "actions": [
+    {
+      "path": "AGENTS.md",
+      "action": "read",
+      "content_summary": "Workspace orientation: layout, core workflow, canonical strings, cross-tool note."
+    },
+    {
+      "path": "decisions.md",
+      "action": "read",
+      "content_summary": "Found load-bearing entry 2026-04-15 — Restrict initial hiring to mid-level engineers only (status: accepted). All Q2 hires mid-level; no staff/senior staff recs this quarter; re-evaluate at Q3 planning."
+    },
+    {
+      "path": "daybook/2026-04-22.md",
+      "action": "read",
+      "content_summary": "Most recent daybook entry. Handoff: vendor + platform clearing done; nothing critical mid-flight; next session pick up security audit prep. No hiring context in the handoff."
+    },
+    {
+      "path": "observations.md",
+      "action": "read",
+      "content_summary": "Register guidance + empty register (no entries past the template)."
+    },
+    {
+      "path": "daybook/",
+      "action": "list",
+      "content_summary": "Contains 0000-00-00-example.md, 2026-04-22.md, AGENTS.md — no entry for today (2026-05-17)."
+    },
+    {
+      "path": "projects/",
+      "action": "list",
+      "content_summary": "Only AGENTS.md present; no active project folders."
+    }
+  ],
+  "notes": [
+    "User prompt was a recall question against a settled decision — answered directly from decisions.md rather than re-deriving.",
+    "Did not open or write today's daybook entry; the start-session and close-session runbooks are user-invoked per AGENTS.md, and this single Q&A turn does not warrant proactive workspace mutation.",
+    "Did not create a new decision; recruiting's request does not itself change the commitment. Flagged in the response that a deliberate supersede would be the right path if leadership wants to revisit early.",
+    "Cross-day gap: last daybook is 2026-04-22, today is 2026-05-17 (~25 days). The 2026-04-15 decision predates the last daybook and remains the governing commitment.",
+    "Did not read scenario.md or expected-signals.md per instructions."
+  ]
+}

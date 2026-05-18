@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "04-routing-novel-observation",
+  "run_number": 2,
+  "axes": {
+    "AR1": {
+      "score": 3,
+      "justification": "Routed to observations.md and explicitly named the methodology's strict bar (descriptive cross-session pattern vs. commitment in decisions.md) with a daybook Log pointer for chronology."
+    },
+    "AR2": {
+      "score": 3,
+      "justification": "Non-procedure scenario, but each named file (observations.md entry, daybook/2026-05-17.md) was produced as a concrete artifact rather than narrated."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "References use relative paths (observations.md, daybook/2026-05-17.md) with stable ISO-dated anchors that resolve to the produced artifacts."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "Both actions are append/create on ISO-dated entries; re-running would add a new dated entry rather than mutate prior history, keeping the workspace coherent."
+    }
+  }
+}

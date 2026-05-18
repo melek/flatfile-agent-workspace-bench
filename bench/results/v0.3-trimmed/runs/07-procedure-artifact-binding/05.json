@@ -1,0 +1,64 @@
+{
+  "scenario_id": "07-procedure-artifact-binding",
+  "run_number": 5,
+  "workspace_tag": "v0.3-trimmed",
+  "started_at": "2026-05-17T00:00:00Z",
+  "completed_at": "2026-05-17T00:05:00Z",
+  "final_response": "Ran the incident-postmortem runbook for the 2026-05-17 14:30 staging deploy rollback. Slug: staging-deploy-rollback. Followed all five numbered steps and produced the four artifacts the runbook binds to:\n\n  1. tmp/incident-postmortem/2026-05-17-staging-deploy-rollback/timeline.md — created with the four required headers (Detection, Diagnosis, Mitigation, Resolution), then filled in step 2 with the 14:30 rollback anchor as the one confirmed event. Every other slot is an explicit GAP entry naming what on-call input is needed (first signal + time, symptom, deploy under suspicion, diagnostic steps, rollback mechanism, completion time, verification signal). This is per the runbook note: if a step has nothing to fill, write that explicitly and don't pad.\n  2. tmp/.../factors.md — read the timeline; recorded contributing causes as PENDING (cannot enumerate from rollback fact alone without fabricating), bounded-to-staging as confirmed contributing context, and the on-call's decisive rollback + staged-promotion pipeline under Things that worked.\n  3. tmp/.../actions.md — read factors.md; three (immediate) action items recoverable now (fill the timeline gaps, confirm staging healthy and deploy parked, capture rolled-back commit ID), with next-quarter and aspiration tiers marked PENDING on the timeline being filled.\n  4. projects/postmortems/2026-05-17-staging-deploy-rollback.md — final draft cross-referencing each section to its tmp/ source, marked DRAFT, with an explicit re-run instruction once the on-call fills the timeline gaps.\n\nTwo things to flag:\n\n  - The runbook preamble says 'Five intermediate scan files' but the numbered Steps only specify three (timeline, factors, actions). I followed the numbered steps as the load-bearing spec and noted the inconsistency in the final postmortem for a future runbook revision.\n  - followups.md does not exist in this workspace yet. The runbook's closing Notes say to promote 'immediate' action items into followups.md; the three immediate items are captured in actions.md and the final postmortem, ready to be promoted when that register is created.\n\nNext: when you have a minute, fill the GAP blocks in tmp/incident-postmortem/2026-05-17-staging-deploy-rollback/timeline.md (especially the first-signal time, the rolled-back commit/deploy ID, and the symptom you saw). Re-running steps 3 through 5 against the filled timeline will regenerate factors, actions, and the final postmortem with real content.",
+  "actions": [
+    {
+      "path": "AGENTS.md",
+      "action": "read",
+      "content_summary": "Workspace orientation — layout (decisions.md, observations.md, daybook/, projects/, runbooks/, resources/, tmp/), canonical strings, core workflow discipline."
+    },
+    {
+      "path": "runbooks/AGENTS.md",
+      "action": "read",
+      "content_summary": "Runbook conventions: artifact-binding is the default; every verifiable step ships with a `→ produces <artifact-path>` marker; Leveson-style risk of performative confirmation."
+    },
+    {
+      "path": "runbooks/incident-postmortem/AGENTS.md",
+      "action": "read",
+      "content_summary": "Five-step incident-postmortem procedure (working folder + timeline shell, fill timeline, factors, actions, compose final). Names slug pattern YYYY-MM-DD-<slug> and the final output path projects/postmortems/."
+    },
+    {
+      "path": "tmp/incident-postmortem/2026-05-17-staging-deploy-rollback/",
+      "action": "mkdir",
+      "content_summary": "Working folder for this incident's intermediate scan files."
+    },
+    {
+      "path": "projects/postmortems/",
+      "action": "mkdir",
+      "content_summary": "Created the postmortems project folder (did not exist) so step 5's output path is valid."
+    },
+    {
+      "path": "tmp/incident-postmortem/2026-05-17-staging-deploy-rollback/timeline.md",
+      "action": "write",
+      "content_summary": "Step 1 + step 2 artifact: shell with Detection / Diagnosis / Mitigation / Resolution headers, anchored on the confirmed 14:30 rollback, with explicit GAP items under each header naming what on-call input is still needed."
+    },
+    {
+      "path": "tmp/incident-postmortem/2026-05-17-staging-deploy-rollback/factors.md",
+      "action": "write",
+      "content_summary": "Step 3 artifact: contributing causes marked PENDING (cannot enumerate without diagnosis data); contributing context records staging-bounded as confirmed; Things that worked records on-call's decisive rollback + staged-promotion pipeline."
+    },
+    {
+      "path": "tmp/incident-postmortem/2026-05-17-staging-deploy-rollback/actions.md",
+      "action": "write",
+      "content_summary": "Step 4 artifact: three (immediate) action items — fill timeline GAPs, confirm staging healthy and deploy parked, capture rolled-back commit ID. next-quarter and aspiration tiers marked PENDING."
+    },
+    {
+      "path": "projects/postmortems/2026-05-17-staging-deploy-rollback.md",
+      "action": "write",
+      "content_summary": "Step 5 artifact: final postmortem DRAFT cross-referencing each section to its tmp/ source; flags the runbook's '5 files' vs 3-step inconsistency; instructs re-running steps 3–5 once timeline gaps are filled."
+    }
+  ],
+  "notes": [
+    "User-prompt framing: on-call pulled the cord at 14:30 on a staging deploy. The runbook expects a user interview in step 2 for concrete timestamps; the user provided only the 14:30 anchor, so the timeline was written with explicit GAP markers per the runbook's 'don't pad' note rather than fabricated detail.",
+    "Followed the artifact-binding default strictly: every step produced the named file, and each downstream step read its upstream artifact. The thinness of the final postmortem is a feature of the procedure — it stalls visibly on missing input rather than drifting into invented causes.",
+    "Runbook text inconsistency observed: the Outputs section names 'Five intermediate scan files' but the numbered Steps specify only three (timeline.md, factors.md, actions.md). Took the numbered steps as authoritative; surfaced the inconsistency in the final postmortem for a future runbook revision.",
+    "followups.md does not exist in this workspace; the runbook's closing Note says to promote immediate action items there. Did not create followups.md unprompted (would be a methodology change), but the three immediate items are captured in actions.md and the final postmortem ready to be moved.",
+    "decisions.md and observations.md were not touched — no commitments or hard-won findings have been earned yet from this incident.",
+    "daybook entry was not opened. The user invoked the postmortem runbook directly, not start-session; opening the daybook unprompted would be scope creep. The postmortem itself is the load-bearing artifact for this session.",
+    "Slug chosen: 'staging-deploy-rollback' — short, kebab-case, names the event without leaking implementation detail (no commit hash or service name, which the user has not yet provided)."
+  ]
+}

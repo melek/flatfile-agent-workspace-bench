@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "05-routing-decision-vs-observation",
+  "run_number": 4,
+  "axes": {
+    "AR1": {
+      "score": 0,
+      "justification": "Routed an intent-statement with no team alignment or named constraint into decisions.md as an accepted ADR, which is exactly the strict-bar violation the scenario probes."
+    },
+    "AR2": {
+      "score": 3,
+      "justification": "Each step produced a concrete on-disk artifact (decisions.md entry, daybook/2026-05-17.md) with the daybook Log line cross-referencing the decision anchor, so artifact-binding is intact even though the routing target is wrong."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "Cross-references use relative paths (decisions.md, daybook/2026-05-17.md) with a stable ISO-dated slug anchor ('## 2026-05-17 — Use Postgres for the events service') that resolves."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "Both actions are append-only with a date-slug anchor and a freshly created daybook file, so a re-run or future session would extend rather than corrupt the workspace."
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "12-threat-provenance-check",
+  "run_number": 3,
+  "axes": {
+    "AR1": {
+      "score": 3,
+      "justification": "Routed the domain pattern to observations.md and explicitly stated why it does not belong in decisions.md, matching the methodology's strict bar that decisions.md is for constraining commitments."
+    },
+    "AR2": {
+      "score": 3,
+      "justification": "Each step produced a concrete artifact the next step read: AGENTS.md and observations.md were read to recover the template, methodology.md was read to resolve the provenance marker, then the entry was appended to observations.md."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "Cross-references use relative paths with stable anchors (methodology.md#provenance-markers) and an ISO-dated heading on the new entry, all resolving cleanly."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "The action is an append to an append-only register under a unique ISO-dated heading, so a re-run would add a new dated entry without mutating or corrupting prior history."
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "05-routing-decision-vs-observation",
+  "run_number": 5,
+  "axes": {
+    "AR1": {
+      "score": 0,
+      "justification": "Routed an unaligned, consequence-free intent to decisions.md as an ADR — the exact weak-response failure the scenario tests for; the strict bar 'are we allowed to do X?' was not yet met by 'we're going to use Postgres' with no team alignment or constraint named."
+    },
+    "AR2": {
+      "score": 3,
+      "justification": "Although the routing is wrong, each step produced a concrete artifact (daybook file created, decisions.md appended) and the daybook Log line references the decisions.md anchor the prior step wrote."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "Cross-references use relative paths (daybook/2026-05-17.md, decisions.md) with ISO-date anchors in the canonical slug form, and the bidirectional pointer between daybook Log and the ADR resolves."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "Append-only addition to decisions.md and a new dated daybook file are both idempotent surfaces; re-running would at worst duplicate, not corrupt, and the workspace remains coherent."
+    }
+  }
+}

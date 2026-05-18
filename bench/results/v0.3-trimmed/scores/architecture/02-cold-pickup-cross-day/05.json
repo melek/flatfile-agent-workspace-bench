@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "02-cold-pickup-cross-day",
+  "run_number": 5,
+  "axes": {
+    "AR1": {
+      "score": 3,
+      "justification": "Treated decisions.md as the durable commitment register and created a new daybook entry for today's response rather than touching the existing decision, matching the methodology's strict bars."
+    },
+    "AR2": {
+      "score": 3,
+      "justification": "Cold-pickup scenario was enacted via concrete file reads (AGENTS.md, decisions.md, 2026-04-22.md) and a created daybook artifact (2026-05-17.md), each step grounded in a real on-disk artifact."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "The decision citation uses the relative path decisions.md with an ISO date anchor (2026-04-15) and exact title, all of which resolve to the actual entry."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "Actions are append-only: the existing decision was read not modified, and a new dated daybook file was created, so a re-run would only refresh reads or no-op on the create without corrupting history."
+    }
+  }
+}

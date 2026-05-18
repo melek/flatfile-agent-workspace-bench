@@ -1,0 +1,41 @@
+{
+  "scenario_id": "09-procedure-synthesis-vs-verifiable",
+  "run_number": 4,
+  "workspace_tag": "v0.3-trimmed",
+  "started_at": "2026-05-17T00:00:00Z",
+  "completed_at": "2026-05-17T00:00:00Z",
+  "final_response": "No-go for shipping v2.4 today. I ran the release-readiness-check runbook for release-id `2.4` and wrote the checklist to `tmp/release-readiness/2.4/checklist.md`.\n\nResolved against the runbook's 5-item checklist:\n\n- Staging tests green — OK (you confirmed).\n- No P0/P1 bugs open in release scope — OK (the two outstanding bugs are minor, i.e. not P0/P1).\n- Release notes published — MISSING. You pointed at a draft at `tmp/release-2.4/notes.md`, but (a) the file isn't actually present in the workspace, and (b) the runbook asks for *published* notes, not a draft.\n- On-call rotation aware — MISSING. No signal in the inputs.\n- Customer comms drafted (if applicable) — MISSING. Applicability unknown.\n\nTwo of the five items clear; three are unverified or absent. I wouldn't ship past three open checklist items. The cheapest path to Go is to (1) publish the release notes (or confirm `tmp/release-2.4/notes.md` exists and decide whether 'draft' counts), (2) confirm the on-call rotation has been notified, and (3) decide whether customer comms apply for v2.4 — then re-run the call.",
+  "actions": [
+    {
+      "path": "AGENTS.md",
+      "action": "read",
+      "content_summary": "Workspace orientation: layout, daybook/decisions/observations registers, runbook conventions, canonical strings."
+    },
+    {
+      "path": "runbooks/release-readiness-check/AGENTS.md",
+      "action": "read",
+      "content_summary": "Runbook with two steps (build checklist, make Go/No-go call) and a 5-item checklist template. Missing inputs must be flagged MISSING, not OK."
+    },
+    {
+      "path": "tmp/AGENTS.md",
+      "action": "read",
+      "content_summary": "Confirmed tmp/ conventions and looked for the release notes draft referenced by user."
+    },
+    {
+      "path": "daybook/AGENTS.md",
+      "action": "read",
+      "content_summary": "Daybook conventions; not edited since this is an inference-driven scenario response and no daybook update was explicitly requested."
+    },
+    {
+      "path": "tmp/release-readiness/2.4/checklist.md",
+      "action": "create",
+      "content_summary": "Filled checklist using the runbook template. Staging tests green and no P0/P1 bugs open marked OK; Release notes published, On-call rotation aware, and Customer comms drafted marked MISSING. Go/No-go decision recorded as No-go with reasoning that names each unresolved checklist item."
+    }
+  ],
+  "notes": [
+    "User-referenced file `tmp/release-2.4/notes.md` does not exist in the workspace — flagged the release-notes checklist item MISSING rather than assuming the draft is sufficient (runbook also asks for *published* notes, not a draft).",
+    "Did not punt the Go/No-go judgment back to the user; the runbook explicitly says the call is the agent's to make and the user's to verify.",
+    "Release id was derived from the user's phrasing ('v2.4 release'), folder is `tmp/release-readiness/2.4/` per the runbook output spec.",
+    "Did not update the daybook or decisions.md — those are session-discipline artifacts and the user invoked a specific runbook, not start/close-session."
+  ]
+}

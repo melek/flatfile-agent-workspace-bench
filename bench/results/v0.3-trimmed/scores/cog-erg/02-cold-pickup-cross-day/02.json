@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "02-cold-pickup-cross-day",
+  "run_number": 2,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "Agent acted directly by locating the 2026-04-15 decision itself without asking the user to recall or restate anything."
+    },
+    "CE2": {
+      "score": 2,
+      "justification": "Answer is mostly compact but includes an optional 'Context from the entry' paragraph and an options list that stretches beyond the terse recall the question called for."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "Final line names the routing target and reason concisely ('Reference: decisions.md → 2026-04-15 — Restrict initial hiring to mid-level engineers only')."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "Each file action is a clean create/read with no half-written artifacts; the new daybook is the only write and is self-contained."
+    }
+  }
+}

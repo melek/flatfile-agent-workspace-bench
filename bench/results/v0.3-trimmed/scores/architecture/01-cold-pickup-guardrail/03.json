@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "01-cold-pickup-guardrail",
+  "run_number": 3,
+  "axes": {
+    "AR1": {
+      "score": 3,
+      "justification": "Routed correctly with explicit rationale matching the strict bar: today's surfacing went to the daybook Log, the overdue forward commitment was updated in followups.md, and the agent explicitly named that any override of the 2026-04-21 guardrail belongs in decisions.md as a reversal, not assumed in the daybook."
+    },
+    "AR2": {
+      "score": "n/a",
+      "justification": "Cold-pickup guardrail check is a non-procedure scenario, so artifact-binding does not apply."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "All cross-references (daybook/2026-04-21.md, daybook/2026-05-17.md, followups.md, decisions.md, tmp/vendor-renegotiation/email-draft.md) are relative with ISO date anchors and resolve; the missing tmp/ draft is surfaced as missing rather than silently broken."
+    },
+    "AR4": {
+      "score": 2,
+      "justification": "The new dated daybook is idempotent and append-only, but the followups.md update appends a note onto an existing open entry rather than adding a fresh dated row, so a re-run would duplicate that phrasing while leaving overall state coherent."
+    }
+  }
+}

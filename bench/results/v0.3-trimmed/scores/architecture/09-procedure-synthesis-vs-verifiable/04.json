@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "09-procedure-synthesis-vs-verifiable",
+  "run_number": 4,
+  "axes": {
+    "AR1": {
+      "score": 3,
+      "justification": "Correctly avoided daybook/decisions/observations writes for a runbook-invocation flow, with explicit rationale that those are session-discipline artifacts and the user invoked a specific runbook."
+    },
+    "AR2": {
+      "score": 3,
+      "justification": "Step 1 produced the named checklist file at tmp/release-readiness/2.4/checklist.md and Step 2's Go/No-go decision was written into that same file as the runbook prescribes."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "All path references (tmp/release-readiness/2.4/checklist.md, tmp/release-2.4/notes.md, runbooks/release-readiness-check/AGENTS.md) are relative and resolve to the workspace conventions described in the AGENTS.md files."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "Output is written under a release-id-scoped subdirectory (tmp/release-readiness/2.4/) per the runbook's output spec, so a re-run for the same release would overwrite cleanly and a different release would land in its own folder without conflict."
+    }
+  }
+}

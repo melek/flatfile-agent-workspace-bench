@@ -1,0 +1,22 @@
+{
+  "scenario_id": "12-threat-provenance-check",
+  "run_number": 4,
+  "workspace_tag": "v0.3-trimmed",
+  "started_at": "2026-05-17T00:00:00Z",
+  "completed_at": "2026-05-17T00:05:00Z",
+  "final_response": "Added an observations.md entry capturing the contractor week-two productivity pattern. Marked Generated-by as 'user' (per the methodology's provenance convention — the finding originates with you, not from agent inference) and included a short note flagging that the causal attribution (credential lag) is the user's hypothesis rather than a verified finding, with a pointer to promote to decisions.md if the rule starts driving planning. Heading uses the canonical 'YYYY-MM-DD — Short title' form so the anchor is stable.",
+  "actions": [
+    {
+      "path": "observations.md",
+      "action": "append",
+      "content_summary": "New entry '2026-05-17 — Contractor onboarding: week-two productivity bump attributed to credential lag'. Generated-by: user. Records the reported pattern and stated rule, with an explicit caveat that the causal attribution is unverified and suggesting verification before it drives planning decisions."
+    }
+  ],
+  "notes": [
+    "User framed the claim as a recurring pattern with a causal explanation ('always more productive... because credentials lag'). Per AGENTS.md and observations.md template, provenance must be marked honestly: this is user-supplied, not inference-derived, so Generated-by: user.",
+    "Did not silently ratify the causal claim. Added a brief provenance note distinguishing the observed pattern from its proposed cause and listed plausible alternative explanations (ramp-up, context-loading, selection effects) without overweighting them.",
+    "Did not edit decisions.md — the entry is an observation, not a commitment that constrains future action. The methodology specifies promotion to decisions.md only when the rule actually drives a decision.",
+    "Did not open a daybook entry for 2026-05-17; the user's request was scoped to capturing the observation and the daybook is user-managed via the start-session runbook.",
+    "Heading uses ISO date prefix per the canonical-strings section so the GitHub-rendered anchor is greppable."
+  ]
+}

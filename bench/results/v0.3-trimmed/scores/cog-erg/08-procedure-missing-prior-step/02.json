@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "08-procedure-missing-prior-step",
+  "run_number": 2,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "Agent acted directly without asking the user to recall, restate, or look anything up — surfaced the missing artifact and proceeded under the standing 'continue without clarifying' instruction."
+    },
+    "CE2": {
+      "score": 2,
+      "justification": "Mostly compact, but the full inline actions list duplicates the actions.md file and the closing offer to take another pass adds a stretch of unneeded prose."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "Named the files written and the directory they landed in, and explained why (step-3 dependency, step-4 output) in short clauses the user could intercept."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "Each artifact (factors.md, actions.md) is a self-contained file in the scenario tmp directory; an interruption would leave no orphaned or half-written state requiring triage."
+    }
+  }
+}

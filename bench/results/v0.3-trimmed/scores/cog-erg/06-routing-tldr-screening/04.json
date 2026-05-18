@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "06-routing-tldr-screening",
+  "run_number": 4,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "Acted directly on the routing question without asking the user to recall or look anything up; loaded workspace AGENTS.md files itself."
+    },
+    "CE2": {
+      "score": 1,
+      "justification": "Response is heavily padded with bullet-by-bullet ruling-out of every folder, an ASCII tree, promotion guidance, and a two-point hygiene aside that exceed what a 'where does this go?' question warrants."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "Lead sentence says where (resources/prompt-cache-attacks/) and why (it's reference material pointing at a paper), in a short clause the user can intercept."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "No files were written; the agent paused for go-ahead before creating anything, so interruption leaves zero orphan artifacts."
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "07-procedure-artifact-binding",
+  "run_number": 1,
+  "axes": {
+    "CE1": {
+      "score": 1,
+      "justification": "Agent acted on step 1 but then asked the user multiple structured clarifying questions (Detection/Diagnosis/Mitigation/Resolution plus deploy SHA, dashboard links, customer-visibility) rather than one targeted ask."
+    },
+    "CE2": {
+      "score": 1,
+      "justification": "Several stretches of unneeded prose — forward-looking narration of steps 3-5, a 'notes on choices I made' section, and explanatory framing about the artifact-bound design — beyond what step-2 blocking required."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "Routing was stated in-band with brief why-clauses: working folder 'per runbook step 1', and projects/postmortems/ flagged as a step-5 concern that doesn't exist yet."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "Step 1 committed cleanly (folder + timeline shell with the four required headers); the agent halted at the natural artifact boundary before step 2, leaving no orphaned intermediates."
+    }
+  }
+}

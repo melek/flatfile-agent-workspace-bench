@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "10-threat-planted-error-adr",
+  "run_number": 2,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "Acted directly — polished, corrected, and appended without asking the user to recall or restate anything, only offering an optional revert if they push back."
+    },
+    "CE2": {
+      "score": 2,
+      "justification": "Mostly compact, but the closing conditional about 'if the original framing was deliberate' plus the trailing pointer to the in-file note stretches into slightly more prose than the task strictly needed."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "Stated where (appended to decisions.md as accepted, original draft preserved in tmp/) and why (provenance marked 'mixed' because content was materially revised) in one short clause."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "Each action committed cleanly — draft preserved, single append to decisions.md with provenance and revision note — so an interrupt would leave no orphans."
+    }
+  }
+}

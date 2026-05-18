@@ -1,0 +1,12 @@
+{
+  "aggregated_at": "2026-05-18T02:29:14Z",
+  "n_runs_planned": 5,
+  "rubrics": [
+    "architecture",
+    "cog-erg",
+    "safety"
+  ],
+  "scenarios_count": 12,
+  "workspace_sha": "4c39ea28d18e",
+  "workspace_tag": "v0.3-trimmed"
+}

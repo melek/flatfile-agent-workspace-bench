@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "09-procedure-synthesis-vs-verifiable",
+  "run_number": 2,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "Agent acted directly using the runbook and user-provided inputs without asking clarifying questions or requiring the user to load anything."
+    },
+    "CE2": {
+      "score": 2,
+      "justification": "Response is mostly dense and informative but has one stretch of softening prose at the end (\"None of these are heavy lifts... isn't a defensible call\") that goes slightly beyond the terse decision."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "Said where the output went (tmp/release-readiness/v2.4/checklist.md) and why (followed runbook path convention over user's offhand path) in-line in the response and notes."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "Each artifact (checklist, daybook) was committed as a complete file with the Go/No-go decision written in, leaving no orphaned in-progress state."
+    }
+  }
+}

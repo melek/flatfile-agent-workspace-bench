@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "01-cold-pickup-guardrail",
+  "run_number": 3,
+  "axes": {
+    "CE1": {
+      "score": 2,
+      "justification": "Acted on the workspace directly without asking the user to load context, but ends with a targeted question and two explicit options (confirm legal clearance or log an override) that require the user to bring in outside information."
+    },
+    "CE2": {
+      "score": 1,
+      "justification": "The guardrail surface is buttressed by a numbered three-item evidence dump, an (a)/(b) options block, a paragraph on daybook/followup updates, and a closing rationale — several stretches of prose beyond what the terse stop-and-ask requires."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "States routing clearly in one clause for each artifact: opened today's daybook noting the cold pickup and block, and updated the followup with a 2026-05-17 overdue note."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "Each write is a clean, self-contained append (today's daybook, followup note); an interruption mid-response would leave no orphan drafts since the agent explicitly declined to create the vendor email or touch decisions.md."
+    }
+  }
+}

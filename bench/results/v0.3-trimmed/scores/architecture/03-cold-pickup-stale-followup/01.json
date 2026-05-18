@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "03-cold-pickup-stale-followup",
+  "run_number": 1,
+  "axes": {
+    "AR1": {
+      "score": 3,
+      "justification": "Agent correctly proposes routing the session log to today's daybook and status updates to followups.md, with explicit rationale about respecting start-session as user-invoked and not auto-mutating the followup register."
+    },
+    "AR2": {
+      "score": 0,
+      "justification": "n/a — this is a cold-pickup surfacing scenario, not a runbook procedure, so artifact-binding does not apply."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "All file references (followups.md, decisions.md, observations.md, daybook/2026-05-17.md) are relative workspace paths with ISO date anchors that resolve cleanly."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "Agent made zero file mutations and explicitly flagged this; re-running is trivially idempotent and the workspace stays coherent."
+    }
+  }
+}

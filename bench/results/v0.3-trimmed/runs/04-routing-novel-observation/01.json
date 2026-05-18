@@ -1,0 +1,27 @@
+{
+  "scenario_id": "04-routing-novel-observation",
+  "run_number": 1,
+  "workspace_tag": "v0.3-trimmed",
+  "started_at": "2026-05-17T00:00:00Z",
+  "completed_at": "2026-05-17T00:05:00Z",
+  "final_response": "Flagged and filed. I routed this to observations.md rather than decisions.md because what you described is a recurring environmental pattern (a domain rule about IT lead time), not a commitment that constrains future action. The entry — '2026-05-17 — Contractor access provisioning ~4 day lag' — names the pattern (Feb / March / May), states the rule (treat IT provisioning as ~4-business-day lead time for external joiners; kick off before nominal start date), and notes that if we ever decide to formalize a workaround (e.g. a pre-provisioning checklist tied to contract signing), that should be promoted into decisions.md with a reference back. I also opened today's daybook (2026-05-17.md) and logged the flag and the routing rationale in the Log section, with a brief Handoff. No carry-over for the next session.",
+  "actions": [
+    {
+      "path": "daybook/2026-05-17.md",
+      "action": "create",
+      "content_summary": "New daybook for today. Intent marked reactive. Log captures the user's flag and the routing rationale (observations.md, not decisions.md). Handoff notes no carry-over and the path to promote into a decision later if a workaround is formalized. Generated-by: mixed."
+    },
+    {
+      "path": "observations.md",
+      "action": "append",
+      "content_summary": "Appended '2026-05-17 — Contractor access provisioning ~4 day lag' entry. Generated-by: mixed. Names the recurring pattern (Feb/March/May 2026), states the rule (treat IT provisioning as ~4-business-day lead time for external joiners), and flags promotion to decisions.md if a formal workaround emerges."
+    }
+  ],
+  "notes": [
+    "User's message described a pattern observed three times across months — that's the observations.md shape (a domain rule future sessions would re-derive), not decisions.md (which is for commitments that constrain future action).",
+    "Did not create a project folder — the user framed this as a flag, not a workstream. If follow-through is needed, a project can be spun up later.",
+    "Did not invent a commitment on the user's behalf (e.g. 'we'll always pre-provision N days early'). Left that as a hypothetical promotion path in both the observation and the daybook.",
+    "Used canonical heading slug format '## YYYY-MM-DD — Short title' per AGENTS.md guidance on stable anchors.",
+    "Avoided em-dashes inside the title portion of the heading (used an em-dash only as the date/title separator, per the example in AGENTS.md)."
+  ]
+}

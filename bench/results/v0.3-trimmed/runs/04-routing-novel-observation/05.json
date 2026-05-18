@@ -1,0 +1,27 @@
+{
+  "scenario_id": "04-routing-novel-observation",
+  "run_number": 5,
+  "workspace_tag": "v0.3-trimmed",
+  "started_at": "2026-05-17T22:20:58Z",
+  "completed_at": "2026-05-17T22:21:24Z",
+  "final_response": "Captured it. This is a textbook observations.md entry rather than a decision: it's a recurring domain pattern (now triple-attested across February, March, and today) that would otherwise get re-derived every time we scope a contractor-dependent project. I appended it to observations.md as a dated entry with a Generated-by: user marker, framed it as a planning rule (assume ~4 business days of onboarding lag from kickoff; start the IT request earlier where policy allows; escalate at request time if the timeline can't absorb the lag), and dropped a Log line in today's daybook (2026-05-17.md) pointing back to the observation so the routing is traceable. I did not promote it to decisions.md because no commitment has been made yet that constrains future action — it's a finding about reality, not a rule we've adopted. If you want to turn the planning rule into an explicit commitment (e.g., 'no contractor-dependent project kickoff date is set without IT credentials request submitted N days prior'), that's the version that would earn a decisions.md entry, and I can draft it.",
+  "actions": [
+    {
+      "path": "observations.md",
+      "action": "append",
+      "content_summary": "Added dated observation '2026-05-17 — IT credentials provisioning lag for external contractors' with Generated-by: user, naming the explicit rule (~4 business days onboarding lag, request earlier, escalate at request time)."
+    },
+    {
+      "path": "daybook/2026-05-17.md",
+      "action": "create",
+      "content_summary": "Created today's daybook with reactive-day Intent, a Log entry pointing to the new observation by anchor, a brief Handoff, and Generated-by: inference."
+    }
+  ],
+  "notes": [
+    "Routed to observations.md (not decisions.md) because the user reported a pattern, not a commitment. observations.md's bar — 'finding future-you would re-derive' and 'domain rule that constrains decisions but isn't itself a commitment' — matches exactly.",
+    "Did not create a project folder: the user framed this as a flag, not as work to pursue. If it grows into remediation work, that would be the moment to spin up projects/contractor-onboarding-lag/.",
+    "Offered explicitly in the response how to escalate the observation to a decisions.md commitment if the user wants to lock in the planning rule as a constraint, without doing so unilaterally.",
+    "Used Generated-by: user on the observation (the user produced the finding) and Generated-by: inference on the daybook (agent drafted it end-to-end), per methodology provenance markers.",
+    "Did not read scenario.md or expected-signals.md."
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "03-cold-pickup-stale-followup",
+  "run_number": 3,
+  "axes": {
+    "AR1": {
+      "score": 3,
+      "justification": "Triage went into the daybook Log as the chronological catch-all surface, followups.md was correctly left unmodified pending user action, and decisions.md/observations.md were correctly not touched since no commitment or pattern was established — routing aligns with the methodology's strict bars."
+    },
+    "AR2": {
+      "score": 2,
+      "justification": "Created daybook/2026-05-17.md as the concrete artifact for the triage; the only prose-only element is the suggested 'chased twice' update which is deferred to the user rather than enacted."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "The single cross-reference (`daybook/2026-05-17.md`) is a stable relative path that resolves, and the date anchor is ISO-formatted."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "Daybook creation is single-file-per-day and append-only within, followups.md was deliberately not mutated, and the user-facing instruction explicitly directs append-style updates rather than rewrites — re-running stays coherent."
+    }
+  }
+}

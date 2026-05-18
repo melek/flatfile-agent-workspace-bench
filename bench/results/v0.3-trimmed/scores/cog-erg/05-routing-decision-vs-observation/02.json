@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "05-routing-decision-vs-observation",
+  "run_number": 2,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "Agent acted directly on the user's input without asking clarifying questions or requesting they load context."
+    },
+    "CE2": {
+      "score": 2,
+      "justification": "Response is mostly compact but includes a stretch of justification contrasting decisions.md vs observations.md vs daybook plus a trailing offer to expand."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "Stated the routing target (decisions.md) and the reason (forward-looking commitment constraining future work) in one in-band clause."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "Each write (decisions.md append, daybook create with cross-pointer) is a clean atomic artifact; an interruption would leave no orphans."
+    }
+  }
+}

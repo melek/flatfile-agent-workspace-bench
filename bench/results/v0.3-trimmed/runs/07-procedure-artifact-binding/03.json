@@ -1,0 +1,75 @@
+{
+  "scenario_id": "07-procedure-artifact-binding",
+  "run_number": 3,
+  "workspace_tag": "v0.3-trimmed",
+  "started_at": "2026-05-17T19:00:00Z",
+  "completed_at": "2026-05-17T19:08:00Z",
+  "final_response": "Ran the incident-postmortem runbook for the 2026-05-17 ~14:30 staging deploy rollback. Used slug `2026-05-17-staging-rollback`. Followed all five steps in order, producing one artifact per step, each reading from the prior one.\n\nStep 1 — created `tmp/incident-postmortem/2026-05-17-staging-rollback/` and wrote `timeline.md` with the four required headers (Detection / Diagnosis / Mitigation / Resolution) as placeholders.\n\nStep 2 — filled `timeline.md` from what the user supplied (`~14:30`, staging, rollback). Because no logs, dashboards, or deploy records were pointed at, I recorded the known facts and explicitly tagged every concrete timestamp / signal / change-set as `[UNCONFIRMED]` rather than fabricate. Closed the file with the three highest-leverage open questions for the on-call.\n\nStep 3 — wrote `factors.md` reading from the timeline. Listed contributing-cause **categories** (the change itself, pre-deploy verification gap, detection latency, rollback-as-default) as `[CONJECTURE]` pending the timeline being filled, plus contributing context (staging-only blast radius, deploy cadence unknown, on-call state unknown) and things that worked (rollback succeeded, staging caught it, detection was fast enough).\n\nStep 4 — wrote `actions.md` reading from `factors.md`. Three immediate items (capture deploy diff + detection signal; confirm rollback target was clean; isolate the specific change), three next-quarter items (close verification gap; reduce detection latency; record the rollback-vs-forward-fix heuristic), two aspirational (progressive staging rollout; automated postmortem-data capture).\n\nStep 5 — composed the final postmortem at `projects/postmortems/2026-05-17-staging-rollback.md` with sections drawn from each intermediate and back-links to each source artifact. Created `projects/postmortems/AGENTS.md` because the projects/AGENTS.md convention requires one per project folder.\n\nPer the runbook's note, promoted the three immediate action items into `followups.md` at workspace root.\n\nThe postmortem is honest about being a structural draft: the shape is in place, the substance is gated on the on-call filling in timestamps, the deploy diff, and the detection signal. Re-running steps 2–5 against a filled timeline will populate the rest. If you want, give me the deploy record and detection trace and I'll re-run.",
+  "actions": [
+    {
+      "path": "tmp/incident-postmortem/2026-05-17-staging-rollback/timeline.md",
+      "action": "create",
+      "content_summary": "Step 1 + 2 artifact. Headers Detection / Diagnosis / Mitigation / Resolution, populated with what the user supplied (~14:30 staging incident, rollback action) and every concrete timestamp/signal/change-set tagged [UNCONFIRMED] pending on-call input. Closes with the three highest-leverage open questions."
+    },
+    {
+      "path": "tmp/incident-postmortem/2026-05-17-staging-rollback/factors.md",
+      "action": "create",
+      "content_summary": "Step 3 artifact, reads from timeline.md. Three sections per runbook: Contributing causes (multiple categories, [CONJECTURE]-tagged), Contributing context (staging-only blast radius noted, others unknown), Things that worked (rollback succeeded, staging caught it, detection fast enough to enable rollback)."
+    },
+    {
+      "path": "tmp/incident-postmortem/2026-05-17-staging-rollback/actions.md",
+      "action": "create",
+      "content_summary": "Step 4 artifact, reads from factors.md. Eight action items tagged (immediate | next-quarter | aspiration): 3 immediate (capture deploy diff, confirm rollback target, isolate offending change); 3 next-quarter (close verification gap, reduce detection latency, capture rollback heuristic); 2 aspirational (progressive staging rollout, automated postmortem capture)."
+    },
+    {
+      "path": "projects/postmortems/AGENTS.md",
+      "action": "create",
+      "content_summary": "Project briefing for the new projects/postmortems/ folder. Status: active, started 2026-05-17, status generated-by inference. Scope: in = runbook-produced postmortems; out = ad-hoc retros / near-misses. Notes that 2026-05-17-staging-rollback.md is the first entry."
+    },
+    {
+      "path": "projects/postmortems/2026-05-17-staging-rollback.md",
+      "action": "create",
+      "content_summary": "Step 5 final postmortem. Summary, Timeline, Contributing factors (causes + context + things that worked), Action items (immediate / next-quarter / aspiration), Cross-references to each tmp/ intermediate and to the runbook. Marked as a structural draft because the timeline is largely [UNCONFIRMED]."
+    },
+    {
+      "path": "followups.md",
+      "action": "create",
+      "content_summary": "Top-level followups register. Three immediate action items from the postmortem promoted per the runbook's explicit instruction: capture deploy diff + detection signal, confirm rollback target clean, isolate the offending change. Each carries origin back-link, owner, and what-to-do."
+    },
+    {
+      "path": "AGENTS.md",
+      "action": "read",
+      "content_summary": "Workspace orientation read for layout + canonical-strings conventions."
+    },
+    {
+      "path": "runbooks/AGENTS.md",
+      "action": "read",
+      "content_summary": "Runbooks folder conventions, esp. artifact-binding default."
+    },
+    {
+      "path": "runbooks/incident-postmortem/AGENTS.md",
+      "action": "read",
+      "content_summary": "The runbook executed — 5 steps, each artifact-bound."
+    },
+    {
+      "path": "projects/AGENTS.md",
+      "action": "read",
+      "content_summary": "Project-folder conventions — used to justify creating projects/postmortems/AGENTS.md."
+    },
+    {
+      "path": "daybook/AGENTS.md",
+      "action": "read",
+      "content_summary": "Daybook conventions; consulted but no daybook entry was written because the user invoked a specific runbook rather than a session-bookend."
+    }
+  ],
+  "notes": [
+    "Workspace path used throughout: ~/Documents/GitHub/flatfile-agent-workspace/bench/results/v0.3-trimmed/runs/07-procedure-artifact-binding/03-workspace/.",
+    "Slug chosen: `2026-05-17-staging-rollback` — kebab-case, ISO-prefixed, action/event-shaped, matches the runbook's `YYYY-MM-DD-<slug>` requirement.",
+    "Followed the artifact-binding discipline strictly: each step wrote exactly the file the next step expects to read, even where substance was thin (timeline filled with [UNCONFIRMED] markers rather than fabrication, because the runbook says missing inputs should stall visibly rather than drift silently).",
+    "Did not interview the user interactively — the calling instructions said to make the reasonable call without stopping for clarification. Reasonable call: produce the structural draft, name every gap, queue the gap-closing work in followups.md.",
+    "Created projects/postmortems/AGENTS.md proactively because projects/AGENTS.md requires every project folder to carry one — the runbook's step 5 implies the folder exists but doesn't enforce the AGENTS.md.",
+    "Promoted all three immediate action items into followups.md per the runbook's explicit Notes instruction (`Promote any 'immediate' action item into followups.md.`).",
+    "Did not write to decisions.md or observations.md — the runbook says these are *possible* outputs, and nothing in this incident yet justifies a durable workspace-level commitment or pattern entry. Action item 6 flags the rollback-vs-forward-fix heuristic as a candidate for one of those once the timeline is filled.",
+    "Did not open today's daybook — the user invoked a specific runbook rather than starting a session; the runbook is the load-bearing unit of work here. If the user signals session-close I'd offer to open it then."
+  ]
+}

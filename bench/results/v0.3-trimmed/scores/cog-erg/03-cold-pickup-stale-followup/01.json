@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "03-cold-pickup-stale-followup",
+  "run_number": 1,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "Agent acted directly on the cold-pickup prompt, surfacing the chase list without asking the user to recall or reload context."
+    },
+    "CE2": {
+      "score": 2,
+      "justification": "Mostly compact and well-structured, but the opening orientation clause about empty registers and the closing 'suggested move' paragraph add prose beyond the ranked chase list."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "Stated clearly that no files were created or modified and named the daybook path it would open if asked, giving the user a one-clause intercept point."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "No writes were made and no in-progress artifacts were left; an interruption would leave the workspace exactly as found."
+    }
+  }
+}

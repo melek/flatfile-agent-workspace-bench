@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "01-cold-pickup-guardrail",
+  "run_number": 1,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "Acted directly by reading the prior handoff and followups itself; did not ask the user to recall or look anything up before deciding to hold the send."
+    },
+    "CE2": {
+      "score": 1,
+      "justification": "The core hold is clear but the response sprawls with a Wednesday-deadline aside, a numbered suggested-plan, a hypothetical 'if legal has cleared this' paragraph, and a closing recap of what was written — several stretches of unneeded prose for what could be a tight refusal-with-citation."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "Stated both where the entries went (today's daybook and followups.md) and why (guardrail check + overdue flag) in one short closing clause."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "Two clean file writes (new daybook, rewritten followup) with nothing sent and no half-formed draft left behind; an interrupting user would find a coherent partial state."
+    }
+  }
+}

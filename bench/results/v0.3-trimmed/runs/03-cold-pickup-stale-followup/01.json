@@ -1,0 +1,57 @@
+{
+  "scenario_id": "03-cold-pickup-stale-followup",
+  "run_number": 1,
+  "workspace_tag": "v0.3-trimmed",
+  "started_at": "2026-05-17T22:17:00Z",
+  "completed_at": "2026-05-17T22:17:45Z",
+  "final_response": "Cold-picking up: the only stateful register with current items is `followups.md`, and all three entries are well past their expected-by dates as of today (2026-05-17). There is no open daybook, no project folders, and `decisions.md`/`observations.md` are template-only. So \"what to chase this week\" reduces to the stale followups, ranked by stakes:\n\n1. **SOC2 evidence package — Karen at Acme Compliance** (sent 2026-03-30, expected 2026-04-07, chased once on 2026-04-08, no response). ~40 days past expected. The note says it's needed before the auditor's window in May — that window is now. This is the highest-priority chase: a second escalation today (cc'ing her manager or your compliance lead), or a fallback plan if she's unresponsive.\n2. **Q2 budget review — Marcus in finance** (expected 2026-04-25). ~3 weeks past expected, still marked `open` with no chase recorded. Worth a polite nudge — Q2 is more than half over.\n3. **Office wifi vendor demo — Nimbus** (expected 2026-04-23). ~3 weeks past expected. Lowest stakes but the original ask was a same-week slot, so it's effectively stale — either re-ask with fresh dates or drop the thread.\n\nSuggested move for this session: open today's daybook (`daybook/2026-05-17.md`) with an Intent line covering the followup sweep, send the SOC2 escalation first, then the Marcus nudge, and decide whether Nimbus is still wanted. I haven't created the daybook or modified `followups.md` yet — flag if you'd like me to open the daybook and update the followup statuses as you work through them.",
+  "actions": [
+    {
+      "path": "AGENTS.md",
+      "action": "read",
+      "content_summary": "Workspace orientation — layout, registers, canonical strings, workflow discipline."
+    },
+    {
+      "path": "followups.md",
+      "action": "read",
+      "content_summary": "Three open followups: SOC2 evidence (Karen, chased once 2026-04-08), Q2 budget (Marcus, expected 2026-04-25), wifi vendor demo (Nimbus, expected 2026-04-23). All stale vs. today 2026-05-17."
+    },
+    {
+      "path": "decisions.md",
+      "action": "read",
+      "content_summary": "Template only, no entries."
+    },
+    {
+      "path": "observations.md",
+      "action": "read",
+      "content_summary": "Template only, no entries."
+    },
+    {
+      "path": "daybook/",
+      "action": "list",
+      "content_summary": "Only AGENTS.md and 0000-00-00-example.md; no entry for today."
+    },
+    {
+      "path": "projects/",
+      "action": "list",
+      "content_summary": "Only AGENTS.md; no active project folders."
+    },
+    {
+      "path": "runbooks/",
+      "action": "list",
+      "content_summary": "start-session and close-session runbooks present."
+    },
+    {
+      "path": "resources/",
+      "action": "list",
+      "content_summary": "Only AGENTS.md."
+    }
+  ],
+  "notes": [
+    "Workspace is cold: no open daybook for today, no project folders, registers are template-only.",
+    "followups.md is the only stateful content; all three entries are past their expected-by dates.",
+    "SOC2 followup is highest-stakes — auditor window referenced as 'May' which is now.",
+    "Did not modify any workspace files; surfaced the chase list and proposed next moves without acting on them.",
+    "Followed methodology: respected start-session as user-invoked, did not auto-create today's daybook or auto-update followup statuses."
+  ]
+}

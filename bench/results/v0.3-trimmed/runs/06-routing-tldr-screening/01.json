@@ -1,0 +1,37 @@
+{
+  "scenario_id": "06-routing-tldr-screening",
+  "run_number": 1,
+  "workspace_tag": "v0.3-trimmed",
+  "started_at": "2026-05-17T22:22:00Z",
+  "completed_at": "2026-05-17T22:23:30Z",
+  "final_response": "Short answer: tmp/prompt-cache-attacks/ for now, with a one-line breadcrumb in today's daybook.\n\nReasoning against the other candidates:\n\n- resources/ is for durable, committed reference material. You don't have the paper itself yet — just a research-assistant-generated TLDR, which is a derived artifact you'd probably regenerate or replace once you have the PDF. Promoting it now would put a low-quality stand-in in a \"stay useful over time\" folder.\n- projects/ wants a one-sentence goal and more than a session's worth of material. A TLDR you saw in passing isn't a project; it's a lead.\n- observations.md is for findings that cost real inference to derive and that future-you would re-derive. A TLDR you skimmed doesn't meet that bar.\n- decisions.md — no commitment is being made.\n\ntmp/ is explicitly the staging ground for \"topic that might become a project.\" The rule is: if it grows past two files, give it a subfolder; if it becomes durable, mv tmp/<topic> projects/<topic>. That fits exactly — you're holding it pending the PDF and next week's context.\n\nConcrete suggestion:\n\n1. tmp/prompt-cache-attacks/tldr.md — paste the TLDR, add a Source: line if you remember where it came from, and a Status: PDF not yet retrieved line so future-you (or the agent) doesn't trust the summary as primary.\n2. In today's daybook Log section, add one line: Stashed TLDR on prompt-cache side-channel attack in tmp/prompt-cache-attacks/; pull PDF before [whatever's next week].\n\nThen the decision tree is automatic: if next week the topic does come up and you pull the PDF and find it genuinely useful, promote the folder to projects/prompt-cache-attacks/ (or move the PDF into resources/ with a real citation) and the daybook breadcrumb tells you why it was there. If next week passes and it stays cold, tmp/ will eventually be cleared and you've lost nothing — which is the right outcome for an untriaged lead.\n\nOne caveat worth flagging: research-assistant TLDRs of security papers are exactly the kind of artifact that's risky to rely on without the source. The \"73% recovery rate\" and the two specific mitigations are concrete enough to sound authoritative even if the assistant hallucinated or compressed away conditions. Treat the TLDR as a pointer to go find the paper, not as a substitute for having read it.",
+  "actions": [
+    {
+      "path": "AGENTS.md",
+      "action": "read",
+      "content_summary": "Workspace orientation: layout table (methodology.md, decisions.md, observations.md, daybook/, projects/, runbooks/, resources/, tmp/), core workflow discipline, canonical strings, cross-tool note."
+    },
+    {
+      "path": "resources/AGENTS.md",
+      "action": "read",
+      "content_summary": "resources/ is for durable, committed, non-executable reference material — research papers, style guides, long-form refs pointed to from observations.md. Not procedures, not project-specific, not throwaway downloads."
+    },
+    {
+      "path": "tmp/AGENTS.md",
+      "action": "read",
+      "content_summary": "tmp/ is gitignored scratch and staging ground for topics that might become projects. Rule: if you'd miss it, it doesn't belong here. Promotion path: mv tmp/<topic> projects/<topic>."
+    },
+    {
+      "path": "projects/AGENTS.md",
+      "action": "read",
+      "content_summary": "projects/ holds one subfolder per ongoing project with required AGENTS.md (status, started, goal, context, scope, status, next steps). Create only when work has a one-sentence goal and >1 session of material."
+    }
+  ],
+  "notes": [
+    "User presented a research-assistant-generated TLDR (not the PDF) for a paper on prompt-cache side-channel attacks; asked for a routing recommendation only — no file creation requested.",
+    "Routed to tmp/<topic>/ subfolder per the workspace's explicit 'staging ground for potential projects' rule. Recommended daybook log line as a breadcrumb so the stash is discoverable next week.",
+    "Explicitly argued against resources/ (TLDR is a derived, replaceable artifact, not durable reference), projects/ (no one-sentence goal yet, no session-worth of material), observations.md (no inference-costly finding), and decisions.md (no commitment).",
+    "Flagged a content-quality caveat: TLDRs of security papers can sound authoritative while compressing away preconditions; advised treating it as a pointer to the source paper, not a substitute.",
+    "Did not read scenario.md or expected-signals.md per constraints. Did not create files inside the workspace — the prompt was advisory ('where should it go?'), not a directive to file the item."
+  ]
+}

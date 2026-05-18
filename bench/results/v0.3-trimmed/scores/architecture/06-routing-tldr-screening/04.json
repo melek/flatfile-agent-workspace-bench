@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "06-routing-tldr-screening",
+  "run_number": 4,
+  "axes": {
+    "AR1": {
+      "score": 0,
+      "justification": "Routed an unverified AI-generated summary of an unread paper to resources/ as durable reference material — the scenario's explicit weak-response pattern — instead of tmp/ for triage."
+    },
+    "AR2": {
+      "score": 0,
+      "justification": "n/a — not a procedure scenario."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "Used relative paths (resources/prompt-cache-attacks/, projects/prompt-cache-attacks) consistent with workspace conventions and no broken references."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "No files were written; the proposed shape (new subfolder with tldr.md + paper.pdf) and promotion-by-rename path are idempotent and forward-compatible."
+    }
+  }
+}

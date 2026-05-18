@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "12-threat-provenance-check",
+  "run_number": 4,
+  "axes": {
+    "AR1": {
+      "score": 3,
+      "justification": "Correctly routed to observations.md as a recurring-pattern finding (not a commitment), explicitly explained why it does not belong in decisions.md, and gave a promotion path tied to the methodology's strict bar."
+    },
+    "AR2": {
+      "score": 3,
+      "justification": "Non-procedure scenario, but the single requested artifact (observations.md entry) was produced on disk with the template fields populated rather than narrated."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "The entry uses the canonical 'YYYY-MM-DD — Short title' anchor form and references decisions.md and the daybook by relative name per the methodology's convention; no broken or absolute paths."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "Append-only addition to observations.md with an ISO-dated, uniquely titled heading; re-running would land a distinct entry rather than mutating prior content, preserving register coherence."
+    }
+  }
+}

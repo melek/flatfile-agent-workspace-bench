@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "02-cold-pickup-cross-day",
+  "run_number": 2,
+  "axes": {
+    "AR1": {
+      "score": 3,
+      "justification": "Did not modify decisions.md (correctly treated the standing decision as constraining), logged the session and forward-looking Guardrails in today's daybook handoff — routing matches the methodology's strict bars."
+    },
+    "AR2": {
+      "score": 3,
+      "justification": "Non-procedure cold-pickup scenario, but each read produced grounding for the next action and the session ended with a concrete daybook file containing Intent/Log/Handoff/Guardrails."
+    },
+    "AR3": {
+      "score": 2,
+      "justification": "Final response cites 'decisions.md → 2026-04-15' using a readable relative reference, but lacks an explicit anchor/heading slug that would make the cross-reference robust to file edits."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "Actions are append-only (new daybook file created, decisions.md untouched) and the Guardrails note in the handoff would be re-readable without conflict on any future cold-pickup."
+    }
+  }
+}

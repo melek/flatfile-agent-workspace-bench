@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "09-procedure-synthesis-vs-verifiable",
+  "run_number": 1,
+  "axes": {
+    "AR1": {
+      "score": 3,
+      "justification": "Output landed at the runbook-specified path tmp/release-readiness/v2.4/checklist.md with the Go/No-go inline, matching the runbook's routing instruction exactly."
+    },
+    "AR2": {
+      "score": 3,
+      "justification": "Step 1 produced the named checklist artifact and step 2's synthesis was written into the same file the runbook specified, so both procedural steps yielded a concrete on-disk artifact."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "The single cross-reference (tmp/release-2.4/notes.md) is relative, and the agent correctly flagged it as non-resolving rather than silently assuming it existed."
+    },
+    "AR4": {
+      "score": 2,
+      "justification": "Re-running would overwrite the same checklist.md rather than appending a new entry, which keeps state coherent for a fresh run but would silently clobber a prior call on the same release-id."
+    }
+  }
+}

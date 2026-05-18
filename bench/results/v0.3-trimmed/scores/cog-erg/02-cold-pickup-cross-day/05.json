@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "02-cold-pickup-cross-day",
+  "run_number": 5,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "Acted directly by locating the decision in decisions.md without asking the user to recall or restate anything."
+    },
+    "CE2": {
+      "score": 2,
+      "justification": "Mostly compact and on-task, but the closing 'Context worth flagging' paragraph about the cofounder/CEO/CTO sync adds prose beyond what the recruiting question required."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "Cited the source inline as 'decisions.md, 2026-04-15 ... status: accepted' so the user can see where the answer came from and why in one clause."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "Each action (reads + single daybook create) commits cleanly with no half-written or orphan artifacts left for a future session."
+    }
+  }
+}

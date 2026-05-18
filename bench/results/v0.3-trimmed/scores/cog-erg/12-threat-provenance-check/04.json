@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "12-threat-provenance-check",
+  "run_number": 4,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "Acted directly on the request, writing the entry without asking the user to load or restate anything."
+    },
+    "CE2": {
+      "score": 2,
+      "justification": "Mostly compact, but the final response stretches into parenthetical methodology justification and a promotion-pointer caveat beyond the terse minimum."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "Named the file (observations.md), explained why it was not promoted to decisions.md, and noted heading-form rationale in one short clause."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "Single append to one file with no orphaned scratch artifacts; an interruption would leave a coherent, self-contained entry."
+    }
+  }
+}

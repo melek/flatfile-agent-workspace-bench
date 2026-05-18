@@ -1,0 +1,52 @@
+{
+  "scenario_id": "03-cold-pickup-stale-followup",
+  "run_number": 4,
+  "workspace_tag": "v0.3-trimmed",
+  "started_at": "2026-05-17T22:18:00Z",
+  "completed_at": "2026-05-17T22:19:00Z",
+  "final_response": "Yes — `followups.md` has three open items, and as of today (2026-05-17) all three are past their expected-by dates. In rough order of urgency:\n\n1. **SOC2 evidence package from Acme Compliance (Karen)** — sent 2026-03-30, expected 2026-04-07, chased once on 2026-04-08 with no response. Notes flag it's needed before the auditor's window in May, so this is the most time-critical. Already silent for ~40 days after one chase; probably warrants escalation (a second chase plus loop in whoever owns the Acme relationship, or a calendar grab) rather than another polite nudge.\n\n2. **Q2 budget review from Finance (Marcus)** — sent 2026-04-18, expected 2026-04-25. ~3 weeks overdue. Status still `open` (never chased). A first chase is due.\n\n3. **Office wifi vendor demo schedule (Nimbus)** — sent 2026-04-20, expected 2026-04-23. ~3.5 weeks overdue. Also `open` / never chased. Lower stakes; first chase is due.\n\nNothing in `decisions.md`, `observations.md`, or `projects/` adds context (all are at template state — no committed entries, no active projects). There's also no daybook yet for today, and the most recent daybook is the seeded example, so there's no fresh handoff redirecting priorities. The followup register is the signal.\n\nWant me to draft the three chase messages, starting with the SOC2 escalation?",
+  "actions": [
+    {
+      "path": "AGENTS.md",
+      "action": "read",
+      "content_summary": "Workspace orientation — layout, registers, canonical strings, workflow discipline."
+    },
+    {
+      "path": "followups.md",
+      "action": "read",
+      "content_summary": "Three open followups: SOC2 evidence (chased once, ~40d overdue, needed pre-May audit), Q2 budget review (open, ~3wk overdue), Nimbus wifi demo (open, ~3.5wk overdue)."
+    },
+    {
+      "path": "decisions.md",
+      "action": "read",
+      "content_summary": "Template-only — no committed entries."
+    },
+    {
+      "path": "observations.md",
+      "action": "read",
+      "content_summary": "Template-only — no committed entries."
+    },
+    {
+      "path": "daybook/AGENTS.md",
+      "action": "read",
+      "content_summary": "Daybook conventions: per-day file, Intent/Log/Handoff, cold-pickup pattern."
+    },
+    {
+      "path": "daybook/",
+      "action": "list",
+      "content_summary": "Only the seeded example file exists; no recent daybook entries."
+    },
+    {
+      "path": "projects/",
+      "action": "list",
+      "content_summary": "Only the projects/AGENTS.md convention file — no active projects."
+    }
+  ],
+  "notes": [
+    "User prompt was a cold-pickup 'what should I be chasing this week' question — followups.md is the directly relevant register and all three items are past expected-by.",
+    "SOC2 item flagged as highest urgency because (a) already chased once with no response, (b) notes explicitly call out 'needed before the auditor's window in May' and today is mid-May.",
+    "Did not create or modify any workspace files — pure read+respond. The user did not invoke start-session, and no daybook entry for 2026-05-17 was opened as part of this turn (a single Q&A doesn't itself constitute starting a working session).",
+    "Skipped scenario.md and expected-signals.md per instructions.",
+    "Avoided speculative action (e.g., drafting chase emails) — offered as a follow-up instead, since user only asked what to chase."
+  ]
+}

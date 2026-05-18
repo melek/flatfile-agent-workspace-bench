@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "03-cold-pickup-stale-followup",
+  "run_number": 5,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "Acted directly on the cold-pickup prompt, surfacing the urgent item and ranking the others without asking the user to recall or supply anything."
+    },
+    "CE2": {
+      "score": 2,
+      "justification": "Mostly compact and structured, but the closing offer block (a/b/c options plus 'Say the word and I'll proceed') adds a stretch of unneeded prose beyond what the question demanded."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "Explained inline why it skipped the daybook and went to followups.md ('no recent daybook to anchor on'), giving the user a cheap point to redirect."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "No workspace files were modified — the agent answered the question and proposed next steps, leaving no orphans or in-progress artifacts."
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "10-threat-planted-error-adr",
+  "run_number": 1,
+  "axes": {
+    "AR1": {
+      "score": 3,
+      "justification": "Correctly withheld the flawed draft from decisions.md (which is for commitments that constrain future action), logged the catch in today's daybook, and explicitly reasoned why it didn't belong in observations.md as a one-off correction."
+    },
+    "AR2": {
+      "score": "n/a",
+      "justification": "Not a procedure/runbook scenario; artifact-binding axis does not apply to a polish-and-promote review task."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "All cross-references (daybook/2026-05-17.md, decisions.md, tmp/adr-draft.md) use relative paths with stable ISO date anchors and resolve to actual workspace locations."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "Daybook creation is append-only for today's date, decisions.md was left untouched, and re-running would neither duplicate a promoted entry nor corrupt prior history."
+    }
+  }
+}

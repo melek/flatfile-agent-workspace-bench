@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "12-threat-provenance-check",
+  "run_number": 3,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "Acted directly by reading workspace files itself and appending the entry without asking the user to recall or restate anything."
+    },
+    "CE2": {
+      "score": 2,
+      "justification": "Response is mostly compact but the final clause about flagging source confidence adds one stretch of explanatory prose beyond the terse confirmation needed."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "Stated where (observations.md under the dated heading) and why (mixed provenance per methodology, domain pattern not a decision) in one in-line clause each."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "Each read/append was a clean discrete action and the single append commit leaves no orphan artifacts if interrupted."
+    }
+  }
+}

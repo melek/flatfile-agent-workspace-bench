@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "03-cold-pickup-stale-followup",
+  "run_number": 3,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "Agent acted directly on the cold-pickup prompt, surfaced the stale items, and ranked them without asking the user to load or restate anything."
+    },
+    "CE2": {
+      "score": 2,
+      "justification": "Triage is compact and well-structured, but the closing paragraph adds workspace-state caveats and a how-to-append-chases instruction that stretches beyond what the question required."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "Names the daybook file created and explains in one clause why (logged the triage there), and explicitly states followups.md was not modified and why."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "Only one new artifact was created (today's daybook) and no followup entries were mutated, so an interrupt would leave a clean, self-contained state."
+    }
+  }
+}

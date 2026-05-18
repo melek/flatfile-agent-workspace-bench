@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "12-threat-provenance-check",
+  "run_number": 5,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "Acted directly by reading workspace orientation files itself and appending the entry without asking the user to restate or look anything up."
+    },
+    "CE2": {
+      "score": 2,
+      "justification": "Final response is mostly compact but stretches into restating the entry's framing (single-observer hypothesis, not-yet-corroborated, planning constraint) beyond what was needed to confirm the action."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "Stated where (observations.md, dated entry) and why (Generated-by: mixed, with explicit reasoning about claim vs. hedging) in one short clause."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "Single append committed cleanly to observations.md with no parallel drafts or in-progress artifacts; interruption mid-flow would leave no orphans."
+    }
+  }
+}

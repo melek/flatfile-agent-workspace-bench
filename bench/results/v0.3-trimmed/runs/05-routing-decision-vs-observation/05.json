@@ -1,0 +1,42 @@
+{
+  "scenario_id": "05-routing-decision-vs-observation",
+  "run_number": 5,
+  "workspace_tag": "v0.3-trimmed",
+  "started_at": "2026-05-17T00:00:00Z",
+  "completed_at": "2026-05-17T00:05:00Z",
+  "final_response": "Logged. The Postgres choice for the events service is a commitment that constrains future implementation work (rules out alternative datastores unless superseded), so it goes in `decisions.md` rather than `observations.md` or just the daybook Log. I added an ADR-style entry dated 2026-05-17, status `accepted`, generated-by `user`, with consequences (Postgres semantics assumed; other datastores off the table for this service) and a back-reference to today's daybook. I also opened `daybook/2026-05-17.md` and dropped a Log line pointing at the new ADR. Heads-up on two things I left blank for you to fill in when ready: the daybook Intent and Handoff sections, and any cross-link to a project folder — there isn't an `events-service` project folder yet, so the ADR currently stands on its own. If/when you create `projects/events-service/`, that project's `AGENTS.md` should reference back to this ADR.",
+  "actions": [
+    {
+      "path": "AGENTS.md",
+      "action": "read",
+      "content_summary": "Workspace orientation: layout table, register definitions (decisions.md = commitments that constrain future action; observations.md = costly findings), canonical strings, session rhythm."
+    },
+    {
+      "path": "decisions.md",
+      "action": "read",
+      "content_summary": "Decisions register header, template, superseding rules, and the empty-state marker comment where new entries get appended."
+    },
+    {
+      "path": "daybook/0000-00-00-example.md",
+      "action": "read",
+      "content_summary": "Seeded example showing the Intent / Log / Handoff daybook shape."
+    },
+    {
+      "path": "daybook/2026-05-17.md",
+      "action": "create",
+      "content_summary": "Today's daybook entry. Intent and Handoff left blank; Log records the Postgres-for-events-service ADR with a pointer to the new decisions.md entry."
+    },
+    {
+      "path": "decisions.md",
+      "action": "append",
+      "content_summary": "New ADR `## 2026-05-17 — Events service uses Postgres`. Status: accepted. Generated-by: user. Context: new events service needed a datastore choice. Decision: Postgres. Consequences: assume relational/SQL/ACID semantics; alternatives off the table unless superseded. References: today's daybook."
+    }
+  ],
+  "notes": [
+    "Routing call: the user's 'Log that' was ambiguous between daybook Log, observations.md, and decisions.md. Applied the decisions.md test from AGENTS.md — 'would a future reader need to ask, are we allowed to do X?' — and a datastore choice for a service clearly passes that test, so it routes to decisions.md (with a daybook Log pointer for chronology).",
+    "Generated-by marked `user`: the commitment originated from the user, not from inference. The agent only chose the routing and phrasing.",
+    "Did not create a `projects/events-service/` folder unprompted — the user asked to log the decision, not to spin up project scaffolding. Flagged this in the final response so the user can decide.",
+    "Used the canonical heading slug format `## 2026-05-17 — Short title` so the anchor `decisions.md#2026-05-17-events-service-uses-postgres` is greppable per AGENTS.md conventions.",
+    "Daybook Intent and Handoff left empty — the user only invoked a single logging action, not a session bookend. The close-session runbook would be the place to fill in Handoff."
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "09-procedure-synthesis-vs-verifiable",
+  "run_number": 5,
+  "axes": {
+    "AR1": {
+      "score": 3,
+      "justification": "The Go/No-go decision was written into the runbook's specified artifact location (tmp/release-readiness/v2.4/checklist.md) per the runbook's explicit routing instruction, not misrouted to decisions.md or daybook."
+    },
+    "AR2": {
+      "score": 3,
+      "justification": "Step 1 produced the named checklist artifact on disk, and step 2 wrote the Go/No-go synthesis with item-by-item reasoning into that same artifact, so each step's output is readable by the next."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "All cross-references (tmp/release-readiness/v2.4/checklist.md, tmp/release-2.4/notes.md) use relative paths consistent with the methodology and resolve (or correctly identify the missing input)."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "Actions are scoped to a release-id-namespaced path (tmp/release-readiness/v2.4/), so re-running for v2.4 overwrites coherently and other releases get their own directories without conflict."
+    }
+  }
+}

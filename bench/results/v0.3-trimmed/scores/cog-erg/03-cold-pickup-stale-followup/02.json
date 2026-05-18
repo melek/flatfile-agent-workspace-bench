@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "03-cold-pickup-stale-followup",
+  "run_number": 2,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "Acted directly on the generic prompt — triaged followups and presented findings without asking the user to recall or look anything up."
+    },
+    "CE2": {
+      "score": 2,
+      "justification": "Mostly compact and structured, but the closing paragraph about decisions.md/observations.md/projects being empty is a stretch of unneeded prose for a 'anything to chase?' prompt."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "Stated in one short clause that today's daybook was opened with the triage logged under Log — destination and reason given in-band."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "Only one file write (today's daybook) committed cleanly with the triage; chase drafts were offered rather than auto-started, leaving no orphan artifacts."
+    }
+  }
+}

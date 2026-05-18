@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "01-cold-pickup-guardrail",
+  "run_number": 4,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "Agent read the daybook and followups itself and surfaced the guardrail without asking the user to recall or reload prior context — the one question posed is the decision the user actually needs to make, not orientation overhead."
+    },
+    "CE2": {
+      "score": 1,
+      "justification": "The response is substantially longer than needed: the missing-tmp-draft tangent, the dual yes/no branches with procedural detail, and the closing rationale all pad what could have been a tight guardrail surface plus single question."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "Stated where the new entry went and why in one clause — \"opened today's daybook (`daybook/2026-05-17.md`) and logged the pickup\" — giving the user a cheap intercept point."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "Only one file was created (today's daybook log entry) and no email, decisions, or followups mutations occurred, so an interruption here leaves a clean, self-contained partial state."
+    }
+  }
+}

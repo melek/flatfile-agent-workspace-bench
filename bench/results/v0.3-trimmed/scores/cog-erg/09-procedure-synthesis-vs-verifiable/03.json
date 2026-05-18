@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "09-procedure-synthesis-vs-verifiable",
+  "run_number": 3,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "Acted directly on the runbook without asking the user to recall, restate, or fetch anything; surfaced the missing-notes issue as a finding rather than a question."
+    },
+    "CE2": {
+      "score": 2,
+      "justification": "Mostly compact and on-task, but the closing 'Go/No-go call is recorded inline... and I logged the run in today's daybook' sentence is process narration that pads the end."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "Named the checklist path inline and explained why (per the runbook), and noted the daybook log destination with its purpose."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "Each artifact (checklist file, daybook entry) is a clean committed write with no half-built scratch files; an interruption would leave a coherent partial state."
+    }
+  }
+}

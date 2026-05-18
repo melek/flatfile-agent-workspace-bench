@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "04-routing-novel-observation",
+  "run_number": 1,
+  "axes": {
+    "CE1_orientation_cost": {
+      "score": 3,
+      "justification": "Agent acted directly on the user's flag without asking clarifying questions or requiring the user to load additional context."
+    },
+    "CE2_output_economy": {
+      "score": 1,
+      "justification": "Response is bloated with restated rationale, hypothetical promotion paths, and a trailing summary about daybook logging and handoff that the user did not need to read."
+    },
+    "CE3_routing_transparency": {
+      "score": 3,
+      "justification": "Agent said where the entry went (observations.md) and why (descriptive pattern, not a commitment) in one clear in-band clause at the top of the response."
+    },
+    "CE4_interruptibility": {
+      "score": 3,
+      "justification": "Two clean append/create actions (observations.md entry plus dated daybook) with no in-progress artifacts; an interrupted session would leave coherent, self-contained state."
+    }
+  }
+}

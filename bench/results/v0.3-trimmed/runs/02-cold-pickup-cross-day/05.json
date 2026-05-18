@@ -1,0 +1,35 @@
+{
+  "scenario_id": "02-cold-pickup-cross-day",
+  "run_number": 5,
+  "workspace_tag": "v0.3-trimmed",
+  "started_at": "2026-05-17T00:00:00Z",
+  "completed_at": "2026-05-17T00:00:01Z",
+  "final_response": "No — we can't open a senior staff rec this quarter. The standing decision (decisions.md, 2026-04-15 \"Restrict initial hiring to mid-level engineers only\", status: accepted) locks all four Q2 engineering hires to mid-level (3–7 years). No staff or senior staff recs open until Q3 planning re-evaluates. Per that decision's stated consequences, recruiting should pass on the candidate with a polite 'not this round' note. If the candidate is unusually strong and worth keeping warm for Q3, that's fine to communicate, but we shouldn't open the rec. Context worth flagging: a cofounder originally advocated for a senior staff hire and was overruled by CEO/CTO at the 2026-04-12 sync. If pressure is building to revisit, the right venue is Q3 planning, not an ad-hoc reversal.",
+  "actions": [
+    {
+      "path": "AGENTS.md",
+      "action": "read",
+      "content_summary": "Workspace orientation: layout, canonical strings, workflow discipline. Identified decisions.md as the primary durable register for commitments constraining future action."
+    },
+    {
+      "path": "decisions.md",
+      "action": "read",
+      "content_summary": "Found accepted decision 2026-04-15: all Q2 engineering hires restricted to mid-level; no senior/staff recs open this quarter; re-evaluate at Q3 planning; recruiting should reject senior+ candidates politely."
+    },
+    {
+      "path": "daybook/2026-04-22.md",
+      "action": "read",
+      "content_summary": "Previous daybook entry. Unrelated to hiring — covered vendor renegotiation and platform rate-limit unblock. No mid-flight hiring context."
+    },
+    {
+      "path": "daybook/2026-05-17.md",
+      "action": "create",
+      "content_summary": "New daybook entry for today. Intent: respond to recruiting on senior staff rec. Log: cited 2026-04-15 decision, summarized the answer. Handoff: note that any revisit belongs in Q3 planning, not ad-hoc."
+    }
+  ],
+  "notes": [
+    "Cross-day cold pickup: the load-bearing artifact was decisions.md, not the prior daybook. The previous daybook (2026-04-22) was unrelated to hiring, so the handoff didn't help — but the decision register did exactly what it's designed to do.",
+    "Did not read scenario.md or expected-signals.md per constraints.",
+    "Did not consult projects/ — only an AGENTS.md scaffold exists there, no project-scoped context relevant to hiring."
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "06-routing-tldr-screening",
+  "run_number": 3,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "Agent acted directly without asking the user to clarify or recall anything, loading AGENTS.md files itself rather than offloading orientation cost to the user."
+    },
+    "CE2": {
+      "score": 1,
+      "justification": "Response is substantially padded with an exhaustive walkthrough of every rejected option (tmp/, projects/, observations.md, daybook) before reaching the recommendation, plus a multi-step future-promotion plan that goes well beyond the routing question asked."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "Routing destination and reasoning are stated up front in one clause (\"resources/ — but only barely\") with the why made explicit, and the provenance caveat is flagged in-band so the user can redirect cheaply."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "No files were written to the workspace; the recommendation is a single-file drop with a clean promotion path, so interruption at any point leaves zero orphaned artifacts."
+    }
+  }
+}

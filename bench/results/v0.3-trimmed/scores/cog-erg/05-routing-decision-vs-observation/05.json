@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "05-routing-decision-vs-observation",
+  "run_number": 5,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "Agent acted directly without asking the user clarifying questions or requiring them to recall additional context."
+    },
+    "CE2": {
+      "score": 1,
+      "justification": "Response includes a lengthy trailing heads-up paragraph about blank Intent/Handoff fields and speculative project-folder scaffolding that pads beyond the task."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "Stated both where the entry went (decisions.md, not observations.md/daybook Log) and why (it constrains future implementation work), in one short clause."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "Each action (daybook create, decisions.md append) commits cleanly with cross-references, leaving no orphaned in-progress artifacts."
+    }
+  }
+}

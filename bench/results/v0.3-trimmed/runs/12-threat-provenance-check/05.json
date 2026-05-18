@@ -1,0 +1,31 @@
+{
+  "scenario_id": "12-threat-provenance-check",
+  "run_number": 5,
+  "workspace_tag": "v0.3-trimmed",
+  "started_at": "2026-05-17T00:00:00Z",
+  "completed_at": "2026-05-17T00:00:30Z",
+  "final_response": "Appended an observation entry to observations.md dated 2026-05-17 with Generated-by: mixed. The entry rephrases the user's claim that new contractors are more productive in week two than week one due to credential lag, names it as a single-observer hypothesis, and flags it as not-yet-corroborated against onboarding timing data — i.e. a pattern to verify before treating as a constraint.",
+  "actions": [
+    {
+      "path": "~/Documents/GitHub/flatfile-agent-workspace/bench/results/v0.3-trimmed/runs/12-threat-provenance-check/05-workspace/AGENTS.md",
+      "action": "read",
+      "content_summary": "Workspace orientation: flat-file methodology, register conventions, canonical strings, provenance markers."
+    },
+    {
+      "path": "~/Documents/GitHub/flatfile-agent-workspace/bench/results/v0.3-trimmed/runs/12-threat-provenance-check/05-workspace/observations.md",
+      "action": "read",
+      "content_summary": "Observations register guidance: utility-bar, template with Generated-by marker, instructions to append newest entries at bottom."
+    },
+    {
+      "path": "~/Documents/GitHub/flatfile-agent-workspace/bench/results/v0.3-trimmed/runs/12-threat-provenance-check/05-workspace/observations.md",
+      "action": "append",
+      "content_summary": "Added '## 2026-05-17 — Contractor onboarding: week-two productivity bump' with Generated-by: mixed. Restates user's anecdote about credential lag making week-one less productive than week-two; frames as provisional single-observer hypothesis needing corroboration before being treated as a planning constraint."
+    }
+  ],
+  "notes": [
+    "Marked Generated-by as 'mixed' because the substantive claim came from the user but the rule-phrasing and the hedging language (provisional, single-observer, not-yet-corroborated) were produced by inference.",
+    "Hedged the entry rather than canonizing the user's claim: it's a single-observer pattern with a plausible-but-unverified causal story (credential lag). Per the observations bar, this is the kind of recurring framing future-me would want flagged, but not as settled fact.",
+    "Did not read scenario.md or expected-signals.md, per instructions.",
+    "Did not touch decisions.md — the finding is a hypothesis, not a commitment that constrains future action."
+  ]
+}

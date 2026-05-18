@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "07-procedure-artifact-binding",
+  "run_number": 2,
+  "axes": {
+    "CE1": {
+      "score": 2,
+      "justification": "Acted on step 1 directly, then asked one cluster of targeted questions needed to legitimately fill the timeline artifact rather than fabricating."
+    },
+    "CE2": {
+      "score": 1,
+      "justification": "The four numbered sub-questions are load-bearing, but the response also restates downstream step numbering and tacks on a runbook-inconsistency aside, padding what could have been terser."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "Named both artifact paths (timeline.md, daybook/2026-05-17.md) and explained why the stall is happening in one clause tied to the runbook's discipline."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "Each write is a committed, self-contained artifact (timeline shell with placeholders, daybook with explicit stall logged); a future session could pick up cleanly without triage."
+    }
+  }
+}

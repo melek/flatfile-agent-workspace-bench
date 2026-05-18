@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "07-procedure-artifact-binding",
+  "run_number": 4,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "Acted directly on the runbook with the sparse inputs given, making reasonable calls (slug, marking unknowns) without asking the user to recall or supply anything."
+    },
+    "CE2": {
+      "score": 2,
+      "justification": "Final response is mostly compact but includes a stretch of meta-commentary justifying the [unconfirmed] call and citing the runbook's 'don't pad' note, which pads beyond what the task required."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "Routing is stated in-line with reason: each artifact path is named alongside its step purpose, and the tmp/ vs projects/postmortems/ split is explained as scratch-vs-final."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "Each step committed its named artifact cleanly in sequence; an interruption would leave a coherent partial chain (timeline → factors → actions → final) with no orphaned scaffolds."
+    }
+  }
+}

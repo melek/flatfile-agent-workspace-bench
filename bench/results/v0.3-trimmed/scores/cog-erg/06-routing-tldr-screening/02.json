@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "06-routing-tldr-screening",
+  "run_number": 2,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "Acted directly on the user's request without asking clarifying questions or requiring the user to consult anything."
+    },
+    "CE2": {
+      "score": 2,
+      "justification": "Mostly compact, but the closing paragraph about threat-model qualifiers stretches into prose beyond what the routing question required."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "Said exactly where it placed the file (resources/prompt-cache-attacks/tldr.md) and why (durable reference, not tmp because gitignored, not projects because not yet a project) in one in-band clause."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "Two atomic actions (mkdir, create one file) with no in-progress artifacts; interrupting would leave a clean, coherent state."
+    }
+  }
+}

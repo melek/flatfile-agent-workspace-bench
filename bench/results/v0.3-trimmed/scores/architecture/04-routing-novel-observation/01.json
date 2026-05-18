@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "04-routing-novel-observation",
+  "run_number": 1,
+  "axes": {
+    "AR1": {
+      "score": 3,
+      "justification": "Routed to observations.md with explicit in-band rationale citing the strict bar (descriptive recurring pattern vs. commitment that constrains future action), and named the promotion path to decisions.md only if a workaround is formalized."
+    },
+    "AR2": {
+      "score": 3,
+      "justification": "Not a procedural runbook scenario, but each step still produced a named artifact (observations.md append and daybook/2026-05-17.md) that a subsequent session could read."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "References use repo-relative filenames (observations.md, decisions.md, daybook/2026-05-17.md) with ISO-dated, canonical '## YYYY-MM-DD — Short title' anchor format per AGENTS.md."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "observations.md is appended to (not rewritten), the daybook is a date-keyed new file, and the promotion-to-decisions path is described as a future cross-referenced entry — re-running would not corrupt prior state."
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "scenario_id": "08-procedure-missing-prior-step",
+  "run_number": 4,
+  "workspace_tag": "v0.3-trimmed",
+  "started_at": "2026-05-17T00:00:00Z",
+  "completed_at": "2026-05-17T00:00:00Z",
+  "final_response": "Step 4 of the incident-postmortem runbook can't run yet — it stalls visibly by design when its input artifact is missing.\n\nWhat's there:\n- `tmp/incident-postmortem/2026-04-23-staging-rollback/timeline.md` exists and is filled in (Detection → Resolution, covering 14:18 → 14:45 on 2026-04-23). That's step 1 + step 2.\n\nWhat's missing:\n- `tmp/incident-postmortem/2026-04-23-staging-rollback/factors.md` — step 3's output. Step 4 says \"Read `factors.md` from step 3\" and writes `actions.md` from it. Without factors, any actions list would be invented out of thin air rather than derived from the contributing-causes / contributing-context / things-that-worked breakdown the runbook expects.\n\nTwo ways forward — pick one:\n\n1. **Run step 3 first** (recommended). I read the filled timeline, walk you through contributing causes, contributing context, and what worked, and write `factors.md`. Then step 4 produces an actions list that's actually traceable to the factors. Probably 10–15 minutes of back-and-forth on the factors, then the actions fall out fast.\n\n2. **Skip step 3 and freehand step 4 from the timeline alone.** Faster but worse — you'd lose the \"each action item ties to a contributing factor\" property that makes the postmortem useful in review. If tomorrow's review is just a status check and the real postmortem comes later, this might be acceptable; if the review will scrutinize the actions, it's not.\n\nWhich one? If you want option 1, point me at anything beyond the timeline that would inform the factors (deploy log, on-call notes, the migration step 2 lock detail).",
+  "actions": [
+    {
+      "path": "runbooks/incident-postmortem/AGENTS.md",
+      "action": "read",
+      "content_summary": "Read the 5-step postmortem runbook; confirmed step 4 reads factors.md from step 3 and produces actions.md."
+    },
+    {
+      "path": "tmp/incident-postmortem/2026-04-23-staging-rollback/",
+      "action": "inspect",
+      "content_summary": "Only timeline.md is present; factors.md (step 3 output) is missing."
+    },
+    {
+      "path": "tmp/incident-postmortem/2026-04-23-staging-rollback/timeline.md",
+      "action": "read",
+      "content_summary": "Filled timeline covering 14:18 detection through 14:45 resolution for the 2026-04-23 staging rollback."
+    }
+  ],
+  "notes": [
+    "Refused to fabricate step 4 output because step 3's input artifact (factors.md) does not exist; the runbook explicitly says missing prior artifacts should make the next step stall visibly.",
+    "Surfaced the gap to the user and offered two paths (run step 3 first, or freehand step 4 with the tradeoff named).",
+    "Did not modify any workspace files; only the transcript JSON was written, outside the workspace per scenario instructions — actually, transcript is written inside the run directory, not the workspace itself."
+  ]
+}

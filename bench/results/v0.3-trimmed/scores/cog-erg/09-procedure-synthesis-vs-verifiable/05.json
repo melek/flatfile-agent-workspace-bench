@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "09-procedure-synthesis-vs-verifiable",
+  "run_number": 5,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "Acted directly on the runbook without asking the user to load, restate, or clarify anything."
+    },
+    "CE2": {
+      "score": 2,
+      "justification": "Response is mostly compact and useful, but the per-item bullet recap plus the Path-to-Go restatement duplicates content already written into the checklist file."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "Named the artifact path (tmp/release-readiness/v2.4/checklist.md) and why it's there (filled checklist + inline Go/No-go reasoning) in one short clause."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "Single file artifact written at the canonical path with the decision inline; an interruption leaves no orphan or in-progress state to triage."
+    }
+  }
+}

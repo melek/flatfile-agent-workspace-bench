@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "07-procedure-artifact-binding",
+  "run_number": 5,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "Agent acted directly on the runbook without asking the user to restate or look anything up, deferring missing inputs into GAP markers rather than demanding them upfront."
+    },
+    "CE2": {
+      "score": 1,
+      "justification": "Final response is heavy with restatement of each artifact's contents, meta-commentary on the runbook inconsistency, and a closing 'Next' paragraph that recapitulates information already enumerated above."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "Each artifact is named with its full path inline and the brief clause explaining why it was written (which step, which inputs it reads from) appears in the same line."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "Each step committed its named artifact before the next began, so an interruption would leave a coherent prefix of the runbook's outputs with no orphan or half-written files."
+    }
+  }
+}

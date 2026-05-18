@@ -1,0 +1,43 @@
+{
+  "scenario_id": "06-routing-tldr-screening",
+  "run_number": 4,
+  "workspace_tag": "v0.3-trimmed",
+  "started_at": "2026-05-17T22:23:00Z",
+  "completed_at": "2026-05-17T22:24:00Z",
+  "final_response": "Short answer: `resources/` — most likely as `resources/prompt-cache-attacks/` with the TLDR in a file like `tldr.md` and a placeholder for the PDF once you pull it.\n\nWalking through the routing decision against the workspace conventions:\n\n- **Not `tmp/`.** You said you want to keep it. `tmp/` is gitignored scratch — its own AGENTS.md is explicit: \"if you'd miss it, it doesn't belong here.\" A TLDR you're deliberately retaining because the topic is going to come up next week fails that test.\n- **Not `projects/`.** There's no project here yet. No stated goal, no multi-session arc, no \"done\" condition. A single TLDR for a paper you haven't read is below project threshold. If next week's discussion turns into actual work (a writeup, a recommendation, a decision you have to defend), promote it then — that's the normal `tmp/` → `projects/` promotion pattern applied to `resources/` instead.\n- **Not `runbooks/`.** Not a procedure.\n- **Not `decisions.md` or `observations.md`.** It's not a commitment that constrains future action, and it's not a hard-won finding you'd otherwise re-derive — it's third-party reference material.\n- **`resources/` fits.** Its AGENTS.md calls out \"a research paper that frames your domain\" as canonical. The TLDR is the pointer; the PDF (when you pull it) is the source document. Both belong in the same subfolder.\n\nSuggested shape:\n\n```\nresources/prompt-cache-attacks/\n├── tldr.md           # the summary you have now, with provenance (\"research-assistant-generated, paper not yet read\")\n└── paper.pdf        # once you download it\n```\n\nTwo things worth noting in the `tldr.md` itself so future-you (or the agent) isn't misled:\n\n1. **Mark it as unverified.** The TLDR is a research-assistant summary of a paper you haven't read. The 73% recovery rate and the two proposed mitigations are claims attributed to the summary, not to the paper directly. Flag that at the top so it doesn't get cited as if you'd vetted it.\n2. **Capture the source.** Wherever you came across this — URL, arXiv ID, paper title, authors if you have them — drop it in. Right now the TLDR has no pointer back to the artifact it's summarizing, which is the most common way reference material rots.\n\nIf next week's conversation makes this a thing you're actually working on (writeup, position, decision), `mv resources/prompt-cache-attacks projects/prompt-cache-attacks` and add a project `AGENTS.md`. Same shape — promotion is a rename.\n\nWant me to create the folder and write the `tldr.md` stub now?",
+  "actions": [
+    {
+      "path": "AGENTS.md",
+      "action": "read",
+      "content_summary": "Workspace orientation — layout table for daybook/decisions/observations/projects/runbooks/resources/tmp; canonical strings; workflow discipline."
+    },
+    {
+      "path": "resources/AGENTS.md",
+      "action": "read",
+      "content_summary": "Resources folder convention — static reference material (papers, style guides, templates); flat files or subfolders; explicitly not procedures, not project-specific, not throwaway."
+    },
+    {
+      "path": "projects/AGENTS.md",
+      "action": "read",
+      "content_summary": "Projects folder convention — one subfolder per project with AGENTS.md carrying state; project threshold = stateable goal, multi-session, would clutter root."
+    },
+    {
+      "path": "tmp/AGENTS.md",
+      "action": "read",
+      "content_summary": "Tmp folder convention — gitignored scratch; rule is 'if you'd miss it, it doesn't belong here'; mirrors projects/ shape for easy promotion."
+    },
+    {
+      "path": "daybook/",
+      "action": "list",
+      "content_summary": "Only an example file (0000-00-00-example.md) and AGENTS.md present; no current-date daybook entry yet."
+    }
+  ],
+  "notes": [
+    "User's question is purely a routing question — 'where should it go?' — not a request to file it. Responded with a recommendation and offered to create the folder/stub.",
+    "Ruled out tmp/ on the user's own signal: they explicitly said they want to keep it. tmp/AGENTS.md is unambiguous on that test.",
+    "Ruled out projects/ on threshold: single TLDR, no stated goal, no multi-session arc. Suggested promotion path if it grows.",
+    "Recommended subfolder rather than a flat file because the paper will likely have at least two companions (the TLDR and the PDF once pulled), matching the 'subfolders when a topic has multiple companions' guidance.",
+    "Flagged two provenance hygiene issues in the TLDR itself: (a) it's a research-assistant summary of an unread paper, claims should be marked unverified; (b) no link/citation back to the source artifact. Both are the kind of thing future-you would regret not capturing.",
+    "Did not write any files inside the workspace — the user asked where, not asked to file. Waiting for their go-ahead before creating resources/prompt-cache-attacks/."
+  ]
+}

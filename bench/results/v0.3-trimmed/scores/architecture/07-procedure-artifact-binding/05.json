@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "07-procedure-artifact-binding",
+  "run_number": 5,
+  "axes": {
+    "AR1": {
+      "score": 3,
+      "justification": "Correctly avoided touching decisions.md, observations.md, and the daybook (no commitments or findings earned), and explicitly named the routing rationale in the notes."
+    },
+    "AR2": {
+      "score": 3,
+      "justification": "Each numbered step produced its named artifact on disk and the agent stalled visibly with GAP/PENDING markers rather than fabricating downstream content, exactly matching the artifact-binding signal."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "Cross-references in the final postmortem point to the tmp/ artifacts using relative workspace paths with ISO-date slug anchors that resolve."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "Slug-scoped working folder and dated final artifact make re-running steps 3–5 against an updated timeline safe and append-coherent, with no in-place mutation of prior state."
+    }
+  }
+}

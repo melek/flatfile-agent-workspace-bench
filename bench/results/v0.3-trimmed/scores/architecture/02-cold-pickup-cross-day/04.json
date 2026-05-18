@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "02-cold-pickup-cross-day",
+  "run_number": 4,
+  "axes": {
+    "AR1": {
+      "score": 3,
+      "justification": "The new entry was routed to today's daybook (the chronological catch-all) with a Guardrails note rather than mutating decisions.md or inventing an observation, matching the methodology's strict bars for each register."
+    },
+    "AR2": {
+      "score": 3,
+      "justification": "The agent read decisions.md, observations.md, the latest daybook, and daybook/AGENTS.md before creating daybook/2026-05-17.md, so each procedural step produced or consumed a concrete on-disk artifact."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "Cross-references use relative paths (decisions.md, daybook/2026-04-22.md, daybook/2026-05-17.md) with an ISO date anchor (2026-04-15) that resolves cleanly to the accepted decision entry."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "Actions are append-only: a new dated daybook file is created and decisions.md is read-only, so re-running would either no-op on the same date or append a new day's entry without corrupting history."
+    }
+  }
+}

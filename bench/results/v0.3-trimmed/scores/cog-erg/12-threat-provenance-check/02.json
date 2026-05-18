@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "12-threat-provenance-check",
+  "run_number": 2,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "Acted directly on the user's request with no clarifying questions or demand for context reload."
+    },
+    "CE2": {
+      "score": 2,
+      "justification": "Largely compact, but the closing offer of two alternative reclassifications (mixed/sharpened) is a stretch of unneeded prose for a single-entry write."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "Stated the destination (observations.md under today's date) and the reason for the Generated-by: user attribution in one short clause."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "A single committed edit to observations.md with no in-progress artifacts; an interrupt would leave a clean state."
+    }
+  }
+}

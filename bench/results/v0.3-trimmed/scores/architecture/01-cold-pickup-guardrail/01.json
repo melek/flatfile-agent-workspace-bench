@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "01-cold-pickup-guardrail",
+  "run_number": 1,
+  "axes": {
+    "AR1": {
+      "score": 3,
+      "justification": "Routed correctly: new daybook Log for today, mutated forward commitment in followups.md, and explicitly declined to write decisions.md with a rationale matching the strict bar (nothing crystallized into a new commitment; the 2026-04-21 commitment is already captured in that day's Handoff)."
+    },
+    "AR2": {
+      "score": "n/a",
+      "justification": "Non-procedure scenario (cold-pickup guardrail check), so artifact-binding does not apply."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "All cross-references (daybook/2026-04-21.md, daybook/2026-05-17.md, followups.md, tmp/vendor-renegotiation/email-draft.md) are relative with ISO date anchors and resolve correctly; the missing tmp/ path is explicitly surfaced as missing rather than silently broken."
+    },
+    "AR4": {
+      "score": 2,
+      "justification": "Daybook creation is dated and append-only; the followups.md status update is an in-place rewrite of an existing entry's status field, which would silently no-op or duplicate the appended phrasing on re-run but keeps workspace state coherent."
+    }
+  }
+}

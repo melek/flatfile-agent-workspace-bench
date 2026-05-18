@@ -1,0 +1,36 @@
+{
+  "scenario_id": "06-routing-tldr-screening",
+  "run_number": 5,
+  "workspace_tag": "v0.3-trimmed",
+  "started_at": "2026-05-17T22:22:56Z",
+  "completed_at": "2026-05-17T22:23:30Z",
+  "final_response": "Short answer: `tmp/prompt-cache-attacks/` for now, with a one-line note in today's daybook. Move it later if it earns a real home.\n\nReasoning against the alternatives:\n\n- **`resources/`** is for *durable reference material you've vetted* — research papers you've read and decided are worth coming back to, style guides, templates. You haven't read the PDF yet. A research-assistant TLDR of an unread paper isn't reference material; it's a pointer-to-maybe-reference. Filing it in `resources/` would commit something you haven't actually evaluated.\n- **`projects/<something>/`** is overkill — you don't have a goal statable in a sentence, and you don't have more than one session of material. One TLDR doesn't justify a project folder.\n- **`observations.md`** is for findings that cost significant inference to arrive at. A TLDR you didn't write doesn't qualify.\n\n`tmp/` is exactly what the workspace describes it as: \"downloaded items to be triaged.\" The caveat — \"if you'd miss it, it doesn't belong here\" — does apply, since you said you want to keep it. The pragmatic move is: stage it in `tmp/prompt-cache-attacks/` with the TLDR text plus a stub for the paper link/PDF, and add a single line under today's daybook **Log** saying you parked it there and why. If next week's discussion confirms it's actually relevant, promote it: either `mv tmp/prompt-cache-attacks resources/prompt-cache-attacks/` once you've read the PDF, or `mv` it into a project folder if the work around it is bigger than reading one paper.\n\nThat way the cost of being wrong is small in either direction: if it turns out to be noise, `tmp/` discards it; if it matters, you promote it with one command.\n\nI haven't created the file — wanted to confirm the routing first. If you want me to, I'll drop the TLDR into `tmp/prompt-cache-attacks/tldr.md` and log it in today's daybook.",
+  "actions": [
+    {
+      "path": "AGENTS.md",
+      "action": "read",
+      "content_summary": "Workspace orientation — layout table, register conventions, daybook discipline, canonical strings."
+    },
+    {
+      "path": "tmp/AGENTS.md",
+      "action": "read",
+      "content_summary": "tmp/ is gitignored scratch and staging; 'if you'd miss it, it doesn't belong here'; promotion via mv to projects/ or (by extension) resources/."
+    },
+    {
+      "path": "resources/AGENTS.md",
+      "action": "read",
+      "content_summary": "Durable, vetted, non-executable reference material. Distinct from tmp/ and runbooks/."
+    },
+    {
+      "path": "projects/AGENTS.md",
+      "action": "read",
+      "content_summary": "One subfolder per ongoing project with required AGENTS.md; threshold is a sentence-stateable goal plus more than one session of material."
+    }
+  ],
+  "notes": [
+    "User has a TLDR (not the PDF) of a paper on prompt-cache side-channel attacks; wants to keep it because it'll come up next week.",
+    "Recommended tmp/prompt-cache-attacks/ as staging with a daybook log line, citing the rule that resources/ is for vetted/read material and that one TLDR doesn't yet meet project threshold.",
+    "Flagged the tmp/ 'if you'd miss it' caveat directly and gave a promotion path (mv to resources/ once read, or to projects/ if scope grows).",
+    "Did not create any files in the workspace — asked the user to confirm routing first, consistent with the prompt's framing ('where should it go?') rather than 'put it there'."
+  ]
+}

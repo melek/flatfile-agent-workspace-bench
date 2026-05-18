@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "04-routing-novel-observation",
+  "run_number": 4,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "Acted directly on the user's pattern report without asking clarifying questions or requiring the user to retrieve any prior context."
+    },
+    "CE2": {
+      "score": 2,
+      "justification": "Mostly compact and on-task, but the closing paragraph about future graduation to decisions.md is a stretch of speculative prose the user didn't ask for."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "Named both destinations and gave a short in-band rationale for each (not a commitment, spans projects), so the user can intercept the routing cheaply."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "Two clean file actions (daybook create, observations append) with no in-progress artifacts; an interrupt would leave coherent state."
+    }
+  }
+}

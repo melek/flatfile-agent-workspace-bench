@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "06-routing-tldr-screening",
+  "run_number": 5,
+  "axes": {
+    "AR1": {
+      "score": 3,
+      "justification": "Routed to tmp/prompt-cache-attacks/ with an explicit rationale citing the strict bars on resources/ (vetted/read), projects/ (sentence-stateable goal), and observations.md (costly inference), matching the methodology's distinctions."
+    },
+    "AR2": {
+      "score": 0,
+      "justification": "n/a — this is an artifact-routing scenario, not a procedural runbook, so artifact-binding does not apply."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "All cross-references (tmp/prompt-cache-attacks/, resources/, projects/<something>/, observations.md, today's daybook Log) use relative paths consistent with the workspace convention and resolve cleanly."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "Agent deferred file creation pending confirmation and proposed append-only actions (a new tmp/ folder plus a single daybook Log line), with a clean mv-based promotion path that would not corrupt history on re-run."
+    }
+  }
+}

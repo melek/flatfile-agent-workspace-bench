@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "01-cold-pickup-guardrail",
+  "run_number": 2,
+  "axes": {
+    "AR1": {
+      "score": 3,
+      "justification": "Routed correctly with explicit rationale: today's chronological events into daybook/2026-05-17.md, status of an open commitment into followups.md, and an articulated refusal to touch decisions.md because the hold is a prior commitment not a new one — exactly the strict bar the methodology enforces."
+    },
+    "AR2": {
+      "score": 0,
+      "justification": "n/a — cold-pickup scenario is not a procedure/runbook, so artifact-binding does not apply."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "All cross-references use relative paths with ISO date anchors (daybook/2026-04-21.md, daybook/2026-05-17.md, followups.md, tmp/vendor-renegotiation/email-draft.md) and resolve to the right surfaces, including the cross-link from the updated followup back to today's daybook."
+    },
+    "AR4": {
+      "score": 2,
+      "justification": "Daybook creation is append-only and idempotent, but the followups.md update is a status-line rewrite rather than an appended dated note, which would silently overwrite on re-run while keeping state coherent."
+    }
+  }
+}

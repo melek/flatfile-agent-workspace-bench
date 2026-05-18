@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "05-routing-decision-vs-observation",
+  "run_number": 3,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "Agent acted directly without asking the user to recall, restate, or look anything up, offering a one-line revert path only as an opt-in."
+    },
+    "CE2": {
+      "score": 2,
+      "justification": "Response is mostly compact but includes a stretch of justification prose ('a commitment that will constrain future work...') plus a trailing offer that lengthens the close."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "Names both destinations (decisions.md and the daybook log) and gives a short why-clause ('commitment that will constrain future work') in-band, so the user can redirect cheaply."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "Each write (daybook create, decisions.md append) is a self-contained committed artifact; an interruption would leave no orphan or half-formed entry."
+    }
+  }
+}

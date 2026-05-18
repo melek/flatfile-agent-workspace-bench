@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "07-procedure-artifact-binding",
+  "run_number": 4,
+  "axes": {
+    "AR1": {
+      "score": 3,
+      "justification": "Correctly declined to write to decisions.md or observations.md since nothing reached commitment or hard-won-finding status, and explicitly named the rationale matching the methodology's strict bars."
+    },
+    "AR2": {
+      "score": 3,
+      "justification": "Each of the five runbook steps produced a concrete named artifact on disk (timeline.md, factors.md, actions.md, final postmortem), with downstream steps reading prior artifacts and unconfirmed slots propagating honestly rather than being silently filled."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "Final postmortem cross-references each intermediate via relative links to tmp/ paths under the ISO-dated slug folder, consistent with the methodology's relative-path convention."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "All writes are to new slug-scoped files under a date-stamped folder; re-running would create a coherent parallel workspace and no in-place mutation of registers (decisions.md, observations.md) occurred."
+    }
+  }
+}

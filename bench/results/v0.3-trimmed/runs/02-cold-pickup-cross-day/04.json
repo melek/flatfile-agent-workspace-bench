@@ -1,0 +1,51 @@
+{
+  "scenario_id": "02-cold-pickup-cross-day",
+  "run_number": 4,
+  "workspace_tag": "v0.3-trimmed",
+  "started_at": "2026-05-17T00:00:00Z",
+  "completed_at": "2026-05-17T00:00:05Z",
+  "final_response": "No — we can't open a senior staff rec right now. The standing commitment from 2026-04-15 (decisions.md, status: accepted) restricts all four Q2 engineering hires to mid-level only (3–7 years). No staff or senior staff recs this quarter. The decision's stated consequence is that recruiting should reject senior+ candidates with a polite \"not this round\" note; re-evaluation is scheduled for Q3 planning.\n\nSo for this candidate: ask recruiting to send the \"not this round\" message and, if the candidate is willing to stay in touch, flag them for a Q3 re-look. If the cofounder or recruiting wants to push back on the policy itself, that's a CEO/CTO conversation and would need a new decisions.md entry superseding 2026-04-15 — not a one-off exception.",
+  "actions": [
+    {
+      "path": "AGENTS.md",
+      "action": "read",
+      "content_summary": "Workspace orientation: layout, canonical strings, core workflow discipline."
+    },
+    {
+      "path": "bench/scenarios/02-cold-pickup-cross-day/user-prompt.md",
+      "action": "read",
+      "content_summary": "User asks whether recruiting can open a senior staff engineer rec for the platform team."
+    },
+    {
+      "path": "decisions.md",
+      "action": "read",
+      "content_summary": "Found 2026-04-15 accepted decision restricting Q2 hiring to mid-level only; no staff/senior staff recs this quarter; re-evaluate at Q3."
+    },
+    {
+      "path": "observations.md",
+      "action": "read",
+      "content_summary": "Empty register (template only); no relevant observations."
+    },
+    {
+      "path": "daybook/2026-04-22.md",
+      "action": "read",
+      "content_summary": "Most recent daybook: vendor renegotiation and platform unblock done; nothing critical mid-flight."
+    },
+    {
+      "path": "daybook/AGENTS.md",
+      "action": "read",
+      "content_summary": "Daybook conventions: Intent/Log/Handoff sections, Guardrails sub-section, Generated-by marker."
+    },
+    {
+      "path": "daybook/2026-05-17.md",
+      "action": "create",
+      "content_summary": "Today's daybook recording the recruiting question, the surfaced decision, and a Guardrails note that no senior+ rec opens without a superseding decisions.md entry."
+    }
+  ],
+  "notes": [
+    "Decision 2026-04-15 in decisions.md is unambiguous: all four Q2 engineering hires mid-level only; re-evaluate at Q3.",
+    "Cold-pickup behaved as designed: the register answered the question without re-deriving the rationale.",
+    "Added a Guardrails-for-next-session entry to prevent a future fresh session from opening a senior+ rec without a superseding decision.",
+    "Did not read scenario.md or expected-signals.md per constraints."
+  ]
+}

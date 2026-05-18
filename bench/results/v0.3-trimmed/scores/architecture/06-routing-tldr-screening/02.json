@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "06-routing-tldr-screening",
+  "run_number": 2,
+  "axes": {
+    "AR1": {
+      "score": 1,
+      "justification": "Routed to resources/ instead of tmp/ as the scenario's signal-bearing behavior requires for AI-summary-without-source, but gave a coherent rationale (durable-keep intent) tied to methodology, making it a defensible neighboring placement rather than a clean hit."
+    },
+    "AR2": {
+      "score": 3,
+      "justification": "Created the named subfolder and tldr.md file with provenance marker and open-items checklist, so the artifact is on disk and readable by any follow-up step."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "All path references (resources/prompt-cache-attacks/tldr.md, projects/prompt-cache-attacks/, daybook/2026-05-17.md) are workspace-relative and would resolve under the file's location."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "Creating a new topic subfolder and a fresh tldr.md is idempotent and append-only-friendly; re-running would either no-op on the mkdir or surface a clean conflict on the file without corrupting existing history."
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "04-routing-novel-observation",
+  "run_number": 2,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "Acted directly on the user's report without asking clarifying questions or requiring them to load any other document."
+    },
+    "CE2": {
+      "score": 1,
+      "justification": "Core routing is clear but the response is padded with a methodology explanation, a conditional ADR offer, and a 'one thing to consider for later' coda that the user did not ask for."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "Said where the entry went and explicitly named why observations.md over decisions.md and daybook-only, in-band where the user can intercept."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "Two clean file commits (observations.md append, daybook create) with cross-pointer; an interruption would leave coherent, non-orphan artifacts."
+    }
+  }
+}

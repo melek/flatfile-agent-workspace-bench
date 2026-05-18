@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "07-procedure-artifact-binding",
+  "run_number": 1,
+  "axes": {
+    "AR1": {
+      "score": 2,
+      "justification": "No misrouting occurred; the agent correctly declined to open a daybook entry as out of scope for this runbook execution, though without naming the routing rationale in methodology terms."
+    },
+    "AR2": {
+      "score": 3,
+      "justification": "Step 1 produced the named timeline.md artifact with the four required headers, and the agent stalled visibly at step 2 explicitly because filling the prior artifact requires user-sourced incident facts that fabrication would defeat."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "All path references are relative (tmp/incident-postmortem/<slug>/, projects/postmortems/) and resolve to the workspace structure the runbook prescribes."
+    },
+    "AR4": {
+      "score": 2,
+      "justification": "mkdir is naturally idempotent and the timeline shell would be safely overwritten pre-fill, but the agent did not declare idempotency guards for a re-run after step 2 has added content, leaving one action that could silently overwrite without flagging."
+    }
+  }
+}

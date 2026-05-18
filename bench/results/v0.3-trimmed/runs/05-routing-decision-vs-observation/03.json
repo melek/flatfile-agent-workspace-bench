@@ -1,0 +1,41 @@
+{
+  "scenario_id": "05-routing-decision-vs-observation",
+  "run_number": 3,
+  "workspace_tag": "v0.3-trimmed",
+  "started_at": "2026-05-17T00:00:00Z",
+  "completed_at": "2026-05-17T00:00:30Z",
+  "final_response": "Logged. A datastore choice for a new service is a commitment that will constrain future work (schemas, drivers, ops tooling), so it belongs in decisions.md rather than observations.md. I appended an accepted ADR-style entry — '2026-05-17 — Events service uses Postgres' — with Generated-by: user, and dropped a pointer line in today's daybook log (daybook/2026-05-17.md) so the chronological record matches. If this should instead be tentative, say the word and I'll flip the Status to proposed.",
+  "actions": [
+    {
+      "path": "AGENTS.md",
+      "action": "read",
+      "content_summary": "Workspace orientation: layout (decisions.md, observations.md, daybook, projects, runbooks, resources, tmp), canonical strings, register routing guidance."
+    },
+    {
+      "path": "decisions.md",
+      "action": "read",
+      "content_summary": "Append-only ADR register; template requires Status, Generated-by, Context, Decision, Consequences, References."
+    },
+    {
+      "path": "observations.md",
+      "action": "read",
+      "content_summary": "Append-only findings register; bar is utility-shaped, not for commitments — those go to decisions.md."
+    },
+    {
+      "path": "daybook/2026-05-17.md",
+      "action": "create",
+      "content_summary": "New daybook entry for today with Intent/Log/Handoff sections; Log notes the Postgres decision and links to the decisions.md anchor."
+    },
+    {
+      "path": "decisions.md",
+      "action": "append",
+      "content_summary": "Added '## 2026-05-17 — Events service uses Postgres' entry; Status accepted, Generated-by user, Context/Decision/Consequences/References filled in, reference points to today's daybook."
+    }
+  ],
+  "notes": [
+    "Routing call: 'we're going to use Postgres' is a forward-looking commitment that constrains future action on the events service, which is the explicit decisions.md bar. Observations.md is for findings/gotchas/rules-of-the-world, not commitments — so this does not belong there.",
+    "Set Generated-by: user because the commitment came from the user; the agent only routed and formatted it.",
+    "Created today's daybook because it did not yet exist, per the 'open today's daybook entry' workflow step, and so the decision has a chronological pointer.",
+    "Did not create a project folder: the prompt did not name the events service as a multi-session project and no other artifacts were requested. If the events service grows, the decision can be referenced from a future projects/<name>/AGENTS.md."
+  ]
+}

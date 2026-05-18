@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "06-routing-tldr-screening",
+  "run_number": 1,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "Acted directly on the user's question with a concrete routing recommendation; no clarifying questions or document pointers required of the user."
+    },
+    "CE2": {
+      "score": 1,
+      "justification": "The short answer was buried under extensive reasoning against four alternative locations, a decision-tree future-state narrative, and a closing caveat — multiple stretches of unrequested justification for a 'where should this go?' question."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "Named the destination (tmp/prompt-cache-attacks/) and the reason (provisional staging until the PDF is retrieved) in the opening clause, making redirection cheap."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "No files were created and the recommendation is advisory with discrete next steps; an interruption mid-flow would leave no orphan artifacts in the workspace."
+    }
+  }
+}

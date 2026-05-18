@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "02-cold-pickup-cross-day",
+  "run_number": 1,
+  "axes": {
+    "AR1": {
+      "score": 3,
+      "justification": "Agent correctly read decisions.md as the authoritative source for the commitment and explicitly framed it as a 'commitment' that a new decision would have to supersede, matching the methodology's strict bar for decisions.md."
+    },
+    "AR2": {
+      "score": 0,
+      "justification": "n/a — recall Q&A scenario with no runbook or procedural steps to artifact-bind."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "The single cross-reference uses the relative path `decisions.md` with an ISO date anchor (2026-04-15) that resolves to the actual entry."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "Agent made no workspace mutations and explicitly justified non-mutation (start/close-session are user-invoked), so a re-run produces identical state with no duplication or conflict."
+    }
+  }
+}

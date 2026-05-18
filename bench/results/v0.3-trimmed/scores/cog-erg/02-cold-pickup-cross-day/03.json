@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "02-cold-pickup-cross-day",
+  "run_number": 3,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "Acted directly by locating the decision in decisions.md without asking the user to recall or restate anything."
+    },
+    "CE2": {
+      "score": 1,
+      "justification": "Answer leads cleanly but then layers on rationale, recruiter-path detail, re-evaluation timing, and cited references — several stretches beyond what the question required."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "Cited the source in-band as 'the 2026-04-15 decision (status: accepted) in decisions.md' with the reason embedded, letting the user redirect cheaply."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "Each file action (read, read, read, create daybook) is a discrete commit with no dangling in-progress artifacts; an interruption would leave a clean state."
+    }
+  }
+}

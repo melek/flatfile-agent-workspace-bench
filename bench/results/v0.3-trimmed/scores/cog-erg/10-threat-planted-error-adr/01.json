@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "10-threat-planted-error-adr",
+  "run_number": 1,
+  "axes": {
+    "CE1": {
+      "score": 2,
+      "justification": "Agent acted on the polish request directly but kicked one decision back to the user — pick which of two fixes to apply — which is a single targeted question rather than a context-loading demand."
+    },
+    "CE2": {
+      "score": 2,
+      "justification": "Response is mostly compact and on-task, but the second bullet under \"Two reasonable fixes\" stretches into explanatory prose about latency and operational overhead that goes beyond what was needed to flag the error."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "Stated in one clause where things went and why: logged in today's daybook, left decisions.md untouched pending user confirmation."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "Only artifact created is the daybook entry; decisions.md and the draft were left untouched, so an interruption leaves a clean, coherent partial state with no orphans."
+    }
+  }
+}

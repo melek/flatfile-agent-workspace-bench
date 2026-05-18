@@ -1,0 +1,28 @@
+{
+  "scenario_id": "07-procedure-artifact-binding",
+  "run_number": 1,
+  "workspace_tag": "v0.3-trimmed",
+  "started_at": "2026-05-17T00:00:00Z",
+  "completed_at": "2026-05-17T00:00:00Z",
+  "final_response": "I've started the incident-postmortem runbook for the 14:30 staging deploy rollback (slug: 2026-05-17-staging-deploy-rollback).\n\n**Step 1 — Working folder + timeline shell: done.**\n\n- Created `tmp/incident-postmortem/2026-05-17-staging-deploy-rollback/`\n- Wrote `timeline.md` with the four required headers (`## Detection`, `## Diagnosis`, `## Mitigation`, `## Resolution`) as empty placeholders, plus a one-line incident summary at the top.\n\n**Step 2 — Fill the timeline: blocked on you.**\n\nThe runbook is explicit that step 2 reads step 1's artifact and is filled by interviewing the on-call (you) or the data you point at. I'm not going to invent timestamps — that's exactly the failure mode the artifact-bound shape is meant to surface. So before I can move on to factors (step 3), I need the following from you, in roughly this shape — bullets are fine, I'll structure them into the timeline:\n\n- **Detection.** What first signaled the problem (alert name, dashboard, manual report)? Time of first signal? Who saw it?\n- **Diagnosis.** What did you look at between detection and the rollback decision? What hypotheses were considered? When did the actual cause (or 'we can't diagnose fast enough, roll back') become clear?\n- **Mitigation.** Time the rollback was called, who called it, time the rollback was initiated, and what happened immediately after (errors dropped, traffic normalized, etc.).\n- **Resolution.** Time staging was verified clean post-rollback, and time on-call / paging stood down.\n\nAlso useful if you have them handy:\n\n- Deploy record / commit SHA of the bad deploy and the one rolled back to.\n- Any dashboard or log links you were watching.\n- Whether anything was customer-visible (this was staging, so likely no, but worth confirming for the action-item step).\n\nOnce you drop those in (or point me at logs / a Slack thread / a deploy record I can read), I'll fill `timeline.md`, then proceed through steps 3 (`factors.md`), 4 (`actions.md`), and 5 (the final `projects/postmortems/2026-05-17-staging-deploy-rollback.md` composed from the three intermediates). I'll cross-reference each section in the final doc back to its source intermediate as the runbook specifies.\n\nA few notes on choices I made so you can correct them now if they're wrong:\n\n- **Slug:** `staging-deploy-rollback`. If you'd rather it be tied to a service name or ticket ID (e.g., `staging-checkout-rollback`, `inc-2042`), say so and I'll rename the folder before step 2.\n- **Date:** I used today (2026-05-17) since you said 'today's deploy rollback.'\n- **`projects/postmortems/`** doesn't exist yet in this workspace. I'll create it when step 5 runs; flag if you'd rather it live somewhere else.",
+  "actions": [
+    {
+      "path": "tmp/incident-postmortem/2026-05-17-staging-deploy-rollback/",
+      "action": "mkdir",
+      "content_summary": "Created the working folder for the postmortem intermediates, per runbook step 1."
+    },
+    {
+      "path": "tmp/incident-postmortem/2026-05-17-staging-deploy-rollback/timeline.md",
+      "action": "create",
+      "content_summary": "Timeline shell with the four required headers (Detection, Diagnosis, Mitigation, Resolution) as empty placeholders, plus a one-line incident summary. Step 1 artifact."
+    }
+  ],
+  "notes": [
+    "Read AGENTS.md, runbooks/AGENTS.md, and runbooks/incident-postmortem/AGENTS.md to ground the procedure before acting.",
+    "Step 1 was executed end-to-end because it has no user-input dependency — just structural setup.",
+    "Step 2 deliberately stopped to ask the user for incident facts. The runbook explicitly names the user (or pointed-to data) as the source for timeline content; fabricating timestamps would defeat the artifact-bound design.",
+    "Chose slug 'staging-deploy-rollback' and date 2026-05-17. Surfaced both choices in the response so the user can correct before step 2 runs.",
+    "Did not yet create projects/postmortems/ — that's a step 5 concern and the folder doesn't exist; flagged in the response.",
+    "Did not open a daybook entry for today (out of scope of this request and the runbook); would normally be a start-session concern."
+  ]
+}

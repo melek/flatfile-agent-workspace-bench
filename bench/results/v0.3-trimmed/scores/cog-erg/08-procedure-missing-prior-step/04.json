@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "08-procedure-missing-prior-step",
+  "run_number": 4,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "Acted directly by inspecting the runbook and tmp directory, surfaced the gap, and offered concrete options without making the user reconstruct context."
+    },
+    "CE2": {
+      "score": 1,
+      "justification": "Response contains noticeable filler — meta framing (\"stalls visibly by design\"), a parenthetical timing estimate, conditional advice about tomorrow's review, and a trailing prompt for additional inputs that pad the core stall message."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "Named the exact missing path (`factors.md`), explained why (step 4 reads it to produce `actions.md`), so the user can intercept and redirect in one clause."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "No workspace files were modified; the agent stalled cleanly before writing, leaving no orphan artifacts for a future session to triage."
+    }
+  }
+}

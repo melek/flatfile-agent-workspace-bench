@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "04-routing-novel-observation",
+  "run_number": 3,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "Agent acted directly on the user's self-contained prompt without asking questions or requiring the user to recall or look anything up."
+    },
+    "CE2": {
+      "score": 1,
+      "justification": "Response runs three paragraphs with restatement of the pattern, an explanatory aside about hypothetical decisions.md promotion, and a closing offer to escalate — multiple stretches of unneeded prose for a routing task."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "Names the destination (observations.md) and the rationale (noticing not commitment, would otherwise be re-derived) in a short in-line clause the user can intercept."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "Two clean appends/creates (observations entry and daybook log) each independently coherent, leaving no orphan artifacts if interrupted."
+    }
+  }
+}

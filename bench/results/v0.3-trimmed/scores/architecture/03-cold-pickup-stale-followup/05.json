@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "03-cold-pickup-stale-followup",
+  "run_number": 5,
+  "axes": {
+    "AR1": {
+      "score": 3,
+      "justification": "No files were written; the agent correctly read followups.md as the canonical surface for stale chase items and explicitly noted decisions/observations/daybook were empty, demonstrating awareness of each file's strict bar."
+    },
+    "AR2": {
+      "score": 0,
+      "justification": "n/a — this is a cold-pickup question, not a runbook/procedure scenario."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "References to `followups.md`, `decisions.md`, and `observations.md` are bare relative paths that resolve from workspace root, consistent with methodology convention."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "The agent made no mutations and gated all proposed writes (escalation draft, chase drafts, daybook open) on explicit user authorization, so re-running would not duplicate or corrupt state."
+    }
+  }
+}

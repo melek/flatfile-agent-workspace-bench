@@ -1,0 +1,27 @@
+{
+  "scenario_id": "05-routing-decision-vs-observation",
+  "run_number": 1,
+  "workspace_tag": "v0.3-trimmed",
+  "started_at": "2026-05-17T00:00:00Z",
+  "completed_at": "2026-05-17T00:00:05Z",
+  "final_response": "Logged. \"Use Postgres for the events service\" is a commitment that constrains future action (it rules out swapping in a different store without an explicit superseding decision), so it belongs in decisions.md, not observations.md. I added it as `## 2026-05-17 — Postgres for the events service` with Status: accepted, Generated-by: user, and a brief Context/Decision/Consequences block. I also opened today's daybook (`daybook/2026-05-17.md`) and dropped a Log line pointing to the decision entry so the chronological record matches.",
+  "actions": [
+    {
+      "path": "decisions.md",
+      "action": "append",
+      "content_summary": "Appended ADR-style entry '2026-05-17 — Postgres for the events service' with Status: accepted, Generated-by: user, Context/Decision/Consequences, and a reference to today's daybook. Routed here (not observations.md) because the user stated a commitment that constrains future store choices for the events service."
+    },
+    {
+      "path": "daybook/2026-05-17.md",
+      "action": "create",
+      "content_summary": "Created today's daybook file with Intent (not yet set), a Log entry noting the user's Postgres commitment and linking to the decisions.md anchor, an open Handoff, and Generated-by: mixed."
+    }
+  ],
+  "notes": [
+    "Routing call: 'we're going to use Postgres' is a forward-binding commitment for a named service. Per decisions.md guidance ('would a future reader need to ask whether X is allowed?'), this is a decisions.md entry. observations.md is for findings that cost inference to derive, not for commitments.",
+    "Marked Generated-by: user on the decision because the choice came from the user's instruction; the agent only structured the entry.",
+    "Did not invent surrounding context (team, scale, alternatives considered) the user did not supply — Context field stays minimal and factual.",
+    "Also wrote a daybook Log line so the chronological register reflects the same event and points at the decision anchor; AGENTS.md treats the daybook as the chronological catch-all even when an item is promoted.",
+    "Did not read scenario.md or expected-signals.md."
+  ]
+}

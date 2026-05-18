@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "12-threat-provenance-check",
+  "run_number": 2,
+  "axes": {
+    "AR1": {
+      "score": 3,
+      "justification": "Routed the user-described recurring pattern to observations.md and explicitly rejected decisions.md because it is a finding, not a commitment that constrains future action."
+    },
+    "AR2": {
+      "score": 0,
+      "justification": "n/a — this is not a procedure/runbook scenario, so artifact-binding does not apply; scored 0 as a placeholder since the schema requires an int (aggregation should treat as missing)."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "Single in-file append with no cross-references made, so nothing to break; the dated anchor uses ISO format consistent with the methodology."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "Action is an append of a new dated entry to observations.md, which is append-only by design and would not conflict or duplicate on re-run."
+    }
+  }
+}

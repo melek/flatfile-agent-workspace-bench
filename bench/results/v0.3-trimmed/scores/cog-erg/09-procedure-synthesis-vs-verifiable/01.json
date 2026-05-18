@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "09-procedure-synthesis-vs-verifiable",
+  "run_number": 1,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "Agent acted directly on the runbook without asking the user to restate context or load anything; it noted the missing user-cited path inline rather than requesting clarification."
+    },
+    "CE2": {
+      "score": 3,
+      "justification": "Response is a single tight paragraph that states the call, the artifact path, what's green, what's MISSING, the rationale, and the flip condition — no preamble or process narration."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "Names the output path (tmp/release-readiness/v2.4/checklist.md) and the reason (ran release-readiness-check against v2.4) in one short clause up front."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "Only one artifact is created and it contains both the checklist and the Go/No-go decision, so an interruption leaves a single coherent file with no orphans."
+    }
+  }
+}

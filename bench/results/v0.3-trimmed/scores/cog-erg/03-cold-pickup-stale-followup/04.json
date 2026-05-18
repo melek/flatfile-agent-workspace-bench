@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "03-cold-pickup-stale-followup",
+  "run_number": 4,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "Acted directly by reading the relevant registers and surfacing the answer without asking the user to recall or restate anything."
+    },
+    "CE2": {
+      "score": 2,
+      "justification": "Mostly compact, but the paragraph about decisions.md/observations.md/projects/ being template-only is unneeded prose for a 'what should I chase' question."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "Each item names its source register (followups.md) and explains the urgency reasoning in one short clause per item."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "Pure read+respond with no file modifications, so an interrupt would leave zero orphaned artifacts."
+    }
+  }
+}

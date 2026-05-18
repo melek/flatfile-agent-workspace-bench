@@ -1,0 +1,26 @@
+{
+  "scenario_id": "05-routing-decision-vs-observation",
+  "run_number": 2,
+  "workspace_tag": "v0.3-trimmed",
+  "started_at": "2026-05-17T15:13:00Z",
+  "completed_at": "2026-05-17T15:14:00Z",
+  "final_response": "Logged. Choosing Postgres for the events service is a forward-looking commitment that constrains future work (schema, ops, tooling, libraries), so it goes in `decisions.md` rather than `observations.md` (which is for costly findings) or just the daybook Log (which is for chronological notes). I added a dated ADR-style entry titled `2026-05-17 — Postgres for the events service` with status `accepted` and `Generated-by: user`, and dropped a pointer into today's daybook Log so the chronological record reflects it. If you want a Context or Consequences blurb fleshed out (alternatives considered, ops implications, migration path from anything prior), say the word and I'll expand the entry.",
+  "actions": [
+    {
+      "path": "decisions.md",
+      "action": "append",
+      "content_summary": "Added ADR-style entry '2026-05-17 — Postgres for the events service' with Status: accepted, Generated-by: user, brief Context, Decision, and References pointer back to the daybook."
+    },
+    {
+      "path": "daybook/2026-05-17.md",
+      "action": "create",
+      "content_summary": "Created today's daybook with Intent (not yet stated), a Log bullet noting the Postgres commitment and pointing to the decisions.md anchor, an empty Handoff placeholder, and Generated-by: inference."
+    }
+  ],
+  "notes": [
+    "Routed the user's 'log that' to decisions.md because the statement is a forward-looking commitment that constrains future action ('we're going to use Postgres'), which matches the decisions.md bar in AGENTS.md and methodology.",
+    "Considered observations.md but rejected: the entry is not a costly-to-rederive finding, it is a chosen commitment.",
+    "Also wrote a brief pointer into today's daybook Log so the chronological record reflects the event, per workspace convention.",
+    "Did not invent Consequences content the user didn't supply; left Context minimal and offered to expand on request."
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "scenario_id": "03-cold-pickup-stale-followup",
+  "run_number": 3,
+  "workspace_tag": "v0.3-trimmed",
+  "started_at": "2026-05-17T00:00:00Z",
+  "completed_at": "2026-05-17T00:00:00Z",
+  "final_response": "Three items in followups.md are all past their expected-by dates and none have been touched since April. Order I'd chase them in:\n\n1. **SOC2 evidence from Acme Compliance (Karen)** — highest urgency. Expected 2026-04-07, chased once on 2026-04-08, silent since. ~5.5 weeks stale, and the note flags an auditor window in May. If today's chase doesn't land a response, this probably needs escalation beyond Karen.\n2. **Q2 budget review from Finance (Marcus)** — expected 2026-04-25, ~3 weeks past, status still 'open' with no chase recorded. Worth a nudge today.\n3. **Office wifi vendor demo (Nimbus)** — expected 2026-04-23, ~3.5 weeks past. Lower stakes but the oldest miss; quick ping to confirm whether the demo is still on.\n\nA couple of things to note about the state of the workspace: there are no daybook entries between the seeded 2026-05-15 example and today, so followups.md is the only signal I have for what's outstanding — there could be other live threads that haven't been logged. I opened today's daybook (`daybook/2026-05-17.md`) with this triage in the Log. I did not modify the followups.md entries themselves; once you send chases, append a 'chased twice' note with today's date to each entry rather than rewriting the originals.",
+  "actions": [
+    {
+      "path": "AGENTS.md",
+      "action": "read",
+      "content_summary": "Workspace orientation — registers (decisions, observations), daybook convention, project layout, canonical strings."
+    },
+    {
+      "path": "followups.md",
+      "action": "read",
+      "content_summary": "Three open followups, all past expected-by dates: SOC2 evidence (Karen, chased once 2026-04-08), Q2 budget review (Marcus, open), wifi vendor demo (Nimbus, open)."
+    },
+    {
+      "path": "daybook/",
+      "action": "list",
+      "content_summary": "Only AGENTS.md and 0000-00-00-example.md — no real daybook entries yet."
+    },
+    {
+      "path": "daybook/0000-00-00-example.md",
+      "action": "read",
+      "content_summary": "Seeded example daybook showing Intent/Log/Handoff format."
+    },
+    {
+      "path": "daybook/AGENTS.md",
+      "action": "read",
+      "content_summary": "Daybook conventions — single file per day, Intent/Log/Handoff, Generated-by marker."
+    },
+    {
+      "path": "decisions.md",
+      "action": "read",
+      "content_summary": "Template/instructions only — no committed decisions logged."
+    },
+    {
+      "path": "observations.md",
+      "action": "read",
+      "content_summary": "Template/instructions only — no observations logged."
+    },
+    {
+      "path": "projects/AGENTS.md",
+      "action": "read",
+      "content_summary": "Projects folder convention — one subfolder per project with its own AGENTS.md."
+    },
+    {
+      "path": "daybook/2026-05-17.md",
+      "action": "create",
+      "content_summary": "Opened today's daybook. Intent: triage stale followups for the user. Log: reviewed followups.md, ranked all three by urgency (SOC2 first, budget second, wifi third). Handoff: awaiting user direction on chases; recommended appending 'chased twice' to register entries when chases go out. Generated-by: inference."
+    }
+  ],
+  "notes": [
+    "User prompt was a cold-pickup question — 'anything I should be chasing this week?' — so the work was triage, not action.",
+    "followups.md is the only outstanding-work signal in the workspace; there are no real daybook entries and no projects, so the answer was scoped to that register.",
+    "Did not modify followups.md entries — sending chases is a user decision, and the register convention reads as append-only (Status / Notes updates rather than rewrites).",
+    "Created today's daybook to satisfy the 'open today's daybook entry' step of the methodology, with Generated-by: inference since the user only asked a question."
+  ]
+}

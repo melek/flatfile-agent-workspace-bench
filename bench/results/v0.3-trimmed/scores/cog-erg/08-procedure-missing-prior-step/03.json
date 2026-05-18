@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "08-procedure-missing-prior-step",
+  "run_number": 3,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "Agent acted directly on the workspace state — checked artifacts, identified the gap, and proposed paths forward without requiring the user to load or restate anything."
+    },
+    "CE2": {
+      "score": 1,
+      "justification": "The core point (step 4 has no input, factors.md missing) is buried under quoted runbook text, a meta-justification about verifiability, and a two-branch closing offer — several stretches of restatement beyond what the task required."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "Named exactly which paths exist and which are missing under `tmp/incident-postmortem/2026-04-23-staging-rollback/`, and stated why step 4 routes through step 3's artifact — both where and why in-band."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "No workspace files were written or modified; the agent stalled cleanly at the gate, leaving no orphan artifacts for a future session to triage."
+    }
+  }
+}

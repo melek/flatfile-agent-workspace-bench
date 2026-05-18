@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "04-routing-novel-observation",
+  "run_number": 5,
+  "axes": {
+    "AR1": {
+      "score": 3,
+      "justification": "Routed to observations.md with explicit in-band rationale matching the methodology's strict bar (pattern/finding, not a commitment) and named why not decisions.md."
+    },
+    "AR2": {
+      "score": 3,
+      "justification": "Non-procedure scenario, but each action still produced a concrete named artifact (observations.md append and dated daybook file) that downstream steps could read."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "Daybook Log entry references the observation by anchor and uses the ISO-dated daybook filename (2026-05-17.md), keeping cross-references relative and stable."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "Append-only observation entry and a newly-created dated daybook file are idempotent and forward-compatible; re-running would not corrupt history."
+    }
+  }
+}

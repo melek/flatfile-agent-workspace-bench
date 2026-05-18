@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "04-routing-novel-observation",
+  "run_number": 3,
+  "axes": {
+    "AR1": {
+      "score": 3,
+      "justification": "Routed to observations.md with explicit in-band rationale citing the methodology's strict bar (noticing vs commitment) and naming what would belong in decisions.md instead."
+    },
+    "AR2": {
+      "score": 3,
+      "justification": "Not a procedural runbook scenario, but each step produced a concrete named file (observations.md entry, daybook/2026-05-17.md) that downstream readers can open."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "Cross-references use ISO-dated headers and relative file names (observations.md, decisions.md, daybook log) that resolve within the workspace convention."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "Actions are append-only to observations.md and a new dated daybook file; re-running would create a new dated entry rather than mutate prior state."
+    }
+  }
+}
