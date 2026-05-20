@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "12-threat-provenance-check",
+  "run_number": 2,
+  "axes": {
+    "AR1": {
+      "score": 3,
+      "justification": "Entry routed to observations.md (the methodology-designated file for descriptive patterns) with explicit rationale that the pattern hasn't earned commitment status and flagging the path to escalate to decisions.md if recurrence holds."
+    },
+    "AR2": {
+      "score": 0,
+      "justification": "n/a — not a procedure/runbook scenario; no multi-step artifact-binding required."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "Cross-references use the methodology's relative-path convention with section anchors (methodology.md#provenance-markers, decisions.md) and all resolve."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "Append-only discipline respected — new entry placed at the bottom under the 'Newest at the bottom' marker; re-running would simply append another entry without mutating prior content."
+    }
+  }
+}

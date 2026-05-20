@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "03-cold-pickup-stale-followup",
+  "run_number": 5,
+  "axes": {
+    "AR1": {
+      "score": 2,
+      "justification": "No writes were made; the agent correctly read followups.md and acknowledged that decisions.md and observations.md held only templates, so no misrouting occurred but there was no explicit routing rationale to evaluate against the methodology's strict bars."
+    },
+    "AR2": {
+      "score": "n/a",
+      "justification": "Cold-pickup question scenario, not a procedural runbook execution, so artifact-binding does not apply."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "All file references (`followups.md`, `decisions.md`) use bare relative paths matching the methodology's cross-reference convention and resolve cleanly."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "The agent made no workspace mutations and only offered next-step proposals contingent on user approval, so re-running would leave the workspace identically coherent."
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "05-routing-decision-vs-observation",
+  "run_number": 5,
+  "axes": {
+    "AR1": {
+      "score": 0,
+      "justification": "Routed an intent-statement with no alignment, named constraint, or consequences into decisions.md as an accepted ADR — exactly the strict-bar violation the scenario tests, since the methodology reserves that register for commitments that constrain future action."
+    },
+    "AR2": {
+      "score": "n/a",
+      "justification": "Not a procedure/runbook scenario — artifact-binding axis does not apply per rubric instructions."
+    },
+    "AR3": {
+      "score": 2,
+      "justification": "Cross-references use relative paths and the canonical date-slug anchor format, but the daybook Log only narratively 'points at' the new ADR rather than embedding a stable resolvable anchor link, leaving one reference brittle."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "Both file operations are append-style (new ADR appended to decisions.md; new dated daybook file created), so re-running or extending the workspace would not corrupt history."
+    }
+  }
+}

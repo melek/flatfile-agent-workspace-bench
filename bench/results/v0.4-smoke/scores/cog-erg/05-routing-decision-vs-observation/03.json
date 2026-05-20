@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "05-routing-decision-vs-observation",
+  "run_number": 3,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "Acted directly by routing the entry without asking the user any clarifying questions or requiring them to load anything."
+    },
+    "CE2": {
+      "score": 2,
+      "justification": "Mostly compact, but the closing promotion-criteria clause is slightly longer than needed and edges into trailing explanation."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "Stated where (daybook/2026-05-17.md, not decisions.md) and why (cited the strict-bar guidance) in one short, in-line clause."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "Single clean write to today's daybook with no half-built decisions.md or observations.md artifacts left behind."
+    }
+  }
+}

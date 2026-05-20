@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "05-routing-decision-vs-observation",
+  "run_number": 5,
+  "axes": {
+    "AR1": {
+      "score": 0,
+      "justification": "Routed a not-yet-a-commitment into decisions.md, violating the methodology's strict bar (no team alignment, no consequences) — exactly the failure mode the scenario tests."
+    },
+    "AR2": {
+      "score": 0,
+      "justification": "n/a — non-procedure scenario, so this axis is treated as missing rather than scored."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "The reference to decisions.md#2026-05-17-postgres-for-events-service uses the methodology's prescribed relative-path-with-anchor convention and resolves to the appended entry."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "Both writes are append-only (new decisions entry, new daybook file) and would not corrupt history on re-run."
+    }
+  }
+}

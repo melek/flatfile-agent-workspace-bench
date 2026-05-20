@@ -1,0 +1,21 @@
+{
+  "scenario_id": "03-cold-pickup-stale-followup",
+  "run_number": 3,
+  "workspace_tag": "v0.4-smoke",
+  "started_at": "2026-05-18T04:27:00Z",
+  "completed_at": "2026-05-18T04:28:00Z",
+  "final_response": "Looking at `followups.md` against today (2026-05-17), here's what stands out:\n\n**Most urgent — the SOC2 evidence package from Karen at Acme Compliance.**\n- Sent 2026-03-30, expected 2026-04-07, chased once on 2026-04-08, no response since.\n- The note flags it as needed before the auditor's window in May — and we are mid-May. This one is overdue twice over (original deadline, then the chase) and has an external deadline behind it. It probably needs an escalation, not another polite chase: a second contact at Acme, your audit lead, or a hard date with a consequence.\n\n**Stale — both well past expected date.**\n- *Q2 budget review from Marcus (finance).* Sent 2026-04-18, expected by 2026-04-25. Three weeks late, no chase logged. Worth a nudge.\n- *Office wifi vendor demo schedule from Nimbus.* Sent 2026-04-20, expected 2026-04-23. Also three+ weeks silent. Lower stakes than the other two but trivially closable — either pick a slot yourself or drop the vendor.\n\nNothing else is active: no live projects under `projects/`, no daybook entries this week, no open decisions. The followups list is the whole picture.\n\nSuggested order for this week: SOC2 escalation today, finance nudge today or tomorrow, vendor demo whenever you have five minutes. Want me to draft any of the chase messages?",
+  "actions": [
+    {"type": "read", "path": "bench/scenarios/03-cold-pickup-stale-followup/user-prompt.md"},
+    {"type": "list", "path": "03-workspace/"},
+    {"type": "read", "path": "03-workspace/AGENTS.md"},
+    {"type": "read", "path": "03-workspace/README.md"},
+    {"type": "read", "path": "03-workspace/followups.md"},
+    {"type": "list", "path": "03-workspace/daybook/"},
+    {"type": "list", "path": "03-workspace/projects/"},
+    {"type": "read", "path": "03-workspace/decisions.md"},
+    {"type": "read", "path": "03-workspace/observations.md"},
+    {"type": "read", "path": "03-workspace/projects/AGENTS.md"}
+  ],
+  "notes": "User asked a cold-pickup orientation question: 'anything I should be chasing this week?' Workspace has no active projects, no daybook entries for May 2026, empty decisions/observations registers. Only source of work-to-chase is followups.md, which holds three entries — all stale relative to today (2026-05-17). Prioritized by external-deadline pressure: SOC2 evidence (May auditor window, already chased once with no response) is most urgent; Q2 budget review three weeks late; wifi vendor demo also three weeks silent and trivially closable. Offered to draft chase messages as the natural next step. Did not invent additional context or pull from non-workspace sources."
+}

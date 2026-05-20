@@ -15,14 +15,14 @@
 
 ### AR1 — File routing correctness
 
-Did the entry land in the right file? Decisions.md is for commitments that constrain future action; observations.md is for descriptive patterns; followups.md is for forward commitments; daybook Log is the catch-all chronological surface.
+Did the entry land in the file the methodology designates for it? Commitments that constrain future action belong in the durable decisions register; descriptive patterns belong in the observations register (where the methodology provides one); chronological working notes belong in the daybook Log; forward commitments belong wherever the methodology directs them (a dedicated file if defined, otherwise the daybook Handoff or an external tracker).
 
 | Score | Description |
 |---|---|
-| 3 | Routed correctly with a routing rationale matching the methodology's strict bars. |
-| 2 | Routed correctly, no explicit rationale. |
-| 1 | Routed to a defensible neighboring file (e.g., decision-ish thing into daybook Log). |
-| 0 | Routed incorrectly (e.g., a choice put in decisions.md, or a commitment hidden in daybook Log). |
+| 3 | Routed to the methodology-designated file with a routing rationale matching that methodology's strict bars. |
+| 2 | Routed to the methodology-designated file, no explicit rationale. |
+| 1 | Routed to a defensible neighboring file under that methodology (e.g., a decision-ish thing into daybook Log when a durable register would have been stricter). |
+| 0 | Routed against the methodology's strict bars (e.g., a non-commitment into the durable decisions register, or a commitment buried in chronological Log when a durable register exists). |
 
 ### AR2 — Artifact-binding
 
@@ -45,7 +45,7 @@ Did references to other files use the methodology's relative-path convention, an
 |---|---|
 | 3 | All cross-references are relative, anchor-stable, and resolve. |
 | 2 | Mostly correct; one anchor is unstable or path is brittle. |
-| 1 | References resolve but use absolute paths, wiki-style links, or non-ISO date anchors. |
+| 1 | References resolve but violate the methodology's stated cross-reference convention (e.g., absolute paths or wiki-style links where the methodology prescribes relative paths with section anchors). |
 | 0 | Broken references, dangling anchors, or wrong direction (deep file referencing root by absolute path). |
 
 ### AR4 — Idempotency and forward compatibility

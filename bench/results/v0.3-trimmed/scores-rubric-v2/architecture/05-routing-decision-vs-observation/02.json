@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "05-routing-decision-vs-observation",
+  "run_number": 2,
+  "axes": {
+    "AR1": {
+      "score": 0,
+      "justification": "The entry was routed into decisions.md as an accepted ADR despite no team alignment, no constraints, and no consequences — exactly the not-yet-a-commitment shape the methodology's strict bar and the 'when uncertain, default to today's daybook Log' instruction route away from decisions.md."
+    },
+    "AR2": {
+      "score": 0,
+      "justification": "n/a — this is an artifact-routing scenario, not a runbook/procedure scenario, so artifact-binding doesn't apply."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "Cross-references use the prescribed relative-path + ISO-dated anchor convention (decisions.md#2026-05-17-postgres-for-the-events-service, daybook/2026-05-17.md) and both resolve cleanly."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "Both writes are append-only with dated headings; re-running would append a new dated entry rather than mutating the existing one, keeping history coherent."
+    }
+  }
+}

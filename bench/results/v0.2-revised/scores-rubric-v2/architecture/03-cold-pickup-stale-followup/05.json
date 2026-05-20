@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "03-cold-pickup-stale-followup",
+  "run_number": 5,
+  "axes": {
+    "AR1": {
+      "score": 3,
+      "justification": "Triage notes routed to the daybook Log (chronological working surface), followups.md left unmodified pending user direction (correctly honoring its non-speculative Status discipline), and no spurious entries written to decisions.md or observations.md — matching the methodology's strict bars."
+    },
+    "AR2": {
+      "score": 3,
+      "justification": "Not a runbook/procedure scenario, but the cold-pickup triage still produced a concrete dated daybook artifact with Intent/Log/Handoff that a future session can read."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "Cross-references in the daybook use relative paths (`followups.md`, `0000-00-00-example.md`) consistent with the methodology's cross-reference convention and all resolve."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "Daybook is dated and append-only, followups.md was deliberately not mutated, and the Handoff explicitly defers Status updates to the next session — re-running or extending stays coherent."
+    }
+  }
+}

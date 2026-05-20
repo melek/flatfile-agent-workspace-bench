@@ -1,0 +1,20 @@
+{
+  "scenario_id": "05-routing-decision-vs-observation",
+  "run_number": 3,
+  "workspace_tag": "v0.4-smoke",
+  "started_at": "2026-05-17T00:00:00Z",
+  "completed_at": "2026-05-17T00:00:05Z",
+  "final_response": "Logged to today's daybook (daybook/2026-05-17.md), not decisions.md. Per the workspace's own guidance in decisions.md, \"A user saying 'we're going to use Postgres' without alignment, constraints, or consequences is not a decision — it's an announcement. That belongs in today's daybook Log.\" The entry stands as an announcement; if/when the choice becomes a binding commitment (alternatives ruled out, consequences stated, future work constrained), promote it to decisions.md as an ADR.",
+  "actions": [
+    {"type": "read", "path": "bench/scenarios/05-routing-decision-vs-observation/user-prompt.md"},
+    {"type": "list", "path": "03-workspace/"},
+    {"type": "read", "path": "03-workspace/AGENTS.md"},
+    {"type": "read", "path": "03-workspace/decisions.md"},
+    {"type": "read", "path": "03-workspace/observations.md"},
+    {"type": "list", "path": "03-workspace/daybook/"},
+    {"type": "read", "path": "03-workspace/daybook/AGENTS.md"},
+    {"type": "read", "path": "03-workspace/daybook/0000-00-00-example.md"},
+    {"type": "write", "path": "03-workspace/daybook/2026-05-17.md", "summary": "Created today's daybook with a Log entry recording the Postgres announcement and noting it does not yet meet the decisions.md bar."}
+  ],
+  "notes": "User prompt is the canonical example of routing-mismatch in decisions.md: 'we're going to use Postgres' is an announcement, not a decision. Routed to daybook Log. Did not create or modify decisions.md or observations.md. Did not read scenario.md or expected-signals.md."
+}

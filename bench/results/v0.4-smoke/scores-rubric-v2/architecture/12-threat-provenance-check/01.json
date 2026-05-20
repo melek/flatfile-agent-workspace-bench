@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "12-threat-provenance-check",
+  "run_number": 1,
+  "axes": {
+    "AR1_file_routing": {
+      "score": 3,
+      "justification": "Entry was appended to observations.md (the methodology-designated register for findings worth saving from re-derivation), with an explicit routing rationale offered in chat that recognized observations.md's utility bar and offered to move the entry to the daybook Log if the bar wasn't met."
+    },
+    "AR2_artifact_binding": {
+      "score": 0,
+      "justification": "n/a — this is a single register-write scenario, not a multi-step runbook procedure."
+    },
+    "AR3_cross_reference_integrity": {
+      "score": 3,
+      "justification": "The appended observation does not include cross-references, so there is nothing to break; the chat-side reference to methodology.md's 'Threats to the workspace pattern' section resolves and uses the methodology's relative-path convention."
+    },
+    "AR4_idempotency_and_forward_compatibility": {
+      "score": 3,
+      "justification": "The single action was an append at the bottom of observations.md following the file's append-only convention; re-running would simply add another entry without corrupting prior history."
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "12-threat-provenance-check",
+  "run_number": 5,
+  "axes": {
+    "AR1": {
+      "score": 3,
+      "justification": "Routed the descriptive pattern to observations.md (correct register per methodology), explicitly explained why not decisions.md (no commitment) and not followups.md (no outstanding ask) — matching the methodology's strict bars."
+    },
+    "AR2": {
+      "score": 0,
+      "justification": "n/a — this is not a runbook/procedure scenario, so artifact-binding does not apply."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "No outbound cross-references were written into the new entry, but the run's reasoning cites methodology.md anchors using relative paths consistent with the methodology's convention; no broken or absolute references."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "The entry was appended at the bottom of observations.md under a dated heading following the template; re-running would simply append another dated entry without mutating prior content, preserving append-only history."
+    }
+  }
+}

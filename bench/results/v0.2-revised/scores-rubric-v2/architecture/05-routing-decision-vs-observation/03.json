@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "05-routing-decision-vs-observation",
+  "run_number": 3,
+  "axes": {
+    "AR1": {
+      "score": 0,
+      "justification": "Routed a not-yet-a-commitment (no team alignment, no constraint named, no consequences) into decisions.md, violating the methodology's strict bar that a future reader must ask 'are we allowed to do X?' — this belonged in observations.md or daybook Log."
+    },
+    "AR2": {
+      "score": 0,
+      "justification": "n/a — this is a routing scenario, not a procedure/runbook execution."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "Used the canonical relative anchor form `decisions.md#2026-05-17-events-service-will-use-postgres` from the daybook Log entry, matching the methodology's cross-reference convention."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "Actions are append-only (new dated entry at the bottom of decisions.md, new daybook file, new Log line) and would not conflict or mutate prior history on re-run."
+    }
+  }
+}

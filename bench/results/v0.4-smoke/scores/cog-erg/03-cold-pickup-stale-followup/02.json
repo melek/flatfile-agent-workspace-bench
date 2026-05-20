@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "03-cold-pickup-stale-followup",
+  "run_number": 2,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "Acted directly on the generic prompt by reading the workspace and surfacing the prioritized list without asking the user to recall or restate anything."
+    },
+    "CE2": {
+      "score": 2,
+      "justification": "Mostly compact and well-structured, but the closing line about other registers being clear is a stretch of unneeded prose given the user only asked what to chase."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "Named the source files inline (`followups.md`, `decisions.md`, `observations.md`) and briefly explained why each item was ranked where it was."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "The response is read-only — no files were written or modified, so an interrupt would leave the workspace in a clean state with no orphan artifacts."
+    }
+  }
+}

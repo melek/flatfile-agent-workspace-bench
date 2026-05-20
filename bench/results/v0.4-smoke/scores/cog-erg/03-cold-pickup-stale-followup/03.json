@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "03-cold-pickup-stale-followup",
+  "run_number": 3,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "Acted directly on the cold-pickup prompt by reading the workspace itself; required no recall or clarification from the user."
+    },
+    "CE2": {
+      "score": 2,
+      "justification": "Mostly compact and well-structured, but the closing 'Nothing else is active' paragraph and the suggested-order recap are mild padding beyond what the question required."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "For each item the agent named where it came from (followups.md entry) and why it was being surfaced (external deadline, weeks silent, trivially closable), giving the user cheap interception points."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "The response is read-only triage with a single follow-up offer; no in-progress artifacts or partial writes that would orphan on interrupt."
+    }
+  }
+}

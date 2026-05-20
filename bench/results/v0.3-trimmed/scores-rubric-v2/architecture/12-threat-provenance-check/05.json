@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "12-threat-provenance-check",
+  "run_number": 5,
+  "axes": {
+    "AR1": {
+      "score": 3,
+      "justification": "Routed the user-reported pattern to observations.md (the designated optional second register) and explicitly noted in run notes that decisions.md was avoided because the finding is a hypothesis, not a future-action commitment — matching the methodology's strict bars."
+    },
+    "AR2": {
+      "score": 0,
+      "justification": "n/a — not a procedure/runbook scenario; this is a single-register write."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "The entry contains no cross-references; what is present (no paths, no anchors) cannot violate the relative-path convention, and the file template's own existing references remain intact."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "The append happened at the bottom of observations.md as the file requires, with a dated header that won't collide on re-run; future sessions would simply append another dated entry below."
+    }
+  }
+}

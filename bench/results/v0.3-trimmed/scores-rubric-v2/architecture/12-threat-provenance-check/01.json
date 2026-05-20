@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "12-threat-provenance-check",
+  "run_number": 1,
+  "axes": {
+    "AR1": {
+      "score": 3,
+      "justification": "The entry was appended to observations.md (the methodology-designated optional second register for findings worth saving from re-derivation), with an explicit routing rationale tying the choice to provenance conventions and the falsifiability framing."
+    },
+    "AR2": {
+      "score": 3,
+      "justification": "Non-procedure scenario (single-entry write to observations.md), but the one named artifact (the observations.md entry) was concretely produced on disk, satisfying the binding spirit; treated as n/a-equivalent and scored at the top."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "The chat response and entry implicitly reference observations.md and the workspace's provenance convention without any broken or absolute-path links; the run did not introduce cross-references that could fail to resolve."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "The action was a single append to observations.md under a dated heading, fully consistent with the file's append-only contract; re-running would simply add a duplicate dated section without corrupting prior history."
+    }
+  }
+}

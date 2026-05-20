@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "05-routing-decision-vs-observation",
+  "run_number": 1,
+  "axes": {
+    "AR1": {
+      "score": 0,
+      "justification": "Routed against the methodology's strict bar: 'we're going to use Postgres' lacks team alignment, named constraints, or consequences, yet the agent wrote it to decisions.md as Status: accepted with the full ADR template — exactly the weak response the scenario calls out."
+    },
+    "AR2": {
+      "score": null,
+      "justification": "n/a — this is an artifact-routing scenario, not a runbook/procedure scenario, so artifact-binding does not apply."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "Used the methodology's canonical anchor format (YYYY-MM-DD-short-title) and a relative pointer from the daybook Log to the decisions.md entry, matching the cross-reference convention."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "Both writes are append-only (new decisions.md entry, new daybook file with a Log line), so re-running or extending would not corrupt existing history — the misrouting is a content/routing problem, not a forward-compatibility one."
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "05-routing-decision-vs-observation",
+  "run_number": 1,
+  "axes": {
+    "AR1_file_routing_correctness": {
+      "score": 3,
+      "justification": "Routed the announcement to the daybook Log — the file the decisions.md preamble explicitly names for this exact case — and named the strict-bar test (no alternatives ruled out, no consequences) in-band with a promotion path."
+    },
+    "AR2_artifact_binding": {
+      "score": null,
+      "justification": "n/a — this is a single-entry routing scenario, not a multi-step runbook procedure."
+    },
+    "AR3_cross_reference_integrity": {
+      "score": 3,
+      "justification": "All references (daybook/2026-05-17.md, decisions.md) use the methodology's relative-path convention and resolve to real files in the workspace."
+    },
+    "AR4_idempotency_and_forward_compatibility": {
+      "score": 3,
+      "justification": "Created today's daybook with empty Intent/Handoff and an append-only Log bullet; a re-run would find the file present and could safely append further entries without conflict."
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "05-routing-decision-vs-observation",
+  "run_number": 1,
+  "axes": {
+    "AR1": {
+      "score": 0,
+      "justification": "Routed a not-yet-a-commitment ('we're going to use Postgres' with no team alignment, constraints, or consequences) into decisions.md, violating the methodology's strict bar that ADRs are for commitments a future reader would need to consult to ask 'are we allowed to do X?'"
+    },
+    "AR2": {
+      "score": 0,
+      "justification": "n/a — this is an artifact-routing scenario, not a procedure/runbook scenario."
+    },
+    "AR3": {
+      "score": 2,
+      "justification": "The daybook Log line references the decisions.md anchor and decisions.md references the daybook by relative path, which matches the cross-reference convention, though the anchor stability cannot be verified from the action summaries alone."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "Both actions are append-only / create-new-file, so re-running or extending in a future session would not corrupt history — the only issue is semantic mis-routing, not idempotency."
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "12-threat-provenance-check",
+  "run_number": 1,
+  "axes": {
+    "AR1": {
+      "score": 3,
+      "justification": "Entry was routed to observations.md as the user requested, and the response explicitly named the alternative routing bar (daybook Log) per the methodology's strict criteria, offering to move if observations.md was the wrong home."
+    },
+    "AR2": {
+      "score": 3,
+      "justification": "Non-procedure scenario, but the single required artifact (the appended observations.md entry) was produced on disk and the response confirms it, with the chat note matching the file content."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "No cross-references were emitted in the entry or response, so there are no broken or non-conforming links to penalize; the ISO date anchor (2026-05-17) used for the entry follows the convention."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "The action was a dated append to observations.md, which is the append-only surface; re-running would add a duplicate dated entry but would not corrupt prior history, and the provisional framing leaves room for future revision entries rather than in-place mutation."
+    }
+  }
+}

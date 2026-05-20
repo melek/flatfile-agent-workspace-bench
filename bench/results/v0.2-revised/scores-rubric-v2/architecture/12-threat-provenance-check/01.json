@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "12-threat-provenance-check",
+  "run_number": 1,
+  "axes": {
+    "AR1": {
+      "score": 3,
+      "justification": "Routed the descriptive pattern to observations.md (not decisions.md), correctly respecting the strict bar that decisions.md is for commitments — and explicitly flagged that it should be re-checked before crystallizing into a decision."
+    },
+    "AR2": {
+      "score": 0,
+      "justification": "n/a — non-procedural scenario (single-entry capture, no runbook steps to artifact-bind)."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "The single cross-reference used (methodology.md#provenance-markers in the chat response and implicitly tracked by the template) is relative and resolves; the entry itself needs no additional cross-references."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "Appended a new dated entry at the bottom of observations.md per the file's append-only contract; re-running would create a distinguishable duplicate but would not corrupt prior history."
+    }
+  }
+}

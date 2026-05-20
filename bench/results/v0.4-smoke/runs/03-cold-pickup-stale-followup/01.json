@@ -1,0 +1,58 @@
+{
+  "scenario_id": "03-cold-pickup-stale-followup",
+  "run_number": 1,
+  "workspace_tag": "v0.4-smoke",
+  "started_at": "2026-05-17T20:50:00Z",
+  "completed_at": "2026-05-17T20:52:00Z",
+  "final_response": "Cold-pickup read — there's no project work in flight yet (no project folders, empty decisions/observations registers, no prior daybook entries), so the signal for \"what to chase\" comes from `followups.md`. All three entries there are past their expected-by dates as of today (2026-05-17):\n\n1. **SOC2 evidence package — Acme Compliance (Karen).** Sent 2026-03-30, expected 2026-04-07, chased once on 2026-04-08, silent since. The note says it's needed before the auditor's window in May — that's this month, so this is the urgent one. Escalation-worthy if Karen doesn't reply within a day or two.\n2. **Q2 budget review — Finance (Marcus).** Sent 2026-04-18, expected 2026-04-25 (~3 weeks overdue). No chase recorded. Low-effort nudge.\n3. **Office wifi vendor demo — Nimbus.** Sent 2026-04-20, expected 2026-04-23 (~3 weeks overdue). No chase recorded. Low-effort nudge; smallest stakes of the three.\n\nSuggested order for the week: SOC2 first (today if possible — it's already been chased once and has a hard external deadline), then Marcus and Nimbus as quick parallel pings. Want me to draft the chase notes, or do you want to handle them yourself and just have me update `followups.md` once you've sent them?\n\nI've also opened today's daybook (`daybook/2026-05-17.md`) with this triage in the Log section. Nothing in the registers needs an entry yet — these are reminders, not commitments.",
+  "actions": [
+    {
+      "path": "AGENTS.md",
+      "action": "read",
+      "content_summary": "Workspace orientation: layout, registers (decisions/observations), daybook convention, canonical strings."
+    },
+    {
+      "path": "followups.md",
+      "action": "read",
+      "content_summary": "Three open followups: SOC2 evidence (chased once, auditor window in May), Q2 budget review (no chase), wifi vendor demo (no chase). All past expected-by dates."
+    },
+    {
+      "path": "decisions.md",
+      "action": "read",
+      "content_summary": "Empty register — only template and shape guidance; no entries yet."
+    },
+    {
+      "path": "observations.md",
+      "action": "read",
+      "content_summary": "Empty register — only template and shape guidance; no entries yet."
+    },
+    {
+      "path": "daybook/0000-00-00-example.md",
+      "action": "read",
+      "content_summary": "Seeded example daybook entry (2026-05-15 placeholder), not real history."
+    },
+    {
+      "path": "daybook/AGENTS.md",
+      "action": "read",
+      "content_summary": "Daybook conventions: one file per workday, Intent/Log/Handoff sections, cold-pickup guidance."
+    },
+    {
+      "path": "projects/AGENTS.md",
+      "action": "read",
+      "content_summary": "Project folder convention; no actual project subfolders present."
+    },
+    {
+      "path": "daybook/2026-05-17.md",
+      "action": "create",
+      "content_summary": "Today's daybook entry: Intent (triage what needs chasing), Log (cold-pickup orientation, stale followups surfaced with dates and status), Handoff left for session close."
+    }
+  ],
+  "notes": [
+    "Cold-pickup scenario: no prior daybook entries to anchor on, only the seed example. Used followups.md as the primary signal for \"what to chase\".",
+    "All three followups are past their expected-by dates; SOC2 is the only one with a recorded chase and the only one with a downstream external deadline (auditor's window in May).",
+    "Did not promote anything to decisions.md or observations.md — these followups are reminders, not commitments, and the bar in this workspace is explicit about that.",
+    "Opened today's daybook with Intent + Log; left Handoff for session close per methodology.",
+    "Did not read methodology.md, runbooks/, resources/, or tmp/ in detail — the question was scoped to \"what to chase this week\" and the answer was already determined by followups.md + registers.",
+    "Offered the user a choice between drafting the chase notes or handling them directly, rather than acting unilaterally on stale items."
+  ]
+}

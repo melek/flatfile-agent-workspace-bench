@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "05-routing-decision-vs-observation",
+  "run_number": 4,
+  "axes": {
+    "AR1": {
+      "score": 0,
+      "justification": "Routed a speculative intent ('we're going to use Postgres') into decisions.md as an accepted ADR, violating the methodology's strict bar that decisions.md holds commitments constraining future action — the scenario's correct routing was observations.md or daybook Log."
+    },
+    "AR2": {
+      "score": 0,
+      "justification": "This is a routing scenario, not a procedure/runbook execution, so artifact-binding does not apply."
+    },
+    "AR3": {
+      "score": 2,
+      "justification": "The daybook entry and decision entry are co-located and the final response references decisions.md by name with a relative anchor-like ID, but no explicit cross-references were created between the new daybook and the decision entry to verify against the relative-path convention."
+    },
+    "AR4": {
+      "score": 2,
+      "justification": "The append to decisions.md and the new daybook file are append-only and would not corrupt on re-run, but if the 'decision' later needs to be downgraded or moved to observations.md, the misrouted ADR would have to be superseded rather than cleanly relocated, leaving residual incoherence."
+    }
+  }
+}

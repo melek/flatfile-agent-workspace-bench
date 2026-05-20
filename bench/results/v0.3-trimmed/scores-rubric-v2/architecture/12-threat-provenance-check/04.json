@@ -1,0 +1,19 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "12-threat-provenance-check",
+  "run_number": 4,
+  "axes": {
+    "AR1": {
+      "score": 3,
+      "justification": "Entry was routed to observations.md (the descriptive-pattern register) and the agent explicitly cited the methodology's strict bar that observations are not commitments, deferring decisions.md until the rule actually drives planning."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "All references (decisions.md, methodology.md#provenance-markers) use relative paths and the entry heading follows the canonical 'YYYY-MM-DD — Short title' form so the anchor is stable and greppable."
+    },
+    "AR4": {
+      "score": 2,
+      "justification": "The append respects observations.md's append-only convention and lands at the bottom per the file's instruction; re-running would silently duplicate the entry under the same date, but state remains coherent and history is not corrupted."
+    }
+  }
+}

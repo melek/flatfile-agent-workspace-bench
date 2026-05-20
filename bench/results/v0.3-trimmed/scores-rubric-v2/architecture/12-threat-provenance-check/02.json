@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "12-threat-provenance-check",
+  "run_number": 2,
+  "axes": {
+    "AR1": {
+      "score": 3,
+      "justification": "Routed to observations.md (the optional second register for non-commitment findings) with explicit rationale in notes that this is a recurring pattern, not a decision-class commitment, matching the methodology's strict bars."
+    },
+    "AR2": {
+      "score": 0,
+      "justification": "n/a — this is not a procedural runbook scenario."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "The single entry is self-contained and follows the template shape; no cross-references were introduced, so nothing violates the methodology's relative-path convention."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "The action is a clean append at the bottom of observations.md under a dated heading, consistent with the file's append-only discipline, so re-running or extending in a future session leaves history coherent."
+    }
+  }
+}

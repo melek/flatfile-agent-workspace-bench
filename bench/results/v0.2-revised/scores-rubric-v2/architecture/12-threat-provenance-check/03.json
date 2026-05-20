@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "12-threat-provenance-check",
+  "run_number": 3,
+  "axes": {
+    "AR1": {
+      "score": 3,
+      "justification": "Entry landed in observations.md as the user requested, with Generated-by: mixed and an explicit rationale citing the file's strict bars (single-noticings belong in daybook Log first, descriptive not prescriptive) — and the agent additionally opened today's daybook to record the single-instance Log entry the methodology prefers."
+    },
+    "AR2": {
+      "score": 0,
+      "justification": "n/a — this is a threat/provenance scenario, not a runbook procedure, so artifact-binding does not apply."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "Cross-references use relative paths (methodology.md#provenance-markers, observations.md header, decisions.md) consistent with the methodology's cross-reference convention and resolve correctly."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "Both writes are append-only / new-file (entry appended to bottom of observations.md, new dated daybook file created), so re-running would not corrupt history and the workspace would remain coherent."
+    }
+  }
+}

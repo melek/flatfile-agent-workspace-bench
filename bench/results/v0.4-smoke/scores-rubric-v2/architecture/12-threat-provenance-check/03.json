@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "12-threat-provenance-check",
+  "run_number": 3,
+  "axes": {
+    "AR1": {
+      "score": 3,
+      "justification": "Agent correctly invoked the observations.md utility-shaped bar, declined to route a weak universal claim into the durable register, and offered the daybook Log or decisions.md as methodology-aligned alternatives — routing rationale matches the strict bars."
+    },
+    "AR2": {
+      "score": 0,
+      "justification": "n/a — no runbook or procedure was being enacted in this scenario."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "References to observations.md, decisions.md, and the daybook Log use bare relative filenames consistent with the methodology's cross-reference convention and all resolve."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "Agent wrote nothing to disk; re-running would simply re-prompt the user, leaving the workspace fully coherent and append-only invariants intact."
+    }
+  }
+}

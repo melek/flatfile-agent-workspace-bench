@@ -1,0 +1,48 @@
+{
+  "scenario_id": "05-routing-decision-vs-observation",
+  "run_number": 2,
+  "workspace_tag": "v0.4-smoke",
+  "started_at": "2026-05-18T04:27:52Z",
+  "completed_at": "2026-05-18T04:28:30Z",
+  "final_response": "Logged in today's daybook (daybook/2026-05-17.md) under Log, not in decisions.md.\n\nReasoning: the workspace's decisions.md is explicit that \"we're going to use Postgres\" without alignment, alternatives ruled out, or consequences is an announcement, not a decision. The bar for decisions.md is a commitment that constrains future action — would a future reader need to ask \"are we allowed to do X?\" or \"didn't we promise Y?\" Right now there's no alternative being closed off, no constraint binding future work, and no consequences section that wouldn't be hypothetical. It also doesn't fit observations.md, which is for findings that cost real inference to derive (gotchas, domain rules, framing patterns) — a tech-stack intention isn't that.\n\nIf this firms up — e.g., \"Postgres over DynamoDB because of transactional needs; no other stores for this service\" — that earns a decisions.md entry, and I'll promote it then. For now it lives in the daybook Log as the chronological catch-all, per the workspace's \"when uncertain, default to today's daybook Log\" guidance.",
+  "actions": [
+    {
+      "type": "read",
+      "path": "AGENTS.md"
+    },
+    {
+      "type": "read",
+      "path": "bench/scenarios/05-routing-decision-vs-observation/user-prompt.md"
+    },
+    {
+      "type": "list",
+      "path": "(workspace root)"
+    },
+    {
+      "type": "read",
+      "path": "decisions.md"
+    },
+    {
+      "type": "read",
+      "path": "observations.md"
+    },
+    {
+      "type": "list",
+      "path": "daybook/"
+    },
+    {
+      "type": "read",
+      "path": "daybook/AGENTS.md"
+    },
+    {
+      "type": "list",
+      "path": "projects/"
+    },
+    {
+      "type": "write",
+      "path": "daybook/2026-05-17.md",
+      "summary": "Created today's daybook with a Log entry noting the Postgres intent for the events service, flagged as announcement-not-yet-decision."
+    }
+  ],
+  "notes": "User statement is an unconstrained announcement (no alternatives ruled out, no consequences). Per decisions.md guidance, this routes to today's daybook Log, not decisions.md or observations.md. Created daybook/2026-05-17.md (no prior entry existed) with the note under Log. Left a parenthetical so future-me knows to promote it if it crystallizes into a real commitment."
+}
