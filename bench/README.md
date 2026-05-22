@@ -12,7 +12,7 @@ A small benchmark for comparing versions of the flatfile-agent-workspace templat
 
 - Not a head-to-head against other workspace systems.
 - Not a magnitude claim. N=5 simulations per scenario will not support significance testing.
-- Not a longitudinal study. Single-session simulations cannot probe Theme-3 compounding effects (see `~/research/evaluation-frameworks-ai-agent-workspaces/review.md §3.2`).
+- Not a longitudinal study. Single-session simulations cannot probe Theme-3 compounding effects.
 - Not a substitute for human-subjects study. Rater agents stand in for human raters. Their bias is the limitation.
 
 ## Layout
@@ -77,8 +77,6 @@ The runner enumerates work; an orchestrating agent dispatches the actual inferen
 ## Disagreement is the signal
 
 We do not pitch v0.1 → v0.2 as improvement. The headline of any results report is **"where the three rubrics agree and where they disagree."** Disagreement matters because rubrics encode different priorities: cognitive ergonomics wants low friction, architecture wants strict routing, safety wants disclosure and resistance to ratification. A change that helps one frequently costs another. That trade-off is the result.
-
-See `~/research/evaluation-frameworks-ai-agent-workspaces/review.md §5` for the framing this benchmark inherits from the SLR.
 
 ## Frozen-scenarios discipline
 
