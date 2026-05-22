@@ -1,0 +1,18 @@
+# OS / editor noise
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Staged per-run workspaces — reproducible from the template + scenario seed,
+# so they are not committed. Transcripts, scores, and reports under
+# bench/results/ ARE committed.
+bench/results/*/runs/*/*-workspace/
