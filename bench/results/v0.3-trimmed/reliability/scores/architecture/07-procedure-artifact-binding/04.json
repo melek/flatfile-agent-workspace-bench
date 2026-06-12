@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "07-procedure-artifact-binding",
+  "run_number": 4,
+  "axes": {
+    "AR1": {
+      "score": 2,
+      "justification": "Intermediates routed to tmp/ and the final postmortem to projects/postmortems/ correctly, with a strong rationale for not earning decisions.md/observations.md entries, but the runbook's explicit directive to promote immediate action items into followups.md was declined rather than honored, leaving the forward commitments only as in-text owners."
+    },
+    "AR2": {
+      "score": 3,
+      "justification": "All five steps produced their named concrete files (timeline.md, factors.md, actions.md, final postmortem), each step read its predecessor before writing, and missing inputs were marked [unconfirmed] and propagated honestly rather than fabricated or skipped."
+    },
+    "AR3": {
+      "score": 2,
+      "justification": "The final postmortem cross-references each intermediate via relative links that resolve at authoring time, but linking a committed file into gitignored tmp/ scratch is brittle since those targets will not persist."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "Every write targets a deterministic slug-named path and would regenerate identically on re-run, with no append-only registers mutated and decisions.md/observations.md left untouched, so the workspace stays coherent."
+    }
+  }
+}

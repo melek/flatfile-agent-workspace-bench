@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "06-routing-tldr-screening",
+  "run_number": 2,
+  "axes": {
+    "AR1": {
+      "score": 1,
+      "justification": "The agent routed an unverified, AI-generated TLDR-without-source into the durable resources/ reference shelf rather than tmp/ for triage, a defensible-neighbor choice that still misses the methodology's triage intent for provisional, un-sourced material."
+    },
+    "AR2": {
+      "score": "n/a",
+      "justification": "This is a non-procedure artifact-routing scenario, so artifact-binding does not apply."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "All cross-references (resources/prompt-cache-attacks/tldr.md, projects/prompt-cache-attacks/) use the methodology's relative-path convention and resolve cleanly with no absolute or wiki-style links."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "The actions are a mkdir plus a single deterministic file create, touch no append-only register, and would re-run without conflicting or corrupting history."
+    }
+  }
+}

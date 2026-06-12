@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "06-routing-tldr-screening",
+  "run_number": 4,
+  "axes": {
+    "AR1": {
+      "score": 1,
+      "justification": "The agent routed the unverified AI-summary-of-an-unread-paper to the durable `resources/` register with explicit reasoning, but that lands it on the wrong side of the durable/provisional line the scenario tests for (it should triage to `tmp/`), making it a defensible-neighboring miss rather than correct routing."
+    },
+    "AR2": {
+      "score": "n/a",
+      "justification": "This is an artifact-routing scenario with no runbook or procedure steps, so artifact-binding does not apply."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "The agent proposed a relative subfolder layout (`resources/prompt-cache-attacks/tldr.md`, `paper.pdf`) and a relative `mv` promotion path, all consistent and resolvable with no absolute or broken references."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "The agent wrote nothing and only recommended a shape, so re-running or extending the session would not conflict, duplicate, or corrupt any existing workspace state."
+    }
+  }
+}

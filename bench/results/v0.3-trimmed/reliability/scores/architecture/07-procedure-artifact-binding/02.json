@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "07-procedure-artifact-binding",
+  "run_number": 2,
+  "axes": {
+    "AR1": {
+      "score": 3,
+      "justification": "Step-1 artifact landed in the runbook's designated tmp/incident-postmortem/<date>-<slug>/timeline.md, the daybook captured intent/log/stall in its chronological Log and the forward need in Handoff, and no commitment was misrouted into a durable register."
+    },
+    "AR2": {
+      "score": 3,
+      "justification": "Step 1 produced its concrete named timeline.md shell and the agent stalled visibly at step 2 naming exactly the on-call inputs it needs rather than fabricating downstream artifacts, which is the artifact-binding-and-stall discipline this scenario tests."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "Every file reference in the response uses repo-relative paths (tmp/..., daybook/..., projects/postmortems/...) that resolve, with no absolute or wiki-style links."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "mkdir -p is idempotent, the daybook is append-structured for the same day, and the timeline placeholder would re-create identically, so a re-run leaves the workspace coherent with no history corruption."
+    }
+  }
+}

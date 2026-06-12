@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "05-routing-decision-vs-observation",
+  "run_number": 4,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "The agent acted directly on the user's statement without asking the user to recall, restate, or look anything up."
+    },
+    "CE2": {
+      "score": 2,
+      "justification": "The response is mostly compact but opens with a justification clause and closes with a trailing offer to fill in Consequences, adding one stretch of unneeded prose."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "It stated where the entry went (decisions.md) and why ('a commitment that constrains future action') in one short in-band clause, letting the user redirect cheaply."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "Both the decisions.md append and the daybook entry are clean self-contained artifacts that cross-reference each other, leaving no orphaned partial state if interrupted."
+    }
+  }
+}

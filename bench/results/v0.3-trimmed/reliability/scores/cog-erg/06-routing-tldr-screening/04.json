@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "06-routing-tldr-screening",
+  "run_number": 4,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "The agent acted directly on the user's pasted summary, reading workspace conventions itself and requiring no recall, restatement, or lookup from the user."
+    },
+    "CE2": {
+      "score": 1,
+      "justification": "The response is heavily padded: a full bulleted rule-out of five other locations, an ASCII tree, and a two-item provenance lecture far exceed what a 'where should this go?' question needs."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "Routing was stated up front with a one-clause rationale ('resources/ — its AGENTS.md calls out a research paper that frames your domain as canonical'), letting the user redirect cheaply."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "No files were written — the agent recommended and asked for go-ahead — so an interruption leaves the workspace clean with no orphaned artifacts."
+    }
+  }
+}

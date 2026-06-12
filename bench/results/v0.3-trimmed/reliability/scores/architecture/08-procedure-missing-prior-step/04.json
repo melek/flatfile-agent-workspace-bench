@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "08-procedure-missing-prior-step",
+  "run_number": 4,
+  "axes": {
+    "AR1": {
+      "score": 3,
+      "justification": "The agent correctly routed nothing — it produced no actions.md and no register entries because the procedure stalled, respecting the runbook's strict bar against fabricating a downstream artifact, and stated that rationale explicitly."
+    },
+    "AR2": {
+      "score": 3,
+      "justification": "On this procedure step the agent checked for factors.md, found it missing, and stalled visibly by name rather than fabricating step 3's output to proceed."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "All file references in the response use the runbook's relative-path convention (tmp/incident-postmortem/.../factors.md, timeline.md) and point at correct, resolvable locations."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "The agent wrote no workspace files, so re-running the action would neither duplicate, no-op destructively, nor corrupt any history — fully idempotent."
+    }
+  }
+}

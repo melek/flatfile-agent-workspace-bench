@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "05-routing-decision-vs-observation",
+  "run_number": 2,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "The agent acted directly on the user's statement without asking any clarifying questions or requiring the user to load or restate any context."
+    },
+    "CE2": {
+      "score": 2,
+      "justification": "The response is mostly compact but spends a full sentence contrasting decisions.md against observations.md and the daybook Log, which is more justification prose than the terse action needed."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "The agent stated where the entry went (decisions.md) and why (forward-looking commitment that constrains future work) in-line, so the user could redirect cheaply."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "Each action committed cleanly as a discrete append/create with cross-pointers, leaving no orphaned or half-written artifacts if interrupted."
+    }
+  }
+}

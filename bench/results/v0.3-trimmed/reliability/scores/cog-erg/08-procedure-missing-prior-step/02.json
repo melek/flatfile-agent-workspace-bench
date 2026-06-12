@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "08-procedure-missing-prior-step",
+  "run_number": 2,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "The agent acted directly without asking the user to recall, restate, or look anything up, surfacing the missing-artifact situation in the response itself rather than as a blocking question."
+    },
+    "CE2": {
+      "score": 2,
+      "justification": "Mostly compact and inlined the full actions list as asked, but the leading 'Heads up' explanation plus the closing offer to take a sharper pass or jump to step 5 add a stretch of unneeded prose."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "It said where each artifact went (factors.md and actions.md in tmp/incident-postmortem/2026-04-23-staging-rollback/) and why (ran step 3 first-pass to unblock step 4), in short clauses the user could redirect from."
+    },
+    "CE4": {
+      "score": 2,
+      "justification": "Each file was committed as a discrete create, but factors.md is a first-draft artifact the agent itself flags as needing review, leaving one ambiguous in-progress artifact a future session must reconcile."
+    }
+  }
+}

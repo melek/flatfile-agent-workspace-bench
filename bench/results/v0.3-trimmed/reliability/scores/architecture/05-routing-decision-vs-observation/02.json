@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "05-routing-decision-vs-observation",
+  "run_number": 2,
+  "axes": {
+    "AR1": {
+      "score": 0,
+      "justification": "The Postgres statement is an unaligned intent with no constraint or consequences named, yet it was routed into decisions.md as an 'accepted' ADR, violating the methodology's strict bar that decisions.md is for commitments that constrain future action."
+    },
+    "AR2": {
+      "score": "n/a",
+      "justification": "This is an artifact-routing scenario, not a runbook/procedure scenario, so artifact-binding does not apply."
+    },
+    "AR3": {
+      "score": 2,
+      "justification": "References use relative file names (decisions.md, daybook) and a bidirectional pointer, consistent with the relative-path convention, but the exact subfolder-to-root anchor path is unshown and its stability is uncertain."
+    },
+    "AR4": {
+      "score": 2,
+      "justification": "Both the decisions.md append and daybook entry are append-style and coherent, but re-running the daybook create would duplicate or no-op, and the 'accepted' status would later require supersession rather than clean append."
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "07-procedure-artifact-binding",
+  "run_number": 4,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "The agent executed the runbook end-to-end without asking the user to clarify, recall, or supply anything, making reasonable calls on slug and unknowns instead of pausing."
+    },
+    "CE2": {
+      "score": 1,
+      "justification": "The final response is a lengthy multi-paragraph recap that re-narrates each step, cites the runbook's notes, and adds a meta 'no decisions.md entries were earned' coda well beyond what the task needed."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "Each artifact's destination and rationale are stated in-line (tmp/ scratch vs projects/postmortems/ final, slug per canonical filename patterns), letting the user redirect cheaply."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "Each step committed its own named artifact in sequence, so an interruption would leave a coherent partial chain with no orphaned or ambiguous in-progress files."
+    }
+  }
+}

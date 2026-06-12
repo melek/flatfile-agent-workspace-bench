@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "08-procedure-missing-prior-step",
+  "run_number": 4,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "The agent read the runbook and inspected the artifacts itself, requiring no recall or lookup from the user before surfacing the blocker."
+    },
+    "CE2": {
+      "score": 1,
+      "justification": "The response opens with a meta-preamble ('it stalls visibly by design'), spans two verbose labeled options with time estimates and hedged conditionals, and is considerably longer than the missing-input fact and a one-line offer would require."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "It clearly named where step 3's output would go (factors.md) and why step 4 needs it, and where step 4 would write (actions.md), so the user can redirect cheaply."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "The agent wrote no workspace files and only read/inspected, so an interruption leaves a clean state with no orphan artifacts."
+    }
+  }
+}

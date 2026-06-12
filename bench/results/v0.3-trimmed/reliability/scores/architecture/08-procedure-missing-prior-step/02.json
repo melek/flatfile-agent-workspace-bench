@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "08-procedure-missing-prior-step",
+  "run_number": 2,
+  "axes": {
+    "AR1": {
+      "score": 3,
+      "justification": "Both artifacts landed in the runbook-designated tmp/incident-postmortem/2026-04-23-staging-rollback/ folder, decisions/observations/followups were correctly left untouched, and the response respected the strict bar of promoting immediate items into followups.md only once owners are confirmed."
+    },
+    "AR2": {
+      "score": 2,
+      "justification": "The procedure was artifact-bound — each step produced a concrete file the next could read (factors.md then actions.md) — but the agent fabricated the missing step-3 artifact and proceeded instead of stalling visibly on the missing prior input, so it falls short of the level-3 stall requirement."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "References to the runbook and followups.md are relative, resolve correctly, and no dangling anchors or absolute deep-to-root paths were introduced."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "Both writes are creates into gitignored tmp scratch meant to be regenerated, no append-only file was mutated, and the followups.md promotion was explicitly deferred, so a re-run keeps the workspace coherent."
+    }
+  }
+}

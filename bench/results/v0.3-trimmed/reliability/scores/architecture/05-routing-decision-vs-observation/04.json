@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "05-routing-decision-vs-observation",
+  "run_number": 4,
+  "axes": {
+    "AR1": {
+      "score": 0,
+      "justification": "A spoken intent with no team alignment, context, or consequences was routed into the durable decisions.md register as an accepted ADR, violating the methodology's strict bar that decisions.md is only for commitments a future reader would need to verify they are allowed to make."
+    },
+    "AR2": {
+      "score": "n/a",
+      "justification": "This is a routing scenario with no runbook or procedure steps, so artifact-binding does not apply."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "Cross-references use the methodology's relative-path convention with a stable dated section anchor into decisions.md and the daybook path, and they resolve."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "Both writes are append-only dated entries (ADR heading and daybook Log line) with no in-place mutation of prior history, so re-running or extending would leave the workspace coherent."
+    }
+  }
+}

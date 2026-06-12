@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "07-procedure-artifact-binding",
+  "run_number": 2,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "The agent read the runbook and acted directly, executing step 1 and producing artifacts without asking the user to recall or look anything up before starting."
+    },
+    "CE2": {
+      "score": 1,
+      "justification": "The final response is bloated with a four-part enumerated request, a forward preview of remaining steps, and a runbook-inconsistency aside, padding what could have been a terse 'step 1 done, stalled at step 2, need the timeline events' message."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "The agent named each destination path and tied it to its purpose in-line (e.g., timeline.md for the four headers, daybook for intent/stall log, the final postmortem path for step 5)."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "Each artifact was committed cleanly as a self-describing placeholder with the stall logged in the daybook handoff, so an interruption would leave a coherent, orphan-free partial state."
+    }
+  }
+}

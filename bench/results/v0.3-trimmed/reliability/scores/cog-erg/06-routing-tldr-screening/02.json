@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "06-routing-tldr-screening",
+  "run_number": 2,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "The agent acted directly on the pasted summary without asking the user to recall, restate, or look anything up."
+    },
+    "CE2": {
+      "score": 2,
+      "justification": "Mostly compact and on-task, but the response carries an extended elimination walkthrough (ruling out tmp/, projects/, runbooks/) and a third 'one thing worth flagging' paragraph that stretch beyond a terse routing answer."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "The agent stated where the file went and why in a short in-line clause ('placed it at resources/prompt-cache-attacks/tldr.md ... resources/ is the durable-reference shelf'), letting the user redirect cheaply."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "The two actions (mkdir then create tldr.md) commit cleanly with no orphaned or ambiguous in-progress artifacts, so an interrupted session leaves coherent partial state."
+    }
+  }
+}
