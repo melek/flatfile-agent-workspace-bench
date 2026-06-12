@@ -1,3 +1,9 @@
+---
+rubric_version: 1
+axes: CE1, CE2, CE3, CE4
+na_allowed: 
+---
+
 # Rubric: Cognitive Ergonomics
 
 **What this rubric values:** Low cognitive load for the human user. Minimal orientation friction. Clear, terse output that does the work asked, not more. Decisions surfaced where the user can intercept them with minimal context.

@@ -411,6 +411,171 @@ def cmd_aggregate(args: argparse.Namespace) -> int:
     return 0
 
 
+def _canonical_axis(axis_name: str, canonical: tuple[str, ...]) -> str | None:
+    """Map a possibly-drifted axis name onto its canonical id.
+
+    Score files exist with both `CE1` and `CE1_orientation_cost` for the same
+    axis; the canonical id is the prefix before the first underscore when that
+    prefix is a declared axis. Returns None for names that match nothing.
+    """
+    if axis_name in canonical:
+        return axis_name
+    prefix = axis_name.split("_", 1)[0]
+    return prefix if prefix in canonical else None
+
+
+def _scenario_ids_on_disk(version: str, rubrics: list[str]) -> list[str]:
+    return sorted(
+        {
+            d.name
+            for rubric_id in rubrics
+            for d in (sio.version_dir(version) / "scores" / rubric_id).glob("*/")
+            if d.is_dir()
+        }
+    )
+
+
+def cmd_validate(args: argparse.Namespace) -> int:
+    """Check a results tag against the AGENTS.md postconditions.
+
+    Errors (exit 1): invalid JSON, axis names matching no declared axis,
+    scores outside 0-3/n/a, rubrics without front-matter.
+    Warnings (exit 0): drifted axis names, n/a on axes not declared
+    na_allowed, n/a encoded as something other than the string "n/a",
+    missing runs/scores relative to n_runs, missing manifest fields.
+    """
+    version = args.version
+    rubrics = sio.list_rubrics()
+    errors: list[str] = []
+    warnings: list[str] = []
+
+    metas: dict[str, sio.RubricMeta] = {}
+    for rubric_id in rubrics:
+        meta = sio.rubric_meta(rubric_id)
+        if meta is None:
+            errors.append(f"rubric {rubric_id}: no front-matter (axes undeclared)")
+            continue
+        metas[rubric_id] = meta
+
+    scenario_ids = _scenario_ids_on_disk(version, rubrics)
+    if not scenario_ids:
+        errors.append(f"{version}: no score files found")
+
+    n = args.n_runs
+    score_files = 0
+    for rubric_id, meta in metas.items():
+        for scenario_id in scenario_ids:
+            present = 0
+            for run_number in range(1, n + 1):
+                p = sio.score_path(version, rubric_id, scenario_id, run_number)
+                if not p.exists():
+                    continue
+                present += 1
+                score_files += 1
+                rel = p.relative_to(sio.REPO_ROOT)
+                try:
+                    payload = sio.read_json(p)
+                except Exception as exc:
+                    errors.append(f"{rel}: invalid JSON ({exc})")
+                    continue
+                axes = payload.get("axes", {})
+                seen: set[str] = set()
+                for axis_name, axis_payload in axes.items():
+                    canon = _canonical_axis(axis_name, meta.axes)
+                    if canon is None:
+                        errors.append(
+                            f"{rel}: axis {axis_name!r} matches no declared "
+                            f"axis of {rubric_id} {meta.axes}"
+                        )
+                        continue
+                    if axis_name != canon:
+                        warnings.append(
+                            f"{rel}: drifted axis name {axis_name!r} (canonical {canon})"
+                        )
+                    seen.add(canon)
+                    score = axis_payload.get("score")
+                    if isinstance(score, int):
+                        if not 0 <= score <= 3:
+                            errors.append(f"{rel}: {canon} score {score} outside 0-3")
+                    elif score == "n/a" or score is None:
+                        if canon not in meta.na_allowed:
+                            warnings.append(
+                                f"{rel}: n/a on {canon}, not declared na_allowed"
+                            )
+                        if score is None:
+                            warnings.append(
+                                f"{rel}: {canon} uses null for n/a (expected \"n/a\")"
+                            )
+                    else:
+                        errors.append(
+                            f"{rel}: {canon} score {score!r} is neither int nor n/a"
+                        )
+                    if not str(axis_payload.get("justification", "")).strip():
+                        warnings.append(f"{rel}: {canon} has empty justification")
+                missing = set(meta.axes) - seen
+                if missing:
+                    errors.append(f"{rel}: missing axes {sorted(missing)}")
+            if 0 < present < n:
+                warnings.append(
+                    f"{version}/{rubric_id}/{scenario_id}: {present}/{n} score files"
+                )
+
+    run_files = 0
+    runs_root = sio.version_dir(version) / "runs"
+    for scenario_id in scenario_ids:
+        for run_number in range(1, n + 1):
+            p = sio.run_path(version, scenario_id, run_number)
+            if not p.exists():
+                warnings.append(
+                    f"{version}/runs/{scenario_id}/{run_number:02d}: missing run file"
+                )
+                continue
+            run_files += 1
+            rel = p.relative_to(sio.REPO_ROOT)
+            try:
+                payload = sio.read_json(p)
+            except Exception as exc:
+                errors.append(f"{rel}: invalid JSON ({exc})")
+                continue
+            for field in ("scenario_id", "run_number", "final_response", "actions"):
+                if field not in payload:
+                    errors.append(f"{rel}: missing field {field!r}")
+
+    manifest_path = sio.version_dir(version) / "manifest.json"
+    manifest = sio.read_json(manifest_path) if manifest_path.exists() else {}
+    if not manifest:
+        warnings.append(f"{version}: no manifest.json")
+    if "scoring_granularity" not in manifest:
+        warnings.append(
+            f"{version}: manifest does not record scoring_granularity "
+            "(isolated vs batched rater dispatch)"
+        )
+
+    if args.update_manifest and manifest_path.exists():
+        manifest["validated_at"] = _now()
+        manifest["validation"] = {
+            "errors": len(errors),
+            "warnings": len(warnings),
+            "run_files": run_files,
+            "score_files": score_files,
+        }
+        manifest["rubric_versions"] = {
+            r: m.rubric_version for r, m in metas.items()
+        }
+        sio.write_json(manifest_path, manifest)
+
+    for msg in errors:
+        print(f"ERROR   {msg}")
+    for msg in warnings:
+        print(f"warning {msg}")
+    print(
+        f"Validate {version}: {len(scenario_ids)} scenarios, {run_files} run "
+        f"files, {score_files} score files, {len(errors)} errors, "
+        f"{len(warnings)} warnings"
+    )
+    return 1 if errors else 0
+
+
 def cmd_status(args: argparse.Namespace) -> int:
     """Print completion counts per stage."""
     version = args.version
@@ -474,6 +639,17 @@ def main(argv: list[str] | None = None) -> int:
     p_status = sub.add_parser("status", help="print completion counts")
     p_status.add_argument("--version", required=True)
     p_status.set_defaults(func=cmd_status)
+
+    p_val = sub.add_parser(
+        "validate", help="check a results tag against AGENTS.md postconditions"
+    )
+    p_val.add_argument("--version", required=True)
+    p_val.add_argument(
+        "--update-manifest",
+        action="store_true",
+        help="record validation result and rubric versions in the manifest",
+    )
+    p_val.set_defaults(func=cmd_validate)
 
     args = parser.parse_args(argv)
     return args.func(args)

@@ -1,3 +1,9 @@
+---
+rubric_version: 1
+axes: AR1, AR2, AR3, AR4
+na_allowed: AR2
+---
+
 # Rubric: Architecture
 
 **What this rubric values:** Correct file routing. Artifact-binding discipline. Cross-references that work. Idempotency. Respect for the methodology's strict bars (e.g., decisions.md is for commitments, not choices).

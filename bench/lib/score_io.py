@@ -61,6 +61,45 @@ def list_rubrics() -> list[str]:
     )
 
 
+@dataclass(frozen=True)
+class RubricMeta:
+    """Canonical axis schema declared in a rubric's front-matter."""
+
+    rubric_id: str
+    rubric_version: str
+    axes: tuple[str, ...]
+    na_allowed: tuple[str, ...]
+
+
+def rubric_meta(rubric_id: str) -> RubricMeta | None:
+    """Parse the `---` front-matter block of a rubric file.
+
+    Returns None when the rubric has no front-matter (legacy rubric). The
+    block is a flat `key: value` list; axis lists are comma-separated.
+    """
+    path = RUBRICS_ROOT / f"{rubric_id}.md"
+    lines = path.read_text().splitlines()
+    if not lines or lines[0].strip() != "---":
+        return None
+    fields: dict[str, str] = {}
+    for line in lines[1:]:
+        if line.strip() == "---":
+            break
+        if ":" in line:
+            key, _, value = line.partition(":")
+            fields[key.strip()] = value.strip()
+    axes = tuple(a.strip() for a in fields.get("axes", "").split(",") if a.strip())
+    na = tuple(
+        a.strip() for a in fields.get("na_allowed", "").split(",") if a.strip()
+    )
+    return RubricMeta(
+        rubric_id=rubric_id,
+        rubric_version=fields.get("rubric_version", "unversioned"),
+        axes=axes,
+        na_allowed=na,
+    )
+
+
 def version_dir(version_tag: str) -> Path:
     return RESULTS_ROOT / version_tag
 
