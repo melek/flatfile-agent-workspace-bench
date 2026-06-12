@@ -11,6 +11,7 @@
   ],
   "scenarios_count": 12,
   "scenarios_frozen_tag": "bench-frozen-v1",
+  "scoring_granularity": "batched: one rater per (scenario x rubric), all 5 runs scored in a single context (36 calls; deviates from AGENTS.md isolated protocol). Scored in same session as v0.2-revised.",
   "started_at": "2026-05-17T09:27:55Z",
   "workspace_sha": "a5d42ea78806",
   "workspace_tag": "v0.1-baseline"

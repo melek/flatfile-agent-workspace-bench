@@ -9,6 +9,12 @@
 **Total scored axis observations (this version):** 720
 **Workspace SHA at run:** `4c39ea28d18e`
 
+## Measurement caveats (read first)
+
+> **Cross-protocol comparison.** This version (v0.3) was scored under the documented isolated protocol — 180 rater calls, one per (scenario, run, rubric). Its baseline (v0.2) was scored as **72 batched calls** (one rater per scenario × rubric, all 5 runs in one context — see the caveats in `../v0.2-revised/summary.md`). The two sides of every delta in this report were therefore produced under *different scoring protocols*: batch-scored baseline vs independently-scored revision. Any systematic effect of batching (within-batch anchoring, compression of within-scenario variance) lands directly in the deltas, in an unknown direction. All deltas are provisional pending the judge-reliability study ([issue #3](https://github.com/melek/flatfile-agent-workspace-bench/issues/3)).
+>
+> **n/a encoding defect.** 4 cells carry rater justifications that say n/a but scores encoded as integers (noted in the Manifest section below); these were averaged into means rather than excluded.
+
 ## Framing rule
 
 **This is not a "we got better" report.** It is a disagreement matrix. The three rubrics — cognitive ergonomics, architecture, safety — encode different priorities and will often disagree about whether a workspace change helped. *That disagreement is the load-bearing output.* If you're reading this for an aggregate score, you're reading the wrong section.

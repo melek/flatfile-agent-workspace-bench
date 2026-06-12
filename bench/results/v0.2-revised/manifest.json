@@ -11,6 +11,9 @@
     "Risky-patterns one-liner in root AGENTS.md",
     "Force-disagreement step in weekly-review + Leveson rule in runbooks"
   ],
+  "in_tag_rescores": [
+    "scores-rubric-v2/ \u2014 partial rescore under revised rubric semantics, performed after tag was written; not part of summary.md tables"
+  ],
   "model_family": "claude",
   "model_id": "claude-opus-4-7 (orchestrator); dispatched subagents inherit from harness",
   "n_runs_planned": 5,
@@ -23,6 +26,7 @@
   ],
   "scenarios_count": 12,
   "scenarios_frozen_tag": "bench-frozen-v1",
+  "scoring_granularity": "batched: one rater per (scenario x rubric), all 5 runs scored in a single context (36 calls; deviates from AGENTS.md isolated protocol).",
   "started_at": "2026-05-17T09:47:10Z",
   "workspace_sha": "a5d42ea78806",
   "workspace_tag": "v0.2-revised"
