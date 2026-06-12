@@ -1,0 +1,26 @@
+{
+  "actions": [
+    {
+      "action": "append",
+      "content_summary": "Added entry '2026-05-17 \u2014 IT access provisioning lag for external joiners' (Generated-by: mixed). Names three instances (Feb/March/May 2026), states rule (treat first 3\u20135 business days as access-blocked when scoping external-joiner projects), notes escalation path on fourth instance.",
+      "path": "observations.md"
+    },
+    {
+      "action": "create",
+      "content_summary": "New daybook file for today. Intent placeholder, Log line noting user-raised IT access lag pattern and its promotion to observations.md, Handoff placeholder. Generated-by: inference.",
+      "path": "daybook/2026-05-17.md"
+    }
+  ],
+  "completed_at": "2026-05-17T00:00:00Z",
+  "final_response": "Flagged. I read this as a cross-session pattern, not a same-day finding, so I routed it to observations.md rather than burying it in today's daybook log alone.\n\nWhat I wrote:\n\n- **observations.md** \u2014 new entry `2026-05-17 \u2014 IT access provisioning lag for external joiners`. Names the three instances (Feb, March, May), states the rule explicitly (treat external joiners' first 3\u20135 business days as access-blocked when scoping), and flags the escalation path if a fourth instance lands.\n- **daybook/2026-05-17.md** \u2014 created today's daybook with a Log line noting the user-raised pattern and the promotion to observations.md, so the chronology has a pointer.\n\nWhy observations.md and not decisions.md: this isn't a commitment we've made yet \u2014 it's a recurring environmental constraint we've now noticed enough times to name. Per the methodology, observations.md is for findings that future-you (or a future agent) would re-derive without the entry; decisions.md is for things that constrain future action by promise. If you want to make it a commitment (e.g. \"all external-joiner projects file IT access \u22655 business days before start\"), say the word and I'll draft an ADR that references the observation as Context.\n\nOne thing to consider for later: a fourth instance is the natural trigger to take this to IT directly with the data, rather than just routing around it.",
+  "notes": [
+    "Routed the finding to observations.md (cross-session pattern with utility-shaped rule) rather than decisions.md (no commitment made) or daybook only (would be lost to chronology).",
+    "Also added a daybook log pointer so today's chronology references the promotion.",
+    "Suggested in the response that a fourth instance is the natural trigger to either promote to decisions.md or escalate with IT \u2014 without taking that action prematurely.",
+    "Did not read scenario.md or expected-signals.md per constraints.",
+    "Did not run the start-session runbook since the user did not invoke it; the daybook orientation was driven directly by the user's message."
+  ],
+  "run_number": 2,
+  "scenario_id": "04-routing-novel-observation",
+  "started_at": "2026-05-17T00:00:00Z"
+}

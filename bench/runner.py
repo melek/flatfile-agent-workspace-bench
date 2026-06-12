@@ -833,6 +833,282 @@ def cmd_compare(args: argparse.Namespace) -> int:
     return 0
 
 
+RESCORE_RUNS = (2, 4)  # fixed stratified picks: 2 runs per (scenario, rubric)
+REDACTED_FIELDS = ("workspace_tag",)  # version-identifying transcript fields
+
+
+def _scenario_brief_path(scenario_id: str) -> Path:
+    """Brief path for active or retired scenarios (frozen tags keep both)."""
+    active = sio.SCENARIOS_ROOT / scenario_id / "scenario.md"
+    if active.exists():
+        return active
+    return sio.BENCH_ROOT / "scenarios-retired" / scenario_id / "scenario.md"
+
+
+def cmd_rescore_sample(args: argparse.Namespace) -> int:
+    """Enumerate the reliability rescore sample and stage redacted inputs.
+
+    For each (scenario, rubric) cell of the tag, runs RESCORE_RUNS are
+    rescored in fresh isolated rater contexts. Transcript copies are staged
+    with version-identifying fields stripped so raters are blind to which
+    tag they are scoring. Idempotent: existing outputs are skipped.
+    """
+    version = args.version
+    rubrics = sio.list_rubrics()
+    rel_root = sio.version_dir(version) / "reliability"
+    inputs_root = rel_root / "inputs"
+    scenario_ids = _scenario_ids_on_disk(version, rubrics)
+
+    jobs: list[dict] = []
+    staged = 0
+    for scenario_id in scenario_ids:
+        for run_number in RESCORE_RUNS:
+            src = sio.run_path(version, scenario_id, run_number)
+            if not src.exists():
+                continue
+            redacted_p = inputs_root / scenario_id / f"{run_number:02d}.json"
+            if not redacted_p.exists():
+                payload = sio.read_json(src)
+                for field in REDACTED_FIELDS:
+                    payload.pop(field, None)
+                sio.write_json(redacted_p, payload)
+                staged += 1
+            for rubric_id in rubrics:
+                out = (
+                    rel_root / "scores" / rubric_id / scenario_id
+                    / f"{run_number:02d}.json"
+                )
+                jobs.append(
+                    {
+                        "scenario_id": scenario_id,
+                        "run_number": run_number,
+                        "rubric_id": rubric_id,
+                        "rubric_path": str(
+                            (sio.RUBRICS_ROOT / f"{rubric_id}.md").relative_to(
+                                sio.REPO_ROOT
+                            )
+                        ),
+                        "scenario_brief": str(
+                            _scenario_brief_path(scenario_id).relative_to(
+                                sio.REPO_ROOT
+                            )
+                        ),
+                        "run_path": str(redacted_p.relative_to(sio.REPO_ROOT)),
+                        "score_output": str(out.relative_to(sio.REPO_ROOT)),
+                    }
+                )
+
+    jobs.sort(key=lambda j: (j["scenario_id"], j["run_number"], j["rubric_id"]))
+    jobs_path = rel_root / "rescore-jobs.jsonl"
+    jobs_path.parent.mkdir(parents=True, exist_ok=True)
+    jobs_path.write_text(
+        "\n".join(__import__("json").dumps(j, sort_keys=True) for j in jobs) + "\n"
+    )
+    pending = [
+        j for j in jobs if not (sio.REPO_ROOT / j["score_output"]).exists()
+    ]
+    print(
+        f"Rescore sample for {version}: {len(jobs)} jobs "
+        f"({len(scenario_ids)} scenarios × runs {RESCORE_RUNS} × "
+        f"{len(rubrics)} rubrics). Staged {staged} redacted inputs. "
+        f"Pending: {len(pending)}. Written: "
+        f"{jobs_path.relative_to(sio.REPO_ROOT)}"
+    )
+    return 0
+
+
+def _ordinal_alpha(pairs: list[tuple[int, int]]) -> float | None:
+    """Krippendorff's alpha for two raters on an ordinal scale.
+
+    `pairs` holds (original, rescore) integer scores per unit; units with a
+    missing side are excluded by the caller (alpha's missing-data handling
+    reduces to listwise deletion in the two-rater case). Ordinal distance
+    uses the standard marginal-rank metric over the coincidence matrix.
+    """
+    if not pairs:
+        return None
+    values = sorted({v for p in pairs for v in p})
+    if len(values) == 1:
+        return None  # no variation: alpha undefined
+    # Coincidence matrix: each pair contributes both orderings.
+    n_ck: dict[tuple[int, int], float] = {}
+    for a, b in pairs:
+        n_ck[(a, b)] = n_ck.get((a, b), 0) + 1
+        n_ck[(b, a)] = n_ck.get((b, a), 0) + 1
+    n_c = {c: sum(v for (a, _), v in n_ck.items() if a == c) for c in values}
+    n_total = sum(n_c.values())
+
+    def delta_sq(c: int, k: int) -> float:
+        lo, hi = min(c, k), max(c, k)
+        between = sum(n_c[g] for g in values if lo <= g <= hi)
+        return (between - (n_c[c] + n_c[k]) / 2) ** 2
+
+    d_o = sum(
+        n_ck.get((c, k), 0) * delta_sq(c, k)
+        for c in values
+        for k in values
+        if c != k
+    )
+    d_e = sum(
+        n_c[c] * n_c[k] * delta_sq(c, k)
+        for c in values
+        for k in values
+        if c != k
+    ) / (n_total - 1)
+    if d_e == 0:
+        return None
+    return 1 - d_o / d_e
+
+
+def cmd_reliability(args: argparse.Namespace) -> int:
+    """Pair original and rescored scores; write reliability.md.
+
+    Per rubric (axes pooled): ordinal Krippendorff's alpha, exact and
+    within-1 agreement. Per axis: raw agreement counts (alpha at axis level
+    is underpowered at this sample size and degenerates on near-constant
+    axes — raw agreement is reported instead).
+    """
+    version = args.version
+    rubrics = sio.list_rubrics()
+    metas = {r: sio.rubric_meta(r) for r in rubrics}
+    rel_root = sio.version_dir(version) / "reliability"
+
+    per_rubric_pairs: dict[str, list[tuple[int, int]]] = {r: [] for r in rubrics}
+    per_axis: dict[tuple[str, str], dict] = {}
+    na_disagreements: list[str] = []
+    n_jobs = n_scored = 0
+
+    for job in sio.read_jsonl(rel_root / "rescore-jobs.jsonl"):
+        n_jobs += 1
+        rubric_id = job["rubric_id"]
+        meta = metas[rubric_id]
+        rescore_p = sio.REPO_ROOT / job["score_output"]
+        orig_p = sio.score_path(
+            version, rubric_id, job["scenario_id"], job["run_number"]
+        )
+        if not rescore_p.exists() or not orig_p.exists():
+            continue
+        n_scored += 1
+        orig_axes = sio.read_json(orig_p).get("axes", {})
+        new_axes = sio.read_json(rescore_p).get("axes", {})
+
+        def canon_map(axes: dict) -> dict:
+            out = {}
+            for name, payload in axes.items():
+                c = _canonical_axis(name, meta.axes)
+                if c:
+                    out[c] = payload.get("score")
+            return out
+
+        o_map, n_map = canon_map(orig_axes), canon_map(new_axes)
+        for axis in meta.axes:
+            o, n_ = o_map.get(axis), n_map.get(axis)
+            o_int, n_int = isinstance(o, int), isinstance(n_, int)
+            stats = per_axis.setdefault(
+                (rubric_id, axis),
+                {"n": 0, "exact": 0, "within1": 0, "na_mismatch": 0},
+            )
+            if o_int and n_int:
+                stats["n"] += 1
+                stats["exact"] += o == n_
+                stats["within1"] += abs(o - n_) <= 1
+                per_rubric_pairs[rubric_id].append((o, n_))
+            elif o_int != n_int:
+                stats["na_mismatch"] += 1
+                na_disagreements.append(
+                    f"{job['scenario_id']}/{job['run_number']:02d} "
+                    f"{rubric_id}.{axis}: original={o!r} rescore={n_!r}"
+                )
+
+    lines = [
+        f"# Judge reliability — {version}",
+        "",
+        f"Generated by `runner.py reliability` at {_now()}.",
+        f"Sample: runs {RESCORE_RUNS} per (scenario, rubric); "
+        f"{n_scored}/{n_jobs} rescore jobs completed. Original scores were "
+        "produced under the isolated protocol; rescores use fresh isolated "
+        "rater contexts with version-identifying transcript fields redacted.",
+        "",
+        "## Per-rubric reliability (axes pooled)",
+        "",
+        "Krippendorff's alpha, ordinal metric, two raters (original vs "
+        "rescore), units with n/a on either side excluded (counted "
+        "separately below). Interpretation convention: alpha ≥ 0.80 "
+        "reliable; 0.67–0.80 tentative; < 0.67 insufficient to support "
+        "the delta tables.",
+        "",
+        "| Rubric | paired units | alpha (ordinal) | exact | within-1 |",
+        "|---|---|---|---|---|",
+    ]
+    for r in rubrics:
+        pairs = per_rubric_pairs[r]
+        axes_stats = [v for (rr, _), v in per_axis.items() if rr == r]
+        n_units = len(pairs)
+        exact = sum(1 for a, b in pairs if a == b)
+        within1 = sum(1 for a, b in pairs if abs(a - b) <= 1)
+        alpha = _ordinal_alpha(pairs)
+        alpha_s = f"{alpha:.3f}" if alpha is not None else "undefined"
+        if n_units:
+            lines.append(
+                f"| {r} | {n_units} | {alpha_s} | "
+                f"{exact / n_units:.0%} | {within1 / n_units:.0%} |"
+            )
+        else:
+            lines.append(f"| {r} | 0 | — | — | — |")
+
+    lines += [
+        "",
+        "## Per-axis raw agreement",
+        "",
+        "Axis-level alpha is underpowered at this n and degenerates on "
+        "near-constant axes; raw agreement is reported instead.",
+        "",
+        "| Rubric | Axis | n | exact | within-1 | n/a mismatches |",
+        "|---|---|---|---|---|---|",
+    ]
+    for (r, axis), s in sorted(per_axis.items()):
+        if s["n"]:
+            lines.append(
+                f"| {r} | {axis} | {s['n']} | {s['exact'] / s['n']:.0%} | "
+                f"{s['within1'] / s['n']:.0%} | {s['na_mismatch']} |"
+            )
+        else:
+            lines.append(
+                f"| {r} | {axis} | 0 | — | — | {s['na_mismatch']} |"
+            )
+
+    if na_disagreements:
+        lines += [
+            "",
+            "## n/a applicability disagreements",
+            "",
+            "One rater scored, the other said n/a — applicability judgment "
+            "drift, the same class of defect as the v0.1→v0.2 SA2 policy "
+            "shift:",
+            "",
+        ]
+        lines += [f"- {d}" for d in na_disagreements]
+
+    lines += [
+        "",
+        "## Limitations",
+        "",
+        "- Two ratings per unit; test-retest stability, not a validity claim.",
+        "- The original raters' model pin was not recorded in the manifest; "
+        "rescore raters may differ in model version. Agreement here is a "
+        "lower bound on same-model stability.",
+        "- Same model family on both sides; self-preference bias is not "
+        "bounded by this study (cross-family sub-task pending).",
+    ]
+    out = rel_root / "reliability.md"
+    out.write_text("\n".join(lines) + "\n")
+    print(
+        f"Reliability report: {out.relative_to(sio.REPO_ROOT)} "
+        f"({n_scored}/{n_jobs} jobs scored)"
+    )
+    return 0
+
+
 def cmd_status(args: argparse.Namespace) -> int:
     """Print completion counts per stage."""
     version = args.version
@@ -922,6 +1198,19 @@ def main(argv: list[str] | None = None) -> int:
         ),
     )
     p_cmp.set_defaults(func=cmd_compare)
+
+    p_rs = sub.add_parser(
+        "rescore-sample",
+        help="enumerate reliability rescore jobs with redacted inputs",
+    )
+    p_rs.add_argument("--version", required=True)
+    p_rs.set_defaults(func=cmd_rescore_sample)
+
+    p_rel = sub.add_parser(
+        "reliability", help="pair original vs rescored scores; write report"
+    )
+    p_rel.add_argument("--version", required=True)
+    p_rel.set_defaults(func=cmd_reliability)
 
     args = parser.parse_args(argv)
     return args.func(args)

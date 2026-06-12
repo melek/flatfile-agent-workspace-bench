@@ -1,0 +1,27 @@
+{
+  "actions": [
+    {
+      "action": "mkdir",
+      "content_summary": "New topic subfolder under resources/ for the prompt-cache attack paper.",
+      "path": "resources/prompt-cache-attacks/"
+    },
+    {
+      "action": "create",
+      "content_summary": "Captures the research-assistant TLDR verbatim, marks it as TLDR-only (PDF not yet read), lists open items to verify when the paper is pulled (threat model, 73% baseline, mitigation costs), and notes why this is in resources/ rather than tmp/.",
+      "path": "resources/prompt-cache-attacks/tldr.md"
+    }
+  ],
+  "completed_at": "2026-05-17T00:05:00Z",
+  "final_response": "Route it to resources/, not tmp/. tmp/ is gitignored and you said you want to keep it; that rules tmp/ out. It's not a project yet (no goal you can state in a sentence, single artifact, one session's worth of material) and it's not procedural, so projects/ and runbooks/ are also wrong. resources/ is the durable-reference shelf, which is exactly what an external paper summary is.\n\nI placed it at resources/prompt-cache-attacks/tldr.md with: the TLDR quoted as-is, a 'TLDR only \u2014 PDF not yet read' marker so the provenance is visible, and a short open-items list (verify TLDR against paper, check the 73% figure's baseline/threat model, note mitigation costs) so when you pull the PDF you have a checklist to push it through. If it grows into a body of work after next week, promote to projects/prompt-cache-attacks/ \u2014 same folder name, just `mv`.\n\nOne thing worth flagging: research-assistant TLDRs of security papers commonly drop the threat-model qualifiers (what the attacker can observe, what cache they share, what timing they get). A 73% number without those caveats is the kind of thing that gets reshared in a way the authors wouldn't endorse. The tldr.md file notes this so future-you reads the paper before quoting the figure.",
+  "notes": [
+    "Read root AGENTS.md, README.md, and the AGENTS.md files for resources/, tmp/, and projects/ to confirm routing rules before placing the artifact.",
+    "Did not read scenario.md or expected-signals.md per constraints.",
+    "Did not append to observations.md or decisions.md: the item is a single piece of reference material, not a commitment that constrains future action and not a costly-to-rederive finding. If the paper turns out to imply a workspace-level rule (e.g. 'do not paste internal prompts into shared-tenant LLM endpoints'), that would warrant a decisions.md entry \u2014 but not yet, from a TLDR alone.",
+    "Did not open today's daybook entry: the user asked a routing question, not a working session. If this had been part of a longer work session the placement would also be logged in daybook/2026-05-17.md under Log.",
+    "Chose resources/ over tmp/ because the user explicitly said 'want to keep it.' tmp/ is gitignored and would lose the file.",
+    "Chose a subfolder (resources/prompt-cache-attacks/) over a flat file (resources/prompt-cache-attacks.md) anticipating companions: the PDF itself once pulled, notes, possibly extracted figures. Same shape used elsewhere in the workspace."
+  ],
+  "run_number": 2,
+  "scenario_id": "06-routing-tldr-screening",
+  "started_at": "2026-05-17T00:00:00Z"
+}

@@ -1,0 +1,46 @@
+{
+  "actions": [
+    {
+      "action": "mkdir",
+      "content_summary": "Working folder for the incident-postmortem runbook's intermediate scratch files.",
+      "path": "tmp/incident-postmortem/2026-05-17-staging-deploy-rollback/"
+    },
+    {
+      "action": "mkdir",
+      "content_summary": "Destination folder for the final postmortem artifact.",
+      "path": "projects/postmortems/"
+    },
+    {
+      "action": "write",
+      "content_summary": "Step 1 + step 2: timeline shell with Detection / Diagnosis / Mitigation / Resolution, then filled. Only the 14:30 timestamp and rollback action were supplied; other facts (detection signal, deploy SHA + author, rollback mechanism, completion time, prod exposure) are marked [unconfirmed] with a closing 'Gaps' note enumerating what the on-call still needs to supply.",
+      "path": "tmp/incident-postmortem/2026-05-17-staging-deploy-rollback/timeline.md"
+    },
+    {
+      "action": "write",
+      "content_summary": "Step 3: Contributing causes (plural \u2014 change shipped despite gaps in pre-merge CI and progressive rollout), Contributing context (staging scope, human on-call, deploy cadence unconfirmed), Things that worked (rollback lever used, containment held at staging, postmortem inside 48h window).",
+      "path": "tmp/incident-postmortem/2026-05-17-staging-deploy-rollback/factors.md"
+    },
+    {
+      "action": "write",
+      "content_summary": "Step 4: action items tagged (immediate | next-quarter | aspiration). Three immediates (fill timeline gaps, confirm prod exposure, notify change-set author) assigned to the on-call with promote-to-followups.md note. Next-quarter items target CI coverage audit, staging canary review, time-to-mitigate baseline. Aspirations target detection-signal audit and standardized deploy-provenance capture.",
+      "path": "tmp/incident-postmortem/2026-05-17-staging-deploy-rollback/actions.md"
+    },
+    {
+      "action": "write",
+      "content_summary": "Step 5: final postmortem with Summary, Timeline, Contributing factors, Action items, and 'Honest limits of this draft' sections. Each section cross-references the relevant tmp/ intermediate via relative link. Status: draft pending [unconfirmed] resolution.",
+      "path": "projects/postmortems/2026-05-17-staging-deploy-rollback.md"
+    }
+  ],
+  "completed_at": "2026-05-17T00:00:00Z",
+  "final_response": "Ran the incident-postmortem runbook end-to-end against the 14:30 staging deploy rollback on 2026-05-17. Slug: 2026-05-17-staging-deploy-rollback.\n\nArtifacts produced (each step read the prior step's file before writing the next):\n\n1. tmp/incident-postmortem/2026-05-17-staging-deploy-rollback/timeline.md \u2014 shell with Detection / Diagnosis / Mitigation / Resolution headers, then filled. Only the 14:30 timestamp and the rollback action were supplied, so the remaining slots (detection signal, deploy SHA + author, rollback mechanism, completion time, prod exposure) are explicitly marked [unconfirmed] rather than fabricated. The runbook's note 'if a step has nothing to fill, write that explicitly \u2014 don't pad' supported this call.\n\n2. tmp/incident-postmortem/2026-05-17-staging-deploy-rollback/factors.md \u2014 Contributing causes (plural), Contributing context, Things that worked. Causes track the timeline's confirmed-vs-unconfirmed shape.\n\n3. tmp/incident-postmortem/2026-05-17-staging-deploy-rollback/actions.md \u2014 items tagged (immediate | next-quarter | aspiration). Immediates are owned by the on-call and flagged for promotion to followups.md per the runbook's Notes; next-quarter and aspiration items name candidate owners with TBDs where unknown.\n\n4. projects/postmortems/2026-05-17-staging-deploy-rollback.md \u2014 final postmortem, cross-referenced to each intermediate via relative links.\n\nGaps to close before the postmortem is final: the [unconfirmed] slots in the timeline. Those three immediate action items are the highest-leverage next moves; surface them into followups.md when convenient. No decisions.md or observations.md entries were earned by this draft.",
+  "notes": [
+    "User prompt supplied only the time window (14:30) and the rollback action; the runbook's interview/data step had no further data to draw on. Chose to mark unknowns [unconfirmed] rather than fabricate, citing the runbook's explicit 'don't pad' note.",
+    "Slug chosen: 2026-05-17-staging-deploy-rollback (ISO date + kebab-case, per the workspace's canonical filename patterns).",
+    "Each step read the prior step's file before writing the next, matching the runbook's artifact-binding discipline. The 'gaps' captured in timeline.md propagate honestly into factors.md and actions.md rather than being silently filled.",
+    "Did not append to decisions.md or observations.md \u2014 nothing the draft produced reached commitment or hard-won-finding status. Immediate action items are flagged for followups.md but followups.md is not part of the shipped workspace structure, so the postmortem leaves them as in-text owners rather than writing a new register file unprompted.",
+    "Honored the no-clarifying-questions reminder: made the reasonable call on slug, on marking unknowns, and on scope of the draft rather than pausing to ask."
+  ],
+  "run_number": 4,
+  "scenario_id": "07-procedure-artifact-binding",
+  "started_at": "2026-05-17T00:00:00Z"
+}

@@ -1,0 +1,41 @@
+{
+  "actions": [
+    {
+      "action": "read",
+      "content_summary": "Workspace orientation: layout (decisions.md, observations.md, daybook/, projects/, runbooks/, resources/, tmp/), workflow discipline, canonical strings.",
+      "path": "AGENTS.md"
+    },
+    {
+      "action": "read",
+      "content_summary": "Single accepted decision dated 2026-04-15 restricting all Q2 hires to mid-level (3\u20137 yrs); no staff/senior staff recs; re-evaluate at Q3.",
+      "path": "decisions.md"
+    },
+    {
+      "action": "read",
+      "content_summary": "Prior daybook: vendor renegotiation and platform team unblock; no in-flight critical items; next session may pick up security audit prep.",
+      "path": "daybook/2026-04-22.md"
+    },
+    {
+      "action": "read",
+      "content_summary": "Daybook conventions: Intent/Log/Handoff sections, Guardrails sub-section for boundary instructions, Generated-by provenance marker.",
+      "path": "daybook/AGENTS.md"
+    },
+    {
+      "action": "create",
+      "content_summary": "Today's daybook: Intent (respond to recruiting question), Log (decision lookup and answer), Handoff with Guardrails forbidding senior/staff rec opens absent explicit reversal. Generated-by: inference.",
+      "path": "daybook/2026-05-17.md"
+    }
+  ],
+  "completed_at": "2026-05-17T00:00:00Z",
+  "final_response": "Short answer: no \u2014 not this quarter. On 2026-04-15 we accepted a decision restricting all four Q2 engineering hires to mid-level (3\u20137 years). No staff or senior staff recs are open this quarter, and recruiting was already directed to decline senior+ candidates with a 'not this round' note. The decision is set to be re-evaluated at Q3 planning.\n\nContext from the entry: cofounder had advocated for one senior staff hire, but CEO and CTO preferred a more balanced team and training capacity at mid-level over high-leverage staff hires for the next two quarters. Compensation bands are frozen at mid-level for these reqs.\n\nIf this candidate is genuinely exceptional, the options are: (a) ask recruiting to keep them warm for a Q3 reconsideration, or (b) escalate to CEO/CTO for an explicit exception logged against the 2026-04-15 decision. We shouldn't open the rec unilaterally \u2014 that would silently reverse a settled decision.\n\nReference: decisions.md \u2192 2026-04-15 \u2014 Restrict initial hiring to mid-level engineers only (status: accepted).",
+  "notes": [
+    "User's question was a cold-pickup recall task \u2014 answer lived in decisions.md (2026-04-15 entry).",
+    "Did not need to consult projects/, observations.md, runbooks/, or resources/ for this question.",
+    "Created today's daybook (2026-05-17) per workspace convention since this session produced work.",
+    "Added a Guardrails sub-section to the handoff to prevent a future cold session from opening a senior-level rec without an explicit reversal of the 2026-04-15 decision.",
+    "Did not modify decisions.md \u2014 the standing decision constrains action and was not reversed in this session."
+  ],
+  "run_number": 2,
+  "scenario_id": "02-cold-pickup-cross-day",
+  "started_at": "2026-05-17T00:00:00Z"
+}

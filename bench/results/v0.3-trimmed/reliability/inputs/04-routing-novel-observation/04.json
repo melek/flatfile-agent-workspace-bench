@@ -1,0 +1,27 @@
+{
+  "actions": [
+    {
+      "action": "create",
+      "content_summary": "New daybook entry for today with Log line recording the contractor-onboarding pattern and noting promotion to observations.md.",
+      "path": "daybook/2026-05-17.md"
+    },
+    {
+      "action": "append",
+      "content_summary": "Appended observation '2026-05-17 \u2014 IT credential provisioning lag for external contractors' (Generated-by: user). Three instances cited, ~4-day lag, with a named rule for scoping external contractor starts.",
+      "path": "observations.md"
+    }
+  ],
+  "completed_at": "2026-05-17T00:05:00Z",
+  "final_response": "Flagged. This is the right shape for `observations.md` \u2014 a recurring, cross-project pattern that would cost time to re-derive next time we onboard an external contractor. It's not a commitment (so not `decisions.md`), and it spans projects (so not project-scoped). I logged it two places:\n\n1. **`observations.md`** \u2014 new entry `2026-05-17 \u2014 IT credential provisioning lag for external contractors`. Three instances (May, March, February), ~4-day lag each time. Stated as a rule: file the IT request before the engagement starts, and plan the first week around tasks that don't need access.\n2. **`daybook/2026-05-17.md`** \u2014 Log line pointing to the observation, so the daybook chronology reflects how the entry got there.\n\nIf this escalates into a commitment (e.g., \"we will not start a contractor before IT confirms access\"), that would graduate to `decisions.md` with the observation cited as Context. For now it's a pattern worth surfacing, not a constraint we've signed up to.",
+  "notes": [
+    "Routed to observations.md rather than decisions.md: the user surfaced a recurring pattern and asked not to lose track, not a commitment that constrains future action. If it later crystallizes into a commitment, the methodology says to promote it to decisions.md citing this observation.",
+    "Not project-scoped \u2014 pattern spans every external contractor onboarding, so a single projects/<name>/ folder would have been the wrong home.",
+    "Set Generated-by: user since the user originated the finding; the agent only routed it.",
+    "Created today's daybook (none existed) and logged the routing action there so the chronology reflects how the observation got promoted.",
+    "Left Intent and Handoff sections of the daybook empty \u2014 session just started; user can fill Intent when the day's purpose firms up, and Handoff at close.",
+    "Did not run close-session \u2014 only the user signals end of session."
+  ],
+  "run_number": 4,
+  "scenario_id": "04-routing-novel-observation",
+  "started_at": "2026-05-17T00:00:00Z"
+}

@@ -1,0 +1,50 @@
+{
+  "actions": [
+    {
+      "action": "read",
+      "content_summary": "Workspace orientation \u2014 layout, canonical strings, workflow discipline.",
+      "path": "AGENTS.md"
+    },
+    {
+      "action": "read",
+      "content_summary": "Three open followups: SOC2 (Karen, expected 2026-04-07, chased once), Q2 budget (Marcus, expected 2026-04-25), Nimbus wifi demo (expected 2026-04-23). All past their expected-by dates.",
+      "path": "followups.md"
+    },
+    {
+      "action": "read",
+      "content_summary": "Template only \u2014 no entries yet.",
+      "path": "decisions.md"
+    },
+    {
+      "action": "read",
+      "content_summary": "Template only \u2014 no entries yet.",
+      "path": "observations.md"
+    },
+    {
+      "action": "read",
+      "content_summary": "Convention doc for project folders. No active projects in this workspace.",
+      "path": "projects/AGENTS.md"
+    },
+    {
+      "action": "read",
+      "content_summary": "Seeded example daybook entry from 2026-05-15. No real prior daybook to inherit from.",
+      "path": "daybook/0000-00-00-example.md"
+    },
+    {
+      "action": "create",
+      "content_summary": "Today's daybook entry. Logged a cold-pickup sweep of followups.md with the three stale items identified and triaged by urgency (SOC2 first).",
+      "path": "daybook/2026-05-17.md"
+    }
+  ],
+  "completed_at": "2026-05-17T00:05:00Z",
+  "final_response": "Yes \u2014 `followups.md` has three open items and all of them are past their expected-by date as of today (2026-05-17). In priority order:\n\n1. **SOC2 evidence package from Karen (Acme Compliance)** \u2014 sent 2026-03-30, expected 2026-04-07, chased once on 2026-04-08, silent for ~40 days. The note says it's needed before the auditor's window in May \u2014 that window is now. This is the urgent one; a hard nudge (or escalation past Karen) is probably warranted today.\n2. **Q2 budget review from Marcus (Finance)** \u2014 sent 2026-04-18, expected 2026-04-25. About 3 weeks overdue and never chased. Worth a first nudge.\n3. **Office wifi vendor demo schedule from Nimbus** \u2014 sent 2026-04-20, expected 2026-04-23, never chased. The original Wed/Fri afternoon slot is long expired, so this is really a re-request rather than a chase.\n\nNothing else in the workspace surfaces as urgent \u2014 `decisions.md` and `observations.md` are still at template state, no projects exist yet, and there's no prior daybook handoff to inherit from (the only daybook file is the seeded example). I've opened today's daybook with this triage logged under Log. Want me to draft chase messages for any of these, starting with SOC2?",
+  "notes": [
+    "Cold pickup: only daybook file present was the seeded example, so no prior handoff context. Read followups.md directly to triage.",
+    "All three followups are past their expected-by dates. SOC2 is the standout \u2014 chased once 5+ weeks ago and tied to a May auditor window that has now arrived.",
+    "Did not auto-draft chase messages \u2014 offered to do so as a follow-up step rather than presuming the action.",
+    "Did not write to decisions.md or observations.md \u2014 none of the findings meet the bar described in those files (no new commitment, no costly-to-rederive rule)."
+  ],
+  "run_number": 2,
+  "scenario_id": "03-cold-pickup-stale-followup",
+  "started_at": "2026-05-17T00:00:00Z"
+}
