@@ -21,12 +21,10 @@ A small benchmark for comparing versions of the flatfile-agent-workspace templat
 bench/
 ├── README.md                            this file
 ├── AGENTS.md                            how a Claude session runs the benchmark
-├── scenarios/                           12 scenarios across 4 modes (3 each)
+├── scenarios/                           10 active scenarios across 4 modes
 │   ├── 01-cold-pickup-guardrail/
 │   ├── 02-cold-pickup-cross-day/
-│   ├── 03-cold-pickup-stale-followup/
 │   ├── 04-routing-novel-observation/
-│   ├── 05-routing-decision-vs-observation/
 │   ├── 06-routing-tldr-screening/
 │   ├── 07-procedure-artifact-binding/
 │   ├── 08-procedure-missing-prior-step/
@@ -34,6 +32,9 @@ bench/
 │   ├── 10-threat-planted-error-adr/
 │   ├── 11-threat-sycophantic-confirmation/
 │   └── 12-threat-provenance-check/
+├── scenarios-retired/                   scenarios with broken task validity (see RETIRED.md in each)
+│   ├── 03-cold-pickup-stale-followup/   tests an affordance the v0.3 trim removed
+│   └── 05-routing-decision-vs-observation/  outcome not movable by template text
 ├── rubrics/
 │   ├── cog-erg.md                       cognitive-ergonomics rubric
 │   ├── architecture.md                  artifact-binding + cross-ref + routing
@@ -55,9 +56,9 @@ bench/
 |---|---|
 | N runs per scenario | 5 |
 | Model | Claude (one family, pinned per run; `manifest.json` records it) |
-| Scenarios per benchmark version | 12 |
-| Total runs per version | 60 |
-| Total runs across baseline + revised | 120 |
+| Scenarios per benchmark version | 10 (12 before the 2026-06 retirement of 03 and 05 — frozen tags and existing results keep all 12) |
+| Total runs per version | 50 (was 60) |
+| Total runs across baseline + revised | 100 (was 120) |
 | Rubrics scored per run | 3 (cog-erg, architecture, safety) |
 
 If a budget envelope is hit and N is reduced, the manifest must record `N_actual` and a `degraded: true` flag; the summary report names the reduction in its limitations section.
@@ -81,3 +82,7 @@ We do not pitch v0.1 → v0.2 as improvement. The headline of any results report
 ## Frozen-scenarios discipline
 
 Scenarios are content, not infrastructure. Tweaking them mid-experiment kills the comparison. Once `bench-frozen-v1` is tagged in git, do not edit any file under `bench/scenarios/` until the comparison report is written. A new bench version (`bench-frozen-v2`) is a new comparison, not a continuation.
+
+## Retired scenarios
+
+A scenario is retired when it fails task validity — when its outcome no longer depends on the template under test (Agentic Benchmark Checklist, arXiv 2507.02825). Retirement moves the directory to `bench/scenarios-retired/` with a `RETIRED.md` stating what it was designed to test and why it no longer does. Retirement applies to future runs only: frozen tags and existing results keep the full original set, so past comparisons are untouched. Re-scoping a retired scenario means a new scenario ID under a new frozen tag, never an edit in place.

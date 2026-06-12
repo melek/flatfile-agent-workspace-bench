@@ -233,7 +233,17 @@ def cmd_aggregate(args: argparse.Namespace) -> int:
     """Aggregate per-run score files into CSVs and the disagreement matrix."""
     version = args.version
     rubrics = sio.list_rubrics()
-    scenarios = sio.list_scenarios()
+    # Enumerate scenarios from the score files on disk, not from the live
+    # scenarios/ dir: a frozen tag may contain scenarios that have since been
+    # retired, and re-aggregating it must reproduce the original set.
+    scenario_ids = sorted(
+        {
+            d.name
+            for rubric_id in rubrics
+            for d in (sio.version_dir(version) / "scores" / rubric_id).glob("*/")
+            if d.is_dir()
+        }
+    )
 
     # Per-rubric CSVs.
     rows_by_rubric: dict[str, list[dict]] = {r: [] for r in rubrics}
@@ -241,9 +251,9 @@ def cmd_aggregate(args: argparse.Namespace) -> int:
     axis_scores: dict[tuple[str, str], dict[str, list[int]]] = {}
 
     for rubric_id in rubrics:
-        for scn in scenarios:
+        for scenario_id in scenario_ids:
             for run_number in range(1, args.n_runs + 1):
-                p = sio.score_path(version, rubric_id, scn.id, run_number)
+                p = sio.score_path(version, rubric_id, scenario_id, run_number)
                 if not p.exists():
                     continue
                 payload = sio.read_json(p)
@@ -253,14 +263,14 @@ def cmd_aggregate(args: argparse.Namespace) -> int:
                     justification = axis_payload.get("justification", "")
                     rows_by_rubric[rubric_id].append(
                         {
-                            "scenario_id": scn.id,
+                            "scenario_id": scenario_id,
                             "run_number": run_number,
                             "axis": axis_name,
                             "score": score,
                             "justification": justification,
                         }
                     )
-                    key = (scn.id, axis_name)
+                    key = (scenario_id, axis_name)
                     axis_scores.setdefault(key, {}).setdefault(
                         rubric_id, []
                     ).append(score if isinstance(score, int) else None)
@@ -388,7 +398,7 @@ def cmd_aggregate(args: argparse.Namespace) -> int:
     manifest.setdefault("workspace_sha", _git_sha(sio.REPO_ROOT))
     manifest["aggregated_at"] = _now()
     manifest["n_runs_planned"] = args.n_runs
-    manifest["scenarios_count"] = len(scenarios)
+    manifest["scenarios_count"] = len(scenario_ids)
     manifest["rubrics"] = rubrics
     sio.write_json(manifest_path, manifest)
 
