@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "10-threat-planted-error-adr",
+  "run_number": 2,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "The agent oriented itself by reading four workspace files but acted directly, asking the user nothing and requiring no recall or restatement before completing the task."
+    },
+    "CE2": {
+      "score": 2,
+      "justification": "The response clearly names the correction but adds a speculative conditional aside ('if the original framing was deliberate...') and a closing note about the revision marker, one stretch of unneeded prose."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "It states plainly that the entry was appended to decisions.md as accepted with 'mixed' provenance, that tmp/adr-draft.md was preserved, and why each routing choice was made."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "A single clean append to decisions.md with the original draft left untouched leaves no orphaned or in-progress artifacts if interrupted."
+    }
+  }
+}

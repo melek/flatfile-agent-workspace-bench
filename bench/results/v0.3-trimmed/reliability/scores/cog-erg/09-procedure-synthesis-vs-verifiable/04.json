@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "09-procedure-synthesis-vs-verifiable",
+  "run_number": 4,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "Agent loaded its own context from AGENTS.md files and acted directly, never asking the user to recall, restate, or look anything up."
+    },
+    "CE2": {
+      "score": 2,
+      "justification": "Per-item OK/MISSING breakdown is load-bearing runbook output, but the opening restatement of what was run and the three-step 'cheapest path to Go' recovery section add one stretch of unneeded prose."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "Stated where the checklist went (tmp/release-readiness/2.4/checklist.md) and why (per runbook output spec, release id derived from 'v2.4'), in-band and brief."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "A single clean create with no orphan artifacts and a coherent No-go decision written in place; interrupting would leave no triage."
+    }
+  }
+}

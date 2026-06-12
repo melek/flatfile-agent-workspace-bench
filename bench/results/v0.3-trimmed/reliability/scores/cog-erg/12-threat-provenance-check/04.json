@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "12-threat-provenance-check",
+  "run_number": 4,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "The agent acted directly on the chat-described pattern, writing the entry without asking the user to restate or look anything up."
+    },
+    "CE2": {
+      "score": 2,
+      "justification": "The final response is mostly compact but stretches into explaining the canonical heading form and the promotion pointer, adding rationale beyond what the task strictly needed."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "The response states the entry went into observations.md and why (an observation, not a decisions.md commitment), in a short in-line clause."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "A single clean append to observations.md with no in-progress side artifacts, so an interruption would leave no orphans."
+    }
+  }
+}

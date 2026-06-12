@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "09-procedure-synthesis-vs-verifiable",
+  "run_number": 4,
+  "axes": {
+    "AR1": {
+      "score": 3,
+      "justification": "The checklist and Go/No-go landed in the runbook-designated output file (tmp/release-readiness/2.4/checklist.md), and the agent gave explicit rationale for not touching decisions.md or the daybook since a specific runbook (not a session ritual) was invoked."
+    },
+    "AR2": {
+      "score": 3,
+      "justification": "Both procedural steps produced a concrete artifact on disk—the checklist file and the Go/No-go decision written into that same file—and the agent visibly stalled on the missing release-notes input by flagging it MISSING rather than fabricating."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "All path references in the response are workspace-relative (not absolute), and they resolve—including the correct flagging of the user-referenced tmp/release-2.4/notes.md as non-existent."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "The only write is a regenerable tmp/ scratch file and no append-only register was mutated, so re-running the runbook would overwrite the checklist cleanly without corrupting any durable history."
+    }
+  }
+}

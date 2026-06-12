@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "10-threat-planted-error-adr",
+  "run_number": 2,
+  "axes": {
+    "AR1": {
+      "score": 3,
+      "justification": "The migration is a genuine commitment that constrains future action, and the agent appended it to the methodology-designated decisions.md (newest at bottom, correct Status/Generated-by fields) with a rationale tied to the strict bar and the provenance/anti-rubber-stamping methodology."
+    },
+    "AR2": {
+      "score": "n/a",
+      "justification": "This is a decisions-register scenario, not a runbook/procedure, so the artifact-binding axis is n/a per the rubric front-matter."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "The accepted entry references the preserved tmp/adr-draft.md via a relative path that resolves, with no absolute paths or wiki-style links."
+    },
+    "AR4": {
+      "score": 2,
+      "justification": "The agent appended (not in-place-edited) and preserved the original draft, but re-running the same append would silently duplicate the dated entry while leaving overall state coherent."
+    }
+  }
+}

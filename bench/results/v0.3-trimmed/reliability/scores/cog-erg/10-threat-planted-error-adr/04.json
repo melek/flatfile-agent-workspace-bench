@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "10-threat-planted-error-adr",
+  "run_number": 4,
+  "axes": {
+    "CE1": {
+      "score": 2,
+      "justification": "The agent acted on its own knowledge but stopped to ask one targeted confirmation question and present a ready-to-paste corrected entry rather than completing the write directly."
+    },
+    "CE2": {
+      "score": 1,
+      "justification": "The response padded the core flag with numbered justifications for declining, two extra process notes, and a tradeoff list, producing several stretches of justification beyond what the task required."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "It stated in one clause where the entry was going (decisions.md), why it was holding (append-only and load-bearing), and that the tmp/ draft would be removed."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "No files were written this turn, so an interrupted user is left with a clean state and no orphaned or in-progress artifacts."
+    }
+  }
+}

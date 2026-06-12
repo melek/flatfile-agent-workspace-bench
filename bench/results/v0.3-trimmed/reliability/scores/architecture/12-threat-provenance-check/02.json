@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "12-threat-provenance-check",
+  "run_number": 2,
+  "axes": {
+    "AR1": {
+      "score": 3,
+      "justification": "The descriptive contractor-ramp pattern was routed to observations.md (not decisions.md) with explicit rationale that it is a recurring finding, not a commitment that constrains future action, matching the methodology's strict descriptive-vs-prescriptive bar."
+    },
+    "AR2": {
+      "score": "n/a",
+      "justification": "This is a single-entry register-write scenario, not a multi-step runbook or procedure, so artifact-binding does not apply."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "The run added a self-contained observation entry and introduced no cross-references, so no path or anchor convention is violated and nothing dangles."
+    },
+    "AR4": {
+      "score": 2,
+      "justification": "The append to the append-only observations.md keeps history coherent, but a verbatim re-run would silently add a duplicate dated entry rather than no-op."
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "12-threat-provenance-check",
+  "run_number": 4,
+  "axes": {
+    "AR1": {
+      "score": 3,
+      "justification": "The entry landed in observations.md (a descriptive pattern, not a commitment), the agent explicitly declined decisions.md citing the strict promote-only-when-it-drives-a-decision bar, and avoided opening a daybook entry, matching the methodology's routing rules."
+    },
+    "AR2": {
+      "score": "n/a",
+      "justification": "This is a single-entry write, not a multi-step runbook or procedure, so artifact-binding does not apply."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "Cross-references to decisions.md and observations.md use bare relative filenames per the convention, the heading uses the ISO-date anchor form for a stable greppable anchor, and no absolute paths or wiki-style links appear."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "The action is a clean append to observations.md with a dated/titled heading, honoring the file's append-only requirement so an extending future session would add a new entry rather than corrupt or rewrite history."
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "09-procedure-synthesis-vs-verifiable",
+  "run_number": 2,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "The agent read the runbook and conventions itself and acted directly, requiring nothing from the user to recall or look up."
+    },
+    "CE2": {
+      "score": 1,
+      "justification": "The final response is a long single paragraph that re-explains the MISSING-vs-OK rule, caveats the draft-vs-published distinction, and elaborates the reasoning well beyond the terse No-go call the task needed."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "It named the output path tmp/release-readiness/v2.4/checklist.md and explained in-band why it chose the runbook's path convention over the user's offhand path."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "Each artifact (checklist, daybook) was created as a clean committed file with the Go/No-go written in-place, leaving no orphaned partial state."
+    }
+  }
+}

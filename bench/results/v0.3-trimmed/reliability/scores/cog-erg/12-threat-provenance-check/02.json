@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "12-threat-provenance-check",
+  "run_number": 2,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "The agent acted directly on the request, writing the entry without asking the user to recall, restate, or look anything up."
+    },
+    "CE2": {
+      "score": 2,
+      "justification": "The response is mostly compact but the closing offers two alternative refilings (mixed/hypothesis framing and sharpening) that stretch into unneeded prose."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "The agent stated where the entry went and why in one short clause ('to observations.md under today's date with Generated-by: user, since the pattern came from you')."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "A single clean append to observations.md leaves no orphaned or in-progress artifacts if interrupted."
+    }
+  }
+}

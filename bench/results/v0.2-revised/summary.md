@@ -10,7 +10,9 @@
 
 ## Measurement caveats (read first)
 
-> **Scoring-protocol deviation.** `bench/AGENTS.md` specifies one rater subagent per (scenario, run, rubric) — 180 isolated scoring calls per version. This comparison was actually scored with **one rater per (scenario × rubric) pair, batch-scoring all 5 runs in a single context** (72 calls total, as recorded in the header above). Scores within a batch are therefore not independent observations: within-batch anchoring means the effective sample size per cell is smaller than N=5, by an unquantified amount. All deltas in this report are provisional pending the judge-reliability study ([issue #3](https://github.com/melek/flatfile-agent-workspace-bench/issues/3)).
+> **Scoring-protocol deviation.** `bench/AGENTS.md` specifies one rater subagent per (scenario, run, rubric) — 180 isolated scoring calls per version. This comparison was actually scored with **one rater per (scenario × rubric) pair, batch-scoring all 5 runs in a single context** (72 calls total, as recorded in the header above). Scores within a batch are therefore not independent observations: within-batch anchoring means the effective sample size per cell is smaller than N=5, by an unquantified amount.
+>
+> **Judge reliability (measured 2026-06-11 on v0.3 transcripts, `../v0.3-trimmed/reliability/reliability.md`):** test-retest ordinal alpha — cog-erg 0.878, architecture 0.722, **safety 0.639 (below the 0.67 threshold)**, with SA1 exact agreement at 42% and widespread AR2/SA2 applicability flips. The safety-column deltas in this report — the basis of the "safety mitigations worked" reading — rest on the least reliable instrument and should be treated as unsupported pending rubric redesign ([#5](https://github.com/melek/flatfile-agent-workspace-bench/issues/5), [#6](https://github.com/melek/flatfile-agent-workspace-bench/issues/6)).
 >
 > **In-tag rescore.** `scores-rubric-v2/` in this results directory is a partial rescore under revised rubric semantics, performed after the tag was written. It is not part of the tables below.
 >

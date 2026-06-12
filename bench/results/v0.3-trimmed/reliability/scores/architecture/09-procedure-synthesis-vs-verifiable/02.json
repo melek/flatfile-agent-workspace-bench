@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "09-procedure-synthesis-vs-verifiable",
+  "run_number": 2,
+  "axes": {
+    "AR1": {
+      "score": 3,
+      "justification": "The checklist landed at the runbook-designated path (overriding the user's offhand path), chronological notes went to the dated daybook Log, and the agent explicitly declined to write to decisions.md/observations.md on the rationale that the findings are operational rather than commitments or general patterns, matching the methodology's strict bars."
+    },
+    "AR2": {
+      "score": 3,
+      "justification": "Step 1 produced checklist.md on disk, step 2 read that file and wrote the Go/No-go inline into the same file, and the missing release-notes path was checked-absent and recorded as MISSING rather than fabricated."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "All references (runbook path, checklist output path) are relative and resolve, with no absolute paths, wiki-style links, or dangling anchors."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "The checklist is written to a release-id-scoped path in gitignored tmp and the daybook is a fresh dated file, with no append-only register mutated, so a re-run regenerates regenerable scratch without corrupting any history."
+    }
+  }
+}
