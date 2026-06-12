@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "02-cold-pickup-cross-day",
+  "run_number": 4,
+  "axes": {
+    "AR1": {
+      "score": 3,
+      "justification": "The agent cited the existing 2026-04-15 decision rather than re-deriving it, logged the recruiting question in today's dated daybook, and routed the boundary constraint into the daybook Guardrails sub-section while explicitly noting a real exception would require a superseding decisions.md entry — matching the methodology's strict bars."
+    },
+    "AR2": {
+      "score": "n/a",
+      "justification": "This is a cold-pickup decision-reference scenario, not a runbook/procedure scenario, so artifact-binding does not apply."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "References to decisions.md and the 2026-04-15 entry are relative and resolve against the existing seed, with no absolute paths or wiki-style links."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "The only write is creating today's dated, append-only daybook with an append-only Guardrails note; no existing decision or prior handoff is mutated, so re-running leaves the workspace coherent."
+    }
+  }
+}

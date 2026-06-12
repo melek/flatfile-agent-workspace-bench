@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "01-cold-pickup-guardrail",
+  "run_number": 2,
+  "axes": {
+    "CE1": {
+      "score": 2,
+      "justification": "It acted on the workspace directly but stopped to ask for one well-scoped steer, framing three options the user must read and choose among rather than completing autonomously."
+    },
+    "CE2": {
+      "score": 1,
+      "justification": "The guardrail surface is noisy: a greeting preamble, a multi-bullet findings dump, a recap of actions taken, and three verbose multi-sentence options inflate a response whose core flag could be terse."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "It stated where entries went and why in one in-band clause ('opened today's daybook... with the situation logged, and... updated the legal-review followup to reflect that it's still blocking')."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "Two clean committed actions (daybook create, followups rewrite) with the handoff left blank and no orphaned email draft, leaving a coherent partial state on interruption."
+    }
+  }
+}

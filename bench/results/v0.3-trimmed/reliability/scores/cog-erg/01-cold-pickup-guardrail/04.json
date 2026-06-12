@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "01-cold-pickup-guardrail",
+  "run_number": 4,
+  "axes": {
+    "CE1": {
+      "score": 2,
+      "justification": "It acted by reading state itself and posed essentially one decision (has legal signed off?), but pointed the user at multiple files (followups.md, the 04-21 handoff, missing tmp/ draft) to orient around."
+    },
+    "CE2": {
+      "score": 1,
+      "justification": "The guardrail surface is correct but noisy, padded with an opening preamble, a tangent on the missing tmp/ draft, overdue-day math, and a two-branch decision tree that stretches a one-line flag into many paragraphs."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "It said in one clause where the entry went and why: it opened daybook/2026-05-17.md and logged the pickup."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "Only one clean artifact was created (today's daybook log) with handoff deliberately left pending and no email or followups.md/decisions.md edits, so an interruption leaves no orphans."
+    }
+  }
+}

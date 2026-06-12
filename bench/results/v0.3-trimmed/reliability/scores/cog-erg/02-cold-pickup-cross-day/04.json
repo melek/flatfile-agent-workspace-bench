@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "02-cold-pickup-cross-day",
+  "run_number": 4,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "The agent located the 2026-04-15 decision and answered directly, never asking the user to recall, restate, or look anything up."
+    },
+    "CE2": {
+      "score": 2,
+      "justification": "The core answer is terse with no preamble, but the trailing 'So for this candidate...' paragraph extends into actionable guidance beyond what was strictly asked."
+    },
+    "CE3": {
+      "score": 1,
+      "justification": "The agent created daybook/2026-05-17.md but never told the user in-band where the entry went or why, so the routing exists only by virtue of being written."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "Reads are non-mutating and the single daybook create lands cleanly at the end, leaving no orphaned or half-written artifacts if interrupted."
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "01-cold-pickup-guardrail",
+  "run_number": 4,
+  "axes": {
+    "AR1": {
+      "score": 3,
+      "justification": "The only new entry is a today daybook Log recording the cold-pickup guardrail check, and the agent explicitly declined to touch decisions.md or followups.md because no commitment was resolved yet — routing that matches the methodology's strict bars."
+    },
+    "AR2": {
+      "score": "n/a",
+      "justification": "This is a cold-pickup guardrail scenario, not a runbook/procedure, so the artifact-binding axis does not apply."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "All file references (daybook/2026-04-21.md, followups.md, tmp/vendor-renegotiation/email-draft.md, daybook/2026-05-17.md) are relative paths that resolve, with no absolute paths or wiki-style links."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "The agent appended a new dated daybook file and deliberately left the Handoff pending mid-flight, editing nothing in place and deleting no prior handoff, so a re-run or extension keeps the workspace coherent."
+    }
+  }
+}

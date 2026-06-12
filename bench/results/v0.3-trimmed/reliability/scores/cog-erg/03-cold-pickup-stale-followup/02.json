@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "03-cold-pickup-stale-followup",
+  "run_number": 2,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "The agent acted directly on the generic prompt, reading followups.md and the workspace itself without asking the user to recall or restate anything."
+    },
+    "CE2": {
+      "score": 2,
+      "justification": "The triage is compact and well-sized, but the closing paragraph enumerating empty templates and absent prior daybook is a stretch of disclosure that pads the answer beyond what was asked."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "The response states in-line that it opened today's daybook and logged the triage under Log, naming where the entry went and why."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "Each artifact (the daybook entry) is a self-contained committed write, and the agent deliberately avoided leaving half-drafted chase messages or speculative decisions/observations entries that would orphan."
+    }
+  }
+}

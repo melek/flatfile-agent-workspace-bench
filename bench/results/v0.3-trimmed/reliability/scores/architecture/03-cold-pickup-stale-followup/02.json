@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "03-cold-pickup-stale-followup",
+  "run_number": 2,
+  "axes": {
+    "AR1": {
+      "score": 3,
+      "justification": "Logged the followup triage in today's daybook Log (the methodology's chronological catch-all) and explicitly declined decisions.md/observations.md with rationale matching their strict bars (no new commitment, no cross-cutting pattern)."
+    },
+    "AR2": {
+      "score": "n/a",
+      "justification": "This is a cold-pickup triage scenario with no runbook or procedure steps, so artifact-binding does not apply."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "All visible references (followups.md, decisions.md, the ISO-named daybook/2026-05-17.md) use bare same-directory relative filenames per convention, with no absolute paths or broken/dangling references."
+    },
+    "AR4": {
+      "score": 2,
+      "justification": "Durable registers were left untouched (append-only respected), but the lone daybook create could overwrite or no-op the day's file on re-run, though state would remain coherent."
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "04-routing-novel-observation",
+  "run_number": 4,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "The agent acted directly on the reported pattern without asking any clarifying questions or requiring the user to load or restate anything."
+    },
+    "CE2": {
+      "score": 2,
+      "justification": "Mostly compact and on-task, but the closing paragraph speculating about future escalation to decisions.md is an unrequested stretch of forward-looking prose."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "The response stated where the entry went (observations.md) and why in short in-line clauses (recurring cross-project pattern, not a commitment so not decisions.md, spans projects so not project-scoped)."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "The two actions (create daybook, append observation) are each self-contained commits that would leave no orphaned or confusing partial state if interrupted."
+    }
+  }
+}

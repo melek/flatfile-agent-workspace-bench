@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "03-cold-pickup-stale-followup",
+  "run_number": 4,
+  "axes": {
+    "AR1": {
+      "score": 3,
+      "justification": "The agent correctly routed nothing to any register — a single cold-pickup Q&A is not a session start and the user only asked what to chase — and it explicitly reasoned that the followups register is the signal, respecting the methodology's bars against speculative writes."
+    },
+    "AR2": {
+      "score": "n/a",
+      "justification": "This is a read-and-respond Q&A scenario with no procedural runbook steps, so artifact-binding does not apply."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "The final response names referenced files (followups.md, decisions.md, observations.md, projects/) correctly and consistently with the workspace layout, and no broken or absolute-path references were authored."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "The agent made zero file mutations, so re-running or extending the session would leave the workspace fully coherent with nothing to conflict or duplicate."
+    }
+  }
+}

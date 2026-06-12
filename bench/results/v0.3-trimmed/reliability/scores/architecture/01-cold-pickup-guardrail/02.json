@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "01-cold-pickup-guardrail",
+  "run_number": 2,
+  "axes": {
+    "AR1": {
+      "score": 3,
+      "justification": "The cold-pickup note landed in the daybook Log (the chronological catch-all), the followup status was updated in followups.md, and the agent correctly withheld the prior hold from decisions.md with an explicit rationale matching the strict bar (no new commitment was made this session)."
+    },
+    "AR2": {
+      "score": "n/a",
+      "justification": "This is a cold-pickup guardrail scenario, not a runbook/procedure scenario, so artifact-binding does not apply."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "All cross-references (daybook/2026-05-17.md, daybook/2026-04-21.md, followups.md, decisions.md, tmp/vendor-renegotiation/email-draft.md) use the methodology's relative-path convention and resolve to the intended files."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "Creating a new dated daybook file is idempotent by date, and rewriting the followups.md status in place is the prescribed behavior for that explicitly non-append-only file, so a re-run leaves the workspace coherent with no append-only violation."
+    }
+  }
+}

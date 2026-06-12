@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "04-routing-novel-observation",
+  "run_number": 2,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "The agent acted directly on the user's reported pattern without asking any clarifying questions or requiring the user to load or restate anything."
+    },
+    "CE2": {
+      "score": 2,
+      "justification": "The response is mostly compact and structured, but the closing 'One thing to consider for later' aside plus the offer to draft an ADR add a stretch of unrequested prose beyond the task."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "The response states both where the entry went (observations.md, with a daybook pointer) and why in-band — cross-session pattern, not a commitment — letting the user redirect cheaply."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "Each action is a clean append/create with a daybook pointer cross-referencing the observation, so an interrupted state would leave coherent, non-orphaned artifacts."
+    }
+  }
+}

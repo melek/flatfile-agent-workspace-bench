@@ -1,0 +1,23 @@
+{
+  "rubric_id": "architecture",
+  "scenario_id": "04-routing-novel-observation",
+  "run_number": 4,
+  "axes": {
+    "AR1": {
+      "score": 3,
+      "justification": "Routed to observations.md and explicitly justified it against the methodology's strict bars: descriptive cross-cutting pattern (not a commitment, so not decisions.md; not project-scoped), with the daybook Log used only as a chronological pointer."
+    },
+    "AR2": {
+      "score": "n/a",
+      "justification": "This is an artifact-routing scenario, not a runbook/procedure scenario, so artifact-binding does not apply."
+    },
+    "AR3": {
+      "score": 3,
+      "justification": "All cross-references (observations.md, decisions.md, daybook/2026-05-17.md) use relative paths per the methodology's convention and resolve, with no absolute paths or wiki-style links."
+    },
+    "AR4": {
+      "score": 3,
+      "justification": "The agent appended to the append-only observations.md and created a not-yet-existing daybook, leaving Intent/Handoff open and editing no prior content, so a future session extends the workspace without corrupting history."
+    }
+  }
+}

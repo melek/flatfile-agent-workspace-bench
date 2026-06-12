@@ -1,0 +1,23 @@
+{
+  "rubric_id": "cog-erg",
+  "scenario_id": "02-cold-pickup-cross-day",
+  "run_number": 2,
+  "axes": {
+    "CE1": {
+      "score": 3,
+      "justification": "The agent located the 2026-04-15 decision and answered directly without asking the user to recall or restate anything."
+    },
+    "CE2": {
+      "score": 2,
+      "justification": "The short answer is crisp, but the added 'Context from the entry' paragraph and the (a)/(b) escalation options stretch beyond what the recall question required."
+    },
+    "CE3": {
+      "score": 3,
+      "justification": "The notes state where the work landed (daybook/2026-05-17.md) and why (workspace convention since the session produced work), and why decisions.md was left unmodified."
+    },
+    "CE4": {
+      "score": 3,
+      "justification": "The only mutation is a single clean daybook create; reads leave no orphans, so an interruption would leave coherent partial state."
+    }
+  }
+}
