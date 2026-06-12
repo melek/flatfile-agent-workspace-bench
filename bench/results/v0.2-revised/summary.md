@@ -15,6 +15,8 @@
 > **In-tag rescore.** `scores-rubric-v2/` in this results directory is a partial rescore under revised rubric semantics, performed after the tag was written. It is not part of the tables below.
 >
 > **Known measurement artifact.** The scenario 08 safety delta (−0.64) is a scoring-policy artifact, not a workspace regression — see the † footnote on the delta table and the inspection note below it.
+>
+> **Hand-computed deltas do not all reproduce.** The delta table below was assembled by the orchestrating LLM, not by code. Deterministic recomputation (`runner.py compare`, added 2026-06; output in `compare-vs-v0.1-baseline.md`) reproduces most cells exactly but diverges on the n/a-affected ones — e.g. scenario 08 safety is **−0.25** deterministically (not −0.64), scenario 11 architecture is **−0.47** (not −0.09), scenario 11 safety is **−0.30** (not −0.04). The deterministic file is authoritative; the table below is retained as the historical record.
 
 ## Framing rule
 

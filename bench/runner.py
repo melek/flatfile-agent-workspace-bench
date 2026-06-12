@@ -576,6 +576,263 @@ def cmd_validate(args: argparse.Namespace) -> int:
     return 1 if errors else 0
 
 
+# Two-sided 97.5th percentile of Student's t, for 95% CIs on paired
+# scenario-level deltas. Indexed by degrees of freedom.
+T_975 = {
+    1: 12.706, 2: 4.303, 3: 3.182, 4: 2.776, 5: 2.571, 6: 2.447, 7: 2.365,
+    8: 2.306, 9: 2.262, 10: 2.228, 11: 2.201, 12: 2.179, 13: 2.160,
+    14: 2.145, 15: 2.131, 16: 2.120, 17: 2.110, 18: 2.101, 19: 2.093,
+    20: 2.086, 25: 2.060, 30: 2.042,
+}
+
+
+def _t975(df: int) -> float:
+    if df in T_975:
+        return T_975[df]
+    keys = sorted(T_975)
+    for k in reversed(keys):
+        if df >= k:
+            return T_975[k]
+    return T_975[keys[0]]
+
+
+def _version_cell_stats(
+    version: str, rubrics: list[str], metas: dict[str, "sio.RubricMeta"], n_runs: int
+) -> dict[tuple[str, str], dict]:
+    """Per (scenario, rubric): rubric mean, n/a rate, and observation counts.
+
+    Replicates the aggregate-step estimator: mean over runs within each axis
+    (int scores only), then mean over axes. Axis names are normalized onto
+    the canonical schema. n/a rate counts non-int scores over all axis
+    observations.
+    """
+    cells: dict[tuple[str, str], dict] = {}
+    scenario_ids = _scenario_ids_on_disk(version, rubrics)
+    for rubric_id in rubrics:
+        meta = metas[rubric_id]
+        for scenario_id in scenario_ids:
+            axis_vals: dict[str, list[int]] = {}
+            total_obs = 0
+            na_obs = 0
+            min_axis_n: int | None = None
+            for run_number in range(1, n_runs + 1):
+                p = sio.score_path(version, rubric_id, scenario_id, run_number)
+                if not p.exists():
+                    continue
+                for axis_name, axis_payload in sio.read_json(p).get(
+                    "axes", {}
+                ).items():
+                    canon = _canonical_axis(axis_name, meta.axes)
+                    if canon is None:
+                        continue
+                    total_obs += 1
+                    score = axis_payload.get("score")
+                    if isinstance(score, int):
+                        axis_vals.setdefault(canon, []).append(score)
+                    else:
+                        na_obs += 1
+            if not total_obs:
+                continue
+            axis_means = [sum(v) / len(v) for v in axis_vals.values()]
+            if axis_vals:
+                min_axis_n = min(len(v) for v in axis_vals.values())
+            cells[(scenario_id, rubric_id)] = {
+                "mean": sum(axis_means) / len(axis_means) if axis_means else None,
+                "na_rate": na_obs / total_obs,
+                "n_obs": total_obs - na_obs,
+                "min_axis_n": min_axis_n,
+            }
+    return cells
+
+
+def cmd_compare(args: argparse.Namespace) -> int:
+    """Compute the baseline→revised delta tables deterministically.
+
+    Refuses to compare across different rubric versions: when scoring
+    semantics change, the baseline's affected axes must be re-scored under
+    the new policy first (common measurement frame). Manifests that predate
+    rubric versioning require --assume-same-rubrics to proceed.
+    """
+    baseline, revised = args.baseline, args.revised
+    rubrics = sio.list_rubrics()
+    metas: dict[str, sio.RubricMeta] = {}
+    for rubric_id in rubrics:
+        meta = sio.rubric_meta(rubric_id)
+        if meta is None:
+            print(f"ERROR: rubric {rubric_id} has no front-matter", file=sys.stderr)
+            return 1
+        metas[rubric_id] = meta
+
+    # Rubric-version gate.
+    manifests = {}
+    for tag in (baseline, revised):
+        mp = sio.version_dir(tag) / "manifest.json"
+        if not mp.exists():
+            print(f"ERROR: {tag} has no manifest.json", file=sys.stderr)
+            return 1
+        manifests[tag] = sio.read_json(mp)
+    recorded = [manifests[t].get("rubric_versions") for t in (baseline, revised)]
+    if recorded[0] is None or recorded[1] is None:
+        if not args.assume_same_rubrics:
+            print(
+                "ERROR: one or both tags predate rubric versioning (no "
+                "rubric_versions in manifest). If both were scored under "
+                "identical rubric semantics, re-run with "
+                "--assume-same-rubrics. If semantics changed between them "
+                "(e.g. the v0.1→v0.2 SA2 n/a policy), the baseline's "
+                "affected axes must be re-scored under the newer policy "
+                "before comparison.",
+                file=sys.stderr,
+            )
+            return 1
+    elif recorded[0] != recorded[1]:
+        print(
+            f"ERROR: rubric versions differ between {baseline} {recorded[0]} "
+            f"and {revised} {recorded[1]}. Re-score the baseline's affected "
+            "axes under the newer rubric before comparing (common "
+            "measurement frame); a version-pin mismatch is not a footnote.",
+            file=sys.stderr,
+        )
+        return 1
+
+    n = args.n_runs
+    base_cells = _version_cell_stats(baseline, rubrics, metas, n)
+    rev_cells = _version_cell_stats(revised, rubrics, metas, n)
+
+    base_scn = {k[0] for k in base_cells}
+    rev_scn = {k[0] for k in rev_cells}
+    common = sorted(base_scn & rev_scn)
+    asym = sorted(base_scn ^ rev_scn)
+
+    batched = any(
+        "batched" in str(manifests[t].get("scoring_granularity", "unrecorded"))
+        or "scoring_granularity" not in manifests[t]
+        for t in (baseline, revised)
+    )
+
+    lines = [
+        f"# {baseline} → {revised} — deterministic comparison",
+        "",
+        f"Generated by `runner.py compare` at {_now()}.",
+        f"Common scenarios: {len(common)}"
+        + (f" (asymmetric, excluded: {', '.join(asym)})" if asym else ""),
+        "",
+    ]
+    if batched:
+        lines += [
+            "> **Dependence caveat.** At least one side of this comparison "
+            "was batch-scored (or has unrecorded scoring granularity): "
+            "scores within a (scenario, rubric) batch are not independent, "
+            "so the intervals below understate uncertainty by an unknown "
+            "amount. See the scoring-protocol disclosure in the tags' "
+            "summary.md files.",
+            "",
+        ]
+
+    # Per-scenario delta table.
+    lines += [
+        "## Per-scenario per-rubric delta (revised − baseline)",
+        "",
+        "Cells show Δ mean, with Δ n/a-rate in parentheses when either side "
+        "has any n/a observations (n/a is missing-not-at-random here: axis "
+        "applicability depends on agent behavior, so a mean delta can be a "
+        "composition shift). `†` marks cells where any contributing axis "
+        "mean rests on fewer than 3 runs on either side.",
+        "",
+        "| Scenario | " + " | ".join(f"{r} Δ" for r in rubrics) + " |",
+        "|---|" + "|".join("---" for _ in rubrics) + "|",
+    ]
+    csv_rows: list[dict] = []
+    for scenario_id in common:
+        cells_out = []
+        for r in rubrics:
+            b = base_cells.get((scenario_id, r))
+            v = rev_cells.get((scenario_id, r))
+            if not b or not v or b["mean"] is None or v["mean"] is None:
+                cells_out.append("—")
+                continue
+            delta = v["mean"] - b["mean"]
+            na_delta = v["na_rate"] - b["na_rate"]
+            thin = (
+                (b["min_axis_n"] is not None and b["min_axis_n"] < 3)
+                or (v["min_axis_n"] is not None and v["min_axis_n"] < 3)
+            )
+            cell = f"{delta:+.2f}"
+            if b["na_rate"] or v["na_rate"]:
+                cell += f" (n/a {na_delta:+.2f})"
+            if thin:
+                cell += " †"
+            cells_out.append(cell)
+            csv_rows.append(
+                {
+                    "scenario_id": scenario_id,
+                    "rubric": r,
+                    "baseline_mean": f"{b['mean']:.4f}",
+                    "revised_mean": f"{v['mean']:.4f}",
+                    "delta": f"{delta:.4f}",
+                    "baseline_na_rate": f"{b['na_rate']:.4f}",
+                    "revised_na_rate": f"{v['na_rate']:.4f}",
+                    "baseline_n_obs": b["n_obs"],
+                    "revised_n_obs": v["n_obs"],
+                }
+            )
+        lines.append(f"| {scenario_id} | " + " | ".join(cells_out) + " |")
+
+    # Per-rubric paired summary across scenarios.
+    lines += [
+        "",
+        "## Per-rubric paired summary (across common scenarios)",
+        "",
+        "Mean of the per-scenario deltas with a t-interval over scenarios "
+        "(the inference target is this fixed scenario set, not a scenario "
+        "population). A CI excluding 0 is a direction signal under the "
+        "dependence caveat above; it is not a magnitude claim.",
+        "",
+        "| Rubric | n scenarios | mean Δ | sd | 95% CI |",
+        "|---|---|---|---|---|",
+    ]
+    for r in rubrics:
+        deltas = [
+            rev_cells[(s, r)]["mean"] - base_cells[(s, r)]["mean"]
+            for s in common
+            if (s, r) in base_cells
+            and (s, r) in rev_cells
+            and base_cells[(s, r)]["mean"] is not None
+            and rev_cells[(s, r)]["mean"] is not None
+        ]
+        k = len(deltas)
+        if k < 2:
+            lines.append(f"| {r} | {k} | — | — | — |")
+            continue
+        mean = sum(deltas) / k
+        var = sum((d - mean) ** 2 for d in deltas) / (k - 1)
+        sd = var ** 0.5
+        half = _t975(k - 1) * sd / k ** 0.5
+        lines.append(
+            f"| {r} | {k} | {mean:+.3f} | {sd:.3f} | "
+            f"[{mean - half:+.3f}, {mean + half:+.3f}] |"
+        )
+
+    out_md = sio.version_dir(revised) / f"compare-vs-{baseline}.md"
+    out_md.write_text("\n".join(lines) + "\n")
+    out_csv = sio.version_dir(revised) / f"compare-vs-{baseline}.csv"
+    sio.write_csv(
+        out_csv,
+        csv_rows,
+        fieldnames=[
+            "scenario_id", "rubric", "baseline_mean", "revised_mean", "delta",
+            "baseline_na_rate", "revised_na_rate", "baseline_n_obs",
+            "revised_n_obs",
+        ],
+    )
+    print(
+        f"Compared {len(common)} scenarios × {len(rubrics)} rubrics. "
+        f"Wrote {out_md.relative_to(sio.REPO_ROOT)} and "
+        f"{out_csv.relative_to(sio.REPO_ROOT)}"
+    )
+    return 0
+
+
 def cmd_status(args: argparse.Namespace) -> int:
     """Print completion counts per stage."""
     version = args.version
@@ -650,6 +907,21 @@ def main(argv: list[str] | None = None) -> int:
         help="record validation result and rubric versions in the manifest",
     )
     p_val.set_defaults(func=cmd_validate)
+
+    p_cmp = sub.add_parser(
+        "compare", help="deterministic delta tables between two tags"
+    )
+    p_cmp.add_argument("--baseline", required=True)
+    p_cmp.add_argument("--revised", required=True)
+    p_cmp.add_argument(
+        "--assume-same-rubrics",
+        action="store_true",
+        help=(
+            "proceed when manifests predate rubric versioning, asserting "
+            "both tags were scored under identical rubric semantics"
+        ),
+    )
+    p_cmp.set_defaults(func=cmd_compare)
 
     args = parser.parse_args(argv)
     return args.func(args)
