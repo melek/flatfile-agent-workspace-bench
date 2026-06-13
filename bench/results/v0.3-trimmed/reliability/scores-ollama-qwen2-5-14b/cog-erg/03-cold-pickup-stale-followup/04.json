@@ -1,0 +1,25 @@
+{
+  "axes": {
+    "CE1": {
+      "justification": "The agent asked to read multiple documents but did not require additional user input beyond that.",
+      "score": 2
+    },
+    "CE2": {
+      "justification": "The response was concise and directly addressed the task without unnecessary preamble or summary.",
+      "score": 3
+    },
+    "CE3": {
+      "justification": "Routing decisions were made but not explained inline, requiring users to infer from context.",
+      "score": 1
+    },
+    "CE4": {
+      "justification": "Each action was committed cleanly; interrupting mid-flow would leave a coherent partial state.",
+      "score": 3
+    }
+  },
+  "backend": "ollama",
+  "model": "qwen2.5:14b",
+  "rubric_id": "cog-erg",
+  "run_number": 4,
+  "scenario_id": "03-cold-pickup-stale-followup"
+}

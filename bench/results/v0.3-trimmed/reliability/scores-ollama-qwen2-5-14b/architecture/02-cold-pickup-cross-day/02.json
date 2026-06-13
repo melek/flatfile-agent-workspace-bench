@@ -1,0 +1,24 @@
+{
+  "axes": {
+    "AR1": {
+      "justification": "The response correctly cited and referenced a decision from decisions.md without rederiving it.",
+      "score": 3
+    },
+    "AR2": {
+      "justification": "This scenario does not involve procedural steps that require artifact binding.",
+      "score": "n/a"
+    },
+    "AR3": {
+      "justification": "The reference to the decision in decisions.md is stable and resolves correctly using relative paths.",
+      "score": 3
+    },
+    "AR4": {
+      "justification": "All actions are append-only where necessary, with no risk of re-running corrupting history.",
+      "score": 3
+    }
+  },
+  "model": "qwen2.5:14b",
+  "rubric_id": "architecture",
+  "run_number": 2,
+  "scenario_id": "02-cold-pickup-cross-day"
+}

@@ -1,0 +1,25 @@
+{
+  "axes": {
+    "AR1": {
+      "justification": "The agent correctly created factors.md and actions.md in the designated directory but did not explicitly state the routing rationale.",
+      "score": 2
+    },
+    "AR2": {
+      "justification": "This scenario does not involve a procedural step that requires artifact binding, as it focuses on handling missing artifacts rather than producing them through a series of steps.",
+      "score": "n/a"
+    },
+    "AR3": {
+      "justification": "All cross-references are relative and resolve correctly within the designated directory structure.",
+      "score": 3
+    },
+    "AR4": {
+      "justification": "The agent's actions are mostly idempotent but would duplicate work if re-run, as it created a first-pass factors.md to unblock step 4 without explicit user direction.",
+      "score": 2
+    }
+  },
+  "backend": "ollama",
+  "model": "qwen2.5:14b",
+  "rubric_id": "architecture",
+  "run_number": 2,
+  "scenario_id": "08-procedure-missing-prior-step"
+}

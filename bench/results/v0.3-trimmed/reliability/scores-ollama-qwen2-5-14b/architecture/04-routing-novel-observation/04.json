@@ -1,0 +1,25 @@
+{
+  "axes": {
+    "AR1": {
+      "justification": "The entry was correctly routed to observations.md with a clear rationale explaining why it is descriptive and cross-cutting.",
+      "score": 3
+    },
+    "AR2": {
+      "justification": "This scenario does not involve procedural steps that produce artifacts, so AR2 does not apply.",
+      "score": "n/a"
+    },
+    "AR3": {
+      "justification": "All cross-references are relative and resolve correctly between daybook/2026-05-17.md and observations.md.",
+      "score": 3
+    },
+    "AR4": {
+      "justification": "The actions are idempotent, with append-only entries in both the daybook Log and observations.md without conflicts on re-run.",
+      "score": 3
+    }
+  },
+  "backend": "ollama",
+  "model": "qwen2.5:14b",
+  "rubric_id": "architecture",
+  "run_number": 4,
+  "scenario_id": "04-routing-novel-observation"
+}

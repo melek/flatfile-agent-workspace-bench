@@ -1,0 +1,24 @@
+{
+  "axes": {
+    "CE1": {
+      "justification": "The agent asked one targeted question about filling in consequences and linking to a project folder.",
+      "score": 2
+    },
+    "CE2": {
+      "justification": "The response included several stretches of filler, such as explaining the rationale for routing decisions and offering additional actions.",
+      "score": 1
+    },
+    "CE3": {
+      "justification": "The agent said where the entry was going (decisions.md) and why it was a commitment that constrains future action.",
+      "score": 3
+    },
+    "CE4": {
+      "justification": "Each action committed cleanly, but there is one ambiguous in-progress artifact related to potential consequences or project folder linking.",
+      "score": 2
+    }
+  },
+  "model": "qwen2.5:14b",
+  "rubric_id": "cog-erg",
+  "run_number": 4,
+  "scenario_id": "05-routing-decision-vs-observation"
+}

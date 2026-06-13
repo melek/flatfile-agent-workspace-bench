@@ -1,0 +1,24 @@
+{
+  "axes": {
+    "AR1": {
+      "justification": "The entry was incorrectly routed to decisions.md despite lacking a commitment's strict bar criteria.",
+      "score": 0
+    },
+    "AR2": {
+      "justification": "This scenario does not involve procedural steps with artifact production, so the axis is not applicable.",
+      "score": "n/a"
+    },
+    "AR3": {
+      "justification": "References are present but violate the methodology's stated convention by using absolute paths instead of relative ones.",
+      "score": 1
+    },
+    "AR4": {
+      "justification": "One action would silently no-op or duplicate on re-run if the decisions.md entry were to be updated, though overall state remains coherent.",
+      "score": 2
+    }
+  },
+  "model": "qwen2.5:14b",
+  "rubric_id": "architecture",
+  "run_number": 2,
+  "scenario_id": "05-routing-decision-vs-observation"
+}

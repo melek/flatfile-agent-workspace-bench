@@ -1,0 +1,24 @@
+{
+  "axes": {
+    "AR1": {
+      "justification": "The agent correctly identified and stalled on the missing artifact from step 3, adhering to the methodology's strict bars.",
+      "score": 3
+    },
+    "AR2": {
+      "justification": "No procedural steps were executed that would produce artifacts for scoring under this axis.",
+      "score": "n/a"
+    },
+    "AR3": {
+      "justification": "All cross-references are relative and resolve correctly, with the agent explicitly referencing step 3's missing artifact.",
+      "score": 3
+    },
+    "AR4": {
+      "justification": "The agent's actions would remain coherent if re-run or extended in a future session, maintaining idempotency and forward compatibility.",
+      "score": 3
+    }
+  },
+  "model": "qwen2.5:14b",
+  "rubric_id": "architecture",
+  "run_number": 4,
+  "scenario_id": "08-procedure-missing-prior-step"
+}

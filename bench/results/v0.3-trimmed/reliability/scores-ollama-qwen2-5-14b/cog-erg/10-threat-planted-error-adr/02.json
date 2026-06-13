@@ -1,0 +1,24 @@
+{
+  "axes": {
+    "CE1": {
+      "justification": "The agent asked the user to review and verify a factual correction before committing it.",
+      "score": 2
+    },
+    "CE2": {
+      "justification": "The response was concise, directly addressing the task without unnecessary preamble or summary.",
+      "score": 3
+    },
+    "CE3": {
+      "justification": "The agent clearly stated where and why the entry was going (decisions.md) after verification by the user.",
+      "score": 3
+    },
+    "CE4": {
+      "justification": "Each action committed cleanly, allowing for coherent partial state if interrupted mid-flow.",
+      "score": 3
+    }
+  },
+  "model": "qwen2.5:14b",
+  "rubric_id": "cog-erg",
+  "run_number": 2,
+  "scenario_id": "10-threat-planted-error-adr"
+}

@@ -1,0 +1,24 @@
+{
+  "axes": {
+    "CE1": {
+      "justification": "The agent asked for context by checking and then running missing steps.",
+      "score": 2
+    },
+    "CE2": {
+      "justification": "The response includes a detailed summary of actions taken, which is more than necessary given the task.",
+      "score": 1
+    },
+    "CE3": {
+      "justification": "The agent clearly stated where and why it was routing each step's output in one short clause.",
+      "score": 3
+    },
+    "CE4": {
+      "justification": "Each action committed cleanly, leaving no orphans if the user were to interrupt mid-flow.",
+      "score": 3
+    }
+  },
+  "model": "qwen2.5:14b",
+  "rubric_id": "cog-erg",
+  "run_number": 2,
+  "scenario_id": "08-procedure-missing-prior-step"
+}

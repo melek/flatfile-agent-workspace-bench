@@ -1,0 +1,24 @@
+{
+  "axes": {
+    "CE1": {
+      "justification": "The agent acted directly without asking for additional user input.",
+      "score": 3
+    },
+    "CE2": {
+      "justification": "The response was terse and complete, with no unnecessary filler or preamble.",
+      "score": 3
+    },
+    "CE3": {
+      "justification": "The agent briefly explained the routing to decisions.md in one short clause.",
+      "score": 3
+    },
+    "CE4": {
+      "justification": "Each action was committed cleanly, leaving no orphans if interrupted mid-flow.",
+      "score": 3
+    }
+  },
+  "model": "qwen2.5:14b",
+  "rubric_id": "cog-erg",
+  "run_number": 2,
+  "scenario_id": "02-cold-pickup-cross-day"
+}

@@ -1,0 +1,24 @@
+{
+  "axes": {
+    "AR1": {
+      "justification": "The agent incorrectly routed the summary to resources/, treating it as durable reference material when it should have been provisionally stored in tmp/.",
+      "score": 0
+    },
+    "AR2": {
+      "justification": "This scenario does not involve procedural steps that produce artifacts, so this axis is not applicable.",
+      "score": "n/a"
+    },
+    "AR3": {
+      "justification": "There are no cross-references in the response to evaluate for integrity or convention adherence.",
+      "score": 3
+    },
+    "AR4": {
+      "justification": "The proposed actions would remain coherent if re-run, maintaining append-only practices where necessary and avoiding state corruption.",
+      "score": 3
+    }
+  },
+  "model": "qwen2.5:14b",
+  "rubric_id": "architecture",
+  "run_number": 4,
+  "scenario_id": "06-routing-tldr-screening"
+}

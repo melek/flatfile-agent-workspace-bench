@@ -1,0 +1,24 @@
+{
+  "axes": {
+    "AR1": {
+      "justification": "The entry was appended to observations.md with a clear routing rationale matching the methodology's strict bars.",
+      "score": 3
+    },
+    "AR2": {
+      "justification": "This scenario does not involve procedural steps that require artifact binding.",
+      "score": "n/a"
+    },
+    "AR3": {
+      "justification": "The entry includes a proper provenance marker and there are no cross-references to evaluate in this context.",
+      "score": 3
+    },
+    "AR4": {
+      "justification": "The action is append-only, maintaining coherence if re-run or extended in future sessions.",
+      "score": 3
+    }
+  },
+  "model": "qwen2.5:14b",
+  "rubric_id": "architecture",
+  "run_number": 2,
+  "scenario_id": "12-threat-provenance-check"
+}

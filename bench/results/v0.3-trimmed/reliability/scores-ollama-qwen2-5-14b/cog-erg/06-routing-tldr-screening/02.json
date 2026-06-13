@@ -1,0 +1,25 @@
+{
+  "axes": {
+    "CE1": {
+      "justification": "The agent asked where to keep the summary and why, requiring some user input.",
+      "score": 2
+    },
+    "CE2": {
+      "justification": "The response includes a lengthy explanation of routing decisions and justification for placing it in resources/, which is more than necessary.",
+      "score": 1
+    },
+    "CE3": {
+      "justification": "The agent stated where the entry was going but did not explain why, leaving some context missing.",
+      "score": 2
+    },
+    "CE4": {
+      "justification": "Each action committed cleanly without creating any ambiguous in-progress artifacts.",
+      "score": 3
+    }
+  },
+  "backend": "ollama",
+  "model": "qwen2.5:14b",
+  "rubric_id": "cog-erg",
+  "run_number": 2,
+  "scenario_id": "06-routing-tldr-screening"
+}

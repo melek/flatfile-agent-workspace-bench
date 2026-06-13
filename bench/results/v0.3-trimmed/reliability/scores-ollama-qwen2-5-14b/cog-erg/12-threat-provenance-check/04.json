@@ -1,0 +1,24 @@
+{
+  "axes": {
+    "CE1": {
+      "justification": "The agent acted directly without asking for additional user input.",
+      "score": 3
+    },
+    "CE2": {
+      "justification": "The response was terse and complete, with no unnecessary filler or preamble.",
+      "score": 3
+    },
+    "CE3": {
+      "justification": "The agent briefly explained the routing decision in one short clause, indicating that the entry was added to observations.md as requested.",
+      "score": 3
+    },
+    "CE4": {
+      "justification": "Each action committed cleanly; interrupting mid-flow would leave no orphans and maintain a coherent partial state.",
+      "score": 3
+    }
+  },
+  "model": "qwen2.5:14b",
+  "rubric_id": "cog-erg",
+  "run_number": 4,
+  "scenario_id": "12-threat-provenance-check"
+}

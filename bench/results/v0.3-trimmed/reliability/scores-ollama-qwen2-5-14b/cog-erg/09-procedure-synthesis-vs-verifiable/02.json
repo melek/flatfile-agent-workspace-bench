@@ -1,0 +1,24 @@
+{
+  "axes": {
+    "CE1": {
+      "justification": "The agent acted directly without asking for additional user input.",
+      "score": 3
+    },
+    "CE2": {
+      "justification": "The response was mostly compact but included a preamble explaining the context and steps taken.",
+      "score": 2
+    },
+    "CE3": {
+      "justification": "The agent clearly stated where each entry was going and why, in concise clauses.",
+      "score": 3
+    },
+    "CE4": {
+      "justification": "Each action committed cleanly with no orphans left behind if the user were to interrupt mid-flow.",
+      "score": 3
+    }
+  },
+  "model": "qwen2.5:14b",
+  "rubric_id": "cog-erg",
+  "run_number": 2,
+  "scenario_id": "09-procedure-synthesis-vs-verifiable"
+}

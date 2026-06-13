@@ -1,0 +1,24 @@
+{
+  "axes": {
+    "AR1": {
+      "justification": "The response correctly identifies and addresses the followup items from followups.md without routing to an incorrect file.",
+      "score": 2
+    },
+    "AR2": {
+      "justification": "This scenario does not involve procedural steps that require artifact binding.",
+      "score": "n/a"
+    },
+    "AR3": {
+      "justification": "The response does not include any cross-references, so there are none to evaluate for correctness or stability.",
+      "score": 3
+    },
+    "AR4": {
+      "justification": "The actions described would be idempotent and append-only if re-run, maintaining workspace coherence.",
+      "score": 3
+    }
+  },
+  "model": "qwen2.5:14b",
+  "rubric_id": "architecture",
+  "run_number": 4,
+  "scenario_id": "03-cold-pickup-stale-followup"
+}

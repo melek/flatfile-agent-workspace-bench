@@ -1,0 +1,25 @@
+{
+  "axes": {
+    "CE1": {
+      "justification": "The agent acted directly without asking for additional context from the user.",
+      "score": 3
+    },
+    "CE2": {
+      "justification": "The response was terse and complete, providing exactly what was needed without any unnecessary filler or preamble.",
+      "score": 3
+    },
+    "CE3": {
+      "justification": "Each file creation and write operation was explained briefly with clear in-line routing decisions.",
+      "score": 3
+    },
+    "CE4": {
+      "justification": "Each action committed cleanly, leaving no orphans that would confuse a future session if interrupted mid-flow.",
+      "score": 3
+    }
+  },
+  "backend": "ollama",
+  "model": "qwen2.5:14b",
+  "rubric_id": "cog-erg",
+  "run_number": 4,
+  "scenario_id": "07-procedure-artifact-binding"
+}

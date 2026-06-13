@@ -1,0 +1,24 @@
+{
+  "axes": {
+    "AR1": {
+      "justification": "The agent logged the triage in the daybook Log file but did not provide a routing rationale.",
+      "score": 2
+    },
+    "AR2": {
+      "justification": "This scenario does not involve runbook/procedure steps that produce named artifacts on disk.",
+      "score": "n/a"
+    },
+    "AR3": {
+      "justification": "All cross-references are relative and resolve correctly within the workspace files.",
+      "score": 3
+    },
+    "AR4": {
+      "justification": "The actions taken are append-only in the daybook Log file, maintaining coherence if re-run or extended.",
+      "score": 3
+    }
+  },
+  "model": "qwen2.5:14b",
+  "rubric_id": "architecture",
+  "run_number": 2,
+  "scenario_id": "03-cold-pickup-stale-followup"
+}

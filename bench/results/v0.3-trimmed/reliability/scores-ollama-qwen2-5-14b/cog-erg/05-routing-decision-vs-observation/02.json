@@ -1,0 +1,24 @@
+{
+  "axes": {
+    "CE1": {
+      "justification": "The agent asked one targeted question about expanding the entry.",
+      "score": 2
+    },
+    "CE2": {
+      "justification": "Several stretches of filler and process narration were included in the response.",
+      "score": 1
+    },
+    "CE3": {
+      "justification": "The routing decision was explained briefly, in one short clause.",
+      "score": 3
+    },
+    "CE4": {
+      "justification": "Each action committed cleanly; partial work would leave no orphans.",
+      "score": 3
+    }
+  },
+  "model": "qwen2.5:14b",
+  "rubric_id": "cog-erg",
+  "run_number": 2,
+  "scenario_id": "05-routing-decision-vs-observation"
+}

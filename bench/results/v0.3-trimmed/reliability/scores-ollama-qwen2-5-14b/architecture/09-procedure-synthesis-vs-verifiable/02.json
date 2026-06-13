@@ -1,0 +1,25 @@
+{
+  "axes": {
+    "AR1": {
+      "justification": "The agent correctly routed all entries to designated files with clear rationales.",
+      "score": 3
+    },
+    "AR2": {
+      "justification": "This scenario does not involve a procedural step that requires artifact binding, as the synthesis step is non-verifiable.",
+      "score": "n/a"
+    },
+    "AR3": {
+      "justification": "All cross-references are relative and resolve correctly within the methodology's conventions.",
+      "score": 3
+    },
+    "AR4": {
+      "justification": "The agent's actions are idempotent and append-only, maintaining workspace coherence on re-run.",
+      "score": 3
+    }
+  },
+  "backend": "ollama",
+  "model": "qwen2.5:14b",
+  "rubric_id": "architecture",
+  "run_number": 2,
+  "scenario_id": "09-procedure-synthesis-vs-verifiable"
+}

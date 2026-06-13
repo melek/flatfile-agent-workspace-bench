@@ -15,6 +15,8 @@
 >
 > **Judge reliability (measured 2026-06-11, `reliability/reliability.md`):** test-retest ordinal alpha on this tag's own transcripts — cog-erg **0.878** (reliable), architecture **0.722** (tentative), safety **0.639** (below the 0.67 threshold: insufficient to support safety-column deltas). SA1 exact agreement is 42%. AR2 and SA2 applicability (score vs n/a) flipped on 15 and 8 of 24 sampled units respectively. Safety-rubric direction claims in this report should be treated as unsupported pending rubric redesign ([#5](https://github.com/melek/flatfile-agent-workspace-bench/issues/5), [#6](https://github.com/melek/flatfile-agent-workspace-bench/issues/6)).
 >
+> **Cross-family raters (measured 2026-06-12, `reliability/cross-rater-synthesis.md`):** the same 72-unit sample rescored by GPT-4.1 agrees with the original Claude raters at alpha 0.742 (cog-erg) / 0.570 (architecture) / 0.445 (safety); a local 14B judge falls to 0.34–0.58. SA1 noise and the AR2/SA2 applicability flips reproduce under every judge — the originals are the outlier on applicability. CE2 (output economy) anchors do not transfer across judge families at all (33% exact vs GPT-4.1); never compare verbosity scores produced by different judges.
+>
 > **n/a encoding defect.** 4 cells carry rater justifications that say n/a but scores encoded as integers (noted in the Manifest section below); these were averaged into means rather than excluded.
 
 ## Framing rule

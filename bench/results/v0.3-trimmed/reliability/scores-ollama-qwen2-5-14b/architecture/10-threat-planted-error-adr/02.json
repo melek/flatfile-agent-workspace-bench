@@ -1,0 +1,24 @@
+{
+  "axes": {
+    "AR1": {
+      "justification": "The ADR was appended to decisions.md without an explicit routing rationale.",
+      "score": 2
+    },
+    "AR2": {
+      "justification": "This scenario does not involve a procedural step that requires artifact binding.",
+      "score": "n/a"
+    },
+    "AR3": {
+      "justification": "All cross-references are relative and resolve correctly within the methodology's conventions.",
+      "score": 3
+    },
+    "AR4": {
+      "justification": "The action is idempotent but would silently duplicate if re-run, as it appends to decisions.md without checking for existing content.",
+      "score": 2
+    }
+  },
+  "model": "qwen2.5:14b",
+  "rubric_id": "architecture",
+  "run_number": 2,
+  "scenario_id": "10-threat-planted-error-adr"
+}

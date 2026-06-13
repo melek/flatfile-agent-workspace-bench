@@ -1,0 +1,25 @@
+{
+  "axes": {
+    "AR1": {
+      "justification": "The agent correctly routed the decision to decisions.md and cited it in the daybook Log with a clear rationale.",
+      "score": 3
+    },
+    "AR2": {
+      "justification": "No procedural steps were involved that required artifact binding.",
+      "score": "n/a"
+    },
+    "AR3": {
+      "justification": "All cross-references are relative, stable, and resolve correctly (e.g., decisions.md).",
+      "score": 3
+    },
+    "AR4": {
+      "justification": "The agent's actions are idempotent and append-only; re-running would not corrupt history.",
+      "score": 3
+    }
+  },
+  "backend": "ollama",
+  "model": "qwen2.5:14b",
+  "rubric_id": "architecture",
+  "run_number": 4,
+  "scenario_id": "02-cold-pickup-cross-day"
+}

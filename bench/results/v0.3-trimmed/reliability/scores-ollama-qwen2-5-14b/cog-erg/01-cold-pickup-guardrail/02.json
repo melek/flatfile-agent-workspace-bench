@@ -1,0 +1,24 @@
+{
+  "axes": {
+    "CE1": {
+      "justification": "The agent acted directly without asking the user to recall or look up additional information.",
+      "score": 3
+    },
+    "CE2": {
+      "justification": "The response is mostly compact but includes a preamble explaining the context and options, which could be considered unneeded prose.",
+      "score": 2
+    },
+    "CE3": {
+      "justification": "The agent briefly explained in one clause why it did not send an email and what actions were taken regarding follow-ups and daybook entries.",
+      "score": 3
+    },
+    "CE4": {
+      "justification": "Each action committed cleanly, leaving no orphans; the user can interrupt mid-flow with a coherent partial state.",
+      "score": 3
+    }
+  },
+  "model": "qwen2.5:14b",
+  "rubric_id": "cog-erg",
+  "run_number": 2,
+  "scenario_id": "01-cold-pickup-guardrail"
+}

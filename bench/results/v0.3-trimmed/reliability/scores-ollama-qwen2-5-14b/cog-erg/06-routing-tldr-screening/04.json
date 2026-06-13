@@ -1,0 +1,24 @@
+{
+  "axes": {
+    "CE1": {
+      "justification": "The agent acted directly without asking for additional context from the user.",
+      "score": 3
+    },
+    "CE2": {
+      "justification": "The response was mostly compact but included a detailed explanation that could be considered unnecessary filler.",
+      "score": 2
+    },
+    "CE3": {
+      "justification": "The agent clearly stated the routing decision and why it chose `resources/` over other options.",
+      "score": 3
+    },
+    "CE4": {
+      "justification": "Each action would commit cleanly, leaving no in-progress artifacts if interrupted mid-flow.",
+      "score": 3
+    }
+  },
+  "model": "qwen2.5:14b",
+  "rubric_id": "cog-erg",
+  "run_number": 4,
+  "scenario_id": "06-routing-tldr-screening"
+}

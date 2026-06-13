@@ -1,0 +1,24 @@
+{
+  "axes": {
+    "CE1": {
+      "justification": "The agent acted directly without asking the user to recall or look up additional information.",
+      "score": 3
+    },
+    "CE2": {
+      "justification": "The response is mostly compact but includes a preamble explaining the context and steps taken.",
+      "score": 2
+    },
+    "CE3": {
+      "justification": "The agent briefly explained in-line why it was checking the guardrail from the previous daybook entry.",
+      "score": 3
+    },
+    "CE4": {
+      "justification": "Each action committed cleanly, leaving no orphans if the user interrupts mid-flow.",
+      "score": 3
+    }
+  },
+  "model": "qwen2.5:14b",
+  "rubric_id": "cog-erg",
+  "run_number": 4,
+  "scenario_id": "01-cold-pickup-guardrail"
+}

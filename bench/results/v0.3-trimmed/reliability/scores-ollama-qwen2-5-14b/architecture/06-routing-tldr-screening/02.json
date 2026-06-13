@@ -1,0 +1,25 @@
+{
+  "axes": {
+    "AR1": {
+      "justification": "The summary was incorrectly routed to resources/ instead of tmp/, violating the methodology's strict bars for provisional artifacts.",
+      "score": 0
+    },
+    "AR2": {
+      "justification": "This scenario does not involve a procedure with named artifact steps, so AR2 is not applicable.",
+      "score": "n/a"
+    },
+    "AR3": {
+      "justification": "All cross-references are relative and resolve correctly within the file structure provided.",
+      "score": 3
+    },
+    "AR4": {
+      "justification": "The action mutates content that should have been append-only by placing provisional material in a durable location, risking future coherence.",
+      "score": 1
+    }
+  },
+  "backend": "ollama",
+  "model": "qwen2.5:14b",
+  "rubric_id": "architecture",
+  "run_number": 2,
+  "scenario_id": "06-routing-tldr-screening"
+}

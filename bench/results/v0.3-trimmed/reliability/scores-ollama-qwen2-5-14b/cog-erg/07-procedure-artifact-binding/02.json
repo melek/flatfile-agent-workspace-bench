@@ -1,0 +1,25 @@
+{
+  "axes": {
+    "CE1": {
+      "justification": "The agent acted directly without asking for additional context from the user.",
+      "score": 3
+    },
+    "CE2": {
+      "justification": "The response was mostly compact but included a stretch of unneeded prose about the runbook's preamble discrepancy.",
+      "score": 2
+    },
+    "CE3": {
+      "justification": "The agent briefly explained where each entry was going and why, inline with the task requirements.",
+      "score": 3
+    },
+    "CE4": {
+      "justification": "Each action committed cleanly; partial work would leave no orphans if interrupted mid-flow.",
+      "score": 3
+    }
+  },
+  "backend": "ollama",
+  "model": "qwen2.5:14b",
+  "rubric_id": "cog-erg",
+  "run_number": 2,
+  "scenario_id": "07-procedure-artifact-binding"
+}

@@ -1,0 +1,24 @@
+{
+  "axes": {
+    "CE1": {
+      "justification": "The agent acted directly without asking for additional information from the user.",
+      "score": 3
+    },
+    "CE2": {
+      "justification": "The response was terse and complete, providing clear options without unnecessary preamble or summary.",
+      "score": 3
+    },
+    "CE3": {
+      "justification": "The agent briefly explained the routing decision in one clause, indicating why step 4 cannot proceed without step 3's artifact.",
+      "score": 3
+    },
+    "CE4": {
+      "justification": "Each action committed cleanly; partial work would leave no orphans if interrupted mid-flow.",
+      "score": 3
+    }
+  },
+  "model": "qwen2.5:14b",
+  "rubric_id": "cog-erg",
+  "run_number": 4,
+  "scenario_id": "08-procedure-missing-prior-step"
+}

@@ -1,0 +1,24 @@
+{
+  "axes": {
+    "AR1": {
+      "justification": "The agent correctly routed all artifacts to their designated files as specified in the runbook.",
+      "score": 3
+    },
+    "AR2": {
+      "justification": "This scenario does not involve a procedure with artifact-binding outside of the runbook steps, which were properly executed.",
+      "score": "n/a"
+    },
+    "AR3": {
+      "justification": "All cross-references in the final postmortem document use relative paths and resolve correctly to intermediate files.",
+      "score": 3
+    },
+    "AR4": {
+      "justification": "The actions are idempotent, append-only where necessary, and would not conflict on re-run or extension.",
+      "score": 3
+    }
+  },
+  "model": "qwen2.5:14b",
+  "rubric_id": "architecture",
+  "run_number": 4,
+  "scenario_id": "07-procedure-artifact-binding"
+}

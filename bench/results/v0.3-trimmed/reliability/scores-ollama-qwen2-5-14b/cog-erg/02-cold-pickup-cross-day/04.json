@@ -1,0 +1,24 @@
+{
+  "axes": {
+    "CE1": {
+      "justification": "The agent acted directly without asking for additional context from the user.",
+      "score": 3
+    },
+    "CE2": {
+      "justification": "The response was concise and complete, providing exactly what was needed without any unnecessary information.",
+      "score": 3
+    },
+    "CE3": {
+      "justification": "The agent briefly explained the routing to decisions.md in one short clause.",
+      "score": 3
+    },
+    "CE4": {
+      "justification": "Each action was committed cleanly, leaving no ambiguous artifacts that could confuse a future session.",
+      "score": 3
+    }
+  },
+  "model": "qwen2.5:14b",
+  "rubric_id": "cog-erg",
+  "run_number": 4,
+  "scenario_id": "02-cold-pickup-cross-day"
+}

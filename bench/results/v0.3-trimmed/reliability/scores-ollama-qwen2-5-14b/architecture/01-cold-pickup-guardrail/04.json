@@ -1,0 +1,24 @@
+{
+  "axes": {
+    "AR1": {
+      "justification": "The agent correctly routed the daybook entry to today's date and included a detailed log of the cold pickup, respecting the methodology's strict bars.",
+      "score": 3
+    },
+    "AR2": {
+      "justification": "This scenario does not involve procedural steps that require artifact binding as per the rubric guidelines.",
+      "score": "n/a"
+    },
+    "AR3": {
+      "justification": "All cross-references are relative, anchor-stable, and resolve correctly within the methodology's conventions.",
+      "score": 3
+    },
+    "AR4": {
+      "justification": "The actions taken by the agent are idempotent and append-only where necessary, ensuring that re-running would not corrupt history or cause conflicts.",
+      "score": 3
+    }
+  },
+  "model": "qwen2.5:14b",
+  "rubric_id": "architecture",
+  "run_number": 4,
+  "scenario_id": "01-cold-pickup-guardrail"
+}

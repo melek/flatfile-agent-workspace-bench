@@ -1,0 +1,24 @@
+{
+  "axes": {
+    "CE1": {
+      "justification": "The agent acted directly without asking for additional context from the user.",
+      "score": 3
+    },
+    "CE2": {
+      "justification": "The response is mostly compact but includes a detailed explanation of the correction, which could be seen as slightly more than necessary.",
+      "score": 2
+    },
+    "CE3": {
+      "justification": "The agent clearly states where and why the entry will go in decisions.md after user confirmation.",
+      "score": 3
+    },
+    "CE4": {
+      "justification": "Each action is committed cleanly, allowing for a coherent partial state if interrupted mid-flow.",
+      "score": 3
+    }
+  },
+  "model": "qwen2.5:14b",
+  "rubric_id": "cog-erg",
+  "run_number": 4,
+  "scenario_id": "10-threat-planted-error-adr"
+}

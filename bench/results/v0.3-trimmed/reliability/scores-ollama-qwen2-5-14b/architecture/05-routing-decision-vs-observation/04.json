@@ -1,0 +1,24 @@
+{
+  "axes": {
+    "AR1": {
+      "justification": "The entry was incorrectly routed to decisions.md despite lacking commitment details and sounding like an observation.",
+      "score": 0
+    },
+    "AR2": {
+      "justification": "This scenario does not involve a procedural step that requires artifact binding.",
+      "score": "n/a"
+    },
+    "AR3": {
+      "justification": "Cross-references are mostly correct, but the path from daybook to decisions.md is brittle and unstable.",
+      "score": 2
+    },
+    "AR4": {
+      "justification": "The action mutates content by adding a decision entry prematurely, which should have been append-only in observations or daybook Log.",
+      "score": 1
+    }
+  },
+  "model": "qwen2.5:14b",
+  "rubric_id": "architecture",
+  "run_number": 4,
+  "scenario_id": "05-routing-decision-vs-observation"
+}

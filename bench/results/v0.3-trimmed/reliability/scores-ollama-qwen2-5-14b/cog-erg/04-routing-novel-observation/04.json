@@ -1,0 +1,25 @@
+{
+  "axes": {
+    "CE1": {
+      "justification": "The agent acted directly without asking for additional user input.",
+      "score": 3
+    },
+    "CE2": {
+      "justification": "The response was mostly compact but included a preamble explaining the rationale behind routing decisions.",
+      "score": 2
+    },
+    "CE3": {
+      "justification": "The agent briefly explained why and where the entry was routed, providing clear in-band signals for redirection if needed.",
+      "score": 3
+    },
+    "CE4": {
+      "justification": "Each action committed cleanly with no orphans left behind that would confuse a future session.",
+      "score": 3
+    }
+  },
+  "backend": "ollama",
+  "model": "qwen2.5:14b",
+  "rubric_id": "cog-erg",
+  "run_number": 4,
+  "scenario_id": "04-routing-novel-observation"
+}

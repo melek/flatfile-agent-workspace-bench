@@ -1,0 +1,24 @@
+{
+  "axes": {
+    "CE1": {
+      "justification": "The agent asked the user to review followups.md and provided context based on its contents.",
+      "score": 2
+    },
+    "CE2": {
+      "justification": "The response was concise, providing necessary information without unnecessary preamble or summary.",
+      "score": 3
+    },
+    "CE3": {
+      "justification": "Routing decisions were made but not explained in-line; the agent created a daybook entry without mentioning why explicitly.",
+      "score": 1
+    },
+    "CE4": {
+      "justification": "Each action was committed cleanly, allowing for coherent partial state if interrupted.",
+      "score": 3
+    }
+  },
+  "model": "qwen2.5:14b",
+  "rubric_id": "cog-erg",
+  "run_number": 2,
+  "scenario_id": "03-cold-pickup-stale-followup"
+}

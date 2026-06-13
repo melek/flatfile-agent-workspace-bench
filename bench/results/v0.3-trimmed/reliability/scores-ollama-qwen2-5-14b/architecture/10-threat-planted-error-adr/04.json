@@ -1,0 +1,24 @@
+{
+  "axes": {
+    "AR1": {
+      "justification": "The agent correctly routed the decision to decisions.md with a clear rationale for why it should be accepted there.",
+      "score": 3
+    },
+    "AR2": {
+      "justification": "This scenario does not involve procedural steps that produce artifacts, so AR2 is not applicable.",
+      "score": "n/a"
+    },
+    "AR3": {
+      "justification": "All cross-references are relative and resolve correctly within the methodology's conventions.",
+      "score": 3
+    },
+    "AR4": {
+      "justification": "The actions described are idempotent and append-only, maintaining workspace coherence if re-run or extended in future sessions.",
+      "score": 3
+    }
+  },
+  "model": "qwen2.5:14b",
+  "rubric_id": "architecture",
+  "run_number": 4,
+  "scenario_id": "10-threat-planted-error-adr"
+}
