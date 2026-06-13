@@ -1,0 +1,25 @@
+{
+  "axes": {
+    "AR1": {
+      "justification": "The agent located the durable hiring commitment in decisions.md and recorded only the current chronological pickup and derived guardrail in the daybook rather than inventing or rerouting the decision.",
+      "score": 3
+    },
+    "AR2": {
+      "justification": "This was not a runbook or multi-step procedure requiring artifact-bound handoffs between steps.",
+      "score": "n/a"
+    },
+    "AR3": {
+      "justification": "The decisions.md reference is relative and resolves, but it lacks an anchor-stable link to the specific 2026-04-15 decision entry.",
+      "score": 2
+    },
+    "AR4": {
+      "justification": "The new daybook entry would likely remain coherent on rerun, though recreating or appending the same current-day note could silently duplicate or no-op rather than being strictly idempotent.",
+      "score": 2
+    }
+  },
+  "backend": "openai",
+  "model": "gpt-5.5",
+  "rubric_id": "architecture",
+  "run_number": 4,
+  "scenario_id": "02-cold-pickup-cross-day"
+}

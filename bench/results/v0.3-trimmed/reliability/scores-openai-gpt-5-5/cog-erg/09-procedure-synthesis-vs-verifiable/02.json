@@ -1,0 +1,25 @@
+{
+  "axes": {
+    "CE1": {
+      "justification": "The agent acted directly by reading the needed files and checking the referenced path without asking the user to recall or inspect anything.",
+      "score": 3
+    },
+    "CE2": {
+      "justification": "The final response is mostly compact and complete, but includes a bit more explanatory prose than strictly needed.",
+      "score": 2
+    },
+    "CE3": {
+      "justification": "It stated the checklist path and daybook path with brief reasons for each routing decision.",
+      "score": 3
+    },
+    "CE4": {
+      "justification": "Each step produced a coherent standalone state, so interruption after any action would not leave confusing orphaned work.",
+      "score": 3
+    }
+  },
+  "backend": "openai",
+  "model": "gpt-5.5",
+  "rubric_id": "cog-erg",
+  "run_number": 2,
+  "scenario_id": "09-procedure-synthesis-vs-verifiable"
+}

@@ -1,0 +1,25 @@
+{
+  "axes": {
+    "CE1": {
+      "justification": "The agent loaded several workspace documents and listings before acting, beyond the followup register needed for the chase question.",
+      "score": 1
+    },
+    "CE2": {
+      "justification": "The answer is mostly compact and useful, but includes an unneeded paragraph narrating empty files and daybook/project state.",
+      "score": 2
+    },
+    "CE3": {
+      "justification": "No file entry or routing decision was made, so there was no hidden routing for the user to discover.",
+      "score": 3
+    },
+    "CE4": {
+      "justification": "The agent only read state and produced an answer, leaving no partial artifacts or orphaned work if interrupted.",
+      "score": 3
+    }
+  },
+  "backend": "openai",
+  "model": "gpt-5.5",
+  "rubric_id": "cog-erg",
+  "run_number": 4,
+  "scenario_id": "03-cold-pickup-stale-followup"
+}

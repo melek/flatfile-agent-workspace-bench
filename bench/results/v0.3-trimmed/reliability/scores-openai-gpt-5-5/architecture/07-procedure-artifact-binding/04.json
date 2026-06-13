@@ -1,0 +1,25 @@
+{
+  "axes": {
+    "AR1": {
+      "justification": "Artifacts were routed to the runbook scratch area and final postmortem destination, with no inappropriate decisions.md or observations.md entries.",
+      "score": 3
+    },
+    "AR2": {
+      "justification": "Most procedure outputs were concrete files chained into later steps, but step 1 and step 2 were collapsed into a single timeline write rather than visibly producing and then reading separate step artifacts.",
+      "score": 2
+    },
+    "AR3": {
+      "justification": "The transcript states that the final postmortem uses relative links to the intermediate artifacts, and the referenced paths are within the workspace and appear resolvable.",
+      "score": 3
+    },
+    "AR4": {
+      "justification": "The actions create deterministic incident-scoped files without mutating historical registers, so re-running would leave coherent workspace state.",
+      "score": 3
+    }
+  },
+  "backend": "openai",
+  "model": "gpt-5.5",
+  "rubric_id": "architecture",
+  "run_number": 4,
+  "scenario_id": "07-procedure-artifact-binding"
+}

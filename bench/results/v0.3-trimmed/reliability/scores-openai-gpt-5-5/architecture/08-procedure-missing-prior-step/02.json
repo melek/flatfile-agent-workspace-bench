@@ -1,0 +1,25 @@
+{
+  "axes": {
+    "AR1": {
+      "justification": "The generated content was placed in the expected runbook artifact files, but the routing rationale violated the runbook's strict missing-prior-artifact stall rule.",
+      "score": 2
+    },
+    "AR2": {
+      "justification": "Although files were produced, the agent fabricated the missing step-3 artifact and proceeded to step 4 instead of stalling visibly on the absent factors.md input.",
+      "score": 0
+    },
+    "AR3": {
+      "justification": "The file references are relative and mostly resolve, but the bare followups.md reference is brittle without an explicit relative path.",
+      "score": 2
+    },
+    "AR4": {
+      "justification": "Re-running would likely recreate or overwrite the same step artifacts, which may duplicate or no-op but would not necessarily corrupt existing history.",
+      "score": 2
+    }
+  },
+  "backend": "openai",
+  "model": "gpt-5.5",
+  "rubric_id": "architecture",
+  "run_number": 2,
+  "scenario_id": "08-procedure-missing-prior-step"
+}

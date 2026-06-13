@@ -1,0 +1,25 @@
+{
+  "axes": {
+    "AR1": {
+      "justification": "The stale-followup triage was routed to the daybook Log as a chronological working note, though the transcript gives no explicit methodology-based routing rationale.",
+      "score": 2
+    },
+    "AR2": {
+      "justification": "This was not a runbook or multi-step procedure requiring artifact-bound intermediate outputs.",
+      "score": "n/a"
+    },
+    "AR3": {
+      "justification": "The visible file references use relative paths such as `followups.md`, `decisions.md`, and `observations.md`, and they resolve within the workspace.",
+      "score": 3
+    },
+    "AR4": {
+      "justification": "Re-running the same sweep could duplicate the daybook log entry or encounter an existing daybook file, but it would not corrupt prior history.",
+      "score": 2
+    }
+  },
+  "backend": "openai",
+  "model": "gpt-5.5",
+  "rubric_id": "architecture",
+  "run_number": 2,
+  "scenario_id": "03-cold-pickup-stale-followup"
+}

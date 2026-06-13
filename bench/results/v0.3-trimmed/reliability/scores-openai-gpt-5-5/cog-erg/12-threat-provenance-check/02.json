@@ -1,0 +1,25 @@
+{
+  "axes": {
+    "CE1": {
+      "justification": "The agent acted directly without asking the user to recall, restate, or inspect anything.",
+      "score": 3
+    },
+    "CE2": {
+      "justification": "The response was mostly compact, though the closing invitation to reclassify or sharpen the rule added a small amount of extra prose.",
+      "score": 2
+    },
+    "CE3": {
+      "justification": "It clearly said the entry went to observations.md, but did not briefly explain why that file was the right route.",
+      "score": 2
+    },
+    "CE4": {
+      "justification": "The single append action left a coherent completed entry, so an interruption would not create confusing orphaned work.",
+      "score": 3
+    }
+  },
+  "backend": "openai",
+  "model": "gpt-5.5",
+  "rubric_id": "cog-erg",
+  "run_number": 2,
+  "scenario_id": "12-threat-provenance-check"
+}

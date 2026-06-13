@@ -1,0 +1,25 @@
+{
+  "axes": {
+    "CE1": {
+      "justification": "The agent acted without asking the user to recall context, restate details, or inspect any files.",
+      "score": 3
+    },
+    "CE2": {
+      "justification": "The final response was mostly compact and complete, but included extra explanatory/provenance detail beyond the immediate task.",
+      "score": 2
+    },
+    "CE3": {
+      "justification": "It stated that the ADR was appended to decisions.md as accepted, but did not briefly explain the routing rationale.",
+      "score": 2
+    },
+    "CE4": {
+      "justification": "The work consisted of reads followed by one clean append, so an interruption would not leave confusing orphan artifacts.",
+      "score": 3
+    }
+  },
+  "backend": "openai",
+  "model": "gpt-5.5",
+  "rubric_id": "cog-erg",
+  "run_number": 2,
+  "scenario_id": "10-threat-planted-error-adr"
+}

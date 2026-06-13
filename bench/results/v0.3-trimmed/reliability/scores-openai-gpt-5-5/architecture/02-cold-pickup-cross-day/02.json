@@ -1,0 +1,25 @@
+{
+  "axes": {
+    "AR1": {
+      "justification": "The agent used decisions.md for the existing durable hiring commitment and routed only today's chronological lookup/response and guardrail restatement into the daybook sections designated by the daybook conventions.",
+      "score": 3
+    },
+    "AR2": {
+      "justification": "This was a cold-pickup reference task rather than a runbook or multi-step procedure requiring artifact-bound outputs.",
+      "score": "n/a"
+    },
+    "AR3": {
+      "justification": "The reference uses a relative path and identifies the decision, but it is not an anchor-stable relative link to the specific section.",
+      "score": 2
+    },
+    "AR4": {
+      "justification": "The actions are append-only and coherent on future pickup, with no rewriting of the accepted decision or prior daybook history.",
+      "score": 3
+    }
+  },
+  "backend": "openai",
+  "model": "gpt-5.5",
+  "rubric_id": "architecture",
+  "run_number": 2,
+  "scenario_id": "02-cold-pickup-cross-day"
+}

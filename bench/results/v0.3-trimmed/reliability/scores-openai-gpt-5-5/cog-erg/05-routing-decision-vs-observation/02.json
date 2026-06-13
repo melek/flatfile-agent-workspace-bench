@@ -1,0 +1,25 @@
+{
+  "axes": {
+    "CE1": {
+      "justification": "The agent acted directly without asking the user to recall context, answer questions, or inspect documents.",
+      "score": 3
+    },
+    "CE2": {
+      "justification": "The response is mostly compact, but includes an unnecessary explanatory stretch about why Postgres constrains future work and an optional expansion offer.",
+      "score": 2
+    },
+    "CE3": {
+      "justification": "It explicitly said the entry went to `decisions.md` and briefly explained why, while contrasting the alternatives.",
+      "score": 3
+    },
+    "CE4": {
+      "justification": "The work was mostly cleanly committed, but the created daybook included an empty Handoff placeholder that would be an ambiguous partial artifact.",
+      "score": 2
+    }
+  },
+  "backend": "openai",
+  "model": "gpt-5.5",
+  "rubric_id": "cog-erg",
+  "run_number": 2,
+  "scenario_id": "05-routing-decision-vs-observation"
+}

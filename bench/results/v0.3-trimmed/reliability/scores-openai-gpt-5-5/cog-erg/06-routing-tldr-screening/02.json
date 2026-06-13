@@ -1,0 +1,25 @@
+{
+  "axes": {
+    "CE1": {
+      "justification": "The agent acted directly without asking the user to restate context, answer questions, or inspect anything first.",
+      "score": 3
+    },
+    "CE2": {
+      "justification": "The response completed the task but included several stretches of rationale, categorization, and cautionary explanation beyond what was needed.",
+      "score": 1
+    },
+    "CE3": {
+      "justification": "It explicitly said the artifact was going to resources/ and explained why the agent chose that route in-band.",
+      "score": 3
+    },
+    "CE4": {
+      "justification": "The work was mostly coherent, but an interruption after creating the folder and before writing the file would leave an ambiguous empty artifact.",
+      "score": 2
+    }
+  },
+  "backend": "openai",
+  "model": "gpt-5.5",
+  "rubric_id": "cog-erg",
+  "run_number": 2,
+  "scenario_id": "06-routing-tldr-screening"
+}

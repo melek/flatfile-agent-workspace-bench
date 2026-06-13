@@ -1,0 +1,25 @@
+{
+  "axes": {
+    "AR1": {
+      "justification": "The pattern was routed to observations.md with an explicit rationale that it is descriptive and cross-cutting rather than a commitment for decisions.md or merely chronology for the daybook.",
+      "score": 3
+    },
+    "AR2": {
+      "justification": "This was an artifact-routing scenario rather than a runbook or multi-step procedure requiring each step to produce a consumed artifact.",
+      "score": "n/a"
+    },
+    "AR3": {
+      "justification": "The referenced files use relative paths such as observations.md and daybook/2026-05-17.md and the cited observation entry is identifiable by its ISO-dated header.",
+      "score": 3
+    },
+    "AR4": {
+      "justification": "The actions are append-oriented and coherent, but re-running them would likely duplicate the observation or daybook log line rather than cleanly no-oping.",
+      "score": 2
+    }
+  },
+  "backend": "openai",
+  "model": "gpt-5.5",
+  "rubric_id": "architecture",
+  "run_number": 4,
+  "scenario_id": "04-routing-novel-observation"
+}

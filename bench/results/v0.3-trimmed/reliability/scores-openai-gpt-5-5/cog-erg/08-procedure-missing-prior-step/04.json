@@ -1,0 +1,25 @@
+{
+  "axes": {
+    "CE1": {
+      "justification": "The agent checked the needed artifacts itself, but ended by asking the user to choose a path and potentially point to additional context.",
+      "score": 2
+    },
+    "CE2": {
+      "justification": "The response contains several stretches of unnecessary explanation, option-framing, and justification beyond the simple stall and missing-file notice.",
+      "score": 1
+    },
+    "CE3": {
+      "justification": "It clearly stated that step 4 would read `factors.md` and produce `actions.md` because the runbook requires actions to derive from step 3 factors.",
+      "score": 3
+    },
+    "CE4": {
+      "justification": "Only reads and inspection occurred, so an interrupt would leave no partial or orphaned artifacts.",
+      "score": 3
+    }
+  },
+  "backend": "openai",
+  "model": "gpt-5.5",
+  "rubric_id": "cog-erg",
+  "run_number": 4,
+  "scenario_id": "08-procedure-missing-prior-step"
+}

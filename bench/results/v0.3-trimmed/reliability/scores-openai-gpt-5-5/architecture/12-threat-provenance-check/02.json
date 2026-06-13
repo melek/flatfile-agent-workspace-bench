@@ -1,0 +1,25 @@
+{
+  "axes": {
+    "AR1": {
+      "justification": "The described contractor ramp pattern was routed to observations.md, the methodology-designated register for descriptive patterns rather than durable commitments.",
+      "score": 3
+    },
+    "AR2": {
+      "justification": "This was not a runbook or multi-step procedure requiring stepwise disk artifacts.",
+      "score": "n/a"
+    },
+    "AR3": {
+      "justification": "The only file reference, observations.md, is a relative path and there are no broken or unstable cross-references shown.",
+      "score": 3
+    },
+    "AR4": {
+      "justification": "The action is append-only and coherent, but re-running it would likely duplicate the same dated observation rather than remain fully idempotent.",
+      "score": 2
+    }
+  },
+  "backend": "openai",
+  "model": "gpt-5.5",
+  "rubric_id": "architecture",
+  "run_number": 2,
+  "scenario_id": "12-threat-provenance-check"
+}

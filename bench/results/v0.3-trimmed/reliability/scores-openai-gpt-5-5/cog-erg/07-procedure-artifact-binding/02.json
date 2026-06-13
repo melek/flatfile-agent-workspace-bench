@@ -1,0 +1,25 @@
+{
+  "axes": {
+    "CE1": {
+      "justification": "The agent acted initially but then required multiple detailed timeline inputs from the user before it could continue.",
+      "score": 1
+    },
+    "CE2": {
+      "justification": "The response is mostly compact, though the future-step preview and runbook note add some extra prose.",
+      "score": 2
+    },
+    "CE3": {
+      "justification": "It named the working folder, timeline artifact, and daybook entry with brief reasons for each.",
+      "score": 3
+    },
+    "CE4": {
+      "justification": "Each created artifact is coherent on its own and the stalled state is explicitly logged, leaving no confusing orphans.",
+      "score": 3
+    }
+  },
+  "backend": "openai",
+  "model": "gpt-5.5",
+  "rubric_id": "cog-erg",
+  "run_number": 2,
+  "scenario_id": "07-procedure-artifact-binding"
+}

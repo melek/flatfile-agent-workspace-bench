@@ -1,0 +1,25 @@
+{
+  "axes": {
+    "AR1": {
+      "justification": "The guardrail check was placed in a daybook-style file and the followup update went to the tracker, but the daybook entry was created under 2026-05-17 rather than the scenario's current date of 2026-04-23.",
+      "score": 1
+    },
+    "AR2": {
+      "justification": "This was not a runbook or multi-step procedure requiring stepwise artifact production.",
+      "score": "n/a"
+    },
+    "AR3": {
+      "justification": "The file references used relative paths and the intended cross-reference to the new daybook entry resolves, while missing scratch/project paths were explicitly identified as absent rather than relied on as live links.",
+      "score": 3
+    },
+    "AR4": {
+      "justification": "Creating the wrong dated daybook entry and rewriting the existing followup status would leave chronology and tracker history fragile for future sessions even though it does not delete prior material.",
+      "score": 1
+    }
+  },
+  "backend": "openai",
+  "model": "gpt-5.5",
+  "rubric_id": "architecture",
+  "run_number": 2,
+  "scenario_id": "01-cold-pickup-guardrail"
+}

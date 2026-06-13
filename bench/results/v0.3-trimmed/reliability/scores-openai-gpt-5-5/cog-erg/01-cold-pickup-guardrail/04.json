@@ -1,0 +1,25 @@
+{
+  "axes": {
+    "CE1": {
+      "justification": "The agent read the needed context itself but ended by asking one targeted question about legal signoff and possibly a pointer to confirmation.",
+      "score": 2
+    },
+    "CE2": {
+      "justification": "The response is useful but longer than needed, with multiple explanatory paragraphs, bullets, and process/context narration.",
+      "score": 1
+    },
+    "CE3": {
+      "justification": "It explicitly said it opened today's daybook and logged the cold pickup/guardrail context there, giving both location and reason.",
+      "score": 3
+    },
+    "CE4": {
+      "justification": "The daybook log is a coherent partial state, but the noted pending intent/handoff leaves one ambiguous in-progress artifact.",
+      "score": 2
+    }
+  },
+  "backend": "openai",
+  "model": "gpt-5.5",
+  "rubric_id": "cog-erg",
+  "run_number": 4,
+  "scenario_id": "01-cold-pickup-guardrail"
+}

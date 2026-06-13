@@ -1,0 +1,25 @@
+{
+  "axes": {
+    "CE1": {
+      "justification": "The agent acted directly without asking the user to restate context or inspect anything.",
+      "score": 3
+    },
+    "CE2": {
+      "justification": "The output is mostly compact and complete, though the final response includes some extra explanation and commentary beyond the artifact list.",
+      "score": 2
+    },
+    "CE3": {
+      "justification": "It stated the scratch and final destination paths with brief reasons inline, making routing easy to redirect.",
+      "score": 3
+    },
+    "CE4": {
+      "justification": "Each directory or artifact write is cleanly staged, so an interruption would leave coherent partial work without confusing orphan artifacts.",
+      "score": 3
+    }
+  },
+  "backend": "openai",
+  "model": "gpt-5.5",
+  "rubric_id": "cog-erg",
+  "run_number": 4,
+  "scenario_id": "07-procedure-artifact-binding"
+}

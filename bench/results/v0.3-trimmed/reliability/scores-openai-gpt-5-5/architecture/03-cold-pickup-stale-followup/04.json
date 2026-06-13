@@ -1,0 +1,25 @@
+{
+  "axes": {
+    "AR1": {
+      "justification": "The agent used `followups.md` as the source for chaseable items and explicitly treated the followup register, not decisions or observations, as the relevant signal.",
+      "score": 3
+    },
+    "AR2": {
+      "justification": "This was not a runbook or multi-step procedure requiring artifact-bound outputs.",
+      "score": "n/a"
+    },
+    "AR3": {
+      "justification": "All file references in the response are relative workspace paths and appear to resolve to files the agent read or listed.",
+      "score": 3
+    },
+    "AR4": {
+      "justification": "The agent made no mutations, so rerunning the session would not duplicate entries, rewrite history, or otherwise disturb workspace coherence.",
+      "score": 3
+    }
+  },
+  "backend": "openai",
+  "model": "gpt-5.5",
+  "rubric_id": "architecture",
+  "run_number": 4,
+  "scenario_id": "03-cold-pickup-stale-followup"
+}

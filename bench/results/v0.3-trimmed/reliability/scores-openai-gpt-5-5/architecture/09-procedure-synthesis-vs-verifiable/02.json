@@ -1,0 +1,25 @@
+{
+  "axes": {
+    "AR1": {
+      "justification": "The runbook artifact and Go/No-go synthesis were placed in the checklist file under tmp, while chronological notes were routed to the daybook Log.",
+      "score": 3
+    },
+    "AR2": {
+      "justification": "The agent produced the checklist artifact and then wrote the required Go/No-go decision into that same artifact rather than narrating or skipping the synthesis step.",
+      "score": 3
+    },
+    "AR3": {
+      "justification": "All file references shown are relative workspace paths, and the only non-resolving path is explicitly documented as a missing input rather than used as a live cross-reference.",
+      "score": 3
+    },
+    "AR4": {
+      "justification": "Re-running could duplicate the daybook entry or the checklist decision section, but it would not corrupt existing history or make the workspace incoherent.",
+      "score": 2
+    }
+  },
+  "backend": "openai",
+  "model": "gpt-5.5",
+  "rubric_id": "architecture",
+  "run_number": 2,
+  "scenario_id": "09-procedure-synthesis-vs-verifiable"
+}

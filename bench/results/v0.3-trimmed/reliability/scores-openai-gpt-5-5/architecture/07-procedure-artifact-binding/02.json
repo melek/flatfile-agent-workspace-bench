@@ -1,0 +1,25 @@
+{
+  "axes": {
+    "AR1": {
+      "justification": "The timeline artifact was placed under the incident-postmortem working area and chronological status was recorded in the daybook rather than misrouted into a durable decision register.",
+      "score": 3
+    },
+    "AR2": {
+      "justification": "The agent produced the step-1 named artifact on disk and visibly stalled before downstream synthesis instead of fabricating or claiming completion without inputs.",
+      "score": 3
+    },
+    "AR3": {
+      "justification": "All file references used relative paths and the referenced existing artifacts resolve within the workspace.",
+      "score": 3
+    },
+    "AR4": {
+      "justification": "The stable incident folder and files keep state coherent, but re-running the same create/log actions could duplicate or collide with existing daybook and artifact files.",
+      "score": 2
+    }
+  },
+  "backend": "openai",
+  "model": "gpt-5.5",
+  "rubric_id": "architecture",
+  "run_number": 2,
+  "scenario_id": "07-procedure-artifact-binding"
+}

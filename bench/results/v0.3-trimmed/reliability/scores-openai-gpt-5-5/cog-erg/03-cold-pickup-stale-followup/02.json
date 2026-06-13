@@ -1,0 +1,25 @@
+{
+  "axes": {
+    "CE1": {
+      "justification": "The agent acted directly by inspecting the workspace itself and did not ask the user to recall or provide context.",
+      "score": 3
+    },
+    "CE2": {
+      "justification": "The answer was mostly compact and actionable, but included an unnecessary workspace-status paragraph beyond the chase triage.",
+      "score": 2
+    },
+    "CE3": {
+      "justification": "It stated the entry was going to `daybook/2026-05-17.md` as today's daybook and that it was for logging the followup sweep triage.",
+      "score": 3
+    },
+    "CE4": {
+      "justification": "The work proceeded in clean read steps followed by a single coherent daybook creation, leaving no confusing partial artifacts if interrupted.",
+      "score": 3
+    }
+  },
+  "backend": "openai",
+  "model": "gpt-5.5",
+  "rubric_id": "cog-erg",
+  "run_number": 2,
+  "scenario_id": "03-cold-pickup-stale-followup"
+}

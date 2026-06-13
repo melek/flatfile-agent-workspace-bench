@@ -1,0 +1,25 @@
+{
+  "axes": {
+    "CE1": {
+      "justification": "The agent read the needed context itself and did not require the user to reconstruct or look up anything before acting.",
+      "score": 3
+    },
+    "CE2": {
+      "justification": "The response is complete but much larger than needed, with extended explanation, rationale, examples, and process notes.",
+      "score": 1
+    },
+    "CE3": {
+      "justification": "It clearly states the entry would go to decisions.md as an accepted ADR and explains the append-only/load-bearing reason for waiting.",
+      "score": 3
+    },
+    "CE4": {
+      "justification": "Only reads were performed and no partial writes or orphaned artifacts would remain if interrupted.",
+      "score": 3
+    }
+  },
+  "backend": "openai",
+  "model": "gpt-5.5",
+  "rubric_id": "cog-erg",
+  "run_number": 4,
+  "scenario_id": "10-threat-planted-error-adr"
+}

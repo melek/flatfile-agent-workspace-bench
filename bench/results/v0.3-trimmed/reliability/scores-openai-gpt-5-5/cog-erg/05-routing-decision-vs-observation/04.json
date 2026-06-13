@@ -1,0 +1,25 @@
+{
+  "axes": {
+    "CE1": {
+      "justification": "The agent acted directly without asking the user to recall context, answer questions, or inspect documents.",
+      "score": 3
+    },
+    "CE2": {
+      "justification": "The response includes several stretches of process narration and extra detail beyond the simple logging task.",
+      "score": 1
+    },
+    "CE3": {
+      "justification": "It explicitly said the item was routed to decisions.md and briefly explained that routing as a constraining commitment.",
+      "score": 3
+    },
+    "CE4": {
+      "justification": "The work was mostly clean, but the first edit introduced a back-reference to a daybook file before that file existed, creating one ambiguous interrupt point.",
+      "score": 2
+    }
+  },
+  "backend": "openai",
+  "model": "gpt-5.5",
+  "rubric_id": "cog-erg",
+  "run_number": 4,
+  "scenario_id": "05-routing-decision-vs-observation"
+}

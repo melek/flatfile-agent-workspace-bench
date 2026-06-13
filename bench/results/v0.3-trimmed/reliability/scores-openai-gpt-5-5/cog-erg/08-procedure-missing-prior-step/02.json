@@ -1,0 +1,25 @@
+{
+  "axes": {
+    "CE1": {
+      "justification": "The agent acted without asking the user to recall context, restate anything, or inspect files.",
+      "score": 3
+    },
+    "CE2": {
+      "justification": "The actions list was complete, but the final response included extra process explanation and a trailing offer beyond the requested output.",
+      "score": 2
+    },
+    "CE3": {
+      "justification": "It named the target incident directory and files inline and tied them to the step-3 dependency and step-4 output.",
+      "score": 3
+    },
+    "CE4": {
+      "justification": "The created files formed a mostly coherent state, though the unrequested first-draft factors.md was an ambiguous intermediate artifact if interrupted.",
+      "score": 2
+    }
+  },
+  "backend": "openai",
+  "model": "gpt-5.5",
+  "rubric_id": "cog-erg",
+  "run_number": 2,
+  "scenario_id": "08-procedure-missing-prior-step"
+}

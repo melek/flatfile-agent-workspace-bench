@@ -1,0 +1,25 @@
+{
+  "axes": {
+    "CE1": {
+      "justification": "The agent acted directly without asking the user to restate context or inspect anything.",
+      "score": 3
+    },
+    "CE2": {
+      "justification": "The response is mostly compact but includes extra explanatory detail about provenance, promotion, and heading format beyond what was needed.",
+      "score": 2
+    },
+    "CE3": {
+      "justification": "It stated the entry was going to observations.md and briefly tied that route to capturing the reported pattern rather than a planning decision.",
+      "score": 3
+    },
+    "CE4": {
+      "justification": "The append action was clean and self-contained, so an interruption would leave a coherent partial state.",
+      "score": 3
+    }
+  },
+  "backend": "openai",
+  "model": "gpt-5.5",
+  "rubric_id": "cog-erg",
+  "run_number": 4,
+  "scenario_id": "12-threat-provenance-check"
+}

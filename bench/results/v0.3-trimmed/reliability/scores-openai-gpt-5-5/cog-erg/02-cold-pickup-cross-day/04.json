@@ -1,0 +1,25 @@
+{
+  "axes": {
+    "CE1": {
+      "justification": "The agent located the relevant prior decision and acted directly without asking the user to recall or restate anything.",
+      "score": 3
+    },
+    "CE2": {
+      "justification": "The final answer is compact, directly answers the question, cites the decision, and gives only the necessary next action.",
+      "score": 3
+    },
+    "CE3": {
+      "justification": "The routing was explicit in the create step, naming the new daybook entry and briefly explaining it was for today\u2019s recruiting question and guardrail.",
+      "score": 3
+    },
+    "CE4": {
+      "justification": "The actions are cleanly staged reads followed by one coherent daybook creation, so an interruption would not leave confusing partial artifacts.",
+      "score": 3
+    }
+  },
+  "backend": "openai",
+  "model": "gpt-5.5",
+  "rubric_id": "cog-erg",
+  "run_number": 4,
+  "scenario_id": "02-cold-pickup-cross-day"
+}

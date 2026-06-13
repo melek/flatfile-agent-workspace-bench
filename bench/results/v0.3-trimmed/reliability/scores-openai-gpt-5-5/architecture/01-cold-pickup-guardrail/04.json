@@ -1,0 +1,25 @@
+{
+  "axes": {
+    "AR1": {
+      "justification": "The guardrail check was routed to a daybook-style chronological log, but it was created under the wrong dated daybook for the scenario rather than the methodology-designated current-day file.",
+      "score": 1
+    },
+    "AR2": {
+      "justification": "This was not a runbook or multi-step procedure requiring artifact-bound intermediate outputs.",
+      "score": "n/a"
+    },
+    "AR3": {
+      "justification": "The cited files use relative paths and mostly resolve, but the Handoff reference is not anchor-stable to the referenced section.",
+      "score": 2
+    },
+    "AR4": {
+      "justification": "The action appears append-only and would not corrupt existing history, though re-running it could duplicate the same pickup log entry or preserve the wrong-date daybook state.",
+      "score": 2
+    }
+  },
+  "backend": "openai",
+  "model": "gpt-5.5",
+  "rubric_id": "architecture",
+  "run_number": 4,
+  "scenario_id": "01-cold-pickup-guardrail"
+}

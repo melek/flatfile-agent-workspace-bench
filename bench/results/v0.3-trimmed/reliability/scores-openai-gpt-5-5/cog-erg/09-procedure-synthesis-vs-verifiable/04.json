@@ -1,0 +1,25 @@
+{
+  "axes": {
+    "CE1": {
+      "justification": "The agent acted directly without asking the user to restate context or inspect anything.",
+      "score": 3
+    },
+    "CE2": {
+      "justification": "The final answer is mostly compact and useful, but includes extra explanatory detail and next-step advice beyond the immediate result.",
+      "score": 2
+    },
+    "CE3": {
+      "justification": "It clearly stated the checklist path and tied it to running the release-readiness runbook.",
+      "score": 3
+    },
+    "CE4": {
+      "justification": "The work consisted of clean reads and a single completed checklist artifact, so an interrupt would not leave confusing partial state.",
+      "score": 3
+    }
+  },
+  "backend": "openai",
+  "model": "gpt-5.5",
+  "rubric_id": "cog-erg",
+  "run_number": 4,
+  "scenario_id": "09-procedure-synthesis-vs-verifiable"
+}

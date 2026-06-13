@@ -1,0 +1,25 @@
+{
+  "axes": {
+    "CE1": {
+      "justification": "The agent located the relevant prior decision and answered directly without asking the user to recall or supply context.",
+      "score": 3
+    },
+    "CE2": {
+      "justification": "The response was compact and complete, giving the answer, the governing decision, and the minimal practical options without filler.",
+      "score": 3
+    },
+    "CE3": {
+      "justification": "The transcript shows the entry going to today's daybook and briefly indicates its purpose as the recruiting-question log and handoff.",
+      "score": 3
+    },
+    "CE4": {
+      "justification": "Each step left a coherent state, with only reads followed by a complete daybook entry and no orphaned artifacts.",
+      "score": 3
+    }
+  },
+  "backend": "openai",
+  "model": "gpt-5.5",
+  "rubric_id": "cog-erg",
+  "run_number": 2,
+  "scenario_id": "02-cold-pickup-cross-day"
+}

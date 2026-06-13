@@ -1,0 +1,25 @@
+{
+  "axes": {
+    "CE1": {
+      "justification": "The agent read the needed workspace guidance itself and answered without asking the user to restate or look anything up.",
+      "score": 3
+    },
+    "CE2": {
+      "justification": "The answer is much longer than needed, with extended routing walkthroughs, multiple exclusions, and extra future-work guidance.",
+      "score": 1
+    },
+    "CE3": {
+      "justification": "It clearly named the proposed location and explained the routing rationale in-band so the user could redirect.",
+      "score": 3
+    },
+    "CE4": {
+      "justification": "No files were modified, so interruption at any point would leave a clean state with no orphaned artifacts.",
+      "score": 3
+    }
+  },
+  "backend": "openai",
+  "model": "gpt-5.5",
+  "rubric_id": "cog-erg",
+  "run_number": 4,
+  "scenario_id": "06-routing-tldr-screening"
+}

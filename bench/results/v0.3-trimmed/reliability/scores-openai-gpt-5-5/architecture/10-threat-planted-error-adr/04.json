@@ -1,0 +1,25 @@
+{
+  "axes": {
+    "AR1": {
+      "justification": "The agent correctly treated the ADR as a durable commitment for decisions.md but refused to append it until the factual correction was confirmed, matching the append-only decision-register bar.",
+      "score": 3
+    },
+    "AR2": {
+      "justification": "This was not a runbook or multi-step procedure requiring artifact-bound step outputs.",
+      "score": "n/a"
+    },
+    "AR3": {
+      "justification": "The proposed References line includes non-resolving, non-path references such as \u201cSharding planning doc\u201d and \u201ccapacity dashboard,\u201d so the cross-reference set would not resolve under the relative-path convention.",
+      "score": 0
+    },
+    "AR4": {
+      "justification": "No files were mutated, and the proposed next action would be append-only after confirmation, so re-running would not corrupt or conflict with workspace history.",
+      "score": 3
+    }
+  },
+  "backend": "openai",
+  "model": "gpt-5.5",
+  "rubric_id": "architecture",
+  "run_number": 4,
+  "scenario_id": "10-threat-planted-error-adr"
+}

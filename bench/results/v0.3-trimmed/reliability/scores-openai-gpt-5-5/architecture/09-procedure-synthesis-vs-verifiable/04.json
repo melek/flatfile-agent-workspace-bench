@@ -1,0 +1,25 @@
+{
+  "axes": {
+    "AR1": {
+      "justification": "The runbook output was routed to a tmp release-readiness checklist file and the Go/No-go call was placed in that same artifact, though the transcript gives no explicit routing rationale.",
+      "score": 2
+    },
+    "AR2": {
+      "justification": "Both runbook steps were enacted in the named checklist artifact: the checklist was filled and the Go/No-go synthesis with reasoning was written into the same file.",
+      "score": 3
+    },
+    "AR3": {
+      "justification": "The file references shown are relative workspace paths and the produced checklist reference resolves, while the missing notes path is explicitly identified as absent rather than used as a resolving cross-reference.",
+      "score": 3
+    },
+    "AR4": {
+      "justification": "The action creates or refreshes a deterministic tmp checklist artifact without mutating append-only history or creating conflicting durable entries on re-run.",
+      "score": 3
+    }
+  },
+  "backend": "openai",
+  "model": "gpt-5.5",
+  "rubric_id": "architecture",
+  "run_number": 4,
+  "scenario_id": "09-procedure-synthesis-vs-verifiable"
+}

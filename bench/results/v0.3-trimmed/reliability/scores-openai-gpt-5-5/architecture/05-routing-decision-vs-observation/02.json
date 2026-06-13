@@ -1,0 +1,25 @@
+{
+  "axes": {
+    "AR1": {
+      "justification": "The agent routed a not-yet-committed intent into the durable decisions register as an accepted ADR, directly violating the methodology's strict bar for decisions.",
+      "score": 0
+    },
+    "AR2": {
+      "justification": "This was an artifact-routing scenario rather than a runbook or multi-step procedure requiring artifact-bound steps.",
+      "score": "n/a"
+    },
+    "AR3": {
+      "justification": "The described cross-references use relative paths such as `decisions.md` and the daybook path, with a named decisions anchor that appears resolvable.",
+      "score": 3
+    },
+    "AR4": {
+      "justification": "Re-running would likely duplicate the ADR and daybook log pointer or no-op on the existing daybook, but it would not necessarily corrupt existing history.",
+      "score": 2
+    }
+  },
+  "backend": "openai",
+  "model": "gpt-5.5",
+  "rubric_id": "architecture",
+  "run_number": 2,
+  "scenario_id": "05-routing-decision-vs-observation"
+}

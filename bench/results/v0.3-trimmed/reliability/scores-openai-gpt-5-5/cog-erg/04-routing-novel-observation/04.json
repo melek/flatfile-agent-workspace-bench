@@ -1,0 +1,25 @@
+{
+  "axes": {
+    "CE1": {
+      "justification": "The agent acted directly without asking the user to recall context, answer questions, or inspect files.",
+      "score": 3
+    },
+    "CE2": {
+      "justification": "The response is mostly compact and useful, but the final paragraph adds extra forward-looking guidance beyond the immediate routing task.",
+      "score": 2
+    },
+    "CE3": {
+      "justification": "It explicitly states the entry went to observations.md and briefly explains why it is not a decision or project-scoped note.",
+      "score": 3
+    },
+    "CE4": {
+      "justification": "The work is mostly clean, but creating a daybook pointer before appending the observation could leave a dangling in-progress reference if interrupted.",
+      "score": 2
+    }
+  },
+  "backend": "openai",
+  "model": "gpt-5.5",
+  "rubric_id": "cog-erg",
+  "run_number": 4,
+  "scenario_id": "04-routing-novel-observation"
+}

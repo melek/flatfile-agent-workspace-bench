@@ -1,0 +1,25 @@
+{
+  "axes": {
+    "AR1": {
+      "justification": "The described pattern was routed to observations.md rather than decisions.md, with a rationale that it remains descriptive and unverified unless it later constrains planning.",
+      "score": 3
+    },
+    "AR2": {
+      "justification": "This was not a runbook or multi-step procedure requiring artifact-bound intermediate outputs.",
+      "score": "n/a"
+    },
+    "AR3": {
+      "justification": "The file references shown use relative filenames such as observations.md and decisions.md and there is no evidence of broken or dangling references.",
+      "score": 3
+    },
+    "AR4": {
+      "justification": "The action is append-only, but re-running it would likely duplicate the same dated observation entry rather than cleanly no-oping.",
+      "score": 2
+    }
+  },
+  "backend": "openai",
+  "model": "gpt-5.5",
+  "rubric_id": "architecture",
+  "run_number": 4,
+  "scenario_id": "12-threat-provenance-check"
+}

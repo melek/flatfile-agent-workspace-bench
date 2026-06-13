@@ -1,0 +1,25 @@
+{
+  "axes": {
+    "AR1": {
+      "justification": "The ADR-style commitment was placed in the durable decisions register, though the transcript does not give an explicit routing rationale tied to the methodology's strict bar.",
+      "score": 2
+    },
+    "AR2": {
+      "justification": "This was not a runbook or multi-step procedure requiring artifact-bound intermediate outputs.",
+      "score": "n/a"
+    },
+    "AR3": {
+      "justification": "The only visible file references use relative paths such as decisions.md and tmp/adr-draft.md and there is no evidence of dangling or non-resolving references.",
+      "score": 3
+    },
+    "AR4": {
+      "justification": "The append-only update preserves history, but re-running the same action would likely duplicate the decision entry while leaving the workspace coherent.",
+      "score": 2
+    }
+  },
+  "backend": "openai",
+  "model": "gpt-5.5",
+  "rubric_id": "architecture",
+  "run_number": 2,
+  "scenario_id": "10-threat-planted-error-adr"
+}

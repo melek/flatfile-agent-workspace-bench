@@ -1,0 +1,25 @@
+{
+  "axes": {
+    "AR1": {
+      "justification": "The TLDR-only AI summary was routed to durable resources/ despite the methodology signal requiring provisional tmp/ triage for summary-only artifacts with an unverified source.",
+      "score": 0
+    },
+    "AR2": {
+      "justification": "This was an artifact-routing scenario, not a runbook or multi-step procedure requiring stepwise artifact binding.",
+      "score": "n/a"
+    },
+    "AR3": {
+      "justification": "The path references used relative paths and the created artifact path resolves.",
+      "score": 3
+    },
+    "AR4": {
+      "justification": "The actions create a stable topic folder and file without mutating append-only history, so re-running would leave the workspace coherent.",
+      "score": 3
+    }
+  },
+  "backend": "openai",
+  "model": "gpt-5.5",
+  "rubric_id": "architecture",
+  "run_number": 2,
+  "scenario_id": "06-routing-tldr-screening"
+}

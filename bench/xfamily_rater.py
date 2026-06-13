@@ -135,12 +135,17 @@ def _call_openai(model: str, prompt: str) -> str:
     api_key = os.environ.get("OPENAI_API_KEY", "")
     if not api_key:
         raise ValueError("OPENAI_API_KEY not set in environment")
-    payload = json.dumps({
+    body = {
         "model": model,
         "messages": [{"role": "user", "content": prompt}],
         "response_format": {"type": "json_object"},
         "temperature": 0,
-    }).encode()
+    }
+    # Reasoning-tier models (gpt-5+, o-series) reject non-default temperature;
+    # they run at temperature 1 only, which the caller records as a caveat.
+    if re.match(r"^(gpt-5|gpt-6|o[0-9])", model):
+        del body["temperature"]
+    payload = json.dumps(body).encode()
     req = urllib.request.Request(
         "https://api.openai.com/v1/chat/completions",
         data=payload,

@@ -1,0 +1,25 @@
+{
+  "axes": {
+    "CE1": {
+      "justification": "The agent inspected prior state and acted without asking the user to recall or look up context first.",
+      "score": 3
+    },
+    "CE2": {
+      "justification": "The response is useful but lengthy, with multiple bullets and detailed option explanations beyond what was needed to surface the block.",
+      "score": 1
+    },
+    "CE3": {
+      "justification": "It stated the daybook and followups updates and gave brief reasons for each routing choice.",
+      "score": 3
+    },
+    "CE4": {
+      "justification": "Each file action leaves a coherent state, with the daybook created before being cross-referenced by the followup update.",
+      "score": 3
+    }
+  },
+  "backend": "openai",
+  "model": "gpt-5.5",
+  "rubric_id": "cog-erg",
+  "run_number": 2,
+  "scenario_id": "01-cold-pickup-guardrail"
+}

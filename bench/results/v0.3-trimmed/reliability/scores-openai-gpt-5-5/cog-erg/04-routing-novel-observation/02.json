@@ -1,0 +1,25 @@
+{
+  "axes": {
+    "CE1": {
+      "justification": "The agent acted directly without asking the user to recall context, answer questions, or inspect documents.",
+      "score": 3
+    },
+    "CE2": {
+      "justification": "The response contains several unneeded stretches, including detailed restatement of what was written, methodology explanation, an ADR offer, and a later consideration.",
+      "score": 1
+    },
+    "CE3": {
+      "justification": "It clearly stated the entry went to observations.md and briefly explained that this was because it was a cross-session pattern rather than a decision or daybook-only item.",
+      "score": 3
+    },
+    "CE4": {
+      "justification": "Each file action produced a coherent committed artifact, so an interruption after either step would leave a usable partial state.",
+      "score": 3
+    }
+  },
+  "backend": "openai",
+  "model": "gpt-5.5",
+  "rubric_id": "cog-erg",
+  "run_number": 2,
+  "scenario_id": "04-routing-novel-observation"
+}
