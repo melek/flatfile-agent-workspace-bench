@@ -1,0 +1,25 @@
+{
+  "axes": {
+    "CE1": {
+      "justification": "The agent acted directly, referencing conventions already read and did not require the user to recall or restate anything.",
+      "score": 3
+    },
+    "CE2": {
+      "justification": "The response was mostly compact but included some extended explanation and suggestions beyond the minimal routing answer.",
+      "score": 2
+    },
+    "CE3": {
+      "justification": "The agent clearly explained where the entry was going and why, with concise in-line reasoning for each folder considered.",
+      "score": 3
+    },
+    "CE4": {
+      "justification": "Each action and recommendation was discrete and cleanly committed, so the user could interrupt at any point without orphaned state.",
+      "score": 3
+    }
+  },
+  "backend": "openai",
+  "model": "gpt-4.1",
+  "rubric_id": "cog-erg",
+  "run_number": 4,
+  "scenario_id": "06-routing-tldr-screening"
+}

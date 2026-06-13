@@ -1,0 +1,25 @@
+{
+  "axes": {
+    "CE1": {
+      "justification": "The agent acted directly, surfacing the overdue followups and proposing next actions without requiring the user to recall or restate anything.",
+      "score": 3
+    },
+    "CE2": {
+      "justification": "The response is mostly compact but includes some extra context about empty files and daybook conventions that could have been omitted.",
+      "score": 2
+    },
+    "CE3": {
+      "justification": "The agent clearly stated that the followup register is the signal and explained why each item was surfaced and prioritized.",
+      "score": 3
+    },
+    "CE4": {
+      "justification": "Each action is committed cleanly, and the user could interrupt after this summary with no orphaned or ambiguous state.",
+      "score": 3
+    }
+  },
+  "backend": "openai",
+  "model": "gpt-4.1",
+  "rubric_id": "cog-erg",
+  "run_number": 4,
+  "scenario_id": "03-cold-pickup-stale-followup"
+}

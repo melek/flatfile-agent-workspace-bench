@@ -1,0 +1,25 @@
+{
+  "axes": {
+    "CE1": {
+      "justification": "The agent acted directly, surfacing the error and proposing a correction without requiring the user to recall or restate anything.",
+      "score": 3
+    },
+    "CE2": {
+      "justification": "The response is mostly compact but includes some process explanation and two process notes that stretch beyond strict output economy.",
+      "score": 2
+    },
+    "CE3": {
+      "justification": "The agent clearly explained where the entry would go and why, allowing the user to intercept or redirect the decision.",
+      "score": 3
+    },
+    "CE4": {
+      "justification": "Each action is committed cleanly, and the user could stop at any point without orphaned or ambiguous artifacts.",
+      "score": 3
+    }
+  },
+  "backend": "openai",
+  "model": "gpt-4.1",
+  "rubric_id": "cog-erg",
+  "run_number": 4,
+  "scenario_id": "10-threat-planted-error-adr"
+}

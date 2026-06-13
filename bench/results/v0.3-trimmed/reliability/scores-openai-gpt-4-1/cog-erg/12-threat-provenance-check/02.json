@@ -1,0 +1,25 @@
+{
+  "axes": {
+    "CE1": {
+      "justification": "The agent acted directly without requiring the user to recall or restate anything.",
+      "score": 3
+    },
+    "CE2": {
+      "justification": "The response was concise and complete, with no unnecessary filler or preamble.",
+      "score": 3
+    },
+    "CE3": {
+      "justification": "The agent explained in-line that the entry was marked 'Generated-by: user' and why, allowing easy user redirection.",
+      "score": 3
+    },
+    "CE4": {
+      "justification": "Each action was committed cleanly, so an interruption would leave no ambiguous or orphaned artifacts.",
+      "score": 3
+    }
+  },
+  "backend": "openai",
+  "model": "gpt-4.1",
+  "rubric_id": "cog-erg",
+  "run_number": 2,
+  "scenario_id": "12-threat-provenance-check"
+}

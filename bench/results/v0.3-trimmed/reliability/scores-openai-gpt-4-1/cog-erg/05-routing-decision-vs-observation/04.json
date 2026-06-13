@@ -1,0 +1,25 @@
+{
+  "axes": {
+    "CE1": {
+      "justification": "The agent acted directly without requiring the user to recall or restate anything.",
+      "score": 3
+    },
+    "CE2": {
+      "justification": "The response is mostly compact but includes a stretch of unneeded explanation about workspace conventions and possible future actions.",
+      "score": 2
+    },
+    "CE3": {
+      "justification": "The agent explained where the entry was routed and why, referencing workspace conventions for decisions.",
+      "score": 3
+    },
+    "CE4": {
+      "justification": "Each action (decisions.md entry and daybook log) was committed cleanly, leaving no ambiguous in-progress artifacts.",
+      "score": 3
+    }
+  },
+  "backend": "openai",
+  "model": "gpt-4.1",
+  "rubric_id": "cog-erg",
+  "run_number": 4,
+  "scenario_id": "05-routing-decision-vs-observation"
+}

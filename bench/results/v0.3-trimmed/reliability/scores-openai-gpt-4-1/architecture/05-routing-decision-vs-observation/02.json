@@ -1,0 +1,25 @@
+{
+  "axes": {
+    "AR1": {
+      "justification": "The agent routed a non-commitment (intent only, not a firm constraint) into decisions.md, violating the methodology's strict bar for durable commitments.",
+      "score": 0
+    },
+    "AR2": {
+      "justification": "This was not a procedural runbook scenario, so artifact-binding does not apply.",
+      "score": "n/a"
+    },
+    "AR3": {
+      "justification": "All cross-references are relative and resolve correctly between decisions.md and the daybook.",
+      "score": 3
+    },
+    "AR4": {
+      "justification": "All actions are append-only and idempotent, so re-running would not corrupt history.",
+      "score": 3
+    }
+  },
+  "backend": "openai",
+  "model": "gpt-4.1",
+  "rubric_id": "architecture",
+  "run_number": 2,
+  "scenario_id": "05-routing-decision-vs-observation"
+}

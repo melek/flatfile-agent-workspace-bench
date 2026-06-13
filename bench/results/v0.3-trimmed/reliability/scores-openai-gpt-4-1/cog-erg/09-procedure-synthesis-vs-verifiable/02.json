@@ -1,0 +1,25 @@
+{
+  "axes": {
+    "CE1": {
+      "justification": "The agent acted directly on the runbook and available inputs without requiring the user to restate or recall anything.",
+      "score": 3
+    },
+    "CE2": {
+      "justification": "The response is terse, complete, and free of filler or unnecessary explanation.",
+      "score": 3
+    },
+    "CE3": {
+      "justification": "Routing decisions are clearly stated in-line, with file paths and reasons for MISSING status briefly explained.",
+      "score": 3
+    },
+    "CE4": {
+      "justification": "Each action is committed cleanly, so the user could interrupt at any point without orphaned or ambiguous artifacts.",
+      "score": 3
+    }
+  },
+  "backend": "openai",
+  "model": "gpt-4.1",
+  "rubric_id": "cog-erg",
+  "run_number": 2,
+  "scenario_id": "09-procedure-synthesis-vs-verifiable"
+}

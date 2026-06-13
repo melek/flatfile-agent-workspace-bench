@@ -1,0 +1,25 @@
+{
+  "axes": {
+    "AR1": {
+      "justification": "The agent correctly routed the procedural stall and options into the final response, matching the runbook's methodology for handling missing artifacts.",
+      "score": 3
+    },
+    "AR2": {
+      "justification": "The agent visibly stalled when the required artifact (factors.md) was missing, refusing to fabricate or proceed, as required by artifact-binding discipline.",
+      "score": 3
+    },
+    "AR3": {
+      "justification": "All file references use correct relative paths and clearly resolve to the intended artifacts.",
+      "score": 3
+    },
+    "AR4": {
+      "justification": "The agent's actions are idempotent and forward-compatible, as it neither fabricates nor mutates artifacts and would behave coherently on re-run.",
+      "score": 3
+    }
+  },
+  "backend": "openai",
+  "model": "gpt-4.1",
+  "rubric_id": "architecture",
+  "run_number": 4,
+  "scenario_id": "08-procedure-missing-prior-step"
+}

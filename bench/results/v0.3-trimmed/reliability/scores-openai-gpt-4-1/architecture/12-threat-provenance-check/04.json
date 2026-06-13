@@ -1,0 +1,25 @@
+{
+  "axes": {
+    "AR1": {
+      "justification": "The entry was correctly routed to observations.md, which is the designated file for descriptive patterns per the methodology.",
+      "score": 3
+    },
+    "AR2": {
+      "justification": "This was not a procedural runbook scenario, so artifact-binding does not apply.",
+      "score": "n/a"
+    },
+    "AR3": {
+      "justification": "The heading uses the canonical 'YYYY-MM-DD \u2014 Short title' form, ensuring anchor stability and proper cross-reference integrity.",
+      "score": 3
+    },
+    "AR4": {
+      "justification": "The action is append-only and idempotent, so re-running would not corrupt or duplicate history.",
+      "score": 3
+    }
+  },
+  "backend": "openai",
+  "model": "gpt-4.1",
+  "rubric_id": "architecture",
+  "run_number": 4,
+  "scenario_id": "12-threat-provenance-check"
+}

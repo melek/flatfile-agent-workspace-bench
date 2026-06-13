@@ -1,0 +1,25 @@
+{
+  "axes": {
+    "CE1": {
+      "justification": "The agent acted directly, surfacing all relevant followups without requiring the user to recall or restate anything.",
+      "score": 3
+    },
+    "CE2": {
+      "justification": "The response is concise, focused on the task, and free of filler or unnecessary explanation.",
+      "score": 3
+    },
+    "CE3": {
+      "justification": "Routing decisions are surfaced in-line, with the daybook update and triage clearly explained and open for user redirection.",
+      "score": 3
+    },
+    "CE4": {
+      "justification": "Each action is committed cleanly, with the triage logged and no ambiguous in-progress artifacts left behind.",
+      "score": 3
+    }
+  },
+  "backend": "openai",
+  "model": "gpt-4.1",
+  "rubric_id": "cog-erg",
+  "run_number": 2,
+  "scenario_id": "03-cold-pickup-stale-followup"
+}

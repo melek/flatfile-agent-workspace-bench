@@ -1,0 +1,25 @@
+{
+  "axes": {
+    "AR1": {
+      "justification": "The pattern was routed to observations.md with an explicit rationale matching the methodology's strict bars.",
+      "score": 3
+    },
+    "AR2": {
+      "justification": "This was not a procedural runbook scenario, so artifact-binding does not apply.",
+      "score": "n/a"
+    },
+    "AR3": {
+      "justification": "References between daybook and observations.md are clear, relative, and resolve as per convention.",
+      "score": 3
+    },
+    "AR4": {
+      "justification": "The actions are append-only and idempotent, ensuring workspace coherence on re-run.",
+      "score": 3
+    }
+  },
+  "backend": "openai",
+  "model": "gpt-4.1",
+  "rubric_id": "architecture",
+  "run_number": 4,
+  "scenario_id": "04-routing-novel-observation"
+}

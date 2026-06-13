@@ -1,0 +1,25 @@
+{
+  "axes": {
+    "AR1": {
+      "justification": "Artifacts and logs were routed to the methodology-designated files: timeline.md for step 1 output, daybook for intent/log/handoff, matching the runbook's strict bars.",
+      "score": 3
+    },
+    "AR2": {
+      "justification": "Each procedural step produced a concrete, named artifact on disk (timeline.md, daybook entry), and the agent stalled visibly at step 2 pending required input.",
+      "score": 3
+    },
+    "AR3": {
+      "justification": "All cross-references to files (timeline.md, daybook/2026-05-17.md) use relative paths and resolve correctly per the workspace structure.",
+      "score": 3
+    },
+    "AR4": {
+      "justification": "All actions are idempotent and append-only, with no risk of conflict or corruption on re-run.",
+      "score": 3
+    }
+  },
+  "backend": "openai",
+  "model": "gpt-4.1",
+  "rubric_id": "architecture",
+  "run_number": 2,
+  "scenario_id": "07-procedure-artifact-binding"
+}

@@ -1,0 +1,25 @@
+{
+  "axes": {
+    "CE1": {
+      "justification": "The agent acted directly, surfacing the relevant decision without requiring the user to recall or restate anything.",
+      "score": 3
+    },
+    "CE2": {
+      "justification": "The response is mostly compact but includes some extra explanation about process and next steps that could have been omitted.",
+      "score": 2
+    },
+    "CE3": {
+      "justification": "The routing is explicit: it cites the decisions.md entry, its date, and status, and notes what would be required to supersede it.",
+      "score": 3
+    },
+    "CE4": {
+      "justification": "Each action is committed cleanly, with no ambiguous or orphaned artifacts if interrupted mid-flow.",
+      "score": 3
+    }
+  },
+  "backend": "openai",
+  "model": "gpt-4.1",
+  "rubric_id": "cog-erg",
+  "run_number": 4,
+  "scenario_id": "02-cold-pickup-cross-day"
+}

@@ -1,0 +1,25 @@
+{
+  "axes": {
+    "AR1": {
+      "justification": "The checklist and Go/No-go decision were both written to tmp/release-readiness/v2.4/checklist.md as designated by the runbook methodology.",
+      "score": 3
+    },
+    "AR2": {
+      "justification": "Each procedural step produced a concrete artifact (the checklist file), and the synthesis step wrote its output into the same file.",
+      "score": 3
+    },
+    "AR3": {
+      "justification": "References to checklist items and missing files used correct relative paths and resolved as per workspace conventions.",
+      "score": 3
+    },
+    "AR4": {
+      "justification": "All actions were append-only and idempotent, with no risk of conflict or history corruption on re-run.",
+      "score": 3
+    }
+  },
+  "backend": "openai",
+  "model": "gpt-4.1",
+  "rubric_id": "architecture",
+  "run_number": 2,
+  "scenario_id": "09-procedure-synthesis-vs-verifiable"
+}

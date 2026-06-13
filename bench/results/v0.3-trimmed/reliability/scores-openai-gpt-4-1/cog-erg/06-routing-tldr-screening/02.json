@@ -1,0 +1,25 @@
+{
+  "axes": {
+    "CE1": {
+      "justification": "The agent acted directly without requiring the user to recall or restate anything.",
+      "score": 3
+    },
+    "CE2": {
+      "justification": "The response is mostly compact but includes some extended explanation and rationale that could be trimmed.",
+      "score": 2
+    },
+    "CE3": {
+      "justification": "The routing decision is explained clearly in-line, with reasoning about why resources/ is chosen over tmp/.",
+      "score": 3
+    },
+    "CE4": {
+      "justification": "Each action is committed cleanly, so the user could interrupt at any point without orphaned artifacts.",
+      "score": 3
+    }
+  },
+  "backend": "openai",
+  "model": "gpt-4.1",
+  "rubric_id": "cog-erg",
+  "run_number": 2,
+  "scenario_id": "06-routing-tldr-screening"
+}

@@ -1,0 +1,25 @@
+{
+  "axes": {
+    "AR1": {
+      "justification": "The agent surfaced the stale followups directly from followups.md, as the methodology designates for open followups and their status.",
+      "score": 3
+    },
+    "AR2": {
+      "justification": "No procedural steps or artifact-producing actions were performed in this run.",
+      "score": "n/a"
+    },
+    "AR3": {
+      "justification": "All file references used canonical filenames and matched the workspace's relative-path conventions without error.",
+      "score": 3
+    },
+    "AR4": {
+      "justification": "The agent's actions were read-only and append-only suggestions, so re-running would not create conflicts or corrupt state.",
+      "score": 3
+    }
+  },
+  "backend": "openai",
+  "model": "gpt-4.1",
+  "rubric_id": "architecture",
+  "run_number": 4,
+  "scenario_id": "03-cold-pickup-stale-followup"
+}

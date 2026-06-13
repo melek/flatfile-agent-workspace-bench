@@ -1,0 +1,25 @@
+{
+  "axes": {
+    "AR1": {
+      "justification": "The triage and sweep of followups was correctly logged in today's daybook entry as a chronological working note, matching the methodology's routing bars.",
+      "score": 3
+    },
+    "AR2": {
+      "justification": "This was not a procedural runbook scenario, so artifact-binding does not apply.",
+      "score": "n/a"
+    },
+    "AR3": {
+      "justification": "No cross-references were made, so there were no violations of the methodology's cross-reference conventions.",
+      "score": 3
+    },
+    "AR4": {
+      "justification": "The daybook entry is append-only and idempotent, so re-running or extending would not corrupt history.",
+      "score": 3
+    }
+  },
+  "backend": "openai",
+  "model": "gpt-4.1",
+  "rubric_id": "architecture",
+  "run_number": 2,
+  "scenario_id": "03-cold-pickup-stale-followup"
+}

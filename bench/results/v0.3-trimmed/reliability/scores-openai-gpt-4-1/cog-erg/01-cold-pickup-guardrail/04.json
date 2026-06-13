@@ -1,0 +1,25 @@
+{
+  "axes": {
+    "CE1": {
+      "justification": "The agent acted directly, surfacing the relevant guardrail and context without requiring the user to recall or restate anything.",
+      "score": 3
+    },
+    "CE2": {
+      "justification": "The response is mostly compact but includes some extended explanation and context that could have been more terse.",
+      "score": 2
+    },
+    "CE3": {
+      "justification": "Routing decisions are explained in-line, with clear references to where entries are logged and why.",
+      "score": 3
+    },
+    "CE4": {
+      "justification": "Each action is committed cleanly, and the user could interrupt at any point without orphaning work or losing context.",
+      "score": 3
+    }
+  },
+  "backend": "openai",
+  "model": "gpt-4.1",
+  "rubric_id": "cog-erg",
+  "run_number": 4,
+  "scenario_id": "01-cold-pickup-guardrail"
+}

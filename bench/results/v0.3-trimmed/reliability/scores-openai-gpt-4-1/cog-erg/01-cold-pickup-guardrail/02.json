@@ -1,0 +1,25 @@
+{
+  "axes": {
+    "CE1": {
+      "justification": "The agent acted directly, surfacing all relevant context without requiring the user to recall or restate anything.",
+      "score": 3
+    },
+    "CE2": {
+      "justification": "The response is terse, complete, and free of filler, preamble, or unnecessary summary.",
+      "score": 3
+    },
+    "CE3": {
+      "justification": "Routing decisions are explained in-line, with each file action and its rationale clearly and briefly stated.",
+      "score": 3
+    },
+    "CE4": {
+      "justification": "Each action is committed cleanly, so the user could interrupt at any point without orphaned or ambiguous state.",
+      "score": 3
+    }
+  },
+  "backend": "openai",
+  "model": "gpt-4.1",
+  "rubric_id": "cog-erg",
+  "run_number": 2,
+  "scenario_id": "01-cold-pickup-guardrail"
+}

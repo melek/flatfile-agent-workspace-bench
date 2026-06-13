@@ -1,0 +1,25 @@
+{
+  "axes": {
+    "AR1": {
+      "justification": "The polished and corrected ADR was routed to decisions.md, the methodology-designated file for durable commitments, with an explicit rationale and revision note.",
+      "score": 3
+    },
+    "AR2": {
+      "justification": "This was not a procedural runbook scenario, so artifact-binding does not apply.",
+      "score": "n/a"
+    },
+    "AR3": {
+      "justification": "Cross-references (e.g., revision note) are present and follow the workspace's conventions, ensuring anchor-stable and resolvable references.",
+      "score": 3
+    },
+    "AR4": {
+      "justification": "The action is idempotent and append-only, with provenance and revision notes ensuring forward compatibility and no risk of conflict on re-run.",
+      "score": 3
+    }
+  },
+  "backend": "openai",
+  "model": "gpt-4.1",
+  "rubric_id": "architecture",
+  "run_number": 2,
+  "scenario_id": "10-threat-planted-error-adr"
+}

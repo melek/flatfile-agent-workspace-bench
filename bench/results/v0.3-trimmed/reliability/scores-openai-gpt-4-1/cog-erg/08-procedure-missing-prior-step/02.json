@@ -1,0 +1,25 @@
+{
+  "axes": {
+    "CE1": {
+      "justification": "The agent acted directly, did not require the user to recall or restate anything, and surfaced the missing artifact itself.",
+      "score": 3
+    },
+    "CE2": {
+      "justification": "The response is mostly compact but includes some extra explanation and context beyond the immediate actions list.",
+      "score": 2
+    },
+    "CE3": {
+      "justification": "The agent clearly explained where outputs were written and why, referencing both the runbook's requirements and the file locations.",
+      "score": 3
+    },
+    "CE4": {
+      "justification": "The agent created both step 3 and step 4 artifacts in one go, so interrupting mid-flow could leave the first-draft factors.md in an ambiguous state.",
+      "score": 2
+    }
+  },
+  "backend": "openai",
+  "model": "gpt-4.1",
+  "rubric_id": "cog-erg",
+  "run_number": 2,
+  "scenario_id": "08-procedure-missing-prior-step"
+}

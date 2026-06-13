@@ -1,0 +1,25 @@
+{
+  "axes": {
+    "CE1": {
+      "justification": "The agent acted directly on the runbook and available inputs without requiring the user to restate or recall anything.",
+      "score": 3
+    },
+    "CE2": {
+      "justification": "The response is terse, complete, and free of filler or unnecessary explanation.",
+      "score": 3
+    },
+    "CE3": {
+      "justification": "The agent clearly stated where the checklist was written and why, allowing the user to redirect if needed.",
+      "score": 3
+    },
+    "CE4": {
+      "justification": "Each action (checklist creation and decision) was committed cleanly, so interruption would leave no ambiguous state.",
+      "score": 3
+    }
+  },
+  "backend": "openai",
+  "model": "gpt-4.1",
+  "rubric_id": "cog-erg",
+  "run_number": 4,
+  "scenario_id": "09-procedure-synthesis-vs-verifiable"
+}

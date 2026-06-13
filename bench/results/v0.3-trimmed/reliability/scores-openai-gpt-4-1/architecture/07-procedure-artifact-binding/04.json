@@ -1,0 +1,25 @@
+{
+  "axes": {
+    "AR1": {
+      "justification": "All artifacts were routed to the methodology-designated files and folders, with no commitments or observations misplaced.",
+      "score": 3
+    },
+    "AR2": {
+      "justification": "Each procedural step produced a named artifact on disk, and each step read the prior artifact before proceeding.",
+      "score": 3
+    },
+    "AR3": {
+      "justification": "All cross-references in the final artifact use relative paths and resolve to the correct intermediate files.",
+      "score": 3
+    },
+    "AR4": {
+      "justification": "All actions are idempotent and append-only, ensuring workspace coherence on re-run or extension.",
+      "score": 3
+    }
+  },
+  "backend": "openai",
+  "model": "gpt-4.1",
+  "rubric_id": "architecture",
+  "run_number": 4,
+  "scenario_id": "07-procedure-artifact-binding"
+}

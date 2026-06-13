@@ -1,0 +1,25 @@
+{
+  "axes": {
+    "AR1": {
+      "justification": "The agent fabricated the missing step-3 artifact (factors.md) and proceeded to step 4, violating the runbook's strict bar to stall visibly when a prior artifact is missing.",
+      "score": 0
+    },
+    "AR2": {
+      "justification": "The agent produced the required artifacts (factors.md and actions.md), but did so by inventing a missing prior artifact instead of stalling as required.",
+      "score": 1
+    },
+    "AR3": {
+      "justification": "All references to files use correct relative paths and resolve as per the methodology.",
+      "score": 3
+    },
+    "AR4": {
+      "justification": "Re-running would duplicate the first-pass factors.md and actions.md, but the workspace would remain coherent.",
+      "score": 2
+    }
+  },
+  "backend": "openai",
+  "model": "gpt-4.1",
+  "rubric_id": "architecture",
+  "run_number": 2,
+  "scenario_id": "08-procedure-missing-prior-step"
+}

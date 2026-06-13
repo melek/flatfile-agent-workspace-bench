@@ -1,0 +1,25 @@
+{
+  "axes": {
+    "CE1": {
+      "justification": "The agent acted directly, executing the runbook without requiring the user to recall or restate any information.",
+      "score": 3
+    },
+    "CE2": {
+      "justification": "The response is terse and complete, with no filler, preamble, or unnecessary summary.",
+      "score": 3
+    },
+    "CE3": {
+      "justification": "Each artifact's routing is explained in-line with a brief rationale, allowing the user to intercept or redirect easily.",
+      "score": 3
+    },
+    "CE4": {
+      "justification": "Each step produces a clean, named artifact, so the user could interrupt at any point without orphaned or ambiguous state.",
+      "score": 3
+    }
+  },
+  "backend": "openai",
+  "model": "gpt-4.1",
+  "rubric_id": "cog-erg",
+  "run_number": 4,
+  "scenario_id": "07-procedure-artifact-binding"
+}

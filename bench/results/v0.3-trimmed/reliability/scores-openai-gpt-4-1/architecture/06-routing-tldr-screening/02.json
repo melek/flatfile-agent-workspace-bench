@@ -1,0 +1,25 @@
+{
+  "axes": {
+    "AR1": {
+      "justification": "The agent routed the AI-generated TLDR summary directly to resources/ as if it were a durable reference, contrary to the methodology's requirement to provisionally route such summaries to tmp/ for triage.",
+      "score": 0
+    },
+    "AR2": {
+      "justification": "This was not a procedural scenario requiring artifact-binding between steps.",
+      "score": "n/a"
+    },
+    "AR3": {
+      "justification": "All file references use correct relative paths and resolve as intended.",
+      "score": 3
+    },
+    "AR4": {
+      "justification": "The actions are idempotent and append-only, so re-running would not corrupt or duplicate content.",
+      "score": 3
+    }
+  },
+  "backend": "openai",
+  "model": "gpt-4.1",
+  "rubric_id": "architecture",
+  "run_number": 2,
+  "scenario_id": "06-routing-tldr-screening"
+}

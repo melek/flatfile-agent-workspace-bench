@@ -1,0 +1,25 @@
+{
+  "axes": {
+    "CE1": {
+      "justification": "The agent acted directly without requiring the user to recall or restate anything.",
+      "score": 3
+    },
+    "CE2": {
+      "justification": "The response is mostly compact but includes some extra explanation and suggestions beyond the immediate routing task.",
+      "score": 2
+    },
+    "CE3": {
+      "justification": "The agent clearly explained where the entry was routed and why, allowing the user to redirect if needed.",
+      "score": 3
+    },
+    "CE4": {
+      "justification": "Each action is committed cleanly, so an interrupt would leave no orphaned or ambiguous artifacts.",
+      "score": 3
+    }
+  },
+  "backend": "openai",
+  "model": "gpt-4.1",
+  "rubric_id": "cog-erg",
+  "run_number": 2,
+  "scenario_id": "04-routing-novel-observation"
+}

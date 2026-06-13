@@ -1,0 +1,25 @@
+{
+  "axes": {
+    "CE1": {
+      "justification": "The agent acted directly, surfacing the relevant decision without requiring the user to recall or restate anything.",
+      "score": 3
+    },
+    "CE2": {
+      "justification": "The response is mostly compact but includes some extra context and options that stretch beyond a terse answer.",
+      "score": 2
+    },
+    "CE3": {
+      "justification": "The routing is explicit, citing the decision's location and status in one short clause.",
+      "score": 3
+    },
+    "CE4": {
+      "justification": "Each action (lookup, answer, daybook entry) is committed cleanly, leaving no ambiguous in-progress artifacts.",
+      "score": 3
+    }
+  },
+  "backend": "openai",
+  "model": "gpt-4.1",
+  "rubric_id": "cog-erg",
+  "run_number": 2,
+  "scenario_id": "02-cold-pickup-cross-day"
+}

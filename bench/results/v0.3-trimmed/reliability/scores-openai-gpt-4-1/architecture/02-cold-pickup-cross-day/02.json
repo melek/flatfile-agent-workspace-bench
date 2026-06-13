@@ -1,0 +1,25 @@
+{
+  "axes": {
+    "AR1": {
+      "justification": "The agent routed the session's actions and rationale into the daybook Log and Handoff, as prescribed for chronological working notes and forward guardrails.",
+      "score": 3
+    },
+    "AR2": {
+      "justification": "This was not a procedural runbook scenario, so artifact-binding does not apply.",
+      "score": "n/a"
+    },
+    "AR3": {
+      "justification": "The agent referenced the decision using the correct relative-path convention ('decisions.md \u2192 2026-04-15'), which resolves and is anchor-stable.",
+      "score": 3
+    },
+    "AR4": {
+      "justification": "All actions are append-only and idempotent; re-running would not overwrite or corrupt prior entries.",
+      "score": 3
+    }
+  },
+  "backend": "openai",
+  "model": "gpt-4.1",
+  "rubric_id": "architecture",
+  "run_number": 2,
+  "scenario_id": "02-cold-pickup-cross-day"
+}

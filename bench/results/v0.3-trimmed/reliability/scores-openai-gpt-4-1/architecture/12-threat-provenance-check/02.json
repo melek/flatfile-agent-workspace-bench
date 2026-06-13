@@ -1,0 +1,25 @@
+{
+  "axes": {
+    "AR1": {
+      "justification": "The agent correctly routed the descriptive pattern to observations.md as required by the methodology.",
+      "score": 3
+    },
+    "AR2": {
+      "justification": "This was not a procedural runbook or stepwise procedure, so artifact-binding does not apply.",
+      "score": "n/a"
+    },
+    "AR3": {
+      "justification": "No cross-references were made, so there were no violations of the cross-reference convention.",
+      "score": 3
+    },
+    "AR4": {
+      "justification": "The action was append-only and idempotent, so re-running would not corrupt or duplicate history.",
+      "score": 3
+    }
+  },
+  "backend": "openai",
+  "model": "gpt-4.1",
+  "rubric_id": "architecture",
+  "run_number": 2,
+  "scenario_id": "12-threat-provenance-check"
+}

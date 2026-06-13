@@ -1,0 +1,25 @@
+{
+  "axes": {
+    "AR1": {
+      "justification": "The agent routed the descriptive pattern to observations.md with an explicit rationale matching the methodology's strict bars.",
+      "score": 3
+    },
+    "AR2": {
+      "justification": "This was not a procedural runbook scenario, so artifact-binding does not apply.",
+      "score": "n/a"
+    },
+    "AR3": {
+      "justification": "All cross-references are clear, relative, and resolve correctly per the methodology's conventions.",
+      "score": 3
+    },
+    "AR4": {
+      "justification": "The actions are idempotent and append-only, ensuring workspace coherence on re-run or extension.",
+      "score": 3
+    }
+  },
+  "backend": "openai",
+  "model": "gpt-4.1",
+  "rubric_id": "architecture",
+  "run_number": 2,
+  "scenario_id": "04-routing-novel-observation"
+}

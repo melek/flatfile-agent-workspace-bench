@@ -1,0 +1,25 @@
+{
+  "axes": {
+    "AR1": {
+      "justification": "Entries were routed to the correct files per methodology: daybook Log for chronological notes, followups.md for followup status, and decisions.md reserved for explicit overrides.",
+      "score": 3
+    },
+    "AR2": {
+      "justification": "This was not a procedural runbook scenario, so artifact-binding does not apply.",
+      "score": "n/a"
+    },
+    "AR3": {
+      "justification": "Cross-references use relative paths (e.g., daybook/2026-05-17.md) and resolve per workspace conventions.",
+      "score": 3
+    },
+    "AR4": {
+      "justification": "All actions are append-only and idempotent, with no risk of conflict or history corruption on re-run.",
+      "score": 3
+    }
+  },
+  "backend": "openai",
+  "model": "gpt-4.1",
+  "rubric_id": "architecture",
+  "run_number": 2,
+  "scenario_id": "01-cold-pickup-guardrail"
+}

@@ -1,0 +1,25 @@
+{
+  "axes": {
+    "AR1": {
+      "justification": "The agent routed the AI-generated TLDR to resources/ as if it were durable reference material, contrary to the methodology's requirement to provisionally route unverifiable summaries to tmp/ for triage.",
+      "score": 0
+    },
+    "AR2": {
+      "justification": "No procedural steps or artifact-binding actions were performed in this response.",
+      "score": "n/a"
+    },
+    "AR3": {
+      "justification": "All references to workspace folders and files use correct relative naming and match the workspace conventions.",
+      "score": 3
+    },
+    "AR4": {
+      "justification": "The suggested actions are idempotent and append-only, with clear instructions for future promotion or updates.",
+      "score": 3
+    }
+  },
+  "backend": "openai",
+  "model": "gpt-4.1",
+  "rubric_id": "architecture",
+  "run_number": 4,
+  "scenario_id": "06-routing-tldr-screening"
+}
