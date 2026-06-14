@@ -623,10 +623,34 @@ def cmd_aggregate(args: argparse.Namespace) -> int:
         }
     )
 
+    metas = {r: sio.rubric_meta(r) for r in rubrics}
+    # Binary/ordinal split applies only to content-epoch tags. A legacy frozen
+    # tag was scored as ordinal under older rubric files; treating its axes as
+    # binary now (because today's rubric files say so) would silently rewrite
+    # its aggregation. Gate on the manifest epoch.
+    _mpre_path = sio.version_dir(version) / "manifest.json"
+    _mpre = sio.read_json(_mpre_path) if _mpre_path.exists() else {}
+    content_epoch = _mpre.get("content_schema") is not None
+
+    def _is_binary(rubric_id: str, axis: str) -> bool:
+        m = metas.get(rubric_id)
+        return content_epoch and bool(m and m.is_binary(axis))
+
     # Per-rubric CSVs.
     rows_by_rubric: dict[str, list[dict]] = {r: [] for r in rubrics}
-    # axis_means[(scenario, axis)][rubric] = list of scores
+    # Ordinal axis scores only: axis_scores[(scenario, axis)][rubric] = [ints]
     axis_scores: dict[tuple[str, str], dict[str, list[int]]] = {}
+    # Binary axis tallies: binary_tally[(rubric, axis)] = {pass,fail,na}
+    binary_tally: dict[tuple[str, str], dict[str, int]] = {}
+
+    def _tally_binary(rubric_id: str, axis: str, score) -> None:
+        t = binary_tally.setdefault((rubric_id, axis), {"pass": 0, "fail": 0, "na": 0})
+        if score in ("pass", True, 1):
+            t["pass"] += 1
+        elif score in ("fail", False, 0):
+            t["fail"] += 1
+        elif score == "n/a" or score is None:
+            t["na"] += 1
 
     for rubric_id in rubrics:
         for scenario_id in scenario_ids:
@@ -644,14 +668,33 @@ def cmd_aggregate(args: argparse.Namespace) -> int:
                             "scenario_id": scenario_id,
                             "run_number": run_number,
                             "axis": axis_name,
+                            "axis_kind": "binary" if _is_binary(rubric_id, axis_name) else "ordinal",
                             "score": score,
                             "justification": justification,
                         }
                     )
+                    if _is_binary(rubric_id, axis_name):
+                        _tally_binary(rubric_id, axis_name, score)
+                        continue
+                    # Ordinal: bool is a subclass of int — exclude it explicitly,
+                    # or a stray True/False would be averaged as 1/0.
+                    is_int = isinstance(score, int) and not isinstance(score, bool)
                     key = (scenario_id, axis_name)
                     axis_scores.setdefault(key, {}).setdefault(
                         rubric_id, []
-                    ).append(score if isinstance(score, int) else None)
+                    ).append(score if is_int else None)
+
+    # Deterministic binary axes live in the separate checks/ namespace.
+    checks_root = sio.version_dir(version) / "checks"
+    if checks_root.exists():
+        for rubric_id in rubrics:
+            for scenario_id in scenario_ids:
+                for run_number in range(1, args.n_runs + 1):
+                    cp = checks_root / rubric_id / scenario_id / f"{run_number:02d}.json"
+                    if not cp.exists():
+                        continue
+                    for axis_name, ap in sio.read_json(cp).get("axes", {}).items():
+                        _tally_binary(rubric_id, axis_name, ap.get("score"))
 
     scores_dir = sio.version_dir(version) / "scores"
     scores_dir.mkdir(parents=True, exist_ok=True)
@@ -660,7 +703,49 @@ def cmd_aggregate(args: argparse.Namespace) -> int:
         sio.write_csv(
             out,
             rows,
-            fieldnames=["scenario_id", "run_number", "axis", "score", "justification"],
+            fieldnames=["scenario_id", "run_number", "axis", "axis_kind", "score", "justification"],
+        )
+
+    # Binary-axis rates (pass-rate with n/a excluded from the denominator, plus
+    # the n/a-rate and a ceiling/floor flag). Never averaged with ordinal means.
+    if binary_tally:
+        brows = []
+        rate_lines = [
+            "# Binary-axis rates",
+            "",
+            f"Workspace version: `{version}` — generated {_now()}",
+            "",
+            "Pass-rate = pass / (pass + fail); n/a is excluded from the "
+            "denominator and reported separately (n/a is missing-not-at-random). "
+            "Ceiling/floor: a rate ≥0.90 or ≤0.10 has low discriminating power — "
+            "read with the base rate, do not headline a ceilinged axis.",
+            "",
+            "| Rubric | Axis | pass | fail | n/a | pass-rate | n/a-rate | flag |",
+            "|---|---|---|---|---|---|---|---|",
+        ]
+        for (rubric_id, axis) in sorted(binary_tally):
+            t = binary_tally[(rubric_id, axis)]
+            denom = t["pass"] + t["fail"]
+            total = denom + t["na"]
+            rate = (t["pass"] / denom) if denom else None
+            na_rate = (t["na"] / total) if total else 0.0
+            flag = ""
+            if rate is not None and (rate >= 0.90 or rate <= 0.10):
+                flag = "ceiling/floor"
+            rate_s = f"{rate:.2f}" if rate is not None else "—"
+            rate_lines.append(
+                f"| {rubric_id} | {axis} | {t['pass']} | {t['fail']} | {t['na']} | "
+                f"{rate_s} | {na_rate:.2f} | {flag} |"
+            )
+            brows.append({
+                "rubric_id": rubric_id, "axis": axis,
+                "pass": t["pass"], "fail": t["fail"], "na": t["na"],
+                "pass_rate": rate_s, "na_rate": f"{na_rate:.2f}", "flag": flag,
+            })
+        (sio.version_dir(version) / "binary-rates.md").write_text("\n".join(rate_lines) + "\n")
+        sio.write_csv(
+            sio.version_dir(version) / "binary-rates.csv", brows,
+            fieldnames=["rubric_id", "axis", "pass", "fail", "na", "pass_rate", "na_rate", "flag"],
         )
 
     # Per-scenario per-rubric mean (averaged across that rubric's axes for the
@@ -778,6 +863,15 @@ def cmd_aggregate(args: argparse.Namespace) -> int:
     manifest["n_runs_planned"] = args.n_runs
     manifest["scenarios_count"] = len(scenario_ids)
     manifest["rubrics"] = rubrics
+    # Stamp rubric versions as a postcondition of aggregate (not an opt-in
+    # validate flag), so the compare version-gate cannot be bypassed by
+    # skipping a step. Only for content-epoch tags: a legacy frozen tag was
+    # scored under older rubric files, so re-aggregating it must NOT stamp
+    # today's versions onto it.
+    if manifest.get("content_schema") is not None and "rubric_versions" not in manifest:
+        manifest["rubric_versions"] = {
+            r: (metas[r].rubric_version if metas[r] else "unversioned") for r in rubrics
+        }
     sio.write_json(manifest_path, manifest)
 
     print(
@@ -1449,6 +1543,13 @@ def cmd_reliability(args: argparse.Namespace) -> int:
         print(f"rater dir not found: {rater_dir}")
         return 1
 
+    # Binary axes are excluded from ordinal alpha only for content-epoch tags;
+    # a legacy tag scored everything ordinal and its committed report must
+    # reproduce.
+    _mpath = sio.version_dir(version) / "manifest.json"
+    _m = sio.read_json(_mpath) if _mpath.exists() else {}
+    rel_content_epoch = _m.get("content_schema") is not None
+
     per_rubric_pairs: dict[str, list[tuple[int, int]]] = {r: [] for r in rubrics}
     per_axis: dict[tuple[str, str], dict] = {}
     na_disagreements: list[str] = []
@@ -1484,8 +1585,17 @@ def cmd_reliability(args: argparse.Namespace) -> int:
 
         o_map, n_map = canon_map(orig_axes), canon_map(new_axes)
         for axis in meta.axes:
+            # Ordinal Krippendorff's alpha is meaningless over binary pass/fail
+            # axes; exclude them (their agreement is reported as raw percent in
+            # the binary-rates path, not pooled into alpha). Content-epoch only,
+            # so legacy reports reproduce.
+            if rel_content_epoch and meta.is_binary(axis):
+                continue
             o, n_ = o_map.get(axis), n_map.get(axis)
-            o_int, n_int = isinstance(o, int), isinstance(n_, int)
+            o_int, n_int = (
+                isinstance(o, int) and not isinstance(o, bool),
+                isinstance(n_, int) and not isinstance(n_, bool),
+            )
             stats = per_axis.setdefault(
                 (rubric_id, axis),
                 {"n": 0, "exact": 0, "within1": 0, "na_mismatch": 0},
