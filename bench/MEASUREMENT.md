@@ -27,6 +27,23 @@ names this first.
 `control2-verbal-spec` stays **exploratory** (a files-vs-prose mechanism probe),
 off the headline.
 
+The load-bearing contrast is **full template vs `control3-bare-scaffold` on the
+deterministic axes** (next section): bare-scaffold isolates the one thing the
+methodology actually sells — its *content/depth* — from the mere existence of
+folders. `control1-blank` answers the weaker, near-foregone "does any structure
+help." For `control3` to discriminate, its bare `AGENTS.md` must encode **no**
+cross-reference or authorship conventions, or AR3/SA2 will not deterministically
+fail on it and the contrast is lost — verify this before the run.
+
+**Token-mass confound (disclose it).** The full template floods the context with
+far more text than the bare scaffold, so a reviewer's null is "more words/longer
+instructions helped, not better methodology." Length-match `control3` as far as
+practical, and **record per-arm token mass in the manifest** so the delta is on
+the table. Where volume cannot be matched, scope the claim to "methodology
+as-shipped vs minimal scaffold" and concede volume is partially confounded with
+depth. `control2-verbal-spec` is the cleanest exploratory lever against this —
+report it, keep it off the headline.
+
 **Break the model confound by pinning, not pairing.** Every arm runs at *one*
 pinned simulator model, recorded in each transcript's required `model` field;
 `validate` hard-fails if `model` is missing or varies within the comparison set.
@@ -45,22 +62,27 @@ it, do not cite it as a control result. Supersede it with a pinned run.
 
 ## 2. Statistics licensed at this scale
 
-- **Unit of analysis is the scenario.** There are 12 fixed scenarios → **11
-  degrees of freedom**, regardless of how many runs stack inside each. Runs
-  (N=5) are *within-scenario replicates*: they shrink the per-scenario standard
-  error, they do **not** add df for any across-scenario claim.
-- **Report each arm as 12 per-scenario means** (each with its run-level SE),
+- **Unit of analysis is the scenario.** There are **10 active scenarios**
+  (03 and 05 retired 2026-06) → **9 degrees of freedom**, regardless of how
+  many runs stack inside each. Runs (N=5) are *within-scenario replicates*:
+  they shrink the per-scenario standard error, they do **not** add df for any
+  across-scenario claim.
+- **Report each arm as 10 per-scenario means** (each with its run-level SE),
   then the **paired** delta (full-template − control) with a **between-scenario**
   confidence interval — propagate the within-scenario run variance into the
-  per-scenario mean; never pool the 60 runs as if independent (per Anthropic
+  per-scenario mean; never pool the 50 runs as if independent (per Anthropic
   "Adding Error Bars to Evals", arXiv 2411.00640).
-- **If testing at all, use a paired test across the 12 scenarios** (Wilcoxon
-  signed-rank — honest for bounded/ordinal data; n=12 gives minimal but nonzero
-  power). No significance language otherwise; "direction signal" is the register.
-- **Multiplicity:** 12 axes × arms is a multiple-comparison surface. Pre-register
-  the axis dispositions (the #6 front-matter does this) and report **all** axes,
-  every arm — no cherry-picking "6 of 12 scenarios show X." If ever testing,
-  control FDR across the axis family.
+- **Effect sizes and CIs, not significance.** At 9 df a paired test (Wilcoxon
+  signed-rank) has trivial power; do **not** build or lean on it. Report the
+  per-scenario means and the paired delta with a between-scenario CI; "direction
+  signal" is the register. A signed-rank test pre-declared as underpowered is
+  ceremony — add it only if a reviewer demands it.
+- **Multiplicity:** the axis × arm grid is a multiple-comparison surface. The
+  control here is "report **all** axes, every arm, no cherry-picking" — which is
+  free — not FDR machinery. **Pre-register the headline-bearing axis set (the
+  deterministic AR3/AR4/SA2) in a tagged commit BEFORE the run**, so "we
+  predicted these three carry the claim" is distinguishable from "we found three
+  that moved."
 - **Binary axes:** report the **base rate** per axis; a pass-rate ≥0.90 or ≤0.10
   is at ceiling/floor and has near-zero discriminating power (a reliable axis can
   still be uninformative). `aggregate` emits these flags in `binary-rates.md`.
@@ -68,12 +90,39 @@ it, do not cite it as a control result. Supersede it with a pinned run.
   ceiling — a blank control should fail SA2/AR3/AR4 deterministically, which is
   where those checks earn their keep.
 
-## 3. Faithfulness and blinding (already enforced by the instrument)
+## 3. The headline rule (pre-registered)
 
-- **Score artifacts, not self-report.** Raters receive the runner-emitted diff;
-  `content_summary` is non-authoritative. The diff is reconstructed from the
-  transcript and **hash-verified** against the recorded `sha256` — a self-report
-  inconsistent with its own hash is flagged, not scored.
+**The headline is the three deterministic, code-checked, family-robust axes —
+AR3, AR4, SA2 — reported as full-template-minus-control pass-rate deltas with
+between-scenario CIs.** Nothing else. The 8 ordinal axes are graded by a
+same-family rater (the system that authors the template's idiom also judges it),
+so they are a *disclosed appendix*, never the headline. The strongest claim the
+instrument licenses is: "the methodology produces measurably more
+artifact-grounded behavior (provenance markers, resolved cross-references,
+append-only discipline) than a no-/bare-framework workspace, across the active
+scenarios, as a direction signal." Not *better*, not a magnitude/percentage, not
+generalization beyond the pinned Claude-family agent, not the safety rubric's
+ordinal verdict (alpha 0.639, below threshold under every judge), not SA1
+(42–58% exact — known-unstable). Fence those off as limitations, not quietly.
+
+## 4. Template of record
+
+Stage the **v0.3-trimmed-lineage surface**, not the longitudinal one. The
+`build_template.py` default derives from the longitudinal working copy, which
+reintroduces `followups.md` and the `weekly-review` runbook — the exact affordance
+that got scenario 03 *retired for task-invalidity*. Staging it would put a surface
+on disk that no active scenario tests, and risk re-validating behavior the active
+set was re-scoped around. Regenerate the template stripping those (or document
+explicitly why they stay and confirm no active scenario's score depends on them),
+and **pin the resulting SHA in the manifest** before any run. "Undecided template
+of record" is itself a publication blocker.
+
+## 5. Faithfulness and blinding (already enforced by the instrument)
+
+- **Score artifacts, not self-report.** The runner derives the actions from the
+  real files the simulator wrote (`snapshot`) and emits a diff; the simulator
+  authors no content or hashes. Raters receive the diff; deterministic checks
+  read it directly.
 - **No answer-key leakage.** Raters get `scenario-public.md` (factual framing),
   never `scenario.md`/`expected-signals.md`. Deterministic checks get the diff
   only. The simulator is blinded to both.
@@ -83,7 +132,7 @@ it, do not cite it as a control result. Supersede it with a pinned run.
   cross-family rater on the ordinal axes is a robustness check (a different bias,
   not bias-free — see the cross-rater synthesis).
 
-## 4. Legacy corpus (v0.1–v0.3)
+## 6. Legacy corpus (v0.1–v0.3)
 
 These were scored **before** artifact-grounding: ordinal axes under rubric
 version 1, raters reading the answer key, scores from `content_summary` rather
