@@ -352,6 +352,93 @@ def _unified_diff(seed: dict[str, str], post: dict[str, str]) -> str:
     return "".join(lines)
 
 
+def _derive_actions(seed: dict[str, str], staged: dict[str, str]) -> list[dict]:
+    """Derive the content-epoch actions list from seed vs staged end-state.
+
+    append-vs-rewrite is exact (not heuristic): a changed pre-existing file
+    whose seed content is a prefix of the staged content was appended to;
+    otherwise it was rewritten. This is also exactly what AR4 needs. Only the
+    end-state is captured (intermediate history collapses), which is all the
+    deterministic checks and the diff require.
+    """
+    actions: list[dict] = []
+    for rel in sorted(set(seed) | set(staged)):
+        s, t = seed.get(rel), staged.get(rel)
+        if t is None:
+            actions.append({"path": rel, "action": "delete"})
+        elif s is None:
+            actions.append({"path": rel, "action": "create", "content": t, "sha256": _sha256_text(t)})
+        elif s == t:
+            continue
+        elif t.startswith(s):
+            actions.append({"path": rel, "action": "append", "content": t[len(s):], "sha256": _sha256_text(t)})
+        else:
+            actions.append({"path": rel, "action": "rewrite", "content": t, "sha256": _sha256_text(t)})
+    return actions
+
+
+def cmd_snapshot(args: argparse.Namespace) -> int:
+    """Derive a run's actions (path/verb/content/sha256) from its staged
+    workspace, so the simulator only has to *write real files* — not
+    self-report content or compute hashes.
+
+    Reads the staged workspace at runs/<scenario>/<n>-workspace/, diffs it
+    against a freshly-built seed, writes the derived actions back into the run
+    transcript, and self-checks by replaying them onto the seed.
+    """
+    version, scenario_id, run_number = args.version, args.scenario, args.run_number
+    run_p = sio.run_path(version, scenario_id, run_number)
+    if not run_p.exists():
+        print(f"ERROR: run file not found: {run_p.relative_to(sio.REPO_ROOT)}", file=sys.stderr)
+        return 2
+    run = sio.read_json(run_p)
+    staged_dir = sio.workspace_path(version, scenario_id, run_number)
+    if not staged_dir.exists():
+        print(
+            f"ERROR: staged workspace not found at "
+            f"{staged_dir.relative_to(sio.REPO_ROOT)} — run `stage` and the "
+            "simulation before `snapshot`.",
+            file=sys.stderr,
+        )
+        return 2
+    scenarios = {s.id: s for s in sio.list_scenarios()}
+    if scenario_id not in scenarios:
+        print(f"ERROR: scenario {scenario_id} not found", file=sys.stderr)
+        return 2
+    scn = scenarios[scenario_id]
+    variant = run.get("variant")
+
+    with tempfile.TemporaryDirectory() as td:
+        seed_dir = Path(td) / "ws"
+        try:
+            _build_seed_workspace(scn, variant, seed_dir)
+        except StagingError as exc:
+            print(f"ERROR: {exc}", file=sys.stderr)
+            return 2
+        seed_snap = _snapshot(seed_dir)
+        staged_snap = _snapshot(staged_dir)
+        actions = _derive_actions(seed_snap, staged_snap)
+        # Self-check: replaying the derived actions onto the seed must
+        # reproduce the staged end-state exactly.
+        try:
+            _replay_actions(seed_dir, actions)
+        except ReplayError as exc:
+            print(f"ERROR: derived actions failed self-replay: {exc}", file=sys.stderr)
+            return 2
+        if _snapshot(seed_dir) != staged_snap:
+            print("ERROR: derived actions do not reproduce the staged workspace", file=sys.stderr)
+            return 2
+
+    run["actions"] = actions
+    sio.write_json(run_p, run)
+    print(
+        f"Snapshot {version}/{scenario_id}/{run_number:02d}: derived "
+        f"{len(actions)} action(s) from the staged workspace -> "
+        f"{run_p.relative_to(sio.REPO_ROOT)}"
+    )
+    return 0
+
+
 def cmd_diff(args: argparse.Namespace) -> int:
     """Reconstruct a run's post-workspace and write a seed->post diff.
 
@@ -1779,6 +1866,14 @@ def main(argv: list[str] | None = None) -> int:
         help="Use a control variant instead of the full template",
     )
     p_stage.set_defaults(func=cmd_stage)
+
+    p_snap = sub.add_parser(
+        "snapshot", help="derive a run's actions from its staged workspace"
+    )
+    p_snap.add_argument("version")
+    p_snap.add_argument("scenario")
+    p_snap.add_argument("run_number", type=int)
+    p_snap.set_defaults(func=cmd_snapshot)
 
     p_diff = sub.add_parser(
         "diff", help="reconstruct a run's post-workspace; write seed->post diff"

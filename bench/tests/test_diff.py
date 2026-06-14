@@ -101,6 +101,42 @@ class TestPlantedMarkerMismatch(unittest.TestCase):
             self.assertNotIn("**Generated-by:**", text)
 
 
+class TestDeriveActions(unittest.TestCase):
+    """snapshot derives the actions list from seed vs staged end-state.
+    append-vs-rewrite is exact via the prefix test."""
+
+    def test_create_append_rewrite_delete_nochange(self):
+        seed = {
+            "decisions.md": "# Decisions\n",       # will be appended
+            "observations.md": "# Obs\nold\n",     # will be rewritten (not a prefix)
+            "followups.md": "gone\n",              # will be deleted
+            "keep.md": "same\n",                   # unchanged -> no action
+        }
+        staged = {
+            "decisions.md": "# Decisions\n## new entry\n",
+            "observations.md": "# Obs\nTOTALLY NEW\n",
+            "keep.md": "same\n",
+            "daybook/d.md": "fresh\n",             # created
+        }
+        actions = {a["path"]: a for a in runner._derive_actions(seed, staged)}
+        self.assertEqual(actions["decisions.md"]["action"], "append")
+        self.assertEqual(actions["decisions.md"]["content"], "## new entry\n")
+        self.assertEqual(actions["observations.md"]["action"], "rewrite")
+        self.assertEqual(actions["followups.md"]["action"], "delete")
+        self.assertEqual(actions["daybook/d.md"]["action"], "create")
+        self.assertNotIn("keep.md", actions)
+
+    def test_derived_actions_replay_back_to_staged(self):
+        seed = {"a.md": "x\n"}
+        staged = {"a.md": "x\nmore\n", "b.md": "new\n"}
+        actions = runner._derive_actions(seed, staged)
+        with tempfile.TemporaryDirectory() as td:
+            root = Path(td)
+            (root / "a.md").write_text("x\n")
+            runner._replay_actions(root, actions)
+            self.assertEqual(runner._snapshot(root), staged)
+
+
 class TestDiffStability(unittest.TestCase):
     def test_diff_is_deterministic_and_shows_changes(self):
         seed = {"a.md": "one\ntwo\n", "keep.md": "same\n"}

@@ -40,6 +40,20 @@ Read `jobs.jsonl`. For each pending job, dispatch a subagent with the **user pro
 
 **Anti-pattern (refuse if reached for):** Do *not* dispatch the simulator agents with elaborate roleplay framing (no "act as an expert in...", no panels, no personas). The point is to test what the workspace produces in a generic agent, not to fish for the highest possible result through prompt engineering. The simulator prompt is essentially: "Operate the workspace at this path as you would for a user. Here is the user's prompt. Produce the response and write any file changes."
 
+### Step 2b — Snapshot + checks (deterministic, no inference)
+
+After each simulation, derive the artifact record and the code-checked axes:
+
+```bash
+python bench/runner.py snapshot <tag> <scenario> <n>   # derive actions from the staged workspace
+python bench/runner.py diff     <tag> <scenario> <n>   # seed->post diff (rater input)
+python bench/runner.py check    <tag> <scenario> <n>   # AR3/AR4/SA2 -> checks/ (no rater)
+```
+
+`snapshot` reads the real files the simulator wrote and fills the transcript's
+`actions` (so the simulator never self-reports content/hashes). `check` writes
+the deterministic axes to `checks/` — these are **not** dispatched to raters.
+
 ### Step 3 — Build the scoring plan
 
 ```bash
@@ -96,35 +110,23 @@ files in {WORKSPACE_PATH}. Do not write outside it.
 Step 3. When you are done, write a JSON transcript to:
   {RUN_OUTPUT}
 
-The transcript must be a single JSON object with these fields:
+The transcript is a single JSON object with these fields:
   scenario_id, run_number, workspace_tag,
   model (the exact model id you ran as — required; the analysis pins on it),
   variant (the staged base: null for the full template, or the control
     variant name e.g. "control3-bare-scaffold"),
   started_at, completed_at,
   final_response (the message you would have sent the user),
-  actions (list of write operations — see schema and semantics below),
   notes (any flags the orchestrator should see; empty list if none).
 
-Each action is an object:
-  {path, action, content, sha256, content_summary}
-  - path: workspace-relative (no leading "/", no ".." traversal).
-  - action: one of "create", "append", "rewrite", "delete".
-  - content: for "create"/"rewrite", the FULL post-write file text; for
-    "append", ONLY the appended fragment; omit for "delete".
-  - sha256: hex sha256 of the file as it stands on disk AFTER this action
-    (omit for "delete"). This is what lets the runner verify a reconstructed
-    diff against what was actually written, rather than trusting the prose.
-  - content_summary: a short paraphrase (intent context only — NOT
-    authoritative for what was written; scoring reads the artifact diff).
-
-Action semantics are a hard contract (the runner replays them to reconstruct
-the post-run workspace, and scores against that):
-  - List order is apply order. Do not reorder.
-  - "create" makes parent directories as needed; "append"/"delete" target a
-    path that already exists (in the seed or from an earlier action).
-  - "delete" unlinks an existing path; deleting a non-existent path is an error.
-  - Paths must be relative and must not escape the workspace.
+You do NOT author an `actions` list, file content, or hashes. The benchmark
+reads the **real files you wrote** in {WORKSPACE_PATH}: after the simulation,
+the orchestrator runs `runner.py snapshot <tag> <scenario> <n>`, which diffs
+the staged workspace against a fresh seed and derives the authoritative
+`actions` (path, verb, content, sha256) deterministically — append vs rewrite
+is recovered exactly by a prefix test. Your only obligation is to write the
+right files in the right places; scoring is grounded in those artifacts, not
+in any self-description.
 
 Important constraints:
 - Operate as a generic agent reading AGENTS.md. Do NOT roleplay as a
