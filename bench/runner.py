@@ -259,6 +259,164 @@ def cmd_stage(args: argparse.Namespace) -> int:
     return 0
 
 
+# --------------------------------------------------------------------------- #
+# Artifact diff (#5): reconstruct the post-run workspace and diff vs seed.     #
+# --------------------------------------------------------------------------- #
+
+def _sha256_text(text: str) -> str:
+    return hashlib.sha256(text.encode("utf-8")).hexdigest()
+
+
+def _snapshot(root: Path) -> dict[str, str]:
+    """Map relpath -> text for every file under root. Binary files (none
+    expected in a flat-file workspace) are recorded as a sentinel."""
+    snap: dict[str, str] = {}
+    for p in sorted(root.rglob("*")):
+        if not p.is_file():
+            continue
+        rel = str(p.relative_to(root))
+        try:
+            snap[rel] = p.read_text(encoding="utf-8")
+        except UnicodeDecodeError:
+            snap[rel] = "\0<binary>"
+    return snap
+
+
+class ReplayError(Exception):
+    """An action could not be applied to the reconstructed workspace."""
+
+
+def _replay_actions(root: Path, actions: list[dict]) -> list[str]:
+    """Apply transcript actions to `root` in list order (= apply order).
+
+    Returns a list of hash-mismatch / fidelity warnings (empty = clean).
+    Raises ReplayError on a contract violation (bad path, delete-missing, …).
+    """
+    issues: list[str] = []
+    for i, action in enumerate(actions):
+        verb = action.get("action")
+        rel = action.get("path", "")
+        if not rel or rel.startswith("/") or ".." in Path(rel).parts:
+            raise ReplayError(f"action[{i}]: path {rel!r} must be relative, non-traversing")
+        target = root / rel
+        if verb == "create" or verb == "rewrite":
+            content = action.get("content")
+            if content is None:
+                raise ReplayError(f"action[{i}] ({verb} {rel}): missing content")
+            target.parent.mkdir(parents=True, exist_ok=True)
+            target.write_text(content, encoding="utf-8")
+        elif verb == "append":
+            content = action.get("content")
+            if content is None:
+                raise ReplayError(f"action[{i}] (append {rel}): missing content")
+            if not target.exists():
+                raise ReplayError(f"action[{i}] (append {rel}): target does not exist")
+            with target.open("a", encoding="utf-8") as fh:
+                fh.write(content)
+        elif verb == "delete":
+            if not target.exists():
+                raise ReplayError(f"action[{i}] (delete {rel}): target does not exist")
+            target.unlink()
+            continue  # nothing to hash-verify
+        else:
+            raise ReplayError(f"action[{i}]: bad verb {verb!r}")
+        # Verify the recorded post-action hash against what we just wrote.
+        recorded = action.get("sha256")
+        if recorded:
+            actual = _sha256_text(target.read_text(encoding="utf-8"))
+            if actual != recorded:
+                issues.append(
+                    f"action[{i}] ({verb} {rel}): sha256 mismatch — recorded "
+                    f"{recorded[:12]}…, replayed {actual[:12]}… (content self-report "
+                    "does not match its own hash)"
+                )
+    return issues
+
+
+def _unified_diff(seed: dict[str, str], post: dict[str, str]) -> str:
+    """Stable unified diff over two relpath->text snapshots."""
+    import difflib
+
+    lines: list[str] = []
+    for rel in sorted(set(seed) | set(post)):
+        a = seed.get(rel, "").splitlines(keepends=True)
+        b = post.get(rel, "").splitlines(keepends=True)
+        if a == b:
+            continue
+        # No mtimes/dates -> reproducible across runs and machines.
+        diff = difflib.unified_diff(a, b, fromfile=f"a/{rel}", tofile=f"b/{rel}", n=3)
+        chunk = "".join(diff)
+        if chunk and not chunk.endswith("\n"):
+            chunk += "\n"
+        lines.append(chunk)
+    return "".join(lines)
+
+
+def cmd_diff(args: argparse.Namespace) -> int:
+    """Reconstruct a run's post-workspace and write a seed->post diff.
+
+    Zero inference. Skips (exit 0) for legacy tags whose manifest predates the
+    content schema — the frozen v0.1-v0.3 transcripts carry no `content`, so a
+    real artifact diff cannot be reconstructed and must not be faked.
+    """
+    version, scenario_id, run_number = args.version, args.scenario, args.run_number
+
+    manifest_path = sio.version_dir(version) / "manifest.json"
+    manifest = sio.read_json(manifest_path) if manifest_path.exists() else {}
+    if manifest.get("content_schema") is None:
+        print(
+            f"skip: {version} predates the content schema (manifest has no "
+            "'content_schema'); transcripts carry no file content, so an "
+            "artifact diff cannot be reconstructed. Frozen tags are untouched."
+        )
+        return 0
+
+    run_p = sio.run_path(version, scenario_id, run_number)
+    if not run_p.exists():
+        print(f"ERROR: run file not found: {run_p.relative_to(sio.REPO_ROOT)}", file=sys.stderr)
+        return 2
+    run = sio.read_json(run_p)
+
+    scenarios = {s.id: s for s in sio.list_scenarios()}
+    if scenario_id not in scenarios:
+        print(f"ERROR: scenario {scenario_id} not found", file=sys.stderr)
+        return 2
+    scn = scenarios[scenario_id]
+    variant = run.get("variant")
+
+    with tempfile.TemporaryDirectory() as td:
+        seed_dir = Path(td) / "ws"
+        try:
+            _build_seed_workspace(scn, variant, seed_dir)
+        except StagingError as exc:
+            print(f"ERROR: {exc}", file=sys.stderr)
+            return 2
+        seed_snap = _snapshot(seed_dir)
+        try:
+            issues = _replay_actions(seed_dir, run.get("actions", []))
+        except ReplayError as exc:
+            print(f"ERROR: replay failed: {exc}", file=sys.stderr)
+            return 2
+        post_snap = _snapshot(seed_dir)
+
+    diff_text = _unified_diff(seed_snap, post_snap)
+    header = [
+        f"# Workspace diff — {version} / {scenario_id} / run {run_number:02d}",
+        f"# variant: {variant!r}  model: {run.get('model')!r}",
+    ]
+    if issues:
+        header.append("# UNVERIFIED — hash mismatches (self-report inconsistent):")
+        header += [f"#   {m}" for m in issues]
+    out = run_p.with_suffix(".diff")
+    out.write_text("\n".join(header) + "\n" + diff_text)
+    rel_out = out.relative_to(sio.REPO_ROOT)
+    if issues:
+        print(f"Diff written WITH {len(issues)} hash mismatch(es): {rel_out}")
+        return 1
+    print(f"Diff written: {rel_out}")
+    return 0
+
+
 def cmd_aggregate(args: argparse.Namespace) -> int:
     """Aggregate per-run score files into CSVs and the disagreement matrix."""
     version = args.version
@@ -1303,6 +1461,14 @@ def main(argv: list[str] | None = None) -> int:
         help="Use a control variant instead of the full template",
     )
     p_stage.set_defaults(func=cmd_stage)
+
+    p_diff = sub.add_parser(
+        "diff", help="reconstruct a run's post-workspace; write seed->post diff"
+    )
+    p_diff.add_argument("version")
+    p_diff.add_argument("scenario")
+    p_diff.add_argument("run_number", type=int)
+    p_diff.set_defaults(func=cmd_diff)
 
     p_agg = sub.add_parser("aggregate", help="aggregate scores into CSVs and matrix")
     p_agg.add_argument("--version", required=True)
