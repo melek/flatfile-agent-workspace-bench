@@ -30,7 +30,15 @@ class Scenario:
 
     @property
     def brief(self) -> Path:
+        """Full design note (answer key). Raters must NOT receive this; use
+        `public_brief`. Retained for tooling that derives the public brief."""
         return self.dir / "scenario.md"
+
+    @property
+    def public_brief(self) -> Path:
+        """Leakage-free rater brief (factual framing, answer key removed).
+        Generated from `brief` by bench/tools/build_scenario_public.py."""
+        return self.dir / "scenario-public.md"
 
     @property
     def user_prompt(self) -> Path:

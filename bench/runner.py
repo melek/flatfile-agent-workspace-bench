@@ -69,7 +69,8 @@ def cmd_plan(args: argparse.Namespace) -> int:
                 {
                     "scenario_id": scn.id,
                     "run_number": run_number,
-                    "scenario_brief": str(scn.brief.relative_to(sio.REPO_ROOT)),
+                    # No scenario_brief here: the simulator is blinded to the
+                    # design note (answer key). It gets the user prompt + seed.
                     "user_prompt": str(scn.user_prompt.relative_to(sio.REPO_ROOT)),
                     "workspace_seed": str(scn.seed.relative_to(sio.REPO_ROOT)),
                     "run_output": str(
@@ -134,7 +135,7 @@ def cmd_plan_scoring(args: argparse.Namespace) -> int:
                                 sio.REPO_ROOT
                             )
                         ),
-                        "scenario_brief": str(scn.brief.relative_to(sio.REPO_ROOT)),
+                        "scenario_brief": str(scn.public_brief.relative_to(sio.REPO_ROOT)),
                         "run_path": str(run_p.relative_to(sio.REPO_ROOT)),
                         "score_output": str(
                             sio.score_path(
@@ -924,10 +925,18 @@ REDACTED_FIELDS = ("workspace_tag",)  # version-identifying transcript fields
 
 
 def _scenario_brief_path(scenario_id: str) -> Path:
-    """Brief path for active or retired scenarios (frozen tags keep both)."""
-    active = sio.SCENARIOS_ROOT / scenario_id / "scenario.md"
-    if active.exists():
-        return active
+    """Leakage-free rater brief for active or retired scenarios.
+
+    Returns the public brief (answer key removed); falls back to the full
+    scenario.md only for retired scenarios that predate public-brief
+    generation, so an old reliability rescore still resolves.
+    """
+    active_public = sio.SCENARIOS_ROOT / scenario_id / "scenario-public.md"
+    if active_public.exists():
+        return active_public
+    retired_public = sio.BENCH_ROOT / "scenarios-retired" / scenario_id / "scenario-public.md"
+    if retired_public.exists():
+        return retired_public
     return sio.BENCH_ROOT / "scenarios-retired" / scenario_id / "scenario.md"
 
 
