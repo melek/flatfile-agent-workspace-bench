@@ -695,6 +695,24 @@ def cmd_validate(args: argparse.Namespace) -> int:
             errors.append(f"rubric {rubric_id}: no front-matter (axes undeclared)")
             continue
         metas[rubric_id] = meta
+        # axis_types integrity: declared kinds must cover exactly the axes, and
+        # deterministic axes must all be binary (a code check on an ordinal axis
+        # is a category error).
+        if meta.axis_types:
+            extra = set(meta.axis_types) - set(meta.axes)
+            missing = set(meta.axes) - set(meta.axis_types)
+            if extra:
+                errors.append(f"rubric {rubric_id}: axis_types names non-axes {sorted(extra)}")
+            if missing:
+                errors.append(f"rubric {rubric_id}: axis_types omits axes {sorted(missing)}")
+            bad_kind = {a: k for a, k in meta.axis_types.items() if k not in ("ordinal", "binary")}
+            if bad_kind:
+                errors.append(f"rubric {rubric_id}: bad axis kinds {bad_kind}")
+        non_binary_det = [a for a in meta.deterministic if not meta.is_binary(a)]
+        if non_binary_det:
+            errors.append(
+                f"rubric {rubric_id}: deterministic axes {non_binary_det} are not binary"
+            )
 
     scenario_ids = _scenario_ids_on_disk(version, rubrics)
     if not scenario_ids:

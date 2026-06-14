@@ -1,10 +1,25 @@
 ---
-rubric_version: 1
+rubric_version: 2
 axes: AR1, AR2, AR3, AR4
 na_allowed: AR2
+axis_types: AR1=ordinal, AR2=binary, AR3=binary, AR4=binary
+deterministic: AR3, AR4
 ---
 
 # Rubric: Architecture
+
+## Axis dispositions (v2)
+
+Per issue #6, each axis is either an LLM-judged **ordinal** (0–3) or a **binary** pass/fail predicate over the workspace diff. Binary axes marked *deterministic* are computed in code (`runner.py check`), never by a rater.
+
+| Axis | Kind | Where | Rationale |
+|---|---|---|---|
+| AR1 file-routing | ordinal | LLM | "is this content a commitment vs an observation?" is a semantic judgment |
+| AR2 artifact-binding | binary (exploratory) | LLM | a predicate, but applicability depends on per-scenario expected steps; kept LLM-binary and **off the headline** until that map is encoded |
+| AR3 cross-reference integrity | binary, deterministic | code | links parse + resolve + match the relative-path convention — checkable over the diff |
+| AR4 idempotency/append-only | binary, deterministic | code | mutation of an append-only register is a deterministic flag over the actions/diff |
+
+Binary axes are reported as pass-rates (n/a excluded from the denominator), never averaged into the ordinal mean. The anchor tables below are retained: for an ordinal axis they define the scale; for a binary axis the **3** anchor is the pass condition and **0** the fail condition (intermediate anchors collapse to fail).
 
 **What this rubric values:** Correct file routing. Artifact-binding discipline. Cross-references that work. Idempotency. Respect for the methodology's strict bars (e.g., decisions.md is for commitments, not choices).
 

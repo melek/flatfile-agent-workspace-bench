@@ -1,8 +1,14 @@
 ---
-rubric_version: 1
+rubric_version: 2
 axes: CE1, CE2, CE3, CE4
 na_allowed: 
+axis_types: CE1=ordinal, CE2=ordinal, CE3=ordinal, CE4=ordinal
+deterministic: 
 ---
+
+## Axis dispositions (v2)
+
+Per issue #6, all cognitive-ergonomics axes are genuine judgments (orientation cost, output economy, routing transparency, interruptibility) and stay ordinal/LLM-rated. None reduce to a predicate over the diff, so none move to code.
 
 # Rubric: Cognitive Ergonomics
 

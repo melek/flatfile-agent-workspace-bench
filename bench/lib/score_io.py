@@ -8,7 +8,7 @@ from __future__ import annotations
 
 import csv
 import json
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Iterable, Iterator
 
@@ -77,6 +77,19 @@ class RubricMeta:
     rubric_version: str
     axes: tuple[str, ...]
     na_allowed: tuple[str, ...]
+    # Per-axis kind: "ordinal" (0-3 LLM-judged) or "binary" (pass/fail).
+    # Legacy rubrics (no axis_types declared) default every axis to ordinal.
+    axis_types: dict[str, str] = field(default_factory=dict)
+    # Binary axes that are computed in code from the workspace diff, not by a
+    # rater. Always a subset of the binary axes.
+    deterministic: tuple[str, ...] = ()
+
+    def kind(self, axis: str) -> str:
+        """'binary' or 'ordinal' for an axis (default ordinal)."""
+        return self.axis_types.get(axis, "ordinal")
+
+    def is_binary(self, axis: str) -> bool:
+        return self.kind(axis) == "binary"
 
 
 def rubric_meta(rubric_id: str) -> RubricMeta | None:
@@ -84,6 +97,7 @@ def rubric_meta(rubric_id: str) -> RubricMeta | None:
 
     Returns None when the rubric has no front-matter (legacy rubric). The
     block is a flat `key: value` list; axis lists are comma-separated.
+    `axis_types` is a comma-separated list of `AXIS=kind` pairs.
     """
     path = RUBRICS_ROOT / f"{rubric_id}.md"
     lines = path.read_text().splitlines()
@@ -100,11 +114,22 @@ def rubric_meta(rubric_id: str) -> RubricMeta | None:
     na = tuple(
         a.strip() for a in fields.get("na_allowed", "").split(",") if a.strip()
     )
+    axis_types: dict[str, str] = {}
+    for pair in fields.get("axis_types", "").split(","):
+        pair = pair.strip()
+        if "=" in pair:
+            k, _, v = pair.partition("=")
+            axis_types[k.strip()] = v.strip()
+    deterministic = tuple(
+        a.strip() for a in fields.get("deterministic", "").split(",") if a.strip()
+    )
     return RubricMeta(
         rubric_id=rubric_id,
         rubric_version=fields.get("rubric_version", "unversioned"),
         axes=axes,
         na_allowed=na,
+        axis_types=axis_types,
+        deterministic=deterministic,
     )
 
 
