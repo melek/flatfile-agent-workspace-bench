@@ -84,6 +84,23 @@ The runner enumerates work; an orchestrating agent dispatches the actual inferen
 
 Consequently `stage`/`diff` for a non-control (full-template) run **fails loudly** with a message pointing here, rather than silently staging an empty or contaminated tree. Materializing a clean `agent-workspace-template/` (full methodology depth, empty registers) is a prerequisite for the next real full-template run and is intentionally paired with that run — not reconstructed after the fact — so the template the run uses is the template of record. Control-variant runs are unaffected.
 
+## Measurement protocol (v0.4+) and the legacy corpus
+
+The next real run uses the artifact-grounded, binary-checked instrument (issues
+#5/#6): content-bearing transcripts, deterministic AR3/AR4/SA2 over a hash-verified
+workspace diff, leakage-free rater briefs, and a per-axis binary/ordinal split.
+**`MEASUREMENT.md`** specifies that run's protocol — the required two-rung pinned
+control (`control1-blank` + `control3-bare-scaffold` + full template, one pinned
+model), the statistics licensed at 12 scenarios (11 df; runs are replicates;
+paired Wilcoxon; between-scenario CIs), and binary base-rate/ceiling reporting.
+
+**v0.1–v0.3 are legacy and not comparable to v0.4+.** They were scored under
+rubric version 1 (ordinal), with raters reading the design notes and scoring the
+simulator's paraphrase rather than the artifact. The `rubric_version` bump makes
+`compare` hard-fail across the boundary by design. The existing `ctrl*-haiku/opus`
+control data is **quarantined**: it varies the model across arms (confounded) and
+is superseded by the pinned control in `MEASUREMENT.md` — do not summarize it.
+
 ## Disagreement is the signal
 
 We do not pitch v0.1 → v0.2 as improvement. The headline of any results report is **"where the three rubrics agree and where they disagree."** Disagreement matters because rubrics encode different priorities: cognitive ergonomics wants low friction, architecture wants strict routing, safety wants disclosure and resistance to ratification. A change that helps one frequently costs another. That trade-off is the result.
