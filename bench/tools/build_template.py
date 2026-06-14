@@ -48,6 +48,19 @@ from lib import score_io as sio  # type: ignore  # noqa: E402
 SOURCE = sio.BENCH_ROOT / "longitudinal" / "state" / "workspace"
 DEST = sio.TEMPLATE_ROOT
 
+# v0.3-trimmed lineage: the trim removed forward-task tracking (followups.md)
+# and the scheduled weekly-review runbook. The longitudinal source still
+# carries them; drop them so the staged template matches the active-scenario
+# surface (scenario 03, which exercised followups, was retired for
+# task-invalidity — staging the affordance it tested would put a surface on
+# disk that no active scenario probes). Scenarios that need followups overlay
+# their own via the seed. NOTE: methodology.md / AGENTS.md prose still mentions
+# these; finalizing the v0.4 methodology text (and whether to add the v0.3
+# start-session/close-session runbooks, which are not in this source) is a
+# run-owner decision to settle before pinning the template SHA.
+_TRIMMED_DROP_FILES = {"followups.md"}
+_TRIMMED_DROP_PREFIXES = ("runbooks/weekly-review/",)
+
 _DATED_HEADING = re.compile(r"^##\s+20\d\d-")
 _DATED_ITEM = re.compile(r"^[-*]\s+\*\*20\d\d-")
 _DATED_DAYBOOK = re.compile(r"^20\d\d-\d\d-\d\d.*\.md$")
@@ -80,6 +93,9 @@ def _derive(src_root: Path) -> dict[str, str | None]:
         if p.is_dir():
             continue
         name = p.name
+        # v0.3-trimmed lineage: drop retired-affordance files.
+        if rel in _TRIMMED_DROP_FILES or rel.startswith(_TRIMMED_DROP_PREFIXES):
+            continue
         # daybook: keep AGENTS.md + the example; drop real dated entries.
         if rel.startswith("daybook/") and _DATED_DAYBOOK.match(name):
             continue
