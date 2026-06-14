@@ -9,9 +9,9 @@ How an agent runs this benchmark. The runner is deterministic bookkeeping; the i
 ## Two passes per benchmark run
 
 1. **Simulation pass.** For each `(scenario, run_number)` with run_number in 1..N, dispatch a subagent that:
-   - Reads `bench/scenarios/<id>/scenario.md`, `workspace-seed/` files, and `user-prompt.md`.
+   - Reads `workspace-seed/` files and `user-prompt.md` **only**. It must NOT read `scenario.md` or `expected-signals.md` — those are rater-side design notes (the answer key); the simulator is blinded to them.
    - Acts as if it is operating the seeded workspace (a fresh copy is staged under `bench/results/<tag>/runs/<scenario>/<n>-workspace/`).
-   - Produces a transcript at `bench/results/<tag>/runs/<scenario>/<n>.json` with fields: `scenario_id`, `run_number`, `workspace_tag`, `model`, `started_at`, `completed_at`, `prompt`, `actions` (list of write operations: path + content), `final_response`, `notes`.
+   - Produces a transcript at `bench/results/<tag>/runs/<scenario>/<n>.json` whose schema and action semantics are pinned in the Simulator subagent template below (`model` and `variant` required; actions carry full `content` + `sha256`).
 
 2. **Scoring pass.** For each `(scenario, run_number, rubric)` triple, dispatch a separate subagent that:
    - Reads the run transcript and the rubric.
@@ -97,12 +97,34 @@ Step 3. When you are done, write a JSON transcript to:
   {RUN_OUTPUT}
 
 The transcript must be a single JSON object with these fields:
-  scenario_id, run_number, workspace_tag, started_at, completed_at,
+  scenario_id, run_number, workspace_tag,
+  model (the exact model id you ran as — required; the analysis pins on it),
+  variant (the staged base: null for the full template, or the control
+    variant name e.g. "control3-bare-scaffold"),
+  started_at, completed_at,
   final_response (the message you would have sent the user),
-  actions (list of {path, action, content_summary} — action is one of
-    "create", "append", "rewrite", "delete"; content_summary is a
-    short paraphrase of what you wrote, not the full content),
+  actions (list of write operations — see schema and semantics below),
   notes (any flags the orchestrator should see; empty list if none).
+
+Each action is an object:
+  {path, action, content, sha256, content_summary}
+  - path: workspace-relative (no leading "/", no ".." traversal).
+  - action: one of "create", "append", "rewrite", "delete".
+  - content: for "create"/"rewrite", the FULL post-write file text; for
+    "append", ONLY the appended fragment; omit for "delete".
+  - sha256: hex sha256 of the file as it stands on disk AFTER this action
+    (omit for "delete"). This is what lets the runner verify a reconstructed
+    diff against what was actually written, rather than trusting the prose.
+  - content_summary: a short paraphrase (intent context only — NOT
+    authoritative for what was written; scoring reads the artifact diff).
+
+Action semantics are a hard contract (the runner replays them to reconstruct
+the post-run workspace, and scores against that):
+  - List order is apply order. Do not reorder.
+  - "create" makes parent directories as needed; "append"/"delete" target a
+    path that already exists (in the seed or from an earlier action).
+  - "delete" unlinks an existing path; deleting a non-existent path is an error.
+  - Paths must be relative and must not escape the workspace.
 
 Important constraints:
 - Operate as a generic agent reading AGENTS.md. Do NOT roleplay as a

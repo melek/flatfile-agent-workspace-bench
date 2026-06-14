@@ -464,6 +464,49 @@ def _scenario_ids_on_disk(version: str, rubrics: list[str]) -> list[str]:
     )
 
 
+def _validate_content_run(
+    rel: Path,
+    payload: dict,
+    errors: list[str],
+    warnings: list[str],
+    models_seen: set[str],
+) -> None:
+    """Enforce the content-epoch transcript contract on one run file.
+
+    Catches a half-migrated run (missing model, content, or a malformed
+    action) instead of letting the diff reconstruct against it silently.
+    """
+    model = payload.get("model")
+    if not model:
+        errors.append(f"{rel}: content-epoch run missing required 'model'")
+    else:
+        models_seen.add(model)
+    if "variant" not in payload:
+        errors.append(
+            f"{rel}: content-epoch run missing 'variant' "
+            "(null for full template, else the control-variant name)"
+        )
+
+    actions = payload.get("actions")
+    if not isinstance(actions, list):
+        return  # the base-field check already flagged a missing/bad actions
+    for i, action in enumerate(actions):
+        where = f"{rel}: action[{i}]"
+        verb = action.get("action")
+        path = action.get("path", "")
+        if verb not in ("create", "append", "rewrite", "delete"):
+            errors.append(f"{where}: bad action verb {verb!r}")
+        if not path or path.startswith("/") or ".." in Path(path).parts:
+            errors.append(f"{where}: path {path!r} must be relative, non-traversing")
+        if verb in ("create", "rewrite", "append"):
+            if "content" not in action:
+                errors.append(f"{where} ({verb} {path}): missing 'content'")
+            if "sha256" not in action:
+                warnings.append(f"{where} ({verb} {path}): missing 'sha256' (unverifiable)")
+        elif verb == "delete" and "content" in action:
+            warnings.append(f"{where} (delete {path}): 'content' ignored on delete")
+
+
 def cmd_validate(args: argparse.Namespace) -> int:
     """Check a results tag against the AGENTS.md postconditions.
 
@@ -477,6 +520,14 @@ def cmd_validate(args: argparse.Namespace) -> int:
     rubrics = sio.list_rubrics()
     errors: list[str] = []
     warnings: list[str] = []
+
+    manifest_path = sio.version_dir(version) / "manifest.json"
+    manifest = sio.read_json(manifest_path) if manifest_path.exists() else {}
+    # The content-schema epoch gates the new artifact-grounding requirements.
+    # Legacy tags (v0.1-v0.3) carry no marker -> the new checks do not apply,
+    # so they remain valid unchanged.
+    content_epoch = manifest.get("content_schema") is not None
+    models_seen: set[str] = set()
 
     metas: dict[str, sio.RubricMeta] = {}
     for rubric_id in rubrics:
@@ -569,9 +620,15 @@ def cmd_validate(args: argparse.Namespace) -> int:
             for field in ("scenario_id", "run_number", "final_response", "actions"):
                 if field not in payload:
                     errors.append(f"{rel}: missing field {field!r}")
+            if content_epoch:
+                _validate_content_run(rel, payload, errors, warnings, models_seen)
 
-    manifest_path = sio.version_dir(version) / "manifest.json"
-    manifest = sio.read_json(manifest_path) if manifest_path.exists() else {}
+    if content_epoch and len(models_seen) > 1:
+        errors.append(
+            f"{version}: runs use multiple models {sorted(models_seen)}; a "
+            "version must be a single pinned model for comparison validity"
+        )
+
     if not manifest:
         warnings.append(f"{version}: no manifest.json")
     if "scoring_granularity" not in manifest:
