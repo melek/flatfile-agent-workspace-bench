@@ -80,9 +80,16 @@ The runner enumerates work; an orchestrating agent dispatches the actual inferen
 `runner.py stage` builds a run's workspace from a **base tree** plus the scenario seed. Two kinds of base tree exist:
 
 - **Control variants** (`bench/controls/control{1,2,3}-*`) — present in-repo; stage directly.
-- **The full template** (`sio.TEMPLATE_ROOT`, `agent-workspace-template/`) — **not materialized in this repo.** The frozen `v0.1`–`v0.3` results predate the `stage`/`diff` tooling and were produced by an orchestrator that staged the template out-of-band; the pristine template tree was never committed here, and the longitudinal working copy at `bench/longitudinal/state/workspace/` is *accumulated state*, not a clean template.
+- **The full template** (`sio.TEMPLATE_ROOT`, `agent-workspace-template/`) — materialized by `bench/tools/build_template.py`, which derives the pristine tree (full methodology depth, **empty registers**) deterministically from the canonical workspace at `bench/longitudinal/state/workspace/` (accumulated state). Dated daybook entries, real register entries, and concrete projects are stripped; every `AGENTS.md`, `methodology.md`, register template, and worked example is kept. Regenerate / verify with:
 
-Consequently `stage`/`diff` for a non-control (full-template) run **fails loudly** with a message pointing here, rather than silently staging an empty or contaminated tree. Materializing a clean `agent-workspace-template/` (full methodology depth, empty registers) is a prerequisite for the next real full-template run and is intentionally paired with that run — not reconstructed after the fact — so the template the run uses is the template of record. Control-variant runs are unaffected.
+  ```bash
+  python bench/tools/build_template.py          # (re)materialize
+  python bench/tools/build_template.py --check  # fail if the on-disk tree is stale
+  ```
+
+  The derived tree reflects the longitudinal-workspace methodology surface. If a benchmark version (e.g. a v0.4 trim) differs, adjust the source or the derived tree and regenerate — the result is the template of record for runs staged from it. Earlier `v0.1`–`v0.3` results predate this tooling and were staged out-of-band (legacy; see `MEASUREMENT.md`).
+
+If the template is ever absent, `stage`/`diff` for a full-template run **fails loudly** with a pointer here rather than staging an empty or contaminated tree. Control-variant runs are unaffected.
 
 ## Measurement protocol (v0.4+) and the legacy corpus
 
