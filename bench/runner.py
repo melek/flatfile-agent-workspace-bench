@@ -18,9 +18,11 @@ from __future__ import annotations
 
 import argparse
 import datetime as dt
+import hashlib
 import shutil
 import subprocess
 import sys
+import tempfile
 from pathlib import Path
 
 # Allow `python bench/runner.py` and `python -m bench.runner` to both work.
@@ -171,11 +173,68 @@ CONTROL_VARIANTS = {
 }
 
 
+class StagingError(Exception):
+    """Raised when a base workspace tree cannot be staged (e.g. the full
+    template is not materialized in-repo). Carries a human-readable message."""
+
+
+def _build_seed_workspace(scn: sio.Scenario, variant: str | None, target: Path) -> None:
+    """Build a fresh seed workspace at `target` (base tree + scenario overlay).
+
+    Base tree is a named control variant, or — when `variant` is None — the
+    full template at `sio.TEMPLATE_ROOT`. Raises StagingError with a clear
+    message when the required base tree is absent on disk, rather than letting
+    `shutil.copytree` raise an opaque FileNotFoundError. Shared by `stage` and
+    `diff` so both reconstruct the seed identically.
+
+    `target` must not already exist (caller owns cleanup).
+    """
+    target.parent.mkdir(parents=True, exist_ok=True)
+
+    if variant:
+        if variant not in CONTROL_VARIANTS:
+            raise StagingError(
+                f"variant {variant!r} not in {list(CONTROL_VARIANTS)}"
+            )
+        base = CONTROL_VARIANTS[variant]
+        if not base.exists():
+            raise StagingError(
+                f"control variant {variant!r} base tree not found at "
+                f"{base.relative_to(sio.REPO_ROOT)}"
+            )
+        shutil.copytree(base, target)
+        # Strip .gitkeep markers and the preamble file (preamble is consumed
+        # by the dispatch prompt, not by the staged workspace).
+        for marker in target.rglob(".gitkeep"):
+            marker.unlink()
+        preamble = target / "scaffold-preamble.md"
+        if preamble.exists():
+            preamble.unlink()
+    else:
+        if not sio.TEMPLATE_ROOT.exists():
+            raise StagingError(
+                f"full-template base tree not materialized at "
+                f"{sio.TEMPLATE_ROOT.relative_to(sio.REPO_ROOT)}. "
+                "Non-control (full-template) runs cannot be staged until it is "
+                "provided. See bench/README.md 'Materializing the template'. "
+                f"Control variants available: {sorted(CONTROL_VARIANTS)}."
+            )
+        shutil.copytree(sio.TEMPLATE_ROOT, target)
+
+    # Overlay the scenario seed (only files that exist in the seed).
+    if scn.seed.exists():
+        for src in scn.seed.rglob("*"):
+            rel = src.relative_to(scn.seed)
+            dst = target / rel
+            if src.is_dir():
+                dst.mkdir(parents=True, exist_ok=True)
+            else:
+                dst.parent.mkdir(parents=True, exist_ok=True)
+                shutil.copy2(src, dst)
+
+
 def cmd_stage(args: argparse.Namespace) -> int:
     """Stage a fresh workspace for one (scenario, run) pair.
-
-    1. Copy the base tree (template OR control variant) to the workspace path.
-    2. Overlay the scenario seed (only files that exist in the seed).
 
     Idempotent — if the workspace already exists, it is removed and rebuilt.
     """
@@ -188,42 +247,12 @@ def cmd_stage(args: argparse.Namespace) -> int:
     target = sio.workspace_path(args.version, scn.id, args.run_number)
     if target.exists():
         shutil.rmtree(target)
-    target.parent.mkdir(parents=True, exist_ok=True)
 
-    # 1. Pick the base tree.
-    variant = getattr(args, "variant", None)
-    if variant:
-        if variant not in CONTROL_VARIANTS:
-            print(
-                f"ERROR: variant {variant} not in {list(CONTROL_VARIANTS)}",
-                file=sys.stderr,
-            )
-            return 2
-        base = CONTROL_VARIANTS[variant]
-        if not base.exists():
-            target.mkdir(parents=True, exist_ok=True)
-        else:
-            shutil.copytree(base, target)
-            # Strip .gitkeep markers and the preamble file (preamble is consumed
-            # by the dispatch prompt, not by the staged workspace).
-            for marker in target.rglob(".gitkeep"):
-                marker.unlink()
-            preamble = target / "scaffold-preamble.md"
-            if preamble.exists():
-                preamble.unlink()
-    else:
-        shutil.copytree(sio.TEMPLATE_ROOT, target)
-
-    # 2. Overlay the seed.
-    if scn.seed.exists():
-        for src in scn.seed.rglob("*"):
-            rel = src.relative_to(scn.seed)
-            dst = target / rel
-            if src.is_dir():
-                dst.mkdir(parents=True, exist_ok=True)
-            else:
-                dst.parent.mkdir(parents=True, exist_ok=True)
-                shutil.copy2(src, dst)
+    try:
+        _build_seed_workspace(scn, getattr(args, "variant", None), target)
+    except StagingError as exc:
+        print(f"ERROR: {exc}", file=sys.stderr)
+        return 2
 
     print(f"Staged: {target.relative_to(sio.REPO_ROOT)}")
     return 0

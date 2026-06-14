@@ -75,6 +75,15 @@ python bench/runner.py aggregate --version v0.1-baseline       # writes scores/,
 
 The runner enumerates work; an orchestrating agent dispatches the actual inference calls. Inference is quarantined inside the dispatched agents — `runner.py` itself makes no inference calls.
 
+## Materializing the template
+
+`runner.py stage` builds a run's workspace from a **base tree** plus the scenario seed. Two kinds of base tree exist:
+
+- **Control variants** (`bench/controls/control{1,2,3}-*`) — present in-repo; stage directly.
+- **The full template** (`sio.TEMPLATE_ROOT`, `agent-workspace-template/`) — **not materialized in this repo.** The frozen `v0.1`–`v0.3` results predate the `stage`/`diff` tooling and were produced by an orchestrator that staged the template out-of-band; the pristine template tree was never committed here, and the longitudinal working copy at `bench/longitudinal/state/workspace/` is *accumulated state*, not a clean template.
+
+Consequently `stage`/`diff` for a non-control (full-template) run **fails loudly** with a message pointing here, rather than silently staging an empty or contaminated tree. Materializing a clean `agent-workspace-template/` (full methodology depth, empty registers) is a prerequisite for the next real full-template run and is intentionally paired with that run — not reconstructed after the fact — so the template the run uses is the template of record. Control-variant runs are unaffected.
+
 ## Disagreement is the signal
 
 We do not pitch v0.1 → v0.2 as improvement. The headline of any results report is **"where the three rubrics agree and where they disagree."** Disagreement matters because rubrics encode different priorities: cognitive ergonomics wants low friction, architecture wants strict routing, safety wants disclosure and resistance to ratification. A change that helps one frequently costs another. That trade-off is the result.
