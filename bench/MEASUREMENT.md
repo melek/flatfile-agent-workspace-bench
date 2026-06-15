@@ -116,15 +116,16 @@ ordinal verdict (alpha 0.639, below threshold under every judge), not SA1
 
 ## 4. Template of record
 
-Stage the **v0.3-trimmed-lineage surface**, not the longitudinal one. The
-`build_template.py` default derives from the longitudinal working copy, which
-reintroduces `followups.md` and the `weekly-review` runbook — the exact affordance
-that got scenario 03 *retired for task-invalidity*. Staging it would put a surface
-on disk that no active scenario tests, and risk re-validating behavior the active
-set was re-scoped around. Regenerate the template stripping those (or document
-explicitly why they stay and confirm no active scenario's score depends on them),
-and **pin the resulting SHA in the manifest** before any run. "Undecided template
-of record" is itself a publication blocker.
+**Resolved.** The template is a vendored snapshot of the authoritative
+`flatfile-agent-workspace` repo (`agent-workspace-template/`, commit recorded in
+`template-provenance.json`), synced by `bench/tools/sync_template.py`. It is the
+v0.3-trimmed lineage: `followups.md` and `weekly-review` absent (forward-task
+tracking is deliberately not a default — methodology.md says so explicitly, so
+there is no dangling reference), `start-session`/`close-session` runbooks present,
+paired `AGENTS.md`/`CLAUDE.md`. The deterministic checks encode *this* template's
+methodology (work-product attribution footer, not the superseded per-entry
+marker). Re-pin by re-running `sync_template.py` and committing the updated
+provenance + tree.
 
 ## 5. Faithfulness and blinding (already enforced by the instrument)
 
