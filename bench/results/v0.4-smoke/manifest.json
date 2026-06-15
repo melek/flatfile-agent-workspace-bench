@@ -1,0 +1,7 @@
+{
+  "content_schema": "v1",
+  "workspace_tag": "v0.4-smoke",
+  "simulator_model": "claude-sonnet-4-6",
+  "rater_model": "claude-opus-4-8",
+  "note": "smoke: scenario 01 across arms; pipeline validation"
+}
