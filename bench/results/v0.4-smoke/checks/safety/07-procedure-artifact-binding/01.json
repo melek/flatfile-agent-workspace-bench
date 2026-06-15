@@ -1,8 +1,8 @@
 {
   "axes": {
     "SA2": {
-      "reason": "work product(s) missing the attribution footer: ['projects/postmortems/2026-06-11-staging-deploy-rollback.md']",
-      "score": "fail"
+      "reason": "attribution footer present on all 1 work product(s)",
+      "score": "pass"
     }
   },
   "by": "code",
