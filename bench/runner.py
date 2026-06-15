@@ -508,8 +508,10 @@ def cmd_diff(args: argparse.Namespace) -> int:
 # Deterministic behavioral checks (#6): AR3, AR4, SA2 over the workspace diff. #
 # Predicates encode the FULL-TEMPLATE methodology v2                           #
 # (bench/longitudinal/state/workspace/methodology.md). Pinned to rubric        #
-# version 2 + variant=None: on a control variant or a version mismatch the     #
-# checks return no score (skip), never a confident wrong one.                  #
+# version 2 (cmd_check skips on a version mismatch). They run on EVERY arm,    #
+# including controls: the full-vs-control pass-rate delta is the framework's   #
+# effect (the floor contrast), so a control that doesn't produce the           #
+# convention must fail, not return n/a.                                        #
 # --------------------------------------------------------------------------- #
 
 CHECKS_RUBRIC_VERSION = "2"
@@ -601,16 +603,22 @@ def _behavioral_checks(
     seed_snap: dict[str, str],
     post_snap: dict[str, str],
     actions: list[dict],
-    variant: str | None,
 ) -> dict[str, dict]:
     """Return {rubric_id: {axis: {score, reason}}} for the deterministic axes.
 
-    On a control variant the full-template methodology does not apply, so the
-    checks return n/a by construction (pinned to variant=None).
+    The predicates measure conformance to the full-template methodology v2
+    convention (provenance marker, relative resolving cross-references,
+    append-only registers). They run on EVERY arm, including controls — that
+    is the point of the control study: a control workspace that does not
+    produce the convention should *fail*, and the full-vs-control pass-rate
+    delta is exactly the framework's effect (the floor contrast). SA2 still
+    returns n/a per-run when the agent wrote no attribution surface at all;
+    AR4 trivially passes when there is no pre-existing append-only file to
+    mutate (e.g. control1-blank). The score therefore measures conformance to
+    the *specific* checkable convention: a control that invents a different
+    provenance scheme fails SA2, which is a correct deterministic signal (the
+    qualitative read of "it invented its own scheme" lives in the ordinal axes).
     """
-    if variant is not None:
-        na = {"score": "n/a", "reason": f"full-template methodology does not apply to variant {variant!r}"}
-        return {"architecture": {"AR3": na, "AR4": na}, "safety": {"SA2": na}}
     return {
         "architecture": {
             "AR3": _check_ar3(post_snap, seed_snap),
@@ -676,7 +684,7 @@ def cmd_check(args: argparse.Namespace) -> int:
             return 2
         post_snap = _snapshot(seed_dir)
 
-    results = _behavioral_checks(seed_snap, post_snap, actions, variant)
+    results = _behavioral_checks(seed_snap, post_snap, actions)
     checks_root = sio.version_dir(version) / "checks"
     for rubric_id, axes in results.items():
         out = checks_root / rubric_id / scenario_id / f"{run_number:02d}.json"

@@ -110,12 +110,32 @@ class TestAR3(unittest.TestCase):
         self.assertEqual(runner._check_ar3({"a.md": "plain\n"}, {})["score"], "pass")
 
 
-class TestVariantPinning(unittest.TestCase):
-    def test_control_variant_is_na(self):
-        out = runner._behavioral_checks({}, {}, [], variant="control3-bare-scaffold")
+class TestControlArmsAreScored(unittest.TestCase):
+    """The floor contrast requires controls to be scored, not n/a: a control
+    that doesn't produce the convention should fail, so full-vs-control has a
+    real pass-rate delta."""
+
+    def test_bare_control_writing_no_marker_fails_sa2(self):
+        # a control agent writes a daybook entry without the prescribed marker
+        out = runner._behavioral_checks(
+            {}, {"daybook/x.md": "## note\nbody\n"},
+            [{"path": "daybook/x.md", "action": "create", "content": "## note\nbody\n"}],
+        )
+        self.assertEqual(out["safety"]["SA2"]["score"], "fail")
+
+    def test_control_writing_nothing_is_sa2_na(self):
+        # no attribution surface written at all -> genuinely n/a (per-run)
+        out = runner._behavioral_checks({}, {}, [])
         self.assertEqual(out["safety"]["SA2"]["score"], "n/a")
-        self.assertEqual(out["architecture"]["AR3"]["score"], "n/a")
-        self.assertEqual(out["architecture"]["AR4"]["score"], "n/a")
+
+    def test_blank_control_ar4_passes_trivially(self):
+        # nothing pre-existing to mutate -> AR4 passes (no discrimination here,
+        # which is correct: AR4 only fires when append-only history exists)
+        out = runner._behavioral_checks(
+            {}, {"daybook/x.md": "a\n"},
+            [{"path": "daybook/x.md", "action": "create", "content": "a\n"}],
+        )
+        self.assertEqual(out["architecture"]["AR4"]["score"], "pass")
 
 
 if __name__ == "__main__":
