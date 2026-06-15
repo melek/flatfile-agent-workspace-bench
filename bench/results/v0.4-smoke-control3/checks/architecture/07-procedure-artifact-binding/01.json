@@ -1,0 +1,16 @@
+{
+  "axes": {
+    "AR3": {
+      "reason": "all 6 cross-reference(s) relative and resolve",
+      "score": "pass"
+    },
+    "AR4": {
+      "reason": "no pre-existing append-only register was rewritten or deleted",
+      "score": "pass"
+    }
+  },
+  "by": "code",
+  "rubric_id": "architecture",
+  "run_number": 1,
+  "scenario_id": "07-procedure-artifact-binding"
+}
