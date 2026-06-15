@@ -2,40 +2,28 @@
 
 A self-documenting workspace for doing real work with an AI assistant — humans and agents alike. No proprietary tools, no databases, no hidden state. Just plain files and folders, with conventions documented in plain text.
 
-The whole workspace is designed so that a person — or an AI agent — can open any folder cold and figure out how to use it from the `AGENTS.md` file inside.
+The whole workspace is designed so that a person — or an AI agent — can open any folder without prior context and figure out how to use it from the `AGENTS.md` file inside.
 
 ## Get started
 
-### If you already have an AI tool
+You're looking at a fresh workspace. Four steps to put it to work:
 
-If you have [Claude Code](https://claude.com/claude-code), [OpenCode](https://opencode.ai), or another AI coding assistant installed, the fastest path is:
+1. **Open the folder in an AI coding assistant.** [Claude Code](https://claude.com/claude-code) and [OpenCode](https://opencode.ai) are terminal apps with their own quick-start guides — install one, then `cd` into this folder and launch it there. The workspace does little on its own; an agent operates it.
+2. **Make it a git repo.** The workspace uses git history as its audit trail — the close-session runbook commits at the end of each day. Simplest path: ask the agent you just opened, *"initialize this folder as a git repo and make a first commit."* To do it yourself:
+   ```bash
+   git init && git add . && git commit -m "Initial workspace"
+   ```
+   No git installed? Get it from [git-scm.com/downloads](https://git-scm.com/downloads). *(Created with `create-workspace.py`? Already done — skip this step.)*
+3. **Orient the agent.** Ask it: *"Read `AGENTS.md` and tell me how to start."* It reads the conventions and walks you through the rest.
+4. **See it working.** The worked example at [`daybook/0000-00-00-example.md`](daybook/0000-00-00-example.md) shows the system mid-use; [`methodology.md`](methodology.md) explains why it is shaped this way. Skim both before judging the workspace — in five minutes of manual reading much of it looks like overhead; the value shows when an agent operates it across sessions. Delete the example daybook once you've written your first real entry.
 
-1. Open your AI tool.
-2. Tell it: *"Download `<owner>/<repo>` from GitHub into a new folder and set it up as a workspace."*
-3. Reopen the tool inside the new folder.
-4. Ask it: *"Read `AGENTS.md` and tell me how to start."*
-
-That's it. The agent handles the rest — downloading, removing the template's git history, initializing a fresh git repo in the folder, and walking you through any missing tools.
-
-### Without an AI tool
-
-1. Click the green **Code** button at the top of this repo, then **Download ZIP**.
-2. Extract the ZIP wherever you keep work.
-3. Install an AI coding assistant. [Claude Code](https://claude.com/claude-code) and [OpenCode](https://opencode.ai) both run from your terminal and can edit files in any folder.
-4. Open the assistant inside the extracted folder.
-5. Tell it: *"Read `AGENTS.md` and walk me through setting this up."*
+On Windows, work inside [WSL](https://learn.microsoft.com/windows/wsl/install) — some runbook steps assume a bash-like shell.
 
 ## How this works
 
-The LLM is your administrative assistant for this workspace. It reads `AGENTS.md` files on folder entry, follows the conventions documented there, and translates between what you do in plain language and what the system records. You can write entries yourself, but you usually won't — the agent drafts handoffs, logs decisions when you make them, files followups when you delegate. Your job is to do the work and review what the agent recorded.
+The LLM is your administrative assistant for this workspace. It reads `AGENTS.md` files on folder entry, follows the conventions documented there, and translates between what you do in plain language and what the system records. You can write entries yourself, but you usually won't — the agent drafts handoffs, logs decisions when you make them, updates project state when something moves. Your job is to do the work and review what the agent recorded.
 
-Be upfront about the tradeoff: this methodology is **aspirational for a manual user**. Daily handoffs, append-only logs, weekly reviews — most people can't keep this up on their own. An LLM, given the right structure, can do best practice more reliably than discipline alone. That's the design center: the workspace makes the methodology *available*, and the agent operates it. You stay in the loop by reviewing what the agent did, not by doing every step yourself.
-
-The simple-enough-for-cold-pickup and rich-enough-for-real-work goals are in genuine tension, and this workspace leans toward the second. The structure earns its keep when an LLM is running it; if you're evaluating it manually in five minutes, much of it will look like overhead.
-
-### A day in this workspace
-
-For a worked tour showing how one situation routes across `decisions.md`, `observations.md`, `followups.md`, and the daybook, see [`resources/workspace-workflow-example.md`](resources/workspace-workflow-example.md). The full filled daybook for that same day is at [`daybook/0000-00-00-example.md`](daybook/0000-00-00-example.md).
+This methodology is aspirational for a manual user — daily handoffs, append-only logs, and a session-bookend rhythm are hard to keep up by hand. The point of the workspace is that an agent operates it for you: it makes best practice *available*, and you stay in the loop by reviewing what the agent did, not by doing every step yourself.
 
 ## Layout
 
@@ -43,12 +31,11 @@ For a worked tour showing how one situation routes across `decisions.md`, `obser
 .
 ├── AGENTS.md        # entry point for AI agents (and curious humans)
 ├── methodology.md   # why this is shaped the way it is + conventions
-├── decisions.md     # append-only log of decisions (ADR-style)
-├── observations.md  # append-only notes that aren't decisions
-├── followups.md     # tickler / waiting-on log
+├── decisions.md     # append-only log of commitments (ADR-style)
+├── observations.md  # append-only log of findings worth saving from re-derivation
 ├── daybook/         # one dated file per workday (Intent / Log / Handoff)
 ├── projects/        # one subfolder per ongoing project
-├── runbooks/        # procedural knowledge — "how to do X"
+├── runbooks/        # procedural knowledge — "how to do X" (ships with start-session/ and close-session/)
 ├── resources/       # durable static reference material (workflow example, etc.)
 └── tmp/             # gitignored scratch
 ```
@@ -57,7 +44,7 @@ Each folder has its own `AGENTS.md` explaining how it's meant to be used, so you
 
 ## Why a template?
 
-Most AI assistants have memory features that lock you to one vendor. This template uses git history and plain markdown files instead — your work outlives whichever tool you happen to use. Decisions you made six months ago are findable with `grep`. Yesterday's context is a `git log` away.
+Most AI assistants have memory features that lock you to one vendor. This template uses git history and plain markdown files instead — your work outlives whichever tool you happen to use. Every close-session run takes a git commit — a timestamped snapshot — so `git log` becomes a searchable history: decisions you made six months ago are findable with `grep`, and yesterday's context is one command away.
 
 See `methodology.md` for the principles, the influences (ADR, flat-file plaintext-productivity tradition, daily-handoff patterns from engineering rotations), and the conventions for keeping the workspace useful over time.
 

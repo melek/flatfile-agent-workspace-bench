@@ -4,32 +4,42 @@ This folder holds **procedural knowledge** — how to do recurring or non-obviou
 
 Runbooks are **living documents.** Update them as the procedure evolves; git tracks the history.
 
-**Without `runbooks/`:** every recurring procedure gets reinvented or re-asked of the agent each time. Quality drifts because there's no stable reference. The agent does a slightly different weekly review every Friday; the new collaborator can't follow your tax-filing process because it lives in your head; the recovery-from-broken-state procedure has to be improvised under stress.
+**Without `runbooks/`:** every recurring procedure gets reinvented or re-asked of the agent each time. Quality drifts because there's no stable reference. The new collaborator can't follow your tax-filing process because it lives in your head; the recovery-from-broken-state procedure has to be improvised under stress; the rhythm steps that bookend a session quietly atrophy.
+
+## Defaults shipped with this workspace
+
+Two runbooks are shipped by default because they carry the workspace's load-bearing rhythm:
+
+- **`start-session/`** — user-invoked at the start of a working session. Reads the most recent daybook Handoff so the agent (or you, cold) picks up where the last session ended, and opens today's daybook with an Intent line. Two steps; the rest is invited extension.
+- **`close-session/`** — user-invoked at the end of a session. Triages open threads with the user, writes today's daybook Handoff, appends any decisions and observations earned today, commits. Five steps — four artifact-bound and one user-triage.
+
+Both are **user-invoked**, not auto-triggered. The agent does not know that a session is starting or ending — only the user does. If you are an LLM and the user signals session close, proactively offer to run `close-session/`; do not assume you can detect it.
+
+These two carry the methodology's minimum rhythm. Everything else in `runbooks/` is whatever you accrue as your work demands it.
 
 ## Layout
 
-Default to flat markdown — one file per procedure:
+Default to flat markdown — one file per procedure. Promote a single-file procedure to a folder when it grows companions (templates, checklists, example outputs, scripts):
 
 ```
 runbooks/
 ├── AGENTS.md
-├── weekly-review/      # folder shape, has companion files
-│   ├── AGENTS.md       # the procedure
-│   └── template.md
-├── onboard-collaborator.md
-└── tax-filing-q1.md
+├── start-session/              # default — orient at session open
+│   └── AGENTS.md
+├── close-session/              # default — sweep at session close
+│   └── AGENTS.md
+├── onboard-collaborator.md     # example user-added procedure
+└── tax-filing-q1.md            # example user-added procedure
 ```
 
-Promote a single-file procedure to a folder when it grows companions — a template, a checklist, an example output, a script. Same pattern `tmp/` uses for staging.
-
-Procedure names are short, lowercase, kebab-case, action-shaped (`weekly-review`, `onboard-collaborator`, `recover-from-abnormal-exit`).
+Procedure names are short, lowercase, kebab-case, action-shaped (`start-session`, `close-session`, `onboard-collaborator`, `recover-from-abnormal-exit`).
 
 ## When to use `runbooks/`
 
 - Procedures that recur or might be repeated by someone else (or future-you who has forgotten).
 - Cross-cutting "how to do X" knowledge that isn't tied to one project.
-- Rituals — weekly review, monthly retro, quarterly planning.
 - Recovery procedures — what to do when something goes wrong.
+- Per-repo conventions when a project's procedures are tightly tied to a specific codebase or workflow. The runbooks-as-per-repo-conventions pattern is common in lived practice; the procedure lives next to the code it operates on.
 
 ## When *not* to use `runbooks/`
 
@@ -48,7 +58,7 @@ A runbook (single file or folder `AGENTS.md`) looks like this:
 
 **Inputs:** What you need before starting — files, access, state.
 
-**Outputs:** What this produces — files, decisions logged, followups created.
+**Outputs:** What this produces — files, decisions logged, log entries.
 
 ## Steps
 
@@ -78,18 +88,18 @@ The shape of a runbook step matters as much as its content. A step that *looks l
 Two patterns mitigate this failure mode and are recommended whenever a step would otherwise be a soft confirmation:
 
 - **Artifact-binding.** The step produces an inspectable file. The user (or a future session) can read what was actually produced and notice if it was hollow. A step that reads "consider whether to ship" is performative; a step that reads "write the Go/No-go call with reasoning into `tmp/release-readiness/<release>/checklist.md`" is not.
-- **Force-disagreement.** The step requires the agent to articulate a credible counter-position grounded in the same artifacts. A ratification step where the agent owes a counter-position cannot quietly ratify — see the Force disagreement step in `runbooks/weekly-review/AGENTS.md` for the worked pattern.
+- **Force-disagreement.** The step requires the agent to articulate a credible counter-position grounded in the same artifacts. A ratification step where the agent owes a counter-position cannot quietly ratify.
 
 If a step in a runbook reads like "check that things are OK" or "review for issues" without an artifact or a counter-position, treat it as a smell. Rewrite the step until it can fail visibly.
 
 ## Promoting a single file to a folder
 
-If `runbooks/weekly-review.md` grows a template, rename it:
+If a single-file procedure grows companions, promote it:
 
 ```bash
-mkdir runbooks/weekly-review
-mv runbooks/weekly-review.md runbooks/weekly-review/AGENTS.md
-# add the template alongside
+mkdir runbooks/<procedure>
+mv runbooks/<procedure>.md runbooks/<procedure>/AGENTS.md
+# add the template, checklist, or script alongside
 ```
 
 The procedure file becomes `AGENTS.md` so it auto-loads when an agent enters the folder.

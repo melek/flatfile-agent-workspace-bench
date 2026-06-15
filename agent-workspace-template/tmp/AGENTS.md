@@ -4,7 +4,7 @@ Gitignored scratch. Intermediate artifacts, search results, downloaded items to 
 
 **Rule:** if you'd miss it, it doesn't belong here. Move it into a project folder, a daybook entry, or a top-level log.
 
-This file (`AGENTS.md`) is the one exception — it's allowed past the gitignore via `!tmp/AGENTS.md` so the folder always exists and the rule is visible in place.
+This `AGENTS.md` and the `CLAUDE.md` passthrough beside it are the exceptions — both are allowed past the gitignore (`!tmp/AGENTS.md`, `!tmp/CLAUDE.md`) so the folder always exists and the rule is visible in place.
 
 ## Layout
 

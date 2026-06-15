@@ -34,8 +34,6 @@ Every project folder has one. Minimum sections:
 **Started:** YYYY-MM-DD
 **Goal:** One sentence — what does "done" look like?
 
-**Status generated-by:** inference | user | mixed
-
 ## Context
 Why this project exists. What problem it solves. Anything a fresh reader (or new agent) needs to know to be useful.
 
@@ -48,8 +46,6 @@ What's done, what's in progress, what's blocked. Update this whenever the state 
 ## Next steps
 The next concrete action(s). When this is empty, the project is either done or paused. Where possible, write these as a small decision tree (if X happens, do Y; if Y, do Z) — that survives weeks of absence better than a single-shot "do this next."
 ```
-
-The **Status generated-by** field marks who is producing the live Status section — the user typing updates, the agent summarizing the work, or both. See `methodology.md#provenance-markers`. This is on the status section specifically because that section gets rewritten the most often; the rest of the file is mostly stable.
 
 This file is **not** append-only — it's meant to be the current state of the project, in one place. Update it as the project evolves.
 

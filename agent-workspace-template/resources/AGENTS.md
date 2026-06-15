@@ -8,21 +8,16 @@ Distinct from `runbooks/` (procedures — *how to do X*). Distinct from `tmp/` (
 
 ## What goes here
 
-- The workspace's own workflow example (`workspace-workflow-example.md`) — a worked tour showing how the top-level files interlock.
 - External references you keep coming back to (a style guide, a checklist you didn't write but rely on, a research paper that frames your domain).
+- Long-form items pointed to from `observations.md` (policy docs, vendor specs, multi-paragraph rules whose pointer + short rule live in `observations.md`).
 - Reusable templates that aren't tied to a single project.
+- Worked examples of procedures or formats that benefit from being seen in full.
 
 ## What doesn't go here
 
 - **Procedures.** "How to do X" lives in `runbooks/`.
 - **Project-specific reference material.** That lives inside the project — see "Recursive pattern" below.
 - **Throwaway downloads.** That's `tmp/`.
-
-## Do-not-strip scaffolding inside resources
-
-`workspace-workflow-example.md` is an example in B2B-SaaS framing. Toward the end it carries a short translation paragraph that maps the example into other domains (research projects, household admin, hiring, kitchen renovation). That paragraph is **load-bearing scaffolding** for the example, not editorial framing: it prevents the single domain from anchoring the user's reading. Do not strip it as fence-bait when editing.
-
-Same rule for any other worked example added later: the "this also applies to other domains" hinge is part of the deliverable, not commentary on it.
 
 ## Layout
 
@@ -31,7 +26,6 @@ Flat files for single artifacts; subfolders when a topic has multiple companions
 ```
 resources/
 ├── AGENTS.md
-├── workspace-workflow-example.md
 └── style-guide/
     ├── AGENTS.md
     └── tone-examples.md

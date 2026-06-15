@@ -26,15 +26,7 @@ See `0000-00-00-example.md` for a seeded example.
 
 ### Guardrails for next session
 (optional sub-section — list any `do NOT` instructions, holds, or boundary conditions the next session needs to honor before acting. These are not the same as in-progress notes: they are constraints on action. If yesterday said "do NOT email the vendor until legal review is complete," that lives here. The next session should read this sub-section before acting on requests that might violate the constraint.)
-
-**Generated-by:** inference | user | mixed
 ```
-
-The `Generated-by` marker captures who produced today's entry: the agent (inference), the user, or both. Keep it on the last line, after Handoff, so a skim of the file always finds it. If the user typed the whole entry, mark `user`; if the agent drafted from a session and the user reviewed without rewriting, mark `mixed`; if the agent wrote it end-to-end without explicit user review, mark `inference`. The methodology calls this out specifically — see `methodology.md#provenance-markers`.
-
-## Why a single file, not two
-
-Earlier versions of this workspace had separate `sessions/` (AM) and `handoffs/` (PM) folders. Real-world practice — bullet-journal daily logs, captain's logs, executive daybooks, on-call shift notes — converges on **one chronological page per day**. Splitting forces a context switch and a "does this go in session or handoff?" decision that doesn't survive a busy week. One file, three sections, zero ambiguity.
 
 ## When to write the Intent section
 
@@ -65,4 +57,4 @@ That's the most recent daybook. Read the Handoff section first — that's where 
 - Each day's state is a discrete artifact you can diff, blame, and grep.
 - "Where did we leave off on Monday?" → open Monday's file.
 - The most recent file is always the right starting point.
-- Old daybooks are append-only history; they don't need pruning. The monthly roll-up (see `methodology.md#review-cadence`) summarizes them into `decisions.md` if a milestone happened.
+- Old daybooks are append-only history; they don't need pruning. If a milestone or commitment crystallizes from a stretch of daybooks, it gets promoted into `decisions.md`; otherwise the daybook is its own record.

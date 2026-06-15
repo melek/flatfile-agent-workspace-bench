@@ -80,14 +80,14 @@ The runner enumerates work; an orchestrating agent dispatches the actual inferen
 `runner.py stage` builds a run's workspace from a **base tree** plus the scenario seed. Two kinds of base tree exist:
 
 - **Control variants** (`bench/controls/control{1,2,3}-*`) — present in-repo; stage directly.
-- **The full template** (`sio.TEMPLATE_ROOT`, `agent-workspace-template/`) — materialized by `bench/tools/build_template.py`, which derives the pristine tree (full methodology depth, **empty registers**) deterministically from the canonical workspace at `bench/longitudinal/state/workspace/` (accumulated state). Dated daybook entries, real register entries, and concrete projects are stripped; every `AGENTS.md`, `methodology.md`, register template, and worked example is kept. Regenerate / verify with:
+- **The full template** (`sio.TEMPLATE_ROOT`, `agent-workspace-template/`) — a **vendored snapshot of the authoritative template** maintained in the sibling repo `flatfile-agent-workspace` (`agent-workspace-template/`). The template has a single owner there; the bench vendors a copy so it is self-contained and reproducible. The source repo + commit SHA are recorded in `template-provenance.json` at the bench repo root. Re-sync / verify with:
 
   ```bash
-  python bench/tools/build_template.py          # (re)materialize
-  python bench/tools/build_template.py --check  # fail if the on-disk tree is stale
+  python bench/tools/sync_template.py          # vendor from the sibling repo
+  python bench/tools/sync_template.py --check  # fail if the vendored tree differs from source
   ```
 
-  The derived tree reflects the longitudinal-workspace methodology surface. If a benchmark version (e.g. a v0.4 trim) differs, adjust the source or the derived tree and regenerate — the result is the template of record for runs staged from it. Earlier `v0.1`–`v0.3` results predate this tooling and were staged out-of-band (legacy; see `MEASUREMENT.md`).
+  This is the v0.3-trimmed lineage of record: `followups.md` and `weekly-review` removed, `start-session`/`close-session` runbooks present, paired `AGENTS.md`/`CLAUDE.md`. The deterministic checks (`runner.py check`) encode *this* template's methodology — notably the work-product attribution footer, not the superseded per-entry `Generated-by` marker. Earlier `v0.1`–`v0.3` results predate this tooling and were staged out-of-band (legacy; see `MEASUREMENT.md`).
 
 If the template is ever absent, `stage`/`diff` for a full-template run **fails loudly** with a pointer here rather than staging an empty or contaminated tree. Control-variant runs are unaffected.
 

@@ -1,6 +1,7 @@
-# Scratch — never committed (AGENTS.md preserves the folder and documents the rule)
+# Scratch — never committed (AGENTS.md + CLAUDE.md preserve the folder and document the rule)
 tmp/*
 !tmp/AGENTS.md
+!tmp/CLAUDE.md
 
 # OS / editor noise
 .DS_Store
