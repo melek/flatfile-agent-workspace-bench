@@ -521,10 +521,14 @@ _ROOT_REGISTERS = ("decisions.md", "observations.md")
 _LINK_RE = __import__("re").compile(r"\[[^\]]*\]\(([^)]+)\)")
 
 # SA2 (canonical methodology, work-product attribution): inference-produced
-# *work products* under these dirs end with a one-line attribution footer.
-# Internal records (decisions.md/observations.md/daybook entries) deliberately
-# carry NO per-entry attribution — the superseded `**Generated-by:**` marker.
-_WORK_PRODUCT_DIRS = ("projects/", "resources/", "tmp/")
+# *durable work products* end with a one-line attribution footer. Internal
+# records (decisions.md/observations.md/daybook entries) deliberately carry NO
+# per-entry attribution (the superseded `**Generated-by:**` marker). tmp/ is
+# excluded: it is gitignored scratch for "verifiability of synthesis"; the
+# methodology's footer lives on the durable artifact the scratch is promoted to
+# (projects/) and on standalone reference reports (resources/), not on every
+# intermediate file a human never acts on directly.
+_WORK_PRODUCT_DIRS = ("projects/", "resources/")
 _SCAFFOLD_NAMES = ("AGENTS.md", "CLAUDE.md")  # not work products
 _FOOTERS = (
     "Report assembled by inference",

@@ -54,8 +54,13 @@ class TestSA2(unittest.TestCase):
 
     def test_footer_must_be_last_line(self):
         # footer present but not at the bottom -> fail
-        r = runner._check_sa2({}, {"tmp/draft.md": f"{FOOTER}\nmore text after\n"})
+        r = runner._check_sa2({}, {"projects/x/draft.md": f"{FOOTER}\nmore text after\n"})
         self.assertEqual(r["score"], "fail")
+
+    def test_tmp_scratch_is_not_a_work_product(self):
+        # tmp/ is gitignored scratch -> no footer required -> n/a
+        r = runner._check_sa2({}, {"tmp/incident/timeline.md": "## Detection\nstuff\n"})
+        self.assertEqual(r["score"], "n/a")
 
 
 class TestAR4(unittest.TestCase):
