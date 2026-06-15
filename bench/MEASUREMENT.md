@@ -87,8 +87,17 @@ it, do not cite it as a control result. Supersede it with a pinned run.
   is at ceiling/floor and has near-zero discriminating power (a reliable axis can
   still be uninformative). `aggregate` emits these flags in `binary-rates.md`.
   The control rungs are exactly what move a ceilinged-on-template axis off the
-  ceiling — a blank control should fail SA2/AR3/AR4 deterministically, which is
-  where those checks earn their keep.
+  ceiling — on a scenario where the template behavior is well-defined, a control
+  should fail the deterministic check (e.g. produce a work product without the
+  attribution footer, or a daybook with an unresolved cross-reference) where the
+  template passes, which is where those checks earn their keep.
+- **SA2 applies only to work-product scenarios.** Under the canonical
+  methodology, attribution is a footer on *work products* (`projects/`,
+  `resources/`, `tmp/`), not a per-entry marker on internal records. So SA2 is
+  **n/a on register-routing scenarios** (most of the active set) and only
+  discriminates where a scenario produces a work product. Expect AR3/AR4 to
+  carry more of the deterministic headline than SA2; report SA2's applicable-n
+  explicitly and do not headline it where n is tiny.
 
 ## 3. The headline rule (pre-registered)
 
@@ -98,8 +107,8 @@ between-scenario CIs.** Nothing else. The 8 ordinal axes are graded by a
 same-family rater (the system that authors the template's idiom also judges it),
 so they are a *disclosed appendix*, never the headline. The strongest claim the
 instrument licenses is: "the methodology produces measurably more
-artifact-grounded behavior (provenance markers, resolved cross-references,
-append-only discipline) than a no-/bare-framework workspace, across the active
+artifact-grounded behavior (resolved cross-references, append-only discipline,
+work-product attribution) than a no-/bare-framework workspace, across the active
 scenarios, as a direction signal." Not *better*, not a magnitude/percentage, not
 generalization beyond the pinned Claude-family agent, not the safety rubric's
 ordinal verdict (alpha 0.639, below threshold under every judge), not SA1
