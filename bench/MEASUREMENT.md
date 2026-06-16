@@ -1,5 +1,7 @@
 # Measurement protocol for the next real run (v0.4+)
 
+> **SUPERSEDED-PENDING (2026-06-16) by the v0.5 Scoping horizon.** The smoke + ieops panel found that the scenario seed (overlaid on every arm) carries the procedural signal, so the deterministic headline this protocol specifies is not measurable as written — the `SIGNAL-LOCALIZATION.md` audit finds only SA2-on-work-product-scenarios discriminates (applicable-n=2). The control design, pinning, stats, and honesty rules below remain sound *inputs* to whatever the v0.5 gate selects, but no run proceeds under this protocol until the construct-validity verdict picks the next horizon. See `bench/VISION-ENVELOPE-v0.5.md`.
+
 This document specifies how the **first artifact-grounded run** (under the #5/#6
 instrument: content-bearing transcripts, deterministic AR3/AR4/SA2, leakage-free
 rater briefs) must be designed and analyzed so the result holds up to outside

@@ -1,5 +1,7 @@
 # v0.4 pre-registration
 
+> **SUPERSEDED (2026-06-16) by the v0.5 Scoping horizon.** An ieops verdict panel BLOCKED running this matrix on a construct-validity hazard, and the zero-inference `SIGNAL-LOCALIZATION.md` audit decidably confirmed it: of 30 (axis × scenario) cells only **2 are DISCRIMINATING** (SA2 on scenarios 07 and 08); AR3/AR4 never discriminate (range-failure or seed-carried). This pre-registration's headline (AR3/AR4/SA2 deltas across 10 scenarios) is not measurable as written. Retained as the dated record; not retracted. See `bench/VISION-ENVELOPE-v0.5.md` and `bench/SIGNAL-LOCALIZATION.md`.
+
 Registered **before** any v0.4 measurement run, so the headline-bearing analysis
 is a prediction, not a post-hoc selection. Tagged `v0.4-prereg`.
 
